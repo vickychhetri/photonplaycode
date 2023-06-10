@@ -88,15 +88,14 @@
                                                                             @php
                                                                                 $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$prod->product_id)->get();
                                                                             @endphp
-                                                                            @foreach ($options as $opp)
-                                                                                {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
+                                                                            @foreach ($options as $opp){{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
                                                                             @endforeach
                                                                         @endforeach
 
                                                                     </td>
                                                                     <td>{{ $prod->quantity }}</td>
                                                                     <td>{{ $prod->color }}</td>
-                                                                    <td>${{$prod->price}}/-</td>
+                                                                    <td>${{$prod->price}}</td>
                                                                 </tr>
                                                             @endforeach
                                                             <tr>
@@ -106,7 +105,7 @@
                                                                 <td colspan="3">
                                                                 </td>
                                                                 <td colspan="2">
-                                                                    ${{$order->grand_total}} /-
+                                                                    ${{$order->grand_total}}
                                                                 </td>
                                                             </tr>
                                                             </tbody>
