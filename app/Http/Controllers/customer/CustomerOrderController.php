@@ -18,7 +18,7 @@ class CustomerOrderController extends Controller
                 $prd["title"]=Product::find($prd->product_id)->title;
                 $prd["cover_image"]=Product::find($prd->product_id)->cover_image;
             }
-
+            dd($order);
             return view('customer.profile.track_order',compact('order'));
         }
 }
