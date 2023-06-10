@@ -26,25 +26,7 @@
                                                 <div id="errormessage" class="bg-danger text-white"></div>
                                                 <h4 class="card-title p-1 d-flex justify-content-around align-items-center m-2 p-2">
                                                     <span>   Order : {{$order->order_number}}</span>
-                                                    <span>
-                                <select class="form-select" id="myForm" name="delivery_status" class="shadow-none m-2">
-                                    <option value="pending" {{$order->delivery_status=="pending"?"selected":""}}>Pending</option>
-                                    <option value="processing" {{$order->delivery_status=="processing"?"selected":""}}>Processing</option>
-                                    <option value="shipped" {{$order->delivery_status=="shipped"?"selected":""}}>Shipped</option>
-                                    <option value="delivered" {{$order->delivery_status=="delivered"?"selected":""}}>Delivered</option>
-                                     <option value="completed" {{$order->delivery_status=="completed"?"selected":""}}>Completed </option>
-                                     <option value="cancelled" {{$order->delivery_status=="cancelled"?"selected":""}}>Cancelled</option>
 
-
-                                     <option value="refunded" {{$order->delivery_status=="refunded"?"selected":""}}>Refunded</option>
-                                     <option value="on_hold" {{$order->delivery_status=="on_hold"?"selected":""}}>On Hold</option>
-
-                                     <option value="returned" {{$order->delivery_status=="returned"?"selected":""}}>Returned</option>
-                                        <option value="partially_shipped" {{$order->delivery_status=="partially_shipped"?"selected":""}}> Partially Shipped</option>
-
-                                </select>
-
-                            </span>
                                                 </h4>
                                                 <div class="shadow-sm p-3">
                                                     <p> Payment Status : <span class="{{$order->payment_status=='paid'?'text-success':'text-warning'}} p-1">
