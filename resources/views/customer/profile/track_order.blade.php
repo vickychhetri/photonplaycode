@@ -103,7 +103,7 @@
                                                                 <td>
 
                                                                 </td>
-                                                                <td colspan="5">
+                                                                <td colspan="4">
                                                                 </td>
                                                                 <td>
                                                                     ${{$order->grand_total}} /-
