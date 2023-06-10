@@ -66,7 +66,7 @@
                                                         <table class="table">
                                                             <thead>
                                                             <tr>
-                                                                <th>Product Id</th>
+
                                                                 <th>Product Image</th>
                                                                 <th>Product Name</th>
                                                                 <th>Options</th>
@@ -79,7 +79,7 @@
                                                             <tbody>
                                                             @foreach($order->orderedProducts as $prod)
                                                                 <tr>
-                                                                    <td>{{ $prod->product_id }}</td>
+
                                                                     <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="Image not found"  style="max-height: 50px;max-width: 100px;"/></td>
                                                                     <td>{{ $prod->title }}</td>
                                                                     <td>
