@@ -102,7 +102,7 @@
                                                                 <td>
 
                                                                 </td>
-                                                                <td colspan="4">
+                                                                <td colspan="3">
                                                                 </td>
                                                                 <td colspan="1">
                                                                     ${{$order->grand_total}}
