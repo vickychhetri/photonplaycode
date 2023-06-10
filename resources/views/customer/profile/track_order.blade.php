@@ -12,7 +12,7 @@
                             <h5 class="btn-light fs-5 py-2 ">Overview</h5>
                             <div class="d-flex gap-4 mt-5">
 
-                                Here is the content
+                                {{print_r($order)}}
 
                             </div>
                         </div>
