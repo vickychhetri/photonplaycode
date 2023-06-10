@@ -3148,3 +3148,5 @@ input:focus {
 .mobile-menu-items {
      border-bottom: 1px solid #d0cbcb;
 }
+
+html, body {width: auto!important; overflow-x: hidden!important}
