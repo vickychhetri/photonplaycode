@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "photonplay-372807",
+  "private_key_id": "eac6685f918094f930f64078153733b474067b8d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDioYoCoYyMY0qG\ncXAo/FE5bqhsayUp/NQYe7Wtk7wjaIbm+8RYy1/OZBMKyM+F6/l7+OmRuA0x8OuI\nqFmMij0NVNXb2cLo7LAGXPSMsZYH05I1V5jHdzp0ZXS9cAeRtoewvhY+pqFBxxjQ\nmZEdwisUDvU83D05W0eNmp80GRx//WftZnqjmKkUI6OwpXm+qUTrjf5l6VHFshWH\n8QgNivEQm9OvpfNSFlqNqrgx67PcSDHiwA1e41TBVFpxP0xZHal68Nl9hHwUEy6i\njKMKlAznnCRBNkirAwZpBLG4e2oPsmhqItRBRHUbAEWyRUZ4lDSJH4pJOknwJpVl\nNRXH7J0PAgMBAAECggEAWEPrAOhTWZAIRAFlWgkfR1uCTCuUv1whbOGtmgtqYG4C\n8G5JA/49c6BFTFN2g6Wqtq50pZTFytgWm9RZgCOM8KbEXgpbX6VjTy8f7bXyhVzQ\n2mah8bnNcezbwTYjNIyfH2aBOmhicMBuuTu+KZVoerjyqX/rdm3HGe8JJ1zKXUwk\ncGnemhq4Sa05I6O2PwUVOFJLZ17t28piyrXWjQf0B1zyYA3kXKOadMkt6uDMbnNp\noLe/tABStPshjfW3b78GMRBAqSArqvHtBYTzHWs7o//CSSXbXWwHIjnsLjTJ139L\npwygjbqH3Nz+PEndFkBHRpRru3iWxY5XgXv89LUmiQKBgQDx530+CiUmjLtj9eQF\n8mabfo15XeeyAlVCWjecrlTa8tfmq+A2E9DK8xK259zpZSj3tX9h7BI9Bz0Q+Yyn\n3xpZDSBxvWk9lPIgme4EP5dgfg1aDV9Cq/k7lrlCOEmpcMV5NUdGMKicFtsV5b7Z\nYoR+M/tZj84xZopfHF6QUgVfmQKBgQDv1jejRcGTgUoAZ3Tc00hmvr4yYYCAP3x4\n8Qdr/ryY9YB4MfiTMu252DWJoDRmERUlkI6FJeZQLOQiwetD+O15syYtDbOzaQXi\nkObd9Jx9PatZ6tK7Ctqq8J0P7XeIYdBdF5QX2QECmZKIgLIKfofkMwOFVwYaRW2Q\nWMzUDi5q5wKBgFPekJur5MmCzY2QuSgerNiIfgBwQF6FVI4WvWVDRARNYfGF8cyN\n/jv/HqPvq7X37sZDVRDcSk6CbfeurceeIIJzfKYyp4REWdZXyCAM9CzuRy7LqBVz\njovMbBq7bT6j7LNjd3ysbij/+6GR8CNqdslSuHiK1VBnXt4u9dJPvbExAoGBAIom\nBIphxe0nTe8JqMECWvQD7x6qFxDIgPRRMgs9AnnBAC0764kujsy8A6qwwz3/nQS0\nTcPYXt/T291Bgjj3DCNL1DOjbt1rI16sRK+ZFQL3INp8bsIasHZCftYL3QyL+y+E\nQ2OxNem/eC50oxl0ZOZHlEGcLQG4+DFrVSDYwlgFAoGBAI188jyZoSw0N/q0V4KK\naouYb8k9jeIM0MsD6MIaxet69E4/d2DGFuDU5YqvY8MWwdSpgjn+lb8NIDE3I+RZ\nvQp/lUCr++QV2oPePR4tO/SQl2zqkI+9ZbSlA1Sz9pfTWtJ/WEMaxpwd4uMNKgrM\nCb3dvAAB1kzkwP/iBoLfmRDt\n-----END PRIVATE KEY-----\n",
+  "client_email": "search-console@photonplay-372807.iam.gserviceaccount.com",
+  "client_id": "107560675501230219797",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/search-console%40photonplay-372807.iam.gserviceaccount.com"
+}

@@ -1,0 +1,64 @@
+html,body,h2,p{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f7fafc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #404040;
+}
+.wrapper{
+    width: 500px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border: solid 1px #e5e6e8;
+}
+.wrapper h2{
+    margin: 0 0 20px;
+    font-size: 2em;
+}
+form .label{
+    margin: 15px 0 10px;
+}
+form input, form textarea {
+    padding: 10px 15px;
+    border: solid 1px #e5e6e8;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #404040;
+    width: 100%;
+    box-sizing: border-box;
+}
+#alert{
+    display: none;
+    margin: 15px 0 0;
+    color: #808080;
+}
+button{
+    margin: 20px 0 0;
+    padding: 10px 15px;
+    background-color: #d54b4b;
+    color: #ffffff;
+    font-size: 0.8em;
+    border: 0;
+    outline: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+button:hover{
+    cursor: pointer;
+}
+.google-message{
+    margin: 15px 0 0;
+    color: #808080;
+    font-size: 0.8em;
+}
+.google-message a{
+    color: #808080;
+}
+.grecaptcha-badge {
+    visibility: hidden;
+}
+  

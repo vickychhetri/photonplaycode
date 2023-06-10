@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /console
+Disallow: /index.php
+
+Sitemap: https://www.photonplay.com/sitemap.xml

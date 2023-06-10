@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Contact Me</h2>
+        <form id="contact-form" method="post">
+            <p class="label">Full Name *</p>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <p class="label">Email *</p>
+            <input type="email" name="email" placeholder="Email" required>
+            <p class="label">Message *</p>
+            <textarea name="message" rows="6" placeholder="Type your message here" required></textarea>
+            <!-- A hidden div “alert” below to display the message received from server once form is submitted-->
+            <div id="alert"></div>
+            <div class="col-md-12 boxed">
+                <div class="g-recaptcha" data-sitekey="6LcNg8gjAAAAAKfi7NBSyrqnRUrF3IZ2Btb3aZMI"></div>
+            </div>
+            <button id="submit-button" type="submit">Send Message</button>
+            <p class="google-message">This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </p>
+        </form>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $('#contact-form').submit(function(event) {
+            event.preventDefault(); // Prevent direct form submission
+            if (grecaptcha === undefined) {
+                alert('Recaptcha not defined'); 
+                return; 
+            }
+
+            var response = grecaptcha.getResponse();
+
+            if (!response) {
+                alert('Coud not get recaptcha response'); 
+                return; 
+            }
+
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function() {
+                if (this.readyState === 4) {
+                    if (this.status === 200) {
+                        alert(this.responseText);
+                    }
+                }
+            }
+            ajax.open('POST', 'validate-recaptcha.php', true);
+            ajax.send('recaptcha=' + response);
+        });
+    </script>
+</body>
+</html>

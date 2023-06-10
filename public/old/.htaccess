@@ -1,0 +1,17 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^ index.php [QSA,L]
+
+
+<IfModule mod_rewrite.c>
+	RewriteCond %{HTTP_HOST} ^photonplay\.com$ [NC]
+	RewriteRule (.*) https://www.photonplay.com/$1 [R=301,L]
+</IfModule>
+
+Options All -Indexes
