@@ -3150,3 +3150,12 @@ input:focus {
 }
 
 html, body {width: auto!important; overflow-x: hidden!important}
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
+}
+
+table {
+    width: 100%;
+    /* Other table styles */
+}

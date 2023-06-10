@@ -38,7 +38,7 @@
                                                     <div class="shadow-lg p-4 ">
 
                                                         <hr/>
-                                                        <table class="table">
+                                                        <table class="table table-container">
                                                             <thead>
                                                             <tr>
 
