@@ -1,3 +1,7 @@
+@php
+    use App\Models\ProductSpcializationOption;
+    use Illuminate\Support\Facades\Log;
+@endphp
 @include('customer.layouts.header')
 <!-- header-end -->
 <!-- banner-start -->
