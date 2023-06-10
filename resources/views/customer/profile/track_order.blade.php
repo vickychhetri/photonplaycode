@@ -52,11 +52,7 @@
                                                     <p> Order Status : <span class="p-1">
                                     {{strtoupper($order->delivery_status)}} </span>   </p>
 
-                                                    <p> Trasaction No. : <span>
-                                {{$order->trx_id}}</span> </p>
                                                     <p>  <b> Order Note: </b>  {{$order->order_notes??'Order notes not available.'}}</p>
-                                                    <a href="{{route('admin.generate_order_invoice',$order->id)}}" target="_blank">
-                                                        <i data-feather="printer"></i>  </a>
                                                 </div>
                                             </div>
                                             <div class="card-body">
@@ -65,7 +61,7 @@
 
                                                     <h2> </h2>
                                                     <div class="shadow-lg p-4 ">
-                                                        <h2> Product </h2>
+
                                                         <hr/>
                                                         <table class="table table-bordered  table-hover">
                                                             <thead>
@@ -119,61 +115,12 @@
                                                     <br/>
 
                                                     <div class="shadow-lg p-4 ">
-                                                        <h2> Customer </h2>
+                                                        <h6> Billing Address </h6>
                                                         <hr/>
-                                                        <table class="table table-bordered table-hover">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>User Id</th>
-                                                                <th>Stripe Id</th>
-                                                                <th>Name</th>
-                                                                <th>Email</th>
-                                                                <th>Phone Number</th>
-
-
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-
-                                                            <tr>
-                                                                <td>{{$order->user->id }}</td>
-                                                                <td>{{$order->user->stripe_id}}</td>
-                                                                <td>{{ $order->user->name }}</td>
-                                                                <td>{{ $order->user->email }}</td>
-                                                                <td>{{ $order->user->phone_number }}</td>
-                                                            </tr>
-
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <br/>
-                                                    <div class="shadow-lg p-4 ">
-                                                        <h2> Billing Address </h2>
-                                                        <hr/>
-                                                        <table class="table table-bordered table-hover">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>Billing Street</th>
-                                                                <th>Billing Flat Suite</th>
-                                                                <th>Billing City</th>
-                                                                <th>Billing State</th>
-                                                                <th>Billing Countryr</th>
-                                                                <th>Billing Postcode</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>{{$order->billing_street }}</td>
-                                                                <td>{{$order->billing_flat_suite}}</td>
-                                                                <td>{{ $order->billing_city }}</td>
-                                                                <td>{{ $order->billing_state}}</td>
-                                                                <td>{{ $order->billing_country }}</td>
-                                                                <td>{{ $order->billing_postcode }}</td>
-                                                            </tr>
-
-
-                                                            </tbody>
-                                                        </table>
+                                                        <p>
+                                                            {{$order->billing_street }} , {{$order->billing_flat_suite}}
+                                                            {{ $order->billing_city }}, {{ $order->billing_state}} , {{ $order->billing_country }}, {{ $order->billing_postcode }}.
+                                                        </p>
                                                         <div class="shadow-sm p-3">
                                                             <p>  <b> Address Note: </b>  {{$order->address}}</p>
                                                         </div>
