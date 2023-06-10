@@ -63,7 +63,7 @@
                                                     <div class="shadow-lg p-4 ">
 
                                                         <hr/>
-                                                        <table class="table table-bordered  table-hover">
+                                                        <table class="table">
                                                             <thead>
                                                             <tr>
                                                                 <th>Product Id</th>
