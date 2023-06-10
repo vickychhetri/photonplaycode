@@ -29,6 +29,7 @@ use App\Http\Controllers\CommonController;
 use App\Http\Controllers\PagesController;
 
 /*
+* New Route
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
