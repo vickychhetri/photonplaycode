@@ -69,7 +69,7 @@
 
                                                                 <th>Product Image</th>
                                                                 <th>Product Name</th>
-                                                                <th>Options</th>
+
                                                                 <th>Quantity</th>
                                                                 <th>Color</th>
                                                                 <th>Price</th>
@@ -81,8 +81,7 @@
                                                                 <tr>
 
                                                                     <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="Image not found"  style="max-height: 50px;max-width: 100px;"/></td>
-                                                                    <td>{{ $prod->title }}</td>
-                                                                    <td>
+                                                                    <td>{{ $prod->title }} -
                                                                         @foreach (explode(',',$prod->option_ids) as $option)
 
                                                                             @php
