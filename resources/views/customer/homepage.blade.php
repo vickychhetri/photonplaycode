@@ -20,7 +20,7 @@ $seo_meta=[
                     <div class="row align-items-center">
                         <div class="col-lg-6 pe-lg-0">
                             <div class="sucess-undeafeted p-4 py-5 text-white">
-                                <p class="text-uppercase">From Idea to Implementation 1</p>
+                                <p class="text-uppercase">From Idea to Implementation</p>
                                 <h4 class="text-uppercase">Our 16+ Years of Undefeated Success</h4>
                                 <p>
                                     PhotonPlay, a family-owned Indian company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 16 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
