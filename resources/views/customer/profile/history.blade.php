@@ -17,7 +17,7 @@
                                         <p class="text-grey mb-0">Order Number :  {{$order->order_number}}</p>
                                         <p class="text-grey mb-0">Order Status : {{strtoupper($order->delivery_status??"Order Placed Successfully ")}}</p>
                                         <span class="text-grey">{{date('M-d-Y', strtotime($order->created_at))}}</span>
-                                        <a href="#" class="text-decoration-none"> Show Detail</a>
+                                        <a href="{{route('customer.show.order',$order->order_number)}}" class="text-decoration-none"> Show Detail</a>
                                     </div>
                                 </div>
                                 @foreach($order->orderedProducts as $product)

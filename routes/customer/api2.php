@@ -19,3 +19,6 @@ Route::get('/photon/{page_name}', [CustomerProfileController::class, 'page_show'
 Route::get('/photon-system/{page_name}/', [ContentPageController::class, 'index_guest'])->name("show_page_policy");
 
 Route::get('/thank-you', [ThankYouController::class, 'index'])->name("show_thank_you_page");
+
+Route::get('/order/show/{id}', [ThankYouController::class, 'index'])->name("show.order");
+
