@@ -20,5 +20,5 @@ Route::get('/photon-system/{page_name}/', [ContentPageController::class, 'index_
 
 Route::get('/thank-you', [ThankYouController::class, 'index'])->name("show_thank_you_page");
 
-Route::get('/order/show/{id}', [ThankYouController::class, 'index'])->name("show.order");
+Route::get('/order/show/{id}', [CustomerOrderController::class, 'show_order'])->name("show.order");
 
