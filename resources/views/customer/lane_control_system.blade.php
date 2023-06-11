@@ -52,9 +52,7 @@ $seo_meta=[
                                     @empty
 
                                     @endforelse
-
-                                        <x-Customer.ShowImageDisplay/>
-
+                                  <x-Customer.ShowImageDisplay/>
                                 </div>
                             </div>
                         </div>
