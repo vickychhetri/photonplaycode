@@ -22,7 +22,7 @@ $seo_meta=[
                     <div class="col-lg-8  col-md-6 col-12">
                         <div class="overview-wrapper">
                             <h5 class="btn-light fs-5 py-2 ">Order Detail</h5>
-                            <div class="d-flex gap-4 mt-5">
+                            <div class="d-flex gap-4">
 
                                 <!-- All Client Table Start -->
                                 <div class="row">
