@@ -60,8 +60,8 @@ $seo_meta=[
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="radar-icop w-75 ">
-                        <h5 class="mb-2">
-                            "Photonplay's Portable Variable Message Signs: Enhancing Traffic Management with Dynamic Messaging Solutions"
+                        <h5 class="mb-2 text-center">
+                            Photonplay's Portable Variable Message Signs: Enhancing Traffic Management with Dynamic Messaging Solutions
                         </h5>
                         <p class="mt-4 mb-lg-0 mb-5 text-center">
                             Photonplay's Portable Variable Message Signs (VMS) are one of the key elements of dynamic
