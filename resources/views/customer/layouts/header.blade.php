@@ -213,7 +213,7 @@ $productLists = Product::take(5)->get();
 
             @endif
             <li >
-                <a class="nav-link text-uppercasen" href="{{route('customer.homePage')}}">HOME</a>
+                <a class="nav-link text-uppercase" href="{{route('customer.homePage')}}">HOME</a>
             </li>
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>
