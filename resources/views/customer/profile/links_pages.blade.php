@@ -9,8 +9,20 @@
                         <div class="overview-wrapper">
                             <h5 class="btn-light fs-5 py-3 ">Account</h5>
                             <div class="card-box border p-3">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card text-white bg-dark mb-3" >
+                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.overview')}}" style="text-decoration:none;"> Overview</a></h4></div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
                                 <div class="review-inner">
-                                    <span class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.overview')}}" style="text-decoration:none;"> Overview</a></span>
+
+
+
                                     <div class="py-3  border-bottom border-1">
                                         <span>ORDERS</span>
                                         <a href="{{route('customer.history')}}"><p class="">History</p></a>
