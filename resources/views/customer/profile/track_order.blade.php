@@ -24,13 +24,12 @@ $seo_meta=[
                             <h5 class="btn-light fs-5 py-2 ">Order Detail</h5>
                             <div class="d-flex gap-4 mt-5">
 
-
                                 <!-- All Client Table Start -->
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-12 col-md-10 hh-grayBox pt45 pb20">
+                                                <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
                                                     <div class="row justify-content-between">
                                                         <div class="order-tracking completed">
                                                             <span class="is-complete"></span>
