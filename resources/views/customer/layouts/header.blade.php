@@ -228,17 +228,18 @@ $productLists = Product::take(5)->get();
                 <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>
             </li>
 
-            <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                @if (!Session::get('user'))\
 
-                @if (!Session::get('user'))
+        <li class="nav-item mobile-menu-items">
                     <div class="d-flex align-items-center">
                         <input type="hidden" name="grand_total" value="{{$currency .''.$cartPrice}}">
                         <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
 
-                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
+                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>
+                            <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                     </div>
                     <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
+        </li>
                 @else
                     <div class="d-flex align-items-center">
                         <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
@@ -272,7 +273,7 @@ $productLists = Product::take(5)->get();
                     </div>
                 @endif
 
-            </form>
+
         </ul>
         </div>
     </nav>
