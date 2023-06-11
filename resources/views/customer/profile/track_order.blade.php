@@ -105,7 +105,7 @@ $seo_meta=[
                                                                    Shipping & handling
                                                                 </td>
                                                                 <td colspan="1">
-                                                                    ${{$order->shipping + (0.18* $order->cart_subtotal)}}
+                                                                    ${{$order->shipping}}
                                                                 </td>
                                                             </tr>
 
