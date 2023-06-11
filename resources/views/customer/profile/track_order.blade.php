@@ -51,10 +51,7 @@ $seo_meta=[
                                                             <tr>
 
                                                                 <th>Product Image</th>
-                                                                <th>Product Name</th>
-
-                                                                <th>Quantity</th>
-                                                                <th>Color</th>
+                                                                <th>Product </th>
                                                                 <th>Price</th>
 
                                                             </tr>
@@ -73,12 +70,12 @@ $seo_meta=[
 
                                                                             @foreach ($options as $opp){{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
                                                                             @endforeach
-                                                                        @endforeach
 
+                                                                        @endforeach
+                                                                       Color:  {{ $prod->color }}
                                                                     </td>
-                                                                    <td>{{ $prod->quantity }}</td>
-                                                                    <td>{{ $prod->color }}</td>
-                                                                    <td>${{$prod->price}}</td>
+
+                                                                    <td>{{ $prod->quantity }} x ${{$prod->price}}</td>
                                                                 </tr>
                                                             @endforeach
                                                             <tr>
