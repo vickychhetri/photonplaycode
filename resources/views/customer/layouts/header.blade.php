@@ -207,6 +207,9 @@ $productLists = Product::take(5)->get();
                     </a>
                 </div>
             </li>
+                <li class="nav-item mobile-menu-items">
+                    <a href="{{route('customer.account.menu')}}"  class="nav-link text-uppercase" > Account</a>
+                </li>
             @endif
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase" href="{{route('customer.homePage')}}">HOME</a>
@@ -256,11 +259,6 @@ $productLists = Product::take(5)->get();
 {{--                    </div>--}}
 
 
-                @if (Session::get('user'))
-                    <li class="">
-                        <a href="{{route('customer.account.menu')}}" > Account</a>
-                    </li>
-                @endif
 
                 <li class="nav-item mobile-menu-items">
                     <a  href="{{route('customer.logout')}}" class="nav-link text-uppercase">
