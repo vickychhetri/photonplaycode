@@ -39,7 +39,7 @@ $seo_meta=[
                                                             <span class="is-complete"></span>
                                                             <p>Shipped </p>
                                                         </div>
-                                                        <div class="order-tracking">
+                                                        <div class="order-tracking completed">
                                                             <span class="is-complete"></span>
                                                             <p>Delivered</p>
                                                         </div>
