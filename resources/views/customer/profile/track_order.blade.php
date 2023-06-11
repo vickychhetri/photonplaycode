@@ -82,7 +82,8 @@ $seo_meta=[
                                                                 <td>
 
                                                                 </td>
-                                                                <td colspan="3">
+                                                                <td colspan="2">
+                                                                    Grand Total
                                                                 </td>
                                                                 <td colspan="1">
                                                                     ${{$order->grand_total}}
