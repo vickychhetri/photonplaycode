@@ -168,6 +168,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
         Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
 
+        Route::get('/account/menu', [SignController::class, 'radarSpeedSigns_menus'])->name("account.menu");
 
 
         Route::get('logout', [LoginController::class, 'logout'])->name('logout');

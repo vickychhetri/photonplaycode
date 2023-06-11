@@ -23,5 +23,4 @@ Route::get('/photon-system/{page_name}/', [ContentPageController::class, 'index_
 Route::get('/thank-you', [ThankYouController::class, 'index'])->name("show_thank_you_page");
 
 Route::get('/order/show/{id}', [CustomerOrderController::class, 'show_order'])->name("show.order");
-Route::get('/account/menu', [SignController::class, 'radarSpeedSigns_menus'])->name("account.menu");
 
