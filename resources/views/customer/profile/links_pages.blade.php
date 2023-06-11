@@ -55,7 +55,7 @@
 
                                     <div class="col-md-6">
                                         <div class="card text-dark bg-light mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','privacy-policy')}}"  class="text-decoration-none text-white">Privacy Policy</a></h4></div>
+                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','privacy-policy')}}"  class="text-decoration-none text-dark">Privacy Policy</a></h4></div>
                                         </div>
                                     </div>
 
