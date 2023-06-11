@@ -54,36 +54,14 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="card text-white bg-dark mb-3" >
+                                        <div class="card text-dark bg-light mb-3" >
                                             <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','privacy-policy')}}"  class="text-decoration-none text-white">Privacy Policy</a></h4></div>
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <div class="review-inner">
 
-
-
-                                    <div class="py-3  border-bottom border-1">
-                                        <span>ORDERS</span>
-                                        <a ><p class="">History</p></a>
-                                    </div>
-                                    <div class="py-3 border-bottom border-1">
-                                        <span class="text-capitalize">account</span>
-                                        <a  style="text-decoration: none"><p class="mb-0 text-grey">Profile </p></a>
-
-                                        <a style="text-decoration: none"><p class="mb-0">Addresses</p></a>
-
-                                        <a  style="text-decoration: none"><p class="mb-0 ">Logout</p></a>
-                                    </div>
-                                    <div class="py-3">
-                                        <span class="text-capitalize">LEGAL</span>
-                                        <a class="mb-0 text-decoration-none"><p class="mb-0">About us</p></a>
-                                        <a href="{{route('customer.page_show_content','term-conditions')}}" class="mb-0 text-decoration-none"><p class="mb-0">Terms of Use </p></a>
-                                        <a href="{{route('customer.page_show_content','privacy-policy')}}" class="mb-0 text-decoration-none"><p class="mb-0">Privacy Policy </p></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
