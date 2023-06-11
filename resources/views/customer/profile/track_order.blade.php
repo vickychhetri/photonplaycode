@@ -10,11 +10,7 @@ $seo_meta=[
 ];
 ?>
 @include('customer.layouts.header')
-<style>
-    table td {
-        font-size: 16px;
-    }
-</style>
+
 <!-- header-end -->
 <!-- banner-start -->
 <section class="overview">
@@ -62,6 +58,9 @@ $seo_meta=[
                                                             </tr>
                                                             </thead>
                                                             <tbody>
+                                                            @php
+                                                            $net_amount=0;
+                                                            @endphp
                                                             @foreach($order->orderedProducts as $prod)
                                                                 <tr>
 
@@ -80,9 +79,26 @@ $seo_meta=[
                                                                        Color:  {{ $prod->color }}
                                                                     </td>
 
-                                                                    <td>{{ $prod->quantity }} x ${{$prod->price}}</td>
+                                                                    <td>{{ $prod->quantity }} x ${{$prod->price}}
+                                                                    @php
+                                                                        $net_amount=$net_amount+ $prod->quantity*$prod->price
+                                                                    @endphp
+                                                                    </td>
                                                                 </tr>
                                                             @endforeach
+                                                            <tr>
+                                                                <td>
+
+                                                                </td>
+                                                                <td colspan="1">
+                                                                   Shipping & handling
+                                                                </td>
+                                                                <td colspan="1">
+                                                                    ${{$order->shipping}} -
+                                                                    {{$net_amount}}
+                                                                </td>
+                                                            </tr>
+
                                                             <tr>
                                                                 <td>
 
