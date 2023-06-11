@@ -67,7 +67,7 @@ class OrderController extends Controller
          $prd["cover_image"]=Product::find($prd->product_id)->cover_image;
         }
 
-//        return $order;
+    //    dd($order);
 
         return view('order.show',compact('order'));
     }

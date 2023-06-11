@@ -94,7 +94,7 @@ use Illuminate\Support\Facades\Log;
                                         <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="Image not found"  style="max-height: 100px;max-width: 100px;"/></td>
                                         <td>{{ $prod->title }}</td>
                                         <td>
-                                            @foreach (explode(',',$prod->option_ids) as $option)
+                                            @foreach (unserialize($prod->option_ids) as $option)
 
                                                 @php
                                                 $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$prod->product_id)->get();

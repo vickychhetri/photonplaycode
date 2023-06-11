@@ -164,7 +164,7 @@ $seo_meta=[
                             @foreach ($product->specilizations as $specilization)
                                 <div class="col-md-8 bg-transparent" >
                                     <div class="">
-                                        <select class="form-select mb-3 " name="{{$specilization->id}}"
+                                        <select class="form-select mb-3 " name="dynamic_specs[{{$specilization->id}}]"
                                                 id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;">
                                             <option selected disabled>{{$specilization->specilization->title}} </option>
                                             @foreach($specilization->options as $option)
@@ -240,7 +240,7 @@ $seo_meta=[
                                     Shipping:7-10 Working Days.
                                 </p>
                             </div>
-                            </dsiv>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -248,7 +248,7 @@ $seo_meta=[
         </div>
     </div>
 
-    </form>
+    
     </div>
     <!-- order summery-end -->
 </section>
@@ -286,7 +286,7 @@ $seo_meta=[
         </div>
     </div>
 </section>
-
+</form>
 
 <!-- improving-section-start -->
 
@@ -438,7 +438,7 @@ $seo_meta=[
         if(radio.checked){
             dict[radio.id] = radio.value;
             $.ajax({
-                url: '{{ route('customer.specification.ajax') }}',
+                url: '{{ route("customer.specification.ajax") }}',
                 type: 'GET',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -460,7 +460,7 @@ $seo_meta=[
         }else {
             let val= dict[radio.id];
             $.ajax({
-                url: '{{ route('customer.specification.ajax') }}',
+                url: '{{ route("customer.specification.ajax") }}',
                 type: 'GET',
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
