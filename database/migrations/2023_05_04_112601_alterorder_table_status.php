@@ -14,7 +14,7 @@ class AlterorderTableStatus extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->string("delivery_status")->nullable();
+            $table->string("delivery_status")->nullable()->default('order');
         });
     }
 

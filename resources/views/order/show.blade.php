@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Log;
                             <span>   Order : {{$order->order_number}}</span>
                             <span>
                                 <select class="form-select" id="myForm" name="delivery_status" class="shadow-none m-2">
-                                    <option value="pending" {{$order->delivery_status=="order"?"selected":""}}>Order</option>
+                                    <option value="order" {{$order->delivery_status=="order"?"selected":""}}>Order</option>
                                     <option value="shipped" {{$order->delivery_status=="shipped"?"selected":""}}>Shipped</option>
                                     <option value="delivered" {{$order->delivery_status=="delivered"?"selected":""}}>Delivered</option>
 
