@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.overview')}}" style="text-decoration:none;"> Overview</a></h4></div>
+                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.overview')}}" class="text-decoration-none text-white"> Overview</a></h4></div>
 
                                         </div>
                                     </div>
