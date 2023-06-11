@@ -198,11 +198,19 @@ $productLists = Product::take(5)->get();
                 <div class="d-flex align-items-center">
                     <i class="bi bi-arrow-left-circle-fill text-dark" style="font-size: 36px;" onclick="closeMenu()"></i>
                 </div>
-
-
-
             </li>
+            @if (!Session::get('user'))
             <li class="nav-item mobile-menu-items">
+                <div class="me-2">
+                    <span class="text-capitalize">Good Day!</span>
+                    <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
+                </div>
+            </li>
+
+                <li class="nav-item mobile-menu-items"><a   href="{{route('customer.edit.profile')}} " class="nav-link text-uppercase">Account</a></li>
+                <li class="nav-item mobile-menu-items"><a  href="{{route('customer.logout')}}" class="nav-link text-uppercase">Logout</a></li>
+            @endif
+            <li >
                 <a class="nav-link text-uppercasen" href="{{route('customer.homePage')}}">HOME</a>
             </li>
             <li class="nav-item mobile-menu-items">
@@ -249,10 +257,7 @@ $productLists = Product::take(5)->get();
                         <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                     </div>
                     <div class="d-flex align-items-center">
-                        <div class="me-2">
-                            <span class="text-capitalize">Good Day!</span>
-                            <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
-                        </div>
+
                         <div class="profile-circle">
 
                             <div class="dropdown">
@@ -267,8 +272,6 @@ $productLists = Product::take(5)->get();
                                              class="img-fluid rounded-circle d-block" width="36" height="36"></a>
                                 </button>
                                 <ul class="dropdown-menu position-absolute end-0" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="{{route('customer.edit.profile')}}">Account</a></li>
-                                    <li><a class="dropdown-item" href="{{route('customer.logout')}}">Logout</a></li>
 
                                 </ul>
                             </div>
