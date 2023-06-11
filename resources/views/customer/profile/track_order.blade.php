@@ -10,6 +10,11 @@ $seo_meta=[
 ];
 ?>
 @include('customer.layouts.header')
+<style>
+    table td {
+        font-size: 16px;
+    }
+</style>
 <!-- header-end -->
 <!-- banner-start -->
 <section class="overview">
@@ -50,7 +55,7 @@ $seo_meta=[
                                                             <thead>
                                                             <tr>
 
-                                                                <th>Product Image</th>
+                                                                <th># </th>
                                                                 <th>Product </th>
                                                                 <th>Price</th>
 
