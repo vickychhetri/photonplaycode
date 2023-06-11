@@ -45,6 +45,7 @@ $seo_meta=[
                                                     <div class="shadow-lg p-4 ">
 
                                                         <hr/>
+                                                        <div class="table-responsive">
                                                         <table class="table table-container">
                                                             <thead>
                                                             <tr>
@@ -92,6 +93,7 @@ $seo_meta=[
                                                             </tr>
                                                             </tbody>
                                                         </table>
+                                                        </div>
                                                     </div>
                                                     <br/>
 
