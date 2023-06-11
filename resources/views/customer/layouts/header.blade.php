@@ -237,8 +237,11 @@ $productLists = Product::take(5)->get();
                         <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
                         <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>
                             <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
-{{--                    <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>--}}
+
                         </div>
+                    </li>
+                    <li class="nav-item mobile-menu-items">
+                    <a href="{{route('customer.loginForm')}}"> Login</a>
                     </li>
                 @else
                     <div class="d-flex align-items-center">
