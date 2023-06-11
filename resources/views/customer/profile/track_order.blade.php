@@ -30,20 +30,7 @@ $seo_meta=[
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
-                                                    <div class="row justify-content-between">
-                                                        <div class="order-tracking  {{!isset($order->delivery_status)|| $order->delivery_status=='order' ?'completed':''}} ">
-                                                            <span class="is-complete"></span>
-                                                            <p>Ordered </p>
-                                                        </div>
-                                                        <div class="order-tracking {{$order->delivery_status=='shipped' ?'completed':''}} ">
-                                                            <span class="is-complete"></span>
-                                                            <p>Shipped </p>
-                                                        </div>
-                                                        <div class="order-tracking {{$order->delivery_status=='delivered' ?'completed':''}} ">
-                                                            <span class="is-complete"></span>
-                                                            <p>Delivered</p>
-                                                        </div>
-                                                    </div>
+                                                    <x-customer.radar.delivery-status />
                                                 </div>
                                             </div>
                                         </div>
