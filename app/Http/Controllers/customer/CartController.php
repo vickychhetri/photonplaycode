@@ -49,6 +49,7 @@ class CartController extends Controller
 
         if(!Session::get('user')){
             $cart_table =  Cart::where('session_id', Session::getId())->get();
+            // dd(unserialize($cart_table[0]['option_ids']));
             $total = 0;
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
@@ -66,24 +67,25 @@ class CartController extends Controller
     }
 
     public function addShoppingBag(Request $request){
-//         dd($request->all());
+        // dd($request->dynamic_specs);
         $specPrice = 0;
-        if(isset($request->dynamic_spec)){
-            foreach($request->dynamic_spec as $specs){
-                foreach(explode(',', $specs) as $spec){
-                    $specPrice += DB::table('product_spcialization_options')->where('id', $spec)->value('specialization_price');
-                }
+        $sessionId = Session::getId();
+        $impodeSpec = array();
+        if(isset($request->dynamic_specs)){
+            foreach($request->dynamic_specs as $specs){
+                $implodeSpec[] = $specs;
+                    $specPrice += DB::table('product_spcialization_options')->where('id', $specs)->value('specialization_price');
             }
         }
-
+        // dd($implodeSpec);
         if(!Session::get('user')){
-        $cart = Cart::where(['session_id' => Session::getId(), 'product_id' => $request->product_id, 'price' => $request->price,])->first();
+        $cart = Cart::where(['session_id' => $sessionId, 'product_id' => $request->product_id, 'price' => $request->price,])->first();
             if($cart){
                 $cart->update(['quantity' => $cart->quantity + $request->quantity]);
             }else{
                 Cart::create([
-                    'session_id' => Session::getId(),
-                    'option_ids' => $specs ?? null,
+                    'session_id' => $sessionId,
+                    'option_ids' => serialize($request->dynamic_specs) ?? null,
                     'product_id' => $request->product_id,
                     'price' => $request->price + $specPrice,
                     'title' => $request->title,
@@ -102,7 +104,7 @@ class CartController extends Controller
                 Cart::create([
                     'user_id' => Session::get('user')->id,
                     'product_id' => $request->product_id,
-                    'option_ids' => $specs ?? null,
+                    'option_ids' => serialize($request->dynamic_specs) ?? null,
                     'price' => $request->price + $specPrice,
                     'title' => $request->title,
                     'category' => $request->category,
