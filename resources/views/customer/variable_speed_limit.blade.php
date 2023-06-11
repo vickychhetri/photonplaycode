@@ -21,7 +21,9 @@ $seo_meta=[
                         <p class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness of <br/>local speed limit</p>
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
-                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 product-feature-model-image mobile-display" >
+                    <div class="desktop-display">
+                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 product-feature-model-image" >
+                    </div>
                 </div>
 
             </div>
@@ -44,8 +46,7 @@ $seo_meta=[
                                 <div class="row">
                                     @forelse ($page->images as $image)
                                     <div class="col-4">
-
-                                        <div class="thumb-image-item mb-3 " >
+                                        <div class="thumb-image-item mb-3 " onclick="showModal('{{asset('storage/'.$image->image)}}')" >
                                             <img src="{{asset('storage/'.$image->image)}}" alt="" class="img-fluid" style="height: 200px;width: 200px;">
                                             <img src="{{asset('assets/customer/images/zoom-in.png')}}" alt="" onclick="showModal('{{asset('storage/'.$image->image)}}')" class="zoom-in">
                                         </div>
