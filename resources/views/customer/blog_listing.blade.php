@@ -15,7 +15,7 @@ $seo_meta=[
 <!-- Banner Sec End -->
 <section class="blog-content-list position-relative">
     <div class="social-icons position-absolute start-0">
-        <!-- <img src="./assets/images/social-media iconss.png" alt=""> -->
+
     </div>
     <div class="container">
         <div class="row">
@@ -51,7 +51,7 @@ $seo_meta=[
                 <form method="get" action="{{route('customer.search_photon_things')}}">
                 <div class="search mb-5 position-relative">
                     <input type="text" name="search" placeholder="Search" class="border-0 ">
-{{--                    <img src="./assets/images/search-копия.png" alt="Not Found" class="position-absolute" width="16" height="16">--}}
+
                     <i class="bi bi-search"></i>
                 </div>
                 </form>
@@ -318,38 +318,38 @@ $seo_meta=[
         }
 
     })
-    $('.mega-menu h4').click(function () {
-        // $(this).siblings('ul').slideDown();
-        if ($(this).parent().hasClass('active')) {
-            $(this).parent().removeClass('active')
-        } else {
-            $(this).parent().addClass('active');
-        }
-        $(this).parent().siblings().removeClass('active');
-    });
-
-    $('.toggler-mega').click(function () {
-        if ($(this).hasClass('active')) {
-            $(this).removeClass('active')
-            $('.mega-menu').slideUp();
-        } else {
-            $(this).addClass('active');
-            $('.mega-menu').slideDown();
-        }
-
-    })
-    $('.mega-menu-parent > h4').click(function () {
-        var bodyColor = $('.drop-downs').attr("style");
-        // console.log(bodyColor)
-        if (bodyColor === 'display: block;') {
-            $('.drop-downs').slideUp(200);
-            $('.mega-menu-item').removeClass('active');
-            // $('.toggler-mega').removeClass('active')
-            return;
-        }
-        $('.drop-downs').slideDown(200);
-
-    })
+    // $('.mega-menu h4').click(function () {
+    //     // $(this).siblings('ul').slideDown();
+    //     if ($(this).parent().hasClass('active')) {
+    //         $(this).parent().removeClass('active')
+    //     } else {
+    //         $(this).parent().addClass('active');
+    //     }
+    //     $(this).parent().siblings().removeClass('active');
+    // });
+    //
+    // $('.toggler-mega').click(function () {
+    //     if ($(this).hasClass('active')) {
+    //         $(this).removeClass('active')
+    //         $('.mega-menu').slideUp();
+    //     } else {
+    //         $(this).addClass('active');
+    //         $('.mega-menu').slideDown();
+    //     }
+    //
+    // })
+    // $('.mega-menu-parent > h4').click(function () {
+    //     var bodyColor = $('.drop-downs').attr("style");
+    //     // console.log(bodyColor)
+    //     if (bodyColor === 'display: block;') {
+    //         $('.drop-downs').slideUp(200);
+    //         $('.mega-menu-item').removeClass('active');
+    //         // $('.toggler-mega').removeClass('active')
+    //         return;
+    //     }
+    //     $('.drop-downs').slideDown(200);
+    //
+    // })
     // $('.mega-menu .col-md-2 > h4').click( function(){
     //     $(this).siblings('ul').slideDown();
     //     console.log(this)
