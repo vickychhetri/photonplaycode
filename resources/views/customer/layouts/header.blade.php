@@ -241,7 +241,7 @@ $productLists = Product::take(5)->get();
                         </div>
                     </li>
                     <li class="nav-item mobile-menu-items">
-                    <a href="{{route('customer.loginForm')}}"> Login</a>
+                    <a href="{{route('customer.loginForm')}}" class="nav-link text-uppercase"> Login</a>
                     </li>
                 @else
                     <div class="d-flex align-items-center">
