@@ -30,7 +30,7 @@ $seo_meta=[
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
-                                                    <x-customer.radar.delivery-status />
+                                                    <x-customer.radar.delivery-status :status="$order->delivery_status"/>
                                                 </div>
                                             </div>
                                         </div>

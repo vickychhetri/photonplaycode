@@ -2,7 +2,7 @@
 <div class="row justify-content-between">
     <div class="order-tracking completed">
         <span class="is-complete"></span>
-        <p>Ordered </p>
+        <p>Ordered {{$status}} </p>
     </div>
     <div class="order-tracking  ">
         <span class="is-complete"></span>

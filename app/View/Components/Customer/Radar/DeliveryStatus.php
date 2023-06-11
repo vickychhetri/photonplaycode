@@ -6,14 +6,16 @@ use Illuminate\View\Component;
 
 class DeliveryStatus extends Component
 {
+
+    public  $status;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($status)
     {
-        //
+        $this->status=$status;
     }
 
     /**
