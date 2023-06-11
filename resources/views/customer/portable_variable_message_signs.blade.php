@@ -54,76 +54,15 @@ $seo_meta=[
     </div>
 </section>
 
-
-{{--    <section class="banner-threee position-relative pt-0">--}}
-{{--        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="false" data-interval="true">--}}
-{{--            <div class="carousel-indicators">--}}
-{{--                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"--}}
-{{--                    aria-current="true" aria-label="Slide 1"></button>--}}
-{{--                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"--}}
-{{--                    aria-label="Slide 2"></button>--}}
-{{--                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"--}}
-{{--                    aria-label="Slide 3"></button>--}}
-{{--            </div>--}}
-{{--            <div class="carousel-inner">--}}
-{{--                <div class="carousel-item active">--}}
-{{--                    <div class="banner-three">--}}
-{{--                        <div class=" d-flex align-items-center justify-content-around h-100">--}}
-{{--                            <div class="slider-heading">--}}
-{{--                                <!-- <img src="./assets/images/MTO.png" alt="Not Found" class="img-fluid"> -->--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="carousel-item">--}}
-{{--                    <div class="banner-three">--}}
-{{--                        <div class=" d-flex align-items-center justify-content-around h-100">--}}
-{{--                            <div class="slider-heading">--}}
-{{--                                <!-- <img src="./assets/images/MTO.png" alt="Not Found" class="img-fluid"> -->--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="carousel-item">--}}
-{{--                    <div class="banner-three">--}}
-{{--                        <div class=" d-flex align-items-center justify-content-around h-100">--}}
-{{--                            <div class="slider-heading">--}}
-{{--                                <!-- <img src="./assets/images/MTO.png" alt="Not Found" class="img-fluid"> -->--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <button class="carousel-control-prev" data-bs-target="#carouselExampleDark" type="button"--}}
-{{--            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">--}}
-{{--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--            <span class="visually-hidden">Previous</span>--}}
-{{--        </button>--}}
-{{--        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"--}}
-{{--            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">--}}
-{{--            <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--            <span class="visually-hidden">Next</span>--}}
-{{--        </button>--}}
-{{--        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">--}}
-{{--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--            <span class="visually-hidden">Previous</span>--}}
-{{--        </button>--}}
-{{--        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">--}}
-{{--            <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--            <span class="visually-hidden">Next</span>--}}
-{{--        </button> -->--}}
-{{--        </div>--}}
-{{--    </section>--}}
     <!-- Photon play radar-start -->
     <section class="portable px-lg-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="radar-icop w-75 ">
-{{--                        <h1 class="mb-">Portable Variable <br> Message Signs (VMS) </h1>--}}
-{{--                        <span class="text-uppercase">MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGN EVER BUILT</span>--}}
+                        <h2 class="mb-2">
+                            "Photonplay's Portable Variable Message Signs: Enhancing Traffic Management with Dynamic Messaging Solutions"
+                        </h2>
                         <p class="mt-4 mb-lg-0 mb-5 text-center">
                             Photonplay's Portable Variable Message Signs (VMS) are one of the key elements of dynamic
                             traffic management systems. Depending on the traffic situation, signs are efficiently used
