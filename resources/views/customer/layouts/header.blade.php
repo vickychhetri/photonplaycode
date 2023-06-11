@@ -230,11 +230,15 @@ $productLists = Product::take(5)->get();
 
                 @if (!Session::get('user'))
                     <li class="nav-item mobile-menu-items">
+                        <div class="d-flex">
+
+
                         <input type="hidden" name="grand_total" value="{{$currency .''.$cartPrice}}">
                         <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
                         <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>
                             <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
-                    <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
+{{--                    <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>--}}
+                        </div>
                     </li>
                 @else
                     <div class="d-flex align-items-center">
