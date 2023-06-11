@@ -23,7 +23,26 @@ $seo_meta=[
                         <div class="overview-wrapper">
                             <h5 class="btn-light fs-5 py-2 ">Order Detail</h5>
                             <div class="d-flex gap-4 mt-5">
-
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-md-10 hh-grayBox pt45 pb20">
+                                            <div class="row justify-content-between">
+                                                <div class="order-tracking completed">
+                                                    <span class="is-complete"></span>
+                                                    <p>Ordered<br><span>Mon, June 24</span></p>
+                                                </div>
+                                                <div class="order-tracking completed">
+                                                    <span class="is-complete"></span>
+                                                    <p>Shipped<br><span>Tue, June 25</span></p>
+                                                </div>
+                                                <div class="order-tracking">
+                                                    <span class="is-complete"></span>
+                                                    <p>Delivered<br><span>Fri, June 28</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <!-- All Client Table Start -->
                                 <div class="row">
