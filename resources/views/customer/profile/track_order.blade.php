@@ -57,7 +57,7 @@ $seo_meta=[
 
                                                             </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody style="font-size: 10px;">
 
                                                             @foreach($order->orderedProducts as $prod)
                                                                 <tr>
