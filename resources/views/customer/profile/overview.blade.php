@@ -12,12 +12,12 @@
                                 <h5 class="btn-light fs-5 py-2 ">Overview</h5>
                                 <div class="d-flex gap-4 mt-5">
                                     <div class="order-address text-center bg-white p-4 border">
-                                        <img src="{{asset('assets\customer\images\delivery-copy.png')}}" alt="Order icon" class="mb-4 img-fluid">
+                                        <img src="{{asset('assets\customer\images\delivery-copy.png')}}" alt="Order icon" class="mb-4 img-fluid" style="max-height: 36px">
                                         <h6>Orders</h6>
                                         <p> <a href="/edit-history"> Check your order status </a></p>
                                     </div>
                                     <div class="order-address text-center bg-white p-4 border">
-                                        <img src="{{asset('assets\customer\images\address-review.png')}}" alt="address icon" class="mb-4 img-fluid">
+                                        <img src="{{asset('assets\customer\images\address-review.png')}}" alt="address icon" class="mb-4 img-fluid" style="max-height: 36px">
                                         <h6>Addresses</h6>
                                         <p class="mb-0">Save addresses for a</p>
                                         <p class="mb-0">hassle-free checkout</p>
