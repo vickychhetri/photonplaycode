@@ -12,50 +12,50 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.overview')}}" class="text-decoration-none text-white"> Overview</a></h4></div>
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.overview')}}" class="text-decoration-none text-white"> Overview</a></h6></div>
 
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.history')}}" class="text-decoration-none text-white"> Orders</a></h4></div>
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.history')}}" class="text-decoration-none text-white"> Orders</a></h6></div>
 
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.edit.profile')}}" class="text-decoration-none text-white"> Profile</a></h4></div>
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.edit.profile')}}" class="text-decoration-none text-white"> Profile</a></h6></div>
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.address')}}" class="text-decoration-none text-white"> Address</a></h4></div>
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.address')}}" class="text-decoration-none text-white"> Address</a></h6></div>
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.logout')}}" class="text-decoration-none text-white"> Address</a></h4></div>
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.logout')}}" class="text-decoration-none text-white"> Address</a></h6></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','about-us')}}"  class="text-decoration-none text-white"> About us</a></h4></div>
+                                        <div class="card  text-dark bg-light mb-3" >
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','about-us')}}"  class="text-decoration-none text-dark"> About us</a></h6></div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="card text-white bg-dark mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','term-conditions')}}"  class="text-decoration-none text-white">Terms of Use</a></h4></div>
+                                        <div class="card  text-dark bg-light mb-3" >
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','term-conditions')}}"  class="text-decoration-none text-dark">Terms of Use</a></h6></div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="card text-dark bg-light mb-3" >
-                                            <div class="card-header">  <h4 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','privacy-policy')}}"  class="text-decoration-none text-dark">Privacy Policy</a></h4></div>
+                                            <div class="card-header">  <h6 class="border-bottom border-1 py-3 d-block"> <a  href="{{route('customer.page_show_content','privacy-policy')}}"  class="text-decoration-none text-dark">Privacy Policy</a></h6></div>
                                         </div>
                                     </div>
 
