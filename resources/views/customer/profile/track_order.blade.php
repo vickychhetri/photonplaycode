@@ -33,15 +33,15 @@ $seo_meta=[
                                                     <div class="row justify-content-between">
                                                         <div class="order-tracking completed">
                                                             <span class="is-complete"></span>
-
+                                                            <p>Ordered</p>
                                                         </div>
                                                         <div class="order-tracking completed">
                                                             <span class="is-complete"></span>
-
+                                                            <p>Shipped </p>
                                                         </div>
                                                         <div class="order-tracking">
                                                             <span class="is-complete"></span>
-
+                                                            <p>Delivered</p>
                                                         </div>
                                                     </div>
                                                 </div>
