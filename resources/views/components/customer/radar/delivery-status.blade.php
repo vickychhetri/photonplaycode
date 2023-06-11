@@ -46,7 +46,7 @@
         </div>
     </div>
 @else
-<div>
+<div class="bg-warning text-white">
     Status:: {{strtoupper($status)}}
 </div>
 @endif
