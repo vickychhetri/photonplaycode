@@ -212,7 +212,7 @@ $productLists = Product::take(5)->get();
                 </li>
 
             @endif
-            <li >
+            <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase" href="{{route('customer.homePage')}}">HOME</a>
             </li>
             <li class="nav-item mobile-menu-items">
