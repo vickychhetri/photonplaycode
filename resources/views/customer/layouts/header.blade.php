@@ -202,15 +202,11 @@ $productLists = Product::take(5)->get();
             @if (Session::get('user'))
             <li class="nav-item mobile-menu-items">
                 <div class="me-2">
-                    <span class="text-capitalize">Good Day!</span>
-                    <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
+                    <span class="text-capitalize"{{Session::get('user')->name}}</span>
+                    <a   href="{{route('customer.edit.profile')}} " class="nav-link text-uppercase">  <p class="text-capitalize mb-0">Profile</p>
+                    </a>
                 </div>
             </li>
-
-                <li class="nav-item mobile-menu-items">
-                    <a   href="{{route('customer.edit.profile')}} " class="nav-link text-uppercase">Account</a>
-                </li>
-
             @endif
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase" href="{{route('customer.homePage')}}">HOME</a>
