@@ -58,9 +58,7 @@ $seo_meta=[
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @php
-                                                            $net_amount=0;
-                                                            @endphp
+
                                                             @foreach($order->orderedProducts as $prod)
                                                                 <tr>
 
@@ -80,12 +78,25 @@ $seo_meta=[
                                                                     </td>
 
                                                                     <td>{{ $prod->quantity }} x ${{$prod->price}}
-                                                                    @php
-                                                                        $net_amount=$net_amount+ $prod->quantity*$prod->price
-                                                                    @endphp
+
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
+
+                                                            <tr>
+                                                                <td>
+
+                                                                </td>
+                                                                <td colspan="1">
+                                                                   Sub Total
+                                                                </td>
+                                                                <td colspan="1">
+                                                                    ${{$order->cart_subtotal}} -
+
+                                                                </td>
+                                                            </tr>
+
+
                                                             <tr>
                                                                 <td>
 
