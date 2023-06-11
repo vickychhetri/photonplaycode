@@ -230,7 +230,7 @@ $productLists = Product::take(5)->get();
 
                 @if (!Session::get('user'))
                     <li class="nav-item mobile-menu-items">
-                        <div class="d-flex">
+                        <div class="d-flex align-items-center">
 
 
                         <input type="hidden" name="grand_total" value="{{$currency .''.$cartPrice}}">
