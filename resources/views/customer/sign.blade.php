@@ -409,7 +409,7 @@ $seo_meta=[
                             <div class="d-block mt-md-5">
                                 <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             </div>
-                    </div>
+                        </ul>
                 </div>
                 <!-- option-five -->
             </div>
@@ -564,3 +564,5 @@ $seo_meta=[
             ]
         });
     </script>
+</body>
+</html>

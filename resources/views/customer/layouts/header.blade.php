@@ -227,6 +227,52 @@ $productLists = Product::take(5)->get();
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>
             </li>
+
+            <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+
+                @if (!Session::get('user'))
+                    <div class="d-flex align-items-center">
+                        <input type="hidden" name="grand_total" value="{{$currency .''.$cartPrice}}">
+                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
+
+                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
+                    </div>
+                    <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
+                @else
+                    <div class="d-flex align-items-center">
+                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
+                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="me-2">
+                            <span class="text-capitalize">Good Day!</span>
+                            <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
+                        </div>
+                        <div class="profile-circle">
+
+                            <div class="dropdown">
+                                <button
+                                    class="btn dropdown-toggle"
+                                    type="button"
+                                    id="dropdownMenuButton"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <a ><img src="{{asset('assets\customer\images\profile.png')}}" alt="Not Found"
+                                             class="img-fluid rounded-circle d-block" width="36" height="36"></a>
+                                </button>
+                                <ul class="dropdown-menu position-absolute end-0" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="{{route('customer.edit.profile')}}">Account</a></li>
+                                    <li><a class="dropdown-item" href="{{route('customer.logout')}}">Logout</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+            </form>
         </ul>
         </div>
     </nav>

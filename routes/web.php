@@ -41,7 +41,6 @@ use App\Http\Controllers\PagesController;
 */
 
 
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [HomeController::class, 'login'])->name('new_login');
     Route::get('home', [HomeController::class, 'index'])->name('home');
@@ -54,8 +53,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/edit-profile/{id}', [ProfileController::class, 'editProfileForm'])->name("edit_adminprofile_form");;
         Route::put('/edit-profile', [ProfileController::class, 'editProfile'])->name("edit_adminprofile");
         // Manage-Customer
-        //Here Customer === Employee (Syntax Only)
-
+        //Here Customer === Employee :change (Syntax Only)
         Route::get('manage-employees', [UserController::class, 'index']);
         Route::get('/delete-employee/{id}', [UserController::class, 'delete_employee']);
         Route::get('/add-employee', [UserController::class, 'add_employee']);
@@ -127,7 +125,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
     Route::group(['namespace' => 'Auth'], function() {
         Route::get('/login', 'LoginController@loginForm')->name('loginForm');
-       
+
 //        Route::get('/', [HomeController::class ,'home_page'])->name('homePage');
         Route::get('register', 'LoginController@registerForm')->name('registerForm');
         Route::post('login', 'LoginController@login')->name('login');

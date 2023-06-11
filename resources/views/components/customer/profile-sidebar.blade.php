@@ -5,7 +5,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4  col-md-6 col-12 border-end border-2">
-                            <div class="review-inner ">
+                            <div class="review-inner desktop-display">
                                 <span class="border-bottom border-1 py-3 d-block"> <a href="{{route('customer.overview')}}" style="text-decoration:none;"> Overview</a></span>
                                 <div class="py-3  border-bottom border-1">
                                     <span>ORDERS</span>
