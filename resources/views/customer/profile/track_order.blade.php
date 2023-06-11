@@ -31,15 +31,15 @@ $seo_meta=[
                                             <div class="row">
                                                 <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
                                                     <div class="row justify-content-between">
-                                                        <div class="order-tracking completed">
+                                                        <div class="order-tracking  {{!isset($order->delivery_status)?'completed':''}} ">
                                                             <span class="is-complete"></span>
-                                                            <p>Ordered {{$order->delivery_status}}</p>
+                                                            <p>Ordered </p>
                                                         </div>
-                                                        <div class="order-tracking completed">
+                                                        <div class="order-tracking  ">
                                                             <span class="is-complete"></span>
                                                             <p>Shipped </p>
                                                         </div>
-                                                        <div class="order-tracking completed">
+                                                        <div class="order-tracking  ">
                                                             <span class="is-complete"></span>
                                                             <p>Delivered</p>
                                                         </div>
