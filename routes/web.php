@@ -9,6 +9,7 @@ use App\Http\Controllers\CMSHomeController;
 use App\Http\Controllers\customer\Auth\LoginController;
 use App\Http\Controllers\customer\CartController;
 use App\Http\Controllers\customer\CustomerProfileController;
+use App\Http\Controllers\customer\SignController;
 use App\Http\Controllers\DBBackupController;
 use App\Http\Controllers\Guest\HomePageController;
 use App\Http\Controllers\NotificationsController;
