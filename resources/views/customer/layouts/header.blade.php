@@ -210,9 +210,7 @@ $productLists = Product::take(5)->get();
                 <li class="nav-item mobile-menu-items">
                     <a   href="{{route('customer.edit.profile')}} " class="nav-link text-uppercase">Account</a>
                 </li>
-                <li class="nav-item mobile-menu-items">
-                    <a  href="{{route('customer.logout')}}" class="nav-link text-uppercase">
-                        Logout</a></li>
+
             @endif
             <li >
                 <a class="nav-link text-uppercasen" href="{{route('customer.homePage')}}">HOME</a>
@@ -256,10 +254,13 @@ $productLists = Product::take(5)->get();
                     <a href="{{route('customer.loginForm')}}" class="nav-link text-uppercase"> Login</a>
                     </li>
                 @else
-                    <div class="d-flex align-items-center">
-                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
-                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
-                    </div>
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>--}}
+{{--                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
+{{--                    </div>--}}
+                <li class="nav-item mobile-menu-items">
+                    <a  href="{{route('customer.logout')}}" class="nav-link text-uppercase">
+                        Logout</a></li>
 
                 @endif
 
