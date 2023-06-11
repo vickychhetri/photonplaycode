@@ -2,6 +2,13 @@
     use App\Models\ProductSpcializationOption;
     use Illuminate\Support\Facades\Log;
 @endphp
+<?php
+$seo_meta=[
+    "title"=>"Order Show ",
+    "description"=>"",
+    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+];
+?>
 @include('customer.layouts.header')
 <!-- header-end -->
 <!-- banner-start -->
