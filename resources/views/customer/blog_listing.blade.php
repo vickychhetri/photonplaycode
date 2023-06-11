@@ -107,9 +107,9 @@ $seo_meta=[
 <!-- blog-banner end  -->
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>--}}
 <script>
 
     $('.clint-wrapperr').slick({
@@ -284,14 +284,14 @@ $seo_meta=[
         ]
     })
 
-    window.addEventListener('click', function (e) {
-        if (window.innerWidth > 992) {
-            if ($('.navbar-collapse').hasClass('show')) {
-                $('.navbar-toggler').click();
-            }
-        }
-
-    })
+    // window.addEventListener('click', function (e) {
+    //     if (window.innerWidth > 992) {
+    //         if ($('.navbar-collapse').hasClass('show')) {
+    //             $('.navbar-toggler').click();
+    //         }
+    //     }
+    //
+    // })
 
     // Hover attribute
     $('.dropdown .dropdown-toggle').mouseenter(function () {
