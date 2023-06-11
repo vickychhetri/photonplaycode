@@ -25,11 +25,6 @@ $seo_meta=[
 
                 </div>
 
-{{--                <h5 class="text-center text-white fw-normal mt-2 mb-2">HIGHLY VISIBLE AND INNOVATIVE, CREATING INSTANT AWARENESS OF LOCAL SPEED LIMIT</h5>--}}
-                <div class="text-center pt-4">
-{{--                    <a  href="#inquiry" class="btn btn-primary rounded-0 ">GET QUOTE</a>--}}
-
-                </div>
             </div>
         </div>
     </section>
@@ -59,12 +54,8 @@ $seo_meta=[
                                     @empty
                                     @endforelse
 
-                                    <div id="modalOverlay" class="modal-overlay" onclick="hideModal()">
-                                        <div id="modalContent" class="modal-content">
-                                            <span class="closeImage "  onclick="hideModal()">x</span> <!-- Add the close symbol here -->
-                                            <img id="myImage" src="{{asset('assets/customer/images/zoom-in.png')}}" alt="Image" class="image-size">
-                                        </div>
-                                    </div>
+                                        <x-Customer.ShowImageDisplay/>
+
                                 </div>
                             </div>
                         </div>

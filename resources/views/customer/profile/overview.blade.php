@@ -50,4 +50,4 @@
             </div>
         </div>
     </section>
-    @include('customer.layouts.footer')
+    @include('customer.layout2.footer')

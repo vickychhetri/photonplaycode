@@ -10,6 +10,7 @@ $seo_meta=[
 ];
 ?>
 @include('customer.layouts.header')
+
 <!-- header-end -->
 <!-- banner-start -->
 <section class="overview">
@@ -21,11 +22,19 @@ $seo_meta=[
                     <div class="col-lg-8  col-md-6 col-12">
                         <div class="overview-wrapper">
                             <h5 class="btn-light fs-5 py-2 ">Order Detail</h5>
-                            <div class="d-flex gap-4 mt-5">
-
+                            <div class="d-flex gap-4">
 
                                 <!-- All Client Table Start -->
                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
+                                                    <x-customer.radar.delivery-status :status="$order->delivery_status"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-header">
@@ -50,16 +59,14 @@ $seo_meta=[
                                                             <thead>
                                                             <tr>
 
-                                                                <th>Product Image</th>
-                                                                <th>Product Name</th>
-
-                                                                <th>Quantity</th>
-                                                                <th>Color</th>
+                                                                <th># </th>
+                                                                <th>Product </th>
                                                                 <th>Price</th>
 
                                                             </tr>
                                                             </thead>
-                                                            <tbody>
+                                                            <tbody style="font-size: 10px;">
+
                                                             @foreach($order->orderedProducts as $prod)
                                                                 <tr>
 
@@ -73,19 +80,49 @@ $seo_meta=[
 
                                                                             @foreach ($options as $opp){{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
                                                                             @endforeach
+
                                                                         @endforeach
+                                                                       Color:  {{ $prod->color }}
+                                                                    </td>
+
+                                                                    <td>{{ $prod->quantity }} x ${{$prod->price}}
 
                                                                     </td>
-                                                                    <td>{{ $prod->quantity }}</td>
-                                                                    <td>{{ $prod->color }}</td>
-                                                                    <td>${{$prod->price}}</td>
                                                                 </tr>
                                                             @endforeach
+
                                                             <tr>
                                                                 <td>
 
                                                                 </td>
-                                                                <td colspan="3">
+                                                                <td colspan="1">
+                                                                   Sub Total
+                                                                </td>
+                                                                <td colspan="1">
+                                                                    ${{$order->cart_subtotal}}
+
+                                                                </td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td>
+
+                                                                </td>
+                                                                <td colspan="1">
+                                                                   Shipping & handling
+                                                                </td>
+                                                                <td colspan="1">
+                                                                    ${{$order->shipping}}
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>
+
+                                                                </td>
+                                                                <td colspan="1">
+                                                                    Grand Total
                                                                 </td>
                                                                 <td colspan="1">
                                                                     ${{$order->grand_total}}

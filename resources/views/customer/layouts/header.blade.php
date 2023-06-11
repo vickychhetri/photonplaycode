@@ -198,12 +198,21 @@ $productLists = Product::take(5)->get();
                 <div class="d-flex align-items-center">
                     <i class="bi bi-arrow-left-circle-fill text-dark" style="font-size: 36px;" onclick="closeMenu()"></i>
                 </div>
-
-
-
             </li>
+            @if (Session::get('user'))
             <li class="nav-item mobile-menu-items">
-                <a class="nav-link text-uppercasen" href="{{route('customer.homePage')}}">HOME</a>
+                <div class="me-2">
+                    <span class="text-capitalize">{{Session::get('user')->name}}</span>
+                    <a   href="{{route('customer.edit.profile')}} " class="nav-link text-uppercase ">  <p class="text-capitalize text-capitalize mb-0">Edit Profile</p>
+                    </a>
+                </div>
+            </li>
+                <li class="nav-item mobile-menu-items">
+                    <a href="{{route('customer.account.menu')}}"  class="nav-link text-uppercase" > Account</a>
+                </li>
+            @endif
+            <li class="nav-item mobile-menu-items">
+                <a class="nav-link text-uppercase" href="{{route('customer.homePage')}}">HOME</a>
             </li>
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>
@@ -228,51 +237,36 @@ $productLists = Product::take(5)->get();
                 <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>
             </li>
 
-            <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-
                 @if (!Session::get('user'))
-                    <div class="d-flex align-items-center">
+                    <li class="nav-item mobile-menu-items">
+                        <div class="d-flex align-items-center">
+
+
                         <input type="hidden" name="grand_total" value="{{$currency .''.$cartPrice}}">
                         <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
+                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>
+                            <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
 
-                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
-                    </div>
-                    <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
+                        </div>
+                    </li>
+                    <li class="nav-item mobile-menu-items">
+                    <a href="{{route('customer.loginForm')}}" class="nav-link text-uppercase"> Login</a>
+                    </li>
                 @else
-                    <div class="d-flex align-items-center">
-                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
-                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="me-2">
-                            <span class="text-capitalize">Good Day!</span>
-                            <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
-                        </div>
-                        <div class="profile-circle">
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>--}}
+{{--                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
+{{--                    </div>--}}
 
-                            <div class="dropdown">
-                                <button
-                                    class="btn dropdown-toggle"
-                                    type="button"
-                                    id="dropdownMenuButton"
-                                    data-mdb-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    <a ><img src="{{asset('assets\customer\images\profile.png')}}" alt="Not Found"
-                                             class="img-fluid rounded-circle d-block" width="36" height="36"></a>
-                                </button>
-                                <ul class="dropdown-menu position-absolute end-0" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="{{route('customer.edit.profile')}}">Account</a></li>
-                                    <li><a class="dropdown-item" href="{{route('customer.logout')}}">Logout</a></li>
 
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
+                <li class="nav-item mobile-menu-items">
+                    <a  href="{{route('customer.logout')}}" class="nav-link text-uppercase">
+                        Logout</a></li>
+
                 @endif
 
-            </form>
+
         </ul>
         </div>
     </nav>

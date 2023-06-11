@@ -170,11 +170,26 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         var modalOverlay = document.getElementById("modalOverlay");
         var modalContent = document.getElementById("modalContent");
         var image = document.getElementById("myImage");
-        image.src=imgurl;
-        // image.style.width="500px";
-        // image.style.height="500px";
-        modalOverlay.style.display = "block";
+
+        image.src = imgurl;
+        image.style.maxHeight = "100vh";
         image.style.display = "block";
+        image.style.margin = "0 auto";
+        image.style.padding = "20px";
+
+        modalOverlay.style.display = "block";
+
+        modalContent.style.display = "flex";
+        modalContent.style.justifyContent = "center";
+        modalContent.style.alignItems = "center";
+
+
+        // image.src=imgurl;
+        // // image.style.width="500px";
+        // // image.style.height="500px";
+        // modalOverlay.style.display = "block";
+        // image.style.display = "block";
+
         // modalContent.style.width = image.width + "px";
         // modalContent.style.height = image.height + "px";
     }

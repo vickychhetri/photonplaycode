@@ -6,6 +6,7 @@ use App\Http\Controllers\ContentPageController;
 use App\Http\Controllers\customer\ContactUsController;
 use App\Http\Controllers\customer\CustomerOrderController;
 use App\Http\Controllers\customer\CustomerProfileController;
+use App\Http\Controllers\customer\SignController;
 use App\Http\Controllers\SearchItemsController;
 use App\Http\Controllers\ThankYouController;
 

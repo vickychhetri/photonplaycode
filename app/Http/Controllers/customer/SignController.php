@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class SignController extends Controller
 {
+    public function radarSpeedSigns_menus(){
+
+        return view('customer.profile.links_pages');
+    }
     public function radarSpeedSigns(){
         $products = Product::where('category_id', 1)->get();
         return view('customer.sign', compact('products'));

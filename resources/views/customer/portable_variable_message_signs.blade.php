@@ -15,10 +15,6 @@ $seo_meta=[
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-            {{--                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"--}}
-            {{--                    aria-label="Slide 2"></button>--}}
-            {{--                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"--}}
-            {{--                    aria-label="Slide 3"></button>--}}
         </div>
         <div class="carousel-inner">
             @for ($i=1; $i<=3; $i++)
@@ -36,19 +32,17 @@ $seo_meta=[
                                     <a  href="#inquiry"  class="btn-primary-rounded">GET QUOTE</a>
                                 </div>
 
-                                <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}"
-                                                                                       class="img-fluid d-none d-md-block" alt="not-found"></div>
+                                <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}" class="img-fluid d-none d-md-block" alt=""></div>
                                 <div
                                     class="circle-dotted position-absolute w-100 d-none d-md-flex align-items-center justify-content-start">
                                     <img src="{{asset('assets\customer\images\circles.png')}}" alt="Not Found" class="img-fluid">
                                 </div>
                             </div>
-                            <!-- <div class="position-absolute top-50 start-0 translate-middle"> -->
+
                             <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found" class="img-fluid mt-3 mt-sm-0">
-                            <!-- </div> -->
+
                             <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                                  class="img-fluid d-none d-md-block">
-                            <!-- <img src="./assets/images/sky-sights.jpg" alt="Not Found"> -->
                         </div>
 
                     </div>
