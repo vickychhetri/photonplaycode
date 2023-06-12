@@ -47,13 +47,13 @@
                                         <span>Color : {{$cart->color}}</span>
                                         @if (unserialize($cart->option_ids) != null)
                                             @forelse (unserialize($cart->option_ids) as $option)
-@php
-    dd($option);
-@endphp
                                                 @php
                                                     $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->get();
                                                 @endphp
                                                 @forelse ($options as $opp)
+                                                @php
+                                                    dd($opp);
+                                                @endphp
                                                     <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span><br>
                                                 @empty
                                                 @endforelse
