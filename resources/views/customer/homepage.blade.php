@@ -184,7 +184,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> Depending on the traffic situation, signs are efficiently used to warn and guide about traffic congestion, routing information, speed limits, road work zones, accidents and other incidents on highways, expressways and arterial roads of cities.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
