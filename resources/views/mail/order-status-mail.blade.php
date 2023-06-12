@@ -102,7 +102,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
-                        <h3 style="padding: 32px;color: black;text-align: center;" class="text-center">Status: {{strtoupper($order->delivery_status)}} </h3>
+                        <h1 style="padding: 32px;text-align: center;" class="text-center bg-info">Status: {{strtoupper($order->delivery_status)}} </h1>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,6 @@
                                         <tr>
                                             <td>{{ $prod->title }} <br/>
                                                 @foreach (explode(',',$prod->option_ids) as $option)
-
                                                     @php
                                                         $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$prod->product_id)->get();
                                                     @endphp
