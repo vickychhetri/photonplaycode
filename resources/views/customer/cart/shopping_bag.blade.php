@@ -45,10 +45,10 @@
                                         <span>Brand : {{$cart->title}}</span>
                                         {{-- <span>Model: ---</span> --}}
                                         <span>Color : {{$cart->color}}</span>
-                                        @foreach (explode(',',$cart->option_ids) as $option)
+                                        @foreach (unserialize($cart->option_ids) as $option)
 
                                             @php
-                                                $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$cart->product_id)->get();
+                                                $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->get();
                                             @endphp
                                             @foreach ($options as $opp)
                                                 <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span><br>
