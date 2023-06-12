@@ -34,6 +34,7 @@ class OrderController extends Controller
             $order->delivery_status=$request->status;
             $order->save();
             $body = [
+                'id' => $order->id,
                 'message' => $request->status,
                 'order_number' => $order->order_number,
             ];
