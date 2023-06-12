@@ -45,17 +45,20 @@
                                         <span>Brand : {{$cart->title}}</span>
                                         {{-- <span>Model: ---</span> --}}
                                         <span>Color : {{$cart->color}}</span>
-                                        @forelse (unserialize($cart->option_ids) as $option)
+                                        @if (!$cart->option_ids)
+                                                @forelse (unserialize($cart->option_ids) as $option)
 
-                                            @php
-                                                $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->get();
-                                            @endphp
-                                            @forelse ($options as $opp)
-                                                <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span><br>
+                                                @php
+                                                    $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->get();
+                                                @endphp
+                                                @forelse ($options as $opp)
+                                                    <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span><br>
+                                                @empty
+                                                @endforelse
                                             @empty
                                             @endforelse
-                                        @empty
-                                        @endforelse
+                                        @endif
+
                                     </div>
                                 </div>
                             </td>
