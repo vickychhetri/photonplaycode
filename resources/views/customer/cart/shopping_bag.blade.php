@@ -51,7 +51,10 @@
                                                     $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->get();
                                                 @endphp
                                                 @forelse ($options as $opp)
-                                                    <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span><br>
+                                                    @if(isset($opp))
+                                                        <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span>
+                                                    @endif
+                                                   <br>
                                                 @empty
                                                 @endforelse
                                             @empty
