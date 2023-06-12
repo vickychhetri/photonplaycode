@@ -127,7 +127,7 @@
 
                             <hr/>
                             <div class="table-responsive">
-                                <table class="table table-container">
+                                <table class="table table-container" style="width: 100%;">
                                     <thead>
                                     <tr>
                                         <th>Product </th>
@@ -136,10 +136,10 @@
                                     </tr>
                                     </thead>
                                     <tbody style="font-size: 10px;">
-
                                     @foreach($order->orderedProducts as $prod)
                                         <tr>
-                                            <td>{{ $prod->title }} <br/>
+                                            <td>
+                                                {{ $prod->title }}  ,
                                                 @foreach (explode(',',$prod->option_ids) as $option)
                                                     @php
                                                         $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$prod->product_id)->get();
@@ -152,7 +152,8 @@
                                                 Color:  {{ $prod->color }}
                                             </td>
 
-                                            <td>{{ $prod->quantity }} x ${{$prod->price}}
+                                            <td>
+                                                {{ $prod->quantity }} x ${{$prod->price}}
 
                                             </td>
                                         </tr>
