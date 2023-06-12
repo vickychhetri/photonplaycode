@@ -1,3 +1,6 @@
+@php
+    use App\Models\ProductSpcializationOption;
+@endphp
 {{--@component('mail::message')--}}
 {{--#--}}
 
