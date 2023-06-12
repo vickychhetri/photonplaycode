@@ -45,7 +45,7 @@
                                         <span>Brand : {{$cart->title}}</span>
                                         {{-- <span>Model: ---</span> --}}
                                         <span>Color : {{$cart->color}}</span>
-                                        @if ($cart->option_ids != null)
+                                        @if ($cart->option_ids != 'N;')
                                                 @forelse (unserialize($cart->option_ids) as $option)
 
                                                 @php
