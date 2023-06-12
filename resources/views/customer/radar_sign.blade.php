@@ -142,7 +142,7 @@ $seo_meta=[
                         <img src="{{ URL::to('/') }}/assets/images/mesenges.png"
                              class="mx-3"/>
                     </a>
-                    <h4>{{$product->category->title}}</h4>
+                    <h4 class="font-weight-bold">{{$product->category->title}}</h4>
 
                     <span class="text-capitalize d-block">
                         {{$product->title}}
@@ -248,7 +248,7 @@ $seo_meta=[
         </div>
     </div>
 
-    
+
     </div>
     <!-- order summery-end -->
 </section>
