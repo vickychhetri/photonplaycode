@@ -51,7 +51,7 @@
                                                     $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->get();
                                                 @endphp
                                                 @forelse ($options as $opp)
-                                                    @if(isset($opp))
+                                                    @if(isset($opp->product_specilization))
 
                                                         <span> {{$opp->product_specilization->specilization->title}} :
 
