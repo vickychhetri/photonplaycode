@@ -52,9 +52,6 @@
                                                 @endphp
                                                 @forelse ($options as $opp)
                                                     <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span><br>
-                                                        @php
-                                                            Log::info({{$opp->product_specilization->specilization->title}});
-                                                        @endphp
                                                 @empty
                                                 @endforelse
                                             @empty
