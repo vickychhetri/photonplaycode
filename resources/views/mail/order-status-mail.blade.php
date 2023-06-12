@@ -6,7 +6,7 @@
     @php
         $baseUrl = url()->to('/');
     @endphp
-    <link href="<?php $baseUrl."/assets/customer/css/bootstrap.min.css" ?>" rel="stylesheet">
+    <link href="https://stagingserver.photonplay.com/assets/customer/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         table {
