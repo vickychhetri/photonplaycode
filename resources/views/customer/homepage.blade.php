@@ -151,7 +151,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> Way finders is a crucial component of tunnel safety since it assists vehicles in securely and effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage from road and rail tunnels. </p>
+                                        <p style="text-align: justify"> Way finders is a crucial component of tunnel safety since it assists vehicles in securely and effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage from road and rail tunnels. </p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -184,7 +184,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> Depending on the traffic situation, signs are efficiently used to warn and guide about traffic congestion, routing information, speed limits, road work zones, accidents and other incidents on highways, expressways and arterial roads of cities.</p>
+                                        <p style="text-align: justify"> Depending on the traffic situation, signs are efficiently used to warn and guide about traffic congestion, routing information, speed limits, road work zones, accidents and other incidents on highways, expressways and arterial roads of cities.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -219,7 +219,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage that indicates where emergency phones may be found.The emergency telephone sign's aim is to direct travellers to the nearest emergency phone in the event of an emergency or breakdown.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
