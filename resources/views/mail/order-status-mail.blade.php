@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
-                        <h3>{{$order->delivery_status}} </h3>
+                        <h3 style="padding: 32px;color: black;text-align: center;" class="text-center">Status: {{strtoupper($order->delivery_status)}} </h3>
                     </div>
                 </div>
             </div>
