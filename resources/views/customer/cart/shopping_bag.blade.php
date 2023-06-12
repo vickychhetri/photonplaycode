@@ -52,7 +52,7 @@
                                                 @endphp
                                                 @forelse ($options as $opp)
                                                     @if(isset($opp))
-                                                        {{dd($opp->product_specilization->specilization)}}
+                                                        {{dd($opp->product_specilization->specilization->title)}}
                                                         <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span>
                                                     @endif
                                                    <br>
