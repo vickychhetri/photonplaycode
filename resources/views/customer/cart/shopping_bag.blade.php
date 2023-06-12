@@ -48,7 +48,7 @@
                                         @if (unserialize($cart->option_ids) != null)
                                             @forelse (unserialize($cart->option_ids) as $option)
                                                 @php
-                                                    $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->groupBy('specialization_option_id')->get();
+                                                    $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('product_specilizations_id', $option)->get();
                                                 @endphp
                                                 @forelse ($options as $opp)
                                                     @if(isset($opp->product_specilization))
