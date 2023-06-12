@@ -219,7 +219,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage that indicates where emergency phones may be found.The emergency telephone sign's aim is to direct travellers to the nearest emergency phone in the event of an emergency or breakdown.</p>
+                                        <p style="text-align: justify;"> These signs identify the location of emergency exits as well as exits going to different destinations outside the tunnel.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -246,13 +246,13 @@ $seo_meta=[
                                     <img src="/assets/customer/images/products_home/emergency_phone.webp" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
-                                        <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="/signages/emergency-telephone-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage that indicates where emergency phones may be found.The emergency telephone sign's aim is to direct travellers to the nearest emergency phone in the event of an emergency or breakdown.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -279,13 +279,13 @@ $seo_meta=[
                                     <img src="/assets/customer/images/products_home/pids_product.webp" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
-                                        <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="/passenger-information-display-system" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p style="text-align: justify;">  Our PIDS is completely programmable and software for all parameters and settings has been created by our team. You can drive manually from your local ASM Terminal, or from the OSC via a PIDS station server.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -314,13 +314,13 @@ $seo_meta=[
                                     <img src="/assets/customer/images/products_home/vms_product.webp" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
-                                        <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="/variable-sign-language" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of traffic management ecosystem for motorways, tunnels and urban traffic management systems.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -347,13 +347,13 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/vsls_product.webp" alt="VSLS" class="">
                                     <div>
-                                        <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p> Full matrix display area that allows speed limits and graphics to display practically any speed. The ultra-bright and excellent quality variable speed limit sign. It is produced for 24/7 operation with AC or independent solar power.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -380,13 +380,13 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/caterpiller.webp" alt=" LED Tickers" class="">
                                     <div>
-                                        <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="/solution-city" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         <h6 class="text-capitalize">Description</h6>
-                                        <p> orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        <p style="text-align: justify;"> Designed for both indoor and outdoor use, our Tickers are durable, energy-efficient, and easy to install. They can be integrated with existing systems or operated as standalone displays, making them a versatile solution for businesses of all sizes.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
