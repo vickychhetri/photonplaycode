@@ -54,7 +54,7 @@
                                                     @if(isset($opp))
 
                                                         <span> {{$opp->product_specilization->specilization->title}} :
-                                                            {{dd($opp->specializationoptions)}}
+                                                            {{dd($opp->specializationoptions->option)}}
                                                             {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span>
                                                     @endif
                                                    <br>
