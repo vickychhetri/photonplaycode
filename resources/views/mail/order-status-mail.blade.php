@@ -3,9 +3,10 @@
 @endphp
 <html>
 <head>
-
-    <!-- Add this in the <head> section of your email template -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    @php
+        $baseUrl = url()->to('/');
+    @endphp
+    <link href="{{$baseUrl}}/assets/customer/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         table {
