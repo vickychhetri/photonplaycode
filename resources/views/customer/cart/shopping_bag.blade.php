@@ -51,9 +51,6 @@
                                                 $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->get();
                                             @endphp
                                             @foreach ($options as $opp)
-                                            @php
-                                                dd($opp);
-                                            @endphp
                                                 <span> {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span><br>
                                             @endforeach
                                         @endforeach
