@@ -102,7 +102,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-12 hh-grayBox pt45 pb20">
-                        <h1 style="padding: 32px;text-align: center;" class="text-center bg-info">Status: {{strtoupper($order->delivery_status)}} </h1>
+                        <h1 style="padding: 32px;text-align: center;background-color: #0a58ca;color: white;" class="text-center bg-info">Status: {{strtoupper($order->delivery_status)}} </h1>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                     <div id="message" class="bg-success text-white"></div>
                     <div id="errormessage" class="bg-danger text-white"></div>
                     <h4 class="card-title p-1 d-flex justify-content-around align-items-center m-2 p-2">
-                        <span>   Order : {{$order->order_number}}</span>
+                        <h2>   Order : {{$order->order_number}}</h2>
 
                     </h4>
 
@@ -159,9 +159,7 @@
                                     @endforeach
 
                                     <tr>
-                                        <td>
 
-                                        </td>
                                         <td >
                                             Sub Total
                                         </td>
@@ -174,24 +172,19 @@
 
                                     <tr>
                                         <td>
-
-                                        </td>
-                                        <td colspan="1">
                                             Shipping & handling
                                         </td>
-                                        <td colspan="1">
+                                        <td>
                                             ${{$order->shipping}}
                                         </td>
                                     </tr>
 
                                     <tr>
-                                        <td>
 
-                                        </td>
-                                        <td colspan="1">
+                                        <td >
                                             Grand Total
                                         </td>
-                                        <td colspan="1">
+                                        <td >
                                             ${{$order->grand_total}}
                                         </td>
                                     </tr>
