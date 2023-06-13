@@ -38,7 +38,7 @@ $seo_meta=[
                     <div class="col-md-6">
                         <div>
 {{--                            <h4 class="text-capitalize">Description</h4>--}}
-                            <p>
+                            <p style="text-align: justify;">
                                 {{$page->description}}
                             </p>
                             <div class="thumb-image">

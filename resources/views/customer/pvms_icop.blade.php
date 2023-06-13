@@ -81,7 +81,7 @@ $seo_meta=[
                     <div class="col-md-6">
                         <div>
 {{--                            <h4 class="text-capitalize">Description</h4>--}}
-                            <p>
+                            <p style="text-align: justify;">
                                 {{$product->description}}
                             </p>
                         </div>
