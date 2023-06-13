@@ -147,8 +147,6 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="col-lg-6">
                     <div class="multiple-option pb-0">
                         <h4>Vehicle Actuated Speed Display (VASD) </h4>
-                        <h6 class="mb-3">Your detail Line here</h6>
-
                         <p style="text-align: justify;">
                             Looking to revolutionize traffic management? Look no further than our Vehicle Actuated Speed Display (VASD). Our cutting-edge solution generates instant recognition of vehicle speed and displays the information to the driver using a full matrix display area. The VASD is highly reliable and efficient, making it ideal for roads, highways, and tunnels. Let us help you enhance road safety and traffic flow with our advanced ITS technology. Explore our VASD solutions today!
                         </p>

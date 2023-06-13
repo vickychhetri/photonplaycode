@@ -94,6 +94,11 @@ $seo_meta=[
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9"
                             aria-label="Slide 2"></button>
 
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11"
+                            aria-label="Slide 2"></button>
+
 
                 </div>
                 <div class="carousel-inner">
@@ -106,7 +111,7 @@ $seo_meta=[
 {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                             </div>
                             <div class="mask-layer common-wdth inner-col text-center">
-                                <img src="/assets/customer/images/KEPLER-US-12.png" alt="Not Found" class="">
+                                <img src="/assets/customer/images/products_home/Radar Speed Sign (2).png" alt="Not Found" class="">
                                <div>
                                <a href="{{route('customer.radar.sign',$product->id)}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">Shop
                                     Now</a>
@@ -143,7 +148,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/way_finder_main.webp" alt="Not Found" class="">
+                                    <img src="/assets/customer/images/products_home/Way Finder (1).png" alt="Not Found" class="">
                                     <div>
                                         <a href="signages/way-finders" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">  Know More</a>
                                     </div>
@@ -175,7 +180,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/pvms_main.webp" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Portable VMS (5).png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="portable-variable-message-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -210,7 +215,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/emergency_exit.webp" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Emergency Exit Sign (1).png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -243,7 +248,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/emergency_phone.webp" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Emergency Telephone Signs (2).png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="/signages/emergency-telephone-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -276,7 +281,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/pids_product.webp" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/PIDS.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="/passenger-information-display-system" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -311,7 +316,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/vms_product.webp" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Variable Message Sign (2).png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="/variable-sign-language" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -345,7 +350,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/vsls_product.webp" alt="VSLS" class="">
+                                    <img src="/assets/customer/images/products_home/Variable Speed Limit Sign (2).png" alt="VSLS" class="">
                                     <div>
                                         <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
@@ -373,12 +378,80 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase">Vehicle Actuated Speed Display (VASD)
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/VASD.png" alt="Bus Sign" class="">
+                                    <div>
+                                        <a href="/solution-transit" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p style="text-align: justify;">The VASD is highly reliable and efficient, making it ideal for roads, highways, and tunnels. Let us help you enhance road safety and traffic flow with our advanced ITS technology. Explore our VASD solutions today!</p>
+                                        <div class="social-two">
+                                            <p class="text-capitalize fs-5">share:</p>
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase">Bus Sign
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/Bus Sign (1).png" alt="Bus Sign" class="">
+                                    <div>
+                                        <a href="/solution-transit" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p style="text-align: justify;">Bus Signs are  designed to provide real-time information to commuters and improve their overall transit experience. Our LED bus signs are highly visible, even in bright sunlight, and can display various types of information, including bus routes, arrival times, and other important information. </p>
+                                        <div class="social-two">
+                                            <p class="text-capitalize fs-5">share:</p>
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
                                     <h6 class="text-uppercase"> LED Ticker
                                     </h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/caterpiller.webp" alt=" LED Tickers" class="">
+                                    <img src="/assets/customer/images/products_home/LED Ticker Tape (3).png" alt=" LED Tickers" class="">
                                     <div>
                                         <a href="/solution-city" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>

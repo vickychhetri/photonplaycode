@@ -75,7 +75,7 @@ real-time data, enhanced safety features, and improved passenger experience.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/pids_solution.webp') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/PIDS 2.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@ real-time data, enhanced safety features, and improved passenger experience.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/bussign_solution.webp') }}" alt="Not Found" class="img-fluid h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/Bus Sign 2.png') }}" alt="Not Found" class="img-fluid h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -119,25 +119,25 @@ real-time data, enhanced safety features, and improved passenger experience.",
                             <div class="d-flex justify-content-between gap-4">
                                 <div class="inner-bus text-center w-50 py-5">
                                     <div class="bus-radious">
-                                        <img src="{{asset('assets/images/solutions/pids_solution.webp') }}" alt="not-found" class="img-fluid">
+                                        <img src="{{asset('assets/images/solutions/PIDS 2.png') }}" alt="not-found" class="img-fluid">
                                     </div>
                                     <div class="mt-4">
                                         <p class="mb-2">Passenger Information </p>
                                         <p>Display System (PIDS)</p>
                                         <a href="{{route('customer.pasenger.information.display.system')}}">
-                                        <img src="{{asset('assets/customer/images/next-bus.png') }}" alt="Not Found" class="img-fluid mt-5">
+                                        <img src="{{asset('assets/customer/images/next-bus.png') }}" alt="Not Found" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="inner-bus text-center w-50 py-5">
                                     <div class="bus-radious">
-                                        <img src="{{asset('assets/images/solutions/bussign_solution.webp') }}" alt="not-found" class="img-fluid">
+                                        <img src="{{asset('assets/images/solutions/Bus Sign 2.png') }}" alt="not-found" class="img-fluid">
                                     </div>
                                     <div class="mt-4">
                                         <p class="mb-2">Bus Signs </p>
                                         <p>Display System (PIDS)</p>
                                         <a href="#">
-                                        <img src="{{asset('assets/customer/images/next-bus.png') }}" alt="Not Found" class="img-fluid mt-5">
+                                        <img src="{{asset('assets/customer/images/next-bus.png') }}" alt="Not Found" class="img-fluid           ">
                                         </a>
                                     </div>
                                 </div>
