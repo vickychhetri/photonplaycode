@@ -203,7 +203,7 @@ Route::get('csv', function(){
                 'city' => $i['CITY'],
                 'postal_code' => $i['POSTAL_CODE'],
             ]);
-            dd($daTA);
+//            dd($daTA);
         }
     }
 
