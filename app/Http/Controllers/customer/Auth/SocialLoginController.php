@@ -31,7 +31,7 @@ class SocialLoginController extends Controller
                 if($cart){
                     return redirect()->intended('shopping-bag')->with('success', ' Logged in successfully !');
                 }
-                return redirect()->intended('radar-speed-signs');
+                return redirect()->intended('radar-speed-signs')->with('success', ' Logged in successfully !');
 
             }else{
 
@@ -55,7 +55,7 @@ class SocialLoginController extends Controller
                 if($cart){
                     return redirect()->intended('shopping-bag')->with('success', ' Logged in successfully !');
                 }
-                return redirect()->intended('radar-speed-signs');
+                return redirect()->intended('radar-speed-signs')->with('success', ' Logged in successfully !');
             }
 
         }
