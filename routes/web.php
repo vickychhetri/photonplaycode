@@ -201,5 +201,5 @@ Route::get('csv', function(){
             'postal_code' => $i['POSTAL_CODE'],
         ]);
     }
-    return
+    return true;
 });
