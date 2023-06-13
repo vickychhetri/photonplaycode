@@ -43,7 +43,7 @@
 
     </style>
 
- 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -173,10 +173,7 @@
                                                 </a>
                                             </li> -->
                                             <li><a href="{{route('customer.signal')}}"
-                                                   class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2">Signages
-                                                    – Emergency
-                                                    Exit Sign ,
-                                                    Emergency Telephone Sign</a></li>
+                                                   class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2"> Emergency Signages</a></li>
                                             <li><a href="{{route('customer.lane.control.system')}}"
                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
                                                     Control
@@ -323,10 +320,7 @@
                                                 Limit Sign
                                                 (VSLS)</a></li>
                                         <li><a href="{{route('customer.signal')}}"
-                                               class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2">Signages
-                                                – Emergency
-                                                Exit Sign ,
-                                                Emergency Telephone Sign</a></li>
+                                               class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2"> Emergency Signages</a></li>
                                         <li><a href="{{route('customer.lane.control.system')}}"
                                                class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
                                                 Control

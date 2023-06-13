@@ -1618,7 +1618,7 @@ ul.slick-dots {
     .mobile-display {
         display: block;
     }
-
+    html, body {width: auto!important; overflow-x: hidden!important}
 
     .title_home_page_banner {
         font-size: 24px;
@@ -3149,7 +3149,7 @@ input:focus {
      border-bottom: 1px solid #d0cbcb;
 }
 
-html, body {width: auto!important; overflow-x: hidden!important}
+
 .table-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
@@ -3236,3 +3236,6 @@ table {
 .order-tracking:first-child:before{display: none;}
 .order-tracking.completed:before{background-color: #27aa80;}
 
+.img-navbar-icon-logo{
+    max-height: 60px;
+}
