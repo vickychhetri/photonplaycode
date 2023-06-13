@@ -47,12 +47,6 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
             </div>
 
-{{--            <div class="text-center pb-4">--}}
-{{--                <h2 class="fs-md-2 mt-3 text-capitalize">Smart Cities </h2>--}}
-{{--                <p class="mb-2">Transform urban mobility and drive sustainable growth with our comprehensive ITS--}}
-{{--                    solutions</p>--}}
-{{--                <p> that enable seamless integration and smarter decision-making for cities of the future.</p>--}}
-{{--            </div>--}}
             <div class="row align-items-center">
                 <!-- option-one -->
                 <h2 class="title-text-h2  m-3 text-capitalize text-center ">Our Products </h2>
@@ -79,7 +73,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/radar_speed.webp') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/Radar Speed Sign 2.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -103,7 +97,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/pvms_smart_city.webp') }}" alt="Not Found" class="img-fluid h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/Portable VMS 2.png') }}" alt="Not Found" class="img-fluid h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -132,7 +126,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/vms_smart.webp') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/VMS 2.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -161,7 +155,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/led_ticker.webp') }}" alt="Not Found" class="img-fluid h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/LED Ticker Tape 2.png') }}" alt="Not Found" class="img-fluid h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -179,7 +173,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-3">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/radar_speed.webp') }}" alt="not-found" class="img-fluid">
+                            <img src="{{asset('assets/images/solutions/Radar Speed Sign 2.png') }}" alt="not-found" class="img-fluid">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Radar Speed Sign </p>
@@ -193,7 +187,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-3">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/pvms_smart_city.webp') }}" alt="not-found" class="img-fluid">
+                            <img src="{{asset('assets/images/solutions/Portable VMS 2.png') }}" alt="not-found" class="img-fluid">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Portable Variable Message Sign </p>
@@ -207,7 +201,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-3">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/vms_smart.webp') }}" alt="not-found" class="img-fluid">
+                            <img src="{{asset('assets/images/solutions/VMS 2.png') }}" alt="not-found" class="img-fluid">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Message Sign</p>
@@ -221,7 +215,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-3">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/led_ticker.webp') }}" alt="not-found" class="img-fluid">
+                            <img src="{{asset('assets/images/solutions/LED Ticker Tape 2.png') }}" alt="not-found" class="img-fluid">
                         </div>
                         <div class="mt-4">
                             <p class="">LED Tickers </p>
