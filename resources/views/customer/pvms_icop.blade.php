@@ -80,7 +80,7 @@ $seo_meta=[
                 <div class="row">
                     <div class="col-md-6">
                         <div>
-                            <h4 class="text-capitalize">Description</h4>
+{{--                            <h4 class="text-capitalize">Description</h4>--}}
                             <p>
                                 {{$product->description}}
                             </p>
@@ -116,6 +116,7 @@ $seo_meta=[
                 </div>
                 <img class="dotted-imag img-fluid d-none d-md-inline" src="{{asset('assets/customer/images/dotted-tran.png')}}" alt="not-found">
             </div>
+        </div>
     </section>
     <!-- Dimension section -->
     <section class="dimention-sec">
