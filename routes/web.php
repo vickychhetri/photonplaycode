@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\PagesController;
+use App\Models\AllCountryPincode;
 
 /*
 * New Route
@@ -182,3 +183,23 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
 Route::post('/upload-photo', [CommonController::class, 'upload'])->name('upload-photo-summernote');
 Route::get('photonplay-optimize', [CommonController::class, 'optimize']);
+Route::get('csv', function(){
+   $filePath = storage_path('csv/allCountriesCSV.csv');
+    $file = fopen($filePath, 'r');
+
+    $header = fgetcsv($file);
+    $users = [];
+    while ($row = fgetcsv($file)) {
+        $users[] = array_combine($header, $row);
+    }
+
+    foreach($users as $i){
+        AllCountryPincode::create([
+            'country' => $i['COUNTRY'],
+            'state' => $i['STATE'],
+            'city' => $i['CITY'],
+            'postal_code' => $i['POSTAL_CODE'],
+        ]);
+    }
+    return
+});
