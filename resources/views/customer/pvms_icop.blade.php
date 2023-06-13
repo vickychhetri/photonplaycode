@@ -10,12 +10,6 @@ $seo_meta=[
     <section class="banner-inner pt-0 pb-0">
         <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-{{--                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"--}}
-{{--                    aria-label="Slide 2"></button>--}}
-{{--                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"--}}
-{{--                    aria-label="Slide 3"></button>--}}
             </div>
             <div class="carousel-inner">
                 @for ($i=1; $i<=3; $i++)
@@ -25,9 +19,9 @@ $seo_meta=[
                             class="banner-image d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
                             <div class="position-relative heading-banner ">
                                 <h2 class="">{{$product->title}}
-                                    <p class="mb-0"><span> Message Sign-MTO</span></p>
+                                    <p class="mb-0 h3 font-weight-bold"><span> Message Sign-MTO</span></p>
                                 </h2>
-                                <div class="fs-6 mt-md-4">
+                                <div class="">
                                     <p class="text-dark">No. 1 in Traffic Calming Solution</p>
                                 </div>
                                 <a href="{{asset("storage/".$product->brochure)}} " type="button"
@@ -98,14 +92,14 @@ $seo_meta=[
                         </div>
                         <div class="circle-floow foloowers position-relative">
                             <div class="accordion accordion-flush" id="accordionFlushExample1">
-                                @foreach ($product->specs as $spec)
+                                @foreach ($product->specs as $index => $spec)
                                     <div class="accordion-item border-0 position-inherit ">
                                         <h2 class="accordion-header" id="flush-headingOne{{$spec->id}}">
                                             <button class="accordion-button collapsed optic bg-white te-3 pb-2 shadow-none text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$spec->id}}" aria-expanded="false" aria-controls="flush-collapseOne{{$spec->id}}">
                                                 {{$spec->spec}}
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseOne{{$spec->id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne{{$spec->id}}" data-bs-parent="#accordionFlushExample1">
+                                        <div id="flush-collapseOne{{$spec->id}}" class="accordion-collapse collapse {{$index==0?'show':''}}" aria-labelledby="flush-headingOne{{$spec->id}}" data-bs-parent="#accordionFlushExample1">
                                             <div class="accordion-body pt-0">
                                                 {!! $spec->description !!}
                                             </div>

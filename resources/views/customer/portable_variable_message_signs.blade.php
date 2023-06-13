@@ -11,8 +11,6 @@ $seo_meta = [
 <section class="banner-inner pt-0 pb-0">
     <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
         </div>
         <div class="carousel-inner">
             @for ($i=1; $i<=3; $i++)
@@ -23,10 +21,10 @@ $seo_meta = [
                             <div class="position-relative heading-banner ">
                                 <h2 class="">Portable Variable
                                     Message Signs (VMS)
-                                    <p class="mb-0">
-                                        <span> MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGN EVER BUILT</span></p>
+                                    <p class="mb-0 h3 font-weight-bold">
+                                        <span> MOST CAPABLE AND HIGHLY-EQUIPPED <br/>RADAR SPEED SIGN EVER BUILT</span></p>
                                 </h2>
-                                <div class="fs-6 mt-md-4">
+                                <div class="fs-6 ">
                                     <p class="text-dark">No. 1 in Traffic Calming Solution</p>
                                     <a href="#inquiry" class="btn-primary-rounded">GET QUOTE</a>
                                 </div>
