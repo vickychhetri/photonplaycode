@@ -144,7 +144,7 @@ $seo_meta=[
 <section class="portable px-lg-5">
     <div class="container-fluid">
         <div class="message-sign d-flex  justify-content-center">
-            <h6 class="">iCop | Portable Variable Message Sign’s</h6>
+{{--            <h6 class="">iCop | Portable Variable Message Sign’s</h6>--}}
 
         </div>
         <div class="heading-sec">
