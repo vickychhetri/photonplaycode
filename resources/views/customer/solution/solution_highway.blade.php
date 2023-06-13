@@ -82,7 +82,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('/assets/customer/images/vms_land.webp') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('/assets/images/solutions/VMS2.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
 
                     </div>
                 </div>
@@ -111,7 +111,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/vsls_squre.webp') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/VSLS Rightside 2.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/vasd.webp') }}" alt="VASD" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/VASD2.png') }}" alt="VASD" class="img-fluid shadow-none h-75 w-75">
 
                     </div>
                 </div>
@@ -177,9 +177,9 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
             <div class="responsive">
 
                 <div class="text-center mx-2">
-                    <div class="inner-bus text-center px-3 h-100">
+                    <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/vms_squre.webp') }}" alt="VASD" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/VMS2.png') }}" alt="VASD" class="img-fluid m-auto" style="height: 300px">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Message Sign </p>
@@ -193,7 +193,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/vsls_squre.webp') }}" alt="VSLS" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/VSLS Rightside 2.png') }}" alt="VSLS" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Speed Limit Sign </p>
@@ -207,7 +207,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/pvms.webp') }}" alt="not-found" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/Back-Left.webp') }}" alt="not-found" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Portable Variable Message Sign </p>
@@ -222,7 +222,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/vasd.webp') }}" alt="not-found" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/VASD2.png') }}" alt="not-found" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Vehicle Actuated Speed Display </p>
