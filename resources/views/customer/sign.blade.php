@@ -163,9 +163,7 @@ $seo_meta=[
         </div>
         <div class="heading-sec">
             <h2 class="fs-md-2 mt-3">Multi Functional Display</h2>
-            <p>Acts like a Messenger and a Speed Sign</p>
-            <p>Full matrix-based Digital Speed Limit Sign with multi-functional display in 4</p>
-            <p> colors with high bright in-built warning FLASHING LIGHTS.</p>
+            <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
         </div>
         <div class="container pb-lg-5">
             <div class="accodion-wrapper pb-5">
@@ -186,13 +184,13 @@ $seo_meta=[
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0"> <code
-                                            class="d-block">Overall Length - <span>5000 mm </span></code>
-                                        <code class="d-block"> Overall Width - <span>2350 mm</span></code>
-                                        <code class="d-block">Operational Height - <span>4625 mm</span></code>
-                                        <code class="d-block">Travelling Height - <span>3250 mm</span></code>
-                                        <code class="d-block">Weight -<span>1132 kgs</span></code>
-                                        <code class="d-block"></code>
+                                    <div class="accordion-body pt-0"> <p
+                                            class="d-block">Overall Length - <span>5000 mm </span></p>
+                                        <p class="d-block"> Overall Width - <span>2350 mm</span></p>
+                                        <p class="d-block">Operational Height - <span>4625 mm</span></p>
+                                        <p class="d-block">Travelling Height - <span>3250 mm</span></p>
+                                        <p class="d-block">Weight -<span>1132 kgs</span></p>
+                                        <p class="d-block"></p>
                                     </div>
                                 </div>
                             </div>
@@ -208,11 +206,11 @@ $seo_meta=[
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body pt-0">Placeholder content for this accordion, which is
-                                        <code class="d-block"> Overall Width - <span>2350 mm</span></code>
-                                        <code class="d-block">Operational Height - <span>4625 mm</span></code>
-                                        <code class="d-block">Travelling Height - <span>3250 mm</span></code>
-                                        <code class="d-block">Weight -<span>1132 kgs</span></code>
-                                        <code class="d-block"></code>
+                                        <p class="d-block"> Overall Width - <span>2350 mm</span></p>
+                                        <p class="d-block">Operational Height - <span>4625 mm</span></p>
+                                        <p class="d-block">Travelling Height - <span>3250 mm</span></p>
+                                        <p class="d-block">Weight -<span>1132 kgs</span></p>
+                                        <p class="d-block"></p>
                                     </div>
                                 </div>
                             </div>
@@ -227,12 +225,12 @@ $seo_meta=[
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0"><code
-                                            class="d-block"> Overall Width - <span>2350 mm</span></code>
-                                        <code class="d-block">Operational Height - <span>4625 mm</span></code>
-                                        <code class="d-block">Travelling Height - <span>3250 mm</span></code>
-                                        <code class="d-block">Weight -<span>1132 kgs</span></code>
-                                        <code class="d-block"></code>
+                                    <div class="accordion-body pt-0"><p
+                                            class="d-block"> Overall Width - <span>2350 mm</span></p>
+                                        <p class="d-block">Operational Height - <span>4625 mm</span></p>
+                                        <p class="d-block">Travelling Height - <span>3250 mm</span></p>
+                                        <p class="d-block">Weight -<span>1132 kgs</span></p>
+                                        <p class="d-block"></p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end position-absolute circle-stone">
@@ -258,19 +256,19 @@ $seo_meta=[
                                         <div class="accordion-body pt-0">
                                             <p class="accordion-button shadow-none te-3 p-0 mb-1 shadow-none bg-white">
                                                 Construction</p>
-                                            <code
-                                                class="d-block"> Trailer: <span>All welded structural steel</span></code>
-                                            <code
-                                                class="d-block">Display cabinet: <span>Aluminium sheet and welded channels</span></code>
-                                            <code
-                                                class="d-block">Finish:  <span>Hydraulic lift raises display cabinet, operated with toggle switch</span></code>
-                                            <code class="d-block">Hydraulics: <span>1132 kgs</span></code>
-                                            <code
-                                                class="d-block">Axle Capacity: <span>3500 lbs , 82" Round Tube , 4 " Drop Trailer Axle</span></code>
-                                            <code
-                                                class="d-block">Tires: <span>15 " Tyre with Overall Diameter : 27.5" , Capacity 1820 lbs each , Load</span></code>
-                                            <code class="d-block">Range : <span>C (6-Ply Rating)</span></code>
-                                            <code class="d-block"></code>
+                                            <p
+                                                class="d-block"> Trailer: <span>All welded structural steel</span></p>
+                                            <p
+                                                class="d-block">Display cabinet: <span>Aluminium sheet and welded channels</span></p>
+                                            <p
+                                                class="d-block">Finish:  <span>Hydraulic lift raises display cabinet, operated with toggle switch</span></p>
+                                            <p class="d-block">Hydraulics: <span>1132 kgs</span></p>
+                                            <p
+                                                class="d-block">Axle Capacity: <span>3500 lbs , 82" Round Tube , 4 " Drop Trailer Axle</span></p>
+                                            <p
+                                                class="d-block">Tires: <span>15 " Tyre with Overall Diameter : 27.5" , Capacity 1820 lbs each , Load</span></p>
+                                            <p class="d-block">Range : <span>C (6-Ply Rating)</span></p>
+                                            <p class="d-block"></p>
                                         </div>
                                     </div>
                                 </div>
