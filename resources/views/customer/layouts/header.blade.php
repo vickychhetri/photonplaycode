@@ -92,10 +92,10 @@ $productLists = Product::take(5)->get();
 
 <!-- <title>login</title> -->
 <body>
-<header class="header bg-white py-3 sticky-top w-100" >
+<header class="header bg-white sticky-top w-100" >
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="/"><img src="{{asset('assets\customer\images\logo-dark.png')}}" alt="Not Found"></a>
+                <a class="navbar-brand" href="/"><img src="{{asset('assets\customer\images\logo-dark.webp')}}" alt="Not Found" class="img-navbar-icon-logo"></a>
 {{--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--}}
 {{--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--}}
 {{--                    aria-expanded="false" aria-label="Toggle navigation">--}}
