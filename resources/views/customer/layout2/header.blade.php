@@ -173,10 +173,7 @@
                                                 </a>
                                             </li> -->
                                             <li><a href="{{route('customer.signal')}}"
-                                                   class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2">Signages
-                                                    – Emergency
-                                                    Exit Sign ,
-                                                    Emergency Telephone Sign</a></li>
+                                                   class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2"> Emergency Signages</a></li>
                                             <li><a href="{{route('customer.lane.control.system')}}"
                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
                                                     Control
@@ -323,10 +320,7 @@
                                                 Limit Sign
                                                 (VSLS)</a></li>
                                         <li><a href="{{route('customer.signal')}}"
-                                               class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2">Signages
-                                                – Emergency
-                                                Exit Sign ,
-                                                Emergency Telephone Sign</a></li>
+                                               class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2"> Emergency Signages</a></li>
                                         <li><a href="{{route('customer.lane.control.system')}}"
                                                class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
                                                 Control
