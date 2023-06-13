@@ -196,15 +196,14 @@ Route::get('csv', function(){
 
         $users[] = array_combine($header, $row);
 
-        foreach($users as $i){
-            $daTA=AllCountryPincode::create([
-                'country' => $i['COUNTRY'],
-                'state' => $i['STATE'],
-                'city' => $i['CITY'],
-                'postal_code' => $i['POSTAL_CODE'],
-            ]);
-//            dd($daTA);
-        }
+//        foreach($users as $i){
+//            $daTA=AllCountryPincode::create([
+//                'country' => $i['COUNTRY'],
+//                'state' => $i['STATE'],
+//                'city' => $i['CITY'],
+//                'postal_code' => $i['POSTAL_CODE'],
+//            ]);
+//        }
     }
 
     foreach($users as $i){
