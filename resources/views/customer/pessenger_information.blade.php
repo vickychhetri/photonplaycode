@@ -146,7 +146,7 @@ $seo_meta=[
         </div>
         <div class="container">
             <div class="px-4">
-                <div class="clints-content-gallery mb-0 d-flex align-items-center">
+                <div class="clints-content-gallery mb-0 ">
                     @foreach ($page->galleries as $gallery)
                     <div>
                         <div class="px-2 branding-diss">
