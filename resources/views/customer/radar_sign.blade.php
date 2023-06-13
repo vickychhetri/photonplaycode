@@ -100,40 +100,6 @@ $seo_meta=[
                     </div>
                 </div>
 
-{{--                    <div class="responsive-two">--}}
-{{--                        <div>--}}
-{{--                            <div class="p-2">--}}
-{{--                                <div class="img-leften  d-flex justify-content-center">--}}
-{{--                                    <img src="{{ asset('storage/'. $product->cover_image) }}" alt="Not Found" class="img-fluid" style="max-height: 500px;">--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        @foreach($product->images as $im_g)--}}
-{{--                            <div>--}}
-{{--                                <div class="p-2">--}}
-{{--                                    <div class="img-leften d-flex justify-content-center">--}}
-{{--                                        <img src="{{asset('storage/'.$im_g->image)}}" alt="Image" class="img-fluid" style="max-height: 500px;">--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        @endforeach--}}
-
-{{--                    </div>--}}
-{{--                    <div class="slider-nav">--}}
-{{--                        <div>--}}
-{{--                            <div class="slider-item"></div>--}}
-{{--                        </div>--}}
-{{--                        <div>--}}
-{{--                            <div class="slider-item"></div>--}}
-{{--                        </div>--}}
-{{--                        <div>--}}
-{{--                            <div class="slider-item"></div>--}}
-{{--                        </div>--}}
-{{--                        <div>--}}
-{{--                            <div class="slider-item"></div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
             </div>
             <div class="col-lg-6">
 
@@ -179,28 +145,6 @@ $seo_meta=[
                                     </div>
                                 </div>
                             @endforeach
-                            {{-- Loop to end Specifications--}}
-
-
-{{--                            --}}{{-- Loop to Start Specifications--}}
-{{--                            @foreach ($product->specilizations as $specilization)--}}
-{{--                                <div class="col-md-6 mb-3">--}}
-{{--                                    <div class="specification p-3 ">--}}
-{{--                                        <h6> <img src="{{asset('assets\customer\images\low-battery.png')}}" alt="Not Found" class="me-2 "> {{$specilization->specilization->title}} </h6>--}}
-{{--                                        @foreach($specilization->options as $option)--}}
-{{--                                            <p> <input type="checkbox" name="{{$specilization->id}}"--}}
-{{--                                                       id="{{$specilization->id}}" type="button" title="{{$option->specialization_price}}" value="{{$option->id}}" onclick="GetSelected(this)" > {{$option->specializationoptions->option}} (+${{$option->specialization_price}})--}}
-{{--                                            </p>--}}
-{{--                                        @endforeach--}}
-{{--                                        --}}
-{{--                                        --}}
-{{--                                        <!-- <p class="mb-0"><input type="checkbox"> 6 Days--}}
-{{--                                            (+$50)--}}
-{{--                                        </p> -->--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            @endforeach--}}
-{{--                            --}}{{-- Loop to end Specifications--}}
 
                             <div class="mt-4">
                                 <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>
@@ -254,7 +198,7 @@ $seo_meta=[
 </section>
 <section class="pt-lg-4 order-summery pb-4 border-bottom pt-5">
     <!-- order summery-start -->
-    <div class="container-fluid">
+    <div class="container">
         <div class="row w-100">
             <!-- <div class=" px-3"> -->
             <div class="col-lg-8 col-md-8">
@@ -270,9 +214,9 @@ $seo_meta=[
             </div>
             <div class=" col-lg-4 col-md-4">
                 <div class="d-md-flex  justify-content-end mt-lg-0 mt-4 buy-right align-items-center">
-                    <a class="btn btn-dark d-flex align-items-center m-2" onclick="increment()" style="height: 20px;">+</a>
+                    <a class="btn btn-dark d-flex align-items-center m-2" onclick="increment()" style="height: 20px;width: 40px;">+</a>
                     <input id=demoInput type=number class="text-center " name="quantity" value="1" min=1 max=100>
-                    <a class="btn btn-dark m-2 d-flex align-items-center" onclick="decrement()" style="height: 20px;">-</a>
+                    <a class="btn btn-dark m-2 d-flex align-items-center" onclick="decrement()" style="height: 20px;width: 40px;">-</a>
                     <div class=" px-4 py-lg-0 py-4">
                         <span class="one-thoshand" id="total_price">${{$product->price}}</span>
                     </div>
