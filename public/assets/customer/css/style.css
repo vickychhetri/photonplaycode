@@ -2254,9 +2254,10 @@ input:focus {
 }
 
 .imaged img {
-    max-width: 540px;
-    min-width: 540px;
-    object-fit: cover;
+    /*max-width: 540px;*/
+    max-height: 400px;
+    /*min-width: 540px;*/
+    /*object-fit: cover;*/
 }
 .imaged{
     display: flex;

@@ -16,7 +16,7 @@ $seo_meta=[
                 <div class="imaged m-auto">
                     <div class="city-wrap flex-wrap">
                         <h2 class=" text-white fw-normal mb-1 title-text-h1">{{$page->title}}</h2>
-                        <h5 class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness of <br/>local speed limit</h5>
+                        <p class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness of <br/>local speed limit</p>
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
                     <div class="desktop-display">
