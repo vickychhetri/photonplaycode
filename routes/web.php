@@ -187,7 +187,8 @@ Route::get('csv', function(){
    $filePath = storage_path('csv/allCountriesCSV.csv');
     $file = fopen($filePath, 'r');
 
-    $header = fgetcsv($file);
+    return $header = fgetcsv($file);
+
     $users = [];
     while ($row = fgetcsv($file)) {
         $users[] = array_combine($header, $row);
