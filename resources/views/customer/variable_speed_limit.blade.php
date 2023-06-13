@@ -38,7 +38,7 @@ $seo_meta=[
                 <div class="row">
                     <div class="col-md-6">
                         <div>
-                            <h4 class="text-capitalize">Description</h4>
+{{--                            <h4 class="text-capitalize">Description</h4>--}}
                             <p>
                             {{$page->description}}
                             </p>
@@ -68,14 +68,14 @@ $seo_meta=[
                         </div>
                         <div class="circle-floow foloowers position-relative">
                             <div class="accordion accordion-flush" id="accordionFlushExample1">
-                                @foreach ($page->specs as $spec)
+                                @foreach ($page->specs as $index => $spec)
                                     <div class="accordion-item border-0 position-inherit ">
                                         <h2 class="accordion-header" id="flush-headingOne{{$spec->id}}">
                                             <button class="accordion-button collapsed optic bg-white te-3 pb-2 shadow-none text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$spec->id}}" aria-expanded="false" aria-controls="flush-collapseOne{{$spec->id}}">
                                                 {{$spec->spec}}
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseOne{{$spec->id}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne{{$spec->id}}" data-bs-parent="#accordionFlushExample1">
+                                        <div id="flush-collapseOne{{$spec->id}}" class="accordion-collapse collapse {{$index==0?'show':''}}" aria-labelledby="flush-headingOne{{$spec->id}}" data-bs-parent="#accordionFlushExample1">
                                             <div class="accordion-body pt-0">
                                                 {!! $spec->description !!}
                                             </div>

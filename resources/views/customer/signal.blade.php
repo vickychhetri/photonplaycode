@@ -68,7 +68,7 @@ $seo_meta=[
                         @foreach ($pages as $page)
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="text-start p-4 list-unsorted">
-                                    <div class="roundedd-imageses">
+                                    <div class="">
                                         <img src="{{asset('storage/'.$page->cover_image)}}" alt="{{$page->title}}"
                                              class="img-fluid">
                                     </div>

@@ -74,7 +74,7 @@ $seo_meta=[
                         @foreach ($page as $i)
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="text-start p-4 list-unsorted">
-                                    <div class="roundedd-imagese">
+                                    <div class="">
                                         <img src="{{asset('storage/'.$i->cover_image)}}" alt="Not Found"
                                             class="img-fluid">
                                     </div>
