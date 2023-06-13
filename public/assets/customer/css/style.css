@@ -1573,6 +1573,8 @@ ul.slick-dots {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0px;
+    margin-bottom: 15px;
     background-color: white;
 }
 .radar-item-box-highlight {

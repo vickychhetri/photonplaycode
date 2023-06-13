@@ -53,7 +53,7 @@ $seo_meta=[
                             <input type="hidden" name="category" id="category" value="{{$product->category->title}}">
                             <input type="hidden" name="price" id="price" value="{{$product->price}}">
                             <input type="hidden" name="cover_image" id="cover_image" value="{{$product->cover_image}}">
-                            <div class="desktop-display">
+                            <div class="desktop-display ">
                                 @foreach($product->images as $im_g)
                                     <div>
                                         <div class="radar-item-box">
@@ -62,7 +62,7 @@ $seo_meta=[
                                     </div>
                                 @endforeach
                                     <div>
-                                        <div class="radar-item-box">
+                                        <div class="radar-item-box mb-0">
                                             <img src="{{ asset('storage/'. $product->cover_image) }}" alt="Image" class="img-fluid">
                                         </div>
                                     </div>
