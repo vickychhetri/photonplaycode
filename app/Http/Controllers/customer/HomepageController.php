@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
-    
+
     public function home_page(){
-        $products = Product::with('category')->take(2)->get();
+        $products = Product::with('category')->take(1)->get();
         $blogs = Blog::latest()->take(3)->get();
         foreach ($blogs as $blog){
             $blog["category"]=BlogCategory::find($blog->blog_category_id)->category;
