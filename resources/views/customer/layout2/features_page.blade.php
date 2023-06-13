@@ -1,6 +1,6 @@
-<section class="sec-feature">
+<section class="sec-feature m-0 pb-0">
     <div class="container">
-        <h2 class="fs-md-2 mt-3 text-center">Feature</h2>
+        <h2 class="fs-md-2 text-center">Feature</h2>
         <div class="feature-list">
             <!-- <ul class=" m-0 p-0 "> -->
             <div class="d-lg-flex justify-content-between">
