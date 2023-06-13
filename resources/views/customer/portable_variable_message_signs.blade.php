@@ -93,7 +93,7 @@ $seo_meta = [
                     <div class="col-lg-3 col-md-6 col-12">
                         <a href="{{route('customer.pvms.i.cop', $item->id)}}" class="text-decoration-none">
                             <div class="text-start p-4 list-unsorted">
-                                <div class="roundedd-image">
+                                <div class="">
                                     <img src="{{asset('storage/'.$item->cover_image)}}" alt="Not Found"
                                          class="img-fluid">
                                 </div>
