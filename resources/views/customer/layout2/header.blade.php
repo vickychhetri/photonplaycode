@@ -60,7 +60,7 @@
     <img src="{{asset('/assets/images/arrow-up.png')}}" height="50px;"/>
 </a>
 <div>
-    <header class="header bg-white sticky-top">
+    <header class="header bg-white pb-2 sticky-top">
         <nav class="navbar navbar-expand-lg custome-mega-amenu">
             <div class="container">
                 <a class="navbar-brand" href="{{route('customer.homePage')}}"><img
