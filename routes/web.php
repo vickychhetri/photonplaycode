@@ -193,6 +193,7 @@ Route::get('csv', function(){
 
     $users = [];
     while ($row = fgetcsv($file)) {
+        dd($row);
         $users[] = array_combine($header, $row);
     }
 
@@ -203,7 +204,7 @@ Route::get('csv', function(){
             'city' => $i['CITY'],
             'postal_code' => $i['POSTAL_CODE'],
         ]);
-        dd($daTA);
+
     }
     }catch (\Exception $e){
         return $e->getMessage();
