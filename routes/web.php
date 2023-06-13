@@ -197,12 +197,13 @@ Route::get('csv', function(){
     }
 
     foreach($users as $i){
-        AllCountryPincode::create([
+        $daTA=AllCountryPincode::create([
             'country' => $i['COUNTRY'],
             'state' => $i['STATE'],
             'city' => $i['CITY'],
             'postal_code' => $i['POSTAL_CODE'],
         ]);
+        dd($daTA);
     }
     }catch (\Exception $e){
         return $e->getMessage();
