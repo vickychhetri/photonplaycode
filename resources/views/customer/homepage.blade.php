@@ -102,7 +102,7 @@ $seo_meta=[
                     <div class="carousel-item {{ $loop->index === 0 ? 'active' : ''}}">
                         <div class="products-two d-lg-flex justify-content-between">
                             <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                <h6>{{$product->category->title}}</h6>
+                                <h6 class="text-uppercase">{{$product->category->title}}</h6>
 {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                             </div>
                             <div class="mask-layer common-wdth inner-col text-center">
@@ -114,7 +114,7 @@ $seo_meta=[
                             </div>
                             <div class="d-lg-flex align-self-center common-wdth inner-col">
                                 <div class="ms-md-5">
-                                    <h6 class="text-capitalize">Description</h6>
+{{--                                    <h6 class="text-capitalize">Description</h6>--}}
 {{--                                    <p>{!! substr(strip_tags($product->description), 0, 100) !!}</p>--}}
                                     <p>{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 200, '...') }}</p>
 
@@ -139,7 +139,7 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6>WAY FINDERS</h6>
+                                    <h6 class="text-uppercase">WAY FINDER</h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
@@ -150,7 +150,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify"> Way finders is a crucial component of tunnel safety since it assists vehicles in securely and effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage from road and rail tunnels. </p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
@@ -170,8 +170,8 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6>Portable Variable
-                                        Message Signs</h6>
+                                    <h6 class="text-uppercase">Portable Variable
+                                        Message Sign</h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
@@ -183,7 +183,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify"> Depending on the traffic situation, signs are efficiently used to warn and guide about traffic congestion, routing information, speed limits, road work zones, accidents and other incidents on highways, expressways and arterial roads of cities.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
@@ -205,7 +205,7 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6>EMERGENCY EXIT SIGN
+                                    <h6 class="text-uppercase">EMERGENCY EXIT SIGN
                                     </h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
@@ -218,7 +218,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;"> These signs identify the location of emergency exits as well as exits going to different destinations outside the tunnel.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
@@ -238,7 +238,7 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6>EMERGENCY TELEPHONE SIGN
+                                    <h6 class="text-uppercase">EMERGENCY TELEPHONE SIGN
                                     </h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
@@ -251,7 +251,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage that indicates where emergency phones may be found.The emergency telephone sign's aim is to direct travellers to the nearest emergency phone in the event of an emergency or breakdown.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
@@ -271,7 +271,7 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6> Passenger Information Display System (PIDS)
+                                    <h6 class="text-uppercase"> Passenger Information Display System (PIDS)
                                     </h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
@@ -284,7 +284,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;">  Our PIDS is completely programmable and software for all parameters and settings has been created by our team. You can drive manually from your local ASM Terminal, or from the OSC via a PIDS station server.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
@@ -306,7 +306,7 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6>VARIABLE MESSAGE SIGNS (VMS)
+                                    <h6 class="text-uppercase">VARIABLE MESSAGE SIGN (VMS)
                                     </h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
@@ -319,7 +319,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of traffic management ecosystem for motorways, tunnels and urban traffic management systems.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
@@ -340,7 +340,7 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6> Variable Speed Limit Signs (VSLS)
+                                    <h6 class="text-uppercase"> Variable Speed Limit Sign (VSLS)
                                     </h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
@@ -352,7 +352,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p> Full matrix display area that allows speed limits and graphics to display practically any speed. The ultra-bright and excellent quality variable speed limit sign. It is produced for 24/7 operation with AC or independent solar power.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
@@ -373,7 +373,7 @@ $seo_meta=[
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6> LED Tickers
+                                    <h6 class="text-uppercase"> LED Ticker
                                     </h6>
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
@@ -385,7 +385,7 @@ $seo_meta=[
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
-                                        <h6 class="text-capitalize">Description</h6>
+{{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;"> Designed for both indoor and outdoor use, our Tickers are durable, energy-efficient, and easy to install. They can be integrated with existing systems or operated as standalone displays, making them a versatile solution for businesses of all sizes.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
