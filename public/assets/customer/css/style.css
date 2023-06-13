@@ -2190,9 +2190,10 @@ input:focus {
     margin-right: 10px;
     background-color: white;
     margin-left: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /*display: flex;*/
+
+    /*align-items: center;*/
+    /*justify-content: center;*/
     border: 1px;
     width: 200px;
     height: 200px;
