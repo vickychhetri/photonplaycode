@@ -45,7 +45,7 @@ $seo_meta=[
                                 <div class="row">
                                     @forelse ($page->images as $image)
                                         <div class="col-4 thumb-image-item d-flex align-items-center flex-column">
-                                            <div class=" " >
+                                            <div class="d-flex align-items-center " >
                                                 <img src="{{asset('storage/'.$image->image)}}" alt="" class="img-fluid" style="height: 200px;">
                                                 <img src="{{asset('assets/customer/images/zoom-in.png')}}" alt="" onclick="showModal('{{asset('storage/'.$image->image)}}')" class="zoom-in">
                                             </div>
