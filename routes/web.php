@@ -204,7 +204,7 @@ Route::get('csv', function(){
             'postal_code' => $i['POSTAL_CODE'],
         ]);
     }
-    }catch (Exception $e){
+    }catch (\Exception $e){
         return $e->getMessage();
     }
     return true;
