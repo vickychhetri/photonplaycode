@@ -2,7 +2,7 @@
 use App\Models\Setting;
 $setting = Setting::first();
 @endphp
-<section class="contact-form bg-light" id="inquiry">
+<section class="contact-form bg-light mt-1 pt-1" id="inquiry">
     <div class="container">
         <div class="row">
             <div class="col-md-6">

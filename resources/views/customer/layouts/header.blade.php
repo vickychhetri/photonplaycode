@@ -92,6 +92,13 @@ $productLists = Product::take(5)->get();
 
 <!-- <title>login</title> -->
 <body>
+<a href="#" id="scrollToTopButton" title="Scroll to Top" style="
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      z-index: 99;">
+    <img src="{{asset('/assets/images/arrow-up.png')}}" height="50px;"/>
+</a>
 <header class="header bg-white sticky-top w-100" >
         <nav class="navbar navbar-expand-lg">
             <div class="container">

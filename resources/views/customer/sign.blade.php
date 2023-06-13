@@ -287,7 +287,7 @@ $seo_meta=[
     </section>
     <!-- Dimension section -->
     <!-- Multiple Size Options-start -->
-    <section class="option-chose ">
+    <section class="option-chose mb-0 pb-0">
         <div class="container option-chose-rows">
             <div class="row align-items-center">
                 <!-- option-one -->
@@ -478,7 +478,7 @@ $seo_meta=[
                 <!-- option-seven -->
             </div>
 
-            <div class="row py-4">
+            <div class="row ">
                 <div class="col-lg-6">
                     <div class="img-left">
                         <img src="{{asset('assets/customer/images/trans-canada.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">
