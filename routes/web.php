@@ -188,6 +188,8 @@ Route::get('csv', function(){
     $file = fopen($filePath, 'r');
 
     $header = fgetcsv($file);
+    try {
+
 
     $users = [];
     while ($row = fgetcsv($file)) {
@@ -201,6 +203,9 @@ Route::get('csv', function(){
             'city' => $i['CITY'],
             'postal_code' => $i['POSTAL_CODE'],
         ]);
+    }
+    }catch (Exception $e){
+        return $e->getMessage();
     }
     return true;
 });
