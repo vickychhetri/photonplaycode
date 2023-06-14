@@ -30,7 +30,7 @@ $seo_meta=[
 </section>
 <!-- End Varient Section -->
 <!-- Our Product-start -->
-<section class="our-product pt-lg-4 pt-5">
+<section class="our-product pt-2 pb-2">
     <form id="myForm" action="{{route('customer.store.shopping.bag')}}" method="post">
         @csrf
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -162,6 +162,7 @@ $seo_meta=[
                                             <option value="#ffff00">Yellow </option>
                                             <option value="#ffffff"> White </option>
                                         </select>
+                                        <input type="text" class="form-control" name="pincode_selected" placeholder="Zipcode" required>
                                     </div>
 
                                     <script>
@@ -196,7 +197,7 @@ $seo_meta=[
     </div>
     <!-- order summery-end -->
 </section>
-<section class="pt-lg-4 order-summery pb-4 border-bottom pt-5">
+<section class="pt-lg-4 order-summery pb-4 border-bottom ">
     <!-- order summery-start -->
     <div class="container">
         <div class="row w-100">
