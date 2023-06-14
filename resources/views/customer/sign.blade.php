@@ -94,7 +94,8 @@ $seo_meta=[
                 <div class="col-lg-12">
                     <div class="text-center mb-lg-4">
                         <h2 class="fs-md-2 mt-3">iCop Series Features</h2>
-                        <p class="fs-6">Our product offers innovative solutions to meet your needs and
+                        <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect your device to various networks and devices,
+                            enabling easy data transfer and integration with other smart devices.
                         </p>
                     </div>
                 </div>

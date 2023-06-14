@@ -78,7 +78,13 @@ class PagesController extends Controller
 
     public function updateFeaturesSubPage(Request $request){
         $feature = PageFeature::find($request->feature_id);
+//        icon
+        if(isset($request->icon)){
+            $image_path = $request->file('icon')->store('images', 'public');
+        }
+
         $feature->update([
+            'icon'=>$image_path??$feature->icon,
             'feature' => $request->feature,
             'description' => $request->description,
         ]);

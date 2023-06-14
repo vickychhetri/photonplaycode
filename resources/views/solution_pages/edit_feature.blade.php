@@ -32,10 +32,28 @@
 
                     <div class="card-body ">
 
-
+                        <div class="d-flex justify-content-center" >
+                            <img src="{{asset('storage/'.$feature->icon)}}" style="height: 70px;"/>
+                        </div>
                         <form method="POST" action="{{route('admin.manage.solution.update.features.page')}}"  enctype="multipart/form-data" >
                             @csrf
                             <input type="hidden" name="feature_id" value="{{$feature->id}}">
+
+
+                            <div class="row mb-3 form-group">
+                                <label for="icon" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Icon') }}</label>
+
+                                <div class="col-md-10">
+                                    <input id="icon" type="file" class="form-control @error('icon') is-invalid @enderror" name="icon" >
+
+                                    @error('icon')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="row mb-3 form-group">
                                 <label for="spec" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Feature') }}</label>
 
@@ -74,7 +92,7 @@
                                         <i data-feather="save"> </i>
                                         Save
                                     </button>
-                                    <a href="{{url('admin/blogs')}}" class="btn btn-dark">
+                                    <a href="{{url('admin/manage-pages')}}" class="btn btn-dark">
                                         <i data-feather="corner-down-right"> </i>
                                         Return Back
                                     </a>

@@ -111,7 +111,7 @@ $seo_meta=[
 {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                             </div>
                             <div class="mask-layer common-wdth inner-col text-center">
-                                <img src="/assets/customer/images/products_home/Radar Speed Sign (2).png" alt="Not Found" class="">
+                                <img src="/assets/customer/images/products_home/Radar Speed Sign.png" alt="Not Found" class="">
                                <div>
                                <a href="{{route('customer.radar.sign',$product->id)}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">Shop
                                     Now</a>
@@ -148,7 +148,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Way Finder (1).png" alt="Not Found" class="">
+                                    <img src="/assets/customer/images/products_home/Way Finder.png" alt="WAY FINDER" class="">
                                     <div>
                                         <a href="signages/way-finders" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">  Know More</a>
                                     </div>
@@ -180,7 +180,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Portable VMS (5).png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Portable VMS.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="portable-variable-message-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -215,7 +215,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Emergency Exit Sign (1).png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Emergency Exit Sign.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -248,7 +248,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Emergency Telephone Signs (2).png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Emergency Telephone Signs.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="/signages/emergency-telephone-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -316,7 +316,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Variable Message Sign (2).png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Variable Message Sign.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="/variable-sign-language" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -350,7 +350,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Variable Speed Limit Sign (2).png" alt="VSLS" class="">
+                                    <img src="/assets/customer/images/products_home/Variable Speed Limit Sign.png" alt="VSLS" class="">
                                     <div>
                                         <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
@@ -418,7 +418,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Bus Sign (1).png" alt="Bus Sign" class="">
+                                    <img src="/assets/customer/images/products_home/Bus Sign.png" alt="Bus Sign" class="">
                                     <div>
                                         <a href="/solution-transit" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
@@ -451,7 +451,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/LED Ticker Tape (3).png" alt=" LED Tickers" class="">
+                                    <img src="/assets/customer/images/products_home/LED Ticker Tape.png" alt=" LED Tickers" class="">
                                     <div>
                                         <a href="/solution-city" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
