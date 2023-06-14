@@ -162,7 +162,7 @@ $seo_meta=[
                                             <option value="#ffff00">Yellow </option>
                                             <option value="#ffffff"> White </option>
                                         </select>
-                                        <input type="text" class="form-control" name="pincode_selected" placeholder="Zipcode" required>
+                                        <input type="text" class="form-control shadow-none" name="pincode_selected" placeholder="Zipcode" required>
                                     </div>
 
                                     <script>
