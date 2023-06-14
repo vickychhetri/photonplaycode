@@ -84,18 +84,8 @@ $seo_meta=[
                             <a href="{{ route('customer.blog_show',$nextPost->slug) }}" class="btn btn-primary">Next</a>
                         @endif
                     </div>
-<hr/>
-{{--                    <div--}}
-{{--                        class="d-flex justify-content-between align-items-center border-0 border-top border-bottom py-4 mb-4">--}}
-{{--                        <div class="d-flex justify-content-between align-items-center"> <img--}}
-{{--                                src="./assets/images/arrowlight.jpg" alt="">--}}
-{{--                            <p class="text-uppercase ms-3 mb-0">POST WITH TEXT ONLY</p>--}}
-{{--                        </div>--}}
-{{--                        <div class="d-flex justify-content-between align-items-center">--}}
-{{--                            <p class="text-uppercase me-3 mb-0">pOST WITH video</p><img--}}
-{{--                                src="./assets/images/arrowlightright.png" alt="">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                <hr/>
+
                 </div>
 
                 <div class="col-lg-4 col-md-12 position-sticky top-0 h-100">

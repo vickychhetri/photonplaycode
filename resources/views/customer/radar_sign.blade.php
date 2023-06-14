@@ -47,12 +47,12 @@ $seo_meta=[
 
                     <div class="row">
                         <div class="col-md-3">
-                            <meta name="csrf-token" content="{{ csrf_token() }}">
-                            <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">
-                            <input type="hidden" name="title" id="title" value="{{$product->title}}">
-                            <input type="hidden" name="category" id="category" value="{{$product->category->title}}">
-                            <input type="hidden" name="price" id="price" value="{{$product->price}}">
-                            <input type="hidden" name="cover_image" id="cover_image" value="{{$product->cover_image}}">
+{{--                            <meta name="csrf-token" content="{{ csrf_token() }}">--}}
+{{--                            <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">--}}
+{{--                            <input type="hidden" name="title" id="title" value="{{$product->title}}">--}}
+{{--                            <input type="hidden" name="category" id="category" value="{{$product->category->title}}">--}}
+{{--                            <input type="hidden" name="price" id="price" value="{{$product->price}}">--}}
+{{--                            <input type="hidden" name="cover_image" id="cover_image" value="{{$product->cover_image}}">--}}
                             <div class="desktop-display ">
                                 @foreach($product->images as $im_g)
                                     <div>
@@ -130,12 +130,12 @@ $seo_meta=[
                             @foreach ($product->specilizations as $specilization)
                                 <div class="col-md-8 bg-transparent" >
                                     <div class="">
-                                        <select class="form-select mb-3 " name="dynamic_specs[{{$specilization->id}}]"
+                                        <select class="form-select mb-3 " onchange="changecalculated_amount(this)" name="dynamic_specs[{{$specilization->id}}]"
                                                 id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;">
                                             <option selected disabled>{{$specilization->specilization->title}} </option>
                                             @foreach($specilization->options as $option)
 
-                                            <option value="{{$option->id}}">{{$option->specializationoptions->option}} (+${{$option->specialization_price}}) </option>
+                                            <option value="{{$option->id}}">{{$option->specializationoptions->option}} (+$<span class="price">{{$option->specialization_price}}</span>) </option>
                                             @endforeach
                                         </select>
 
@@ -357,24 +357,24 @@ $seo_meta=[
         arrows: false
     });
     let totalPrice=0
-    function increment() {
-        let inputV=document.getElementById('demoInput')
-        inputV.stepUp();
-        let innerPrice=document.getElementById("total_price")
-        const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
-        if(!totalPrice) totalPrice=totl-selectedValue.reduce((a,b)=>a+b,0)
-        innerPrice.innerHTML=`$${totl+totalPrice+selectedValue.reduce((a,b)=>a+b,0)}`
-    }
-    function decrement() {
-        let inputV=document.getElementById('demoInput')
-        console.log(inputV.value)
-        if(inputV.value==1) return
-        inputV.stepDown();
-        let innerPrice=document.getElementById("total_price")
-        const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
-        if(!totalPrice) totalPrice=totl
-        innerPrice.innerHTML=`$${totl-totalPrice-selectedValue.reduce((a,b)=>a+b,0)}`
-    }
+    // function increment() {
+    //     let inputV=document.getElementById('demoInput')
+    //     inputV.stepUp();
+    //     let innerPrice=document.getElementById("total_price")
+    //     const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
+    //     if(!totalPrice) totalPrice=totl-selectedValue.reduce((a,b)=>a+b,0)
+    //     innerPrice.innerHTML=`$${totl+totalPrice+selectedValue.reduce((a,b)=>a+b,0)}`
+    // }
+    // function decrement() {
+    //     let inputV=document.getElementById('demoInput')
+    //     console.log(inputV.value)
+    //     if(inputV.value==1) return
+    //     inputV.stepDown();
+    //     let innerPrice=document.getElementById("total_price")
+    //     const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
+    //     if(!totalPrice) totalPrice=totl
+    //     innerPrice.innerHTML=`$${totl-totalPrice-selectedValue.reduce((a,b)=>a+b,0)}`
+    // }
 
     var dict = {};
     const selectedValue=[]
@@ -511,4 +511,76 @@ $seo_meta=[
         });
     });
 
+    /**************************************
+    // Vicky Chhetri JS ZONE : Begin
+    ************************************/
+    var total_amount={{$product->price??0}};
+    var product_amount={{$product->price??0}};
+    var total_amount_single_product={{$product->price??0}};
+    var single_items_cart = {};
+    function extractAmountFromString(string) {
+        var regex = /\+\$(\d+(?:\.\d{2})?)/;
+        var match = string.match(regex);
+        if (match) {
+            var amount = parseFloat(match[1]);
+            return amount;
+        }
+        return null; // Return null if no amount is found
+    }
+
+
+    function changecalculated_amount(price_element){
+    // console.log(price_element);
+        const selectedOption = price_element.options[price_element.selectedIndex];
+        console.log();
+
+        var total_price =document.getElementById('total_price');
+        var counts =document.getElementById('demoInput').value;
+
+        var inputString = selectedOption.text;
+        var amount = extractAmountFromString(inputString);
+        single_items_cart[price_element.id]=amount;
+
+        let extra_option_amount=0;
+        for (let key in single_items_cart) {
+            if (single_items_cart.hasOwnProperty(key)) {
+                let value = single_items_cart[key];
+                extra_option_amount+=parseInt(value);
+            }
+        }
+        if(amount!=null){
+           total_amount_single_product=product_amount+extra_option_amount;
+       }
+        console.log(total_amount_single_product);
+        total_price.innerText='$'+counts*total_amount_single_product;
+     }
+
+    function increment() {
+        let inputV=document.getElementById('demoInput')
+        inputV.stepUp();
+        // let innerPrice=document.getElementById("total_price")
+        // const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
+        // if(!totalPrice) totalPrice=totl-selectedValue.reduce((a,b)=>a+b,0)
+        // innerPrice.innerHTML=`$${totl+totalPrice+selectedValue.reduce((a,b)=>a+b,0)}`
+
+        var total_price =document.getElementById('total_price');
+        var counts =document.getElementById('demoInput').value;
+        total_amount=parseInt(counts)*parseFloat(total_amount_single_product);
+        total_price.innerText='$'+total_amount;
+
+    }
+    function decrement() {
+        let inputV=document.getElementById('demoInput')
+        console.log(inputV.value)
+        if(inputV.value==1) return
+        inputV.stepDown();
+        var total_price =document.getElementById('total_price');
+        var counts =document.getElementById('demoInput').value;
+        total_amount=parseInt(counts)*parseFloat(total_amount_single_product);
+        total_price.innerText='$'+total_amount;
+        // let innerPrice=document.getElementById("total_price")
+        // const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
+        // if(!totalPrice) totalPrice=totl
+        // innerPrice.innerHTML=`$${totl-totalPrice-selectedValue.reduce((a,b)=>a+b,0)}`
+    }
 </script>
