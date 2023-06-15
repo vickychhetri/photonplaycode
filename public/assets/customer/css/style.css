@@ -1636,6 +1636,9 @@ ul.slick-dots {
     .image-client-logo {
         transform:scale(1.5);
     }
+    /*.thumb-image-item{*/
+    /*    height: 100px;*/
+    /*}*/
 }
 
 
