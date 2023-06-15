@@ -222,7 +222,7 @@
 {{--</html>--}}
 @component('mail::message')
 Dear User,
-Your {{$order->order_number}} order status is {{strtoupper($order->delivery_status)}}
+Your {{$order->order_number}} order status :: {{strtoupper($order->delivery_status)}}
 
 Thanks,<br>
 {{ config('app.name') }}
