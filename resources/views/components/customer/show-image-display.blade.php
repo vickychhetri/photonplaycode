@@ -1,4 +1,4 @@
-<div id="modalOverlay" class="modal-overlay bg-white p-3" onclick="hideModal()">
+<div id="modalOverlay" class="modal-overlay p-3" onclick="hideModal()">
     <div id="modalContent" class="modal-content ">
         <span class="closeImage text-danger "  onclick="hideModal()"> X</span> <!-- Add the close symbol here -->
 

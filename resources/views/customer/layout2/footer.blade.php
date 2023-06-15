@@ -172,7 +172,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         var image = document.getElementById("myImage");
 
         image.src = imgurl;
-        image.style.maxHeight = "100vh";
+        image.src = imgurl;
         image.style.display = "block";
         image.style.margin = "0 auto";
         image.style.padding = "20px";
@@ -182,7 +182,6 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         modalContent.style.display = "flex";
         modalContent.style.justifyContent = "center";
         modalContent.style.alignItems = "center";
-
 
         // image.src=imgurl;
         // // image.style.width="500px";

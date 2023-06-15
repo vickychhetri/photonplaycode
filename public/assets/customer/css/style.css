@@ -3149,7 +3149,7 @@ input:focus {
 /* Hide the Image by Default */
 .modal-content img {
     display: none;
-    width: 100%;
+    /*width: 100%;*/
     height: 100%;
 }
 
