@@ -41,6 +41,7 @@ class ShippingRateController extends Controller
             'state' => 'required',
             'country' => 'required',
             'postal_code' => 'required|integer|unique:shipping_rates,postal_code',
+            'shipping_rate' => 'required|integer',
         ]);
 
         ShippingRate::create($request->except('_token'));
@@ -87,6 +88,7 @@ class ShippingRateController extends Controller
             'state' => $request->state,
             'country' => $request->country,
             'postal_code' => $request->postal_code,
+            'shipping_rate' => $request->shipping_rate,
         ]);
 
         return redirect()->route('admin.shipping-rate.index');

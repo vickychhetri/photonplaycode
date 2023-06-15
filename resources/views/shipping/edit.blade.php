@@ -89,6 +89,19 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3 form-group">
+                            <label for="Postal Code" class="col-md-4 col-form-label text-md-end"><span>* </span>{{ __('Shipping Rate') }} ($)</label>
+
+                            <div class="col-md-6">
+                                <input id="shipping_rate" type="text" class="form-control @error('Postal Code') is-invalid @enderror" name="shipping_rate" value="{{ $data->shipping_rate }}" required autocomplete="title" autofocus>
+
+                                @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

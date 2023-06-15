@@ -43,6 +43,7 @@
                                         <th>State</th>
                                         <th>Country</th>
                                         <th>Postal Code</th>
+                                        <th>Shipping Rate</th>
                                         <th>Options</th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,7 @@
                                             <td>{{$i->state}}</td>
                                             <td>{{$i->country}}</td>
                                             <td>{{$i->postal_code}}</td>
+                                            <td>${{$i->shipping_rate}}</td>
                                             <td>
                                             <a href="{{route('admin.shipping-rate.edit', $i->id)}}" class="text-warning p-1" data-toggle="tooltip" title="Edit">
                                                 <i data-feather="edit"></i>
