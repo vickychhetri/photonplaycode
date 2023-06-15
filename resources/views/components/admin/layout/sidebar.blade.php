@@ -121,6 +121,13 @@
                         </li>
 
                         <li class="sidebar-list">
+                            <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/shipping-rate') ? 'active':''}}" href="{{route('admin.shipping-rate.index') }}">
+                                <i data-feather="settings"></i>
+                                <span>Shipping Rate</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/db-backup','db-backup') ? 'active':''}}" href="{{route('admin.dbbackupform') }}">
                                 <i data-feather="database"></i>
                                 <span>DB Backup</span>

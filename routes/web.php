@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ShippingRateController;
 use App\Models\AllCountryPincode;
 
 /*
@@ -118,6 +119,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('add-pvms-products', [PagesController::class, 'addPvmsProductForm'])->name('add.pvms.products');
         Route::post('store-pvms-products', [PagesController::class, 'storePvmsProductForm'])->name('pvms.product.store');
         Route::get('download-pdf', [PagesController::class, 'downloadPdf'])->name('manage.solution.download.pdf');
+
+        Route::get('shipping-rate/delete/{id}', [ShippingRateController::class, 'destroy']);
+        Route::resource('shipping-rate', ShippingRateController::class);
 
     });
 });
