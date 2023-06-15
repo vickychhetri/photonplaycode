@@ -223,7 +223,7 @@
 @component('mail::message')
 Dear User,
 Your {{$order->order_number}} order status :: {{strtoupper($order->delivery_status)}}
-
+<p> for more detail : <a href="https://stagingserver.photonplay.com/login"> Account </a></p>
 Thanks,<br>
 {{ config('app.name') }}
 @endcomponent
