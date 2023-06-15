@@ -21,9 +21,9 @@ $seo_meta=[
                         <div class="col-lg-6 pe-lg-0">
                             <div class="sucess-undeafeted p-4 py-5 text-white">
                                 <p class="text-uppercase">From Idea to Implementation</p>
-                                <h4 class="text-uppercase">Our 16+ Years of Undefeated Success</h4>
+                                <h4 class="text-uppercase">Our 12+ Years of Undefeated Success</h4>
                                 <p>
-                                    PhotonPlay, a family-owned Indian company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 16 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
+                                    PhotonPlay, a family-owned Indian company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 12 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
                                 </p>
                                 <a href="{{route('customer.contact.us')}}" class="btn btn-whites bg-white rounded-0 text-uppercase btn-light px-4">WORK
                                     WITH
@@ -38,14 +38,14 @@ $seo_meta=[
                                         <p>Global Expertise with 1K+ Successful Projects</p>
                                     </div>
                                     <div class="order-address text-center bg-white p-4 border px-5">
-                                        <h1 class="fw-bold text-dark">17+</h1>
-                                        <p class="mb-0">Executing Excellence Worldwide for 17+ Years and Counting</p>
+                                        <h1 class="fw-bold text-dark">12+</h1>
+                                        <p class="mb-0">Executing Excellence Worldwide for 12+ Years and Counting</p>
                                     </div>
                                 </div>
                                 <div class="d-flex mt-0 one-kk">
                                     <div class="order-address text-center bg-white p-4 border px-5 border-top-0 ">
                                         <h1 class="fw-bold text-dark">120+</h1>
-                                        <p>120+ Experts, One Mission: To Deliver Outstanding Results For You</p>
+                                        <p>120+ Experts, One Mission: To Deliver Outstanding Results</p>
                                     </div>
                                     <div class="order-address text-center bg-white p-4 border px-5 border-top-0">
                                         <h1 class="fw-bold text-dark">50+</h1>
