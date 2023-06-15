@@ -67,7 +67,7 @@ $seo_meta=[
             <div class="col-lg-12">
                 <div class="text-center mb-lg-5">
                     <h2 class="fs-md-2 mt-3 text-uppercase">Products</h2>
-                    <h6 class="fs-6 text-colorr">Empowering Smarter Mobility with Innovative Product Solutions that Exceed Expectations.</h6>
+                    <h6 class="fs-6 text-colorr">Empowering Smarter Mobility with Innovative Product Solutions that Exceed Expectations</h6>
                 </div>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-interval="3000" data-bs-ride="carousel">
@@ -121,8 +121,11 @@ $seo_meta=[
                                 <div class="ms-md-5">
 {{--                                    <h6 class="text-capitalize">Description</h6>--}}
 {{--                                    <p>{!! substr(strip_tags($product->description), 0, 100) !!}</p>--}}
-                                    <p>{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 200, '...') }}</p>
+{{--                                    <p>{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 200, '...') }}</p>--}}
 
+                                    <p style="text-align: justify;">
+                                        The sign has all the standard features combined in one product to make it the industry's best Radar Speed Sign. The sign acts like a Variable Message Sign to display graphics and custom text
+                                    </p>
                                     <div class="social-two">
                                         <p class="text-capitalize fs-5">share:</p>
                                         <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -290,7 +293,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p style="text-align: justify;">  Our PIDS is completely programmable and software for all parameters and settings has been created by our team. You can drive manually from your local ASM Terminal, or from the OSC via a PIDS station server.</p>
+                                        <p style="text-align: justify;"> PIDS is a digital and electronic system that provides information to passengers in various modes of transportation, such as airports, train stations, bus terminals, and subway stations.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -358,7 +361,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p> Full matrix display area that allows speed limits and graphics to display practically any speed. The ultra-bright and excellent quality variable speed limit sign. It is produced for 24/7 operation with AC or independent solar power.</p>
+                                        <p> The ultra-bright and excellent-quality variable speed limit sign is a sign with a full matrix display area that allows speed limits and graphics to display practically any speed.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -391,7 +394,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
                                         {{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p style="text-align: justify;">The VASD is highly reliable and efficient, making it ideal for roads, highways, and tunnels. Let us help you enhance road safety and traffic flow with our advanced ITS technology. Explore our VASD solutions today!</p>
+                                        <p style="text-align: justify;">VASD is a highly reliable and efficient traffic calming and enforcement system, ideal for roads, highways, and tunnels. Let us help you enhance road safety and traffic flow with this advanced ITS technology. </p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
@@ -459,7 +462,7 @@ $seo_meta=[
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
                                     <div class="ms-md-5">
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p style="text-align: justify;"> Designed for both indoor and outdoor use, our Tickers are durable, energy-efficient, and easy to install. They can be integrated with existing systems or operated as standalone displays, making them a versatile solution for businesses of all sizes.</p>
+                                        <p style="text-align: justify;"> Designed for both indoor and outdoor use, our Tickers are durable, energy-efficient, and easy to install. They can be integrated with existing systems or operated as standalone displays, They are versatile solution for businesses of all types.</p>
                                         <div class="social-two">
                                             <p class="text-capitalize fs-5">share:</p>
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
