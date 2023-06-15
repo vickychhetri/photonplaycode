@@ -127,7 +127,7 @@ $seo_meta=[
                                         The sign has all the standard features combined in one product to make it the industry's best Radar Speed Sign. The sign acts like a Variable Message Sign to display graphics and custom text
                                     </p>
                                     <div class="social-two">
-                                        <p class="text-capitalize fs-5">share:</p>
+
                                         <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -161,7 +161,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify"> Way finders is a crucial component of tunnel safety since it assists vehicles in securely and effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage from road and rail tunnels. </p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -194,7 +194,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify"> Depending on the traffic situation, signs are efficiently used to warn and guide about traffic congestion, routing information, speed limits, road work zones, accidents and other incidents on highways, expressways and arterial roads of cities.</p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -229,7 +229,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;"> These signs identify the location of emergency exits as well as exits going to different destinations outside the tunnel.</p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -262,7 +262,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage that indicates where emergency phones may be found.The emergency telephone sign's aim is to direct travellers to the nearest emergency phone in the event of an emergency or breakdown.</p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -295,7 +295,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;"> PIDS is a digital and electronic system that provides information to passengers in various modes of transportation, such as airports, train stations, bus terminals, and subway stations.</p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -330,7 +330,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of traffic management ecosystem for motorways, tunnels and urban traffic management systems.</p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -363,7 +363,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p> The ultra-bright and excellent-quality variable speed limit sign is a sign with a full matrix display area that allows speed limits and graphics to display practically any speed.</p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -396,7 +396,7 @@ $seo_meta=[
                                         {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;">VASD is a highly reliable and efficient traffic calming and enforcement system, ideal for roads, highways, and tunnels. Let us help you enhance road safety and traffic flow with this advanced ITS technology. </p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -431,7 +431,7 @@ $seo_meta=[
                                         {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;">Bus Signs are  designed to provide real-time information to commuters and improve their overall transit experience. Our LED bus signs are highly visible, even in bright sunlight, and can display various types of information, including bus routes, arrival times, and other important information. </p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
@@ -464,7 +464,7 @@ $seo_meta=[
 {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                         <p style="text-align: justify;"> Designed for both indoor and outdoor use, our Tickers are durable, energy-efficient, and easy to install. They can be integrated with existing systems or operated as standalone displays, They are versatile solution for businesses of all types.</p>
                                         <div class="social-two">
-                                            <p class="text-capitalize fs-5">share:</p>
+
                                             <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
 
 
