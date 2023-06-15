@@ -43,7 +43,7 @@ $seo_meta=[
                             <div class="thumb-image">
                                 <div class="row">
                                     @forelse ($page->images as $image)
-                                        <div class="col-4  thumb-image-item">
+                                        <div class="col-md-4  thumb-image-item">
 
                                             <div class="mb-3" >
                                                 <img src="{{asset('storage/'.$image->image)}}" alt="" class="img-fluid" style="height: 200px;">
