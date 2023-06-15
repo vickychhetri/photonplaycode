@@ -84,6 +84,24 @@ $seo_meta=[
                             <p style="text-align: justify;">
                                 {{$product->description}}
                             </p>
+                            <div class="thumb-image">
+                                <div class="row">
+                                    @forelse ($product->images as $image)
+                                        <div class="col-4">
+                                            <div class="thumb-image-item mb-3 " onclick="showModal('{{asset('storage/'.$image->image)}}')" >
+                                                <img src="{{asset('storage/'.$image->image)}}" alt="" class="img-fluid" style="height: 200px;width: 200px;">
+                                                <img src="{{asset('assets/customer/images/zoom-in.png')}}" alt="" onclick="showModal('{{asset('storage/'.$image->image)}}')" class="zoom-in">
+                                            </div>
+
+                                        </div>
+                                    @empty
+
+                                    @endforelse
+
+                                    <x-Customer.ShowImageDisplay/>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
