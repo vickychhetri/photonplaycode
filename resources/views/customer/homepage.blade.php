@@ -559,7 +559,7 @@ $seo_meta=[
                         <div class="content-application-items members-profile h-100 application-item">
                             <h6 class="text-uppercase text-dark">Smart Cities </h6>
                             <p class="mb-0 text-center">
-                            Navigating tunnels becomes easier and safer with our intelligent ITS solutions that offer comprehensive monitoring, ventilation control, and incident management.
+                                From intelligent traffic management to efficient public transportation, we provide innovative solutions that improve urban mobility and reduce environmental impacts.
                             </p>
                         </div>
                     </div>
@@ -582,7 +582,7 @@ $seo_meta=[
                         <div class="content-application-items members-profile h-100 application-item">
                             <h6 class="text-uppercase text-dark">Transits</h6>
                             <p class="mb-0 text-center">
-                            Navigating tunnels becomes easier and safer with our intelligent ITS solutions that offer comprehensive monitoring, ventilation control, and incident management.
+                                Our ITS solutions for transit authorities offer real-time information to commuters, improving the overall transit experience.
                             </p>
                         </div>
                     <!-- <div class="members-profile h-100">
