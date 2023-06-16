@@ -67,14 +67,13 @@ class CartController extends Controller
             $grand_total = $total - $discount;
         }
 
-        $postalCode = '';
         if(Session::get('user')){
             $postalCode = UserPostalCode::where('user_id', Session::get('user')->id)->first();
         }else{
             $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
         }
 
-        if($postalCode->postal_code){
+        if($postalCode){
             $shippingRate = ShippingRate::where('postal_code', $postalCode->postal_code)->first();
         }else{
             $shippingRate = null;
