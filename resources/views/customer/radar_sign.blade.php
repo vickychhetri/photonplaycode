@@ -162,7 +162,7 @@ $seo_meta=[
                                             <option value="#ffff00">Yellow </option>
                                             <option value="#ffffff"> White </option>
                                         </select>
-{{--                                        <input type="text" class="form-control shadow-none" name="pincode_selected" placeholder="Zipcode service disabled currently" disabled>--}}
+                                       <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif>
                                     </div>
 
                                     <script>

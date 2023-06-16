@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\Product;
+use App\Models\UserPostalCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class SignController extends Controller
 {
@@ -19,10 +22,20 @@ class SignController extends Controller
     }
 
     public function radarSigns($id){
+        $sessionId = Session::getId();
         $product = Product::with('images','specilizations.specilization','specilizations.options','specilizations.options.specializationoptions','category')->find($id);
         $productLists = Product::where('category_id', 1)->take(5)->get();
         // dd($product);
-        return view('customer.radar_sign', compact('product','productLists'));
+        $postalCode = '';
+        $cartCount = 0;
+        if(Session::get('user')){
+            $cartCount = Cart::where('user_id', Session::get('user')->id())->count();
+            $postalCode = UserPostalCode::where('user_id', Session::get('user')->id())->first();
+        }else{
+            $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
+            $cartCount = Cart::where('session_id', $sessionId)->count();
+        }
+        return view('customer.radar_sign', compact('product','productLists','postalCode','cartCount'));
     }
 
     public function specificationAjax(Request $request){

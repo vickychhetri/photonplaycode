@@ -125,7 +125,7 @@
                                 @endif
                                 <li class="d-flex justify-content-between">
                                     <span class="text text-capitalize">Shipping and Handing</span>
-                                    <span class="text-amount">${{$shipping = $taxes->shipping_time ?? 00.00}}</span>
+                                    <span class="text-amount">${{$shipping = $shippingTax ?? 00.00}}</span>
                                 </li>
                                 <li class="d-flex justify-content-between">
                                     <span class="text text-capitalize">Tax/GST</span>

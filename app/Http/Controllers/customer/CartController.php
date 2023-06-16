@@ -7,7 +7,9 @@ use App\Models\Cart;
 use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderedProduct;
+use App\Models\ShippingRate;
 use App\Models\UserAddress;
+use App\Models\UserPostalCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -19,6 +21,7 @@ use Stripe;
 class CartController extends Controller
 {
     public function shoppingBag(Request $request){
+        $sessionId = Session::getId();
         $taxes = DB::table('settings')->select('shipping_time','gst')->first();
         $coupon = Coupon::where('coupon_name', $request->coupon)->first();
         $discount = 0;
@@ -63,7 +66,19 @@ class CartController extends Controller
             }
             $grand_total = $total - $discount;
         }
-        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total'));
+
+        $postalCode = '';
+        if(Session::get('user')){
+            $postalCode = UserPostalCode::where('user_id', Session::get('user')->id)->first();
+        }else{
+            $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
+        }
+
+        $shippingRate = ShippingRate::where('postal_code', $postalCode->postal_code)->first();
+
+        $shippingTax = $shippingRate->shipping_rate ?? $taxes->shipping_time;
+
+        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total', 'shippingTax'));
     }
 
     public function addShoppingBag(Request $request){
@@ -77,7 +92,16 @@ class CartController extends Controller
                     $specPrice += DB::table('product_spcialization_options')->where('id', $specs)->value('specialization_price');
             }
         }
-        // dd($implodeSpec);
+
+        if($request->postal_code){
+            UserPostalCode::updateOrCreate([
+                'user_id' => Session::get('user')->id ?? null,
+                'session_id' => $sessionId,
+            ],[
+                'postal_code' => $request->postal_code,
+            ]);
+        }
+
         if(!Session::get('user')){
         $cart = Cart::where(['session_id' => $sessionId, 'product_id' => $request->product_id, 'price' => $request->price,])->first();
             if($cart){
