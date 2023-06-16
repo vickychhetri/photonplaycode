@@ -188,6 +188,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 Route::post('/upload-photo', [CommonController::class, 'upload'])->name('upload-photo-summernote');
 Route::get('photonplay-optimize', [CommonController::class, 'optimize']);
 Route::get('csv', function(){
+    AllCountryPincode::truncate();
    $filePath = storage_path('csv/allCountriesCSV.csv');
     $file = fopen($filePath, 'r');
 
@@ -214,4 +215,8 @@ Route::get('csv', function(){
         return $e->getMessage();
     }
     return true;
+});
+
+Route::get('php', function() {
+    return phpinfo();
 });
