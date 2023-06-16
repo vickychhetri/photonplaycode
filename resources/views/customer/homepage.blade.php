@@ -512,7 +512,7 @@ $seo_meta=[
                     <a href="{{route('customer.solution.highway')}}" style="text-decoration: none;">
                     <div class="application-item">
                         <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
-                        <div class="content-application-items members-profile">
+                        <div class="content-application-items members-profile" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Highways </h6>
                             <p class="mb-0 text-center">
                             Drive with confidence on the highways with our advanced ITS solutions designed to improve traffic flow and enhance road safety.
@@ -534,7 +534,7 @@ $seo_meta=[
                 <a href="{{route('customer.solution.tunnel')}}" style="text-decoration: none;">
                 <div class="application-item">
                 <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
-                        <div class="content-application-items members-profile ">
+                        <div class="content-application-items members-profile " style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Tunnels </h6>
                             <p class="mb-0 text-center">
                             Navigating tunnels becomes easier and safer with our intelligent ITS solutions that offer comprehensive monitoring, ventilation control, and incident management.
@@ -556,7 +556,7 @@ $seo_meta=[
                 <a href="{{route('customer.solution.city')}}" style="text-decoration: none;">
                 <div class="application-item">
                 <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">
-                        <div class="content-application-items members-profile application-item">
+                        <div class="content-application-items members-profile application-item" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Smart Cities </h6>
                             <p class="mb-0 text-center">
                                 From intelligent traffic management to efficient public transportation, we provide innovative solutions that improve urban mobility and reduce environmental impacts.
@@ -579,7 +579,7 @@ $seo_meta=[
                 <a href="{{route('customer.solution.tunnel')}}" style="text-decoration: none;">
                 <div class="application-item">
                 <img src="{{ asset('assets/customer/images/Transits-Icons.png') }}" alt="image">
-                        <div class="content-application-items members-profile application-item">
+                        <div class="content-application-items members-profile application-item" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Transit</h6>
                             <p class="mb-0 text-center">
                                 Our ITS solutions for transit authorities offer real-time information to commuters, improving the overall transit experience.

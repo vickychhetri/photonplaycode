@@ -125,14 +125,14 @@ $seo_meta=[
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Transits-Icons.png') }}" alt="image">
-                        <div class="content-application-items">
-                            <h4 class="text-uppercase">Transits </h4>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-md-3">--}}
+{{--                    <div class="application-item">--}}
+{{--                        <img src="{{ asset('assets/customer/images/Transits-Icons.png') }}" alt="image">--}}
+{{--                        <div class="content-application-items">--}}
+{{--                            <h4 class="text-uppercase">Transits </h4>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
