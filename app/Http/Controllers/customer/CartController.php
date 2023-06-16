@@ -74,7 +74,7 @@ class CartController extends Controller
             $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
         }
 
-        $shippingRate = ShippingRate::where('postal_code', $postalCode->postal_code)->first();
+        $shippingRate = ShippingRate::where('postal_code', $postalCode->postal_code)->first() ?? null;
 
         $shippingTax = $shippingRate->shipping_rate ?? $taxes->shipping_time;
 
