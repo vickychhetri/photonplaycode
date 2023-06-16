@@ -98,6 +98,10 @@ class CartController extends Controller
         }
 
         if($request->postal_code){
+            if(Session::get('user')){
+                UserPostalCode::where('user_id', Session::get('user')->id)->delete();
+            }
+            UserPostalCode::where('session_id', $sessionId)->delete();
             UserPostalCode::updateOrCreate([
                 'user_id' => Session::get('user')->id ?? null,
                 'session_id' => $sessionId,
