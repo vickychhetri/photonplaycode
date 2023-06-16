@@ -35,13 +35,13 @@ that enable seamless integration and smarter decision-making for cities of the f
     </section>
 
     <!-- Multiple Size Options-start -->
-    <section class="option-chose veriants">
+    <section class="option-chose veriants  pt-1 mb-0 pb-0">
         <div class="container option-chose-rows">
 
             <div class="d-flex justify-content-center ">
                 <div class="w-75">
                     <p class="text-center" >
-                        Derive with confidence on the highways with our advanced ITS solutions designed to improve traffic flow, and enhance road safety. our system provide real time information and analytics to enable  better decision-making and efficient operations.
+
                     </p>
 
                 </div>
@@ -54,15 +54,8 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-6 mt-3">
                     <div class="multiple-option pb-0">
                         <h4 class="text-capitalize mb-4">Radar Speed Sign</h4>
-                        <h6 class="mb-3">Highly visible and innovative, creating instant awareness of local speed limit
-                        </h6>
-
                         <p style="text-align: justify">
-                            Our Radar Speed Signs provide an effective solution for managing speed on the roads. Using advanced radar technology, these signs detect the speed of vehicles and display it to the driver, encouraging them to slow down and improve road safety.
-
-                        </p>
-                        <p style="text-align: justify">
-                            Our Radar Speed Signs are highly reliable and durable, making them ideal for use on highways, roads, and tunnels. They can be easily installed in any location and offer a range of display options to suit different traffic management needs. Explore our range of Radar Speed Signs and discover how they can help you enhance road safety with our advanced ITS technology.
+                            Our Radar Speed Signs provide an effective solution for managing speed on the roads. Using advanced radar technology, these signs detect the speed of vehicles and display it to the driver, encouraging them to slow down and improve road safety. Our Radar Speed Signs are highly reliable and durable, making them ideal for use on highways, roads, and tunnels. They can be easily installed in any location and offer a range of display options to suit different traffic management needs. Explore our range of Radar Speed Signs and discover how they can help you enhance road safety with our advanced ITS technology.
                         </p>
 
                         <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
@@ -82,11 +75,11 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <!-- option-two -->
                 <div class="col-lg-6">
                     <div class="multiple-option pb-0">
-                        <h4>Portaible Variable Message Sign (PVMS) </h4>
+                        <h4>Portable Variable Message Sign (PVMS) </h4>
                         <!-- <span class="text-capitalize d-block">Designed to withstand extreme weather
                             conditions</span> -->
                         <p style="text-align: justify;">
-                            Our PVMS offers flexible and efficient solutions for traffic management. These portable signs can be easily transported to different locations and offer a range of display options to suit a variety of traffic management needs. Ideal for applications on roads, highways, and tunnels, our PVMS provides a highly reliable and rugged solution for traffic guidance and information purposes. With real-time information and analytics, our systems provide better decision-making and efficient operations. At Photonplay, we are committed to providing cutting-edge technology for a better future. Let us help you create safer and more efficient roads with our PVMS solutions.
+                            Portable VMS : Our PVMS offers flexible and efficient solutions for traffic management. These portable signs can be easily transported to different locations and offer a range of display options to suit a variety of traffic management needs. Ideal for applications on roads, highways, and tunnels, our PVMS provides a highly reliable and rugged solution for traffic guidance and information purposes. With real-time information and analytics, our systems provide better decision-making and efficient operations. At Photonplay, we are committed to providing cutting-edge technology for a better future. Let us help you create safer and more efficient roads with our PVMS solutions.
                         </p>
 
                         <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
@@ -107,15 +100,8 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-6">
                     <div class="multiple-option pb-0">
                         <h4 class="text-capitalize mb-4">Variable Message Sign (VMS)</h4>
-                        <h6 class="mb-3">Highly visible and innovative, creating instant awareness of local speed limit
-                        </h6>
-                        <!-- <span class="text-capitalize d-block">Three Size Options To Choose From</span> -->
                         <p style="text-align: justify;">
-                            Photonplay's Variable Message Signs (VMS) display messages, warning signals, and information about specific events to commuters on roads. Our VMS solutions enhance road safety by guiding motorists with accurate and real-time information.
-                        </p>
-                        <p style="text-align: justify;">
-                            Drive with confidence with our VMS. Our advanced VMS technology provides flexible and efficient solutions for traffic management. With a range of display options to suit various traffic needs, our VMS is the ideal solution for enhancing road safety and traffic flow. Click on the "Explore Now" button to learn more about our VMS products.
-
+                            Variable Message Signs play a crucial role in displaying messages, warning signals, and information about specific events to commuters on roads. At Photonplay, our Variable Message Signs (VMS) enhance road and traffic safety by guiding millions of motorists every day. Our VMS product range includes a variety of highly reliable and rugged solutions designed specifically for traffic guidance and information purposes. Explore our VMS product range and choose from our Standard VMS, Solar VMS, and Smart City VMS solutions. Each of our solutions is designed to cater to the unique needs of traffic management systems
                         </p>
 
                         <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
@@ -138,12 +124,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                         <h4>LED Tickers </h4>
                       <p style="text-align: justify;">
                           Our LED Tickers provide a dynamic way to display information in real-time. With a variety of customizable options, our Tickers can be tailored to suit the needs of any industry, including finance, sports, and news.
-                      </p>
-                        <p style="text-align: justify;">
-
                           Designed for both indoor and outdoor use, our Tickers are durable, energy-efficient, and easy to install. They can be integrated with existing systems or operated as standalone displays, making them a versatile solution for businesses of all sizes.
-                        </p>
-                        <p style="text-align: justify;">
 
                         Explore our range of LED Tickers and discover how they can help you engage your audience, increase visibility, and enhance your brand image.
                       </p>
@@ -165,7 +146,7 @@ that enable seamless integration and smarter decision-making for cities of the f
     </section>
     <!-- Multiple Size Options-end -->
     <!--system-bus-start  -->
-    <section class="bus-sign">
+    <section class="bus-sign mt-1 pt-1">
         <div class="container">
             <div class="row">
                 <!-- <div class="col-lg-12">
