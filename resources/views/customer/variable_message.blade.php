@@ -19,7 +19,9 @@ $seo_meta=[
                 <div class="imaged m-auto">
                     <div class="city-wrap flex-wrap">
                         <h2 class=" text-white fw-normal mb-1 title-text-h2">Variable Message Signs (VMS)</h2>
-                        <h5 class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness of <br/>local speed limit</h5>
+                        <h5 class=" text-white fw-normal mt-2 mb-2 ">
+                            Highly visible and innovative, creating instant awareness about specific events to the people commuting on the roads.
+                        </h5>
                         <a  href="#inquiry" class="btn-primary-rounded  p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
                     <div class=" m-auto desktop-display " >
@@ -42,16 +44,9 @@ $seo_meta=[
                     <h2 class="text-center mb-2"> Variable Message Signs (VMS) </h2>
                     <div class="p-4 m-2">
                         <p>
-                            Viewed by millions of eyes every day, guiding way to millions of motorist to drive them back
-                            home safely every day, Photonplay is contributing its part to the humanity in it own way by
-                            enhanced road and traffic safety.
+                            Viewed by millions of eyes every day and guiding millions of motorists back home safely every day, Photonplay is contributing its part to humanity in its own way by enhancing road and traffic safety. Photonplay’s outperforming VMS signs are highly reliable and rugged components of the traffic management ecosystem for motorways, tunnels, and urban traffic management systems.
                         </p>
-                        <p>
-                            The product range starting from Variable message sign solutions for traffic guidance and
-                            information purposes. Photonplay’s outperforming VMS signs are highly reliable and rugged
-                            components of traffic management ecosystem for motorways, tunnels and urban traffic
-                            management systems.
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -76,7 +71,7 @@ $seo_meta=[
                                 <div class="text-start p-4 list-unsorted">
                                     <div class="">
                                         <img src="{{asset('storage/'.$i->cover_image)}}" alt="Not Found"
-                                            class="img-fluid">
+                                            class="img-fluid" style="max-height: 300px">
                                     </div>
                                     <div class="my-3 list-bacgunded px-4 py-4">
                                         <h5 class="fw-bold text-capitalize">{{ $i->title }}</h5>
