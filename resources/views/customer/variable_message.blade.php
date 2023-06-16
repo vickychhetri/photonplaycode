@@ -37,7 +37,7 @@ $seo_meta=[
     </section>
     <!-- Banner Sec End -->
     <!-- banner-text-start -->
-    <section class="bg-white">
+    <section class="bg-white pb-0">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
@@ -54,11 +54,11 @@ $seo_meta=[
     </section>
     <!-- banner-text-end -->
     <!-- Our Product-start -->
-    <section class="our-product pt-lg-4">
+    <section class="our-product">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="text-center mb-lg-5">
+                    <div class="text-center ">
                         <!-- <h6 class="fs-6 text-colorr">photonplay’s </h6> -->
                         <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold">VMS Series</h2>
                     </div>
@@ -71,7 +71,7 @@ $seo_meta=[
                                 <div class="text-start p-4 list-unsorted">
                                     <div class="">
                                         <img src="{{asset('storage/'.$i->cover_image)}}" alt="Not Found"
-                                            class="img-fluid" style="max-height: 300px">
+                                            class="img-fluid" style="max-height: 250px">
                                     </div>
                                     <div class="my-3 list-bacgunded px-4 py-4">
                                         <h5 class="fw-bold text-capitalize">{{ $i->title }}</h5>
@@ -90,17 +90,15 @@ $seo_meta=[
     </section>
     <!-- Our Product -->
 
-
-
-
     <!-- Application -->
-    <section class="application-section">
+    <section class="application-section mt-0 pt-0">
         <div class="container">
             <h2 class="fs-md-2 mt-0 mb-2 text-center text-uppercase">Special Applications</h2>
             <p class="text-center mb-4">Variable signs for special needs in work zones safety and speed calming
                 applications
             </p>
-            <div class="row">
+            <div class="row d-flex justify-content-center">
+
                 <div class="col-md-3">
                     <div class="application-item">
                         <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
