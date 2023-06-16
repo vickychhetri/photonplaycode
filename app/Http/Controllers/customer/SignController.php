@@ -29,7 +29,7 @@ class SignController extends Controller
         $postalCode = '';
         $cartCount = 0;
         if(Session::get('user')){
-            $cartCount = Cart::where('user_id', Session::get('user')->id())->count();
+            $cartCount = Cart::where('user_id', Session::get('user')->id)->count();
             $postalCode = UserPostalCode::where('user_id', Session::get('user')->id())->first();
         }else{
             $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
