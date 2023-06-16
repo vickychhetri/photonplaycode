@@ -2310,7 +2310,7 @@ input:focus {
     color: #544e5d;
     border-radius: 15px;
     padding-top: 130px;
-
+    height: 310px;
 }
 
 .content-application-items h4 {
