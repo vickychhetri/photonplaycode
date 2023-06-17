@@ -35,8 +35,11 @@ $seo_meta=[
                                     <img src="{{asset('assets\customer\images\circles.png')}}" alt="Not Found" class="img-fluid">
                                 </div>
                             </div>
+                            <div class="desktop-display">
+                                <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found" class="mt-3 mt-sm-0" style="height: 450px;">
+                            </div>
                             <!-- <div class="position-absolute top-50 start-0 translate-middle"> -->
-                            <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found" class="img-fluid mt-3 mt-sm-0">
+
                             <!-- </div> -->
                             <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                                 class="img-fluid d-none d-md-block">
