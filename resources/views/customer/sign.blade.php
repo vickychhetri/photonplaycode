@@ -301,15 +301,13 @@ $seo_meta=[
                     <div class="multiple-option pb-0">
                         <h4>Multiple Size Options</h4>
                         <span class="text-capitalize d-block">Three Size Options To Choose From</span>
-                        <p>Depending upon the application and visibility requirement, Visible up to 1000 ft. <br>
-                            12", 15”- and 18”-Character Height Radar Speed Signs are available.</p>
+                        <p>Depending upon the application and visibility requirement, Visible up to 1000 ft. 12", 15”- and 18”-Character Height Radar Speed Signs are available..</p>
                         <ul class="ps-3">
                             <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
+                            <li> School Zone - <span> 12" and 15" Models are recommended </span></li>
+                            <li> Neighborhood - <span>12" and 15" Models are recommended</span></li>
+                            <li> Highways - <span> 15" and 18" Models are recommended </span></li>
+
                         </ul>
                         <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
@@ -334,14 +332,10 @@ $seo_meta=[
                         <p>Radar your speed signs are designed to work all weather conditions including high
                             temperatures of middle-east to the cold Alaska winters.</p>
                         <ul class="ps-3">
-                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra
-                                    Violet
-                                    rays and extreme heats of middle east (GE-LEXAN)</span></li>
+                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra Violet rays and extreme heats of middle east (GE-LEXAN)</span></li>
                             <li>Water Proofing - <span>IP66 Rated Enclosure made with marine grade aluminium</span>
                             </li>
-                            <li> High Grade Batteries -<span> Military Grade Batteries to operate in all
-                                    temperature</span></li>
-                            <li> High Grade Batteries - <span>12" and 15" Models are recommended</span></li>
+                            <li> High Grade Batteries - <span>  Military Grade Batteries to operate in all temperature scenarios with maximum efficiency</span></li>
                         </ul>
                         <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
