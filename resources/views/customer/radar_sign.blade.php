@@ -152,11 +152,10 @@ $seo_meta=[
                                 <div class="d-flex align-items-center justify-content-between">
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
-                                       <div class="border-radius: 150px;
-background: #e0e0e0;
-box-shadow:  8px 8px 15px #bebebe,
-             -8px -8px 15px #ffffff;">
- <i class="bi bi-check-circle-fill p-1 " style="font-size: 36px;color:#ffbf00;"></i>
+                                       <div>
+ <i class="bi bi-check-circle-fill p-1 border-radius: 150px;
+box-shadow:  8px 8px 15px #a9a9a9,
+             -8px -8px 15px #e5e5e5;" style="font-size: 36px;color:#ffbf00;"></i>
                                        </div>
 
 
