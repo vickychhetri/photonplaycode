@@ -162,6 +162,8 @@ $seo_meta=[
                                             <option value="#ffbf00"> Amber </option>
                                             <option value="#ffff00">Yellow </option>
                                             <option value="#ffffff"> White </option>
+                                            <option value="#7cf210"> Green </option>
+
                                         </select>
                                        <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif>
                                     </div>
