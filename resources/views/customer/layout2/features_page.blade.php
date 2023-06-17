@@ -15,7 +15,7 @@
                 <div class="d-flex align-items-center bg-white feature-card p-4">
                     <div class="me-3"><img src="{{asset('assets/customer/images/COMPLIANCE.png')}}" alt="Not Found"></div>
                     <div class="">
-                        <h6>{{ $feature->feature}}</h6>
+                        <h6>{{ strtoupper($feature->feature)}}</h6>
                         <p class="mb-0">{{ $feature->description}}</p>
                     </div>
                 </div>
