@@ -101,7 +101,7 @@ $seo_meta = [
                                     <img src="{{asset('storage/'.$item->cover_image)}}" alt="Not Found"
                                          class="img-fluid">
                                 </div>
-                                <div class="my-3 list-bacgund px-4 py-4" style="font-size: 15px;">
+                                <div class="my-3 list-bacgund px-4 py-4" style="font-size: 15px;height: 240px;overflow: hidden;">
                                     <h5 class="fw-bold text-capitalize text-dark">{{$item->title}}</h5>
                                     <ul class="text-dark">
                                         @foreach ($item->features as $feature)
