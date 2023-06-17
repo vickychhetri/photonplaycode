@@ -154,8 +154,7 @@ $seo_meta=[
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
                                        <div style="border-radius: 150px;
 background: rgba(18,17,17,0.72);
-box-shadow:  2px 2px 2px rgba(0,0,0,0.67),
-             -2px -2px 2px #1b1919;">
+box-shadow:  2px 2px 2px rgba(0,0,0,0.67)">
  <i class="bi bi-check-circle-fill p-1 " style="font-size: 36px;color:#ffbf00;"></i>
                                        </div>
 
