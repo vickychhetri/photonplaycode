@@ -121,7 +121,7 @@ $seo_meta=[
                         <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
                         <span>( 150+ Customers Reviews)</span>
                     </div>
-                    <p class="fw-bold fs-5"  id="total_price">${{$product->price}}</p>
+                    <p class="fw-bold fs-5"  id="total_price2">${{$product->price}}</p>
                     <div>
                         <p class="specific-heading">Select Specification</p>
                         <div class="row mt-3">
