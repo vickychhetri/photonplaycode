@@ -152,12 +152,12 @@ $seo_meta=[
                                 <div class="d-flex align-items-center justify-content-between">
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
-                                       <span class="border-radius: 150px;
+                                       <div class="border-radius: 150px;
 background: #e0e0e0;
 box-shadow:  8px 8px 15px #bebebe,
              -8px -8px 15px #ffffff;">
  <i class="bi bi-check-circle-fill p-1 " style="font-size: 36px;color:#ffbf00;"></i>
-                                       </span>
+                                       </div>
 
 
                                         <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none;
