@@ -61,8 +61,8 @@ $seo_meta=[
 
     <!-- Desc and specification -->
     <section class="sepeicification bg-light position-relative">
-        <div class="container pb-lg-5">
-            <div class="accodion-wrapper pb-5">
+        <div class="container ">
+            <div class="accodion-wrapper">
                 <div class="row">
                     <div class="col-md-6">
                         <div>
@@ -123,7 +123,7 @@ $seo_meta=[
         </div>
     </section>
     <!-- Dimension section -->
-    <section class="dimention-sec">
+    <section class="dimention-sec pt-1" >
         <div class="heading-sec">
             <h2 class="fs-2 mt-3">DIMENSION</h2>
         </div>
@@ -145,7 +145,7 @@ $seo_meta=[
 
 
 <!-- Portable Variable Message Sign’s -->
-<section class="portable px-lg-5">
+<section class="portable px-lg-5 pt-0">
     <div class="container-fluid">
         <div class="message-sign d-flex  justify-content-center">
 {{--            <h6 class="">iCop | Portable Variable Message Sign’s</h6>--}}
