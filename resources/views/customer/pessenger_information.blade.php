@@ -100,7 +100,7 @@ $seo_meta=[
     <!-- Application -->
     <section class="application-section">
         <div class="container">
-            <h2 class="fs-md-2 mb-5 text-center">APPLICATION</h2>
+            <h2 class="fs-md-2 mb-5 text-center">APPLICATIONS</h2>
             <div class="row d-flex justify-content-center">
 
 
