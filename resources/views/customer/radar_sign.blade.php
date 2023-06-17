@@ -169,7 +169,7 @@ box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
                                             <option value="#7cf210"> Green </option>
 
                                         </select>
-                                       <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif>
+{{--                                       <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif>--}}
                                     </div>
 
                                     <script>
