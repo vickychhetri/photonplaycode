@@ -95,22 +95,22 @@
     <section class="application-section">
         <div class="container">
             <h2 class="fs-md-2 mt-3 mb-5 text-center">APPLICATION</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="application-item">
-                        <img src="{{asset('assets/customer/images/application-img-1.png')}}" alt="image">
-                        <div class="content-application-item">
-                            <h4 class="text-uppercase">Real time traffic information </h4>
-                            <p>Traffic congestion , Accidents incidents, route options useful to the road user, Ongoing
-                                Roadwork zones, Speed Limits</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
+            <div class="row d-flex justify-content-center">
+{{--                <div class="col-md-6">--}}
+{{--                    <div class="application-item">--}}
+{{--                        <img src="{{asset('assets/customer/images/application-img-1.png')}}" alt="image">--}}
+{{--                        <div class="content-application-item">--}}
+{{--                            <h4 class="text-uppercase">Real time traffic information </h4>--}}
+{{--                            <p>Traffic congestion , Accidents incidents, route options useful to the road user, Ongoing--}}
+{{--                                Roadwork zones, Speed Limits</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="col-md-4">
                     <div class="application-item">
                         <img src="{{asset('assets/customer/images/standrooms.png')}}" alt="image">
                         <div class="content-application-item">
-                            <h4 class="text-uppercase">Parking Lots </h4>
+                            <h4 class="text-uppercase">Rail and Road Tunnels  </h4>
                             <p>Parking availability information</p>
                         </div>
                     </div>
