@@ -160,7 +160,6 @@ $seo_meta=[
     -moz-appearance: none;
     appearance: none;">
                                             <option value="#ffbf00"> Amber </option>
-                                            <option value="#ffff00">Yellow </option>
                                             <option value="#ffffff"> White </option>
                                             <option value="#7cf210"> Green </option>
 
