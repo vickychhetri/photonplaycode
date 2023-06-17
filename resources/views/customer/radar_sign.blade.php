@@ -130,9 +130,10 @@ $seo_meta=[
                             @foreach ($product->specilizations as $specilization)
                                 <div class="col-md-8 bg-transparent" >
                                     <div class="">
+                                        <h4 class="text-dark"> {{$specilization->specilization->title}} </h4>
                                         <select class="form-select mb-3 " onchange="changecalculated_amount(this)" name="dynamic_specs[{{$specilization->id}}]"
                                                 id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;">
-                                            <option selected disabled>{{$specilization->specilization->title}} </option>
+                                            <option selected disabled>--Select {{$specilization->specilization->title}} -- </option>
                                             @foreach($specilization->options as $option)
 
                                             <option value="{{$option->id}}">{{$option->specializationoptions->option}} (+$<span class="price">{{$option->specialization_price}}</span>) </option>
