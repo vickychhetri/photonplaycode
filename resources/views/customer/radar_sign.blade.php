@@ -127,7 +127,7 @@ $seo_meta=[
                         <div class="row mt-3">
 
                             {{-- Loop to Start Specifications--}}
-                            @foreach ($product->specilizations as $specilization)
+                            @foreach ($product->specilizations->reverse() as $specilization)
                                 <div class="col-md-8 bg-transparent" >
                                     <div class="">
                                         <h6 class="text-dark"> {{$specilization->specilization->title}} </h6>
