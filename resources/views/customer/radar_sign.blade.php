@@ -536,6 +536,7 @@ $seo_meta=[
         console.log();
 
         var total_price =document.getElementById('total_price');
+        var total_price2 =document.getElementById('total_price2');
         var counts =document.getElementById('demoInput').value;
 
         var inputString = selectedOption.text;
@@ -554,6 +555,8 @@ $seo_meta=[
        }
         console.log(total_amount_single_product);
         total_price.innerText='$'+counts*total_amount_single_product;
+        total_price2.innerText='$'+counts*total_amount_single_product;
+
      }
 
     function increment() {
@@ -565,9 +568,12 @@ $seo_meta=[
         // innerPrice.innerHTML=`$${totl+totalPrice+selectedValue.reduce((a,b)=>a+b,0)}`
 
         var total_price =document.getElementById('total_price');
+        var total_price2 =document.getElementById('total_price2');
         var counts =document.getElementById('demoInput').value;
         total_amount=parseInt(counts)*parseFloat(total_amount_single_product);
         total_price.innerText='$'+total_amount;
+        total_price2.innerText='$'+total_amount;
+
 
     }
     function decrement() {
@@ -576,9 +582,11 @@ $seo_meta=[
         if(inputV.value==1) return
         inputV.stepDown();
         var total_price =document.getElementById('total_price');
+        var total_price2 =document.getElementById('total_price2');
         var counts =document.getElementById('demoInput').value;
         total_amount=parseInt(counts)*parseFloat(total_amount_single_product);
         total_price.innerText='$'+total_amount;
+        total_price2.innerText='$'+total_amount;
         // let innerPrice=document.getElementById("total_price")
         // const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
         // if(!totalPrice) totalPrice=totl
