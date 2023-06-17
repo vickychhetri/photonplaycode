@@ -153,8 +153,8 @@ $seo_meta=[
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
                                        <div style="border-radius: 150px;
-background: #121111;
-box-shadow:  2px 2px 4px #090909,
+background: rgba(18,17,17,0.72);
+box-shadow:  2px 2px 4px rgba(0,0,0,0.67),
              -2px -2px 4px #1b1919;">
  <i class="bi bi-check-circle-fill p-1 " style="font-size: 36px;color:#ffbf00;"></i>
                                        </div>
