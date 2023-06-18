@@ -76,7 +76,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
             </div>
 
 
-            <div class="row py-lg-5 py-0 align-items-center">
+            <div class="row  py-0 align-items-center">
                 <!-- option-two -->
                 <div class="col-lg-6">
                     <div class="multiple-option pb-0">
@@ -119,7 +119,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                     </div>
                 </div>
             </div>
-            <div class="row py-lg-5 py-0 align-items-center">
+            <div class="row py-lg-1 py-0 align-items-center">
                 <!-- option-two -->
 
                 <div class="col-lg-6">

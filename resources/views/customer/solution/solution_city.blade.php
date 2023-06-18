@@ -152,7 +152,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <!-- <div class="col-lg-12">
                     <div class="row justify-content-center"> -->
                 <div class="col-lg-3">
-                    <div class="inner-bus text-center py-4 px-3 h-100">
+                    <div class="inner-bus text-center px-3 h-100">
                         <div class="bus-radious">
                             <img src="{{asset('assets/images/solutions/Radar Speed Sign 2.png') }}" alt="not-found" class="img-fluid">
                         </div>
@@ -166,7 +166,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="inner-bus text-center py-4 px-3 h-100">
+                    <div class="inner-bus text-center px-3 h-100">
                         <div class="bus-radious">
                             <img src="{{asset('assets/images/solutions/Portable VMS 2.png') }}" alt="not-found" class="img-fluid">
                         </div>
@@ -180,7 +180,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="inner-bus text-center py-4 px-3 h-100">
+                    <div class="inner-bus text-center px-3 h-100">
                         <div class="bus-radious">
                             <img src="{{asset('assets/images/solutions/VMS 2 (2).png') }}" alt="not-found" class="img-fluid">
                         </div>
@@ -194,7 +194,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="inner-bus text-center py-4 px-3 h-100">
+                    <div class="inner-bus text-center px-3 h-100">
                         <div class="bus-radious">
                             <img src="{{asset('assets/images/solutions/LED Ticker Tape 2.png') }}" alt="not-found" class="img-fluid">
                         </div>
