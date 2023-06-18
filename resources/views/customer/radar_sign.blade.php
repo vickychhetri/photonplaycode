@@ -152,7 +152,7 @@ $seo_meta=[
                                 <div class="d-flex align-items-center ">
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
-                                       <div style="border-radius: 150px;padding: 0px;
+                                       <div class="d-flex align-items-center" style="border-radius: 150px;padding: 0px;
 background: rgba(18,17,17,0.21);
 box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
  <i class="bi bi-check-circle-fill m-0 p-0" style="font-size: 36px;color:#ffbf00;"></i>
@@ -171,7 +171,7 @@ box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
                                         </select>
                                         @if($product->brochure)
                                             <div>
-                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-primary" style="height: 50px;padding:8px;" target="_blank">  Download Datasheet</a>
+                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-primary d-flex align-items-center" style="height: 40px;padding:8px;" target="_blank">  Download Datasheet</a>
                                             </div>
 
                                         @endif
