@@ -125,7 +125,7 @@ $seo_meta=[
     <!-- Dimension section -->
     <section class="dimention-sec pt-1" >
         <div class="heading-sec">
-            <h2 class="fs-2 mt-3">DIMENSION</h2>
+            <h2 class="fs-2 mt-3 title-text-h1">DIMENSIONS</h2>
         </div>
         <div class="container">
             <div class="row">
