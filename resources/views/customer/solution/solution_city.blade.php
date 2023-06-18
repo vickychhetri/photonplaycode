@@ -58,7 +58,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                             Our Radar Speed Signs provide an effective solution for managing speed on the roads. Using advanced radar technology, these signs detect the speed of vehicles and display it to the driver, encouraging them to slow down and improve road safety. Our Radar Speed Signs are highly reliable and durable, making them ideal for use on highways, roads, and tunnels. They can be easily installed in any location and offer a range of display options to suit different traffic management needs. Explore our range of Radar Speed Signs and discover how they can help you enhance road safety with our advanced ITS technology.
                         </p>
 
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="{{route('customer.radar.speed.signs')}}" class="btn btn-primary text-uppercase rounded-2">BUY NOW</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -71,7 +71,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
             </div>
 
-            <div class="row py-lg-5 py-0 align-items-center">
+            <div class="row  py-0 align-items-center">
                 <!-- option-two -->
                 <div class="col-lg-6">
                     <div class="multiple-option pb-0">
@@ -82,7 +82,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                             Portable VMS : Our PVMS offers flexible and efficient solutions for traffic management. These portable signs can be easily transported to different locations and offer a range of display options to suit a variety of traffic management needs. Ideal for applications on roads, highways, and tunnels, our PVMS provides a highly reliable and rugged solution for traffic guidance and information purposes. With real-time information and analytics, our systems provide better decision-making and efficient operations. At Photonplay, we are committed to providing cutting-edge technology for a better future. Let us help you create safer and more efficient roads with our PVMS solutions.
                         </p>
 
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="{{route('customer.portable.variable.message.signs')}}" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -104,7 +104,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                             Variable Message Signs play a crucial role in displaying messages, warning signals, and information about specific events to commuters on roads. At Photonplay, our Variable Message Signs (VMS) enhance road and traffic safety by guiding millions of motorists every day. Our VMS product range includes a variety of highly reliable and rugged solutions designed specifically for traffic guidance and information purposes. Explore our VMS product range and choose from our Standard VMS, Solar VMS, and Smart City VMS solutions. Each of our solutions is designed to cater to the unique needs of traffic management systems
                         </p>
 
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="{{route('customer.variable.message')}}" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -116,7 +116,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                     </div>
                 </div>
             </div>
-            <div class="row py-lg-5 py-0 align-items-center">
+            <div class="row  py-0 align-items-center">
                 <!-- option-two -->
 
                 <div class="col-lg-6">
@@ -128,7 +128,7 @@ that enable seamless integration and smarter decision-making for cities of the f
 
                         Explore our range of LED Tickers and discover how they can help you engage your audience, increase visibility, and enhance your brand image.
                       </p>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <button class="btn btn-primary text-uppercase rounded-2">KNOW MORE</button>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
