@@ -52,7 +52,7 @@
                                 <div class="col-md-12 ">
                                     <h6> Product Information</h6>
                                 </div>
-                                <form method="POST" action="{{route('admin.product.store')}}">
+                                <form method="POST" action="{{route('admin.product.store')}}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3 form-group">
                                         <label for="category" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Category') }}</label>
@@ -99,10 +99,34 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                             @enderror
+
+
                                         </div>
 
 
                                     </div>
+
+                                    <div class="row mb-2 form-group">
+                                        <label for="brochure" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Brochure') }}</label>
+
+                                        <div class="col-md-7">
+                                            <input id="brochure" type="file" class="form-control @error('brochure') is-invalid @enderror" name="brochure" value="" required autocomplete="brochure" autofocus>
+
+                                            @error('brochure')
+                                            <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-2">
+                                            @if(isset($product->brochure))
+                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-dark-gradien">Download</a>
+                                            @endif
+                                        </div>
+
+
+                                    </div>
+
 
 
 

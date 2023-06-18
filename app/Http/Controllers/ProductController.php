@@ -52,6 +52,13 @@ class ProductController extends Controller
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
+
+        if(isset($request->brochure)){
+            $brochure_path = $request->file('brochure')->store('brochure', 'public');
+            $product->brochure=$brochure_path;
+        }
+
+
         $product->save();
         return redirect('/admin/product');
     }
@@ -101,10 +108,16 @@ class ProductController extends Controller
             'price' => 'required|max:255',
         ]);
 
+
+
         $product= Product::find($id);
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
+        if(isset($request->brochure)){
+            $brochure_path = $request->file('brochure')->store('brochure', 'public');
+            $product->brochure=$brochure_path;
+        }
         $product->save();
         return redirect('/admin/product');
     }
