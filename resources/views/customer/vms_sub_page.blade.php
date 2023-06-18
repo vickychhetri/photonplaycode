@@ -16,7 +16,7 @@ $seo_meta=[
                 <div class="imaged m-auto">
                     <div class="city-wrap flex-wrap">
                         <h2 class=" text-white fw-normal mb-1 title-text-h1">{{$page->title}}</h2>
-                        <p class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness of <br/>local speed limit</p>
+                        <p class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness <br/> about specific events to the people commuting on the roads.</p>
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
                     <div class="desktop-display">
@@ -129,27 +129,38 @@ $seo_meta=[
     <!-- Application -->
     <section class="application-section">
         <div class="container">
-            <h2 class="fs-md-2 mt-3 mb-5 text-center">APPLICATION</h2>
-            <div class="row">
-                <div class="col-md-6">
+            <h2 class="fs-md-2 mt-3 mb-5 text-center">APPLICATIONS</h2>
+            <div class="row d-flex justify-content-center">
+                @if(request()->is('solution/solar-vms'))
+                <div class="col-md-3">
                     <div class="application-item">
-                        <img src="{{asset('assets/customer/images/application-img-1.png')}}" alt="image">
-                        <div class="content-application-item">
-                            <h4 class="text-uppercase">Real time traffic information </h4>
-                            <p>Traffic congestion , Accidents incidents, route options useful to the road user, Ongoing
-                                Roadwork zones, Speed Limits</p>
+                        <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
+                        <div class="content-application-items">
+                            <h4 class="text-uppercase">Highways </h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="application-item">
-                        <img src="{{asset('assets/customer/images/standrooms.png')}}" alt="image">
-                        <div class="content-application-item">
-                            <h4 class="text-uppercase">Parking Lots </h4>
-                            <p>Parking availability information</p>
+                @endif
+
+                    @if(request()->is('solution/standard-vms'))
+                        <div class="col-md-3">
+                            <div class="application-item">
+                                <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
+                                <div class="content-application-items">
+                                    <h4 class="text-uppercase">Highways </h4>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="col-md-3">
+                            <div class="application-item">
+                                <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
+                                <div class="content-application-items">
+                                    <h4 class="text-uppercase">Tunnels </h4>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
             </div>
         </div>
     </section>
