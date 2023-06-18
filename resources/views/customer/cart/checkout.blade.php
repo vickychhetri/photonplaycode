@@ -46,7 +46,7 @@
                         ADDRESS?</label> --}}
                     <label class="d-block mt-3">Order notes (optional)</label>
                     <textarea name="order_notes" class="form-control rounded-0 mt-2" rows="5"
-                        placeholder="Order Notes here..."></textarea>
+                        placeholder="Order Notes here"></textarea>
                 </div>
                 <div class="col-md-6">
                     <h3>our order</h3>
