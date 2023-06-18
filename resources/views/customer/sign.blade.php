@@ -166,7 +166,7 @@ $seo_meta=[
             <h2 class="fs-md-2 mt-3">Multi Functional Display</h2>
             <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
         </div>
-        <div class="container pb-lg-5">
+        <div class="container ">
             <div class="accodion-wrapper pb-5">
                 <div class="row">
                     <div class="col-md-6">
@@ -258,35 +258,10 @@ $seo_meta=[
                                 </div>
                             </div>
 
-{{--                            <div class="accordion accordion-flush" id="accordionFlushExample1">--}}
-{{--                                <div class="accordion-item border-0 position-inherit ">--}}
-{{--                                    <h2 class="accordion-header" id="flush-headingOne1">--}}
-{{--                                        <button--}}
-{{--                                            class="accordion-button collapsed bg-white shadow-none te-3 pb-2 shadow-none text-dark"--}}
-{{--                                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1"--}}
-{{--                                            aria-expanded="false" aria-controls="flush-collapseOne1">--}}
-{{--                                            Warranty--}}
-{{--                                        </button>--}}
-{{--                                    </h2>--}}
-{{--                                    <div id="flush-collapseOne1" class="accordion-collapse collapse show"--}}
-{{--                                        aria-labelledby="flush-headingOne1" data-bs-parent="#accordionFlushExample1">--}}
-{{--                                        <div class="accordion-body pt-0">--}}
-{{--                                            <p class="accordion-button shadow-none te-3 p-0 mb-1 shadow-none bg-white">--}}
-{{--                                                FLASHING LIGHTS</p>--}}
-{{--                                          <p>--}}
-{{--                                              White high bright flashing lights to alert the drivers, so one can never miss the attention--}}
-{{--                                          </p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    --}}
-{{--                                    --}}
-{{--                                </div>--}}
-
+{{--                            <div class="stone-accordian position-absolute d-flex align-items-center ">--}}
+{{--                                <img src="{{asset('assets/customer/images/object.png')}}" class="img-fluid circle-image d-none d-md-block"--}}
+{{--                                    alt="not-found">--}}
 {{--                            </div>--}}
-                            <div class="stone-accordian position-absolute d-flex align-items-center ">
-                                <img src="{{asset('assets/customer/images/object.png')}}" class="img-fluid circle-image d-none d-md-block"
-                                    alt="not-found">
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -296,7 +271,7 @@ $seo_meta=[
     </section>
     <!-- Dimension section -->
     <!-- Multiple Size Options-start -->
-    <section class="option-chose mb-0 pb-0">
+    <section class="option-chose mb-0 pb-0 pt-0 mt-0">
         <div class="container option-chose-rows">
             <div class="row align-items-center">
                 <!-- option-one -->
