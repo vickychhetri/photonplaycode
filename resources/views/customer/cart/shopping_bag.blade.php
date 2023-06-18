@@ -128,7 +128,7 @@
                                     <span class="text-amount">${{$shipping = $shippingTax ?? 00.00}}</span>
                                 </li>
                                 <li class="d-flex justify-content-between">
-                                    <span class="text text-capitalize">Tax/GST</span>
+                                    <span class="text text-capitalize">VAT</span>
                                     <span class="text-amount">{{floor($gst = $taxes->gst) ?? 0}}%</span>
                                 </li>
 
