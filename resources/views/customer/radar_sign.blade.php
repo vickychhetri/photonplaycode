@@ -149,7 +149,7 @@ $seo_meta=[
 
                             <div class="mt-4">
                                 <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>
-                                <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center ">
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
                                        <div style="border-radius: 150px;padding: 0px;
@@ -163,14 +163,17 @@ box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
     border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;">
+    appearance: none;width: 120px;">
                                             <option value="#ffbf00"> Amber </option>
                                             <option value="#ffffff"> White </option>
                                             <option value="#7cf210"> Green </option>
 
                                         </select>
                                         @if($product->brochure)
-                                            <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-dark" target="_blank">  Brochure</a>
+                                            <div>
+                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-primary" style="height: 50px;padding:8px;" target="_blank">  Download Datasheet</a>
+                                            </div>
+
                                         @endif
 
                                     </div>
