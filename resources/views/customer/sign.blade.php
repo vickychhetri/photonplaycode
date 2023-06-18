@@ -292,7 +292,7 @@ $seo_meta=[
                             <li> Highways - <span> 15" and 18" Models are recommended </span></li>
 
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -320,7 +320,7 @@ $seo_meta=[
                             </li>
                             <li> High Grade Batteries - <span>  Military Grade Batteries to operate in all temperature scenarios with maximum efficiency</span></li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -351,7 +351,7 @@ $seo_meta=[
                                     vehicles</span></li>
                             <li>Control - <span>Control and configure the radar signs</span></li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">
                         </div>
@@ -382,7 +382,7 @@ $seo_meta=[
                             <li> High Grade Batteries - <span>Military Grade Batteries to operate in all temperature
                                     scenarios with
                                     maximum efficiency</span></li>
-                            <div class="d-block mt-md-5">
+                            <div class="d-block ">
                                 <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             </div>
                         </ul>
@@ -416,7 +416,7 @@ $seo_meta=[
                             <li> Safe Routes to School aligned</li>
                             <li> FCC Approved</li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">
                         </div>
@@ -446,7 +446,7 @@ $seo_meta=[
                                     road</span>
                             </li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -457,12 +457,12 @@ $seo_meta=[
             </div>
 
             <div class="row ">
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="max-height: 300px">
                     <div class="img-left">
                         <img src="{{asset('assets/customer/images/trans-canada.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 " style="max-height: 300px">
                     <div class="multiple-option pb-0">
                         <h4>Easy Installation</h4>
                         <span class="text-capitalize d-block">Very easy to install</span>
@@ -473,7 +473,7 @@ $seo_meta=[
                         <ul class="ps-3">
                             <li> Instant - <span>15 minutes installation</span></li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>
