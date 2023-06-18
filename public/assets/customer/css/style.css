@@ -611,7 +611,9 @@ a.nav-link.dropdown-toggle.show img,
     filter: blur(5px); /* Adjust the blur intensity as desired */
     z-index: -1;
 }
-
+.title-text-dimension-h1{
+    font-size: 100px;
+}
 .title-text-h1{
     font-size: 60px;
 }
@@ -1613,6 +1615,9 @@ ul.slick-dots {
         font-weight: bold;
         border-width: 2px;
         border-style: solid;
+    }
+    .title-text-dimension-h1{
+        font-size: 36px;
     }
     /* Add your mobile-specific styles here */
     .desktop-display {
