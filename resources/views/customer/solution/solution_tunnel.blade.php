@@ -62,7 +62,7 @@ ITS solutions designed for optimal safety and efficiency..",
                             Variable Message Signs play a crucial role in displaying messages, warning signals, and information about specific events to commuters on roads. At Photonplay, our Variable Message Signs (VMS) enhance road and traffic safety by guiding millions of motorists every day. Our VMS product range includes a variety of highly reliable and rugged solutions designed specifically for traffic guidance and information purposes. Explore our VMS product range and choose from our Standard VMS, Solar VMS, and Smart City VMS solutions. Each of our solutions is designed to cater to the unique needs of traffic management systems
                         </p>
 
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="{{route('customer.variable.message')}}" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -75,7 +75,7 @@ ITS solutions designed for optimal safety and efficiency..",
                 </div>
             </div>
 
-            <div class="row py-lg-5 py-0 align-items-center">
+            <div class="row  py-0 align-items-center">
                 <!-- option-two -->
                 <div class="col-lg-6">
                     <div class="multiple-option pb-0">
@@ -85,7 +85,7 @@ ITS solutions designed for optimal safety and efficiency..",
                             The Variable Speed Limit Sign (VSLS) is a revolutionary solution that generates instant recognition of centrally regulated speed limits from ITS systems. Our VSLS features a full matrix display area that allows speed limits and graphics to display practically any speed. Drive confidently on the highways with our advanced ITS solutions, including the VSLS, designed to improve traffic flow and enhance road safety. Our systems provide real-time information and analytics for better decision-making and efficient operations.
                         </p>
 
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="{{route('customer.variable.speed.limit')}}" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid " width="80">
                         </div>
@@ -108,7 +108,7 @@ ITS solutions designed for optimal safety and efficiency..",
                             Signages play a crucial role in ensuring safe and effective navigation through tunnels. At Photonplay, we offer a wide range of signage designed specifically for tunnel safety. Our signages not only provide clear instructions for drivers but also helps ensure a safe passage for both road and rail tunnels. From way finders to emergency exit signs and telephone signs, Photonplay offers a comprehensive range of signage solutions that enhance tunnel safety and traffic management.
                         </p>
 
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="/signages" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -121,7 +121,7 @@ ITS solutions designed for optimal safety and efficiency..",
                 </div>
             </div>
 
-            <div class="row py-lg-5 py-0 align-items-center">
+            <div class="row  py-0 align-items-center">
                 <!-- option-two -->
 
                 <div class="col-lg-6">
@@ -131,7 +131,7 @@ ITS solutions designed for optimal safety and efficiency..",
 
                             The Lane Control System (LCS) is an integral part of any tunnel management system. The LCS offers real-time monitoring and control of the traffic flow within the tunnel, ensuring a smooth and safe journey for commuters. The sign comprises of RED and GREEN directional arrows to guide the drivers to the correct lanes and warn them of any potential hazards.
                         </p>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="/lane-control-system" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
