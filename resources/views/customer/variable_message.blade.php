@@ -26,7 +26,7 @@ $seo_meta=[
                     </div>
                     <div class=" m-auto desktop-display " >
                         <img src="{{ asset('assets/customer/images/vms_land.webp') }}" alt="alt"
-                             class="d-block mx-auto "  style=" transform: scale(1.5);"]>
+                             class="d-block mx-auto product-feature-model-image "  >
                     </div>
 {{--                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 " >--}}
                 </div>

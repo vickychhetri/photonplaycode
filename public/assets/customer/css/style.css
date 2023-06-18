@@ -822,6 +822,7 @@ a.nav-link.dropdown-toggle.show img,
 .product-feature-model-image{
     max-height: 350px;
     min-height: 350px;
+    transform: scale(1.5);
 }
 
 .get-quote-button-header-model{
