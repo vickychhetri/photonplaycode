@@ -10,6 +10,7 @@ use App\Models\PageSpec;
 use App\Models\PageType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use PDF;
 use Dompdf\Dompdf;
@@ -97,7 +98,23 @@ class PagesController extends Controller
             'brochure' => 'required',
         ]);
         $product=Page::find($request->page_id);
-        $image_path = $request->file('brochure')->store('brochure', 'public');
+//        $image_path = $request->file('brochure')->store('brochure', 'public');
+
+        $image_path="";
+        if (isset($request->brochure)) {
+            $originalName = $request->file('brochure')->getClientOriginalName();
+            $extension = $request->file('brochure')->getClientOriginalExtension();
+            $number = 0;
+            $brochureName = $originalName;
+
+            while (Storage::disk('public')->exists('brochure/' . $brochureName)) {
+                $number++;
+                $brochureName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
+            }
+
+            $brochurePath = $request->file('brochure')->storeAs('brochure', $brochureName, 'public');
+            $image_path = $brochurePath;
+        }
 
         $product->update([
             'brochure' => $image_path,

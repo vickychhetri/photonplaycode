@@ -8,6 +8,7 @@ use App\Models\ProductSpcializationOption;
 use App\Models\ProductSpecilization;
 use App\Models\Specilization;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -53,9 +54,19 @@ class ProductController extends Controller
         $product->title=$request->title;
         $product->price=$request->price;
 
-        if(isset($request->brochure)){
-            $brochure_path = $request->file('brochure')->store('brochure', 'public');
-            $product->brochure=$brochure_path;
+        if (isset($request->brochure)) {
+            $originalName = $request->file('brochure')->getClientOriginalName();
+            $extension = $request->file('brochure')->getClientOriginalExtension();
+            $number = 0;
+            $brochureName = $originalName;
+
+            while (Storage::disk('public')->exists('brochure/' . $brochureName)) {
+                $number++;
+                $brochureName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
+            }
+
+            $brochurePath = $request->file('brochure')->storeAs('brochure', $brochureName, 'public');
+            $product->brochure = $brochurePath;
         }
 
 
@@ -114,9 +125,19 @@ class ProductController extends Controller
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
-        if(isset($request->brochure)){
-            $brochure_path = $request->file('brochure')->store('brochure', 'public');
-            $product->brochure=$brochure_path;
+        if (isset($request->brochure)) {
+            $originalName = $request->file('brochure')->getClientOriginalName();
+            $extension = $request->file('brochure')->getClientOriginalExtension();
+            $number = 0;
+            $brochureName = $originalName;
+
+            while (Storage::disk('public')->exists('brochure/' . $brochureName)) {
+                $number++;
+                $brochureName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
+            }
+
+            $brochurePath = $request->file('brochure')->storeAs('brochure', $brochureName, 'public');
+            $product->brochure = $brochurePath;
         }
         $product->save();
         return redirect('/admin/product');
