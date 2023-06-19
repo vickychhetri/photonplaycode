@@ -39,7 +39,7 @@
                     placeholder="City" id="billing_city" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_state" placeholder="State" id="billing_state" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_country" placeholder="Country" id="billing_country" value="" required>
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" value="" placeholder="Postcode" required>
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" value="" placeholder="Postcode" max="6" required>
                     <textarea name="address" class="form-control rounded-0 mt-2" rows="5"
                         placeholder="Your address here..." required></textarea>
                     {{-- <h3 class="mt-5 mb-2">SHIPPING ADDRESS</h3> --}}
@@ -61,8 +61,9 @@
                         </li>
                         @endforeach
                         <li class="d-flex justify-content-between">
-                            <span class="text">Shipping Charges</span>
-                            <span class="text-amount">${{$shipping = $taxes->shipping_time ?? 00}}</span>
+                            <span class="text-amount">Shipping Charges</span>
+                            {{-- <span class="text-amount">${{$shipping = $taxes->shipping_time ?? 00}}</span> --}}
+                            <span class="text" id="submittername">{{$shipping = 0}}</span>
                         </li>
                         <li class="d-flex justify-content-between">
                             <span class="text"><b>Cart Subtotal</b></span>
@@ -80,11 +81,12 @@
                         @endif
                         <li class="d-flex justify-content-between">
                             <span class="text"><b>Grand Total</b></span>
-                            <span class="text-amount">${{$grand_total = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
+                            <span id="grand_total" class="text-amount">{{$grand_total = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
+                            <span style="display : none;" id="grand_total_static" class="text-amount">{{$grand_totall = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
                         </li>
                     </ul>
 
-                    <input type="hidden" name="grand_total" value="{{$grand_total}}">
+                    <input type="hidden" id="inputGrandTotal" name="grand_total" value="">
                     <input type="hidden" name="cart_subtotal" value="{{$total}}">
                     <input type="hidden" name="gst" value="{{$gst}}">
                     <input type="hidden" name="shipping" value="{{$shipping}}">
@@ -130,5 +132,41 @@
             });
         });
     });
+
+    $(document).ready(function() {
+        $('#billing_postcode').on('change', function() {
+            var txtInput = $(this).val();
+            // console.log(txtInput);
+            var url = "{{ route('customer.get.user.postal.code', ":id") }}";
+            url = url.replace(':id', txtInput);
+            $.ajax({
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                url : url,
+                type : 'GET',
+                dataType : 'json',
+                success : function(result){
+                    // console.log(result);
+
+
+
+                    $('#submittername').empty();
+                    var shipping = $('#submittername').append('$' + result);
+
+                    var total = $('#grand_total_static').text();
+                    // console.log(total);
+
+                    $('#grand_total').text(parseInt(total) + parseInt(result));
+                    $('#inputGrandTotal').val(parseInt(total) + parseInt(result));
+                    // $('#submittername').empty();
+
+                },
+
+            });
+
+        })
+    });
+
 
 </script>

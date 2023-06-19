@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderedProduct;
+use App\Models\Setting;
 use App\Models\ShippingRate;
 use App\Models\UserAddress;
 use App\Models\UserPostalCode;
@@ -67,22 +68,22 @@ class CartController extends Controller
             $grand_total = $total - $discount;
         }
 
-        if(Session::get('user')){
-            $postalCode = UserPostalCode::where('user_id', Session::get('user')->id)->first();
-        }else{
-            $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
-        }
+        // if(Session::get('user')){
+        //     $postalCode = UserPostalCode::where('user_id', Session::get('user')->id)->first();
+        // }else{
+        //     $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
+        // }
 
-        if($postalCode){
-            $shippingRate = ShippingRate::where('postal_code', $postalCode->postal_code)->first();
-        }else{
-            $shippingRate = null;
-        }
+        // if($postalCode){
+        //     $shippingRate = ShippingRate::where('postal_code', $postalCode->postal_code)->first();
+        // }else{
+        //     $shippingRate = null;
+        // }
 
 
-        $shippingTax = $shippingRate->shipping_rate ?? $taxes->shipping_time;
+        // $shippingTax = $shippingRate->shipping_rate ?? $taxes->shipping_time;
 
-        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total', 'shippingTax'));
+        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total'));
     }
 
     public function addShoppingBag(Request $request){
@@ -278,5 +279,17 @@ class CartController extends Controller
         }
         $address = UserAddress::find($addressId);
         return response()->json($address);
+    }
+
+    public function getUserPostalCode($postalCode){
+        $rate = ShippingRate::where('postal_code', $postalCode)->first();
+        $shipping = Setting::select('shipping_time')->first();
+        $shippingPrice = 0;
+        if($rate){
+            $shippingPrice = $rate->shipping_rate;
+        }else{
+            $shippingPrice = $shipping->shipping_time;
+        }
+        return response()->json((int)$shippingPrice);
     }
 }

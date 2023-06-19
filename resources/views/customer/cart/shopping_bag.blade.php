@@ -125,7 +125,7 @@
                                 @endif
                                 <li class="d-flex justify-content-between">
                                     <span class="text text-capitalize">Shipping and Handing</span>
-                                    <span class="text-amount">${{$shipping = $shippingTax ?? 00.00}}</span>
+                                    <span class="text-amount">${{$shipping = 00.00}}</span>
                                 </li>
                                 <li class="d-flex justify-content-between">
                                     <span class="text text-capitalize">Tax/GST</span>
@@ -134,7 +134,7 @@
 
                                 <li class="d-flex justify-content-between active">
                                     <span class="text text-capitalize fw-bold">Order total</span>
-                                    <span class="text-amount">${{$grand_total + $shipping + (($grand_total * $gst) / 100)}}</span>
+                                    <span class="text-amount">${{$grand_total  + (($grand_total * $gst) / 100)}}</span>
                                 </li>
                             </ul>
                         </div>

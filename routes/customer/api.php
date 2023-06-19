@@ -43,3 +43,4 @@ Route::get('solution/{slug}', [ContactUsController::class, 'vmsSubPage'])->name(
 Route::get('signages/{slug}', [ContactUsController::class, 'signagesSubPage'])->name('signages.sub.page');
 
 Route::get('get-saved-address/{addressId}', [CartController::class, 'getSavedAddress'])->name('get-saved-address');
+Route::get('get-postal-code/{postalCode}', [CartController::class, 'getUserPostalCode'])->name('get.user.postal.code');
