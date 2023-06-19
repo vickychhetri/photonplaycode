@@ -117,7 +117,7 @@
                     <h4 class="text-white text-center">{{$page->title}} - Brochure</h4>
                 </div>
                 <div class="col-md-6 text-center">
-                    <a href="{{asset('storage/'.$page->brochure)}}" class="btn btn-primary rounded-0" download="">Download Now</a>
+                    <a href="{{asset('storage/'.$page->brochure)}}" class="btn btn-primary rounded-0" target="_blank">Download Now</a>
                 </div>
             </div>
         </div>
