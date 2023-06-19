@@ -33,7 +33,7 @@ $seo_meta=[
 
     <!-- Desc and specification -->
     <section class="sepeicification bg-light position-relative">
-        <div class="container pb-lg-5">
+        <div class="container ">
             <div class="accodion-wrapper pb-5">
                 <div class="row">
                     <div class="col-md-6">
@@ -102,8 +102,8 @@ $seo_meta=[
 
 
 <!-- Application -->
-    <section class="application-section">
-        <div class="container">
+    <section class="application-section pt-4 pb-4 ">
+        <div class="container p-0">
             <h2 class="fs-md-2  mb-2 text-center">APPLICATION</h2>
             <div class="row d-flex justify-content-center">
                 <div class="col-md-3">
