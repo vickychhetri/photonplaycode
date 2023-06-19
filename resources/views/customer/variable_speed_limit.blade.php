@@ -1,7 +1,7 @@
 <?php
 $seo_meta=[
-    "title"=>"ICOP",
-    "description"=>"ICOP",
+    "title"=>"VARIABLE SPEED LIMIT SIGNS ",
+    "description"=>"A fully competent and revolutionary Variable Speed Limit Sign (VSLS), generating instant recognition of centrally regulated speed limits from ITS systems",
     "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
 ];
 ?>
