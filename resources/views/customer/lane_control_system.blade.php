@@ -99,16 +99,15 @@ $seo_meta=[
 
 
     <!-- Application -->
-    <section class="application-section">
+    <section class="application-section pt-4 pb-4">
         <div class="container">
-            <h2 class="fs-md-2 mt-3 mb-5 text-center">APPLICATION</h2>
-            <div class="row">
-                <div class="col-md-12">
+            <h2 class="fs-md-2 mb-5 text-center">APPLICATION</h2>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3">
                     <div class="application-item">
-                        <img src="{{asset('assets/customer/images/application-img-1.png')}}" alt="image">
-                        <div class="content-application-item">
-                            <h4 class="text-uppercase">Tunnels</h4>
-                            <p>Lane use and Control in Tunnels</p>
+                        <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
+                        <div class="content-application-items">
+                            <h4 class="text-uppercase">Tunnels </h4>
                         </div>
                     </div>
                 </div>
