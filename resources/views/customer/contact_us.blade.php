@@ -305,9 +305,6 @@ our product can work best for you, +1 (800) 966-9329 or sales@photonplay.com.",
 <!-- _____________________ourclint-last-start___________________ -->
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
-
-
-
 <script src="/assets/customer/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/customer/js/jquery.js"></script>
 <script src="/assets/customer/slick/slick.min.js"></script>
@@ -402,7 +399,7 @@ our product can work best for you, +1 (800) 966-9329 or sales@photonplay.com.",
             autoplay:true,
             autoplaySpeed: 3000,
             fade:true,
-        })
+        });
         $('.clints-content-branding').slick({
             dots: false,
             infinite: false,
@@ -435,7 +432,52 @@ our product can work best for you, +1 (800) 966-9329 or sales@photonplay.com.",
                 }
             ]
         })
-    })
+    });
+    $('.clints-content-banner').slick({
+        dots: false,
+        infinite: false,
+        // speed: 3000,
+        slidesToShow: 1,
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='/assets/customer/images/left-chevron.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='/assets/customer/images/right-chevron.png'/></button>",
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay:true,
+        autoplaySpeed: 3000,
+        fade:true,
+    });
+    $('.clints-content-branding').slick({
+        dots: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 5,
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='/assets/customer/images/left-chevron.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='/assets/customer/images/right-chevron.png'/></button>",
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay:true,
+        // fade:true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
     window.addEventListener('click', function (e) {
         if ($('.navbar-collapse').hasClass('show')) {
             $('.navbar-toggler').click();

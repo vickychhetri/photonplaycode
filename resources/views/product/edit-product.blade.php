@@ -17,7 +17,7 @@
 @section('breadcrumb-items')
     <li class="breadcrumb-item">Dashboard</li>
     <li class="breadcrumb-item">Settings</li>
-    <li class="breadcrumb-item active">Add Product</li>
+    <li class="breadcrumb-item active">Edit Product</li>
 @endsection
 
 @section('content')
@@ -41,7 +41,7 @@
                                         <h6> Product Information</h6>
                                         <hr/>
                                     </div>
-                                    <form method="POST" action="{{route('admin.product.update',$product->id)}}">
+                                    <form method="POST" action="{{route('admin.product.update',$product->id)}}" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
                                         <div class="row mb-3 form-group">
@@ -86,15 +86,34 @@
 
                                                 @error('price')
                                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
                                                 @enderror
                                             </div>
 
 
                                         </div>
 
+                                        <div class="row mb-2 form-group">
+                                            <label for="brochure" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Brochure') }}</label>
 
+                                            <div class="col-md-7">
+                                                <input id="brochure" type="file" class="form-control @error('brochure') is-invalid @enderror" name="brochure" value="" required autocomplete="brochure" autofocus>
+
+                                                @error('brochure')
+                                                <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                            <div class="col-md-2">
+                                                @if(isset($product->brochure))
+                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-dark-gradien">Download</a>
+                                                @endif
+                                            </div>
+
+
+                                        </div>
 
 
                                         <div class="row mb-0">

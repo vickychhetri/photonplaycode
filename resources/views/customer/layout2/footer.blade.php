@@ -36,14 +36,10 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 <div class="logo-bottom mb-lg-4 w-100">
                     <img src="{{asset('assets\customer\images\logo-dark.png')}}" alt="">
                 </div>
-                <div class="description">
-                    <p style="text-align: justify">
-                    PHOTONPLAY is a family owned, India based design, develop and manufacturing of Systems for the ITS
-                    industry since 2006. With subsidiary offices in US, Australia and Norway plus distribution facility
-                    in
-                    the US and representatives all over the world, PHOTONPLAY has satisfied customers (System
-                    integrators,
-                    Govt Authorities, OEMs and corporates) in over 30 countries worldwide.
+                <div class="description" style="text-align: justify;word-spacing:-1px;clear: both;">
+                    <p>
+                        PhotonPlay, a family-owned Indian company, delivers high quality intelligent transportation systems (ITS) worldwide. For over 12 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions.
+                        Our expertise,innovation, and commitment to smarter transportation make us a trusted partner.
                     </p>
                 </div>
 
@@ -76,7 +72,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
             <div class="footer-item mb-0 mb-md-5 footer-item-2">
                 <h2 class="text-uppercase">SOLUTIONS</h2>
                 <ul class="p-0">
-                    <li><a href="{{route('customer.solution.highway')}}">Highway</a></li>
+                    <li><a href="{{route('customer.solution.highway')}}">Highways</a></li>
                     <li><a href="{{route('customer.solution.tunnel')}}">Tunnels</a></li>
                     <li><a href="{{route('customer.solution.city')}}">Smart Cities</a></li>
                     <li><a href="{{route('customer.solution.transit')}}">Transit</a></li>
@@ -100,7 +96,9 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                         @if ($setting)
                         <a href="tel:{{$setting->sales_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->sales_phone}}</a>
                         @if ($setting->support_phone !=null)
-                        <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}}</a>
+                        <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
+
+                                <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (CANADA)</a>
                         @endif
                         <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
                         @endif

@@ -16,7 +16,7 @@ $seo_meta=[
                 <div class="d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.4); height: 100%;">
                        <div >
                            <h1 class="text-white text-center title-text-h1"   > About Us</h1>
-                           <h6 class=" text-white text-center" >Driving Smarter Transportation Solutions for 16+ Years</h6>
+                           <h6 class=" text-white text-center" >Driving Smarter Transportation Solutions for 12+ Years</h6>
                        </div>
                 </div>
 
@@ -36,12 +36,8 @@ $seo_meta=[
 {{--                                <h4 class="text-uppercase text-dark mb-4">About us </h4>--}}
 
                                 <p class="mb-4">
-                                    At PhotonPlay, we are a family-owned Indian company that has been delivering intelligent transportation systems (ITS) to clients worldwide for over 16 years. Our focus on creating safer, more efficient, and sustainable mobility solutions has earned us a reputation as a trusted partner for system integrators, government authorities, OEMs, and corporations across 30+ countries.
+                                    Photonplay has been delivering intelligent transportation systems (ITS) to clients worldwide for over 12 years. Our focus on creating safer, more efficient, and sustainable mobility solutions has earned us a reputation as a trusted partner for system integrators, government authorities, OEMs, and corporations across 30+ countries. We take pride in our expertise, innovation, and commitment to excellence in every aspect of our work. From the initial idea to implementation, we strive to provide unparalleled service to our clients. Our passion for smarter transportation solutions has enabled us to stay at the forefront of our industry, and we look forward to continuing to drive innovation and create value for our clients for years to come.
 
-
-                                </p>
-                                <p class="mb-5">
-                                    We take pride in our expertise, innovation, and commitment to excellence in every aspect of our work. From the initial idea to implementation, we strive to provide unparalleled service to our clients. Our passion for smarter transportation solutions has enabled us to stay at the forefront of our industry for 16+ years, and we look forward to continuing to drive innovation and create value for our clients for years to come.
                                 </p>
 
                             </div>
@@ -60,7 +56,7 @@ $seo_meta=[
                 <div class="col-lg-10">
                     <div class="text-center mb-lg-5">
                         <h2 class="fs-md-2 mt-3">PHOTONPLAY AT A GLANCE</h2>
-                        <p class="text-mutedd"> PhotonPlay is a financially independent, global technology company established in 2006 with wholly-owned subsidiaries in the USA, Norway, and Australia. With a group revenue of over $82 million, we deliver cutting-edge intelligent transportation systems worldwide.
+                        <p class="text-mutedd">  Photonplay is a financially independent, global technology company established in 2011 with wholly-owned subsidiaries in Canada. We deliver cutting-edge intelligent transportation systems worldwide.
                         </p>
                     </div>
                     <div class="row">
@@ -117,7 +113,7 @@ $seo_meta=[
         <div class="container">
             <div class="col-lg-12">
                 <div class="text-center mb-lg-5">
-                    <h2 class="fs-md-2 mt-3">MARKET SEGMENTS</h2>
+                    <h2 class="fs-md-2 mt-3">SOLUTIONS</h2>
                 </div>
             </div>
             <div class="row">

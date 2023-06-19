@@ -38,35 +38,28 @@ real-time data, enhanced safety features, and improved passenger experience.",
     </section>
 
     <!-- Multiple Size Options-start -->
-    <section class="option-chose veriants p-1 mb-1 mt-4">
+    <section class="option-chose veriants p-1 pb-1 mb-1 mt-4">
         <div class="container option-chose-rows">
             <div class="d-flex justify-content-center ">
                 <div class="w-75">
                     <p class="text-center" >
-                        Derive with confidence on the highways with our advanced ITS solutions designed to improve traffic flow, and enhance road safety. our system provide real time information and analytics to enable  better decision-making and efficient operations.
+
                     </p>
 
                 </div>
             </div>
             <div class="row align-items-center">
                 <!-- option-one -->
-                <h2 class="title-text-h2  m-3 text-capitalize text-center ">Our Products </h2>
+                <h2 class="title-text-h2  text-capitalize text-center ">Our Products </h2>
 
-                <div class="col-lg-6 mt-3">
+                <div class="col-lg-6 ">
                     <div class="multiple-option pb-0">
                         <h4>Passenger Information Display System <br> (PIDS)</h4>
                      <p style="text-align: justify;">
-                         Our Passenger Information Display Systems (PIDS) offer highly reliable and customizable solutions for train signaling and commuter information. With advanced technology and versatile display options, our PIDS are visible even in sunny conditions and function 24/7 for up to 20 years. Our PIDS products include concourse displays, Metro platform displays, and major overview train information displays.
-                     </p>
-                        <p style="text-align: justify;">
-                         Our team provides software for all parameters and settings, allowing for easy manual or remote operation. We work closely with our customers to ensure product viability and design, and our team manages prototyping, development, and implementation from start to finish. Let us help you improve train safety and enhance commuter experiences with our innovative PIDS solutions.
+                         PIDS - Our Passenger Information Display Systems (PIDS) offer highly reliable and customizable solutions for commuter information. With advanced technology and versatile display options, our PIDS are visible even in sunny conditions and function 24/7 . Our PIDS products include concourse displays, Metro platform displays, and Bus Queue shelter displays.
 
                      </p>
-                        <h6> Application</h6>
-                        <ul class="ps-3">
-                            <li> Bus</li>
-                            <li> Rail Transits</li>
-                        </ul>
+
                         <div class="d-block d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="{{route('customer.pasenger.information.display.system')}}" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
@@ -80,7 +73,7 @@ real-time data, enhanced safety features, and improved passenger experience.",
                 </div>
             </div>
 
-            <div class="row py-lg-5 py-0 align-items-center">
+            <div class="row  py-0 align-items-center">
                 <!-- option-two -->
 
                 <div class="col-lg-6">
@@ -110,7 +103,7 @@ real-time data, enhanced safety features, and improved passenger experience.",
     </section>
     <!-- Multiple Size Options-end -->
     <!--system-bus-start  -->
-    <section class="bus-sign" >
+    <section class="bus-sign mt-1 pt-1" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

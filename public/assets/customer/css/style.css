@@ -611,7 +611,9 @@ a.nav-link.dropdown-toggle.show img,
     filter: blur(5px); /* Adjust the blur intensity as desired */
     z-index: -1;
 }
-
+.title-text-dimension-h1{
+    font-size: 100px;
+}
 .title-text-h1{
     font-size: 60px;
 }
@@ -820,6 +822,7 @@ a.nav-link.dropdown-toggle.show img,
 .product-feature-model-image{
     max-height: 350px;
     min-height: 350px;
+    transform: scale(1.5);
 }
 
 .get-quote-button-header-model{
@@ -1614,6 +1617,9 @@ ul.slick-dots {
         border-width: 2px;
         border-style: solid;
     }
+    .title-text-dimension-h1{
+        font-size: 36px;
+    }
     /* Add your mobile-specific styles here */
     .desktop-display {
         display: none;
@@ -2310,7 +2316,6 @@ input:focus {
     color: #544e5d;
     border-radius: 15px;
     padding-top: 130px;
-
 }
 
 .content-application-items h4 {
@@ -3001,7 +3006,7 @@ input:focus {
     }
 
     .multiple-option {
-        padding: 50px 0px !important;
+        padding: 10px 0px !important;
     }
 
     h1 {

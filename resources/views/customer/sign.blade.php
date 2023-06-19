@@ -166,7 +166,7 @@ $seo_meta=[
             <h2 class="fs-md-2 mt-3">Multi Functional Display</h2>
             <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
         </div>
-        <div class="container pb-lg-5">
+        <div class="container ">
             <div class="accodion-wrapper pb-5">
                 <div class="row">
                     <div class="col-md-6">
@@ -180,18 +180,15 @@ $seo_meta=[
                                         data-bs-target="#flush-collapseOne"
                                         aria-expanded="false"
                                         aria-controls="flush-collapseOne">
-                                        Dimensions and weight
+                                        GRAPHICS
                                     </button>
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0"> <p
-                                            class="d-block">Overall Length - <span>5000 mm </span></p>
-                                        <p class="d-block"> Overall Width - <span>2350 mm</span></p>
-                                        <p class="d-block">Operational Height - <span>4625 mm</span></p>
-                                        <p class="d-block">Travelling Height - <span>3250 mm</span></p>
-                                        <p class="d-block">Weight -<span>1132 kgs</span></p>
-                                        <p class="d-block"></p>
+                                    <div class="accordion-body pt-0">
+                                        <p>
+                                            Option to display graphic content with custom-made and standard graphic library like "SLOW DOWN", "THANK YOU", "WORK ZONE", etc.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -201,84 +198,70 @@ $seo_meta=[
                                         class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                         aria-expanded="false" aria-controls="flush-collapseTwo">
-                                        Display
+                                        TEXT MESSAGES
                                     </button>
                                 </h2>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0">Placeholder content for this accordion, which is
-                                        <p class="d-block"> Overall Width - <span>2350 mm</span></p>
-                                        <p class="d-block">Operational Height - <span>4625 mm</span></p>
-                                        <p class="d-block">Travelling Height - <span>3250 mm</span></p>
-                                        <p class="d-block">Weight -<span>1132 kgs</span></p>
-                                        <p class="d-block"></p>
+                                    <div class="accordion-body pt-0">
+                                        <p>
+                                            Option to display custom text messages like community notifications, traffic updates, etc.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item border-0">
-                                <h2 class="accordion-header" id="flush-headingThree">
-                                    <button
-                                        class="accordion-button collapsed bg-white shadow-none tex3 pb-2 shadow-none"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                        aria-expanded="false" aria-controls="flush-collapseThree">
-                                        Power
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0"><p
-                                            class="d-block"> Overall Width - <span>2350 mm</span></p>
-                                        <p class="d-block">Operational Height - <span>4625 mm</span></p>
-                                        <p class="d-block">Travelling Height - <span>3250 mm</span></p>
-                                        <p class="d-block">Weight -<span>1132 kgs</span></p>
-                                        <p class="d-block"></p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end position-absolute circle-stone">
-                                    <img src="{{asset('assets/customer/images/circle_stone.png')}}" alt="not-found" class="img-fluid">
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="circle-floow position-relative">
-                            <div class="accordion accordion-flush" id="accordionFlushExample1">
-                                <div class="accordion-item border-0 position-inherit ">
-                                    <h2 class="accordion-header" id="flush-headingOne1">
+
+                            <div class="accordion accordion-flush position-relative" id="accordionFlushExampleSecond">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
                                         <button
-                                            class="accordion-button collapsed bg-white shadow-none te-3 pb-2 shadow-none text-dark"
-                                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1"
-                                            aria-expanded="false" aria-controls="flush-collapseOne1">
-                                            Warranty
+                                            class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseOneSecond"
+                                            aria-expanded="false"
+                                            aria-controls="flush-collapseOneSecond">
+                                            MULTI-COLOUR
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseOne1" class="accordion-collapse collapse show"
-                                        aria-labelledby="flush-headingOne1" data-bs-parent="#accordionFlushExample1">
+                                    <div id="flush-collapseOneSecond" class="accordion-collapse collapse show"
+                                         aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExampleSecond">
                                         <div class="accordion-body pt-0">
-                                            <p class="accordion-button shadow-none te-3 p-0 mb-1 shadow-none bg-white">
-                                                Construction</p>
-                                            <p
-                                                class="d-block"> Trailer: <span>All welded structural steel</span></p>
-                                            <p
-                                                class="d-block">Display cabinet: <span>Aluminium sheet and welded channels</span></p>
-                                            <p
-                                                class="d-block">Finish:  <span>Hydraulic lift raises display cabinet, operated with toggle switch</span></p>
-                                            <p class="d-block">Hydraulics: <span>1132 kgs</span></p>
-                                            <p
-                                                class="d-block">Axle Capacity: <span>3500 lbs , 82" Round Tube , 4 " Drop Trailer Axle</span></p>
-                                            <p
-                                                class="d-block">Tires: <span>15 " Tyre with Overall Diameter : 27.5" , Capacity 1820 lbs each , Load</span></p>
-                                            <p class="d-block">Range : <span>C (6-Ply Rating)</span></p>
-                                            <p class="d-block"></p>
+                                            <p>
+                                                Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button
+                                            class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwoThird"
+                                            aria-expanded="false" aria-controls="flush-collapseTwoThird">
+                                            FLASHING LIGHTS
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwoThird" class="accordion-collapse collapse"
+                                         aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExampleSecond">
+                                        <div class="accordion-body pt-0">
+                                            <p>
+                                                White high bright flashing lights to alert the drivers, so one can never miss the attention
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                            </div>
-                            <div class="stone-accordian position-absolute d-flex align-items-center ">
-                                <img src="{{asset('assets/customer/images/object.png')}}" class="img-fluid circle-image d-none d-md-block"
-                                    alt="not-found">
-                            </div>
+{{--                            <div class="stone-accordian position-absolute d-flex align-items-center ">--}}
+{{--                                <img src="{{asset('assets/customer/images/object.png')}}" class="img-fluid circle-image d-none d-md-block"--}}
+{{--                                    alt="not-found">--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -288,7 +271,7 @@ $seo_meta=[
     </section>
     <!-- Dimension section -->
     <!-- Multiple Size Options-start -->
-    <section class="option-chose mb-0 pb-0">
+    <section class="option-chose mb-0 pb-0 pt-0 mt-0">
         <div class="container option-chose-rows">
             <div class="row align-items-center">
                 <!-- option-one -->
@@ -301,17 +284,15 @@ $seo_meta=[
                     <div class="multiple-option pb-0">
                         <h4>Multiple Size Options</h4>
                         <span class="text-capitalize d-block">Three Size Options To Choose From</span>
-                        <p>Depending upon the application and visibility requirement, Visible up to 1000 ft. <br>
-                            12", 15”- and 18”-Character Height Radar Speed Signs are available.</p>
+                        <p>Depending upon the application and visibility requirement, Visible up to 1000 ft. 12", 15”- and 18”-Character Height Radar Speed Signs are available..</p>
                         <ul class="ps-3">
                             <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
+                            <li> School Zone - <span> 12" and 15" Models are recommended </span></li>
+                            <li> Neighborhood - <span>12" and 15" Models are recommended</span></li>
+                            <li> Highways - <span> 15" and 18" Models are recommended </span></li>
+
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -334,16 +315,12 @@ $seo_meta=[
                         <p>Radar your speed signs are designed to work all weather conditions including high
                             temperatures of middle-east to the cold Alaska winters.</p>
                         <ul class="ps-3">
-                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra
-                                    Violet
-                                    rays and extreme heats of middle east (GE-LEXAN)</span></li>
+                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra Violet rays and extreme heats of middle east (GE-LEXAN)</span></li>
                             <li>Water Proofing - <span>IP66 Rated Enclosure made with marine grade aluminium</span>
                             </li>
-                            <li> High Grade Batteries -<span> Military Grade Batteries to operate in all
-                                    temperature</span></li>
-                            <li> High Grade Batteries - <span>12" and 15" Models are recommended</span></li>
+                            <li> High Grade Batteries - <span>  Military Grade Batteries to operate in all temperature scenarios with maximum efficiency</span></li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -374,7 +351,7 @@ $seo_meta=[
                                     vehicles</span></li>
                             <li>Control - <span>Control and configure the radar signs</span></li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">
                         </div>
@@ -405,7 +382,7 @@ $seo_meta=[
                             <li> High Grade Batteries - <span>Military Grade Batteries to operate in all temperature
                                     scenarios with
                                     maximum efficiency</span></li>
-                            <div class="d-block mt-md-5">
+                            <div class="d-block ">
                                 <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             </div>
                         </ul>
@@ -439,7 +416,7 @@ $seo_meta=[
                             <li> Safe Routes to School aligned</li>
                             <li> FCC Approved</li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">
                         </div>
@@ -469,7 +446,7 @@ $seo_meta=[
                                     road</span>
                             </li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>
@@ -480,12 +457,12 @@ $seo_meta=[
             </div>
 
             <div class="row ">
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="max-height: 300px">
                     <div class="img-left">
                         <img src="{{asset('assets/customer/images/trans-canada.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 " style="max-height: 300px">
                     <div class="multiple-option pb-0">
                         <h4>Easy Installation</h4>
                         <span class="text-capitalize d-block">Very easy to install</span>
@@ -496,7 +473,7 @@ $seo_meta=[
                         <ul class="ps-3">
                             <li> Instant - <span>15 minutes installation</span></li>
                         </ul>
-                        <div class="d-block mt-md-5 d-flex align-items-center justify-content-between dotted-imagess">
+                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
                             <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
                         </div>

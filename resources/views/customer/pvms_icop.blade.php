@@ -19,7 +19,7 @@ $seo_meta=[
                             class="banner-image d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
                             <div class="position-relative heading-banner ">
                                 <h2 class="">{{$product->title}}
-                                    <p class="mb-0 h3 font-weight-bold"><span> Message Sign-MTO</span></p>
+                                    <p class="mb-0 h3 font-weight-bold"><span> Highly  Equipped and Robust Message Sign  </span></p>
                                 </h2>
                                 <div class="">
                                     <p class="text-dark">No. 1 in Traffic Calming Solution</p>
@@ -35,8 +35,11 @@ $seo_meta=[
                                     <img src="{{asset('assets\customer\images\circles.png')}}" alt="Not Found" class="img-fluid">
                                 </div>
                             </div>
+                            <div class="desktop-display">
+                                <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found" class="mt-3 mt-sm-0" style="height: 450px;">
+                            </div>
                             <!-- <div class="position-absolute top-50 start-0 translate-middle"> -->
-                            <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found" class="img-fluid mt-3 mt-sm-0">
+
                             <!-- </div> -->
                             <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                                 class="img-fluid d-none d-md-block">
@@ -48,24 +51,7 @@ $seo_meta=[
                 @endfor
 
             </div>
-{{--            <button class="carousel-control-prev" data-bs-target="#carouselExampleDark" type="button"--}}
-{{--                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">--}}
-{{--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--                <span class="visually-hidden">Previous</span>--}}
-{{--            </button>--}}
-{{--            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"--}}
-{{--                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">--}}
-{{--                <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--                <span class="visually-hidden">Next</span>--}}
-{{--            </button>--}}
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button> -->
+
         </div>
     </section>
 
@@ -75,8 +61,8 @@ $seo_meta=[
 
     <!-- Desc and specification -->
     <section class="sepeicification bg-light position-relative">
-        <div class="container pb-lg-5">
-            <div class="accodion-wrapper pb-5">
+        <div class="container ">
+            <div class="accodion-wrapper">
                 <div class="row">
                     <div class="col-md-6">
                         <div>
@@ -137,9 +123,9 @@ $seo_meta=[
         </div>
     </section>
     <!-- Dimension section -->
-    <section class="dimention-sec">
+    <section class="dimention-sec pt-1" >
         <div class="heading-sec">
-            <h2 class="fs-2 mt-3">DIMENSION</h2>
+            <h2 class="fs-2 mt-3 title-text-h1">DIMENSIONS</h2>
         </div>
         <div class="container">
             <div class="row">
@@ -159,7 +145,7 @@ $seo_meta=[
 
 
 <!-- Portable Variable Message Sign’s -->
-<section class="portable px-lg-5">
+<section class="portable px-lg-5 pt-0">
     <div class="container-fluid">
         <div class="message-sign d-flex  justify-content-center">
 {{--            <h6 class="">iCop | Portable Variable Message Sign’s</h6>--}}

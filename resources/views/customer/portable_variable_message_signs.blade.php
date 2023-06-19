@@ -19,10 +19,12 @@ $seo_meta = [
                         <div
                             class="banner-image d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
                             <div class="position-relative heading-banner ">
-                                <h2 class="">Portable Variable
+                                <h2 class="title-text-h2 title-text-h2">Portable Variable
                                     Message Signs (VMS)
-                                    <p class="mb-0 h3 font-weight-bold">
-                                        <span> MOST CAPABLE AND HIGHLY-EQUIPPED <br/>RADAR SPEED SIGN EVER BUILT</span></p>
+                                    <p class="mb-0 h4 font-weight-bold">
+                                        <span>
+                                        Highly  Equipped and Robust Message Sign
+                                        </span></p>
                                 </h2>
                                 <div class="fs-6 ">
                                     <p class="text-dark">No. 1 in Traffic Calming Solution</p>
@@ -38,9 +40,11 @@ $seo_meta = [
                                          class="img-fluid">
                                 </div>
                             </div>
+                                <div class="desktop-display">
+                                    <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found"
+                                         class="mt-3 mt-sm-0" style="height: 450px;">
 
-                            <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found"
-                                 class="img-fluid mt-3 mt-sm-0">
+                                </div>
 
                             <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                                  class="img-fluid d-none d-md-block">
@@ -97,13 +101,14 @@ $seo_meta = [
                                     <img src="{{asset('storage/'.$item->cover_image)}}" alt="Not Found"
                                          class="img-fluid">
                                 </div>
-                                <div class="my-3 list-bacgund px-4 py-4">
-                                    <h5 class="fw-bold text-capitalize">{{$item->title}}</h5>
-                                    <ul>
+                                <div class="my-3 list-bacgund px-4 py-4" style="font-size: 15px;height: 240px;overflow: hidden;">
+                                    <h5 class="fw-bold text-capitalize text-dark">{{$item->title}}</h5>
+                                    <ul class="text-dark">
                                         @foreach ($item->features as $feature)
                                             <li>{{$feature->feature }} - {{$feature->description}}</li>
                                         @endforeach
                                     </ul>
+                                    <a href="{{route('customer.pvms.i.cop', $item->id)}}" class="text-decoration-none"> Learn More >> </a>
                                 </div>
                             </div>
                         </a>

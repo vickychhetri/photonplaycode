@@ -25,7 +25,7 @@ $seo_meta=[
                 <div class="imaged m-auto">
                     <div class="city-wrap">
                         <h2 class=" text-white fw-normal mb-1 title-text-h2">SIGNAGES</h2>
-                        <h5 class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness of local speed limit</h5>
+                        <h5 class=" text-white fw-normal mt-2 mb-2 ">Ensuring safe and secure passage while <br/> navigating through tunnels</h5>
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
                     <div class="desktop-display">
@@ -79,7 +79,7 @@ $seo_meta=[
 
 
                                     <div class="my-3 listed-bacgunded px-4 py-4">
-                                        <h5 class="fw-bold text-capitalize">{{$page->title}}</h5>
+                                        <h5 class="fw-bold text-capitalize">{{strtoupper($page->title)}}</h5>
                                         <p>{{substr($page->description, 0, 60)}} ...</p>
                                         <a href="{{route('customer.signages.sub.page', $page->slug)}}" style="text-decoration: none;"><h6 class="text-colorr mb-0 mt-5">Know More >></h6></a>
                                     </div>

@@ -121,18 +121,19 @@ $seo_meta=[
                         <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
                         <span>( 150+ Customers Reviews)</span>
                     </div>
-                    <p class="fw-bold fs-5">${{$product->price}}</p>
+                    <p class="fw-bold fs-5"  id="total_price2">${{$product->price}}</p>
                     <div>
                         <p class="specific-heading">Select Specification</p>
                         <div class="row mt-3">
 
                             {{-- Loop to Start Specifications--}}
-                            @foreach ($product->specilizations as $specilization)
+                            @foreach ($product->specilizations->reverse() as $specilization)
                                 <div class="col-md-8 bg-transparent" >
                                     <div class="">
+                                        <h6 class="text-dark"> {{$specilization->specilization->title}} </h6>
                                         <select class="form-select mb-3 " onchange="changecalculated_amount(this)" name="dynamic_specs[{{$specilization->id}}]"
                                                 id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;">
-                                            <option selected disabled>{{$specilization->specilization->title}} </option>
+                                            <option selected disabled>--Choose an Option--</option>
                                             @foreach($specilization->options as $option)
 
                                             <option value="{{$option->id}}">{{$option->specializationoptions->option}} (+$<span class="price">{{$option->specialization_price}}</span>) </option>
@@ -148,21 +149,34 @@ $seo_meta=[
 
                             <div class="mt-4">
                                 <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>
-                                <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center ">
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
-                                        <i class="bi bi-check-circle-fill p-1" style="font-size: 36px;color:#ffbf00;"></i>
+                                       <div class="d-flex align-items-center" style="border-radius: 150px;padding: 0px;
+background: rgba(18,17,17,0.21);
+box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
+ <i class="bi bi-check-circle-fill m-0 p-0" style="font-size: 36px;color:#ffbf00;"></i>
+                                       </div>
+
 
                                         <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none;
     border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;">
+    appearance: none;width: 120px;">
                                             <option value="#ffbf00"> Amber </option>
-                                            <option value="#ffff00">Yellow </option>
                                             <option value="#ffffff"> White </option>
+                                            <option value="#7cf210"> Green </option>
+
                                         </select>
                                        {{-- <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif> --}}
+                                        @if($product->brochure)
+                                            <div>
+                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-primary d-flex align-items-center" style="height: 40px;padding:8px;" target="_blank">  Download Datasheet</a>
+                                            </div>
+
+                                        @endif
+
                                     </div>
 
                                     <script>
@@ -251,36 +265,36 @@ $seo_meta=[
                             Specifications
                         </button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-dark" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
-                            Features
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-dark" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                            Power option
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-dark" id="visibility-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-panel" type="button" role="tab" aria-controls="contact-tab-panel" aria-selected="false">
-                            Visibility
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link text-dark" id="deal-tabish" data-bs-toggle="tab" data-bs-target="#deal-tab" type="button" role="tab" aria-controls="deal-tab" aria-selected="false">
-                            Ideal For
-                        </button>
-                    </li>
+{{--                    <li class="nav-item" role="presentation">--}}
+{{--                        <button class="nav-link text-dark" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">--}}
+{{--                            Features--}}
+{{--                        </button>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item" role="presentation">--}}
+{{--                        <button class="nav-link text-dark" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">--}}
+{{--                            Power option--}}
+{{--                        </button>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item" role="presentation">--}}
+{{--                        <button class="nav-link text-dark" id="visibility-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-panel" type="button" role="tab" aria-controls="contact-tab-panel" aria-selected="false">--}}
+{{--                            Visibility--}}
+{{--                        </button>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item" role="presentation">--}}
+{{--                        <button class="nav-link text-dark" id="deal-tabish" data-bs-toggle="tab" data-bs-target="#deal-tab" type="button" role="tab" aria-controls="deal-tab" aria-selected="false">--}}
+{{--                            Ideal For--}}
+{{--                        </button>--}}
+{{--                    </li>--}}
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane mt-3 fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                         {!! $product->description!!}
                     </div>
                     <div class="tab-pane fade mt-3" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"> {!!$product->specification!!}</div>
-                    <div class="tab-pane fade mt-3" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">   {!!$product->feature!!}</div>
-                    <div class="tab-pane fade mt-3" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0"> {!!$product->power_option!!} </div>
-                    <div class="tab-pane fade mt-3" id="contact-tab-panel" role="tabpanel" aria-labelledby="visibility-tab " tabindex="0">  {!!$product->visibility!!} </div>
-                    <div class="tab-pane fade mt-3" id="deal-tab" role="tabpanel" aria-labelledby="deal-tabish" tabindex="0"> {!!$product->ideal_for!!}</div>
+    {{--                    <div class="tab-pane fade mt-3" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">   {!!$product->feature!!}</div>--}}
+    {{--                    <div class="tab-pane fade mt-3" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0"> {!!$product->power_option!!} </div>--}}
+    {{--                    <div class="tab-pane fade mt-3" id="contact-tab-panel" role="tabpanel" aria-labelledby="visibility-tab " tabindex="0">  {!!$product->visibility!!} </div>--}}
+    {{--                    <div class="tab-pane fade mt-3" id="deal-tab" role="tabpanel" aria-labelledby="deal-tabish" tabindex="0"> {!!$product->ideal_for!!}</div>--}}
                 </div>
             </div>
         </div>
@@ -535,6 +549,7 @@ $seo_meta=[
         console.log();
 
         var total_price =document.getElementById('total_price');
+        var total_price2 =document.getElementById('total_price2');
         var counts =document.getElementById('demoInput').value;
 
         var inputString = selectedOption.text;
@@ -553,6 +568,8 @@ $seo_meta=[
        }
         console.log(total_amount_single_product);
         total_price.innerText='$'+counts*total_amount_single_product;
+        total_price2.innerText='$'+counts*total_amount_single_product;
+
      }
 
     function increment() {
@@ -564,9 +581,12 @@ $seo_meta=[
         // innerPrice.innerHTML=`$${totl+totalPrice+selectedValue.reduce((a,b)=>a+b,0)}`
 
         var total_price =document.getElementById('total_price');
+        var total_price2 =document.getElementById('total_price2');
         var counts =document.getElementById('demoInput').value;
         total_amount=parseInt(counts)*parseFloat(total_amount_single_product);
         total_price.innerText='$'+total_amount;
+        total_price2.innerText='$'+total_amount;
+
 
     }
     function decrement() {
@@ -575,9 +595,11 @@ $seo_meta=[
         if(inputV.value==1) return
         inputV.stepDown();
         var total_price =document.getElementById('total_price');
+        var total_price2 =document.getElementById('total_price2');
         var counts =document.getElementById('demoInput').value;
         total_amount=parseInt(counts)*parseFloat(total_amount_single_product);
         total_price.innerText='$'+total_amount;
+        total_price2.innerText='$'+total_amount;
         // let innerPrice=document.getElementById("total_price")
         // const totl=Number(innerPrice.innerHTML.slice(1,innerPrice.length))
         // if(!totalPrice) totalPrice=totl

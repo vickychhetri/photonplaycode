@@ -39,7 +39,7 @@
                     placeholder="City" id="billing_city" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_state" placeholder="State" id="billing_state" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_country" placeholder="Country" id="billing_country" value="" required>
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" value="" placeholder="Postcode" max="6" required>
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" value="" placeholder="Postcode" required>
                     <textarea name="address" class="form-control rounded-0 mt-2" rows="5"
                         placeholder="Your address here..." required></textarea>
                     {{-- <h3 class="mt-5 mb-2">SHIPPING ADDRESS</h3> --}}
@@ -47,7 +47,7 @@
                         ADDRESS?</label> --}}
                     <label class="d-block mt-3">Order notes (optional)</label>
                     <textarea name="order_notes" class="form-control rounded-0 mt-2" rows="5"
-                        placeholder="Your address here..."></textarea>
+                        placeholder="Enter Order Notes"></textarea>
                 </div>
                 <div class="col-md-6">
                     <h3>our order</h3>

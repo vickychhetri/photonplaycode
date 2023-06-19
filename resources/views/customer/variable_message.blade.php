@@ -19,12 +19,14 @@ $seo_meta=[
                 <div class="imaged m-auto">
                     <div class="city-wrap flex-wrap">
                         <h2 class=" text-white fw-normal mb-1 title-text-h2">Variable Message Signs (VMS)</h2>
-                        <h5 class=" text-white fw-normal mt-2 mb-2 ">Highly visible and innovative, creating instant awareness of <br/>local speed limit</h5>
+                        <h5 class=" text-white fw-normal mt-2 mb-2 ">
+                            Highly visible and innovative, creating instant awareness about <br/>specific events to the people commuting on the roads.
+                        </h5>
                         <a  href="#inquiry" class="btn-primary-rounded  p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
                     <div class=" m-auto desktop-display " >
                         <img src="{{ asset('assets/customer/images/vms_land.webp') }}" alt="alt"
-                             class="d-block mx-auto img-fluid product-feature-model-image" >
+                             class="d-block mx-auto product-feature-model-image "  >
                     </div>
 {{--                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 " >--}}
                 </div>
@@ -35,23 +37,16 @@ $seo_meta=[
     </section>
     <!-- Banner Sec End -->
     <!-- banner-text-start -->
-    <section class="bg-white">
+    <section class="bg-white pb-0">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-10">
                     <h2 class="text-center mb-2"> Variable Message Signs (VMS) </h2>
                     <div class="p-4 m-2">
                         <p>
-                            Viewed by millions of eyes every day, guiding way to millions of motorist to drive them back
-                            home safely every day, Photonplay is contributing its part to the humanity in it own way by
-                            enhanced road and traffic safety.
+                            Viewed by millions of eyes every day and guiding millions of motorists back home safely every day, Photonplay is contributing its part to humanity in its own way by enhancing road and traffic safety. Photonplay’s outperforming VMS signs are highly reliable and rugged components of the traffic management ecosystem for motorways, tunnels, and urban traffic management systems.
                         </p>
-                        <p>
-                            The product range starting from Variable message sign solutions for traffic guidance and
-                            information purposes. Photonplay’s outperforming VMS signs are highly reliable and rugged
-                            components of traffic management ecosystem for motorways, tunnels and urban traffic
-                            management systems.
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -59,11 +54,11 @@ $seo_meta=[
     </section>
     <!-- banner-text-end -->
     <!-- Our Product-start -->
-    <section class="our-product pt-lg-4">
+    <section class="our-product">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="text-center mb-lg-5">
+                    <div class="text-center ">
                         <!-- <h6 class="fs-6 text-colorr">photonplay’s </h6> -->
                         <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold">VMS Series</h2>
                     </div>
@@ -76,7 +71,7 @@ $seo_meta=[
                                 <div class="text-start p-4 list-unsorted">
                                     <div class="">
                                         <img src="{{asset('storage/'.$i->cover_image)}}" alt="Not Found"
-                                            class="img-fluid">
+                                            class="img-fluid" style="max-height: 250px">
                                     </div>
                                     <div class="my-3 list-bacgunded px-4 py-4">
                                         <h5 class="fw-bold text-capitalize">{{ $i->title }}</h5>
@@ -95,17 +90,15 @@ $seo_meta=[
     </section>
     <!-- Our Product -->
 
-
-
-
     <!-- Application -->
-    <section class="application-section">
+    <section class="application-section mt-0 pt-0">
         <div class="container">
             <h2 class="fs-md-2 mt-0 mb-2 text-center text-uppercase">Special Applications</h2>
             <p class="text-center mb-4">Variable signs for special needs in work zones safety and speed calming
                 applications
             </p>
-            <div class="row">
+            <div class="row d-flex justify-content-center">
+
                 <div class="col-md-3">
                     <div class="application-item">
                         <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
@@ -130,14 +123,14 @@ $seo_meta=[
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Transits-Icons.png') }}" alt="image">
-                        <div class="content-application-items">
-                            <h4 class="text-uppercase">Transits </h4>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-md-3">--}}
+{{--                    <div class="application-item">--}}
+{{--                        <img src="{{ asset('assets/customer/images/Transits-Icons.png') }}" alt="image">--}}
+{{--                        <div class="content-application-items">--}}
+{{--                            <h4 class="text-uppercase">Transits </h4>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
