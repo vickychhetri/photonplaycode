@@ -106,40 +106,13 @@ $seo_meta=[
 
                 <div class="col-md-3">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
+                        <img src="{{ asset('assets/customer/images/application-img-1.png') }}" alt="image">
                         <div class="content-application-items">
-                            <h4 class="text-uppercase">Highways </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
-                        <div class="content-application-items">
-                            <h4 class="text-uppercase">Tunnels </h4>
+                            <h4 class="text-uppercase">Bus and Rail Transits </h4>
                         </div>
                     </div>
                 </div>
 
-{{--                <div class="col-md-6">--}}
-{{--                    <div class="application-item">--}}
-{{--                        <img src="{{asset('assets/customer/images/application-img-1.png')}}" alt="image">--}}
-{{--                        <div class="content-application-item">--}}
-{{--                            <h4 class="text-uppercase">Real time traffic information </h4>--}}
-{{--                            <p>Traffic congestion , Accidents incidents, route options useful to the road user, Ongoing--}}
-{{--                                Roadwork zones, Speed Limits</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-6">--}}
-{{--                    <div class="application-item">--}}
-{{--                        <img src="{{asset('assets/customer/images/standrooms.png')}}" alt="image">--}}
-{{--                        <div class="content-application-item">--}}
-{{--                            <h4 class="text-uppercase">Parking Lots </h4>--}}
-{{--                            <p>Parking availability information</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
         </div>
     </section>
