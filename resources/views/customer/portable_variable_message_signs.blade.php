@@ -209,7 +209,7 @@ $seo_meta = [
         <h2 class="fs-md-2 mt-3">Exclusively Constructed Trailer</h2>
         <p>Ensuring Safety, Delivering Quality </p>
     </div>
-    <div class="container pb-lg-5">
+    <div class="container pb-lg-2">
         <div class="accodion-wrapper pb-5">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
@@ -369,7 +369,15 @@ $seo_meta = [
         </div>
         <img class="dotted-imag img-fluid d-none d-md-inline" src="{{asset('assets\customer\images\dotted-tran.png')}}"
              alt="not-found">
+    </div>
 </section>
+
+<!-- PVMS Gallery -->
+<x-Pvms.PvmsGallery/>
+
+<!-- End of PVMS Gallery-->
+
+
 <!-- Dimension section -->
 <section class="connectivity bg-light">
     <div class="container">
@@ -457,4 +465,38 @@ $seo_meta = [
             // instead of a settings object
         ]
     });
+
+    $('.clints-content-gallery').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='{{asset('assets/customer/images/left-chevron.png')}}/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='{{asset('assets/customer/images/right-chevron.png')}}/></button>",
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,           // Enable auto-scroll
+        autoplaySpeed: 2000,      // Set auto-scroll speed (in milliseconds)
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
 </script>
