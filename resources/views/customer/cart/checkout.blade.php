@@ -40,8 +40,7 @@
                     <input type="text" class="form-control rounded-0 px-3" name="billing_state" placeholder="State" id="billing_state" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_country" placeholder="Country" id="billing_country" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" value="" placeholder="Postcode" required>
-                    <textarea name="address" class="form-control rounded-0 mt-2" rows="5"
-                        placeholder="Your address here..." required></textarea>
+                    <input name="address" type="hidden" value="."/>
                     {{-- <h3 class="mt-5 mb-2">SHIPPING ADDRESS</h3> --}}
                     {{-- <label for=""> <input type="checkbox" class="me-2 d-inline-block">SHIP TO A DIFFERENT
                         ADDRESS?</label> --}}
