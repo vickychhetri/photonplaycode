@@ -374,7 +374,6 @@ $seo_meta = [
 
 <!-- PVMS Gallery -->
 <x-Pvms.PvmsGallery/>
-
 <!-- End of PVMS Gallery-->
 
 

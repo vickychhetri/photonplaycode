@@ -22,7 +22,7 @@ $seo_meta=[
                             <div class="sucess-undeafeted p-4 py-5 text-white">
                                 <p class="text-uppercase">From Idea to Implementation</p>
                                 <h4 class="text-uppercase">Our 12+ Years of Undefeated Success</h4>
-                                <p>
+                                <p style="text-align: justify;">
                                     PhotonPlay, a family-owned Indian company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 12 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
                                 </p>
                                 <a href="{{route('customer.contact.us')}}" class="btn btn-whites bg-white rounded-0 text-uppercase btn-light px-4">WORK
@@ -144,6 +144,254 @@ $seo_meta=[
                     @endforeach
 
                         {{--Start Static--}}
+                        {{--VMS--}}
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase">VARIABLE MESSAGE SIGN (VMS)
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/Variable Message Sign.png" alt="Portable Variable
+                                        Message Signs" class="">
+                                    <div>
+                                        <a href="/variable-sign-language" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of traffic management ecosystem for motorways, tunnels and urban traffic management systems.</p>
+                                        <div class="social-two">
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- VMS END--}}
+
+                        {{--PVMS--}}
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase">Portable Variable
+                                        Message Sign</h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/Portable VMS.png" alt="Portable Variable
+                                        Message Signs" class="">
+                                    <div>
+                                        <a href="portable-variable-message-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p style="text-align: justify"> Depending on the traffic situation, signs are efficiently used to warn and guide about traffic congestion, routing information, speed limits, road work zones, accidents and other incidents on highways, expressways and arterial roads of cities.</p>
+                                        <div class="social-two">
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{--PVMS End--}}
+
+                        {{--VSLS Start--}}
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase"> Variable Speed Limit Sign (VSLS)
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/Variable Speed Limit Sign.png" alt="VSLS" class="">
+                                    <div>
+                                        <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p> The ultra-bright and excellent-quality variable speed limit sign is a sign with a full matrix display area that allows speed limits and graphics to display practically any speed.</p>
+                                        <div class="social-two">
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{--VSLS End--}}
+
+                        {{--LCS Start--}}
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase"> LANE CONTROL SIGN (LCS)
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/LCS front 2.png" alt="LCS" class="">
+                                    <div>
+                                        <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p> These signs should be given legitimate consideration by drivers, and people on foot for their own security and for the wellbeing of others. There are various types of traffic control signs, one of which is the lane control signs.</p>
+                                        <div class="social-two">
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{--LCS End--}}
+
+                        {{--  PIDS Start--}}
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase"> Passenger Information Display System (PIDS)
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/PIDS.png" alt="Portable Variable
+                                        Message Signs" class="">
+                                    <div>
+                                        <a href="/passenger-information-display-system" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p style="text-align: justify;"> PIDS is a digital and electronic system that provides information to passengers in various modes of transportation, such as airports, train stations, bus terminals, and subway stations.</p>
+                                        <div class="social-two">
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{--  PIDS End--}}
+
+                        {{-- Emergency Telephone Sign--}}
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase">EMERGENCY TELEPHONE SIGN
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/Emergency Telephone Signs.png" alt="Portable Variable
+                                        Message Signs" class="">
+                                    <div>
+                                        <a href="/signages/emergency-telephone-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage that indicates where emergency phones may be found.The emergency telephone sign's aim is to direct travellers to the nearest emergency phone in the event of an emergency or breakdown.</p>
+                                        <div class="social-two">
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Emergency Telephone Sign End--}}
+
+                        {{-- Emergency Exit Sign--}}
+                        <div class="carousel-item">
+                            <div class="products-two d-lg-flex justify-content-between">
+                                <div class="common-wdth common-wdth_ inner-col align-self-center">
+                                    <h6 class="text-uppercase">EMERGENCY EXIT SIGN
+                                    </h6>
+                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                                </div>
+                                <div class="mask-layer common-wdth inner-col text-center">
+                                    <img src="/assets/customer/images/products_home/Emergency Exit Sign.png" alt="Portable Variable
+                                        Message Signs" class="">
+                                    <div>
+                                        <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                    </div>
+                                </div>
+                                <div class="d-lg-flex align-self-center common-wdth inner-col">
+                                    <div class="ms-md-5">
+                                        {{--                                        <h6 class="text-capitalize">Description</h6>--}}
+                                        <p style="text-align: justify;"> These signs identify the location of emergency exits as well as exits going to different destinations outside the tunnel.</p>
+                                        <div class="social-two">
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
+
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
+                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
+
+                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- Emergency Exit sign End--}}
+
+
+                        {{-- Way Finder--}}
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
@@ -174,210 +422,9 @@ $seo_meta=[
                                 </div>
                             </div>
                         </div>
+                        {{--End WayFinder--}}
 
-                        <div class="carousel-item">
-                            <div class="products-two d-lg-flex justify-content-between">
-                                <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6 class="text-uppercase">Portable Variable
-                                        Message Sign</h6>
-                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
-                                </div>
-                                <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Portable VMS.png" alt="Portable Variable
-                                        Message Signs" class="">
-                                    <div>
-                                        <a href="portable-variable-message-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
-                                    </div>
-                                </div>
-                                <div class="d-lg-flex align-self-center common-wdth inner-col">
-                                    <div class="ms-md-5">
-{{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p style="text-align: justify"> Depending on the traffic situation, signs are efficiently used to warn and guide about traffic congestion, routing information, speed limits, road work zones, accidents and other incidents on highways, expressways and arterial roads of cities.</p>
-                                        <div class="social-two">
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <div class="products-two d-lg-flex justify-content-between">
-                                <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6 class="text-uppercase">EMERGENCY EXIT SIGN
-                                    </h6>
-                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
-                                </div>
-                                <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Emergency Exit Sign.png" alt="Portable Variable
-                                        Message Signs" class="">
-                                    <div>
-                                        <a href="signages/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
-                                    </div>
-                                </div>
-                                <div class="d-lg-flex align-self-center common-wdth inner-col">
-                                    <div class="ms-md-5">
-{{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p style="text-align: justify;"> These signs identify the location of emergency exits as well as exits going to different destinations outside the tunnel.</p>
-                                        <div class="social-two">
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="products-two d-lg-flex justify-content-between">
-                                <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6 class="text-uppercase">EMERGENCY TELEPHONE SIGN
-                                    </h6>
-                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
-                                </div>
-                                <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Emergency Telephone Signs.png" alt="Portable Variable
-                                        Message Signs" class="">
-                                    <div>
-                                        <a href="/signages/emergency-telephone-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
-                                    </div>
-                                </div>
-                                <div class="d-lg-flex align-self-center common-wdth inner-col">
-                                    <div class="ms-md-5">
-{{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage that indicates where emergency phones may be found.The emergency telephone sign's aim is to direct travellers to the nearest emergency phone in the event of an emergency or breakdown.</p>
-                                        <div class="social-two">
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="products-two d-lg-flex justify-content-between">
-                                <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6 class="text-uppercase"> Passenger Information Display System (PIDS)
-                                    </h6>
-                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
-                                </div>
-                                <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/PIDS.png" alt="Portable Variable
-                                        Message Signs" class="">
-                                    <div>
-                                        <a href="/passenger-information-display-system" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
-                                    </div>
-                                </div>
-                                <div class="d-lg-flex align-self-center common-wdth inner-col">
-                                    <div class="ms-md-5">
-{{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p style="text-align: justify;"> PIDS is a digital and electronic system that provides information to passengers in various modes of transportation, such as airports, train stations, bus terminals, and subway stations.</p>
-                                        <div class="social-two">
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <div class="products-two d-lg-flex justify-content-between">
-                                <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6 class="text-uppercase">VARIABLE MESSAGE SIGN (VMS)
-                                    </h6>
-                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
-                                </div>
-                                <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Variable Message Sign.png" alt="Portable Variable
-                                        Message Signs" class="">
-                                    <div>
-                                        <a href="/variable-sign-language" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
-                                    </div>
-                                </div>
-                                <div class="d-lg-flex align-self-center common-wdth inner-col">
-                                    <div class="ms-md-5">
-{{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of traffic management ecosystem for motorways, tunnels and urban traffic management systems.</p>
-                                        <div class="social-two">
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <div class="products-two d-lg-flex justify-content-between">
-                                <div class="common-wdth common-wdth_ inner-col align-self-center">
-                                    <h6 class="text-uppercase"> Variable Speed Limit Sign (VSLS)
-                                    </h6>
-                                    {{--                                <p class="mb-0">{{$product->title}}</p>--}}
-                                </div>
-                                <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Variable Speed Limit Sign.png" alt="VSLS" class="">
-                                    <div>
-                                        <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
-                                    </div>
-                                </div>
-                                <div class="d-lg-flex align-self-center common-wdth inner-col">
-                                    <div class="ms-md-5">
-{{--                                        <h6 class="text-capitalize">Description</h6>--}}
-                                        <p> The ultra-bright and excellent-quality variable speed limit sign is a sign with a full matrix display area that allows speed limits and graphics to display practically any speed.</p>
-                                        <div class="social-two">
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)">  <img src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                                <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                            <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)">  <img src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                        {{-- Vehicle Actuated Speed Display (VASD) Start--}}
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
@@ -409,10 +456,10 @@ $seo_meta=[
                                 </div>
                             </div>
                         </div>
+                        {{-- Vehicle Actuated Speed Display (VASD) END --}}
 
 
-
-
+                        {{-- Bus Sign--}}
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
@@ -444,8 +491,9 @@ $seo_meta=[
                                 </div>
                             </div>
                         </div>
+                        {{-- Bus Sign End--}}
 
-
+                        {{--  LED Ticker --}}
                         <div class="carousel-item">
                             <div class="products-two d-lg-flex justify-content-between">
                                 <div class="common-wdth common-wdth_ inner-col align-self-center">
@@ -478,7 +526,7 @@ $seo_meta=[
                                 </div>
                             </div>
                         </div>
-
+                        {{--  LED Ticker End --}}
 
 
 
