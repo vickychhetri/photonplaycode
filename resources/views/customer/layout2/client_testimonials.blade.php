@@ -17,7 +17,7 @@
                 <div class="row clint-wrapperr">
                     <!-- <div class=""> -->
 
-                    @foreach($client_says as $says)
+                    @foreach($client_says->reverse() as $says)
                         <div class="col-lg-4">
                             <div class="members-profile h-100 mx-3 h-100">
                                 <div class="p-4 position-re lative h-100 inner-max-width">
