@@ -93,6 +93,7 @@ $seo_meta=[
                 <img class="dotted-imag img-fluid d-none d-md-inline" src="{{asset('assets/customer/images/dotted-tran.png')}}"
                     alt="not-found">
             </div>
+        </div>
     </section>
     <!-- Desc and specificatio  end -->
 
@@ -142,31 +143,36 @@ $seo_meta=[
     </section>
 
     <!-- _____________________ourclint-last-start___________________ -->
-    <section class="our-clints-last">
-        <div class="mb-lg-5 text-center">
-            <h2 class="fs-md-2 mt-3">GALLERY</h2>
-        </div>
-        <div class="container">
-            <div class="px-4">
-                <div class="clints-content-gallery mb-0 ">
-                    @foreach ($page->galleries as $gallery)
-                    <div>
-                        <div class="px-2 branding-diss">
-                            <img src="{{asset('storage/'.$gallery->image)}}" onclick="showModal('{{asset('storage/'.$gallery->image)}}')"  class="d-block mx-auto" />
-                        </div>
-                    </div>
-                    @endforeach
-                        @foreach ($page->galleries as $gallery)
-                            <div>
-                                <div class="px-2 branding-diss">
-                                    <img src="{{asset('storage/'.$gallery->image)}}" class="d-block mx-auto" />
-                                </div>
-                            </div>
-                        @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
+
+{{-- gallery--}}
+@include('customer.layout2.model_gallery')
+{{--gallery end --}}
+
+{{--    <section class="our-clints-last">--}}
+{{--        <div class="mb-lg-5 text-center">--}}
+{{--            <h2 class="fs-md-2 mt-3">GALLERY</h2>--}}
+{{--        </div>--}}
+{{--        <div class="container">--}}
+{{--            <div class="px-4">--}}
+{{--                <div class="clints-content-gallery mb-0 ">--}}
+{{--                    @foreach ($page->galleries as $gallery)--}}
+{{--                    <div>--}}
+{{--                        <div class="px-2 branding-diss">--}}
+{{--                            <img src="{{asset('storage/'.$gallery->image)}}" onclick="showModal('{{asset('storage/'.$gallery->image)}}')"  class="d-block mx-auto" />--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    @endforeach--}}
+{{--                        @foreach ($page->galleries as $gallery)--}}
+{{--                            <div>--}}
+{{--                                <div class="px-2 branding-diss">--}}
+{{--                                    <img src="{{asset('storage/'.$gallery->image)}}" class="d-block mx-auto" />--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- _____________________ourclint-last-end___________________ -->
 
     <!-- contact form -->
