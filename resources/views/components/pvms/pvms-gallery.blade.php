@@ -36,6 +36,7 @@
                         <img src="{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}')"  class="d-block mx-auto" />
                     </div>
                 </div>
+
             <div>
                     <div class="px-2 branding-diss">
                         <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-2-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-2-Circle.png')}}')"  class="d-block mx-auto" />
