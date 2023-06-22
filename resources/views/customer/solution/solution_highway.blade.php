@@ -69,7 +69,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('/assets/images/solutions/VMS2.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('/assets/images/solutions/R-CLOUD.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
 
                     </div>
                 </div>

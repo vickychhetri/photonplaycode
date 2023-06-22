@@ -153,7 +153,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Variable Message Sign.png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Smart City VMS Front.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="/variable-sign-language" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -188,7 +188,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Portable VMS.png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/iCop-MTO-Side-front.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="portable-variable-message-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -399,7 +399,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Way Finder.png" alt="WAY FINDER" class="">
+                                    <img src="/assets/customer/images/products_home/Way-Finder-Light-Glow.png" alt="WAY FINDER" class="">
                                     <div>
                                         <a href="signages/way-finders" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">  Know More</a>
                                     </div>
@@ -502,7 +502,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/LED Ticker Tape.png" alt=" LED Tickers" class="">
+                                    <img src="/assets/customer/images/products_home/Circular_outer_led_ticker.png" alt=" LED Tickers" class="">
                                     <div>
                                         <a href="/solution-city" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>

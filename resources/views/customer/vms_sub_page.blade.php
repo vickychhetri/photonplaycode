@@ -287,7 +287,7 @@ $seo_meta=[
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 1,
         prevArrow: "<button type='button' class='slick-prev pull-left'><img src='{{asset('assets/customer/images/left-chevron.png')}}/></button>",
         nextArrow: "<button type='button' class='slick-next pull-right'><img src='{{asset('assets/customer/images/right-chevron.png')}}/></button>",
         slidesToScroll: 1,
@@ -298,7 +298,7 @@ $seo_meta=[
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 1,
                 }
             },
             {
