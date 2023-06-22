@@ -222,12 +222,23 @@ $seo_meta = [
                                     type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                     aria-expanded="false" aria-controls="flush-collapseOne">
                                     Automatic Hydraulic Lift Mechanism
+
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                  aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body pt-0 acc-spn">
-                                    <span>Rapid and Easy Deployment</span>
+
+                                    <div class="row">
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <span>Rapid and Easy Deployment</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="{{asset('assets/customer/images/pvms/Automatic-lift-mechanism-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Automatic-lift-mechanism-Circle.png')}}')"  class="img-fluid" style="max-height: 250px" >
+                                        </div>
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -238,12 +249,25 @@ $seo_meta = [
                                     type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                     aria-expanded="false" aria-controls="flush-collapseTwo">
                                     Finest Powder Coat Finish
+
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                  aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body pt-0">
-                                    <span>Secure and Vandal Proof</span>
+                                    <div class="row">
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <span>Secure and Vandal Proof</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="{{asset('assets/customer/images/pvms/powder-coating-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}')"  class="img-fluid" style="max-height: 250px" >
+                                        </div>
+
+                                    </div>
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -259,7 +283,18 @@ $seo_meta = [
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                  aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body pt-0">
-                                    <span>Enter The Data</span>
+                                    <div class="row">
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <span>Secure and Vandal Proof</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                        </div>
+
+                                    </div>
+
+
+
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end position-absolute circle-stone">
@@ -280,7 +315,15 @@ $seo_meta = [
                             <div id="flush-collapseTwos" class="accordion-collapse collapse"
                                  aria-labelledby="flush-headingTwos" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body pt-0">
-                                    <span>Secure and Vandal Proof tongueee</span>
+                                    <div class="row">
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <span>Removable Tongue</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-2-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -301,7 +344,17 @@ $seo_meta = [
                                 <div id="flush-collapsejack" class="accordion-collapse collapse show"
                                      aria-labelledby="flush-headingjack" data-bs-parent="#accordionFlushExample1">
                                     <div class="accordion-body pt-0">
-                                        <span>Effortless and Secure Trailer Assembly</span>
+                                        <div class="row">
+                                            <div class="col-md-6 d-flex align-items-center">
+                                                <span>Effortless and Secure Trailer Assembly</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            </div>
+
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -318,7 +371,15 @@ $seo_meta = [
                                 <div id="flush-collapsejackss" class="accordion-collapse collapse"
                                      aria-labelledby="flush-headingjackss" data-bs-parent="#accordionFlushExample1">
                                     <div class="accordion-body pt-0">
-                                        <span>Effortless and Secure Trailer Assembly</span>
+                                        <div class="row">
+                                            <div class="col-md-6 d-flex align-items-center">
+                                                <span>Leveling Jack</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="{{asset('assets/customer/images/pvms/Leveling-Jack-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -336,7 +397,15 @@ $seo_meta = [
                                      aria-labelledby="flush-headingjackfouee"
                                      data-bs-parent="#accordionFlushExample1">
                                     <div class="accordion-body pt-0">
-                                        <span>Effortless and Secure Trailer Assembly</span>
+                                        <div class="row">
+                                            <div class="col-md-6 d-flex align-items-center">
+                                                <span>Rugged Mast Brake</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="{{asset('assets/customer/images/pvms/Rugge-Mast-Brake-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -353,7 +422,15 @@ $seo_meta = [
                                 <div id="flush-collapsefender" class="accordion-collapse collapse"
                                      aria-labelledby="flush-headingfender" data-bs-parent="#accordionFlushExample1">
                                     <div class="accordion-body pt-0">
-                                        <span>Heavy Duty Plastic Fenders</span>
+                                        <div class="row">
+                                            <div class="col-md-6 d-flex align-items-center">
+                                                <span>Heavy Duty Plastic Fenders</span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="{{asset('assets/customer/images/pvms/Heavy-Duty-Plastic-Fender-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -373,7 +450,7 @@ $seo_meta = [
 </section>
 
 <!-- PVMS Gallery -->
-<x-Pvms.PvmsGallery/>
+{{--<x-Pvms.PvmsGallery/>--}}
 <!-- End of PVMS Gallery-->
 
 
