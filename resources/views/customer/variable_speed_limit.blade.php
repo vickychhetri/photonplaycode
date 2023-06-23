@@ -22,7 +22,7 @@ $seo_meta=[
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
                     <div class="desktop-display">
-                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 product-feature-model-image"  transform: scale(0.8); >
+                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 product-feature-model-image"  style="transform: scale(1.2);"  >
                     </div>
                 </div>
 
