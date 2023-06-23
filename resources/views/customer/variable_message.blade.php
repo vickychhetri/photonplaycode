@@ -26,7 +26,7 @@ $seo_meta=[
                     </div>
                     <div class=" m-auto desktop-display " >
                         <img src="{{ asset('assets/customer/images/F-SOLAR (1).png') }}" alt="alt"
-                             class="d-block mx-auto product-feature-model-image h-75"  style="transform: scale(0.8);" >
+                             class="d-block mx-auto product-feature-model-image "  style="transform: scale(1.1);" >
                     </div>
 {{--                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 " >--}}
                 </div>
