@@ -94,16 +94,16 @@ use Illuminate\Support\Facades\Log;
                                         <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="Image not found"  style="max-height: 100px;max-width: 100px;"/></td>
                                         <td>{{ $prod->title }}</td>
                                         <td>
+                                            @if (unserialize($prod->option_ids) != null)
                                             @foreach (unserialize($prod->option_ids) as $option)
-
                                                 @php
                                                 $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$prod->product_id)->get();
                                                 @endphp
                                                 @foreach ($options as $opp)
                                                     {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
                                                 @endforeach
-                                            @endforeach
-
+                                            @endforeach    
+                                            @endif
                                         </td>
                                         <td>{{ $prod->quantity }}</td>
                                         <td>{{ $prod->color }}</td>
