@@ -41,7 +41,7 @@ $seo_meta = [
                                 </div>
                             </div>
                                 <div class="desktop-display">
-                                    <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found"
+                                    <img src="{{asset('assets\customer\images\Side-VMS-Resting (1).png')}}" alt="Not Found"
                                          class="mt-3 mt-sm-0" style="height: 450px;">
 
                                 </div>

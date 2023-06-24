@@ -36,7 +36,10 @@ $seo_meta=[
                                 </div>
                             </div>
                             <div class="desktop-display">
-                                <img src="{{asset('assets\customer\images\MTO.png')}}" alt="Not Found" class="mt-3 mt-sm-0" style="height: 450px;">
+                                <img src="{{asset('storage/'.$product->cover_image)}}" alt="Not Found" class="mt-3 mt-sm-0" style="height: 450px;">
+
+
+
                             </div>
                             <!-- <div class="position-absolute top-50 start-0 translate-middle"> -->
 
