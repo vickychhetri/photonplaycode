@@ -468,7 +468,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Bus Sign.png" alt="Bus Sign" class="">
+                                    <img src="/assets/customer/images/products_home/FDU-AMBER FRONT.png" alt="Bus Sign" class="">
                                     <div>
                                         <a href="/solution-transit" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
