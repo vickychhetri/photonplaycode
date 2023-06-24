@@ -114,7 +114,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/Side-VMS-Resting.png') }}" alt="Not Found" class="img-fluid h-75 w-75 shadow-none">
+                        <img src="{{asset('assets/images/solutions/Back-Left.webp') }}" alt="Not Found" class="img-fluid h-75 w-75 shadow-none">
 
                     </div>
                 </div>
@@ -155,7 +155,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/R-CLOUD.png') }}" alt="VASD" class="img-fluid m-auto" style="height: 300px">
+                            <img src="{{asset('assets/images/solutions/F-SOLAR (2).png') }}" alt="VASD" class="img-fluid m-auto" style="height: 300px">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Message Sign </p>
@@ -169,7 +169,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/VSLS Rightside 2 (2).png') }}" alt="VSLS" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/VSLS Sample-01 front (2).png') }}" alt="VSLS" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Speed Limit Sign </p>
