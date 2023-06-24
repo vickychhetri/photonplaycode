@@ -70,7 +70,7 @@ ITS solutions designed for optimal safety and efficiency..",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/VMS 2 (1).png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/R-CLOUD.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@ ITS solutions designed for optimal safety and efficiency..",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/VMS 2 (1).png') }}" alt="not-found" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/R-CLOUD.png') }}" alt="not-found" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Message Sign </p>
@@ -171,7 +171,7 @@ ITS solutions designed for optimal safety and efficiency..",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/VSLS Rightside 2 (1).png') }}" alt="not-found" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/VSLS Sample-01 front (2).png') }}" alt="not-found" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Speed Limit Sign </p>
@@ -185,10 +185,10 @@ ITS solutions designed for optimal safety and efficiency..",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/Emergency Exit Sign-Right 2.png') }}" alt="not-found" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/Way-Finder-Light-Glow_signage2.png') }}" alt="not-found" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
-                            <p class="mb-2">Signages </p>
+                            <p class="mb-2">Emergency Signages </p>
                             <p class="">SIGN</p>
                             <a href="/signages">
                             <img src="{{asset('assets/customer/images/next-bus.png') }}" alt="Not Found" class="img-fluid m-auto">
@@ -199,10 +199,10 @@ ITS solutions designed for optimal safety and efficiency..",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/OHLS expright 2.png') }}" alt="not-found" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/LCS front 2_img.png') }}" alt="not-found" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
-                            <p class="mb-2">Lane Control System  </p>
+                            <p class="mb-2">Lane Control Sign  </p>
                             <p class="">(LCS)</p>
                             <a href="lane-control-system">
                             <img src="{{asset('assets/customer/images/next-bus.png') }}" alt="Not Found" class="img-fluid m-auto">
