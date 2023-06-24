@@ -114,7 +114,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/Back-Left.webp') }}" alt="Not Found" class="img-fluid h-75 w-75 shadow-none">
+                        <img src="{{asset('assets/images/solutions/Side-VMS-Resting.png') }}" alt="Not Found" class="img-fluid h-75 w-75 shadow-none">
 
                     </div>
                 </div>
@@ -183,7 +183,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/Back-Left.webp') }}" alt="not-found" class="img-fluid m-auto">
+                            <img src="{{asset('assets/images/solutions/Side-VMS-Resting.png') }}" alt="not-found" class="img-fluid m-auto">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Portable Variable Message Sign </p>
