@@ -90,7 +90,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/Portable VMS 2.png') }}" alt="Not Found" class="img-fluid h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/Portable-VMS-left-Side.png') }}" alt="Not Found" class="img-fluid h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 </div>
                 <div class="col-lg-6">
                     <div class="img-left">
-                        <img src="{{asset('assets/images/solutions/VMS 2.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
+                        <img src="{{asset('assets/images/solutions/R-CLOUD.png') }}" alt="Not Found" class="img-fluid shadow-none h-75 w-75">
                     </div>
                 </div>
             </div>
@@ -168,7 +168,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-3">
                     <div class="inner-bus text-center px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/Portable VMS 2.png') }}" alt="not-found" class="img-fluid">
+                            <img src="{{asset('assets/images/solutions/Side-VMS-Resting.png') }}" alt="not-found" class="img-fluid">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Portable Variable Message Sign </p>
@@ -182,7 +182,7 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-3">
                     <div class="inner-bus text-center px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/VMS 2 (2).png') }}" alt="not-found" class="img-fluid">
+                            <img src="{{asset('assets/images/solutions/R-CLOUD.png') }}" alt="not-found" class="img-fluid">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Message Sign</p>
@@ -196,10 +196,10 @@ that enable seamless integration and smarter decision-making for cities of the f
                 <div class="col-lg-3">
                     <div class="inner-bus text-center px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/LED Ticker Tape 2.png') }}" alt="not-found" class="img-fluid">
+                            <img src="{{asset('assets/images/solutions/Circular_outer_led_ticker.png') }}" alt="not-found" class="img-fluid">
                         </div>
-                        <div class="mt-4">
-                            <p class="">LED Tickers </p>
+                        <div class="mt-4 mb-2">
+                            <p class="mb-2">LED Tickers </p>
                             <p class="">Display System (PIDS)</p>
                             <img src="{{asset('assets/customer/images/next-bus.png') }}" alt="Not Found" class="img-fluid">
                         </div>
