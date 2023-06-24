@@ -231,10 +231,10 @@ $seo_meta = [
 
                                     <div class="row">
                                         <div class="col-md-6 d-flex align-items-center">
-                                            <span>Rapid and Easy Deployment</span>
+                                            <span class="text-dark" style="font-size: 16px;">Rapid and Easy Deployment</span>
                                         </div>
-                                        <div class="col-md-6">
-                                            <img src="{{asset('assets/customer/images/pvms/Automatic-lift-mechanism-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Automatic-lift-mechanism-Circle.png')}}')"  class="img-fluid" style="max-height: 250px" >
+                                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                            <img src="{{asset('assets/customer/images/pvms/Automatic-lift-mechanism-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -257,10 +257,10 @@ $seo_meta = [
                                 <div class="accordion-body pt-0">
                                     <div class="row">
                                         <div class="col-md-6 d-flex align-items-center">
-                                            <span>Secure and Vandal Proof</span>
+                                            <span>Protection from rust, humidity and other impact.</span>
                                         </div>
-                                        <div class="col-md-6">
-                                            <img src="{{asset('assets/customer/images/pvms/powder-coating-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}')"  class="img-fluid" style="max-height: 250px" >
+                                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                            <img src="{{asset('assets/customer/images/pvms/powder-coating-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}')"  class="img-fluid h-50" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -285,10 +285,10 @@ $seo_meta = [
                                 <div class="accordion-body pt-0">
                                     <div class="row">
                                         <div class="col-md-6 d-flex align-items-center">
-                                            <span>Secure and Vandal Proof</span>
+                                            <span>Protection of Battery Box and Controller Box through secure locks</span>
                                         </div>
-                                        <div class="col-md-6">
-                                            <img src="{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                            <img src="{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -317,10 +317,10 @@ $seo_meta = [
                                 <div class="accordion-body pt-0">
                                     <div class="row">
                                         <div class="col-md-6 d-flex align-items-center">
-                                            <span>Removable Tongue</span>
+                                            <span>Manage Storage Space</span>
                                         </div>
-                                        <div class="col-md-6">
-                                            <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-2-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                            <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-2-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -335,7 +335,7 @@ $seo_meta = [
                             <div class="accordion-item border-0 position-inherit ">
                                 <h2 class="accordion-header" id="flush-headingjack">
                                     <button
-                                        class="accordion-button collapsed bg-white shadow-none te-3 pb-2 shadow-none text-dark"
+                                        class="accordion-button collapsed bg-white shadow-none te-3 pb-2 shadow-none"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsejack"
                                         aria-expanded="false" aria-controls="flush-collapsejack">
                                         Tongue Wheel Jack
@@ -348,8 +348,8 @@ $seo_meta = [
                                             <div class="col-md-6 d-flex align-items-center">
                                                 <span>Effortless and Secure Trailer Assembly</span>
                                             </div>
-                                            <div class="col-md-6">
-                                                <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                                <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
                                             </div>
 
                                         </div>
@@ -361,7 +361,7 @@ $seo_meta = [
                             <div class="accordion-item border-0 position-inherit ">
                                 <h2 class="accordion-header" id="flush-headingjackss">
                                     <button
-                                        class="accordion-button collapsed bg-white shadow-none te-3 pb-2 shadow-none text-dark"
+                                        class="accordion-button collapsed bg-white shadow-none te-3 pb-2 shadow-none "
                                         type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapsejackss" aria-expanded="false"
                                         aria-controls="flush-collapsejackss">
@@ -373,10 +373,10 @@ $seo_meta = [
                                     <div class="accordion-body pt-0">
                                         <div class="row">
                                             <div class="col-md-6 d-flex align-items-center">
-                                                <span>Leveling Jack</span>
+                                                <span>Stabilizing the trailer</span>
                                             </div>
-                                            <div class="col-md-6">
-                                                <img src="{{asset('assets/customer/images/pvms/Leveling-Jack-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                                <img src="{{asset('assets/customer/images/pvms/Leveling-Jack-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
                                             </div>
 
                                         </div>
@@ -399,10 +399,10 @@ $seo_meta = [
                                     <div class="accordion-body pt-0">
                                         <div class="row">
                                             <div class="col-md-6 d-flex align-items-center">
-                                                <span>Rugged Mast Brake</span>
+                                                <span>Stable erection of sign</span>
                                             </div>
-                                            <div class="col-md-6">
-                                                <img src="{{asset('assets/customer/images/pvms/Rugge-Mast-Brake-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                                <img src="{{asset('assets/customer/images/pvms/Rugge-Mast-Brake-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
                                             </div>
 
                                         </div>
@@ -424,10 +424,10 @@ $seo_meta = [
                                     <div class="accordion-body pt-0">
                                         <div class="row">
                                             <div class="col-md-6 d-flex align-items-center">
-                                                <span>Heavy Duty Plastic Fenders</span>
+                                                <span>Enhance Longevity</span>
                                             </div>
-                                            <div class="col-md-6">
-                                                <img src="{{asset('assets/customer/images/pvms/Heavy-Duty-Plastic-Fender-Circle.png')}}"  class="img-fluid" style="max-height: 250px" >
+                                            <div class="col-md-6 d-flex align-items-center justify-content-center" >
+                                                <img src="{{asset('assets/customer/images/pvms/Heavy-Duty-Plastic-Fender-Circle.png')}}"  class= "img-fluid h-50" style="max-height: 250px" >
                                             </div>
 
                                         </div>
