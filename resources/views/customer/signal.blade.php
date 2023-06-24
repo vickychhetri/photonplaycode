@@ -24,7 +24,7 @@ $seo_meta=[
 
                 <div class="imaged m-auto">
                     <div class="city-wrap">
-                        <h2 class=" text-white fw-normal mb-1 title-text-h2">SIGNAGES</h2>
+                        <h2 class=" text-white fw-normal mb-1 title-text-h2">EMERGENCY SIGNAGES</h2>
                         <h5 class=" text-white fw-normal mt-2 mb-2 ">Ensuring safe and secure passage while <br/> navigating through tunnels</h5>
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
@@ -62,7 +62,7 @@ $seo_meta=[
                 <div class="col-lg-12">
                     <div class="text-center mb-lg-5">
                         <!-- <h6 class="fs-6 text-colorr">photonplay’s </h6> -->
-                        <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold">SIGNAGES Series</h2>
+                        <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold"> EMERGENCY SIGNAGES SERIES</h2>
                     </div>
                 </div>
 
