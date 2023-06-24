@@ -8,7 +8,48 @@ $seo_meta=[
 ?>
 @include('customer.layouts.header')
 {{--Radar Banner Start--}}
-<x-Customer.Radar.RadarBanner/>
+{{--<x-Customer.Radar.RadarBanner/>--}}
+
+<section class="banner-inner pt-0 pb-0">
+    <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+        </div>
+        <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="banner">
+                        <div
+                            class="banner-image-new-radar d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
+                            <div class="position-relative heading-banner ">
+                                <h2 class="">iCop | RADAR SPEED SIGN
+                                    <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
+                                </h2>
+                                <div class="">
+                                    <p class="text-dark">Best safety score with standout visibility and features.</p>
+                                </div>
+                                <a href="#our_products" type="button"
+                                   class="py-2 rounded border-0 px-4 mt-5 bg-white outline-0 btn-light text-decoration-none">Shop Now <img class="fs-4 ms-2" width="10" src="{{asset('assets\customer\images\downarrow.png')}}"
+                                                  alt=""></a>
+                                <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}"
+                                                                                       class="img-fluid d-none d-md-block" alt="not-found"></div>
+                                <div
+                                    class="circle-dotted position-absolute w-100 d-none d-md-flex align-items-center justify-content-start">
+{{--                                    <img src="{{asset('assets\customer\images\circles.png')}}" alt="Not Found" class="img-fluid">--}}
+                                </div>
+                            </div>
+{{--                            <div class="desktop-display">--}}
+{{--                                <img src="#" alt="Not Found" class="mt-3 mt-sm-0" style="height: 450px;">--}}
+{{--                            </div>--}}
+                            <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
+                                 class="img-fluid d-none d-md-block">
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</section>
+
 {{--Radar Banner End--}}
     <!-- Photon play radar-start -->
     <section class="portable px-lg-5">

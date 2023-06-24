@@ -29,7 +29,7 @@ $seo_meta=[
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
                     <div class="desktop-display">
-                        <img src="{{asset('assets/customer/images/Way-Finder-Light-Glow_signage2.png')}}"  alt="alt" class="d-block img-fluid h-75 product-feature-model-image"  style="transform: scale(1.3);">
+                        <img src="{{asset('assets/customer/images/Emergency-Signages.png')}}"  alt="alt" class="d-block img-fluid h-75 product-feature-model-image"  style="transform: scale(1.1);">
                     </div>
 
                 </div>

@@ -522,6 +522,18 @@ a.nav-link.dropdown-toggle.show img,
     height: 100%;
 }
 
+
+.banner .banner-image-new-radar {
+    background-image: url("../images/Radar-speed2222.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+}
+
+
 /*.banner .banner-imageses {*/
 /*    background-image: url("../images/solution-trash.webp");*/
 /*    background-repeat: no-repeat;*/
