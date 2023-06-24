@@ -1,16 +1,31 @@
 <section class="pt-0 pb-sm-4 pb-lg-5" >
     <div class="clints-content clints-content-banner mb-0">
 
-        @foreach($banners as $banner)
             <div>
                 <div class="clider-content-wrapper w-100 position-relative">
                     <div class="slider-content position-absolute top-50 start-50 translate-middle text-center">
-                        <h1 class="title_home_page_banner">{{$banner->tagline}}</h1>
-                        <h6 class="text-white mb-3">{{$banner->sub_tagline}}</h6>
+                        <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
+                        <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
                         <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                     </div>
-                    <img src="{{asset('storage/'.$banner->image)}}" alt="Not-Found" class="img-fluid w-100">
+
+                    <video width="100%" class="img-fluid w-100" autoplay loop muted>
+                        <source src="{{asset('assets/videos/head_video_photon.mp4')}}" type="video/mp4">
+                    </video>
+                    {{--                    <img src="" alt="Not-Found" >--}}
                 </div>
+            </div>
+
+        @foreach($banners as $banner)
+            <div>
+{{--                <div class="clider-content-wrapper w-100 position-relative">--}}
+{{--                    <div class="slider-content position-absolute top-50 start-50 translate-middle text-center">--}}
+{{--                        <h1 class="title_home_page_banner">{{$banner->tagline}}</h1>--}}
+{{--                        <h6 class="text-white mb-3">{{$banner->sub_tagline}}</h6>--}}
+{{--                        <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>--}}
+{{--                    </div>--}}
+{{--                    <img src="{{asset('storage/'.$banner->image)}}" alt="Not-Found" class="img-fluid w-100">--}}
+{{--                </div>--}}
             </div>
         @endforeach
 
