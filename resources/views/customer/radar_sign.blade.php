@@ -104,11 +104,20 @@ $seo_meta=[
             <div class="col-lg-6">
 
                 <div class="multiple-optionn pb-0 pt-lg-0 pt-5 pb-0">
-                    <a href="{{route('customer.contact.us')}}" class="text-decoration-none" style="float:right;">
-                        <img src="{{ URL::to('/') }}/assets/images/mesenges.png"
-                             class="mx-3"/>
-                    </a>
+                    <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
+
+                    @if($product->brochure)
+                        <div>
+                            <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-primary d-flex align-items-center"  style="height: 40px;padding:8px; width: 200px;" target="_blank">  Download Datasheet</a>
+                        </div>
+                    @endif
+                        <a href="{{route('customer.contact.us')}}" class="text-decoration-none" >
+                            <img src="{{ URL::to('/') }}/assets/images/mesenges.png"
+                                 class="mx-3"/>
+                        </a>
+                    </div>
                     <h4 class="font-weight-bold">{{$product->category->title}}</h4>
+
 
                     <span class="text-capitalize d-block">
                         {{$product->title}}
@@ -170,12 +179,7 @@ box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
 
                                         </select>
                                        {{-- <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif> --}}
-                                        @if($product->brochure)
-                                            <div>
-                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-primary d-flex align-items-center" style="height: 40px;padding:8px;" target="_blank">  Download Datasheet</a>
-                                            </div>
 
-                                        @endif
 
                                     </div>
 
