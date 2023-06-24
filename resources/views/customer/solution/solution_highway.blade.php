@@ -155,7 +155,7 @@ cutting-edge ITS solutions tailored to highways and tunnels.",
                 <div class="text-center mx-2">
                     <div class="inner-bus text-center py-4 px-3 h-100">
                         <div class="bus-radious">
-                            <img src="{{asset('assets/images/solutions/F-SOLAR (2).png') }}" alt="VASD" class="img-fluid m-auto" style="height: 300px">
+                            <img src="{{asset('assets/images/solutions/R-CLOUD.png') }}" alt="VMS" class="img-fluid m-auto" style="height: 300px">
                         </div>
                         <div class="mt-4">
                             <p class="mb-2">Variable Message Sign </p>
