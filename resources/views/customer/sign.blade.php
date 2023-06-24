@@ -27,7 +27,7 @@ $seo_meta=[
                                     <p class="text-dark">Best safety score with standout visibility and features.</p>
                                 </div>
                                 <a href="#our_products" type="button"
-                                   class="py-2 rounded border-0 px-4 mt-5 bg-white outline-0 btn-light text-decoration-none">Shop Now <img class="fs-4 ms-2" width="10" src="{{asset('assets\customer\images\downarrow.png')}}"
+                                   class="py-2 rounded border-0 px-4 mt-5 bg-white outline-1 btn-light text-decoration-none border-1" >Shop Now <img class="fs-4 ms-2" width="10" src="{{asset('assets\customer\images\downarrow.png')}}"
                                                   alt=""></a>
                                 <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}"
                                                                                        class="img-fluid d-none d-md-block" alt="not-found"></div>
@@ -80,12 +80,12 @@ $seo_meta=[
     </section>
     <!-- Photon play radar-end -->
     <!-- Our Product-start -->
-    <section class="icop-series pt-4">
+    <section class="icop-series pt-1 mt-1" >
         <div class="container"  id="our_products">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center mb-lg-5">
-                        <h2 class="fs-md-2 mt-3">Our Products</h2>
+                        <h2 class="fs-md-2">Our Products</h2>
                         <h6 class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your needs and exceed your expectations.
                         </h6>
                     </div>
