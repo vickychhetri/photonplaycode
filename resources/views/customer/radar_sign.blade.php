@@ -266,7 +266,7 @@ box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link text-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
-                            Specifications
+                            Features
                         </button>
                     </li>
 {{--                    <li class="nav-item" role="presentation">--}}
