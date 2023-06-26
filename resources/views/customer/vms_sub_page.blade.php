@@ -10,7 +10,7 @@ $seo_meta=[
 <body>
 
     <!-- Banner sec -->
-    <section class="banner-sec-smart-city py-4" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
+    <section class="highyway-imageses py-4" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
         <div class="container">
             <div class="slider-content ">
                 <div class="imaged m-auto">
