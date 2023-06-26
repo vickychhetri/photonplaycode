@@ -30,7 +30,7 @@ class SocialLoginController extends Controller
                 $userLogged=Auth::guard('customer')->user();
                 if($userLogged){
                     if($userLogged->is_block){
-                        return redirect()->back()->with('error', "Your Account Blocked !");
+                        return redirect(route('customer.loginForm'))->with('error', "Your Account Blocked !");
                     }
                 }
 
