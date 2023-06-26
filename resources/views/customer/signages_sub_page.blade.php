@@ -3,7 +3,7 @@
 <body>
 
     <!-- Banner sec -->
-    <section class="banner-sec-smart-city py-4" >
+    <section class="banner-sec-signage-signs py-4" >
         <div class="container">
             <div class="slider-content ">
                 <div class="imaged m-auto">

@@ -524,7 +524,7 @@ a.nav-link.dropdown-toggle.show img,
 
 
 .banner .banner-image-new-radar {
-    background-image: url("../images/banner-one.png");
+    /*background-image: url("../images/banner-one.png");*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -533,6 +533,14 @@ a.nav-link.dropdown-toggle.show img,
     height: 100%;
 }
 
+.banner-image-new-radar-parent {
+    background-image: url("../images/banner-one.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+}
 
 /*.banner .banner-imageses {*/
 /*    background-image: url("../images/solution-trash.webp");*/
@@ -645,7 +653,7 @@ a.nav-link.dropdown-toggle.show img,
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url("../images/shanghai-overpass-night.webp");
+    background-image: url("../images/Highways.jpg");
     background-size: cover;
     background-position: center;
     filter: blur(8px); /* Adjust the blur intensity as desired */
@@ -2208,6 +2216,33 @@ input:focus {
     z-index: -1;
     /*background-color: rgba(0, 0, 0, 0.6); height: 100%;*/
 }
+
+
+.banner-sec-signage-signs{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); height: 100%;
+
+}
+
+
+.banner-sec-signage-signs::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/Tunnels-ing-2.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Adjust the blur intensity as desired */
+    z-index: -1;
+    /*background-color: rgba(0, 0, 0, 0.6); height: 100%;*/
+}
+
+
 
 .thumb-image-item {
     position: relative;

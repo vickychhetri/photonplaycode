@@ -11,15 +11,17 @@ $seo_meta=[
 {{--<x-Customer.Radar.RadarBanner/>--}}
 
 <section class="banner-inner pt-0 pb-0">
-    <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleDark" class="carousel slide banner-image-new-radar-parent" data-bs-ride="carousel">
         <div class="carousel-indicators">
         </div>
         <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="banner">
+                    <div class="banner container">
                         <div
-                            class="banner-image-new-radar d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
-                            <div class="position-relative heading-banner ">
+                            class="banner-image-new-radar d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2 ">
+
+                            <div class="position-relative heading-banner  ">
+
                                 <h2 class="">iCop | RADAR SPEED SIGN
                                     <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
                                 </h2>
