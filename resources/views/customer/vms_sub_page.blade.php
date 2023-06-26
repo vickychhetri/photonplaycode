@@ -140,15 +140,6 @@ $seo_meta=[
                         </div>
                     </div>
                 </div>
-
-                    <div class="col-md-3">
-                        <div class="application-item">
-                            <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
-                            <div class="content-application-items">
-                                <h4 class="text-uppercase">Tunnels </h4>
-                            </div>
-                        </div>
-                    </div>
                 @endif
 
                     @if(request()->is('solution/standard-vms'))
