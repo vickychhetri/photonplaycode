@@ -141,7 +141,7 @@ $seo_meta=[
                                     <div class="">
                                         <h6 class="text-dark"> {{$specilization->specilization->title}} </h6>
                                         <select class="form-select mb-3 " onchange="changecalculated_amount(this)" name="dynamic_specs[{{$specilization->id}}]"
-                                                id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;">
+                                                id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;" required>
                                             <option selected disabled>--Choose an Option--</option>
                                             @foreach($specilization->options as $option)
 
