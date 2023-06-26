@@ -656,7 +656,7 @@ a.nav-link.dropdown-toggle.show img,
     background-image: url("../images/Highways.jpg");
     background-size: cover;
     background-position: center;
-    filter: blur(8px); /* Adjust the blur intensity as desired */
+    filter: blur(4px); /* Adjust the blur intensity as desired */
     z-index: -1;
 }
 
