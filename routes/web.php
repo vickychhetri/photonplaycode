@@ -62,6 +62,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/add-employee', [UserController::class, 'add_employee']);
         Route::get('/edit-employee/{id}', [UserController::class, 'edit_employee']);
         Route::put('/insert-employee', [UserController::class, 'insert_employee']);
+        //User
+        Route::get('/view-user/{id}', [UserController::class, 'view_user'])->name('user.view');
+        Route::get('/user-customer-block/{id}', [UserController::class, 'block_user'])->name("user.block");
 
         require_once "admins/api.php";
         require_once "admins/api2.php";

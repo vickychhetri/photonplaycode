@@ -60,6 +60,15 @@ class LoginController extends Controller
         if (!Auth::guard('customer')->attempt($credentials)) {
             return redirect()->back()->with('error', "You have entered invalid credentials");
         }
+
+        $userLogged=Auth::guard('customer')->user();
+        if($userLogged){
+            if($userLogged->is_block){
+                return redirect()->back()->with('error', "Your Account Blocked !");
+            }
+        }
+
+
         $session = Session::put('user', Auth::guard('customer')->user());
         $cart = Cart::where('session_id', $sessionId)->update(['user_id' => Session::get('user')->id]);
 

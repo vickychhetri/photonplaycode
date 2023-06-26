@@ -52,9 +52,10 @@
                                         <td>{{$item->email }}</td>
                                         <td>{{ date('d-m-Y',strtotime($item->created_at)) ?? ''}}</td>
                                         <td>
-                                            <a href="{{ url('admin/edit-employee/'.$item->id)}}" class="text-warning p-1" data-toggle="tooltip" title="Edit">
-                                                <i data-feather="edit"></i>
+                                            <a href="{{ route('admin.user.view',$item->id)}}" class="text-warning p-1" data-toggle="tooltip" title="View">
+                                                <i data-feather="eye"></i>
                                             </a>
+
 
                                             <a id="Delete-{{$item->id}}" class="text-danger pointer p-1" data-toggle="tooltip" title="Delete">
                                                 <i data-feather="trash-2"></i>

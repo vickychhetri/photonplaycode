@@ -61,7 +61,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end"><span>* </span>{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? $employee->email ?? ''}}" required autocomplete="off">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? $employee->email ?? ''}}" readonly required autocomplete="off">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

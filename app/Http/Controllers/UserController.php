@@ -11,6 +11,25 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+
+    public function block_user($id){
+        $user = Customer::find($id);
+        if($user->is_block){
+            $user->is_block=false;
+            $user->save();
+            return redirect()->back();
+        }else {
+            $user->is_block=true;
+            $user->save();
+        }
+        return redirect()->back();
+    }
+
+    public function view_user($id){
+        $employee = Customer::find($id);
+        return view('employees.view-user', compact('employee'));
+    }
+
     public function index()
     {
         $employee = Customer::get();
