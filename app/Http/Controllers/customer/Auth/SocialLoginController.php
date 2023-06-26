@@ -26,6 +26,15 @@ class SocialLoginController extends Controller
 
             if($finduser){
                 Auth::guard('customer')->login($finduser);
+
+                $userLogged=Auth::guard('customer')->user();
+                if($userLogged){
+                    if($userLogged->is_block){
+                        return redirect()->back()->with('error', "Your Account Blocked !");
+                    }
+                }
+
+
                 Session::put('user', Auth::guard('customer')->user());
                 $cart = Cart::where('session_id', $sessionId)->update(['user_id' => Session::get('user')->id]);
                 if($cart){
