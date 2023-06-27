@@ -292,7 +292,7 @@ h1 {
 
 h2 {
     font-size: 24px;
-    font-weight: 600px;
+    /*font-weight: 600;*/
     color: #06040a;
     font-weight: 600;
 }
