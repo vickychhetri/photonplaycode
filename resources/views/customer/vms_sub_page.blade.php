@@ -9,8 +9,14 @@ $seo_meta=[
 
 <body>
 
-    <!-- Banner sec -->
-    <section class="highyway-imageses py-4" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
+
+    <!-- Banner sec
+     SECTION ALTER AS PER THE PAGE REQUIREMENT , IF PAGE IS DIFFERENT THAN
+
+     -->
+
+
+    <section class="{{request()->is('solution/smart-city-vms')?'security-imageses':'highyway-imageses'}}  py-4" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
         <div class="container">
             <div class="slider-content ">
                 <div class="imaged m-auto">
