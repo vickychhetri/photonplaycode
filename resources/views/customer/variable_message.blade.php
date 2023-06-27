@@ -12,7 +12,7 @@ $seo_meta=[
 
     <!-- iCop Series Features Start -->
     <!-- Banner sec -->
-    <section class="banner-sec-smart-city py-5" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
+    <section class="highyway-imageses py-5" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
         <div class="container" >
             <div class="slider-content">
 
@@ -69,7 +69,7 @@ $seo_meta=[
                         @foreach ($page as $i)
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="text-start p-4 list-unsorted">
-                                    <div class="">
+                                    <div class="d-flex justify-content-center">
                                         <img src="{{asset('storage/'.$i->cover_image)}}" alt="Not Found"
                                             class="img-fluid" style="max-height: 250px">
                                     </div>
