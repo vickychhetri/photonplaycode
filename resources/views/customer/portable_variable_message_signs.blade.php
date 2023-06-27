@@ -234,7 +234,7 @@ $seo_meta = [
                                             <span class="text-dark" style="font-size: 16px;">Rapid and Easy Deployment</span>
                                         </div>
                                         <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                            <img src="{{asset('assets/customer/images/pvms/Automatic-lift-mechanism-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
+                                            <img src="{{asset('assets/customer/images/pvms/Automatic-lift-mechanism-Circle.png')}}"  class="img-fluid h-100" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -260,7 +260,7 @@ $seo_meta = [
                                             <span>Protection from rust, humidity and other impact.</span>
                                         </div>
                                         <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                            <img src="{{asset('assets/customer/images/pvms/powder-coating-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}')"  class="img-fluid h-50" style="max-height: 250px" >
+                                            <img src="{{asset('assets/customer/images/pvms/powder-coating-Circle.png')}}" onclick="showModal('{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}')"  class="img-fluid h-100" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -288,7 +288,7 @@ $seo_meta = [
                                             <span>Protection of Battery Box and Controller Box through secure locks</span>
                                         </div>
                                         <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                            <img src="{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
+                                            <img src="{{asset('assets/customer/images/pvms/Secure-and-Vandal-Proof-Circle.png')}}"  class="img-fluid h-100" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -320,7 +320,7 @@ $seo_meta = [
                                             <span>Manage Storage Space</span>
                                         </div>
                                         <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                            <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-2-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
+                                            <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-2-Circle.png')}}"  class="img-fluid h-100" style="max-height: 250px" >
                                         </div>
 
                                     </div>
@@ -349,7 +349,7 @@ $seo_meta = [
                                                 <span>Effortless and Secure Trailer Assembly</span>
                                             </div>
                                             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                                <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
+                                                <img src="{{asset('assets/customer/images/pvms/Tonge-Wheel-Jack-Circle.png')}}"  class="img-fluid h-100" style="max-height: 250px" >
                                             </div>
 
                                         </div>
@@ -376,7 +376,7 @@ $seo_meta = [
                                                 <span>Stabilizing the trailer</span>
                                             </div>
                                             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                                <img src="{{asset('assets/customer/images/pvms/Leveling-Jack-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
+                                                <img src="{{asset('assets/customer/images/pvms/Leveling-Jack-Circle.png')}}"  class="img-fluid h-100" style="max-height: 250px" >
                                             </div>
 
                                         </div>
@@ -402,7 +402,7 @@ $seo_meta = [
                                                 <span>Stable erection of sign</span>
                                             </div>
                                             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                                <img src="{{asset('assets/customer/images/pvms/Rugge-Mast-Brake-Circle.png')}}"  class="img-fluid h-50" style="max-height: 250px" >
+                                                <img src="{{asset('assets/customer/images/pvms/Rugge-Mast-Brake-Circle.png')}}"  class="img-fluid h-100" style="max-height: 250px" >
                                             </div>
 
                                         </div>
@@ -427,7 +427,7 @@ $seo_meta = [
                                                 <span>Enhance Longevity</span>
                                             </div>
                                             <div class="col-md-6 d-flex align-items-center justify-content-center" >
-                                                <img src="{{asset('assets/customer/images/pvms/Heavy-Duty-Plastic-Fender-Circle.png')}}"  class= "img-fluid h-50" style="max-height: 250px" >
+                                                <img src="{{asset('assets/customer/images/pvms/Heavy-Duty-Plastic-Fender-Circle.png')}}"  class= "img-fluid h-100" style="max-height: 250px" >
                                             </div>
 
                                         </div>
