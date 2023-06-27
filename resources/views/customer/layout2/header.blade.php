@@ -177,7 +177,7 @@
                                             <li><a href="{{route('customer.lane.control.system')}}"
                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
                                                     Control
-                                                    System (LCS) </a>
+                                                    Sign (LCS) </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -192,7 +192,7 @@
                                             <li><a href="{{route('customer.pasenger.information.display.system')}}"
                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Passenger
                                                     Information Display
-                                                    System <br> (PIDS) </a></li>
+                                                    Sign <br> (PIDS) </a></li>
                                             <li><a href="#" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus
                                                     Signs</a></li>
                                             <li>
@@ -324,7 +324,7 @@
                                         <li><a href="{{route('customer.lane.control.system')}}"
                                                class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
                                                 Control
-                                                System (LCS) </a>
+                                                Sign (LCS) </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -334,7 +334,7 @@
                                         <li><a href="{{route('customer.pasenger.information.display.system')}}"
                                                class="text-wrap dropdown-item px-0 text-uppercase mb-2">Passenger
                                                 Information Display
-                                                System <br> (PIDS) </a></li>
+                                                Sign <br> (PIDS) </a></li>
                                         <li><a href="#" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus
                                                 Signs</a></li>
                                         <li>
