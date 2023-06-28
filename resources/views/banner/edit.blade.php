@@ -43,10 +43,10 @@
                                 <div class="col-md-6">
                                     <select id="type"   class="form-select @error('type') is-invalid @enderror" name="type">
                                         <option value="" selected disabled> --Select Type-- </option>
-                                        <option value="1">Homepage</option>
+{{--                                        <option value="1">Homepage</option>--}}
                                         <option value="2">Key Project</option>
-                                        <option value="3">Radar Speed Sign</option>
-                                        <option value="4">Portable Variable Message Sign</option>
+{{--                                        <option value="3">Radar Speed Sign</option>--}}
+{{--                                        <option value="4">Portable Variable Message Sign</option>--}}
                                     </select>
 
                                     @error('sub_tagline')
