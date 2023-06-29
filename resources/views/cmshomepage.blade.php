@@ -70,6 +70,14 @@
                                     Banners</a>
                             </div>
 
+
+                            <div class="col-md-4  mb-3">
+                                <a href="{{url('admin/testimonials')}}" class="btn btn-primary btn-lg btn-block w-100 d-flex align-items-center justify-content-center">
+                                    <i data-feather="user"></i>
+                                    Testimonials</a>
+                            </div>
+
+
                         </div>
 
                     </div>

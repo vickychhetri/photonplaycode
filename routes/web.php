@@ -15,6 +15,7 @@ use App\Http\Controllers\Guest\HomePageController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeadController;
@@ -125,6 +126,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::get('shipping-rate/delete/{id}', [ShippingRateController::class, 'destroy']);
         Route::resource('shipping-rate', ShippingRateController::class);
+        Route::resource('testimonials', TestimonialController::class);
+
 
     });
 });
