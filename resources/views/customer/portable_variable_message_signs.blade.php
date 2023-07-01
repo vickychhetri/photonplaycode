@@ -459,8 +459,7 @@ $seo_meta = [
     <div class="container">
         <h3 class="text-center fs-2">Connectivity with Sign</h3>
         <div class="sub-header-message text-center col-md-6 mx-auto">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna aliqua</p>
+            <p>We offer flexible and user-friendly signage access options . The sign can be accessed in multiple ways either from remote or from on site </p>
         </div>
         <div class="row">
             <div class="col-md-4">
