@@ -52,12 +52,6 @@ $seo_meta=[
 
                     <div class="row">
                         <div class="col-md-3">
-{{--                            <meta name="csrf-token" content="{{ csrf_token() }}">--}}
-{{--                            <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">--}}
-{{--                            <input type="hidden" name="title" id="title" value="{{$product->title}}">--}}
-{{--                            <input type="hidden" name="category" id="category" value="{{$product->category->title}}">--}}
-{{--                            <input type="hidden" name="price" id="price" value="{{$product->price}}">--}}
-{{--                            <input type="hidden" name="cover_image" id="cover_image" value="{{$product->cover_image}}">--}}
                             <div class="desktop-display ">
                                 @foreach($product->images as $im_g)
                                     <div>
@@ -118,10 +112,7 @@ $seo_meta=[
                                 </a>
                         </div>
                     @endif
-{{--                        <a href="{{route('customer.contact.us')}}" class="text-decoration-none" >--}}
-{{--                            <img src="{{ URL::to('/') }}/assets/images/mesenges.png"--}}
-{{--                                 class="mx-3"/>--}}
-{{--                        </a>--}}
+
                     </div>
                     <h4 class="font-weight-bold">{{$product->category->title}}</h4>
 
@@ -168,21 +159,24 @@ $seo_meta=[
                                 <div class="d-flex align-items-center ">
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
-                                       <div class="d-flex align-items-center" style="border-radius: 150px;padding: 0px;
-background: rgba(18,17,17,0.21);
-box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
- <i class="bi bi-check-circle-fill m-0 p-0" style="font-size: 36px;color:#ffbf00;"></i>
-                                       </div>
-
+{{--                                       <div class="d-flex align-items-center" style="border-radius: 150px;padding: 0px;--}}
+{{--background: rgba(18,17,17,0.21);--}}
+{{--box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">--}}
+{{-- <i class="bi bi-check-circle-fill m-0 p-0" style="font-size: 36px;color:#ffbf00;"></i>--}}
+{{--                                       </div>--}}
+                                        <div>
+                                            <img src="{{asset('/assets/images/radar/color/Amber-Color.png')}}" style="height:40px;" id="imgicon_color_st" />
+                                        </div>
 
                                         <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none;
     border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;width: 120px;">
-                                            <option value="#ffbf00"> Amber </option>
-                                            <option value="#ffffff"> White </option>
-                                            <option value="#7cf210"> Green </option>
+                                            <option value="Amber-Color.png"> Amber </option>
+                                            <option value="White-Color.png"> White </option>
+                                            <option value="Green-Color.png"> Green </option>
+                                            <option value="Red-Color.png"> Red </option>
 
                                         </select>
                                        {{-- <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif> --}}
@@ -192,15 +186,16 @@ box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">
 
                                     <script>
                                         const selectElement = document.getElementById('select-color');
-                                        const iconElement = document.querySelector('.bi-check-circle-fill');
+                                        const iconElement = document.querySelector('#imgicon_color_st');
                                         const colorHolderElement = document.querySelector('#colorchoose');
+                                        const baseurl='{{asset('/assets/images/radar/color/')}}';
 
                                         selectElement.addEventListener('change', function() {
                                             const selectedOption = this.options[this.selectedIndex];
                                             const selectedText = selectedOption.text;
                                             const selectedColor = this.value;
                                             colorHolderElement.value=selectedText;
-                                            iconElement.style.color = selectedColor;
+                                            iconElement.src =baseurl+'/'+selectedColor;
                                         });
                                     </script>
 
