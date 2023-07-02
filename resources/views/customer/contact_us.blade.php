@@ -14,7 +14,7 @@ our product can work best for you, +1 (800) 966-9329 or sales@photonplay.com.",
                 <div class="col-lg-9">
                     <div class="text-center mb-lg-5 mb-5">
                         <h2 class="fs-2   mt-3">Contact Us</h2>
-                        <p class="text-mutedd">We are waiting to help you and your team
+                        <p claclints-content-brandingss="text-mutedd">We are waiting to help you and your team
                             <br> so don't hesitate to reach out!
                         </p>
                     </div>

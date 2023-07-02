@@ -133,69 +133,124 @@ $seo_meta=[
     <!-- iCop Series Features Start -->
     <section class=" pt-4">
         <div class="container">
-            <div class="row gy-5">
+            <div class="row gy-5" style="margin-right: 12%;margin-left: 12%;" >
                 <div class="col-lg-12">
                     <div class="text-center mb-lg-4">
                         <h2 class="fs-md-2 mt-3">iCop Series Features</h2>
                         <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect your device to various networks and devices,
                             enabling easy data transfer and integration with other smart devices.
                         </p>
+
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center bg-white feature-card p-4">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/icon.png')}}" alt="Not Found"></div>
-                        <div class="">
-                            <h6>Solar Powered</h6>
-                            <p class="mb-0"> Makes the device cost effective</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center bg-white feature-card p-4">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/WEATHER.png')}}" alt="Not Found"></div>
-                        <div class="">
-                            <h6>All Weather Operation</h6>
-                            <p class="mb-0"> The sign operates efficiently in all the weathers</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center bg-white feature-card p-4">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" alt="Not Found"></div>
+
+                <div class="col-lg-6  ">
+                    <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Traffic Data Analysis</h6>
                             <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
                         </div>
+
+                    </div>
+                    <img src="{{asset('assets/images/radar/RSS4.jpg')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center bg-white feature-card p-4">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/BATTERY.png')}}" alt="Not Found"></div>
-                        <div class="">
-                            <h6>Battery Backup</h6>
-                            <p class="mb-0"> Long battery backup increases operational hours </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center bg-white feature-card p-4">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/COMPLIANCE.png')}}" alt="Not Found"></div>
-                        <div class="">
-                            <h6>Fully Compliance</h6>
-                            <p class="mb-0"> Comply standard norms with other industries</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center bg-white feature-card p-4">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/CLUDE.png')}}" alt="Not Found"></div>
+
+                <div class="col-lg-6">
+                    <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>24x7 Cloud Connectivity</h6>
                             <p class="mb-0"> All time access to the device</p>
                         </div>
                     </div>
+                        <img src="{{asset('assets/images/radar/RSS3.jpg')}}"  class="img-fluid p-2"/>
+                    </div>
                 </div>
+
+
+                <div class="col-lg-6">
+                    <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" alt="Not Found"></div>
+                        <div class="">
+                            <h6>Solar Powered</h6>
+                            <p class="mb-0"> Makes the device cost effective</p>
+
+                        </div>
+                         </div>
+                        <img src="{{asset('assets/images/radar/RSS2.jpg')}}"  class="img-fluid p-2"/>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/BATTERY.png')}}" style="height: 70px;"  ></div>
+                        <div class="">
+                            <h6>Battery Backup</h6>
+                            <p class="mb-0"> Long battery backup increases operational hours </p>
+                        </div>
+                    </div>
+                        <img src="{{asset('assets/images/radar/RSS5.jpg')}}"  class="img-fluid p-2"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/COMPLIANCE.png')}}"  style="height: 70px;" alt="Not Found"></div>
+                        <div class="">
+                            <h6>Fully Compliance</h6>
+                            <p class="mb-0"> Comply standard norms with other industries</p>
+                        </div>
+                    </div>
+                        <img src="{{asset('assets/images/radar/RSS6.jpg')}}"  class="img-fluid p-2"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>All Weather Operation</h6>
+                            <p class="mb-0"> The sign operates efficiently in all the weathers</p>
+                        </div>
+                    </div>
+                        <img src="{{asset('assets/images/radar/RSS1.jpg')}}"  class="img-fluid p-2"/>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="feature-card p-4 bg-white">
+                        <div class="d-flex align-items-center ">
+                            <div class="me-3"><img src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                            <div class="">
+                                <h6>Robust</h6>
+                                <p class="mb-0"> Designed to withstand extreme weather conditions </p>
+                            </div>
+                        </div>
+                        <img src="{{asset('assets/images/radar/RSS7.jpg')}}"  class="img-fluid p-2"/>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="feature-card p-4 bg-white">
+                        <div class="d-flex align-items-center ">
+                            <div class="me-3"><img src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                            <div class="">
+                                <h6>Robust</h6>
+                                <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
+                            </div>
+                        </div>
+                        <img src="{{asset('assets/images/radar/RSS8.jpg')}}"  class="img-fluid p-2"/>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
     </section>
@@ -232,6 +287,7 @@ $seo_meta=[
                                         <p>
                                             Option to display graphic content with custom-made and standard graphic library like "SLOW DOWN", "THANK YOU", "WORK ZONE", etc.
                                         </p>
+                                        <img src="{{asset('assets/images/radar/RSS display.png')}}"  class="img-fluid p-2"/>
                                     </div>
                                 </div>
                             </div>
@@ -250,6 +306,8 @@ $seo_meta=[
                                         <p>
                                             Option to display custom text messages like community notifications, traffic updates, etc.
                                         </p>
+                                        <img src="{{asset('assets/images/radar/RSS Text.png')}}"  class="img-fluid p-2"/>
+
                                     </div>
                                 </div>
                             </div>
@@ -278,6 +336,9 @@ $seo_meta=[
                                             <p>
                                                 Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options.
                                             </p>
+
+
+                                            <img src="{{asset('assets/images/radar/RSS Multicolor.png')}}"  class="img-fluid p-2"/>
                                         </div>
                                     </div>
                                 </div>
@@ -296,6 +357,8 @@ $seo_meta=[
                                             <p>
                                                 White high bright flashing lights to alert the drivers, so one can never miss the attention
                                             </p>
+                                            <img src="{{asset('assets/images/radar/RSS Strobes.png')}}"  class="img-fluid p-2"/>
+
                                         </div>
                                     </div>
                                 </div>
@@ -312,226 +375,274 @@ $seo_meta=[
             <img class="dotted-imag img-fluid d-none d-md-inline" src="/assets/customer/images/dotted-tran.png" alt="not-found">
         </div>
     </section>
+
+<section class="option-chose mb-0 pb-0 pt-0 mt-0" style="background-color: #ebebeb;">
+    <div class="container option-chose-rows">
+        <div class="row align-items-center m-4">
+            <div class="col-md-12">
+                <h4 class="text-center mt-2 pt-4 font-weight-bold text-dark" style="font-size: 24px;">   EXPLORE THE SIGN </h4>
+            </div>
+
+            <div class="col-md-7 p-4">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/TRLuZV_qSaE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="p-2 m-1" style="border: 10px solid white;"></iframe>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center align-items-center " >
+                <div>
+
+
+                <img src="{{asset('assets/images/radar/Layer 676.png')}}" style="height: 415px;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- Dimension section -->
     <!-- Multiple Size Options-start -->
-    <section class="option-chose mb-0 pb-0 pt-0 mt-0">
-        <div class="container option-chose-rows">
-            <div class="row align-items-center">
-                <!-- option-one -->
-                <div class="col-lg-6">
-                    <div class="img-left">
-                        <img src="{{asset('assets/customer/images/your_speed.webp')}}" alt="" class="img-fluid h-75 w-75">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="multiple-option pb-0">
-                        <h4>Multiple Size Options</h4>
-                        <span class="text-capitalize d-block">Three Size Options To Choose From</span>
-                        <p>Depending upon the application and visibility requirement, Visible up to 1000 ft. 12", 15”- and 18”-Character Height Radar Speed Signs are available..</p>
-                        <ul class="ps-3">
-                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>
-                            <li> School Zone - <span> 12" and 15" Models are recommended </span></li>
-                            <li> Neighborhood - <span>12" and 15" Models are recommended</span></li>
-                            <li> Highways - <span> 15" and 18" Models are recommended </span></li>
+{{--    <section class="option-chose mb-0 pb-0 pt-0 mt-0">--}}
+{{--        <div class="container option-chose-rows">--}}
+{{--            <div class="row align-items-center">--}}
+{{--                <!-- option-one -->--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="img-left">--}}
+{{--                        <img src="{{asset('assets/customer/images/your_speed.webp')}}" alt="" class="img-fluid h-75 w-75">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="multiple-option pb-0">--}}
+{{--                        <h4>Multiple Size Options</h4>--}}
+{{--                        <span class="text-capitalize d-block">Three Size Options To Choose From</span>--}}
+{{--                        <p>Depending upon the application and visibility requirement, Visible up to 1000 ft. 12", 15”- and 18”-Character Height Radar Speed Signs are available..</p>--}}
+{{--                        <ul class="ps-3">--}}
+{{--                            <li> Work Zone Safety - <span>12" and 15" Models are recommended</span></li>--}}
+{{--                            <li> School Zone - <span> 12" and 15" Models are recommended </span></li>--}}
+{{--                            <li> Neighborhood - <span>12" and 15" Models are recommended</span></li>--}}
+{{--                            <li> Highways - <span> 15" and 18" Models are recommended </span></li>--}}
 
-                        </ul>
-                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
-                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--                        </ul>--}}
+{{--                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">--}}
+{{--                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>--}}
+{{--                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="row py-4">
-                <!-- option-two -->
-                <div class="col-lg-6">
-                    <div class="img-left">
-                        <img src="{{asset('assets/customer/images/key-speed.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="multiple-option pb-0">
-                        <h4>Robust</h4>
-                        <span class="text-capitalize d-block">Designed to withstand extreme weather
-                            conditions</span>
-                        <p>Radar your speed signs are designed to work all weather conditions including high
-                            temperatures of middle-east to the cold Alaska winters.</p>
-                        <ul class="ps-3">
-                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra Violet rays and extreme heats of middle east (GE-LEXAN)</span></li>
-                            <li>Water Proofing - <span>IP66 Rated Enclosure made with marine grade aluminium</span>
-                            </li>
-                            <li> High Grade Batteries - <span>  Military Grade Batteries to operate in all temperature scenarios with maximum efficiency</span></li>
-                        </ul>
-                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
-                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row py-4">--}}
+{{--                <!-- option-two -->--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="img-left">--}}
+{{--                        <img src="{{asset('assets/customer/images/key-speed.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="multiple-option pb-0">--}}
+{{--                        <h4>Robust</h4>--}}
+{{--                        <span class="text-capitalize d-block">Designed to withstand extreme weather--}}
+{{--                            conditions</span>--}}
+{{--                        <p>Radar your speed signs are designed to work all weather conditions including high--}}
+{{--                            temperatures of middle-east to the cold Alaska winters.</p>--}}
+{{--                        <ul class="ps-3">--}}
+{{--                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra Violet rays and extreme heats of middle east (GE-LEXAN)</span></li>--}}
+{{--                            <li>Water Proofing - <span>IP66 Rated Enclosure made with marine grade aluminium</span>--}}
+{{--                            </li>--}}
+{{--                            <li> High Grade Batteries - <span>  Military Grade Batteries to operate in all temperature scenarios with maximum efficiency</span></li>--}}
+{{--                        </ul>--}}
+{{--                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">--}}
+{{--                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>--}}
+{{--                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="row py-4">
-                <!-- option-three -->
-                <div class="col-lg-6">
-                    <div class="img-left">
-                        <img src="{{asset('assets/customer/images/Data-analysis-cloud-radar-sign.webp')}}" alt="" class="img-fluid h-75 w-75">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="multiple-option pb-0">
-                        <h4>Traffic Data Analysis</h4>
-                        <span class="text-capitalize d-block">Cloud based powerful tools for traffic data
-                            analysis</span>
-                        <p>Professional data collection system and analysis tool set for historic analysis of the
-                            traffic trends and effects on the traffic behaviour, this comes as a standard package
-                            with
-                            all our models.</p>
-                        <ul class="ps-3">
-                            <li> Access - <span>Realtime Access and analyse data from anywhere, anytime at our
-                                    Cloud</span></li>
-                            <li>Unlimited - <span>Cloud database with unlimited storage in terms of no of
-                                    vehicles</span></li>
-                            <li>Control - <span>Control and configure the radar signs</span></li>
-                        </ul>
-                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
-                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row py-4">--}}
+{{--                <!-- option-three -->--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="img-left">--}}
+{{--                        <img src="{{asset('assets/customer/images/Data-analysis-cloud-radar-sign.webp')}}" alt="" class="img-fluid h-75 w-75">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="multiple-option pb-0">--}}
+{{--                        <h4>Traffic Data Analysis</h4>--}}
+{{--                        <span class="text-capitalize d-block">Cloud based powerful tools for traffic data--}}
+{{--                            analysis</span>--}}
+{{--                        <p>Professional data collection system and analysis tool set for historic analysis of the--}}
+{{--                            traffic trends and effects on the traffic behaviour, this comes as a standard package--}}
+{{--                            with--}}
+{{--                            all our models.</p>--}}
+{{--                        <ul class="ps-3">--}}
+{{--                            <li> Access - <span>Realtime Access and analyse data from anywhere, anytime at our--}}
+{{--                                    Cloud</span></li>--}}
+{{--                            <li>Unlimited - <span>Cloud database with unlimited storage in terms of no of--}}
+{{--                                    vehicles</span></li>--}}
+{{--                            <li>Control - <span>Control and configure the radar signs</span></li>--}}
+{{--                        </ul>--}}
+{{--                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">--}}
+{{--                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>--}}
+{{--                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="row py-4">
-                <!-- option-four -->
-                <div class="col-lg-6">
-                    <div class="img-left">
-                        <img src="{{asset('assets/customer/images/iMAGE-HOLDER.jpg')}}" alt="Not Found" class="img-fluid h-75 w-75">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="multiple-option pb-0">
-                        <h4>Solar Powered (Optional)</h4>
-                        <span class="text-capitalize d-block">Power options including Solar with backup upto 7
-                            days</span>
-                        <p>Solar Powered Speed Signs options with an extended battery back of up to 7 days without
-                            sunlight.</p>
-                        <ul class="ps-3">
-                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra
-                                    Violet
-                                    rays and
-                                    extreme heats of middle east</span></li>
-                            <li> Water Proofing - <span>Enclosure made from marine grade aluminium</span></li>
-                            <li> High Grade Batteries - <span>Military Grade Batteries to operate in all temperature
-                                    scenarios with
-                                    maximum efficiency</span></li>
-                            <div class="d-block ">
-                                <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
-                            </div>
-                        </ul>
-                </div>
-                <!-- option-five -->
-            </div>
+{{--            <div class="row py-4">--}}
+{{--                <!-- option-four -->--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="img-left">--}}
+{{--                        <img src="{{asset('assets/customer/images/iMAGE-HOLDER.jpg')}}" alt="Not Found" class="img-fluid h-75 w-75">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="multiple-option pb-0">--}}
+{{--                        <h4>Solar Powered (Optional)</h4>--}}
+{{--                        <span class="text-capitalize d-block">Power options including Solar with backup upto 7--}}
+{{--                            days</span>--}}
+{{--                        <p>Solar Powered Speed Signs options with an extended battery back of up to 7 days without--}}
+{{--                            sunlight.</p>--}}
+{{--                        <ul class="ps-3">--}}
+{{--                            <li> UV Resistant - <span>Double Layer UV coating protecting electronics from Ultra--}}
+{{--                                    Violet--}}
+{{--                                    rays and--}}
+{{--                                    extreme heats of middle east</span></li>--}}
+{{--                            <li> Water Proofing - <span>Enclosure made from marine grade aluminium</span></li>--}}
+{{--                            <li> High Grade Batteries - <span>Military Grade Batteries to operate in all temperature--}}
+{{--                                    scenarios with--}}
+{{--                                    maximum efficiency</span></li>--}}
+{{--                            <div class="d-block ">--}}
+{{--                                <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>--}}
+{{--                            </div>--}}
+{{--                        </ul>--}}
+{{--                </div>--}}
+{{--                <!-- option-five -->--}}
+{{--            </div>--}}
 
-            <div class="row py-4">
-                <div class="col-lg-6">
-                    <div class="img-left">
-                        <img src="{{asset('assets/customer/images/trans-canada.webp')}}" alt="Not Found" class="img-fluid h-75 w-75" >
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="multiple-option pb-0">
-                        <h4>Standards And Compliances</h4>
-                        <!-- <span class="text-capitalize d-block">Power options including Solar with backup upto 7
-                                days</span> -->
-                        <p>Be it Driver Feedback Signs, Radar Speed Signs, or Speed Feedback Sign, all are designed
-                            to
-                            comply with all traffic needs around the globe, including European and North American
-                            industry standards, while also aligning with safety initiatives across the US and
-                            Canada.
-                        </p>
-                        <ul class="ps-3">
-                            <li> MUTCD approved - <span>Text and display fonts complying with Manual on Uniform
-                                    Traffic
-                                    Control Devices (MUTCD)</span></li>
-                            <li> Transport Canada approved</li>
-                            <li> IP66</li>
-                            <li> Safe Routes to School aligned</li>
-                            <li> FCC Approved</li>
-                        </ul>
-                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
-                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">
-                        </div>
-                    </div>
-                </div>
-                <!--option six -->
-            </div>
+{{--            <div class="row py-4">--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="img-left">--}}
+{{--                        <img src="{{asset('assets/customer/images/trans-canada.webp')}}" alt="Not Found" class="img-fluid h-75 w-75" >--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="multiple-option pb-0">--}}
+{{--                        <h4>Standards And Compliances</h4>--}}
+{{--                        <!-- <span class="text-capitalize d-block">Power options including Solar with backup upto 7--}}
+{{--                                days</span> -->--}}
+{{--                        <p>Be it Driver Feedback Signs, Radar Speed Signs, or Speed Feedback Sign, all are designed--}}
+{{--                            to--}}
+{{--                            comply with all traffic needs around the globe, including European and North American--}}
+{{--                            industry standards, while also aligning with safety initiatives across the US and--}}
+{{--                            Canada.--}}
+{{--                        </p>--}}
+{{--                        <ul class="ps-3">--}}
+{{--                            <li> MUTCD approved - <span>Text and display fonts complying with Manual on Uniform--}}
+{{--                                    Traffic--}}
+{{--                                    Control Devices (MUTCD)</span></li>--}}
+{{--                            <li> Transport Canada approved</li>--}}
+{{--                            <li> IP66</li>--}}
+{{--                            <li> Safe Routes to School aligned</li>--}}
+{{--                            <li> FCC Approved</li>--}}
+{{--                        </ul>--}}
+{{--                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">--}}
+{{--                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>--}}
+{{--                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid " width="80">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <!--option six -->--}}
+{{--            </div>--}}
 
-            <div class="row py-4">
-                <div class="col-lg-6">
-                    <div class="img-left">
-                        <img src="{{asset('assets/customer/images/ballon-HOLDER.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="multiple-option pb-0">
-                        <h4>High Grade Retro Reflective Facia</h4>
-                        <span class="text-capitalize d-block">Diamond grade retro Reflective Sheeting</span>
-                        <p>Various Sheeting color options to choose from special can be made on requests.</p>
-                        <ul class="ps-3">
-                            <li> Orange Color - <span>Traffic Calming in Construction Zone</span></li>
-                            <li> Yellow Color (Most widely used) - <span>12" and 15" Models are recommended</span>
-                            </li>
-                            <li> Work Zone Safety - <span>Yellow signifies WARNING. Yellow traffic signs stand for
-                                    slowing down, driving with caution, or a general warning</span></li>
-                            <li> White - <span>Regulatory signs tell you what you can and can’t do on the
-                                    road</span>
-                            </li>
-                        </ul>
-                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
-                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
-                        </div>
-                    </div>
-                </div>
+{{--            <div class="row py-4">--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="img-left">--}}
+{{--                        <img src="{{asset('assets/customer/images/ballon-HOLDER.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="multiple-option pb-0">--}}
+{{--                        <h4>High Grade Retro Reflective Facia</h4>--}}
+{{--                        <span class="text-capitalize d-block">Diamond grade retro Reflective Sheeting</span>--}}
+{{--                        <p>Various Sheeting color options to choose from special can be made on requests.</p>--}}
+{{--                        <ul class="ps-3">--}}
+{{--                            <li> Orange Color - <span>Traffic Calming in Construction Zone</span></li>--}}
+{{--                            <li> Yellow Color (Most widely used) - <span>12" and 15" Models are recommended</span>--}}
+{{--                            </li>--}}
+{{--                            <li> Work Zone Safety - <span>Yellow signifies WARNING. Yellow traffic signs stand for--}}
+{{--                                    slowing down, driving with caution, or a general warning</span></li>--}}
+{{--                            <li> White - <span>Regulatory signs tell you what you can and can’t do on the--}}
+{{--                                    road</span>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">--}}
+{{--                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>--}}
+{{--                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- option-seven -->
-            </div>
+{{--                <!-- option-seven -->--}}
+{{--            </div>--}}
 
-            <div class="row ">
-                <div class="col-lg-6" style="max-height: 300px">
-                    <div class="img-left">
-                        <img src="{{asset('assets/customer/images/trans-canada.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">
-                    </div>
-                </div>
-                <div class="col-lg-6 " style="max-height: 300px">
-                    <div class="multiple-option pb-0">
-                        <h4>Easy Installation</h4>
-                        <span class="text-capitalize d-block">Very easy to install</span>
-                        <p>Radar speed signs are designed in such a way to be used like a plug and play device, with
-                            very easy accessible mounting options and connections to install a signs on a standard
-                            sign
-                            post or a pole.</p>
-                        <ul class="ps-3">
-                            <li> Instant - <span>15 minutes installation</span></li>
-                        </ul>
-                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>
-                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">
-                        </div>
-                    </div>
-                </div>
+{{--            <div class="row ">--}}
+{{--                <div class="col-lg-6" style="max-height: 300px">--}}
+{{--                    <div class="img-left">--}}
+{{--                        <img src="{{asset('assets/customer/images/trans-canada.webp')}}" alt="Not Found" class="img-fluid h-75 w-75">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6 " style="max-height: 300px">--}}
+{{--                    <div class="multiple-option pb-0">--}}
+{{--                        <h4>Easy Installation</h4>--}}
+{{--                        <span class="text-capitalize d-block">Very easy to install</span>--}}
+{{--                        <p>Radar speed signs are designed in such a way to be used like a plug and play device, with--}}
+{{--                            very easy accessible mounting options and connections to install a signs on a standard--}}
+{{--                            sign--}}
+{{--                            post or a pole.</p>--}}
+{{--                        <ul class="ps-3">--}}
+{{--                            <li> Instant - <span>15 minutes installation</span></li>--}}
+{{--                        </ul>--}}
+{{--                        <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">--}}
+{{--                            <a href="#our_products" class="btn btn-primary text-uppercase rounded-2">Shop Now</a>--}}
+{{--                            <img src="{{asset('assets/customer/images/Dot-Patternc.jpg')}}" alt="Not Found" class="img-fluid" width="80">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
+{{--            </div>--}}
 
-        </div>
-        </div>
-        </div>
-    </section>
+{{--        </div>--}}
+{{--        </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- Multiple Size Options-end -->
-    <!--  -->
+
+<section class="key-project pb-0 key-wrap" style="margin-top: 50px;">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+            <div class="text-center mb-lg-5">
+                <h2 class="fs-md-2 mt-3">Gallery</h2>
+                <p class="fs-6">Our Key Projects Across the Globe - Discover How Our Innovative Solutions are Changing the Game!</p>
+            </div>
+        </div>
+    </div>
+    <div class="key-slider mb-0"  style="height: 650px;">
+        <div>
+            <img src="{{asset('assets/images/radar/gallery/UV9D2BRMlg5xvAE4fjxZdmNw1Kv4i731VzOTKlHN.jpg')}}" alt="banner" class="img-fluid w-100 h-100 slide-images-key">
+        </div>
+        <div>
+            <img src="{{asset('assets/images/radar/gallery/0W2kZs8THRJN0mSOI6Lr9J4OxCLJ4gx4BjGwG5jn.jpg')}}" alt="banner" class="img-fluid w-100 h-100 slide-images-key">
+        </div>
+    </div>
+</section>
+
+
+<!--  -->
 @include('customer.layout2.get_in_touch')
+<!-- _____________________ourclint-last-start___________________ -->
+@include('customer.layout2.our_clients')
+<!-- _____________________ourclint-last-end___________________ -->
+
     @include('customer.layout2.footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
@@ -544,6 +655,41 @@ $seo_meta=[
     }
 </style>
 <script>
+
+    $(document ).ready( function(){
+        $('.clints-content-branding').slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 5,
+            prevArrow: "<button type='button' class='slick-prev pull-left'><img src='/assets/customer/images/left-chevron.png'/></button>",
+            nextArrow: "<button type='button' class='slick-next pull-right'><img src='/assets/customer/images/right-chevron.png'/></button>",
+            slidesToScroll: 1,
+            arrows: true,
+            autoplay:true,
+            // fade:true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 6,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    });
         $('.responsive').slick({
             dots: true,
             infinite: false,
