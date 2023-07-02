@@ -256,7 +256,7 @@ $seo_meta=[
     </section>
     <!-- iCop Series Features End -->
     <!-- SPECIFICATION Sec Accordion -->
-    <section class="sepeicification  pt-md-4 pt-0 position-relative">
+    <section class="sepeicification  pt-md-4 pt-0  pb-0 position-relative">
         <div class="message-sign text-center text-primary">
             <!-- <h6 class="fs-6">photonplay’s</h6> -->
         </div>
@@ -376,19 +376,22 @@ $seo_meta=[
         </div>
     </section>
 
-<section class="option-chose mb-0 pb-0 pt-0 mt-0" style="background-color: #ebebeb;">
+<section class="option-chose mb-2 pb-2 pt-0 mt-0 bg-white">
     <div class="container option-chose-rows">
-        <div class="row align-items-center">
+        <div class="row">
             <div class="col-md-12">
-                <h4 class="text-center mt-2 pt-4 font-weight-bold text-dark" style="font-size: 24px;">   EXPLORE THE SIGN </h4>
+                <h2 class="fs-md-2 mt-3 text-center">   EXPLORE THE SIGN </h2>
             </div>
-
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mb-4 pb-3">
             <div class="col-md-7">
                 <iframe width="100%" height="400" src="https://www.youtube.com/embed/TRLuZV_qSaE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="p-2 m-1" style="border: 10px solid white;"></iframe>
             </div>
             <div class="col-md-5 d-flex justify-content-center align-items-center " >
                 <div>
-                <img src="{{asset('assets/images/radar/Layer 676.png')}}" style="height: 415px;"/>
+                    <img src="{{asset('assets/images/radar/ezgif.com-video-to-gif.gif')}}" style="height: 415px;"/>
                 </div>
             </div>
         </div>
@@ -615,25 +618,26 @@ $seo_meta=[
 {{--    </section>--}}
     <!-- Multiple Size Options-end -->
 
-<section class="key-project pb-0 key-wrap" style="margin-top: 50px;">
-    <div class="container-fluid">
+
+    <div class="container-fluid mb-0">
         <div class="col-lg-12">
-            <div class="text-center mb-lg-5">
+            <div class="text-center">
                 <h2 class="fs-md-2 mt-3">Gallery</h2>
                 <p class="fs-6">Our Key Projects Across the Globe - Discover How Our Innovative Solutions are Changing the Game!</p>
-            </div>
+            </div>`
         </div>
+       <div class="col-lg-12 pb-4 pt-0 mt-0">
+<div class="key-slider-sign-radar slide-images-key">
+    <div>
+        <img src="/assets/images/radar/gallery/UV9D2BRMlg5xvAE4fjxZdmNw1Kv4i731VzOTKlHN.jpg"  class="img-fluid w-100 h-100 slide-images-key">
     </div>
-    <div class="key-slider mb-0"  style="height: 650px;">
-        <div>
-            <img src="{{asset('assets/images/radar/gallery/UV9D2BRMlg5xvAE4fjxZdmNw1Kv4i731VzOTKlHN.jpg')}}" alt="banner" class="img-fluid w-100 h-100 slide-images-key">
-        </div>
-        <div>
-            <img src="{{asset('assets/images/radar/gallery/0W2kZs8THRJN0mSOI6Lr9J4OxCLJ4gx4BjGwG5jn.jpg')}}" alt="banner" class="img-fluid w-100 h-100 slide-images-key">
-        </div>
+    <div>
+        <img src="/assets/images/radar/gallery/0W2kZs8THRJN0mSOI6Lr9J4OxCLJ4gx4BjGwG5jn.jpg"  class="img-fluid w-100 h-100 slide-images-key">
     </div>
-</section>
 
+</div>
+       </div>
+    </div>
 
 <!--  -->
 @include('customer.layout2.get_in_touch')
@@ -726,6 +730,51 @@ $seo_meta=[
                 // instead of a settings object
             ]
         });
+    $('.key-slider-sign-radar').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        autoplay:true,
+        adaptiveHeight: true
+    });
+    //
+    // $('.key-slider-sign-radar').slick({
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 300,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     responsive: [
+    //         {
+    //             breakpoint: 1024,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1,
+    //                 infinite: true,
+    //                 dots: true
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 600,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 480,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1
+    //             }
+    //         }
+    //         // You can unslick at a given breakpoint now by adding:
+    //         // settings: "unslick"
+    //         // instead of a settings object
+    //     ]
+    // });
     </script>
 </body>
 </html>
