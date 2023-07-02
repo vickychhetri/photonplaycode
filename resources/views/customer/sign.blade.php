@@ -378,18 +378,16 @@ $seo_meta=[
 
 <section class="option-chose mb-0 pb-0 pt-0 mt-0" style="background-color: #ebebeb;">
     <div class="container option-chose-rows">
-        <div class="row align-items-center m-4">
+        <div class="row align-items-center">
             <div class="col-md-12">
                 <h4 class="text-center mt-2 pt-4 font-weight-bold text-dark" style="font-size: 24px;">   EXPLORE THE SIGN </h4>
             </div>
 
-            <div class="col-md-7 p-4">
+            <div class="col-md-7">
                 <iframe width="100%" height="400" src="https://www.youtube.com/embed/TRLuZV_qSaE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="p-2 m-1" style="border: 10px solid white;"></iframe>
             </div>
             <div class="col-md-5 d-flex justify-content-center align-items-center " >
                 <div>
-
-
                 <img src="{{asset('assets/images/radar/Layer 676.png')}}" style="height: 415px;"/>
                 </div>
             </div>
