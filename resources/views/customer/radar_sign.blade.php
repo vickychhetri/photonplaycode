@@ -16,7 +16,12 @@ $seo_meta=[
     }
 @endphp
 @include('customer.layouts.header')
-
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">
     <ul class="list-style-ul pt-2 m-0 pb-2 d-flex justify-content-center align-items-center flex-wrap">
