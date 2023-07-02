@@ -107,19 +107,21 @@ $seo_meta=[
 
             </div>
             <div class="col-lg-6">
-
                 <div class="multiple-optionn pb-0 pt-lg-0 pt-5 pb-0">
                     <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
-
                     @if($product->brochure)
                         <div>
-                            <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-primary d-flex align-items-center"  style="height: 40px;padding:8px; width: 200px;" target="_blank">  Download Datasheet</a>
+                            <a href="{{asset('storage/'.$product->brochure)}}" class="d-flex align-items-center text-decoration-none text-dark"  style="height: 40px;padding:8px; width: 200px;" target="_blank">
+                                <img src="/assets/images/radar/pdf_icon.png" style="height:40px;"> &nbsp
+                                <span class="font-weight-bold"><u> {{$product->title}} PDF </u> </span>
+
+                                </a>
                         </div>
                     @endif
-                        <a href="{{route('customer.contact.us')}}" class="text-decoration-none" >
-                            <img src="{{ URL::to('/') }}/assets/images/mesenges.png"
-                                 class="mx-3"/>
-                        </a>
+{{--                        <a href="{{route('customer.contact.us')}}" class="text-decoration-none" >--}}
+{{--                            <img src="{{ URL::to('/') }}/assets/images/mesenges.png"--}}
+{{--                                 class="mx-3"/>--}}
+{{--                        </a>--}}
                     </div>
                     <h4 class="font-weight-bold">{{$product->category->title}}</h4>
 
@@ -127,7 +129,7 @@ $seo_meta=[
                     <span class="text-capitalize d-block">
                         {{$product->title}}
                     </span>
-                    <div class="d-flex justify-content-start align-items-center">
+                    <div class="d-flex justify-content-start align-items-center gap-1">
                         <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
                         <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
                         <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
