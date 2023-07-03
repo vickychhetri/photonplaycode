@@ -19,8 +19,7 @@ $seo_meta = [
                         <div
                             class="banner-image d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
                             <div class="position-relative heading-banner ">
-                                <h2 class="title-text-h2 title-text-h2">Portable Variable
-                                    Message Signs (VMS)
+                                <h2 class="title-text-h2 title-text-h2"> PORTABLE VARIABLE MESSAGE SIGN
                                     <p class="mb-0 h4 font-weight-bold">
                                         <span>
                                         Highly  Equipped and Robust Message Sign
@@ -98,7 +97,7 @@ $seo_meta = [
                                     <img src="{{asset('storage/'.$item->cover_image)}}" alt="Not Found"
                                          class="img-fluid">
                                 </div>
-                                <div class="my-3 list-bacgund px-4 py-4" style="font-size: 15px;height: 240px;overflow: hidden;">
+                                <div class="my-3 list-bacgund px-4 py-4" style="font-size: 11px;height: 240px;overflow: hidden;">
                                     <h5 class="fw-bold text-capitalize text-dark">{{$item->title}}</h5>
                                     <ul class="text-dark">
                                         @foreach ($item->features as $feature)
