@@ -159,11 +159,6 @@ $seo_meta=[
                                 <div class="d-flex align-items-center ">
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
-{{--                                       <div class="d-flex align-items-center" style="border-radius: 150px;padding: 0px;--}}
-{{--background: rgba(18,17,17,0.21);--}}
-{{--box-shadow:  2px 2px 2px rgba(0,0,0,0.25)">--}}
-{{-- <i class="bi bi-check-circle-fill m-0 p-0" style="font-size: 36px;color:#ffbf00;"></i>--}}
-{{--                                       </div>--}}
                                         <div>
                                             <img src="{{asset('/assets/images/radar/color/Amber-Color.png')}}" style="height:40px;" id="imgicon_color_st" />
                                         </div>
