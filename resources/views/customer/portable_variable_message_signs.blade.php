@@ -70,10 +70,7 @@ $seo_meta = [
                         Messaging Solutions
                     </h5>
                     <p class="mt-4 mb-lg-0 mb-5 text-center">
-                        Photonplay's Portable Variable Message Signs (VMS) are one of the key elements of dynamic
-                        traffic management systems. Depending on the traffic situation, signs are efficiently used
-                        to warn and guide about traffic congestion, routing information, speed limits, road work
-                        zones, accidents and other incidents on highways, expressways and arterial roads of cities
+                        Portable variable message sign, also known as a portable VMS or a portable message board, is a device used to display variable messages or information to motorists and pedestrians. These signs are often used in traffic management, construction zones, special events, or any situation where temporary messaging is needed.These signs are designed to be easily transported and set up at different locations. They are typically mounted on trailers or stands and can be moved using a vehicle. These signs are commonly used for traffic management purposes, such as providing information about road closures, detours, lane shifts, speed limits, or upcoming hazards. They can help regulate traffic flow and improve safety.
                     </p>
                 </div>
             </div>
