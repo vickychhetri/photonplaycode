@@ -44,10 +44,7 @@ $seo_meta=[
                 <div class="col-lg-10">
                     <div>
                         <p>
-                            Tunnel signage is a crucial component of tunnel safety since it assists vehicles in securely
-                            and effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage
-                            from road and rail tunnels. To ensure a safe passage through the tunnel, it's essential to
-                            follow the instructions on these signs.
+                            Tunnel signage is a crucial component of tunnel safety since it assists vehicles in securely and effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage from road and rail tunnels. To ensure a safe passage through the tunnel, it's essential to follow the instructions on these signs. When it comes to emergencies, every second counts. Our Emergency Signages are intelligently crafted to provide clear and unmistakable guidance to individuals navigating through tunnels in critical situations. The ultra-bright illumination ensures maximum visibility, even in low light or smoke-filled conditions, making it easier for people to locate the nearest exit points swiftly.
                         </p>
                     </div>
                 </div>
