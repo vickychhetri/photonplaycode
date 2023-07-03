@@ -176,7 +176,7 @@ $seo_meta=[
                                             <option value="Amber-Color.png"> Amber </option>
                                             <option value="White-Color.png"> White </option>
                                             <option value="Green-Color.png"> Green </option>
-                                            <option value="Red-Color.png"> Red </option>
+                                            <option value="Red-Color.png"> Orange </option>
 
                                         </select>
                                        {{-- <input type="text" class="form-control shadow-none" name="postal_code" value="{{$postalCode->postal_code ?? null}}" placeholder="Postal Code" @if ($cartCount > 0) readonly @endif> --}}
