@@ -79,7 +79,7 @@ $seo_meta=[
             <div class="col-lg-6  ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s1.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>24/7 Uptime</h6>
                             <p class="mb-0"> Enhance the operational capabilities</p>
@@ -92,7 +92,7 @@ $seo_meta=[
             <div class="col-lg-6">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s2.png')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>GPS Device Locator</h6>
                             <p class="mb-0"> Live Map to view all the device locations</p>
@@ -106,7 +106,7 @@ $seo_meta=[
             <div class="col-lg-6">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/BATTERY.png')}}" style="height: 70px;"  ></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s3.png')}}" style="height: 70px;"  ></div>
                         <div class="">
                             <h6>User Authentication</h6>
                             <p class="mb-0"> Provides multiple user level access </p>
@@ -118,7 +118,7 @@ $seo_meta=[
             <div class="col-lg-6">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/COMPLIANCE.png')}}"  style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s4.png')}}"  style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>Schedules</h6>
                             <p class="mb-0"> Schedules events by days, weeks and months dynamically</p>
@@ -132,7 +132,7 @@ $seo_meta=[
             <div class="col-lg-6">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s5.png')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>Centrally Controlled</h6>
                             <p class="mb-0"> Single point of connect for multiple signs</p>
@@ -145,7 +145,7 @@ $seo_meta=[
             <div class="col-lg-6">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s6.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Alert Management</h6>
                             <p class="mb-0"> Alerts for the events like over speeding and low battery </p>
@@ -158,7 +158,7 @@ $seo_meta=[
             <div class="col-lg-6">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s7.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Pro Data Analysis</h6>
                             <p class="mb-0"> Data analysis and report generations</p>
@@ -171,7 +171,7 @@ $seo_meta=[
             <div class="col-lg-6">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s8.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Cost Reduction</h6>
                             <p class="mb-0"> Remote connectivity reduces the operational cost </p>
