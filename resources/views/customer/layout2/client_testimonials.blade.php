@@ -18,9 +18,9 @@
                     <!-- <div class=""> -->
 
                     @foreach($client_says->reverse() as $says)
-                        <div class="col-lg-4">
-                            <div class="members-profile h-100 mx-3 h-100">
-                                <div class="p-4 position-re lative h-100 inner-max-width">
+                        <div class="col-lg-4 ">
+                            <div class="  members-profile mx-3  " style="height: 400px;">
+                                <div class="p-4 position-re lative  inner-max-width">
                                     <div class="qutess position-absolute top-0 translate-middle">
                                         {{--   Icon ""--}}
                                         {{--    <img src="#" alt="Not Found">--}}
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                     <div class="text-start mt-3">
-                                        <p> {{ \Illuminate\Support\Str::limit($says->message, 300) }}</p>
+                                        <p> {{ \Illuminate\Support\Str::limit($says->message, 500) }}</p>
                                     </div>
                                 </div>
                             </div>
