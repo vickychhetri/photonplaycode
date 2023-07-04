@@ -11,7 +11,7 @@ $seo_meta=[
 {{--<x-Customer.Radar.RadarBanner/>--}}
 
 <section class="banner-inner pt-0 pb-0" >
-    <div id="carouselExampleDark" class="carousel slide banner-image-new-radar-parent" data-bs-ride="carousel">
+    <div id="carouselExampleDark" class="carousel slide banner-image-new-cloud-software-parent" data-bs-ride="carousel">
         <div class="carousel-indicators">
         </div>
         <div class="carousel-inner">

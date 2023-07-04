@@ -534,6 +534,15 @@ a.nav-link.dropdown-toggle.show img,
 }
 
 .banner-image-new-radar-parent {
+    background-image: url("../images/banner-one.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+}
+
+.banner-image-new-cloud-software-parent {
     background-image: url("../images/cloudmanager/RSS cloud.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -3247,7 +3256,6 @@ table {
     width: 100%;
     /* Other table styles */
 }
-
 
 .hh-grayBox {
     background-color: #F8F8F8;
