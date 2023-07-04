@@ -189,7 +189,7 @@ $seo_meta=[
 <!-- iCop Series Features End -->
 
 
-<div class="container-fluid mb-0" style="overflow-x:hidden;">
+<div class="container-fluid mb-0" style="overflow:hidden;">
     <div class="col-lg-12">
         <div class="text-center">
             <h2 class="fs-md-2 mt-3">Gallery</h2>
