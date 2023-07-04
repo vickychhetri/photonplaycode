@@ -71,7 +71,7 @@ $seo_meta=[
     <div class="container">
         <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;" >
             <div class="col-lg-12">
-                <div class="text-center mb-lg-4">
+                <div class="text-center ">
                     <h2 class="fs-md-2 mt-3">Cloud Features</h2>
                 </div>
             </div>
