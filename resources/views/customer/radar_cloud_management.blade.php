@@ -188,27 +188,27 @@ $seo_meta=[
 </section>
 <!-- iCop Series Features End -->
 
+{{--hIDE GALLRY--}}
+{{--<div class="container-fluid mb-0" style="overflow:hidden;">--}}
+{{--    <div class="col-lg-12">--}}
+{{--        <div class="text-center">--}}
+{{--            <h2 class="fs-md-2 mt-3">Gallery</h2>--}}
+{{--            <p class="fs-6">Our Key Projects Across the Globe - Discover How Our Innovative Solutions are Changing the Game!</p>--}}
+{{--        </div>`--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-12 pb-4 pt-0 mt-0">--}}
+{{--        <div class="key-slider-sign-radar slide-images-key">--}}
+{{--            <div>--}}
+{{--                <img src="/assets/images/radar/gallery/UV9D2BRMlg5xvAE4fjxZdmNw1Kv4i731VzOTKlHN.jpg"  class="img-fluid w-100 h-100 slide-images-key">--}}
+{{--            </div>--}}
+{{--            <div>--}}
+{{--                <img src="/assets/images/radar/gallery/0W2kZs8THRJN0mSOI6Lr9J4OxCLJ4gx4BjGwG5jn.jpg"  class="img-fluid w-100 h-100 slide-images-key">--}}
+{{--            </div>--}}
 
-<div class="container-fluid mb-0" style="overflow:hidden;">
-    <div class="col-lg-12">
-        <div class="text-center">
-            <h2 class="fs-md-2 mt-3">Gallery</h2>
-            <p class="fs-6">Our Key Projects Across the Globe - Discover How Our Innovative Solutions are Changing the Game!</p>
-        </div>`
-    </div>
-    <div class="col-lg-12 pb-4 pt-0 mt-0">
-        <div class="key-slider-sign-radar slide-images-key">
-            <div>
-                <img src="/assets/images/radar/gallery/UV9D2BRMlg5xvAE4fjxZdmNw1Kv4i731VzOTKlHN.jpg"  class="img-fluid w-100 h-100 slide-images-key">
-            </div>
-            <div>
-                <img src="/assets/images/radar/gallery/0W2kZs8THRJN0mSOI6Lr9J4OxCLJ4gx4BjGwG5jn.jpg"  class="img-fluid w-100 h-100 slide-images-key">
-            </div>
-
-        </div>
-    </div>
-</div>
-
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+{{--hIDE GALLERY END--}}
 <!--  -->
 @include('customer.layout2.get_in_touch')
 <!-- _____________________ourclint-last-start___________________ -->
