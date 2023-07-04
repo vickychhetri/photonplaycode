@@ -207,6 +207,7 @@
                         <!-- <div class="position-absolute down-image">
 
                             </div> -->
+
                         <li class="nav-item">
                             <a class="nav-link text-uppercase {{Request::is('blog') ? 'active':''}}"
                                href="{{route('customer.blog')}}">NEWS & EVENTS</a>

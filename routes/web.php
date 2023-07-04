@@ -14,6 +14,7 @@ use App\Http\Controllers\DBBackupController;
 use App\Http\Controllers\Guest\HomePageController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RadarCloudManagementController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
@@ -190,6 +191,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     });
     Route::get('delete-cart-item/{id}', [CartController::class, 'deleteCartTableItem'])->name('delete.cart.table.item');
 });
+
+Route::get('/radar-cloud-management', [RadarCloudManagementController::class, 'index'])->name('radar.cloud.management');
 
 Route::post('/upload-photo', [CommonController::class, 'upload'])->name('upload-photo-summernote');
 Route::get('photonplay-optimize', [CommonController::class, 'optimize']);
