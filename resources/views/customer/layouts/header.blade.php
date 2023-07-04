@@ -227,6 +227,12 @@ $productLists = Product::take(5)->get();
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>
             </li>
+            <li class="nav-item mobile-menu-items">
+                <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"
+                   href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>
+            </li>
+
+
 
             <li class="nav-item mobile-menu-items" >
                 <span class="d-flex justify-content-between">
