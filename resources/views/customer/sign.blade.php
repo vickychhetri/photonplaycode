@@ -241,7 +241,7 @@ $seo_meta=[
                         <div class="d-flex align-items-center ">
                             <div class="me-3"><img src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found"></div>
                             <div class="">
-                                <h6>Robust</h6>
+                                <h6>Easy Installation</h6>
                                 <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
                             </div>
                         </div>
