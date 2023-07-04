@@ -71,12 +71,7 @@ $seo_meta=[
                         </p>
                     </div>
                 </div>
-{{--                <div class="col-lg-6 ">--}}
-{{--                    <div class="radar-icop-image d-flex justify-content-center align-items-center">--}}
-{{--                        <div class="bg-colored"></div>--}}
-{{--                        <img src="{{ asset('assets\customer\images\iCop icon.png') }}" alt="Not Found" class="img-fluid">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+
             </div>
         </div>
     </section>
