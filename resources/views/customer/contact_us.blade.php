@@ -83,7 +83,8 @@ our product can work best for you, +1 (800) 966-9329 or sales@photonplay.com.",
                                 <div class="m-2  mb-md-2 mb-4">
                                     <h5 class="text-uppercase"><u>Talk to Sales</u></h5>
                                     <p>Chat with our sales team to discover how <br> our product can work best for you.</p>
-                                    <span><img src="{{asset('assets\customer\images\phone.svg')}}" class="me-2 mb-2"/>+1  (800) 966-9329</span>
+                                    <span><img src="{{asset('assets\customer\images\phone.svg')}}" class="me-2 mb-2"/>
+                                        +1 (800) 966-9329</span>
                                     <span class="d-block"><img src="{{asset('assets\customer\images\message.png')}}" class="me-2"/> sales@photonplay.com</span>
                                 </div>
                                    <div class="m-2">
@@ -188,7 +189,7 @@ our product can work best for you, +1 (800) 966-9329 or sales@photonplay.com.",
                                     <div class="d-flex align-items-start"> <img src="{{asset('assets\images\pin-map.png')}}"  class="me-2 mb-2"/>
                                         <p class="">Photonplay Systems Ltd. <br>23 Overstone road, Georgetown, Ontario, <br> L7G 0M9 Canada.Photonplay Systems Ltd</p>
                                     </div>
-                                    <span><img src="{{asset('assets\customer\images\phone.svg')}}" class="me-2 mb-2"/>  (800) 966-9329 </span>
+                                    <span><img src="{{asset('assets\customer\images\phone.svg')}}" class="me-2 mb-2"/>  +1 (800) 966-9329 </span>
                                     <span class="d-block"><img src="{{asset('assets\customer\images\message.png')}}" class="me-2"/> sales@photonplay.com</span>
                                 </div>
 
