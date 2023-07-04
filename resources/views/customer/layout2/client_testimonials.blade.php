@@ -19,7 +19,7 @@
 
                     @foreach($client_says->reverse() as $says)
                         <div class="col-lg-4 ">
-                            <div class="  members-profile mx-3  " style="height: 400px;">
+                            <div class="  members-profile mx-3  h-100" >
                                 <div class="p-4 position-re lative  inner-max-width">
                                     <div class="qutess position-absolute top-0 translate-middle">
                                         {{--   Icon ""--}}
