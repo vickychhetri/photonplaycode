@@ -1,8 +1,11 @@
 <?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::VMS)->first();
 $seo_meta=[
-    "title"=>"Variable Message Signs (VMS)",
-    "description"=>"Photonplay’s outperforming VMS signs are highly reliable and rugged components of traffic management ecosystem for motorways, tunnels and urban traffic management systems.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
 ?>
 
