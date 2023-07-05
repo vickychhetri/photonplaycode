@@ -124,10 +124,7 @@ $productLists = Product::take(5)->get();
                         <li class="nav-item">
                             <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"
-                               href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>
-                        </li>
+
                         <li class="nav-item dropdown position-relative solution-pos">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -144,6 +141,10 @@ $productLists = Product::take(5)->get();
                             <div class="position-absolute down-image">
                                 <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found">
                             </div>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"
+                               href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>
                         </li>
@@ -227,12 +228,6 @@ $productLists = Product::take(5)->get();
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>
             </li>
-            <li class="nav-item mobile-menu-items">
-                <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"
-                   href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>
-            </li>
-
-
 
             <li class="nav-item mobile-menu-items" >
                 <span class="d-flex justify-content-between">
@@ -248,7 +243,10 @@ $productLists = Product::take(5)->get();
                     @endforelse
 
                 </ul>
-
+            <li class="nav-item mobile-menu-items">
+                <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"
+                   href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>
+            </li>
             <li class="nav-item mobile-menu-items">
                 <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>
             </li>
