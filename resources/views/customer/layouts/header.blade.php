@@ -5,12 +5,13 @@ $cartPrice = 0;
 if(!Session::get('user')){
     $cart = \DB::table('carts')->where('session_id', Session::getId())->get();
         foreach($cart as $i){
-            $cartPrice += $i->price * $i->quantity;
+            //$cartPrice += $i->price * $i->quantity;
+            $cartPrice += $i->quantity;
         }
 }else {
     $cart = \DB::table('carts')->where('user_id', Session::get('user')->id)->get();
         foreach($cart as $i){
-            $cartPrice += $i->price * $i->quantity;
+            $cartPrice += $i->quantity;
         }
 }
 
@@ -154,15 +155,15 @@ $productLists = Product::take(5)->get();
 
                         @if (!Session::get('user'))
                         <div class="d-flex align-items-center">
-                        <input type="hidden" name="grand_total" value="{{$currency .''.$cartPrice}}">
-                            <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
+                        <input type="hidden" name="grand_total" value="{{$cartPrice}}">
+                            <p class="me-2 mb-0">`{{$cartPrice}}</p>
 
                           <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                         </div>
                         <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
                         @else
                         <div class="d-flex align-items-center">
-                            <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
+                            <p class="me-2 mb-0">{{$cartPrice}}</p>
                             <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                         </div>
                         <div class="d-flex align-items-center">
@@ -256,8 +257,8 @@ $productLists = Product::take(5)->get();
                         <div class="d-flex align-items-center">
 
 
-                        <input type="hidden" name="grand_total" value="{{$currency .''.$cartPrice}}">
-                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>
+                        <input type="hidden" name="grand_total" value="{{$cartPrice}}">
+                        <p class="me-2 mb-0">{{$cartPrice}}</p>
                         <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>
                             <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
 
@@ -268,7 +269,7 @@ $productLists = Product::take(5)->get();
                     </li>
                 @else
 {{--                    <div class="d-flex align-items-center">--}}
-{{--                        <p class="me-2 mb-0">{{$currency .''.$cartPrice}}</p>--}}
+{{--                        <p class="me-2 mb-0">{{$cartPrice}}</p>--}}
 {{--                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
 {{--                    </div>--}}
 
