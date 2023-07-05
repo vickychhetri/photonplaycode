@@ -1,11 +1,8 @@
 <?php
-use App\Models\ManageSeo;
-$data_record = ManageSeo::where('page_name',ManageSeo::HOME)->first();
 $seo_meta=[
-    "title"=>$data_record->title,
-    "description"=>$data_record->description,
-    "keywords"=>$data_record->keyword,
-    "schema"=>$data_record->schema
+    "title"=>"Variable Message Signs | Radar Speed Signs | Driver Feedback Signs - Photonplay",
+    "description"=>"PhotonPlay is a financially independent, global technology company established in 2006 with wholly-owned subsidiaries in the USA, Norway, and Australia.",
+    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
 ];
 ?>
 @include('customer.layout2.header')
