@@ -19,6 +19,7 @@ class CreateManageSeosTable extends Migration
             $table->string('title')->nullable();
             $table->text('keyword')->nullable();
             $table->string('description')->nullable();
+            $table->text('schema')->nullable();
             $table->timestamps();
         });
     }
