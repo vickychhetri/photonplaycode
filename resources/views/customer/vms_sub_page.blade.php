@@ -1,6 +1,6 @@
 <?php
 $seo_meta=[
-    "title"=>"{$page->title}",
+    "title"=>"{$page->meta_title}",
     "description"=>"{$page->description}",
     "keywords"=>"{$page->meta_keyword}",
     "schema"=>"{$page->schema}"
