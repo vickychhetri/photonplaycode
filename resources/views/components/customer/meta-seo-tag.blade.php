@@ -44,3 +44,6 @@
 
 <meta property="og:image" content="{{asset('assets\images\photonshare_image.png')}}">
 <meta property="twitter:image" content="{{asset('assets\images\photonshare_image.png')}}">
+{{--Schema--}}
+{{$seodata['schema']}}
+{{--Schema End--}}

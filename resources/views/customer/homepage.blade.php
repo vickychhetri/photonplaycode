@@ -4,7 +4,8 @@ $data_record = ManageSeo::where('page_name',ManageSeo::HOME)->first();
 $seo_meta=[
     "title"=>$data_record->title,
     "description"=>$data_record->description,
-    "keywords"=>$data_record->keyword
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
 ?>
 @include('customer.layout2.header')
