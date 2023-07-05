@@ -1,9 +1,11 @@
 <?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::TRANSIT)->first();
 $seo_meta=[
-    "title"=>"Transit Solutions",
-    "description"=>"Revolutionize public transportation systems with our advanced ITS solutions that offer
-real-time data, enhanced safety features, and improved passenger experience.",
-    "keywords"=>"Passenger Information Display System (PIDS),Bus Signs,"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
 ?>
 @include('customer.layout2.header')

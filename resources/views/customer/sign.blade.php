@@ -1,10 +1,12 @@
 <?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::RADAR)->first();
 $seo_meta=[
-"title"=>"iCop | RADAR SPEED SIGN - No.1 In Traffic Claiming Solution",
-"description"=>" The sign acts like a Variable Message Sign to display graphics and text along with white Alert Flashing Lights . The sign acts as a Smart Traffic data collector and analyzer. It is a cloud controlled and highly secured Radar Speed Sign.",
-"keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
-
 ?>
 @include('customer.layouts.header')
 {{--Radar Banner Start--}}

@@ -1,12 +1,13 @@
 <?php
-
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::COMPANY)->first();
 $seo_meta=[
-    "title"=>"About us",
-    "description"=>"PhotonPlay is a financially independent, global technology company established in 2006 with wholly-owned subsidiaries in the USA, Norway, and Australia.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
-
-    ?>
+?>
 @include('customer.layout2.header')
     <!-- header-end -->
     <!-- banner-text-start -->

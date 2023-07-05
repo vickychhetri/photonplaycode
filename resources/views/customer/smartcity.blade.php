@@ -1,3 +1,13 @@
+<?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::SMARTCITY)->first();
+$seo_meta=[
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
+];
+?>
 @include('customer.layout2.header')
 <body>
 

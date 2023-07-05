@@ -1,9 +1,11 @@
 <?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::TUNNELS)->first();
 $seo_meta=[
-    "title"=>"Tunnel Solutions",
-    "description"=>"Navigate through tunnels with ease and confidence with our advanced
-ITS solutions designed for optimal safety and efficiency..",
-    "keywords"=>"Variable Message Sign (VMS),Variable Speed Limit Sign (VSLS),Way Finders,Signages"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
 ?>
 

@@ -1,9 +1,11 @@
 <?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::SMARTCITY)->first();
 $seo_meta=[
-    "title"=>"Smart City Solutions",
-    "description"=>"Transform urban mobility and drive sustainable growth with our comprehensive ITS solutions
-that enable seamless integration and smarter decision-making for cities of the future.",
-    "keywords"=>"Radar Speed Sign,Portaible Variable Message Sign (PVMS),Variable Message Sign (VMS),LEDTickers"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
 ?>
 @include('customer.layout2.header')

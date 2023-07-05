@@ -1,9 +1,11 @@
 <?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::CONTACT)->first();
 $seo_meta=[
-    "title"=>"Contact us ",
-    "description"=>"Chat with our sales team to discover how
-our product can work best for you, +1 (800) 966-9329 or sales@photonplay.com.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
 ?>
 @include('customer.layout2.header')

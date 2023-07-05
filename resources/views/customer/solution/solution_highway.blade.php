@@ -1,12 +1,13 @@
 <?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::HIGHWAYS)->first();
 $seo_meta=[
-    "title"=>"Highways Solutions",
-    "description"=>"Experience improved traffic flow and safer journeys with our
-cutting-edge ITS solutions tailored to highways and tunnels.",
-    "keywords"=>"Variable Message Sign (VMS),Variable Speed Limit Sign (VSLS),Portaible Variable Message Sign (PVMS),Vehicle Actuated Speed Display (VASD)"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
 ?>
-
 
 @include('customer.layout2.header')
     <!-- header-end -->

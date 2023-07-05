@@ -1,11 +1,12 @@
 <?php
-
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name',ManageSeo::NEWS_EVENT)->first();
 $seo_meta=[
-    "title"=>$blog->title,
-    "description"=>\Illuminate\Support\Str::limit(strip_tags($blog->body), 200, '...') ,
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>$data_record->title,
+    "description"=>$data_record->description,
+    "keywords"=>$data_record->keyword,
+    "schema"=>$data_record->schema
 ];
-
 ?>
 @include('customer.layout2.header')
 
