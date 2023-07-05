@@ -2,7 +2,8 @@
 $seo_meta=[
     "title"=>"{$page->title}",
     "description"=>"{$page->description}",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "keywords"=>"{$page->meta_keyword}",
+    "schema"=>"{$page->schema}"
 ];
 ?>
 @include('customer.layout2.header')
