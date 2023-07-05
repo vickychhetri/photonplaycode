@@ -1,5 +1,5 @@
 <?php
-use \App\Models\ManageSeo;
+use App\Models\ManageSeo;
 $data_record = ManageSeo::where('page_name',ManageSeo::HOME)->first();
 $seo_meta=[
     "title"=>$data_record->title,
