@@ -1,0 +1,30 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/photonpl/live.photonplay.com
+
+    - name: Set proper file permissions
+      command: chmod -R 755 $DEPLOYPATH
+
+    - name: Clear application cache
+      command: php $DEPLOYPATH/artisan cache:clear
+
+    - name: Generate Laravel application key
+      command: php $DEPLOYPATH/artisan key:generate
+
+    - name: Migrate the database
+      command: php $DEPLOYPATH/artisan migrate --force
+
+    - name: Install composer dependencies
+      command: composer install --working-dir=$DEPLOYPATH
+
+    - name: Optimize Laravel autoloader
+      command: php $DEPLOYPATH/artisan optimize
+
+    - name: Restart PHP service (if required)
+      command: /usr/bin/killall -u $USER php-fpm
+
+ignore_files:
+  - .env
+  - storage/
+  - vendor/
