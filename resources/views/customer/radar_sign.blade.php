@@ -1,11 +1,14 @@
 <?php
     $seo_record= \App\Models\ProductSeo::where('product_id',$product->id)->first();
-$seo_meta=[
-    "title"=>"{$seo_record->meta_title}",
-    "description"=>"{$seo_record->meta_description}",
-    "keywords"=>"{$seo_record->meta_keywords}",
-    "schema"=>"{$seo_record->schema}"
-];
+if(isset($seo_record)){
+    $seo_meta=[
+        "title"=>"{$seo_record->meta_title}",
+        "description"=>"{$seo_record->meta_description}",
+        "keywords"=>"{$seo_record->meta_keywords}",
+        "schema"=>"{$seo_record->schema}"
+    ];
+}
+
 ?>
 
 
