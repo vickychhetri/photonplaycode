@@ -24,7 +24,7 @@ $seo_meta=[
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="post-item mb-5">
-                        <img src="{{asset("storage/".$blog->image)}}" alt="" class="mb-4 img-fluid w-100" style="max-height: 400px;">
+                        <img src="{{asset("storage/".$blog->image)}}" alt="" class="mb-4 img-fluid" style="max-height: 400px;">
                         <div class="pb-3 post-info border-0">
                             <h1 class="text-uppercase mb-3 text-dark"> {{$blog->title}} </h1>
                             <div class="mb-4">
