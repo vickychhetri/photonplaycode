@@ -17,23 +17,52 @@ Route::get('confirmation/{order_id}', [CartController::class, 'confirmation'])->
 Route::post('add-shopping-bag', [CartController::class, 'addShoppingBag'])->name('store.shopping.bag');
 Route::get('remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cartitem');
 Route::get('specification-ajax', [SignController::class, 'specificationAjax'])->name('specification.ajax');
-Route::get('solution-highway', [SolutionController::class, 'solutionHighway'])->name('solution.highway');
-Route::get('solution-tunnels', [SolutionController::class, 'solutionTunnel'])->name('solution.tunnel');
+
+#solution-highway  -- highways
+Route::get('highways', [SolutionController::class, 'solutionHighway'])->name('solution.highway');
+
+
+#solution-tunnels - tunnels
+Route::get('tunnels', [SolutionController::class, 'solutionTunnel'])->name('solution.tunnel');
 Route::get('solution-city', [SolutionController::class, 'solutionCity'])->name('solution.city');
-Route::get('solution-transit', [SolutionController::class, 'solutionTransit'])->name('solution.transit');
-Route::get('contact-us', [ContactUsController::class, 'contactUs'])->name('contact.us');
-Route::get('about-us', [ContactUsController::class, 'aboutUs'])->name('about.us');
+
+#solution-transit - transit
+Route::get('transit', [SolutionController::class, 'solutionTransit'])->name('solution.transit');
+
+#contact-us - contact
+Route::get('contact', [ContactUsController::class, 'contactUs'])->name('contact.us');
+
+
+//about-us
+Route::get('company', [ContactUsController::class, 'aboutUs'])->name('about.us');
 //Route::get('blog-detail', [ContactUsController::class, 'blogDetail'])->name('blog.detail');
 //
 //
 //Route::get('blog', [ContactUsController::class, 'blog'])->name('blog');
-Route::get('signages', [ContactUsController::class, 'signal'])->name('signal');
-Route::get('smartcity', [ContactUsController::class, 'smartcity'])->name('smartcity');
-Route::get('variable-sign-language', [ContactUsController::class, 'variableMessage'])->name('variable.message');
+
+//signages emergency-signage
+Route::get('emergency-signage', [ContactUsController::class, 'signal'])->name('signal');
+
+
+#smartcity - smart-cities
+Route::get('smart-cities', [ContactUsController::class, 'smartcity'])->name('smartcity');
+
+
+
+#variable-sign-language - variable-message-signs
+Route::get('variable-message-signs', [ContactUsController::class, 'variableMessage'])->name('variable.message');
+
+
 Route::get('variable-speed-limit-signs', [ContactUsController::class, 'variableSpeedLimit'])->name('variable.speed.limit');
-Route::get('passenger-information-display-system', [ContactUsController::class, 'pasengerInformationDisplay'])->name('pasenger.information.display.system');
-Route::get('portable-variable-message-signs', [ContactUsController::class, 'portableVariableMessageSigns'])->name('portable.variable.message.signs');
-Route::get('lane-control-system', [ContactUsController::class, 'laneControlSystem'])->name('lane.control.system');
+
+#passenger-information-display-system - passenger-information-display-systems
+Route::get('passenger-information-display-systems', [ContactUsController::class, 'pasengerInformationDisplay'])->name('pasenger.information.display.system');
+
+#portable-variable-message-signs-portable-variable-message-sign
+Route::get('portable-variable-message-sign', [ContactUsController::class, 'portableVariableMessageSigns'])->name('portable.variable.message.signs');
+
+#lane-control-system - lane-control-sign
+Route::get('lane-control-sign', [ContactUsController::class, 'laneControlSystem'])->name('lane.control.system');
 Route::get('pvms-i-cop/{id}', [ContactUsController::class, 'pvmsICop'])->name('pvms.i.cop');
 Route::post('newsletter', [NewsletterController::class, 'newsletter'])->name('newsletter.store');
 Route::post('submit-inquery', [InqueryController::class, 'store'])->name('inquery.submit');
