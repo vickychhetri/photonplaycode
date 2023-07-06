@@ -30,6 +30,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         </div>
     </section>
 
+
     <footer class="footer-section px-2">
         <div class="footer-section-inner d-lg-flex justify-content-center">
             <div class="footer-item mb-0 mb-md-5 footer-item-1">
@@ -115,6 +116,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
             </div>
         </div>
     </footer>
+
        <div class="container-fluid">
           <div class="sec-copyright py-3 text-center m-auto d-flex justify-content-between align-items-center">
               <p>
@@ -124,6 +126,19 @@ $blogs = Blog::select('slug','title')->take(4)->get();
               <p>© 2023 Photonplay Systems Inc. All right reserved</p>
           </div>
        </div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5da70a23df22d913399f714f/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 <script>
     @if (session()->has('success'))
     Toastify({

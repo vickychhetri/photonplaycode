@@ -50,8 +50,152 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+
+
+    <!-- Start Schema --><script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://www.photonplay.com"
+  }]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Photonplay",
+  "url": "https://www.photonplay.com/",
+  "logo": "https://www.photonplay.com/img/logo-dark.png",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "8009669329",
+    "contactType": "sales",
+    "contactOption": ["HearingImpairedSupported","TollFree"],
+    "areaServed": ["CA","US"],
+    "availableLanguage": ["en","fr","es"]
+  },{
+    "@type": "ContactPoint",
+    "telephone": "989 969 0347",
+    "contactType": "sales",
+    "contactOption": "HearingImpairedSupported",
+    "areaServed": "IN",
+    "availableLanguage": "en"
+  },{
+    "@type": "ContactPoint",
+    "telephone": "203-608-7507",
+    "contactType": "sales",
+    "contactOption": "HearingImpairedSupported",
+    "areaServed": "GB",
+    "availableLanguage": ["en","fr","es"]
+  }],
+  "sameAs": [
+    "https://www.facebook.com/photonplaygroup/",
+    "https://twitter.com/PhotonplayInc",
+    "https://www.instagram.com/photonplayinc/",
+    "https://www.youtube.com/@Photonplay/",
+    "https://www.linkedin.com/company/photonplay-systems/",
+"https://www.pinterest.ca/photonplaysystems/"
+  ]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Photonplay",
+  "image": "https://www.photonplay.com/img/logo-dark.png",
+  "@id": "",
+  "url": "https://www.photonplay.com",
+  "telephone": "+1 (800) 966-9329",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "23 Overstone road",
+    "addressLocality": "Georgetown",
+    "addressRegion": "ON",
+    "postalCode": "L7G0M9",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.6374354,
+    "longitude": -79.8654911
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/photonplaygroup/",
+    "https://twitter.com/PhotonplayInc",
+    "https://www.instagram.com/photonplayinc/",
+    "https://www.youtube.com/@Photonplay/",
+    "https://www.linkedin.com/company/photonplay-systems/",
+    "https://www.pinterest.ca/photonplaysystems/",
+    "https://www.photonplay.com"
+  ]
+}
+</script>
+    <!-- End Schema -->
+
+
+    <link rel="canonical" href="https://www.photonplay.com/" />
+
+    <link rel="shortcut icon" href="https://www.photonplay.com/img/faviicon.png" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168260545-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168260545-1');
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MXJCLSBCFP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MXJCLSBCFP');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NJZBCGR');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
+                  style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a href="#" id="scrollToTopButton" title="Scroll to Top" style="
       position: fixed;
       bottom: 70px;
