@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/photonpl/live.photonplay.com
+    - export DEPLOYPATH=/home/photonpl/public_html
     - /bin/cp -R * $DEPLOYPATH
