@@ -1,9 +1,9 @@
 <?php
 $seo_meta=[
-    "title"=>"{$page->meta_title}",
-    "description"=>"{$page->description}",
-    "keywords"=>"{$page->meta_keyword}",
-    "schema"=>"{$page->schema}"
+    "title"=>"{$product->meta_title}",
+    "description"=>"{$product->description}",
+    "keywords"=>"{$product->meta_keyword}",
+    "schema"=>"{$product->schema}"
 ];
 ?>
 @include('customer.layout2.header')
