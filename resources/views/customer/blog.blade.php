@@ -1,11 +1,9 @@
 <?php
-use App\Models\ManageSeo;
-$data_record = ManageSeo::where('page_name',ManageSeo::NEWS_EVENT)->first();
+
 $seo_meta=[
-    "title"=>$data_record->title,
-    "description"=>$data_record->description,
-    "keywords"=>$data_record->keyword,
-    "schema"=>$data_record->schema
+    "title"=>$blog->title,
+    "description"=>$blog->description,
+    "keywords"=>$blog->keywords,
 ];
 ?>
 @include('customer.layout2.header')
