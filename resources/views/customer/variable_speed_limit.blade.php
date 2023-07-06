@@ -1,8 +1,9 @@
 <?php
 $seo_meta=[
-    "title"=>"VARIABLE SPEED LIMIT SIGNS ",
-    "description"=>"A fully competent and revolutionary Variable Speed Limit Sign (VSLS), generating instant recognition of centrally regulated speed limits from ITS systems",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>"{$page->meta_title}",
+    "description"=>"{$page->description}",
+    "keywords"=>"{$page->meta_keyword}",
+    "schema"=>"{$page->schema}"
 ];
 ?>
 @include('customer.layout2.header')
