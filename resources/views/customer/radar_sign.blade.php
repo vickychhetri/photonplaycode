@@ -1,10 +1,11 @@
 <?php
+    $seo_record= \App\Models\ProductSeo::where('product_id',$product->id)->first();
 $seo_meta=[
-    "title"=>"{$product->title} | Radar Speed Signs",
-    "description"=>" The sign acts like a Variable Message Sign to display graphics and text along with white Alert Flashing Lights . The sign acts as a Smart Traffic data collector and analyzer. It is a cloud controlled and highly secured Radar Speed Sign.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>"{$seo_record->meta_title}",
+    "description"=>"{$seo_record->meta_description}",
+    "keywords"=>"{$seo_record->meta_keywords}",
+    "schema"=>"{$seo_record->schema}"
 ];
-
 ?>
 
 
