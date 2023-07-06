@@ -12,7 +12,7 @@ class ProductSeoController extends Controller
     //open_seo_form
     public function open_seo_form(Request $request,$id){
         $product=Product::find($id);
-        $product_seo=ProductSeo::where('id','1')->get()->first();
+        $product_seo=ProductSeo::where('product_id',$product->id)->get()->first();
 
         return view('product.seo.index',compact('product','product_seo'));
     }
