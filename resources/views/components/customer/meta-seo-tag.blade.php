@@ -4,6 +4,15 @@
     <meta property="og:title" content="{{$seodata['title']}}">
     <meta property="twitter:title" content="{{$seodata['title']}}">
 @endif
+
+<link rel = "icon" href =
+    "{{asset('assets/images/photon_small.png')}}"
+      type = "image/x-icon">
+
+<link rel="canonical" href="{{Illuminate\Support\Facades\URL::current()}}" />
+
+
+
 @if(isset($seodata['description']))
     <meta name="description" content="{{$seodata['description']}}">
     <meta property="og:description" content="{{$seodata['description']}}">
@@ -13,12 +22,6 @@
 @if(isset($seodata['keywords']))
     <meta name="keywords" content="{{$seodata['keywords']}}">
 @endif
-
-<link rel = "icon" href =
-    "{{asset('assets/images/photon_small.png')}}"
-      type = "image/x-icon">
-
-<link rel="canonical" href="{{Illuminate\Support\Facades\URL::current()}}" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
