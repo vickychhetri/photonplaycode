@@ -25,7 +25,7 @@ $seo_meta=[
             <div class="col-lg-8 col-md-12">
                 @foreach($blogs as $s_blog)
                     <div class="post-item mb-4" >
-                        <a href="{{route("customer.blog_show",$s_blog->slug)}}" > <img src="{{asset("storage/".$s_blog->image)}}" alt="" class="mb-4 img-fluid w-100" style="max-height: 350px;"> </a>
+                        <a href="{{route("customer.blog_show",$s_blog->slug)}}"  > <img src="{{asset("storage/".$s_blog->image)}}" alt="" class="mb-4 img-fluid" style="max-height: 350px;"> </a>
                         <div class="mb-4 pb-4 post-info">
                             <a href="{{route("customer.blog_show",$s_blog->slug)}}"   class="text-decoration-none">   <h2 class="text-uppercase"> <b>   {{$s_blog->title}} </b></h2></a>
                             <div>{{$s_blog->blog_created_date}} by {{$s_blog->author}}</div>
