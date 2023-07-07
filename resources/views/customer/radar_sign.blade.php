@@ -484,7 +484,6 @@ if(isset($seo_record)){
         });
     });
     console.log('upper',{{$product}});
-
 </script>
 <script>
     $('.responsive').slick({
