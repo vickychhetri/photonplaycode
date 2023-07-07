@@ -18,7 +18,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:title" content="{{$seodata['title']??''}}">
-<meta property="og:description" content="{{$seodata['description']?''}}">
+<meta property="og:description" content="{{$seodata['description']??''}}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{\Illuminate\Support\Facades\URL::full()}}">
 
