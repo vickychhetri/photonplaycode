@@ -143,7 +143,7 @@
                                 <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                             </div>
                                 <div class="d-flex justify-content-center " >
-                                    <video  style="object-fit: cover;" autoplay loop muted>
+                                    <video  style="object-fit: cover;" autoplay loop muted playsinline>
                                         <source src="{{asset('assets/videos/head_video_photon.mp4')}}" type="video/mp4">
                                     </video>
                                 </div>
