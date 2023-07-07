@@ -553,7 +553,7 @@ if(isset($seo_record)){
 
 
     function changecalculated_amount(price_element){
-    // console.log(price_element);
+     console.log(price_element);
         const selectedOption = price_element.options[price_element.selectedIndex];
         console.log();
 
