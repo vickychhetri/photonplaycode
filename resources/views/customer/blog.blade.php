@@ -177,7 +177,7 @@ $seo_meta=[
                                  {{--               below class removed: branding-diss--}}
                                  <div class="px-2 ">
                                      <div>
-                                         <img src="{{asset("storage/".$relatedBlog->image)}}" class="d-block mx-auto" style="max-height: 250px;max-width: 100%;"/>
+                                         <img src="{{asset("storage/".$relatedBlog->image)}}" class="d-block mx-auto" style="max-height: 200px;max-width: 100%;"/>
                                      </div>
 
                                      <div class="py-4">
