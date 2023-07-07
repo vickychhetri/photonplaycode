@@ -176,7 +176,10 @@ $seo_meta=[
                              <div>
                                  {{--               below class removed: branding-diss--}}
                                  <div class="px-2 ">
-                                     <img src="{{asset("storage/".$relatedBlog->image)}}" class="d-block mx-auto w-100" />
+                                     <div>
+                                         <img src="{{asset("storage/".$relatedBlog->image)}}" class="d-block mx-auto" style="max-height: 250px;"/>
+                                     </div>
+
                                      <div class="py-4">
                                          <h6 class="text-uppercase mb-0">{{$relatedBlog->title}}</h6>
                                          <span class="text-lights">{{$relatedBlog->created_at}}  / {{$relatedBlog->author}} </span>
