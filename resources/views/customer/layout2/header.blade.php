@@ -24,6 +24,7 @@
     <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
     {{--        End    Start meta--}}
 
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
