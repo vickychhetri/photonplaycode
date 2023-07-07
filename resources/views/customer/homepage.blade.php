@@ -194,7 +194,7 @@ $seo_meta=[
                                     <img src="/assets/customer/images/products_home/iCop-MTO-Side-front.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
-                                        <a href="portable-variable-message-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="{{route('customer.portable.variable.message.signs')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
@@ -229,7 +229,7 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/Variable Speed Limit Sign.png" alt="VSLS" class="">
                                     <div>
-                                        <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="{{route('customer.variable.speed.limit')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
@@ -263,7 +263,7 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/LCS front 2.png" alt="LCS" class="">
                                     <div>
-                                        <a href="/variable-speed-limit-signs" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="{{route('customer.lane.control.system')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
@@ -298,7 +298,7 @@ $seo_meta=[
                                     <img src="/assets/customer/images/products_home/PIDS.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
-                                        <a href="/passenger-information-display-system" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="{{route('customer.pasenger.information.display.system')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
