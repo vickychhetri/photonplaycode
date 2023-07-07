@@ -25,7 +25,7 @@
 
 <!-- Twitter -->
 <meta property="twitter:title" content="{{$seodata['title']??''}}">
-<meta property="twitter:description" content="{{$seodata['description']?''}}">
+<meta property="twitter:description" content="{{$seodata['description']??''}}">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{\Illuminate\Support\Facades\URL::full()}}">
 
