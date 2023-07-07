@@ -133,6 +133,7 @@ if(isset($seo_record)){
                         <span>( 150+ Customers Reviews)</span>
                     </div>
                     <p class="fw-bold fs-5"  id="total_price2">${{$product->price}}</p>
+                    <p class="fw-bold fs-5"  >${{$product->price}}</p>
                     <div>
                         <p class="specific-heading">Select Specification</p>
                         <div class="row mt-3">
@@ -357,7 +358,7 @@ if(isset($seo_record)){
     </div>
 </section>
 
-<h1> ye price {{$product->price}}</h1>
+
 @include('customer.layout2.footer')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
