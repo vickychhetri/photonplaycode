@@ -26,7 +26,8 @@ Route::get('highways', [SolutionController::class, 'solutionHighway'])->name('so
 Route::get('tunnels', [SolutionController::class, 'solutionTunnel'])->name('solution.tunnel');
 
 #smart-cities
-Route::get('solution-city', [SolutionController::class, 'solutionCity'])->name('solution.city');
+//Route::get('solution-city', [SolutionController::class, 'solutionCity'])->name('solution.city');
+Route::get('smart-cities', [SolutionController::class, 'solutionCity'])->name('solution.city');
 
 #solution-transit - transit
 Route::get('transit', [SolutionController::class, 'solutionTransit'])->name('solution.transit');
@@ -47,7 +48,7 @@ Route::get('emergency-signage', [ContactUsController::class, 'signal'])->name('s
 
 
 #smartcity - smart-cities
-Route::get('smart-cities', [ContactUsController::class, 'smartcity'])->name('smartcity');
+//Route::get('smart-cities', [ContactUsController::class, 'smartcity'])->name('smartcity');
 
 
 
