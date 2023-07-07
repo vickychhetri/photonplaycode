@@ -438,7 +438,7 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/VASD.png" alt="Bus Sign" class="">
                                     <div>
-                                        <a href="/solution-transit" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="{{route('customer.solution.transit')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
@@ -473,7 +473,7 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/FDU-AMBER FRONT.png" alt="Bus Sign" class="">
                                     <div>
-                                        <a href="/solution-transit" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="{{'customer.solution.transit'}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
@@ -507,7 +507,7 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/Circular_outer_led_ticker.png" alt=" LED Tickers" class="">
                                     <div>
-                                        <a href="/solution-city" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="{{route('customer.solution.city')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
