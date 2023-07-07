@@ -543,7 +543,9 @@ if(isset($seo_record)){
 
 
     var product_amount={{$product->price??0}};
-    alert(product_amount);
+    alert({{$product
+    ->
+    price}});
     var total_amount_single_product={{$product->price??0}};
     var single_items_cart = {};
     function extractAmountFromString(string) {
