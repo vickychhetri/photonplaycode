@@ -538,7 +538,10 @@ if(isset($seo_record)){
     // Vicky Chhetri JS ZONE : Begin
     ************************************/
     var total_amount={{$product->price??0}};
+
+
     var product_amount={{$product->price??0}};
+    alert(product_amount);
     var total_amount_single_product={{$product->price??0}};
     var single_items_cart = {};
     function extractAmountFromString(string) {
