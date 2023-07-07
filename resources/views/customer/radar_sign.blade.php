@@ -148,7 +148,12 @@ if(isset($seo_record)){
                                             @foreach($specilization->options as $option)
 
                                             <option value="{{$option->id}}">{{$option->specializationoptions->option}} (+$<span class="price">{{$option->specialization_price}}</span>)
-                                                {{$specilization->specilization->title=="Cloud-Access"?"sub":"no"}}
+                                                @if($specilization->specilization->title=="Cloud-Access")
+                                                    @if(strtolower($option->specializationoptions->option)=="yes")
+                                                        Subscription Free For 1 Year
+                                                    @endif
+                                                @endif
+
                                             </option>
                                             @endforeach
                                         </select>
