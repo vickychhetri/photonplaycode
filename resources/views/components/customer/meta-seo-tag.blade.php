@@ -2,15 +2,15 @@
 <title> {{$seodata['title']}} </title>
 <meta name="title" content="{{$seodata['title']}}">
 @endif
+@if(isset($seodata['description']))
+    <meta name="description" content="{{$seodata['description']}}">
+@endif
+<meta name="google-site-verification" content="x2TVSaiGBx9F_unjNk_O1mEB64-JF5s3lmTguSQvstw" />
 
 <link rel = "icon" href =
     "{{asset('assets/images/photon_small.png')}}"
       type = "image/x-icon">
 <link rel="canonical" href="{{Illuminate\Support\Facades\URL::current()}}" />
-
-@if(isset($seodata['description']))
-<meta name="description" content="{{$seodata['description']}}">
-@endif
 
 @if(isset($seodata['keywords']))
 <meta name="keywords" content="{{$seodata['keywords']}}">
