@@ -147,7 +147,7 @@ if(isset($seo_record)){
                                             <option selected disabled>--Choose an Option--</option>
                                             @foreach($specilization->options as $option)
 
-                                            <option value="{{$option->id}}">{{$option->specializationoptions->option}} (+$<span class="price">{{$option->specialization_price}}</span>) {{$specilization->specilization->title=="Cloud-Access"?"Subscription Free for 1 Year"}}</option>
+                                            <option value="{{$option->id}}">{{$option->specializationoptions->option}} (+$<span class="price">{{$option->specialization_price}}</span>) </option>
                                             @endforeach
                                         </select>
 
