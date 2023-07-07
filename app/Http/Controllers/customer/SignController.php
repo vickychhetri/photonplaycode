@@ -35,6 +35,8 @@ class SignController extends Controller
             $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
             $cartCount = Cart::where('session_id', $sessionId)->count();
         }
+
+        return $product;
         return view('customer.radar_sign', compact('product','productLists','postalCode','cartCount'));
     }
 
