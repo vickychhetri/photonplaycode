@@ -483,7 +483,6 @@ if(isset($seo_record)){
             });
         });
     });
-    console.log('upper',{{$product}});
 </script>
 <script>
     $('.responsive').slick({
@@ -544,7 +543,9 @@ if(isset($seo_record)){
 
 
     var product_amount={{$product->price??0}};
-    console.log({{$product}});
+    console.log({{$product
+    ->
+    price}});
     var total_amount_single_product={{$product->price??0}};
     var single_items_cart = {};
     function extractAmountFromString(string) {
