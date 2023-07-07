@@ -320,7 +320,7 @@ if(isset($seo_record)){
                 </div>
             </div>
             <div class="responsive">
-                @foreach ($productLists as $product)
+                @foreach ($productLists as $products)
                     <div >
                         <div class="p-2">
                             <div class="product_highlight inner-product bg-white">
@@ -332,7 +332,7 @@ if(isset($seo_record)){
                                     <span class="d-block weight-font">
                                         Radar Speed Sign
                                     </span>
-                                    <span class="d-block">{{$product->title}}</span>
+                                    <span class="d-block">{{$products->title}}</span>
                                     <div class="d-flex justify-content-center align-items-center my-2">
                                         <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
                                              width="14px">
@@ -345,8 +345,8 @@ if(isset($seo_record)){
                                         <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
                                              width="14px">
                                     </div>
-                                    <span class="d-block weight-font">{{$product->price}}</span>
-                                    <a href="{{route('customer.radar.sign', $product->id)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
+                                    <span class="d-block weight-font">{{$products->price}}</span>
+                                    <a href="{{route('customer.radar.sign', $products->id)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -541,7 +541,7 @@ if(isset($seo_record)){
     ************************************/
     var total_amount={{$product->price??0}};
     var product_amount={{$product->price??0}};
-    console.log({{$product}});
+    console.log({$product});
     var total_amount_single_product={{$product->price??0}};
     var single_items_cart = {};
     function extractAmountFromString(string) {
