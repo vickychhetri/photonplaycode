@@ -156,7 +156,7 @@ $productLists = Product::take(5)->get();
                         @if (!Session::get('user'))
                         <div class="d-flex align-items-center">
                         <input type="hidden" name="grand_total" value="{{$cartPrice}}">
-                            <p class="me-2 mb-0">`{{$cartPrice}}</p>
+                            <p class="me-2 mb-0">{{$cartPrice}}</p>
 
                           <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                         </div>
