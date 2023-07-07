@@ -20,6 +20,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{--            Start meta--}}
+    <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
+    {{--        End    Start meta--}}
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,10 +37,6 @@
     <link rel="stylesheet" type="text/css" href="/assets/customer/slick/slick-theme.css"/>
     <link rel="stylesheet" href="/assets/customer/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    {{--            Start meta--}}
-    <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
-    {{--        End    Start meta--}}
-
     <style>
         .product-pvms-icop:hover {
             transform: scale(2);
@@ -50,7 +51,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
 
 
 
@@ -154,11 +154,6 @@
 </script>
     <!-- End Schema -->
 
-
-    <link rel="canonical" href="https://www.photonplay.com/" />
-
-    <link rel="shortcut icon" href="https://www.photonplay.com/img/faviicon.png" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168260545-1"></script>

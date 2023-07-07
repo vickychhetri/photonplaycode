@@ -18,6 +18,7 @@
     "{{asset('assets/images/photon_small.png')}}"
       type = "image/x-icon">
 
+<link rel="canonical" href="{{Illuminate\Support\Facades\URL::current()}}" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
