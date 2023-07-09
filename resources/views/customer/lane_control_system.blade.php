@@ -3,13 +3,12 @@ $seo_meta=[
     "title"=>"{$page->meta_title}",
     "description"=>"{$page->description}",
     "keywords"=>"{$page->meta_keyword}",
-    "schema"=>"{$page->schema}"
+    "schema"=>"{$page->schema}" ?? ''
 ];
 ?>
 @include('customer.layout2.header')
 
 <body>
-
     <!-- Banner sec -->
     <section class="banner-sec-signage-signs py-4">
         <div class="container">

@@ -2,10 +2,10 @@
 use App\Models\ManageSeo;
 $data_record = ManageSeo::where('page_name',ManageSeo::TUNNELS)->first();
 $seo_meta=[
-    "title"=>$data_record->title,
-    "description"=>$data_record->description,
-    "keywords"=>$data_record->keyword,
-    "schema"=>$data_record->schema
+    "title"=>$data_record->title ?? '',
+    "description"=>$data_record->description ?? '',
+    "keywords"=>$data_record->keyword ?? '',
+    "schema"=>$data_record->schema ?? ''
 ];
 ?>
 
@@ -111,7 +111,7 @@ $seo_meta=[
                         </p>
 
                         <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="/signages" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
+                            <a href="/emergency-signage" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
                     </div>
@@ -134,7 +134,7 @@ $seo_meta=[
                             The Lane Control System (LCS) is an integral part of any tunnel management system. The LCS offers real-time monitoring and control of the traffic flow within the tunnel, ensuring a smooth and safe journey for commuters. The sign comprises of RED and GREEN directional arrows to guide the drivers to the correct lanes and warn them of any potential hazards.
                         </p>
                         <div class="d-block  d-flex align-items-center justify-content-between dotted-imagess">
-                            <a href="/lane-control-system" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
+                            <a href="/lane-control-sign" class="btn btn-primary text-uppercase rounded-2">KNOW MORE</a>
                             <img src="{{asset('assets/customer/images/Dot-Patternc.jpg') }}" alt="Not Found" class="img-fluid" width="80">
                         </div>
                     </div>
