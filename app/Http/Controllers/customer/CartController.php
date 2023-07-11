@@ -271,15 +271,21 @@ class CartController extends Controller
             Cart::where('user_id', Session::get('user')->id)->delete();
 //            dd($user_io->email);
 
-        $order_product=OrderedProduct::where('order_id',$order->id)->first();
-        if(isset($order_product)){
-            $order["product_price"]=$order_product->price??"-";
-            $order["product_color"]=$order_product->color??"-";
-            $order["product_quantity"]=$order_product->quantity??"-";
-            $product_selected=Product::where('id',$order_product->product_id)->first();
-            $order["product_name"]=$product_selected->title??"-";
-            $order["product_cover_image"]=url("storage")."/".($product_selected->cover_image??"/default.png");
-        }
+        $order_product=OrderedProduct::where('order_id',$order->id)->get();
+                $products_list=[];
+            foreach ($order_product as $product_order){
+                $order_p=array();
+                $order_p["product_price"]=$product_order->price??"-";
+                $order_p["product_color"]=$product_order->color??"-";
+                $order_p["product_quantity"]=$product_order->quantity??"-";
+
+                $product_selected=Product::where('id',$product_order->product_id)->first();
+                $order_p["product_name"]=$product_selected->title??"-";
+                $order_p["product_cover_image"]=url("storage")."/".($product_selected->cover_image??"/default.png");
+                $products_list[]=$order_p;
+            }
+            $order['item']=$products_list;
+
         $place_order = new OrderPlaceMail($order);
 //dd($order);
         Mail::to($user_io->email)->send($place_order);
