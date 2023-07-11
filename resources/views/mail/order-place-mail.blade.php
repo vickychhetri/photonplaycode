@@ -58,13 +58,13 @@ We would like to express our sincere gratitude for choosing to purchase our prod
     </tr>
     <tr>
         <td>
-            {{$data["grand_total"]}}
+            ${{$data["grand_total"]}}/-
         </td>
         <td>
-            {{$data["payment_status"]}}
+            {{strtoupper($data["payment_status"])}}
         </td>
         <td>
-            {{$data["delivery_status"]}}
+            {{strtoupper($data["delivery_status"])}}
         </td>
     </tr>
 </table>
