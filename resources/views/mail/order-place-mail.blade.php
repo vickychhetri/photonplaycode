@@ -18,7 +18,7 @@ We would like to express our sincere gratitude for choosing to purchase our prod
             Image
         </td>
         <th>
-            <img src='{{asset('storage/'.$data["product_cover_image"])}}' style="max-width: 100%;height:70px;"/>
+            <img src='{{$data["product_cover_image"]}}' style="max-width: 100%;height:70px;"/>
         </th>
     </tr>
     <tr>
