@@ -271,7 +271,7 @@ class CartController extends Controller
             Cart::where('user_id', Session::get('user')->id)->delete();
 //            dd($user_io->email);
 
-        $order_product=OrderedProduct::where('order_id',$orderId);
+        $order_product=OrderedProduct::where('order_id',$orderId)->first();
 
         if(isset($order_product)){
             $order["product_price"]=$order_product->price??"-";
