@@ -272,7 +272,7 @@ class CartController extends Controller
 //            dd($user_io->email);
 
         $order_product=OrderedProduct::where('order_id',$orderId)->first();
-
+dd($order_product);
         if(isset($order_product)){
             $order["product_price"]=$order_product->price??"-";
             $order["product_color"]=$order_product->color??"-";
