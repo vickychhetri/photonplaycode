@@ -271,9 +271,7 @@ class CartController extends Controller
             Cart::where('user_id', Session::get('user')->id)->delete();
 //            dd($user_io->email);
 
-        dd($orderId);
-        $order_product=OrderedProduct::where('order_id',$orderId)->first();
-dd($order_product);
+        $order_product=OrderedProduct::where('order_id',$order->id)->first();
         if(isset($order_product)){
             $order["product_price"]=$order_product->price??"-";
             $order["product_color"]=$order_product->color??"-";
@@ -282,7 +280,6 @@ dd($order_product);
             $order["product_name"]=$product_selected->title??"-";
             $order["product_cover_image"]=url("storage")->$product_selected->cover_image??"/default.png";
         }
-
         $place_order = new OrderPlaceMail($order);
 dd($order);
         Mail::to($user_io->email)->send($place_order);
