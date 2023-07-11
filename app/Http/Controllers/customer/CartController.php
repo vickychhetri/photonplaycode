@@ -8,6 +8,7 @@ use App\Models\Cart;
 use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderedProduct;
+use App\Models\Product;
 use App\Models\Setting;
 use App\Models\ShippingRate;
 use App\Models\UserAddress;
@@ -269,7 +270,20 @@ class CartController extends Controller
         $user_io=Session::get('user');
             Cart::where('user_id', Session::get('user')->id)->delete();
 //            dd($user_io->email);
+
+        $order_product=OrderedProduct::where('order_id',$orderId);
+
+        if(isset($order_product)){
+            $order["product_price"]=$order_product->price??"-";
+            $order["product_color"]=$order_product->color??"-";
+            $order["product_quantity"]=$order_product->quantity??"-";
+            $product_selected=Product::where('product_id',$order_product->product_id);
+            $order["product_name"]=$product_selected->title??"-";
+            $order["product_cover_image"]=url("storage")->$product_selected->cover_image??"/default.png";
+        }
+
         $place_order = new OrderPlaceMail($order);
+dd($order);
         Mail::to($user_io->email)->send($place_order);
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));
