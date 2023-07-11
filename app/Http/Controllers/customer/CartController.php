@@ -268,7 +268,7 @@ class CartController extends Controller
 
         $user_io=Session::get('user');
             Cart::where('user_id', Session::get('user')->id)->delete();
-            dd($user_io->email);
+//            dd($user_io->email);
         $place_order = new OrderPlaceMail($order);
         Mail::to($user_io->email)->send($place_order);
 
