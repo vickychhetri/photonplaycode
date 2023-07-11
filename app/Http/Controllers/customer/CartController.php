@@ -278,7 +278,7 @@ class CartController extends Controller
             $order["product_quantity"]=$order_product->quantity??"-";
             $product_selected=Product::where('id',$order_product->product_id)->first();
             $order["product_name"]=$product_selected->title??"-";
-            $order["product_cover_image"]=url("storage")->$product_selected->cover_image??"/default.png";
+            $order["product_cover_image"]=url("storage")."/".($product_selected->cover_image??"/default.png");
         }
         $place_order = new OrderPlaceMail($order);
 dd($order);
