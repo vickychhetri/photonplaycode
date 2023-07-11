@@ -266,10 +266,11 @@ class CartController extends Controller
                 'payment_status' => $checkout->payment_status
             ]);
 
+        $user_io=Session::get('user');
             Cart::where('user_id', Session::get('user')->id)->delete();
-            dd($order['email']);
+            dd($user_io->email);
         $place_order = new OrderPlaceMail($order);
-        Mail::to($order['email'])->send($place_order);
+        Mail::to($user_io->email)->send($place_order);
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));
     }
