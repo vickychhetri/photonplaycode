@@ -269,7 +269,7 @@ class CartController extends Controller
             Cart::where('user_id', Session::get('user')->id)->delete();
 
         $place_order = new OrderPlaceMail($order);
-        Mail::to($this->data['email'])->send($place_order);
+        Mail::to($order['email'])->send($place_order);
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));
     }
