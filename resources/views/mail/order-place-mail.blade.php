@@ -7,23 +7,17 @@ We would like to express our sincere gratitude for choosing to purchase our prod
     <tr><td>Order Number</td><th>{{$data["order_number"]}}</th></tr>
 </table>
 
-<table width="100%">
+<table width="100%" border="1">
     <tr>
         <td>
             Product
         </td>
-    </tr>
-    <tr>
         <td>
             Image
         </td>
-    </tr>
-    <tr>
         <td>
             Color
         </td>
-    </tr>
-    <tr>
         <td>
             Quantity
         </td>
@@ -45,8 +39,8 @@ We would like to express our sincere gratitude for choosing to purchase our prod
     </tr>
     @endforeach
 </table>
-<br/>
-<table width="100%">
+<br/><br/>
+<table width="100%" border="1">
     <tr>
         <th>
             Grand Total
