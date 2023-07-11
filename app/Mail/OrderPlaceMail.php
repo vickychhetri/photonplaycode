@@ -29,7 +29,7 @@ class OrderPlaceMail extends Mailable
      */
     public function build()
     {
-        $subject = $this->data["order_number"].'()Thank You for Your Purchase - Order Acknowledgment';
+        $subject = $this->data["order_number"].' Thank You for Your Purchase - Order Acknowledgment';
 
         return $this->markdown('mail.order-place-mail')
             ->with('data', $this->data)
