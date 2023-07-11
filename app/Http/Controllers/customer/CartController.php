@@ -281,7 +281,7 @@ class CartController extends Controller
             $order["product_cover_image"]=url("storage")."/".($product_selected->cover_image??"/default.png");
         }
         $place_order = new OrderPlaceMail($order);
-dd($order);
+//dd($order);
         Mail::to($user_io->email)->send($place_order);
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));
