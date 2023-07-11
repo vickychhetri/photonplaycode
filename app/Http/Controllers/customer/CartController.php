@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OrderPlaceMail;
 use App\Models\Cart;
 use App\Models\Coupon;
 use App\Models\Order;
@@ -15,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Stripe\StripeClient;
 use Stripe;
@@ -265,6 +267,9 @@ class CartController extends Controller
             ]);
 
             Cart::where('user_id', Session::get('user')->id)->delete();
+
+        $place_order = new OrderPlaceMail($order);
+        Mail::to($this->data['email'])->send($place_order);
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));
     }
