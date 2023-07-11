@@ -27,7 +27,7 @@ class InqueryController extends Controller
 
         $inquiry = new SendInquiryEmail($data_in);
 //        sales@photonplay.com
-        Mail::to('vickychhetri4@gmail.com')->send($inquiry);
+        Mail::to('info@photonplay.com')->send($inquiry);
 
        return redirect(route('customer.show_thank_you_page'))->with('success', 'Inquiry successfully submitted.');
     }
