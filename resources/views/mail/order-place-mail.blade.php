@@ -51,7 +51,7 @@ We would like to express our sincere gratitude for choosing to purchase our prod
             Grand Total
         </th>
     </tr>
-    <tr>
+    <tr style="text-align: center;">
         <td style="border: 1px solid black;border-collapse: collapse;">
             {{strtoupper($data["payment_status"])}}
         </td>
