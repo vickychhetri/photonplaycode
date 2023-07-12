@@ -1,74 +1,69 @@
 @component('mail::message')
 Dear Customer,<br/>
 We would like to express our sincere gratitude for choosing to purchase our product. This email serves as both a thank you and an acknowledgment of your recent purchase.
-<style>
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-</style>
-<table width="100%">
-    <tr><td>Order Number</td><th>{{$data["order_number"]}}</th></tr>
+<br/>
+<table width="100%" style="border: 1px solid black;border-collapse: collapse;" >
+    <tr><td style="border: 1px solid black;border-collapse: collapse;">Order Number</td><th style="border: 1px solid black;border-collapse: collapse;">{{$data["order_number"]}}</th></tr>
 </table>
-
-<table width="100%" border="1">
+<br/>
+<table width="100%" border="1" style="border: 1px solid black;border-collapse: collapse;">
     <tr>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             Product
         </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             Image
         </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             Color
         </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             Quantity
         </td>
     </tr>
     @foreach($data["item"] as $prod)
     <tr>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             {{$prod["product_name"]}}
         </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             <img src='{{$prod["product_cover_image"]}}' style="max-width: 100%;height:70px;"/>
         </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             {{$prod["product_color"]}}
         </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             {{$prod["product_quantity"]}}
         </td>
     </tr>
     @endforeach
 </table>
 <br/><br/>
-<table width="100%" border="1">
+<table width="100%" border="1" style="border: 1px solid black;border-collapse: collapse;">
     <tr>
-        <th>
-            Grand Total
-        </th>
-        <th>
+        <th style="border: 1px solid black;border-collapse: collapse;">
         Payment Status
         </th>
-        <th>
+        <th style="border: 1px solid black;border-collapse: collapse;">
         Delivery Status
+        </th>
+        <th style="border: 1px solid black;border-collapse: collapse;">
+            Grand Total
         </th>
     </tr>
     <tr>
-        <td>
-            ${{$data["grand_total"]}}/-
-        </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             {{strtoupper($data["payment_status"])}}
         </td>
-        <td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
             {{strtoupper($data["delivery_status"])}}
+        </td>
+        <td style="border: 1px solid black;border-collapse: collapse;">
+            ${{$data["grand_total"]}}/-
         </td>
     </tr>
 </table>
-
+<br/><br/>
 Thanks,<br>
 {{ config('app.name') }}
 @endcomponent
