@@ -164,7 +164,7 @@ $productLists = Product::take(5)->get();
                         @else
                         <div class="d-flex align-items-center">
                             <p class="me-2 mb-0">{{$cartPrice}}</p>
-                            <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>
+                            <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="me-2">
