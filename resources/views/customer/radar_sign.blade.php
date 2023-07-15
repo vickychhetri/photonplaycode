@@ -352,7 +352,7 @@ if(isset($seo_record)){
                                         <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
                                              width="14px">
                                     </div>
-                                    $<span class="d-block weight-font">{{$more_product->price}}</span>
+                                    <span class="d-block weight-font">$ {{$more_product->price}}</span>
                                     <a href="{{route('customer.radar.sign', $more_product->id)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
                                 </div>
                             </div>
