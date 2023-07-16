@@ -42,7 +42,7 @@ $seo_meta=[
                                                 <div id="errormessage" class="bg-danger text-white"></div>
                                                 <h4 class="card-title p-1 d-flex justify-content-around align-items-center m-2 p-2">
                                                     <span>   Order : {{$order->order_number}}</span>
-{{--<a href="{{route('customer.customer_order_invoice',$order->id)}}"><i class="bi bi-receipt"></i> Invoice</a>--}}
+<a href="{{route('customer.customer_order_invoice',$order->id)}}"><i class="bi bi-receipt"></i> Invoice</a>
                                                 </h4>
 
                                             </div>
