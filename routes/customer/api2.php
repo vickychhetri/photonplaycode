@@ -7,6 +7,7 @@ use App\Http\Controllers\customer\ContactUsController;
 use App\Http\Controllers\customer\CustomerOrderController;
 use App\Http\Controllers\customer\CustomerProfileController;
 use App\Http\Controllers\customer\SignController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SearchItemsController;
 use App\Http\Controllers\ThankYouController;
 
@@ -25,3 +26,4 @@ Route::get('/thank-you', [ThankYouController::class, 'index'])->name("show_thank
 
 Route::get('/order/show/{id}', [CustomerOrderController::class, 'show_order'])->name("show.order");
 
+Route::get('/reports/order/customer/invoice/{id}', [OrderController::class,'generateCustomerInvoice'])->name("customer_order_invoice");
