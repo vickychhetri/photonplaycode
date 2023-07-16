@@ -31,12 +31,12 @@
                     Payment Status :
                 </th>
                 <td>
-                    <p>  <span class="{{$order->payment_status=='paid'?'text-success':'text-warning'}} p-1">
+                    <p style="text-wrap: normal;">  <span class="{{$order->payment_status=='paid'?'text-success':'text-warning'}} p-1">
                                     {{ucfirst($order->payment_status)}} </span>   </p>
                 </td>
 
                 <th>
-                    Order Status :
+                        Order Status :
                 </th>
                 <td>
                     <p>  <span class="p-1">
