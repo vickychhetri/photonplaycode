@@ -21,17 +21,28 @@
                 <th>
                     Order Date & Time:
                 </th>
-                <td>
+                    <td>
                     <p>   {{$order->created_at}}</p>
                 </td>
             </tr>
 
             <tr>
                 <th>
+                    Name
+                </th>
+                <td>{{ $order->user->name }}</td>
+                <th>
+                    Email
+                </th>
+                <td>{{ $order->user->email }}</td>
+            {{--    <td>{{ $order->user->phone_number }}</td>--}}
+            </tr>
+            <tr>
+                <th>
                     Payment Status :
                 </th>
                 <td>
-                    <p style="text-wrap: normal;">  <span class="{{$order->payment_status=='paid'?'text-success':'text-warning'}} p-1">
+                    <p>  <span class="{{$order->payment_status=='paid'?'text-success':'text-warning'}} p-1">
                                     {{ucfirst($order->payment_status)}} </span>   </p>
                 </td>
 
@@ -43,15 +54,15 @@
                                     {{strtoupper($order->delivery_status)}} </span>   </p>
                 </td>
             </tr>
-            <tr>
-                <th >
-                    Transaction No. :
-                </th>
-                <td colspan="3">
-                    <p>  <span>
-                                {{$order->trx_id}}</span> </p>
-                </td>
-            </tr>
+{{--            <tr>--}}
+{{--                <th >--}}
+{{--                    Transaction No. :--}}
+{{--                </th>--}}
+{{--                <td colspan="3">--}}
+{{--                    <p style="text-wrap: normal;">  <span>--}}
+{{--                                {{$order->trx_id}}</span> </p>--}}
+{{--                </td>--}}
+{{--            </tr>--}}
             <tr>
                 <th>
                     Order Note:
@@ -138,9 +149,7 @@
                 <tbody>
 
                 <tr>
-                    <td>{{ $order->user->name }}</td>
-                    <td>{{ $order->user->email }}</td>
-                    <td>{{ $order->user->phone_number }}</td>
+
                 </tr>
 
                 </tbody>
