@@ -62,10 +62,6 @@
                 </td>
             </tr>
         </table>
-
-
-        <a href="{{route('admin.generate_order_invoice',$order->id)}}" target="_blank">
-            <i data-feather="printer"></i>  </a>
     </div>
 
 
@@ -127,13 +123,11 @@
         <br/>
 
         <div class="shadow-lg p-4 ">
-            <h2> Customer </h2>
+            <h2> Customer Information </h2>
             <hr/>
             <table style="width: 100%" border="1">
                 <thead>
                 <tr>
-                    <th>User Id</th>
-                    <th>Stripe Id</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone Number</th>
@@ -144,8 +138,6 @@
                 <tbody>
 
                 <tr>
-                    <td>{{$order->user->id }}</td>
-                    <td>{{$order->user->stripe_id}}</td>
                     <td>{{ $order->user->name }}</td>
                     <td>{{ $order->user->email }}</td>
                     <td>{{ $order->user->phone_number }}</td>
