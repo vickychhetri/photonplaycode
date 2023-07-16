@@ -133,28 +133,31 @@
         </div>
         <br/>
 
-        <div class="shadow-lg p-4 ">
-            <h2> Customer Information </h2>
-            <hr/>
-            <table style="width: 100%" border="1">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
+{{--        <div class="shadow-lg p-4 ">--}}
+{{--            <h2> Customer Information </h2>--}}
+{{--            <hr/>--}}
+{{--            <table style="width: 100%" border="1">--}}
+{{--                <thead>--}}
+{{--                <tr>--}}
+{{--                    <th>Name</th>--}}
+{{--                    <th>Email</th>--}}
+{{--                    <th>Phone Number</th>--}}
 
 
-                </tr>
-                </thead>
-                <tbody>
+{{--                </tr>--}}
+{{--                </thead>--}}
+{{--                <tbody>--}}
 
-                <tr>
+{{--                <tr>--}}
 
-                </tr>
+{{--                </tr>--}}
 
-                </tbody>
-            </table>
-        </div>
+{{--                </tbody>--}}
+{{--            </table>--}}
+{{--        </div>--}}
+
+
+
         <br/>
         <div class="shadow-lg p-4 ">
             <h2> Billing Address </h2>
