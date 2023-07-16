@@ -121,6 +121,9 @@ $seo_meta=[
                                                                 <td>
 
                                                                 </td>
+                                                                <td>
+
+                                                                </td>
                                                                 <td colspan="1">
                                                                     Grand Total
                                                                 </td>
