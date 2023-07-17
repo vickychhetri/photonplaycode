@@ -63,7 +63,7 @@
                                         <span class="text-amount">${{$orders->shipping}}</span>
                                     </li>
                                     <li class="d-flex justify-content-between py-3">
-                                        <span class="text text-capitalize">GST</span>
+                                        <span class="text text-capitalize">VAT</span>
                                         <span class="text-amount">${{$orders->gst}}</span>
                                     </li>
                                     @if($orders->discounted_amount != 0)
@@ -76,6 +76,10 @@
                                     <li class="d-flex justify-content-between py-3 active">
                                         <span class="text text-capitalize fw-bold">Order total</span>
                                         <span class="text-amount">${{$orders->grand_total}}</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-3 active">
+                                        <span class="text text-capitalize fw-bold">Invoice</span>
+                                        <span class="text-amount"><a href="{{route('customer.customer_order_invoice',$order->id)}}"><i class="bi bi-receipt"></i> </a></span>
                                     </li>
                                 </ul>
                             </div>
