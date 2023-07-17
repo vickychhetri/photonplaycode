@@ -79,7 +79,7 @@
                                     </li>
                                     <li class="d-flex justify-content-between py-3 active">
                                         <span class="text text-capitalize fw-bold">Invoice</span>
-                                        <span class="text-amount"><a href="{{route('customer.customer_order_invoice',$order->id)}}"><i class="bi bi-receipt"></i> </a></span>
+                                        <span class="text-amount"><a href="{{route('customer.customer_order_invoice',$orders->id)}}"><i class="bi bi-receipt"></i> </a></span>
                                     </li>
                                 </ul>
                             </div>
