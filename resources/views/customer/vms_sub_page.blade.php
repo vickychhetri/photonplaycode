@@ -123,6 +123,8 @@ $seo_meta=[
                 </div>
             </div>
         </section>
+    @else
+        <h2> false</h2>
     @endif
 
 
