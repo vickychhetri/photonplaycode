@@ -45,7 +45,7 @@ $seo_meta=[
                         <div class="col-md-12">
                             <div>
                                 {{--                            <h4 class="text-capitalize">Description</h4>--}}
-                                <p style="text-align: justify;">
+                                <p style="text-align: justify;" class="m-4">
                                     VMS {{$page->description}}
                                 </p>
                                 <div class="thumb-image">
