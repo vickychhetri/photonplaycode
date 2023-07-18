@@ -37,7 +37,7 @@ $seo_meta=[
     </section>
     <!-- Banner Sec End -->
 
-    @if(request()->is(route('customer.vms.sub.page','smart-city-vms')))
+    @if(request()->is('solution/smart-city-vms'))
         <section class="sepeicification bg-light position-relative">
             <div class="container pb-lg-5">
                 <div class="accodion-wrapper pb-5">
