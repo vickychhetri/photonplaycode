@@ -49,7 +49,7 @@ $seo_meta=[
                                     VMS {{$page->description}}
                                 </p>
                                 <div class="thumb-image">
-                                    <div class="row">
+                                    <div class="row d-flex justify-content-center">
                                         @forelse ($page->images as $image)
                                             <div class="col-md-4 thumb-image-item">
                                                 <div class="mb-3 w" >
