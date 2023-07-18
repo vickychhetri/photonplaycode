@@ -39,8 +39,8 @@ $seo_meta=[
 
     @if(request()->is('solution/smart-city-vms'))
         <section class="sepeicification bg-light position-relative">
-            <div class="container pb-lg-5">
-                <div class="accodion-wrapper pb-5">
+            <div class="container p-0 m-0">
+                <div class="accodion-wrapper ">
                     <div class="row">
                         <div class="col-md-12">
                             <div>
