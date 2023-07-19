@@ -130,7 +130,7 @@
                             <h6>Safe And Secure  </h6>
                             <p class="mb-1" style="font-size: 10px;">
                                 User access management for securing the system from unauthorized access.
-                            </p>
+                            </p><br/>
                         </div>
 
                     </div>
