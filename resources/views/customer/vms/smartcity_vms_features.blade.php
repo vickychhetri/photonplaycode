@@ -13,7 +13,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f1.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Fully Customizable and Programmable</h6>
                             <p class="mb-0" style="font-size: 10px;"> Send custom content like videos , text , images , advertisements etc.  to different VMS locations as per situation. </p>
@@ -26,7 +26,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f2.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Travel Time Information</h6>
                             <p class="mb-0" style="font-size: 10px;"> Get real time updates about traffic routes , congestion and travel time through out your journey  </p><br/>
@@ -39,7 +39,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f3.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Real Time Updates</h6>
                             <p class="mb-0" style="font-size: 10px;"> Integrated with various centralized systems and emergency response data sources for real time information of all types like weather, air pollution etc. </p>
@@ -54,7 +54,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f4.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Parking Information</h6>
                             <p class="mb-0" style="font-size: 10px;"> VMS provides real-time parking availability information to avoid congestion or traffic jams. </p><br/>
@@ -67,7 +67,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f5.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Advertisements and Branding</h6>
                             <p class="mb-0" style="font-size: 10px;"> In order to reach individuals without access to mainstream media, VMS is utilized to display advertisements , city events  and branding </p><br/>
@@ -81,7 +81,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f6.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Centralized Control  and Monitoring </h6>
                             <p class="mb-0" style="font-size: 10px;">
@@ -99,7 +99,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f7.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Fully Automated </h6>
                             <p class="mb-0" style="font-size: 10px;"> Without having to intervene manually , the system can operates through automatic command control. </p><br/>
@@ -112,7 +112,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f8.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Configurable Schedular </h6>
                             <p class="mb-0" style="font-size: 10px;"> Transmits the content at pre defined schedules on day/date/weekly basis </p><br/>
@@ -125,7 +125,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f9.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Safe And Secure  </h6>
                             <p class="mb-0" style="font-size: 10px;">
@@ -144,7 +144,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f10.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Multi-lingual Support  </h6>
                             <p class="mb-0" style="font-size: 10px;"> Highly versatile sign supports all the regional languages makes the sign more user friendly. </p><br/>
@@ -157,7 +157,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f11.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Ultra Low Power Consumption </h6>
                             <p class="mb-0" style="font-size: 10px;"> With Auto brightness control sensors, display can switch to low power consumption mode as and when required  </p><br/>
@@ -170,7 +170,7 @@
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f12.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Certifications and Compliances   </h6>
                             <p class="mb-0" style="font-size: 10px;">
