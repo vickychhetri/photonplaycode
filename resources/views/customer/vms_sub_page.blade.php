@@ -191,24 +191,6 @@ $seo_meta=[
                     @endif
 
                     @if(request()->is('solution/smart-city-vms'))
-
-                        <div class="col-md-3">
-                            <div class="application-item">
-                                <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
-                                <div class="content-application-items">
-                                    <h4 class="text-uppercase">Highways </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="application-item">
-                                <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
-                                <div class="content-application-items">
-                                    <h4 class="text-uppercase">Tunnels </h4>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="col-md-3">
                             <div class="application-item">
                                 <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">
