@@ -29,7 +29,7 @@
                         <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Travel Time Information</h6>
-                            <p class="mb-0" style="font-size: 8px;"> Get real time updates about traffic routes , congestion and travel time through out your journey  </p>
+                            <p class="mb-0" style="font-size: 8px;"> Get real time updates about traffic routes , congestion and travel time through out your journey  </p><br/>
                         </div>
 
                     </div>
