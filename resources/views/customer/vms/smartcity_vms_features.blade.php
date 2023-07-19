@@ -128,7 +128,7 @@
                         <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f9.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Safe And Secure  </h6>
-                            <p class="mb-0" style="font-size: 10px;">
+                            <p class="mb-1" style="font-size: 10px;">
                                 User access management for securing the system from unauthorized access.
                             </p>
                         </div>
@@ -173,7 +173,7 @@
                         <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f12.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Certifications and Compliances   </h6>
-                            <p class="mb-0" style="font-size: 10px;">
+                            <p class="mb-1" style="font-size: 10px;">
                                 The sign is in compliance with FCC and CE and certified with BIS
                             </p>
                         </div>
