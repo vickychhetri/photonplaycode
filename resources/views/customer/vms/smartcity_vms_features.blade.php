@@ -57,7 +57,7 @@
                         <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Parking Information</h6>
-                            <p class="mb-0" style="font-size: 10px;"> VMS provides real-time parking availability information to avoid congestion or traffic jams. </p>
+                            <p class="mb-0" style="font-size: 10px;"> VMS provides real-time parking availability information to avoid congestion or traffic jams. </p><br/>
                         </div>
 
                     </div>
