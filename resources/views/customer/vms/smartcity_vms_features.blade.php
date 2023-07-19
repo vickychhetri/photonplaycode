@@ -42,7 +42,7 @@
                         <div class="me-3"><img src="{{asset('assets/customer/images/vms/icon/f3.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Real Time Updates</h6>
-                            <p class="mb-0" style="font-size: 10px;"> Integrated with various centralized systems and emergency response data sources for real time information of all types like weather, air pollution etc. </p>
+                            <p class="mb-1" style="font-size: 10px;"> Integrated with various centralized systems and emergency response data sources for real time information of all types like weather, air pollution etc. </p>
                         </div>
 
                     </div>
