@@ -15,8 +15,8 @@
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Traffic Data Analysis</h6>
-                            <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
+                            <h6>Fully Customizable and Programmable</h6>
+                            <p class="mb-0"> Send custom content like videos , text , images , advertisements etc.  to different VMS locations as per situation. </p>
                         </div>
 
                     </div>
@@ -28,8 +28,8 @@
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Traffic Data Analysis</h6>
-                            <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
+                            <h6>Travel Time Information</h6>
+                            <p class="mb-0"> Get real time updates about traffic routes , congestion and travel time through out your journey  </p>
                         </div>
 
                     </div>
@@ -41,8 +41,8 @@
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Traffic Data Analysis</h6>
-                            <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
+                            <h6>Real Time Updates</h6>
+                            <p class="mb-0"> Integrated with various centralized systems and emergency response data sources for real time information of all types like weather, air pollution etc. </p>
                         </div>
 
                     </div>
