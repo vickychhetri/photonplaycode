@@ -77,6 +77,7 @@
                     <img src="{{asset('assets/customer/images/vms/VMS5.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
+
             <div class="col-lg-4 ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
@@ -94,7 +95,96 @@
             </div>
 
 
+
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Fully Automated </h6>
+                            <p class="mb-0" style="font-size: 10px;"> Without having to intervene manually , the system can operates through automatic command control. </p><br/>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS7.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Configurable Schedular </h6>
+                            <p class="mb-0" style="font-size: 10px;"> Transmits the content at pre defined schedules on day/date/weekly basis </p><br/>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS8.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Safe And Secure  </h6>
+                            <p class="mb-0" style="font-size: 10px;">
+                                User access management for securing the system from unauthorized access.
+                            </p>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS9.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Multi-lingual Support  </h6>
+                            <p class="mb-0" style="font-size: 10px;"> Highly versatile sign supports all the regional languages makes the sign more user friendly. </p><br/>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS10.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Ultra Low Power Consumption </h6>
+                            <p class="mb-0" style="font-size: 10px;"> With Auto brightness control sensors, display can switch to low power consumption mode as and when required  </p><br/>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS11.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Certifications and Compliances   </h6>
+                            <p class="mb-0" style="font-size: 10px;">
+                                The sign is in compliance with FCC and CE and certified with BIS
+                            </p>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS12.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
+s
