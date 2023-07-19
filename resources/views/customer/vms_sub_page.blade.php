@@ -128,30 +128,6 @@ $seo_meta=[
                                     </div>
                                 </div>
                             </div>
-
-                            {{--                        <div class="circle-floow fo loowers position-relative">--}}
-                            {{--                            <div class="accordion accordion-flush" id="accordionFlushExample1">--}}
-
-                            {{--                            @foreach ($page->specs as $spec)--}}
-                            {{--                                <div class="accordion-item border-0 position-inherit ">--}}
-                            {{--                                    <h2 class="accordion-header" id="flush-headingOne1">--}}
-                            {{--                                        <button class="accordion-button collapsed optic bg-white shadow-none te-3 pb-2 shadow-none text-dark" type="button" data-toggle="collapse" data-target="#flush-collapseOne{{$spec->id}}" aria-expanded="false" aria-controls="flush-collapseOne1">--}}
-                            {{--                                            <!-- <p class="accordion-button  shadow-none te-3 p-0 mb-1 shadow-none bg-white">Optics </p> -->--}}
-                            {{--                                            {{$spec->spec}}--}}
-                            {{--                                        </button>--}}
-                            {{--                                    </h2>--}}
-                            {{--                                    <div id="flush-collapseOne{{$spec->spec}}" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne1" data-bs-parent="#accordionFlushExample1">--}}
-                            {{--                                        <div class="accordion-body pt-0">--}}
-                            {{--                                            {!!  $spec->description!!}--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                @endforeach--}}
-                            {{--                                <div class="stone-accordian position-absolute d-flex align-items-center ">--}}
-                            {{--                                    <img src="{{asset('assets/customer/images/object.png')}}" class="img-fluid circle-image d-none d-md-block" alt="not-found">--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
                         </div>
                     </div>
                     <img class="dotted-imag img-fluid d-none d-md-inline" src="{{asset('assets/customer/images/dotted-tran.png')}}" alt="not-found">
@@ -168,7 +144,13 @@ $seo_meta=[
 
     <!-- Feature -->
 <!-- Feature -->
-@include('customer.layout2.features_page')
+
+    @if(request()->is('solution/smart-city-vms'))
+        @include('customer.vms.smartcity_vms_features')
+    @else
+        @include('customer.layout2.features_page')
+    @endif
+
 <!-- Feature end -->
 
 <!-- Feature end -->
