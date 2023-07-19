@@ -51,6 +51,49 @@
             </div>
 
 
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Parking Information</h6>
+                            <p class="mb-0" style="font-size: 10px;"> VMS provides real-time parking availability information to avoid congestion or traffic jams. </p>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS4.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Advertisements and Branding</h6>
+                            <p class="mb-0" style="font-size: 10px;"> In order to reach individuals without access to mainstream media, VMS is utilized to display advertisements , city events  and branding </p><br/>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS5.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Centralized Control  and Monitoring </h6>
+                            <p class="mb-0" style="font-size: 10px;">
+                                Multiple VMSs are connected and controlled via central software and server. The devices are monitored for fault diagnose like system failure , power failure , link breakage etc.
+                            </p>
+                        </div>
+
+                    </div>
+                    <img src="{{asset('assets/customer/images/vms/VMS6.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </section>
