@@ -20,7 +20,7 @@
                         </div>
 
                     </div>
-                    <img src="{{asset('assets/images/radar/RSS4.jpg')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vms/VMS1.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
             <div class="col-lg-4 ">
@@ -33,7 +33,7 @@
                         </div>
 
                     </div>
-                    <img src="{{asset('assets/images/radar/RSS4.jpg')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vms/VMS2.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
             <div class="col-lg-4 ">
@@ -46,19 +46,11 @@
                         </div>
 
                     </div>
-                    <img src="{{asset('assets/images/radar/RSS4.jpg')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vms/VMS3.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
 
-{{--                <div class="col-lg-4">--}}
-{{--                    <div class="d-flex align-items-center bg-white feature-card p-4">--}}
-{{--                        <div class="me-3"><img src="{{asset('assets/customer/images/COMPLIANCE.png')}}" alt="Not Found"></div>--}}
-{{--                        <div class="">--}}
-{{--                            <h6>MAINTAINENCE FREE</h6>--}}
-{{--                            <p class="mb-0">Maintainance Free Operation with dry cell sealed batteries</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+
         </div>
     </div>
 </section>
