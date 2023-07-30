@@ -21,7 +21,7 @@ $seo_meta=[
                             <div class="text-center  d-flex align-items-center justify-content-center h-100" style="background-color: rgba(0, 0, 0, 0.4); height: 100%;">
                                 <div class="d-flex justify-content-center ">
                                     <div class="w-75">
-                                        <h1 class="text-uppercase text-white title-text-h1" >SMART CITIES SOLUTIONS</h1>
+                                        <h1 class="text-uppercase text-white title-text-h1" >SMART CITIES </h1>
                                         <h6 class="text-white text-center mb-4" >
                                             Transform urban mobility and drive sustainable growth with our comprehensive ITS solutions
                                              that enable seamless integration and smarter decision-making for cities of the future.
