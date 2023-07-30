@@ -156,7 +156,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Smart City VMS Front.png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/Smart City VMS Front.webp" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="{{route('customer.variable.message')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -261,7 +261,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/LCS front 2.png" alt="LCS" class="">
+                                    <img src="/assets/customer/images/products_home/LCS front 2.webp" alt="LCS" class="">
                                     <div>
                                         <a href="{{route('customer.lane.control.system')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
