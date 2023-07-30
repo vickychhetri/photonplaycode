@@ -190,7 +190,7 @@ $seo_meta=[
                         </div>
                     @endif
 
-                    @if(request()->is('solution/smart-city-vms'))
+                    @if(request()->is('solution/smart-city-vms'))x
                         <div class="col-md-3">
                             <div class="application-item">
                                 <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">

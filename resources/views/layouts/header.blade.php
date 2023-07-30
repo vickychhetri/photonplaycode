@@ -379,7 +379,7 @@
                     <ul class="profile-dropdown onhover-show-div me-4" style="width: 180px;">
 
 
-                        <li><a href="#"><i data-feather="user"></i><span>Edit Profile </span></a></li>
+                        <li><a href="{{route('admin.edit_adminprofile_form')}}"><i data-feather="user"></i><span>Edit Profile </span></a></li>
                         <li><a href="{{ route('admin.logout') }}" id="logout"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
