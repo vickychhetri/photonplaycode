@@ -191,7 +191,7 @@
                         <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
 
-                    <img id="fallback-image" src="{{asset('assets/videos/video_bg.webp')}}" alt="Fallback Image">
+                    <img id="fallback-image" src="{{asset('assets/videos/video_bg.webp')}}"  style="width: 100%;" alt="Fallback Image">
                 </div>
 
             </div>
