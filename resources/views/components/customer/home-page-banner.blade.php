@@ -143,10 +143,9 @@
                                 <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                             </div>
                                 <div class="d-flex justify-content-center " >
-{{--                                    <video  style="object-fit: cover;" autoplay loop muted playsinline>--}}
-{{--                                        <source src="{{asset('assets/videos/head_video_photon.mp4')}}" type="video/mp4">--}}
-{{--                                    </video>--}}
-                                    <img src="{{asset('storage/'.$banners[0]->image??'')}}" alt="Not-Found" class="img-fluid w-100">
+                                    <video  style="object-fit: cover;" autoplay loop muted playsinline>
+                                        <source src="{{asset('assets/videos/head_video_photon.mp4')}}" type="video/mp4">
+                                    </video>
                                 </div>
 
                         </div>
