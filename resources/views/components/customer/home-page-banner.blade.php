@@ -146,7 +146,7 @@
 {{--                                    <video  style="object-fit: cover;" autoplay loop muted playsinline>--}}
 {{--                                        <source src="{{asset('assets/videos/head_video_photon.mp4')}}" type="video/mp4">--}}
 {{--                                    </video>--}}
-                                    <img src="{{asset('storage/'.$banner[0]->image??'')}}" alt="Not-Found" class="img-fluid w-100">
+                                    <img src="{{asset('storage/'.$banners[0]->image??'')}}" alt="Not-Found" class="img-fluid w-100">
                                 </div>
 
                         </div>
