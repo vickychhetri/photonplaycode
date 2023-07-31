@@ -155,12 +155,15 @@
                                     </video>
 
                                     <script>
-                                        // Get the video element
-                                        const videoElement = document.getElementById('videoPlayer');
-                                        const videoSrc ="assets/videos/head_video_photon.mp4";
-                                        videoElement.src = `https://www.photonplay.com/${videoSrc}`;
-                                        // Play the video
-                                        videoElement.play();
+                                        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                                            // Get the video element
+                                            const videoElement = document.getElementById('videoPlayer');
+                                            const videoSrc ="assets/videos/head_video_photon.mp4";
+                                            videoElement.src = `https://www.photonplay.com/${videoSrc}`;
+                                            // Play the video
+                                            videoElement.play();
+                                        }
+
                                     </script>
 
 
