@@ -227,7 +227,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Variable Speed Limit Sign.png" alt="VSLS" class="">
+                                    <img src="/assets/customer/images/products_home/Variable-Speed-Limit-Sign.webp" alt="VSLS" class="">
                                     <div>
                                         <a href="{{route('customer.variable.speed.limit')}}" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
@@ -295,7 +295,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/PIDS.png" alt="Portable Variable
+                                    <img src="/assets/customer/images/products_home/PIDS.webp" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
                                         <a href="/passenger-information-display-systems" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
