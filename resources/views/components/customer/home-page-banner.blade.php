@@ -157,8 +157,8 @@
                                     <script>
                                         // Get the video element
                                         const videoElement = document.getElementById('videoPlayer');
-                                        const videoSrc ="https://www.photonplay.com/assets/videos/head_video_photon.mp4";
-                                        videoElement.src = `path/to/videos/${videoSrc}`;
+                                        const videoSrc ="assets/videos/head_video_photon.mp4";
+                                        videoElement.src = `https://www.photonplay.com/${videoSrc}`;
                                         // Play the video
                                         videoElement.play();
                                     </script>
