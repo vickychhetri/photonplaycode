@@ -158,7 +158,7 @@
                                         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
                                             // Get the video element
                                             const videoElement = document.getElementById('videoPlayer');
-                                            const videoSrc ="assets/videos/head_video_photon_2.mp4";
+                                            const videoSrc ="assets/videos/head_video_photon_1.mp4";
                                             videoElement.src = `https://www.photonplay.com/${videoSrc}`;
                                             // Play the video
                                             videoElement.play();
