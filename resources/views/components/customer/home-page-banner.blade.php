@@ -134,8 +134,8 @@
 <section class="pt-0 pb-sm-4 pb-lg-5 mobile-display " style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
 
 {{--    // remove from below div : clints-content-banner--}}
-    <div class="clints-content  mb-0 " >
-                    <div class="">
+    <div class="clints-content  mb-0 "  style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
+                    <div class=""  style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
                         <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
                             <div class="slider-content position-absolute   start-50 translate-middle text-center" style="margin-top: 250px;z-index:3;">
                                 <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
@@ -177,8 +177,8 @@
 
 
 <section class="pt-0 pb-sm-4 pb-lg-5 desktop-display" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")" >
-    <div class="clints-content clints-content-banner mb-0" >
-        <div class="">
+    <div class="clints-content clints-content-banner mb-0"   style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
+        <div class=""  style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
                 <div class="slider-content position-absolute top-50 start-50 translate-middle text-center" style="z-index:3;">
                     <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
