@@ -131,10 +131,10 @@
     }
 </style>
 
-<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display " style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
+<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display bg-danger " style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
 
 {{--    // remove from below div : clints-content-banner--}}
-    <div class="clints-content  mb-0 " >
+    <div class="clints-content  mb-0 bg-danger " >
                     <div class="" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
                         <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
                             <div class="slider-content position-absolute   start-50 translate-middle text-center" style="margin-top: 250px;z-index:3;">
@@ -209,9 +209,9 @@
 
 
 
-<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")" >
-    <div class="clints-content clints-content-banner mb-0" >
-        <div class="" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
+<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display bg-danger" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")" >
+    <div class="clints-content clints-content-banner mb-0  bg-danger" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")" >
+        <div class="" style="background-image: url({{asset('assets/videos/video_bg.webp')}})">
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
                 <div class="slider-content position-absolute top-50 start-50 translate-middle text-center" >
 {{--                    style="z-index:3;"--}}
