@@ -142,7 +142,15 @@
                                 <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
                                 <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                             </div>
-                                <div class="d-flex justify-content-center " >
+
+                            <div class="d-flex justify-content-center "  id="video-container" >
+                                <video id="video-player" width="100%" preload="metadata"  autoplay loop muted playsinline>
+                                    <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
+                                </video>
+
+                                <img id="fallback-image" src="{{asset('assets/videos/video_bg.webp')}}"  style="height: 100%;width:100%;" alt="Fallback Image">
+                            </div>
+                                <div class="d-flex justify-content-center " id="video-container"  >
 
 
 {{--                                    <video  style="object-fit: cover;" autoplay loop muted playsinline>--}}
@@ -150,14 +158,16 @@
 
 
 {{--                                    </video>--}}
-                                    <video id="videoPlayer"  preload="metadata" style="object-fit: cover;"   autoplay loop muted playsinline>
+                                    <video id="video-player"  preload="metadata" style="object-fit: cover;"   autoplay loop muted playsinline>
                                         <source src="" type="video/mp4">
                                     </video>
+
+                                    <img id="fallback-image" src="{{asset('assets/videos/video_bg.webp')}}"  style="height: 100%;width:100%;" alt="Fallback Image">
 
                                     <script>
                                         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
                                             // Get the video element
-                                            const videoElement = document.getElementById('videoPlayer');
+                                            const videoElement = document.getElementById('video-player');
                                             const videoSrc ="assets/videos/head_video_photon_1.mp4#t=0.5";
                                             videoElement.src = `https://www.photonplay.com/${videoSrc}`;
                                             // Play the video
