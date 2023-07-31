@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: /
+Disallow: /cgi-bin/
+Disallow: /index.php
+Disallow: /tag
+Disallow: /admin/login
+Sitemap: https://www.photonplay.com/sitemap.xml
