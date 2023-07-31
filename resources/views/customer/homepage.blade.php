@@ -402,7 +402,7 @@ $seo_meta=[
                                     {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                                 </div>
                                 <div class="mask-layer common-wdth inner-col text-center">
-                                    <img src="/assets/customer/images/products_home/Way-Finder-Light-Glow.png" alt="WAY FINDER" class="">
+                                    <img src="/assets/customer/images/products_home/Way-Finder-Light-Glow.webp" alt="WAY FINDER" class="">
                                     <div>
                                         <a href="signages/way-finders" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">  Know More</a>
                                     </div>
