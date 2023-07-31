@@ -26,7 +26,7 @@
 
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">
+{{--    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">--}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -37,6 +37,8 @@
     <link rel="stylesheet" type="text/css" href="/assets/customer/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/customer/slick/slick-theme.css"/>
     <link rel="stylesheet" href="/assets/customer/css/style.css">
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         .product-pvms-icop:hover {
