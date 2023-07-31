@@ -143,9 +143,27 @@
                                 <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                             </div>
                                 <div class="d-flex justify-content-center " >
-                                    <video  style="object-fit: cover;" autoplay loop muted playsinline>
-                                        <source src="{{asset('assets/videos/head_video_photon.mp4')}}" type="video/mp4">
+
+
+{{--                                    <video  style="object-fit: cover;" autoplay loop muted playsinline>--}}
+{{--                                        <source src="{{asset('assets/videos/head_video_photon.mp4')}}" type="video/mp4">--}}
+
+
+{{--                                    </video>--}}
+                                    <video id="videoPlayer" width="100%" autoplay loop muted playsinline>
+                                        <source src="" type="video/mp4">
                                     </video>
+
+                                    <script>
+                                        // Get the video element
+                                        const videoElement = document.getElementById('videoPlayer');
+                                        const videoSrc ="https://www.photonplay.com/assets/videos/head_video_photon.mp4";
+                                        videoElement.src = `path/to/videos/${videoSrc}`;
+                                        // Play the video
+                                        videoElement.play();
+                                    </script>
+
+
                                 </div>
 
                         </div>
