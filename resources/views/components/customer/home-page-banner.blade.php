@@ -131,7 +131,7 @@
     }
 </style>
 
-<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display " >
+<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display " style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
 
 {{--    // remove from below div : clints-content-banner--}}
     <div class="clints-content  mb-0 " >
@@ -186,7 +186,7 @@
                     <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                 </div>
                 <div class="d-flex justify-content-center " >
-                    <video width="100%" preload="metadata" autoplay loop muted playsinline>
+                    <video width="100%" preload="metadata"  autoplay loop muted playsinline>
                         <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
                 </div>
