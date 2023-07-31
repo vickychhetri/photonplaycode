@@ -162,7 +162,7 @@
                                         <source src="" type="video/mp4">
                                     </video>
 
-                                    <img id="fallback-image" src="{{asset('assets/videos/video_bg.webp')}}"  style="height: 100%;width:100%;" alt="Fallback Image">
+                                    <img id="fallback-image" src="{{asset('assets/videos/video_bg.webp')}}"    style="object-fit: cover;"  alt="Fallback Image">
 
                                     <script>
                                         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
