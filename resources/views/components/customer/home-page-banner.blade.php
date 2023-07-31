@@ -150,7 +150,7 @@
 
 
 {{--                                    </video>--}}
-                                    <video id="videoPlayer" width="100%" autoplay loop muted playsinline>
+                                    <video id="videoPlayer" style="object-fit: cover;"   autoplay loop muted playsinline>
                                         <source src="" type="video/mp4">
                                     </video>
 
