@@ -1,4 +1,4 @@
-<section class="key-project pb-0 key-wrap" style="margin-top: 50px;">
+<section class="key-project pb-0 key-wrap desktop-display" style="margin-top: 50px;">
     <div class="container-fluid">
         <div class="col-lg-12">
             <div class="text-center mb-lg-5">
