@@ -176,7 +176,7 @@
 
 
 
-<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display" >
+<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")" >
     <div class="clints-content clints-content-banner mb-0" >
         <div class="">
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
