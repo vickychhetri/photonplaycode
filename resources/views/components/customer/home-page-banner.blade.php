@@ -219,12 +219,10 @@
                     <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
                     <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                 </div>
-                <div class="d-flex justify-content-center "  id="video-container" >
-                    <video id="video-player" width="100%" preload="metadata"  autoplay loop muted playsinline>
+                <div class="d-flex justify-content-center "  >
+                    <video  width="100%" preload="metadata"  autoplay loop muted playsinline>
                         <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
-
-                    <img id="fallback-image" src="{{asset('assets/videos/video_bg.webp')}}" alt="Fallback Image">
                 </div>
 
             </div>
