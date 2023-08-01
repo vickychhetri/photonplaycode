@@ -224,7 +224,7 @@
     <div class="clints-content clints-content-banner mb-0 bg-primary"  >
         <div class="" >
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
-                <div class="slider-content position-absolute top-50 start-50 translate-middle text-center" >
+                <div class="slider-content position-absolute top-50 start-50 translate-middle text-center"   style="z-index:2;">
 {{--                    style="z-index:3;"--}}
                     <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
                     <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
