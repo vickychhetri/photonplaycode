@@ -148,7 +148,7 @@
     <div class="clints-content  mb-0  " >
                     <div class="">
                         <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
-                            <div class="slider-content position-absolute   start-50 translate-middle text-center" style="margin-top: 250px;z-index:2;">
+                            <div class="slider-content position-absolute   start-50 translate-middle text-center" style="margin-top: 250px;z-index:1;">
                                 <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
                                 <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
                                 <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
