@@ -136,11 +136,9 @@
         position: absolute;
         content: '';
         background: url("{{asset('assets/images/overlay.png')}}");
-        inset: 0;
-        margin: auto;
         height: 100%;
-        background-size: 100% 100%;
         width: 100%;
+        z-index: 1;
     }
 </style>
 
@@ -222,7 +220,7 @@
 
 
 
-<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display overlay-video-img"  >
+<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display"  >
     <div class="clints-content clints-content-banner mb-0 bg-primary"  >
         <div class="" >
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
@@ -232,7 +230,7 @@
                     <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
                     <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                 </div>
-                <div class="d-flex justify-content-center "  >
+                <div class="d-flex justify-content-center overlay-video-img"  >
                     <video  width="100%" preload="metadata" poster="{{asset('assets/videos/video_back.webp')}}"   autoplay loop muted playsinline>
                         <source src="{{asset('assets/videos/video2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
