@@ -134,7 +134,7 @@
 <section class="pt-0 pb-sm-4 pb-lg-5 mobile-display">
 
 {{--    // remove from below div : clints-content-banner--}}
-    <div class="clints-content1 mb-0 home-video-bg-screen  "   >
+    <div class="clints-content1 mb-0 "   >
                     <div >
                         <div class="clider-content-wrapper w-100 position-relative  " style="margin-top: -100px;">
                             <div class="slider-content position-absolute start-50 translate-middle text-center" style="margin-top: 250px;z-index:3;">
@@ -210,7 +210,7 @@
 
 
 <section class="pt-0 pb-sm-4 pb-lg-5 desktop-display  "  >
-    <div class="clints-content clints-content-banner mb-0 home-video-bg-screen "  >
+    <div class="clints-content clints-content-banner mb-0 "  >
         <div   >
             <div class="clider-content-wrapper  w-100 position-relative " style="margin-top: -100px;">
                 <div class="slider-content position-absolute  top-50 start-50 translate-middle text-center" >
@@ -220,7 +220,7 @@
                     <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                 </div>
                 <div class="d-flex justify-content-center "  >
-                    <video  width="100%" preload="metadata"  autoplay loop muted playsinline>
+                    <video  width="100%" preload="metadata" poster="{{asset('assets/videos/video_bg.webp')}}"  autoplay loop muted playsinline>
                         <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
                 </div>
