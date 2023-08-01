@@ -47,13 +47,14 @@ class ProductController extends Controller
             'category_id' => 'required|max:255',
             'title' => 'required|max:255',
             'price' => 'required|max:255',
+            'slug' => 'required|max:255',
         ]);
 
         $product= new Product();
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
-
+        $product->slug=$request->slug;
         if (isset($request->brochure)) {
             $originalName = $request->file('brochure')->getClientOriginalName();
             $extension = $request->file('brochure')->getClientOriginalExtension();
@@ -117,6 +118,7 @@ class ProductController extends Controller
             'category_id' => 'required|max:255',
             'title' => 'required|max:255',
             'price' => 'required|max:255',
+            'slug' => 'required|max:255',
         ]);
 
 
@@ -125,6 +127,7 @@ class ProductController extends Controller
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
+        $product->slug=$request->slug;
         if (isset($request->brochure)) {
             $originalName = $request->file('brochure')->getClientOriginalName();
             $extension = $request->file('brochure')->getClientOriginalExtension();
