@@ -150,7 +150,7 @@
 
 
 {{--                                    </video>--}}
-                                    <video id="videoPlayer" poster="{{asset('assets/videos/video_bg.webp')}}"  preload="auto" style="object-fit: cover;"   autoplay loop muted playsinline>
+                                    <video id="videoPlayer" poster="{{asset('assets/videos/video_bg.webp')}}"  preload="metadata" style="object-fit: cover;"   autoplay loop muted playsinline>
                                         <source src="" type="video/mp4">
                                     </video>
 
