@@ -129,9 +129,17 @@
             display: none;
         }
     }
+    .overlay-video-img:before {
+        position: absolute;
+        content: url("{{asset('assets/images/overlay.png')}}");
+        inset: 0;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+    }
 </style>
 
-<section class="pt-0 pb-sm-4 pb-lg-5  mobile-display  " >
+<section class="pt-0 pb-sm-4 pb-lg-5  mobile-display  overlay-video-img position-relative" >
 
 {{--    // remove from below div : clints-content-banner--}}
     <div class="clints-content  mb-0  " >
@@ -209,7 +217,7 @@
 
 
 
-<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display"  >
+<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display overlay-video-img position-relative"  >
     <div class="clints-content clints-content-banner mb-0 bg-primary"  >
         <div class="" >
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
