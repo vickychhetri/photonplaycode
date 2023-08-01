@@ -130,14 +130,14 @@
         }
     }
 </style>
-{{--style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")--}}
-<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display">
+
+<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display " style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
 
 {{--    // remove from below div : clints-content-banner--}}
-    <div class="clints-content1 mb-0 "   >
-                    <div >
-                        <div class="clider-content-wrapper w-100 position-relative  " style="margin-top: -100px;">
-                            <div class="slider-content position-absolute start-50 translate-middle text-center" style="margin-top: 250px;z-index:3;">
+    <div class="clints-content  mb-0 " >
+                    <div class="" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")">
+                        <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
+                            <div class="slider-content position-absolute   start-50 translate-middle text-center" style="margin-top: 250px;z-index:3;">
                                 <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
                                 <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
                                 <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
@@ -150,7 +150,7 @@
 
 
 {{--                                    </video>--}}
-                                    <video id="videoPlayer" poster="{{asset('assets/videos/video_bg.webp')}}"  preload="metadata" style="object-fit: cover;"   autoplay loop muted playsinline>
+                                    <video id="videoPlayer"  preload="metadata" style="object-fit: cover;"   autoplay loop muted playsinline>
                                         <source src="" type="video/mp4">
                                     </video>
 
@@ -209,18 +209,18 @@
 
 
 
-<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display  "  >
-    <div class="clints-content clints-content-banner mb-0 "  >
-        <div   >
-            <div class="clider-content-wrapper  w-100 position-relative " style="margin-top: -100px;">
-                <div class="slider-content position-absolute  top-50 start-50 translate-middle text-center" >
+<section class="pt-0 pb-sm-4 pb-lg-5 desktop-display" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")" >
+    <div class="clints-content clints-content-banner mb-0  bg-danger" style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")" >
+        <div class="" style="background-image: url({{asset('assets/videos/video_bg.webp')}})">
+            <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
+                <div class="slider-content position-absolute top-50 start-50 translate-middle text-center" >
 {{--                    style="z-index:3;"--}}
                     <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
                     <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
                     <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                 </div>
                 <div class="d-flex justify-content-center "  >
-                    <video  width="100%" preload="metadata" poster="{{asset('assets/videos/video_bg.webp')}}"  autoplay loop muted playsinline>
+                    <video  width="100%" preload="metadata"  autoplay loop muted playsinline>
                         <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
                 </div>
