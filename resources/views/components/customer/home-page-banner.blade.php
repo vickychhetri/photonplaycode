@@ -158,7 +158,7 @@
                                         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
                                             // Get the video element
                                             const videoElement = document.getElementById('videoPlayer');
-                                            const videoSrc ="assets/videos/head_video_photon_1.mp4#t=0.5";
+                                            const videoSrc ="assets/videos/video2.mp4#t=0.5";
                                             videoElement.src = `https://www.photonplay.com/${videoSrc}`;
                                             // Play the video
                                             videoElement.play();
@@ -221,7 +221,7 @@
                 </div>
                 <div class="d-flex justify-content-center "  >
                     <video  width="100%" preload="metadata" poster="{{asset('assets/videos/video_back.webp')}}"   autoplay loop muted playsinline>
-                        <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
+                        <source src="{{asset('assets/videos/video2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
                 </div>
 
