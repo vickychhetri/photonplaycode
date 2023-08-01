@@ -150,7 +150,7 @@
 
 
 {{--                                    </video>--}}
-                                    <video id="videoPlayer" poster="{{asset('assets/videos/video_bg.webp')}}" preload="metadata" style="object-fit: cover;"   autoplay loop muted playsinline>
+                                    <video id="videoPlayer" poster="{{asset('assets/videos/video_back.webp')}}" preload="metadata" style="object-fit: cover;"   autoplay loop muted playsinline>
                                         <source src="" type="video/mp4">
                                     </video>
 
@@ -220,7 +220,7 @@
                     <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
                 </div>
                 <div class="d-flex justify-content-center "  >
-                    <video  width="100%" preload="metadata" poster="{{asset('assets/videos/video_bg.webp')}}"   autoplay loop muted playsinline>
+                    <video  width="100%" preload="metadata" poster="{{asset('assets/videos/video_back.webp')}}"   autoplay loop muted playsinline>
                         <source src="{{asset('assets/videos/head_video_photon_2.mp4#t=0.5')}}" type="video/mp4">
                     </video>
                 </div>
