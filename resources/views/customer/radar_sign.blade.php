@@ -30,7 +30,7 @@ if(isset($seo_record)){
 <section class="pt-0 pb-0">
     <ul class="list-style-ul pt-2 m-0 pb-2 d-flex justify-content-center align-items-center flex-wrap">
         @forelse ($productLists as $list)
-            <a href="{{route('customer.radar.sign', $list->id)}}"  class="gap-1 text-decoration-none text-dark"><span class="p-2  {{ request()->url() == route('customer.radar.sign', [$list->slug]) ? 'bg-dark text-white' : '' }}
+            <a href="{{route('customer.radar.sign', $list->slug)}}"  class="gap-1 text-decoration-none text-dark"><span class="p-2  {{ request()->url() == route('customer.radar.sign', [$list->slug]) ? 'bg-dark text-white' : '' }}
  m-2">{{$list->title}}</span></a>
         @empty
 
