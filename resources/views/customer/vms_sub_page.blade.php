@@ -17,7 +17,7 @@ $seo_meta=[
      -->
 
 
-    <section class="{{request()->is('solution/smart-city-vms')?'security-imageses':'highyway-imageses'}}  py-4" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
+    <section class="{{request()->is('variable-message-signs/smart-city-vms')?'security-imageses':'highyway-imageses'}}  py-4" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
         <div class="container">
             <div class="slider-content ">
                 <div class="imaged m-auto">
@@ -37,7 +37,7 @@ $seo_meta=[
     </section>
     <!-- Banner Sec End -->
 
-    @if(request()->is('solution/smart-city-vms'))
+    @if(request()->is('variable-message-signs/smart-city-vms'))
         <section class="sepeicification bg-light position-relative">
             <div class="container pb-lg-1">
                 <div class="accodion-wrapper pb-1">
@@ -145,7 +145,7 @@ $seo_meta=[
     <!-- Feature -->
 <!-- Feature -->
 
-    @if(request()->is('solution/smart-city-vms'))
+    @if(request()->is('variable-message-signs/smart-city-vms'))
         @include('customer.vms.smartcity_vms_features')
     @else
         @include('customer.layout2.features_page')
@@ -160,7 +160,7 @@ $seo_meta=[
         <div class="container">
             <h2 class="fs-md-2  mb-5 text-center">APPLICATIONS</h2>
             <div class="row d-flex justify-content-center">
-                @if(request()->is('solution/solar-vms'))
+                @if(request()->is('variable-message-signs/solar-vms'))
                 <div class="col-md-3">
                     <div class="application-item">
                         <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
@@ -171,7 +171,7 @@ $seo_meta=[
                 </div>
                 @endif
 
-                    @if(request()->is('solution/standard-vms'))
+                    @if(request()->is('variable-message-signs/standard-vms'))
                         <div class="col-md-3">
                             <div class="application-item">
                                 <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
@@ -190,7 +190,7 @@ $seo_meta=[
                         </div>
                     @endif
 
-                    @if(request()->is('solution/smart-city-vms'))x
+                    @if(request()->is('variable-message-signs/smart-city-vms'))x
                         <div class="col-md-3">
                             <div class="application-item">
                                 <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">
