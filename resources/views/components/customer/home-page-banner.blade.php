@@ -131,10 +131,10 @@
     }
 </style>
 {{--style="background-image: url("{{asset('assets/videos/video_bg.webp')}}")--}}
-<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display home-video-bg-screen">
+<section class="pt-0 pb-sm-4 pb-lg-5 mobile-display">
 
 {{--    // remove from below div : clints-content-banner--}}
-    <div class="clints-content  mb-0 home-video-bg-screen  "   >
+    <div class="clints-content1 mb-0 home-video-bg-screen  "   >
                     <div >
                         <div class="clider-content-wrapper w-100 position-relative  " style="margin-top: -100px;">
                             <div class="slider-content position-absolute start-50 translate-middle text-center" style="margin-top: 250px;z-index:3;">
