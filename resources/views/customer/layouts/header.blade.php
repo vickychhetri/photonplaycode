@@ -133,7 +133,7 @@ $productLists = Product::take(5)->get();
                             </a>
                             <ul class="dropdown-menu bg-light borderes">
                                 @forelse ($productLists as $list)
-                                    <li><a class="dropdown-item px-lg-3 px-0 pb-4 pb-lg-3" href="{{route('customer.radar.sign', $list->id)}}">{{$list->title}}</a></li>
+                                    <li><a class="dropdown-item px-lg-3 px-0 pb-4 pb-lg-3" href="{{route('customer.radar.sign', $list->slug)}}">{{$list->title}}</a></li>
                                 @empty
 
                                 @endforelse

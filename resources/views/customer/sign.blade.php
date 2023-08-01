@@ -116,7 +116,7 @@ $seo_meta=[
                                             width="14px">
                                     </div>
                                     <span class="d-block weight-font">${{$product->price}}</span>
-                                    <a href="{{route('customer.radar.sign', $product->id)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
+                                    <a href="{{route('customer.radar.sign', $product->slug)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
