@@ -1952,6 +1952,8 @@ input:focus {
 .sucess-undeafeted {
     filter: drop-shadow(0px 14px 18px rgba(0, 0, 0, 0.04));
     background-color: #036eb1;
+    position: relative;
+    z-index: 1;
 }
 
 .undefeated-wrapper {
