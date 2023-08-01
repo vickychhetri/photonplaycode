@@ -71,8 +71,8 @@ Route::post('newsletter', [NewsletterController::class, 'newsletter'])->name('ne
 Route::post('submit-inquery', [InqueryController::class, 'store'])->name('inquery.submit');
 Route::any('success-response', [CartController::class, 'checkoutSuccess'])->name('success.response');
 Route::any('cancel-response', [CartController::class, 'checkoutCancel'])->name('cancel.response');
-
-Route::get('solution/{slug}', [ContactUsController::class, 'vmsSubPage'])->name('vms.sub.page');
+//Route::get('solution/{slug}', [ContactUsController::class, 'vmsSubPage']);
+Route::get('variable-message-signs/{slug}', [ContactUsController::class, 'vmsSubPage'])->name('vms.sub.page');
 
 Route::get('signages/{slug}', [ContactUsController::class, 'signagesSubPage'])->name('signages.sub.page');
 
