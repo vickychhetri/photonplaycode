@@ -13,7 +13,7 @@ $seo_meta=[
 
 <!-- Banner sec -->
 <section class="inner-banner-bg">
-    <h3 class="text-white text-center mb-0">NEWS & EVENTS</h3>
+    <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
 </section>
 <!-- Banner Sec End -->
 <section class="blog-content-list position-relative">
