@@ -26,7 +26,7 @@ class CommonController extends Controller
                 $imageName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
             }
 
-            $request->file('image')->storeAs('public/photos', strtolower($imageName), 'public');
+            $request->file('photo')->storeAs('public/photos', strtolower($imageName), 'public');
             $filename=$imageName;
         }
 
