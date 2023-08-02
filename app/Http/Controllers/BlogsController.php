@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogsController extends Controller
@@ -25,6 +26,7 @@ class BlogsController extends Controller
 
     public function store(Request $request)
     {
+
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'required|max:255',
@@ -35,8 +37,22 @@ class BlogsController extends Controller
             'body' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp|max:2048',
         ]);
+        $image_path='';
+        if (isset($request->image)) {
+            $originalName = $request->file('image')->getClientOriginalName();
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $number = 0;
+            $imageName = $originalName;
 
-        $image_path = $request->file('image')->store('image', 'public');
+            while (Storage::disk('public')->exists('image/' . $imageName)) {
+                $number++;
+                $imageName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
+            }
+
+            $image_path = $request->file('image')->storeAs('image', $imageName, 'public');
+//            $input["image"]=$imagePath;
+        }
+//        $image_path = $request->file('image')->store('image', 'public');
         $post= new Blog();
 
        $FLAG=true;
@@ -93,8 +109,24 @@ class BlogsController extends Controller
             $request->validate([
                 'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,webp|max:2048',
                 ]);
-            $image_path = $request->file('image')->store('image', 'public');
-            $input["image"]=$image_path;
+
+            if (isset($request->image)) {
+                $originalName = $request->file('image')->getClientOriginalName();
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $number = 0;
+                $imageName = $originalName;
+
+                while (Storage::disk('public')->exists('image/' . $imageName)) {
+                    $number++;
+                    $imageName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
+                }
+
+                $image_path = $request->file('image')->storeAs('image', $imageName, 'public');
+                $input["image"]=$image_path;
+            }
+
+//            $image_path = $request->file('image')->store('image', 'public');
+//            $input["image"]=$image_path;
              }
         $data=Blog::find($id);
 
