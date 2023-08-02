@@ -218,8 +218,6 @@
     </div>
 </section>
 
-
-
 <section class="pt-0 pb-sm-4 pb-lg-5 desktop-display"  >
     <div class="clints-content clints-content-banner mb-0"  >
         <div class="" >
