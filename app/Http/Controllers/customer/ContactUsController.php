@@ -161,7 +161,7 @@ class ContactUsController extends Controller
     }
 
     public function pvmsICop($id){
-        $product = Page::with('specs','images','features','galleries')->find($id);
+        $product = Page::with('specs','images','features','galleries')->where('slug',$id)->first();
         // dd($product);
         return view('customer.pvms_icop', compact('product'));
     }

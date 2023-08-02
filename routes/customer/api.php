@@ -66,7 +66,7 @@ Route::get('portable-variable-message-sign', [ContactUsController::class, 'porta
 
 #lane-control-system - lane-control-sign
 Route::get('lane-control-sign', [ContactUsController::class, 'laneControlSystem'])->name('lane.control.system');
-Route::get('pvms-i-cop/{id}', [ContactUsController::class, 'pvmsICop'])->name('pvms.i.cop');
+Route::get('portable-variable-message-sign/{id}', [ContactUsController::class, 'pvmsICop'])->name('pvms.i.cop');
 Route::post('newsletter', [NewsletterController::class, 'newsletter'])->name('newsletter.store');
 Route::post('submit-inquery', [InqueryController::class, 'store'])->name('inquery.submit');
 Route::any('success-response', [CartController::class, 'checkoutSuccess'])->name('success.response');
