@@ -107,7 +107,7 @@ $seo_meta=[
                                             <li>{{$feature->feature }} - {{$feature->description}}</li>
                                         @endforeach
                                     </ul>
-                                    <a href="{{route('customer.pvms.i.cop', $item->slug}}" class="text-decoration-none"> Learn More >> </a>
+                                    <a href="{{route('customer.pvms.i.cop', $item->slug)}}" class="text-decoration-none"> Learn More >> </a>
                                 </div>
                             </div>
                         </a>
