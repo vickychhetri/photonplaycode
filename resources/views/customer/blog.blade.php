@@ -4,6 +4,7 @@ $seo_meta=[
     "title"=>$blog->title,
     "description"=>$blog->description,
     "keywords"=>$blog->keywords,
+    "schema"=>$blog->schema,
 ];
 ?>
 @include('customer.layout2.header')
