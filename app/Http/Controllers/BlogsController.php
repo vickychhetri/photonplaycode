@@ -49,7 +49,7 @@ class BlogsController extends Controller
                 $imageName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
             }
 
-            $image_path = $request->file('image')->storeAs('image', $imageName, 'public');
+            $image_path = $request->file('image')->storeAs('image', strtolower($imageName), 'public');
 //            $input["image"]=$imagePath;
         }
 //        $image_path = $request->file('image')->store('image', 'public');
@@ -121,7 +121,7 @@ class BlogsController extends Controller
                     $imageName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
                 }
 
-                $image_path = $request->file('image')->storeAs('image', $imageName, 'public');
+                $image_path = $request->file('image')->storeAs('image', strtolower($imageName), 'public');
                 $input["image"]=$image_path;
             }
 
