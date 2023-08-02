@@ -73,7 +73,7 @@ class ContactUsController extends Controller
         }
 
 
-        $blogs=$blogs->paginate(5);
+        $blogs=$blogs->orderBy('id','DESC')->paginate(5);
 
         foreach ($blogs as $blog){
             $date = Carbon::createFromFormat('Y-m-d H:i:s', $blog->created_at);
