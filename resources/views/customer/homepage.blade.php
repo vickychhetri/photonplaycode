@@ -334,7 +334,7 @@ $seo_meta=[
                                     <img src="/assets/customer/images/products_home/Emergency Telephone Signs.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
-                                        <a href="/emergency-signage/emergency-telephone-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="/emergency-signage/product/emergency-telephone-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
@@ -370,7 +370,7 @@ $seo_meta=[
                                     <img src="/assets/customer/images/products_home/Emergency Exit Sign.png" alt="Portable Variable
                                         Message Signs" class="">
                                     <div>
-                                        <a href="emergency-signage/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                                        <a href="emergency-signage/product/emergency-exit-sign" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
@@ -404,7 +404,7 @@ $seo_meta=[
                                 <div class="mask-layer common-wdth inner-col text-center">
                                     <img src="/assets/customer/images/products_home/Way-Finder-Light-Glow.webp" alt="WAY FINDER" class="">
                                     <div>
-                                        <a href="emergency-signage/way-finders" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">  Know More</a>
+                                        <a href="emergency-signage/product/way-finders" class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4">  Know More</a>
                                     </div>
                                 </div>
                                 <div class="d-lg-flex align-self-center common-wdth inner-col">
