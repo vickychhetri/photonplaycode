@@ -29,6 +29,7 @@ class BlogsController extends Controller
             'title' => 'required|max:255',
             'description' => 'required|max:255',
             'keywords' => 'required|max:255',
+            'slug' => 'required|max:255',
             'author' => 'required|max:255',
             'category_selected' => 'required|max:255',
             'body' => 'required',
@@ -51,12 +52,13 @@ class BlogsController extends Controller
         }
 
         $post->title  = $request->title;
-        $post->slug =$slug_blog;
+        $post->slug =$request->slug??$slug_blog;
         $post->blog_category_id =$request->category_selected;
 
         $post->description  = $request->description;
         $post->keywords  = $request->keywords;
         $post->author  = $request->author;
+        $post->schema  = $request->schema??NULL;
         $post->body  = $request->body;
         $post->image  = $image_path;
         $post->save();
@@ -81,6 +83,7 @@ class BlogsController extends Controller
             'title' => 'required|max:255',
             'description' => 'required|max:255',
             'keywords' => 'required|max:255',
+            'slug' => 'required|max:255',
             'author' => 'required|max:255',
             'category_selected' => 'required|max:255',
             'body' => 'required',
@@ -104,6 +107,8 @@ class BlogsController extends Controller
             $input["description"]=$request->description;
             $input["keywords"]=$request->keywords;
             $input["author"]=$request->author;
+            $input["slug"]=$request->slug;
+            $input["schema"]=$request->schema;
             $input["blog_category_id"]=$request->category_selected;
             $input["body"]=$request->body;
 

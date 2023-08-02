@@ -68,6 +68,37 @@
                                     @enderror
                                 </div>
                             </div>
+
+
+                            <div class="row mb-3 form-group">
+                                <label for="schema" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Schema') }}</label>
+
+                                <div class="col-md-10">
+                                    <textarea id="schema" type="text" class="form-control @error('schema') is-invalid @enderror" name="schema" required autocomplete="schema" autofocus>{{ old('schema') ?? $data->schema ?? ''}}</textarea>
+
+                                    @error('schema')
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 form-group">
+                                <label for="slug" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Slug') }}</label>
+
+                                <div class="col-md-10">
+                                    <input id="slug" type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ old('slug') ?? $data->slug ?? ''}}" required autocomplete="slug" autofocus>
+
+                                    @error('slug')
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
                             <div class="row mb-3 form-group">
                                 <label for="keywords" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Keywords') }}</label>
 
