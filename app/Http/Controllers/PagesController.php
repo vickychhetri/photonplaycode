@@ -160,6 +160,7 @@ class PagesController extends Controller
             'meta_title' => $request->meta_title,
             'meta_keyword' => $request->meta_keyword,
             'schema' => $request->schema,
+            'slug' => $request->slug??NULL,
             'cover_image' => $image_path,
         ]);
 
