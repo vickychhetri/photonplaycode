@@ -16,7 +16,7 @@ $seo_meta=[
             <div class="slider-content ">
                 <div class="imaged m-auto">
                     <div class="city-wrap">
-                        <h2 class=" text-white fw-normal mb-1 title-text-h2">{{$page->title}}</h2>
+                        <h1 class=" text-white fw-normal mb-1 title-text-h2">{{$page->title}}</h1>
                         <p class=" text-white fw-normal mt-2 mb-2 ">Ensuring safe and secure passage while navigating through tunnels </p>
                         <a  href="#inquiry" class="btn-primary-rounded p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                     </div>
