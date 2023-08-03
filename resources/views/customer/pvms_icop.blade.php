@@ -19,7 +19,7 @@ $seo_meta=[
                         <div
                             class="banner-image d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
                             <div class="position-relative heading-banner ">
-                                <h1 class="">{{$product->title}}
+                                <h1 class="text-dark">{{$product->title}}
                                     <p class="mb-0 h3 font-weight-bold"><span> Highly  Equipped and Robust Message Sign  </span></p>
                                 </h1>
                                 <div class="">
