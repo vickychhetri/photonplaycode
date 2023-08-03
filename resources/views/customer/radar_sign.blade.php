@@ -233,7 +233,7 @@ if(isset($seo_record)){
                     {{--                    <span class="border-1 border-right d-block  pe-lg-5 pe-4">Order--}}
                     {{--                        Summary</span>--}}
                     <div class="border-left  ">
-                        <p class="fw-bold fs-5 mb-0 py-lg-0 py-3">{{$product->category->title}} | {{$product->title}}</p>
+                        <h1 class="fw-bold fs-5 mb-0 py-lg-0 py-3">{{$product->category->title}} | {{$product->title}}</h1>
                         <p class="mb-0 opacity-50">{{$product->color}} | {{$product->warranty}}
                             Warranty</p>
                     </div>

@@ -22,12 +22,12 @@ $seo_meta=[
                         <div
                             class="banner-image d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2">
                             <div class="position-relative heading-banner ">
-                                <h2 class="title-text-h2 title-text-h2"> PORTABLE VARIABLE MESSAGE SIGN
+                                <h1 class="title-text-h2 title-text-h2"> PORTABLE VARIABLE MESSAGE SIGN
                                     <p class="mb-0 h4 font-weight-bold">
                                         <span>
                                         Highly  Equipped and Robust Message Sign
                                         </span></p>
-                                </h2>
+                                </h1>
                                 <div class="fs-6 ">
                                     <p class="text-dark">No. 1 in Traffic Calming Solution</p>
                                     <a href="#inquiry" class="btn-primary-rounded">GET QUOTE</a>

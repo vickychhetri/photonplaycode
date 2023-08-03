@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-12 col-md-12 mb-2">
-               <h4 class="text-dark">  {{$record->title}}</h4>
+               <h1 class="text-dark">  {{$record->title}}</h1>
                 <hr/>
             </div>
             <div class="col-lg-12 col-md-12">

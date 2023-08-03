@@ -22,9 +22,9 @@ $seo_meta=[
 
                         <div class="position-relative heading-banner  ">
 
-                            <h2 class="">RADAR CLOUD MANAGEMENT
+                            <h1 class="">RADAR CLOUD MANAGEMENT
                                 <p class="mb-0 h4 font-weight-bold"><span> Manage Your Speed Sign Anywhere, Anytime </span></p>
-                            </h2>
+                            </h1>
 
                             <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}"
                                                                                    class="img-fluid d-none d-md-block" alt="not-found"></div>
