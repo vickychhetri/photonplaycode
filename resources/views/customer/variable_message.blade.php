@@ -21,7 +21,7 @@ $seo_meta=[
 
                 <div class="imaged m-auto">
                     <div class="city-wrap flex-wrap">
-                        <h2 class=" text-white fw-normal mb-1 title-text-h2">Variable Message Signs (VMS)</h2>
+                        <h1 class=" text-white fw-normal mb-1 title-text-h2">Variable Message Signs (VMS)</h1>
                         <h5 class=" text-white fw-normal mt-2 mb-2 ">
                             Highly visible and innovative, creating instant awareness <br/> about  specific events to the people commuting on the roads.
                         </h5>
