@@ -20,7 +20,14 @@ Route::get('/content/search', [SearchItemsController::class, 'search_index'])->n
 Route::get('/photon/{page_name}', [CustomerProfileController::class, 'page_show'])->name('page_show_content');
 
 
-Route::get('/photon-system/{page_name}/', [ContentPageController::class, 'index_guest'])->name("show_page_policy");
+//Route::get('/photon-system/{page_name}/', [ContentPageController::class, 'index_guest'])->name("show_page_policy");
+
+Route::get('/term-conditions', [ContentPageController::class, 'term_conditions'])->name("show_page_policy_term_conditions");
+Route::get('/about-us', [ContentPageController::class, 'about_us'])->name("show_page_policy_about_us");
+Route::get('/privacy-policy', [ContentPageController::class, 'privacy_policy'])->name("show_page_policy_privacy_policy");
+Route::get('/shipping', [ContentPageController::class, 'shipping'])->name("show_page_policy_shipping");
+Route::get('/return-policy', [ContentPageController::class, 'return_policy'])->name("show_page_policy_return_policy");
+
 
 Route::get('/thank-you', [ThankYouController::class, 'index'])->name("show_thank_you_page");
 

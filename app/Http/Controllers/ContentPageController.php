@@ -38,6 +38,53 @@ class ContentPageController extends Controller
     }
 
 
+    public function privacy_policy()
+    {
+        $record=ContentPage::where('page_name','privacy-policy')->first();
+        if(!isset($record)){
+            abort(404);
+        }
+        return view('customer.policy_page', compact('record'));
+    }
+    public function shipping()
+    {
+        $record=ContentPage::where('page_name','shipping')->first();
+        if(!isset($record)){
+            abort(404);
+        }
+        return view('customer.policy_page', compact('record'));
+    }
+    public function return_policy()
+    {
+        $record=ContentPage::where('page_name','return-policy')->first();
+        if(!isset($record)){
+            abort(404);
+        }
+        return view('customer.policy_page', compact('record'));
+    }
+
+    public function about_us()
+    {
+        $record=ContentPage::where('page_name','about-us')->first();
+        if(!isset($record)){
+            abort(404);
+        }
+        return view('customer.policy_page', compact('record'));
+    }
+    public function term_conditions()
+    {
+        $record=ContentPage::where('page_name','term-conditions')->first();
+        if(!isset($record)){
+            abort(404);
+        }
+        return view('customer.policy_page', compact('record'));
+    }
+
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *

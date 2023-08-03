@@ -120,8 +120,8 @@ $blogs = Blog::select('slug','title')->take(4)->get();
        <div class="container-fluid">
           <div class="sec-copyright py-3 text-center m-auto d-flex justify-content-between align-items-center">
               <p>
-                 <a href="{{route('customer.show_page_policy','term-conditions')}}"> Terms </a>
-                  |    <a href="{{route('customer.show_page_policy','privacy-policy')}}">Privacy </a> |    <a href="{{route('customer.show_page_policy','shipping')}}">Shipping </a>|    <a href="{{route('customer.show_page_policy','return-policy')}}">Refund/Return Policy</a>
+                 <a href="{{route('customer.show_page_policy_term_conditions')}}"> Terms </a>
+                  |    <a href="{{route('customer.show_page_policy_privacy_policy')}}">Privacy </a> |    <a href="{{route('customer.show_page_policy_shipping')}}">Shipping </a>|    <a href="{{route('customer.show_page_policy_return_policy')}}">Refund/Return Policy</a>
               </p>
               <p>© 2023 Photonplay Systems Inc. All right reserved</p>
           </div>
