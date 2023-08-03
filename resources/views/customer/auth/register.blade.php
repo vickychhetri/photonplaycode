@@ -7,7 +7,7 @@
                 <div class="d-flex flex-lg-row form-section-inner" >
                     <div class="login-parent">
                         <div class="login-parent-inner">
-                            <h1 class="mb-lg-5 mb-4">Create account</h1>
+                            <h1 class="mb-lg-5 mb-4 text-dark">Create account</h1>
                             <form action="{{ route('customer.register') }}" method="post">
                                 @csrf
                                 <label for="">Name</label>

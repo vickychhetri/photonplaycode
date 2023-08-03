@@ -8,7 +8,7 @@
                 <div class="d-flex form-section-inner" >
                     <div class="login-parent">
                         <div class="login-parent-inner">
-                            <h1 class="mb-lg-5 mb-4">Login in to <br />Your account</h1>
+                            <h1 class="mb-lg-5 mb-4 text-dark">Login in to <br />Your account</h1>
                             <form action="{{ route('customer.login') }}" method="post">
                                 @csrf
                                 <input type="hidden" name="p" value="{{$p ?? 0}}">
