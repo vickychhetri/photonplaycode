@@ -24,7 +24,7 @@ $seo_meta=[
 
                             <div class="position-relative heading-banner  ">
 
-                                <h1 class="">iCop | RADAR SPEED SIGN
+                                <h1 class="text-dark">iCop | RADAR SPEED SIGN
                                     <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
                                 </h1>
                                 <div class="">

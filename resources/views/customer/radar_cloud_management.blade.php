@@ -22,7 +22,7 @@ $seo_meta=[
 
                         <div class="position-relative heading-banner  ">
 
-                            <h1 class="">RADAR CLOUD MANAGEMENT
+                            <h1 class="text-dark">RADAR CLOUD MANAGEMENT
                                 <p class="mb-0 h4 font-weight-bold"><span> Manage Your Speed Sign Anywhere, Anytime </span></p>
                             </h1>
 
