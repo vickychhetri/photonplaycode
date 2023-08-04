@@ -154,16 +154,23 @@ class PagesController extends Controller
         }else{
             $image_path = $sub_page->cover_image;
         }
-        $sub_page->update([
+
+
+        $inp=[
             'title' => $request->title,
             'description' => $request->description,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
             'meta_keyword' => $request->meta_keyword,
             'schema' => $request->schema,
-            'slug' => $request->slug??NULL,
             'cover_image' => $image_path,
-        ]);
+        ];
+
+        if(isset($request->slug)){
+            $inp['slug']=$request->slug;
+        }
+
+        $sub_page->update($inp);
 
         return redirect()->back()->with('success', 'Page successfully updated');
     }
