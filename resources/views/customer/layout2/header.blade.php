@@ -636,3 +636,36 @@
         //     console.log(this)
         // })
     </script>
+    <script>
+        $(document).ready(function() {
+            // Set a scroll threshold below which the button will be hidden
+            var scrollThreshold = 100;
+
+            // Check the scroll position on page load
+            checkScrollPosition();
+
+            // Check the scroll position when the user scrolls
+            $(window).scroll(function() {
+                checkScrollPosition();
+            });
+
+            function checkScrollPosition() {
+                // Get the current scroll position
+                var scrollPosition = $(window).scrollTop();
+
+                // Show or hide the button based on the scroll position
+                if (scrollPosition > scrollThreshold) {
+                    $("#scrollToTopButton").fadeIn(); // Show the button
+                } else {
+                    $("#scrollToTopButton").fadeOut(); // Hide the button
+                }
+            }
+
+            // Smoothly scroll to the top when the button is clicked
+            $("#scrollToTopButton").click(function() {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            });
+        });
+    </script>
+
