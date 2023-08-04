@@ -18,7 +18,7 @@ class AdminContactusController extends Controller
      * @return Application|Factory|View
      */
     public function index(Request $request){
-            $records=Inquery::get();
+            $records=Inquery::orderBy('id','DESC')->get();
             $Sr=1;
             return  view('contact_us.index',compact('records','Sr'));
    }
