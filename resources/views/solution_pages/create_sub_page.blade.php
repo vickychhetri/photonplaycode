@@ -84,7 +84,7 @@
                             </div>
 
                             <div class="row mb-3 form-group">
-                                <label for="meta_description" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Meta Title') }}</label>
+                                <label for="meta_description" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Meta Description') }}</label>
 
                                 <div class="col-md-10">
                                     <input id="meta_description" type="text" class="form-control @error('meta_description') is-invalid @enderror" name="meta_description" value="{{$page->meta_description}}"  autocomplete="meta_description" autofocus>
