@@ -9,7 +9,6 @@ $seo_meta=[
 ];
 ?>
 @include('customer.layout2.header')
-<body>
 
     <!-- iCop Series Features Start -->
     <!-- Banner sec -->
