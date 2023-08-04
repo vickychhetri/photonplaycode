@@ -158,6 +158,7 @@ class PagesController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'meta_title' => $request->meta_title,
+            'meta_description' => $request->meta_description,
             'meta_keyword' => $request->meta_keyword,
             'schema' => $request->schema,
             'slug' => $request->slug??NULL,

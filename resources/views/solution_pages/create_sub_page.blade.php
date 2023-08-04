@@ -83,6 +83,20 @@
                                 </div>
                             </div>
 
+                            <div class="row mb-3 form-group">
+                                <label for="meta_description" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Meta Title') }}</label>
+
+                                <div class="col-md-10">
+                                    <input id="meta_description" type="text" class="form-control @error('meta_description') is-invalid @enderror" name="meta_description" value="{{$page->meta_description}}"  autocomplete="meta_description" autofocus>
+
+                                    @error('meta_description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                         {{-- THIS IS FOR 3 == PVMS CASE ONLY--}}
                             @if($page->page_type_id==3)
                                 <div class="row mb-3 form-group">
