@@ -1,5 +1,4 @@
 @include('customer.layout2.header')
-<body>
 <!-- Banner Sec End -->
 <section class="blog-content-list position-relative ">
     <div class="container">

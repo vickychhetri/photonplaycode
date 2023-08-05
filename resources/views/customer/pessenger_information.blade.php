@@ -8,8 +8,6 @@ $seo_meta=[
 ?>
 @include('customer.layout2.header')
 
-<body>
-
     <!-- Banner sec -->
     <section class="banner-sec-pids-sign py-4">
         <div class="container">

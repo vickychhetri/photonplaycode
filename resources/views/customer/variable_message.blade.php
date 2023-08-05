@@ -11,8 +11,6 @@ $seo_meta=[
 
 @include('customer.layout2.header')
 
-<body>
-
     <!-- iCop Series Features Start -->
     <!-- Banner sec -->
     <section class="highyway-imageses py-5" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">

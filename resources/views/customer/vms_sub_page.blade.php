@@ -8,8 +8,6 @@ $seo_meta=[
 ?>
 @include('customer.layout2.header')
 
-<body>
-
 
     <!-- Banner sec
      SECTION ALTER AS PER THE PAGE REQUIREMENT , IF PAGE IS DIFFERENT THAN

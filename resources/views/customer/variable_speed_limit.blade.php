@@ -7,8 +7,6 @@ $seo_meta=[
 ];
 ?>
 @include('customer.layout2.header')
-
-<body>
 <!-- Modal Overlay and Image -->
 
 

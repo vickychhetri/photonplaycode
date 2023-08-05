@@ -9,7 +9,6 @@ $seo_meta=[
 ];
 ?>
 @include('customer.layout2.header')
-<body>
 
 <!-- Banner sec -->
 <section class="inner-banner-bg">
