@@ -1,6 +1,5 @@
 @include('customer.layouts.header')
 
-<body>
     <div class="container-cus pt-lg-5 pt-3">
         <div class="login-sec px-2"  >
             <div class="form-section p-3"  >

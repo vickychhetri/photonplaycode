@@ -1,5 +1,4 @@
 @include('customer.layouts.header')
-<body>
 
     <!-- header-end -->
     <div class="container-cus pt-lg-5 pt-3">

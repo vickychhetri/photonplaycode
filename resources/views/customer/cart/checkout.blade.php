@@ -1,6 +1,5 @@
 @include('customer.layouts.header')
 <head>
-    <title>Buy cool new product</title>
     <script src="https://js.stripe.com/v3/"></script>
   </head>
 <section class="stepper-form-tabber pt-3 pb-0">
