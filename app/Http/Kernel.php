@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'is_Admin' => \App\Http\Middleware\AdminMiddleware::class,
         'is_User' => \App\Http\Middleware\UserMiddleware::class,
         'customerCheck' => \App\Http\Middleware\customerCheck::class,
+        'country.redirect' => \App\Http\Middleware\CountryRedirect::class,
     ];
 }
