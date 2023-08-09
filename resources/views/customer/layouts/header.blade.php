@@ -370,10 +370,13 @@ $productLists = Product::take(5)->get();
                 const region = data.regionName;
                 const country = data.country;
 
+
+
                 console.log('IP Address:', ipAddress);
                 console.log('City:', city);
                 console.log('Region:', region);
                 console.log('Country:', country);
+                alert("dsd"+ipAddress);
 
                 // Now you can use this information as needed
             })
