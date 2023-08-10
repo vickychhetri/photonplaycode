@@ -25,7 +25,7 @@ class CountryRedirect
         $countryCode = $record->country->isoCode;
 
         if ($countryCode === 'IN') {
-            return redirect('https://www.photonplayinc.com/radar-speed-signs');
+            return redirect('https://www.photonplayinc.com/traffic-signs/radar-speed-signs/');
         }
 
         return $next($request);
