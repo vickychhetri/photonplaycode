@@ -652,7 +652,7 @@ THIS IS GALLERY SECTION HIDE BECAUSE : CURRENT DESIGN NOT READY YET
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3 class="text-center font-weight-bold p-3 m-3"> <b> FAQ </b> </h3>
+            <h2 class="fs-md-2 mt-3 text-center">  FAQ  </h2>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
