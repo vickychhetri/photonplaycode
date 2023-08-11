@@ -59,6 +59,9 @@ $seo_meta=[
     <section class="portable px-lg-5">
         <div class="container">
             <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <p class="text-center"> A radar speed sign, also known as a radar speed display or a driver feedback sign, is a device that gives drivers real-time feedback on the speed of their vehicle. These signs are frequently put on roadways, mainly where speeding is a concern or speed limits must be enforced. Radar speed signs' main purpose is to encourage drivers to slow down and obey imposed speed limits, improving road safety.</p>
+                </div>
                 <div class="col-lg-12 ">
                     <div class="radar-icop">
                         <h4 class="text-uppercase text-center">MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGN EVER BUILT !</h4>
