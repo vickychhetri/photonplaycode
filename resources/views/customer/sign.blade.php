@@ -747,12 +747,12 @@ THIS IS GALLERY SECTION HIDE BECAUSE : CURRENT DESIGN NOT READY YET
                 </div>
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEight">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    <h2 class="accordion-header" id="headingEightA">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEightA" aria-expanded="false" aria-controls="collapseEightA">
                             How effective are radar speed signs?
                         </button>
                     </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                    <div id="collapseEightA" class="accordion-collapse collapse" aria-labelledby="headingEightA" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Radar speed signs are excellent in getting cars to slow down and obey speed restrictions.
                         </div>
