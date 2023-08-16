@@ -8,6 +8,6 @@ class VASDController extends Controller
 {
    public  function vehicle_actuated_speed_displays(){
 
-       return view('customer.cart.vasd');
+       return view('customer.vasd');
    }
 }
