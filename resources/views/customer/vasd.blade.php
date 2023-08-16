@@ -23,15 +23,13 @@ $seo_meta=[
                         <div class="position-relative heading-banner  ">
 
                             <h1 class="text-dark">Vehicle Actuated Speed Display
-                                <p class="mb-0 h4 font-weight-bold"><span> Traffic Management Tool For Real time speed feedback <br/>and Enforcement </span></p>
+                                <p class="mb-0 h4 font-weight-bold text-primary"><span> Traffic Management Tool For Real time speed feedback <br/>and Enforcement </span></p>
                             </h1>
 
 
 
-
-
-                            <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}"
-                                                                                   class="img-fluid d-none d-md-block" alt="not-found"></div>
+{{--                            <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}"--}}
+{{--                                                                                   class="img-fluid d-none d-md-block" alt="not-found"></div>--}}
                             <div
                                 class="circle-dotted position-absolute w-100 d-none d-md-flex align-items-center justify-content-start">
                                 {{--                                    <img src="{{asset('assets\customer\images\circles.png')}}" alt="Not Found" class="img-fluid">--}}
@@ -39,6 +37,8 @@ $seo_meta=[
                         </div>
                         <div class="desktop-display">
 
+                            <img src="{{asset('assets\customer\images\vasd\camerab.webp')}}" alt="Not Found"
+                                 class="img-fluid d-none d-md-block">
                         </div>
                         <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                              class="img-fluid d-none d-md-block">
