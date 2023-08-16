@@ -559,6 +559,15 @@ a.nav-link.dropdown-toggle.show img,
     background-size: cover;
 }
 
+.banner-image-new-vasd-parent {
+    background-image: url("../images/vasd/Banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+}
+
 /*.banner .banner-imageses {*/
 /*    background-image: url("../images/solution-trash.webp");*/
 /*    background-repeat: no-repeat;*/

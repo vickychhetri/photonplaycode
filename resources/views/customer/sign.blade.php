@@ -748,7 +748,7 @@ THIS IS GALLERY SECTION HIDE BECAUSE : CURRENT DESIGN NOT READY YET
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingEightA">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEightA" aria-expanded="false" aria-controls="collapseEightA">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEightA" aria-expanded="false" aria-controls="collapseEightAx`blue ">
                             How effective are radar speed signs?
                         </button>
                     </h2>

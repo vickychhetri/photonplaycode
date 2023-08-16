@@ -10,6 +10,7 @@ use App\Http\Controllers\customer\SignController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SearchItemsController;
 use App\Http\Controllers\ThankYouController;
+use App\Http\Controllers\VASDController;
 
 Route::get('blog/{page_name}', [ContactUsController::class, 'blog_show'])->name('blog_show');
 Route::get('blog/{blog_id}/like-unlike', [BlogLikeController::class, 'like_unlike'])->name('blog_like_unlike');
@@ -34,3 +35,8 @@ Route::get('/thank-you', [ThankYouController::class, 'index'])->name("show_thank
 Route::get('/order/show/{id}', [CustomerOrderController::class, 'show_order'])->name("show.order");
 
 Route::get('/reports/order/customer/invoice/{id}', [OrderController::class,'generateCustomerInvoice'])->name("customer_order_invoice");
+
+
+
+//VASD
+Route::get('/vehicle-actuated-speed-displays', [VASDController::class, 'vehicle_actuated_speed_displays'])->name("vehicle_actuated_speed_displays");
