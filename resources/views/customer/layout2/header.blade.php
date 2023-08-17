@@ -160,7 +160,7 @@
                                                     Message Sign
                                                     (PVMS) </a></li>
                                             <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
-                                                   href="#">Vehicle
+                                                   href="{{route('customer.vehicle_actuated_speed_displays')}}">Vehicle
                                                     Actuated
                                                     Speed Display
                                                     (VASD) </a></li>
@@ -326,7 +326,7 @@
                                                 Variable
                                                 Message Sign
                                                 (PVMS) </a></li>
-                                        <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="#">Vehicle
+                                        <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="{{route('customer.vehicle_actuated_speed_displays')}}">Vehicle
                                                 Actuated
                                                 Speed Display
                                                 (VASD) </a></li>
