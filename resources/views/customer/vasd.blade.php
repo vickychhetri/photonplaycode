@@ -103,7 +103,7 @@ $seo_meta=[
 
                         </div>
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c2.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/2.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
 
@@ -116,7 +116,7 @@ $seo_meta=[
                             <p class="mb-0"> Provides multiple user level access </p>
                         </div>
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c3.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/3.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -128,7 +128,7 @@ $seo_meta=[
                             <p class="mb-0"> Schedules events by days, weeks and months dynamically</p>
                         </div>
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c4.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/4.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
 
@@ -142,7 +142,7 @@ $seo_meta=[
                             <p class="mb-0"> Single point of connect for multiple signs</p>
                         </div>
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c5.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/5.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
 
@@ -155,7 +155,7 @@ $seo_meta=[
                             <p class="mb-0"> Alerts for the events like over speeding and low battery </p>
                         </div>
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c6.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/6.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
 
@@ -168,7 +168,7 @@ $seo_meta=[
                             <p class="mb-0"> Data analysis and report generations</p>
                         </div>
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c7.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/7.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
 
@@ -181,11 +181,23 @@ $seo_meta=[
                             <p class="mb-0"> Remote connectivity reduces the operational cost </p>
                         </div>
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c8.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/8.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
 
 
+            <div class="col-lg-4">
+                <div class="feature-card p-4 bg-white">
+                    <div class="d-flex align-items-center ">
+                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s8.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="">
+                            <h6>Cost Reduction</h6>
+                            <p class="mb-0"> Remote connectivity reduces the operational cost </p>
+                        </div>
+                    </div>
+                    <img src="{{asset('assets/customer/images/vasd/features/9.jpg')}}"  class="img-fluid p-2"/>
+                </div>
+            </div>
 
         </div>
     </div>
