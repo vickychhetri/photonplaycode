@@ -86,7 +86,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v1.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Vehicle classification  </h6>
-                            <p class="mb-0"> categorizing different types of vehicles based on size like two wheerlers , four wheelers , heavy vehicles </p>
+                            <p class="mb-0" style="font-size: 10px;"> categorizing different types of vehicles based on size like two wheerlers , four wheelers , heavy vehicles </p>
                         </div>
 
                     </div>
@@ -99,7 +99,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v2.png')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>ANPR Solution</h6>
-                            <p class="mb-0"> Automatic number plate recognition with high accuracy  </p>
+                            <p class="mb-0" style="font-size: 10px;"> Automatic number plate recognition with high accuracy  </p>
 
                         </div>
                     </div>
@@ -113,7 +113,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v3.png')}}" style="height: 70px;"  ></div>
                         <div class="">
                             <h6>Traffic Enforcement </h6>
-                            <p class="mb-0">  All the infractions are logged and integrate with central law enforcement agencies  like VAHAN portal  </p>
+                            <p class="mb-0" style="font-size: 10px;">  All the infractions are logged and integrate with central law enforcement agencies  like VAHAN portal  </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/3.jpg')}}"  class="img-fluid p-2"/>
