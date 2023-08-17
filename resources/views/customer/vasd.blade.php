@@ -203,7 +203,7 @@ $seo_meta=[
     </div>
 </section>
 <!-- iCop Series Features End -->
-@include('customer.layout2.model_gallery')
+
 <!--  -->
 @include('customer.layout2.get_in_touch')
 <!-- _____________________ourclint-last-start___________________ -->
