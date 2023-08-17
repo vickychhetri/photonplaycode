@@ -83,14 +83,14 @@ $seo_meta=[
             <div class="col-lg-4  ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s1.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v1.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>24/7 Uptime</h6>
-                            <p class="mb-0"> Enhance the operational capabilities</p>
+                            <h6>Vehicle classification  </h6>
+                            <p class="mb-0"> categorizing different types of vehicles based on size like two wheerlers , four wheelers , heavy vehicles </p>
                         </div>
 
                     </div>
-                    <img src="{{asset('assets/customer/images/cloudmanager/c1.png')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/customer/images/vasd/features/1.jpg')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
             <div class="col-lg-4">
