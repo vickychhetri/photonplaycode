@@ -1,7 +1,7 @@
 <?php
 $seo_meta=[
     "title"=>"Vehicle Actuated Speed Display",
-    "description"=>" The sign acts like a Variable Message Sign to display graphics and text along with white Alert Flashing Lights . The sign acts as a Smart Traffic data collector and analyzer. It is a cloud controlled and highly secured Radar Speed Sign.",
+    "description"=>"Enhance road safety with our Vehicle Actuated Speed Displays (VASD). Instantly recognize vehicle speed for efficient traffic flow on roads, highways, and tunnels.",
     "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
 ];
 
