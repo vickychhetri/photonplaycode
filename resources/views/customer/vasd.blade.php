@@ -22,8 +22,8 @@ $seo_meta=[
 
                         <div class="position-relative heading-banner  ">
 
-                            <h1 class="text-dark">Vehicle Actuated Speed Display
-                                <p class="mb-0 h4 font-weight-bold text-primary"><span> Traffic Management Tool For Real time speed feedback <br/>and Enforcement </span></p>
+                            <h1 class="text-dark" style="font-size: 36px;">Vehicle Actuated Speed Display
+                                <p class="mb-0 h4 font-weight-bold text-primary"><span> Traffic Management Tool For Real time speed feedback  and Enforcement </span></p>
                             </h1>
 
 
