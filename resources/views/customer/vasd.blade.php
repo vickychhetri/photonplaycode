@@ -73,7 +73,7 @@ $seo_meta=[
 <!-- iCop Series Features Start -->
 <section class="pt-0 mt-0" >
     <div class="container">
-        <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;" >
+        <div class="row gy-5"   >
             <div class="col-lg-12">
                 <div class="text-center ">
                     <h2 class="fs-md-2 mt-3"> Features</h2>
