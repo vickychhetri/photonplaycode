@@ -80,7 +80,7 @@ $seo_meta=[
                 </div>
             </div>
 
-            <div class="col-lg-6  ">
+            <div class="col-lg-4  ">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s1.png')}}" style="height: 70px;"  alt="Not Found"></div>
@@ -93,7 +93,7 @@ $seo_meta=[
                     <img src="{{asset('assets/customer/images/cloudmanager/c1.png')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s2.png')}}" style="height: 70px;" alt="Not Found"></div>
@@ -107,7 +107,7 @@ $seo_meta=[
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s3.png')}}" style="height: 70px;"  ></div>
@@ -119,7 +119,7 @@ $seo_meta=[
                     <img src="{{asset('assets/customer/images/cloudmanager/c3.png')}}"  class="img-fluid p-2"/>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s4.png')}}"  style="height: 70px;" alt="Not Found"></div>
@@ -133,7 +133,7 @@ $seo_meta=[
             </div>
 
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s5.png')}}" style="height: 70px;" alt="Not Found"></div>
@@ -146,7 +146,7 @@ $seo_meta=[
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s6.png')}}" style="height: 70px;"  alt="Not Found"></div>
@@ -159,7 +159,7 @@ $seo_meta=[
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s7.png')}}" style="height: 70px;"  alt="Not Found"></div>
@@ -172,7 +172,7 @@ $seo_meta=[
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s8.png')}}" style="height: 70px;"  alt="Not Found"></div>
