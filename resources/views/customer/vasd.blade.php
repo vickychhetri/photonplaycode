@@ -122,7 +122,7 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s4.png')}}"  style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v4.png')}}"  style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>Automatic Lane Identification</h6>
                             <p class="mb-0"> Automatic and accurate detection of Lane in multi lane scenario </p>
@@ -136,7 +136,7 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s5.png')}}" style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v5.webp')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>24x7 Operation </h6>
                             <p class="mb-0"> Fully optimized to work in day and night conditions</p>
@@ -149,7 +149,7 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s6.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v6.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>High performance  Radar</h6>
                             <p class="mb-0"> High performance 4D radar is used to detect the speeds and Lanes  </p>
@@ -162,7 +162,7 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s7.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v7.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Clear Visibility </h6>
                             <p class="mb-0"> The speed signs are visible from a distance of 300mtrs . The motorist shall be well aware of speed from a distance </p>
@@ -175,7 +175,7 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s8.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v8.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Dynamic Message Broadcast</h6>
                             <p class="mb-0"> Overspeed warning messages and white flashing strobe lights for over speeding vehicles  </p>
@@ -189,7 +189,7 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s8.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v1.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Highly Accurate</h6>
                             <p class="mb-0"> The system is highly accurate to achieve an accuracy of more than 95% on vehicle detection , classification and ANPR </p>
