@@ -80,7 +80,7 @@ $seo_meta=[
                 </div>
             </div>
 
-            <div class="col-lg-4  ">
+            <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v1.png')}}" style="height: 70px;"  alt="Not Found"></div>
@@ -96,10 +96,10 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s2.png')}}" style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v2.png')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
-                            <h6>GPS Device Locator</h6>
-                            <p class="mb-0"> Live Map to view all the device locations</p>
+                            <h6>ANPR Solution</h6>
+                            <p class="mb-0"> Automatic number plate recognition with high accuracy  </p>
 
                         </div>
                     </div>
@@ -110,10 +110,10 @@ $seo_meta=[
             <div class="col-lg-4">
                 <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s3.png')}}" style="height: 70px;"  ></div>
+                        <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v3.png')}}" style="height: 70px;"  ></div>
                         <div class="">
-                            <h6>User Authentication</h6>
-                            <p class="mb-0"> Provides multiple user level access </p>
+                            <h6>Traffic Enforcement </h6>
+                            <p class="mb-0">  All the infractions are logged and integrate with central law enforcement agencies  like VAHAN portal  </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/3.jpg')}}"  class="img-fluid p-2"/>
