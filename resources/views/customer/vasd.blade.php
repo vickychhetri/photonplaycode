@@ -125,7 +125,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v4.png')}}"  style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>Automatic Lane Identification</h6>
-                            <p class="mb-0"> Automatic and accurate detection of Lane in multi lane scenario </p>
+                            <p class="mb-0" style="font-size: 10px;"> Automatic and accurate detection of Lane in multi lane scenario </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/4.jpg')}}"  class="img-fluid p-2"/>
@@ -139,7 +139,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v5.webp')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>24x7 Operation </h6>
-                            <p class="mb-0"> Fully optimized to work in day and night conditions</p>
+                            <p class="mb-0" style="font-size: 10px;"> Fully optimized to work in day and night conditions</p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/5.jpg')}}"  class="img-fluid p-2"/>
@@ -152,7 +152,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v6.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>High performance  Radar</h6>
-                            <p class="mb-0"> High performance 4D radar is used to detect the speeds and Lanes  </p>
+                            <p class="mb-0" style="font-size: 10px;"> High performance 4D radar is used to detect the speeds and Lanes  </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/6.jpg')}}"  class="img-fluid p-2"/>
@@ -165,7 +165,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v7.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Clear Visibility </h6>
-                            <p class="mb-0"> The speed signs are visible from a distance of 300mtrs . The motorist shall be well aware of speed from a distance </p>
+                            <p class="mb-0" style="font-size: 10px;"> The speed signs are visible from a distance of 300mtrs . The motorist shall be well aware of speed from a distance </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/7.jpg')}}"  class="img-fluid p-2"/>
@@ -178,7 +178,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v8.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Dynamic Message Broadcast</h6>
-                            <p class="mb-0"> Overspeed warning messages and white flashing strobe lights for over speeding vehicles  </p>
+                            <p class="mb-0" style="font-size: 10px;"> Overspeed warning messages and white flashing strobe lights for over speeding vehicles  </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/8.jpg')}}"  class="img-fluid p-2"/>
@@ -192,7 +192,7 @@ $seo_meta=[
                         <div class="me-3"><img src="{{asset('assets/customer/images/vasd/icon/v1.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Highly Accurate</h6>
-                            <p class="mb-0"> The system is highly accurate to achieve an accuracy of more than 95% on vehicle detection , classification and ANPR </p>
+                            <p class="mb-0" style="font-size: 10px;"> The system is highly accurate to achieve an accuracy of more than 95% on vehicle detection , classification and ANPR </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/9.jpg')}}"  class="img-fluid p-2"/>
@@ -204,27 +204,6 @@ $seo_meta=[
 </section>
 <!-- iCop Series Features End -->
 
-{{--hIDE GALLRY--}}
-{{--<div class="container-fluid mb-0" style="overflow:hidden;">--}}
-{{--    <div class="col-lg-12">--}}
-{{--        <div class="text-center">--}}
-{{--            <h2 class="fs-md-2 mt-3">Gallery</h2>--}}
-{{--            <p class="fs-6">Our Key Projects Across the Globe - Discover How Our Innovative Solutions are Changing the Game!</p>--}}
-{{--        </div>`--}}
-{{--    </div>--}}
-{{--    <div class="col-lg-12 pb-4 pt-0 mt-0">--}}
-{{--        <div class="key-slider-sign-radar slide-images-key">--}}
-{{--            <div>--}}
-{{--                <img src="/assets/images/radar/gallery/UV9D2BRMlg5xvAE4fjxZdmNw1Kv4i731VzOTKlHN.jpg"  class="img-fluid w-100 h-100 slide-images-key">--}}
-{{--            </div>--}}
-{{--            <div>--}}
-{{--                <img src="/assets/images/radar/gallery/0W2kZs8THRJN0mSOI6Lr9J4OxCLJ4gx4BjGwG5jn.jpg"  class="img-fluid w-100 h-100 slide-images-key">--}}
-{{--            </div>--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--hIDE GALLERY END--}}
 <!--  -->
 @include('customer.layout2.get_in_touch')
 <!-- _____________________ourclint-last-start___________________ -->
