@@ -58,9 +58,9 @@ $seo_meta=[
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="radar-icop">
-                    <h4 class="text-uppercase text-center"> CONTROL RADAR SPPED SIGNS VIA CENTRALIZED RADAD CLOUD MANAGEMENT SOFTWARE.</h4>
+                    <h4 class="text-uppercase text-center">  Vehicle-Actuated Speed Display (VASD)  </h4>
                     <p class="mt-4 text-center">
-                        The complete sign management includes basic sign configuration and settings, alert management, data analysis and data collection from anywhere for the connected device without installing any application.
+                        Vehicle-Actuated Speed Display (VASD) is a traffic management tool used to display the speed of approaching vehicles to encourage them to adhere to the speed limit. The basic concept behind a VASD is to provide drivers with real-time feedback on their current speed. The device consists of a radar sensor that measures the speed of approaching vehicles. The measured speed is then displayed on a prominent electronic sign or LED display board When a vehicle exceeds the predefined threshold speed (usually the posted speed limit), the VASD activates the display, which shows the vehicle's current speed. The intention is to remind drivers of their speed and encourage them to slow down, promoting safer driving habits.  VASD ANPR systems play a crucial role in enforcing traffic laws. By automatically classifying the vehicle class,  reading license plates, ANPR cameras can identify vehicles that are speeding, or violating other traffic regulations. The system integrates with standard government portals for enforcing chalans .  ANPR technology enables law enforcement agencies to efficiently monitor traffic and enforce compliance with road safety regulations.
                     </p>
                 </div>
             </div>
@@ -76,7 +76,7 @@ $seo_meta=[
         <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;" >
             <div class="col-lg-12">
                 <div class="text-center ">
-                    <h2 class="fs-md-2 mt-3">Cloud Features</h2>
+                    <h2 class="fs-md-2 mt-3"> Features</h2>
                 </div>
             </div>
 
