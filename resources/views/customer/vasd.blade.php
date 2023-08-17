@@ -124,8 +124,8 @@ $seo_meta=[
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s4.png')}}"  style="height: 70px;" alt="Not Found"></div>
                         <div class="">
-                            <h6>Schedules</h6>
-                            <p class="mb-0"> Schedules events by days, weeks and months dynamically</p>
+                            <h6>Automatic Lane Identification</h6>
+                            <p class="mb-0"> Automatic and accurate detection of Lane in multi lane scenario </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/4.jpg')}}"  class="img-fluid p-2"/>
@@ -138,8 +138,8 @@ $seo_meta=[
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s5.png')}}" style="height: 70px;" alt="Not Found"></div>
                         <div class="">
-                            <h6>Centrally Controlled</h6>
-                            <p class="mb-0"> Single point of connect for multiple signs</p>
+                            <h6>24x7 Operation </h6>
+                            <p class="mb-0"> Fully optimized to work in day and night conditions</p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/5.jpg')}}"  class="img-fluid p-2"/>
@@ -151,8 +151,8 @@ $seo_meta=[
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s6.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Alert Management</h6>
-                            <p class="mb-0"> Alerts for the events like over speeding and low battery </p>
+                            <h6>High performance  Radar</h6>
+                            <p class="mb-0"> High performance 4D radar is used to detect the speeds and Lanes  </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/6.jpg')}}"  class="img-fluid p-2"/>
@@ -164,8 +164,8 @@ $seo_meta=[
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s7.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Pro Data Analysis</h6>
-                            <p class="mb-0"> Data analysis and report generations</p>
+                            <h6>Clear Visibility </h6>
+                            <p class="mb-0"> The speed signs are visible from a distance of 300mtrs . The motorist shall be well aware of speed from a distance </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/7.jpg')}}"  class="img-fluid p-2"/>
@@ -177,8 +177,8 @@ $seo_meta=[
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s8.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Cost Reduction</h6>
-                            <p class="mb-0"> Remote connectivity reduces the operational cost </p>
+                            <h6>Dynamic Message Broadcast</h6>
+                            <p class="mb-0"> Overspeed warning messages and white flashing strobe lights for over speeding vehicles  </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/8.jpg')}}"  class="img-fluid p-2"/>
@@ -191,8 +191,8 @@ $seo_meta=[
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img src="{{asset('assets/customer/images/cloudmanager/icon/s8.png')}}" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Cost Reduction</h6>
-                            <p class="mb-0"> Remote connectivity reduces the operational cost </p>
+                            <h6>Highly Accurate</h6>
+                            <p class="mb-0"> The system is highly accurate to achieve an accuracy of more than 95% on vehicle detection , classification and ANPR </p>
                         </div>
                     </div>
                     <img src="{{asset('assets/customer/images/vasd/features/9.jpg')}}"  class="img-fluid p-2"/>
