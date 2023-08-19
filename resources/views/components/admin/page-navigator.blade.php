@@ -29,7 +29,7 @@
     <div class="col-md-2 mb-3">
         <a href="{{route('admin.manage.solution.create.images.page',$pid)}}" class="btn btn-outline-{{$page==4?'success':'dark'}} w-100  d-flex align-items-center"  >
             <i data-feather="image"> </i>
-            Images & PDF </a>
+            Cover </a>
     </div>
     <div class="col-md-2 mb-3">
         <a href="{{route('admin.manage.solution.create.gallery.page',$pid)}}" class="btn btn-outline-{{$page==5?'success':'dark'}} w-100  d-flex align-items-center"  >  <i data-feather="toggle-left"> </i> Gallery </a>
