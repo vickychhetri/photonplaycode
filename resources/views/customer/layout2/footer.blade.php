@@ -117,7 +117,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         </div>
     </footer>
 
-       <div class="container-fluid">
+       <div class="contain0er-fluid">
           <div class="sec-copyright py-3 text-center m-auto d-flex justify-content-between align-items-center">
               <p>
                  <a href="{{route('customer.show_page_policy_term_conditions')}}"> Terms </a>
@@ -126,6 +126,25 @@ $blogs = Blog::select('slug','title')->take(4)->get();
               <p>© 2023 Photonplay Systems Inc. All right reserved</p>
           </div>
        </div>
+
+
+
+<script>
+    window.intercomSettings = {
+        api_base: "https://api-iam.intercom.io",
+        app_id: "rok4kth5",
+        name: 'customer', // Full name
+        email: 'vickychhetri4@gmail.com', // Email address
+        created_at: "<?php echo date('m/d/Y h:i:s a', time()); ?>" // Signup date as a Unix timestamp
+    };
+</script>
+
+<script>
+    // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/rok4kth5'
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/rok4kth5';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+</script>
+
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
