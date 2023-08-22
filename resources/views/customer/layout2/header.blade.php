@@ -98,8 +98,8 @@
             bottom: 120px;
             right: 50px;
             z-index: 999;
-            border-radius: 50px 50px 50px 0px;
-            padding: 0px;
+            border-radius: 50px 50px 0px 50px;
+            padding: 5px;
         }
     </style>
 </head>
