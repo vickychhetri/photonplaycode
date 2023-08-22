@@ -91,8 +91,19 @@
 
     <script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>
 
+
+    <style>
+        #startvideochat{
+            position: absolute;
+            bottom: 160px;
+            right: 50px;
+        }
+    </style>
 </head>
 <body>
+
+
+<a id="startvideochat" href="https://www.google.com/">Video Call </a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
