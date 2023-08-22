@@ -106,7 +106,7 @@
 <body>
 
 
-<a id="startvideochat" href="https://www.google.com/">Video Call </a>
+{{--<a id="startvideochat" href="https://www.google.com/">Video Call </a>--}}
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
