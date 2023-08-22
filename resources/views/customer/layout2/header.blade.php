@@ -97,16 +97,14 @@
             position: fixed;
             bottom: 160px;
             right: 50px;
-            z-index: 1111111;
-            background: red;
-            color:whitesmoke;
+            z-index: 999;
         }
     </style>
 </head>
 <body>
 
 
-{{--<a id="startvideochat" href="https://www.google.com/">Video Call </a>--}}
+<a id="startvideochat" href="https://www.photonplay.com/?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn btn-primary">Video Call </a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
