@@ -104,7 +104,7 @@
 <body>
 
 
-<a id="startvideochat" href="https://www.photonplay.com/?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn btn-primary"> <i class="bi bi-camera-video"></i> Video Call </a>
+<a id="startvideochat" href="https://www.photonplay.com/?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn btn-primary"> <i class="bi bi-camera-video" style="font-size: 36px;"></i> Video Call </a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
