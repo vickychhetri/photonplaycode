@@ -106,7 +106,8 @@
 <body>
 
 
-<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn btn-primary d-flex justify-content-center align-items-center gap-1"> <span ><i class="bi bi-camera-video-fill"></i>  </span> </a>
+<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn btn-primary d-flex justify-content-center align-items-center gap-1"> <span ><i class="bi bi-camera-video-fill" style="font-size: 30px;" target="_blank"></i>  </span> </a>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
