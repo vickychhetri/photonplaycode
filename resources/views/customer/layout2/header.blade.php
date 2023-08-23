@@ -96,7 +96,7 @@
         #startvideochat{
             position: fixed;
             bottom: 120px;
-            border: 6px solid rgba(28,117,199,1);
+            border: 8px solid rgba(28,117,199,1);
             right: 50px;
             z-index: 999;
             border-radius: 50px 50px 0px 50px;
