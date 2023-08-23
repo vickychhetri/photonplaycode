@@ -96,17 +96,20 @@
         #startvideochat{
             position: fixed;
             bottom: 120px;
+            border: 6px solid rgba(28,117,199,1);
             right: 50px;
             z-index: 999;
             border-radius: 50px 50px 0px 50px;
-            padding: 5px;
+            height: 40px;
+            padding-inline: 20px;
+            min-width: 90px;
         }
     </style>
 </head>
 <body>
 
 
-<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn bg-white d-flex justify-content-center align-items-center gap-1"> <span ><i class="bi bi-camera-video" style="font-size: 30px;" target="_blank"></i>  </span> </a>
+<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn bg-white d-flex justify-content-center align-items-center gap-1"> <span ><i class="bi bi-camera-video" style="font-size: 24px;" target="_blank"></i>  </span> </a>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
