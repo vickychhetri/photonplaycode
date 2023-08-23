@@ -102,7 +102,7 @@
             border-radius: 50px 50px 0px 50px;
             height: 40px;
             padding-inline: 35px;
-            min-width: 90px;
+            min-width: 120px;
         }
     </style>
 </head>
