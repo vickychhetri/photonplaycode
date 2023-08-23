@@ -96,13 +96,13 @@
         #startvideochat{
             position: fixed;
             bottom: 120px;
-            border: 8px solid rgba(28,117,199,1);
+            border: 10px solid rgba(28,117,199,1);
             right: 50px;
             z-index: 999;
             border-radius: 50px 50px 0px 50px;
-            height: 40px;
+            height: 50px;
             padding-inline: 35px;
-            min-width: 120px;
+            min-width: 150px;
         }
     </style>
 </head>
