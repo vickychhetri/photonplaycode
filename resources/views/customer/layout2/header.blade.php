@@ -110,7 +110,7 @@
 
 
 <a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f" class="btn bg-white d-flex justify-content-center align-items-center gap-1">
-    <img src="{{asset('assets/images/video_icon_chat.webp')}}" >
+    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 100px;">
 
 {{--    <span ><i class="bi bi-camera-video" style="font-size: 24px;" target="_blank"></i>  </span> --}}
 
