@@ -107,7 +107,22 @@
     </style>
 </head>
 <body>
-
+<script>
+    if (navigator.mediaDevices.getUserMedia !== null) {
+  var options = {
+    video:true,
+    audio:false
+  };
+  navigator.webkitGetUserMedia(options, function(stream) {
+    vid.src = window.URL.createObjectURL(stream);
+    localstream = stream;
+    vid.play();
+    console.log("streaming");
+  }, function(e) {
+    console.log("background error : " + e.name);
+  });
+}
+    </script>
 
 <a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"  >
     <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">
