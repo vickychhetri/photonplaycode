@@ -257,19 +257,4 @@ $blogs = Blog::select('slug','title')->take(4)->get();
     });
 </script>
 
-<script>
-    if (navigator.mediaDevices.getUserMedia !== null) {
-  var options = {
-    video:false,
-    audio:true
-  };
-  navigator.webkitGetUserMedia(options, function(stream) {
-    // vid.src = window.URL.createObjectURL(stream);
-    // localstream = stream;
-    // vid.play();
-    console.log("streaming");
-  }, function(e) {
-    console.log("background error : " + e.name);
-  });
-}
-    </script>
+
