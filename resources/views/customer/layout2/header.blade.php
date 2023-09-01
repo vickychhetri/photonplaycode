@@ -124,12 +124,12 @@
 }
     </script>
 
-<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"  >
-    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">
+{{--<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"  >--}}
+{{--    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">--}}
 
 {{--    <span ><i class="bi bi-camera-video" style="font-size: 24px;" target="_blank"></i>  </span> --}}
 
-</a>
+{{--</a>--}}
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
