@@ -358,3 +358,28 @@ $("#flip-btn").click(function(){
 $("#flip-back").click(function(){
     $(".flip-card-inner").removeClass("flipped")
 })
+
+
+const openModalBtn = document.getElementById("openModalBtn");
+const videoModal = document.getElementById("videoModal");
+const videoIframe = document.getElementById("videoIframe");
+const closeModal = document.querySelector(".close");
+
+openModalBtn.addEventListener("click", () => {
+    // videoIframe.src = "https://www.youtube.com/embed/your-video-id"; // Replace with your video URL or embed code
+    videoModal.style.display = "block";
+});
+
+
+closeModal.addEventListener("click", () => {
+    // videoIframe.src = "";
+    videoModal.style.display = "none";
+});
+
+// Close the modal if the user clicks outside of it
+window.addEventListener("click", (event) => {
+    if (event.target === videoModal) {
+        // videoIframe.src = "";
+        videoModal.style.display = "none";
+    }
+});

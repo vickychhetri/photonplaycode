@@ -7,6 +7,15 @@ $categories = Category::select('title')->take(3)->get();
 $blogs = Blog::select('slug','title')->take(4)->get();
 @endphp
 
+<div class="chat_modal" id="videoModal">
+    <div class="chat_modal-content">
+        <span class="chat_close">&times;</span>
+        <iframe src=https://client.consolto.com/expert/photonplay.systems allow="camera;microphone;fullscreen;autoplay;display-capture" frameborder="0" scrolling="no" style="width: 100%; height: 100%;"></iframe>
+    </div>
+</div>
+
+
+
 <!-- _____________________ourclint-last-end___________________ -->
     <section class="subscribe-section" id="subscribed">
         <div class="container">
