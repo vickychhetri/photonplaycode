@@ -360,13 +360,13 @@ $("#flip-back").click(function(){
 })
 
 
-const openModalBtn = document.getElementById("openModalBtn");
-const videoModal = document.getElementById("videoModal");
-const videoIframe = document.getElementById("videoIframe");
+const openModalBtn = document.getElementById("startvideochat");
+const videoModal = document.getElementById("chat_videoModal");
+// const videoIframe = document.getElementById("chat_videoIframe");
 const closeModal = document.querySelector(".close");
 
 openModalBtn.addEventListener("click", () => {
-    // videoIframe.src = "https://www.youtube.com/embed/your-video-id"; // Replace with your video URL or embed code
+
     videoModal.style.display = "block";
 });
 
