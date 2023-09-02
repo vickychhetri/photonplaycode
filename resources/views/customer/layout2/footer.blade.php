@@ -22,7 +22,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
     const closeModal = document.querySelector(".close");
 
     openModalBtn.addEventListener("click", () => {
-        alert("hit");
+        // alert("hit");
         videoModal.style.display = "block";
     });
 
