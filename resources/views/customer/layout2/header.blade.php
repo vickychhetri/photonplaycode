@@ -117,9 +117,7 @@
 {{--href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"--}}
 <span id="startvideochat" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  >
     <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">
-
 {{--    <span ><i class="bi bi-camera-video" style="font-size: 24px;" target="_blank"></i>  </span>--}}
-
 </span>
 
 
