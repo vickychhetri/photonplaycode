@@ -360,26 +360,3 @@ $("#flip-back").click(function(){
 })
 
 
-const openModalBtn = document.getElementById("startvideochat");
-const videoModal = document.getElementById("chat_videoModal");
-// const videoIframe = document.getElementById("chat_videoIframe");
-const closeModal = document.querySelector(".close");
-
-openModalBtn.addEventListener("click", () => {
-    alert("hit");
-    videoModal.style.display = "block";
-});
-
-
-closeModal.addEventListener("click", () => {
-    // videoIframe.src = "";
-    videoModal.style.display = "none";
-});
-
-// Close the modal if the user clicks outside of it
-window.addEventListener("click", (event) => {
-    if (event.target === videoModal) {
-        // videoIframe.src = "";
-        videoModal.style.display = "none";
-    }
-});
