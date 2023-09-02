@@ -114,11 +114,11 @@
 
 {{--<script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>--}}
 
-<span id="openModalBtn"  >
+<button id="openModalBtn"  >
     <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">
     {{--    <span ><i class="bi bi-camera-video" style="font-size: 24px;" target="_blank"></i>  </span>--}}
 
-</span>
+</button>
 
 
 {{--<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"  >--}}
