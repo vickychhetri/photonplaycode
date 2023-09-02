@@ -366,7 +366,7 @@ const videoModal = document.getElementById("chat_videoModal");
 const closeModal = document.querySelector(".close");
 
 openModalBtn.addEventListener("click", () => {
-
+    alert("hit");
     videoModal.style.display = "block";
 });
 
