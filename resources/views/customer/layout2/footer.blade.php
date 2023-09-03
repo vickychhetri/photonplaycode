@@ -34,22 +34,17 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 
 
 <script>
-    window.addEventListener('consoltoEvent', (e) => { // Listen to events sent from Consolto
+    // Add a click event listener to the button
+    document.getElementById('startvideochat').addEventListener('click', function () {
+        // Create the custom event with 'consoltoReady' set to true
+        var consoltoReadyEvent = new CustomEvent('consoltoEvent', {
+            detail: {
+                consoltoReady: true
+            }
+        });
 
-        if (e.detail.consoltoReady) { // Will be true only when Consolto becomes ready
-
-            var event = new CustomEvent('consolto_h2w', { // Create a custom event that will be dispatched and trigger one of the actions.
-
-                detail: {
-
-                    'et-click-type': 'start-call', // One of the 5 available actions
-
-                },
-
-            });
-
-        }
-
+        // Dispatch the custom event
+        window.dispatchEvent(consoltoReadyEvent);
     });
 </script>
 
@@ -62,7 +57,6 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 
     openModalBtn.addEventListener("click", () => {
         // alert("hit");
-        window.dispatchEvent(event); // Here we programmatically trigger the Consolto widget
         videoModal.style.display = "block";
     });
 
