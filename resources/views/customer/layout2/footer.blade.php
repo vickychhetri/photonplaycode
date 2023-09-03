@@ -36,7 +36,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 <script>
     // Add a click event listener to the button
     document.getElementById('startvideochat').addEventListener('click', function () {
-        //     console.log("hitted");
+            console.log("hitted");
         window.addEventListener('consoltoEvent', (e) => { // Listen to events sent from Consolto
 
             if (e.detail.consoltoReady) { // Will be true only when Consolto becomes ready
