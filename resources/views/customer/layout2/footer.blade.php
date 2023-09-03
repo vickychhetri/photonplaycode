@@ -36,6 +36,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 <script>
     // Add a click event listener to the button
     document.getElementById('startvideochat').addEventListener('click', function () {
+        console.log("hitted");
         // Create the custom event with 'consoltoReady' set to true
         var consoltoReadyEvent = new CustomEvent('consoltoEvent', {
             detail: {
@@ -50,29 +51,29 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 
 
 <script>
-    const openModalBtn = document.getElementById("startvideochat");
-    const videoModal = document.getElementById("chat_videoModal");
-    // const videoIframe = document.getElementById("chat_videoIframe");
-    const closeModal = document.querySelector(".close");
-
-    openModalBtn.addEventListener("click", () => {
-        // alert("hit");
-        videoModal.style.display = "block";
-    });
-
-
-    closeModal.addEventListener("click", () => {
-        // videoIframe.src = "";
-        videoModal.style.display = "none";
-    });
-
-    // Close the modal if the user clicks outside of it
-    window.addEventListener("click", (event) => {
-        if (event.target === videoModal) {
-            // videoIframe.src = "";
-            videoModal.style.display = "none";
-        }
-    });
+    // const openModalBtn = document.getElementById("startvideochat");
+    // const videoModal = document.getElementById("chat_videoModal");
+    // // const videoIframe = document.getElementById("chat_videoIframe");
+    // const closeModal = document.querySelector(".close");
+    //
+    // openModalBtn.addEventListener("click", () => {
+    //     // alert("hit");
+    //     videoModal.style.display = "block";
+    // });
+    //
+    //
+    // closeModal.addEventListener("click", () => {
+    //     // videoIframe.src = "";
+    //     videoModal.style.display = "none";
+    // });
+    //
+    // // Close the modal if the user clicks outside of it
+    // window.addEventListener("click", (event) => {
+    //     if (event.target === videoModal) {
+    //         // videoIframe.src = "";
+    //         videoModal.style.display = "none";
+    //     }
+    // });
 
 </script>
 
