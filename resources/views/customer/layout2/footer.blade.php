@@ -14,23 +14,23 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 {{--</div>--}}
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header">
+{{--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">--}}
+{{--    <div class="modal-dialog  modal-fullscreen">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
 {{--                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>--}}
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" >
-                <iframe src=https://client.consolto.com/expert/photonplay.systems allow="camera;microphone;fullscreen;autoplay;display-capture" frameborder="0" scrolling="no" style="width: 100%; height: 100%;"></iframe>
-            </div>
+{{--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body" >--}}
+{{--                <iframe src=https://client.consolto.com/expert/photonplay.systems allow="camera;microphone;fullscreen;autoplay;display-capture" frameborder="0" scrolling="no" style="width: 100%; height: 100%;"></iframe>--}}
+{{--            </div>--}}
 {{--            <div class="modal-footer">--}}
 {{--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Minimize</button>--}}
 {{--                <button type="button" class="btn btn-primary">Understood</button>--}}
 {{--            </div>--}}
-        </div>
-    </div>
-</div>
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 
 <script>
