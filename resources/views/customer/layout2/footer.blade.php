@@ -33,6 +33,25 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 </div>
 
 
+<script>
+    window.addEventListener('consoltoEvent', (e) => { // Listen to events sent from Consolto
+
+        if (e.detail.consoltoReady) { // Will be true only when Consolto becomes ready
+
+            var event = new CustomEvent('consolto_h2w', { // Create a custom event that will be dispatched and trigger one of the actions.
+
+                detail: {
+
+                    'et-click-type': 'start-call', // One of the 5 available actions
+
+                },
+
+            });
+
+        }
+
+    });
+</script>
 
 
 <script>
@@ -43,6 +62,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
 
     openModalBtn.addEventListener("click", () => {
         // alert("hit");
+        window.dispatchEvent(event); // Here we programmatically trigger the Consolto widget
         videoModal.style.display = "block";
     });
 
@@ -61,6 +81,9 @@ $blogs = Blog::select('slug','title')->take(4)->get();
     });
 
 </script>
+
+
+
 
 
 <!-- _____________________ourclint-last-end___________________ -->
