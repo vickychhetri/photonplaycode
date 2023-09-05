@@ -1,8 +1,8 @@
 <?php
 $seo_meta=[
-    "title"=>"Vehicle Actuated Speed Display",
-    "description"=>"Enhance road safety with our Vehicle Actuated Speed Displays (VASD). Instantly recognize vehicle speed for efficient traffic flow on roads, highways, and tunnels.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>"Innovative and Reliable Bus Signs for Your Transit System",
+    "description"=>"Transform your transit system with our innovative and reliable Bus Signs. Customize them to fit your unique needs and trust in our advanced ITS technology.",
+    "keywords"=>"Transit, pids display, bus sign, led bus sign display, passenger information display systems, led passenger information display,"
 ];
 
 ?>
@@ -22,7 +22,7 @@ $seo_meta=[
 
                         <div class="position-relative heading-banner  ">
 
-                            <h1 class="text-dark" style="font-size: 36px;">Vehicle Actuated Speed Display
+                            <h1 class="text-dark" style="font-size: 36px;">Bus sign
                                 <p class="mb-0 h4 font-weight-bold text-primary"><span> Traffic Management Tool For Real time speed feedback  and Enforcement </span></p>
                             </h1>
 

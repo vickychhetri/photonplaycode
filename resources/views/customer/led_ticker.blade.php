@@ -1,8 +1,8 @@
 <?php
 $seo_meta=[
-    "title"=>"Vehicle Actuated Speed Display",
-    "description"=>"Enhance road safety with our Vehicle Actuated Speed Displays (VASD). Instantly recognize vehicle speed for efficient traffic flow on roads, highways, and tunnels.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>"Transform Your Business with LED Ticker Tapes",
+    "description"=>"By displaying real-time text or graphic feeds, LED Ticker Tape helps to engage your audience, increase visibility, and enhance your brand image.",
+    "keywords"=>"Led ticker tape, led ticker display, led stock ticker, led stock ticker display, circle led display, led stock ticker tape, electronics ticker tape, financial led ticker, stock market display, led ticker sign, digital ticker display, stock ticker display for home, Sports led ticker display,"
 ];
 
 ?>
@@ -22,7 +22,7 @@ $seo_meta=[
 
                         <div class="position-relative heading-banner  ">
 
-                            <h1 class="text-dark" style="font-size: 36px;">Vehicle Actuated Speed Display
+                            <h1 class="text-dark" style="font-size: 36px;">LED TICKER TAPES
                                 <p class="mb-0 h4 font-weight-bold text-primary"><span> Traffic Management Tool For Real time speed feedback  and Enforcement </span></p>
                             </h1>
 
