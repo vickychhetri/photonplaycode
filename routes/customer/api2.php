@@ -2,11 +2,13 @@
 
 
 use App\Http\Controllers\BlogLikeController;
+use App\Http\Controllers\BussignContorller;
 use App\Http\Controllers\ContentPageController;
 use App\Http\Controllers\customer\ContactUsController;
 use App\Http\Controllers\customer\CustomerOrderController;
 use App\Http\Controllers\customer\CustomerProfileController;
 use App\Http\Controllers\customer\SignController;
+use App\Http\Controllers\LedController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SearchItemsController;
 use App\Http\Controllers\ThankYouController;
@@ -40,3 +42,10 @@ Route::get('/reports/order/customer/invoice/{id}', [OrderController::class,'gene
 
 //VASD
 Route::get('/vehicle-actuated-speed-displays', [VASDController::class, 'vehicle_actuated_speed_displays'])->name("vehicle_actuated_speed_displays");
+
+Route::get('/led-ticker-tape', [LedController::class, 'led'])->name("led_ticker_tape");
+
+Route::get('/bus-signs', [BussignContorller::class, 'bus_sign'])->name("bus_signs");
+
+
+
