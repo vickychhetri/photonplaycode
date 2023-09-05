@@ -11,7 +11,7 @@ $seo_meta=[
 {{--<x-Customer.Radar.RadarBanner/>--}}
 
 <section class="banner-inner pt-0 pb-0" >
-    <div id="carouselExampleDark" class="carousel slide banner-image-new-vasd-parent" data-bs-ride="carousel">
+    <div id="carouselExampleDark" class="carousel slide banner-image-new-ledticker-parent" data-bs-ride="carousel">
         <div class="carousel-indicators">
         </div>
         <div class="carousel-inner">
@@ -23,7 +23,7 @@ $seo_meta=[
                         <div class="position-relative heading-banner  ">
 
                             <h1 class="text-dark" style="font-size: 36px;">LED TICKER TAPES
-                                <p class="mb-0 h4 font-weight-bold text-primary"><span> Traffic Management Tool For Real time speed feedback  and Enforcement </span></p>
+                                <p class="mb-0 h4 font-weight-bold text-primary"><span> LIVE NEWS STREAMING FROM YOUR FAVOURITE SOURCE</span></p>
                             </h1>
 
 
@@ -60,7 +60,13 @@ $seo_meta=[
                 <div class="radar-icop">
                     <h4 class="text-uppercase text-center">  Vehicle-Actuated Speed Display (VASD)  </h4>
                     <p class="mt-4 text-center">
-                        Vehicle-Actuated Speed Display (VASD) is a traffic management tool used to display the speed of approaching vehicles to encourage them to adhere to the speed limit. The basic concept behind a VASD is to provide drivers with real-time feedback on their current speed. The device consists of a radar sensor that measures the speed of approaching vehicles. The measured speed is then displayed on a prominent electronic sign or LED display board When a vehicle exceeds the predefined threshold speed (usually the posted speed limit), the VASD activates the display, which shows the vehicle's current speed. The intention is to remind drivers of their speed and encourage them to slow down, promoting safer driving habits.  VASD ANPR systems play a crucial role in enforcing traffic laws. By automatically classifying the vehicle class,  reading license plates, ANPR cameras can identify vehicles that are speeding, or violating other traffic regulations. The system integrates with standard government portals for enforcing chalans .  ANPR technology enables law enforcement agencies to efficiently monitor traffic and enforce compliance with road safety regulations.
+                        LED Stock Ticker's are one of the key factors in creating the university business environment. It is a medium through which live scrolling stocks, bonds, shares, CMEs etc. may really be seen. The ambiance is so lovely that you merely stick to a led stock ticker while viewing it. Tickerplay presents one of the industry's most seamless scrolling and streamings display. Differing in many alternatives and sizes may be tailored to your taste and budget standards.
+
+                        A range of names from all over the world such as Led Stock Ticker Tape, Stock Ticker, Led Ticker, Color Ticker, Custom Tickers, Digital Ticker, Led Stock Ticker, NYSE Stock Ticker, BSE Stock Ticker, Commodities Led Ticker, Equities Digital Ticker, Wall-Street ticker, Našdaq Stock Ticker, Reuters Stock Ticker have been mentioned on the listed ticker display
+
+                        Led stock ticker streams near live stocks, RSS feed, Cryptocurrencies, commodities, major stocks indexes as Nasdaq, S&P 500, Dow Jones, etc. We can also add some unique material between live data feeds for urgent information or fun. We've installed over 1560 in North America at Stock Ticker Display alone, 250 in France, 150 in the UK and everywhere throughout the globe.
+
+                        Led Stock Ticker Tape is very simple to install like hanging photo frame on a wall. We supply installation from our side to customised orders at the customer's place. On any surface our ticker bands can be used. Whether indoors or outside, we will accomplish it as priorities for any specific length you need. We follow our promise and always tailor your goods to your specifications.
                     </p>
                 </div>
             </div>
