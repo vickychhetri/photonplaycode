@@ -37,8 +37,8 @@ $seo_meta=[
                         </div>
                         <div class="desktop-display">
 
-                            <img src="{{asset('assets\customer\images\vasd\camerab.webp')}}" alt="Not Found"
-                                 class="img-fluid d-none d-md-block">
+{{--                            <img src="{{asset('assets\customer\images\vasd\camerab.webp')}}" alt="Not Found"--}}
+{{--                                 class="img-fluid d-none d-md-block">--}}
                         </div>
                         <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                              class="img-fluid d-none d-md-block">
