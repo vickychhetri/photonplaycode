@@ -89,7 +89,10 @@
         })(window, document, 'script', 'dataLayer', 'GTM-NJZBCGR');</script>
     <!-- End Google Tag Manager -->
 
-    <script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>
+{{--    <script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>--}}
+
+{{--    <iframe src=https://client.consolto.com/expert/photonplay.systems allow="camera;microphone;fullscreen;autoplay;display-capture" frameborder="0" scrolling="no" style="width: 100%; height: 100%;"></iframe>--}}
+
 
 
     <style>
@@ -107,29 +110,18 @@
     </style>
 </head>
 <body>
-<script>
-    if (navigator.mediaDevices.getUserMedia !== null) {
-  var options = {
-    video:true,
-    audio:false
-  };
-  navigator.webkitGetUserMedia(options, function(stream) {
-    vid.src = window.URL.createObjectURL(stream);
-    localstream = stream;
-    vid.play();
-    console.log("streaming");
-  }, function(e) {
-    console.log("background error : " + e.name);
-  });
-}
-    </script>
 
-<a id="startvideochat" href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"  >
+
+{{--<script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>--}}
+
+{{--href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"--}}
+
+{{--data-bs-toggle="modal" data-bs-target="#staticBackdrop"--}}
+<span id="startvideochat"  >
     <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">
+</span>
 
-{{--    <span ><i class="bi bi-camera-video" style="font-size: 24px;" target="_blank"></i>  </span> --}}
 
-</a>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"

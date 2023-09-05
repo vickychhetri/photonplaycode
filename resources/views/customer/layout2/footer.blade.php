@@ -7,6 +7,105 @@ $categories = Category::select('title')->take(3)->get();
 $blogs = Blog::select('slug','title')->take(4)->get();
 @endphp
 
+{{--<div class="chat_modal" id="chat_videoModal">--}}
+{{--    <div class="chat_modal-content">--}}
+{{--        <span class="chat_close">&times;</span>--}}
+{{--    </div>--}}
+{{--</div>--}}
+
+<!-- Modal -->
+{{--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">--}}
+{{--    <div class="modal-dialog  modal-fullscreen">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>--}}
+{{--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body" >--}}
+{{--                <iframe src=https://client.consolto.com/expert/photonplay.systems allow="camera;microphone;fullscreen;autoplay;display-capture" frameborder="0" scrolling="no" style="width: 100%; height: 100%;"></iframe>--}}
+{{--            </div>--}}
+{{--            <div class="modal-footer">--}}
+{{--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Minimize</button>--}}
+{{--                <button type="button" class="btn btn-primary">Understood</button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+
+
+<script>
+    // Add a click event listener to the button
+
+        window.addEventListener('consoltoEvent', (e) => { // Listen to events sent from Consolto
+
+            document.getElementById('startvideochat').addEventListener('click', function () {
+                console.log("hitted");
+            if (e.detail.consoltoReady) { // Will be true only when Consolto becomes ready
+
+
+                var event = new CustomEvent('consolto_h2w', { // Create a custom event that will be dispatched and trigger one of the actions.
+
+                    detail: {
+
+                        'et-click-type': 'start-call', // One of the 5 available actions
+
+                    },
+
+                });
+
+                window.dispatchEvent(event); // Here we programmatically trigger the Consolto widget
+
+            }
+
+        });
+    });
+
+    // document.getElementById('startvideochat').addEventListener('click', function () {
+    //     console.log("hitted");
+    //     // Create the custom event with 'consoltoReady' set to true
+    //     var consoltoReadyEvent = new CustomEvent('consoltoEvent', {
+    //         detail: {
+    //             'et-click-type': 'open-widget', // One of the 5 available actions
+    //         }
+    //     });
+    //
+    //     // Dispatch the custom event
+    //     window.dispatchEvent(consoltoReadyEvent);
+    // });
+</script>
+
+
+<script>
+    // const openModalBtn = document.getElementById("startvideochat");
+    // const videoModal = document.getElementById("chat_videoModal");
+    // // const videoIframe = document.getElementById("chat_videoIframe");
+    // const closeModal = document.querySelector(".close");
+    //
+    // openModalBtn.addEventListener("click", () => {
+    //     // alert("hit");
+    //     videoModal.style.display = "block";
+    // });
+    //
+    //
+    // closeModal.addEventListener("click", () => {
+    //     // videoIframe.src = "";
+    //     videoModal.style.display = "none";
+    // });
+    //
+    // // Close the modal if the user clicks outside of it
+    // window.addEventListener("click", (event) => {
+    //     if (event.target === videoModal) {
+    //         // videoIframe.src = "";
+    //         videoModal.style.display = "none";
+    //     }
+    // });
+
+</script>
+
+
+
+
+
 <!-- _____________________ourclint-last-end___________________ -->
     <section class="subscribe-section" id="subscribed">
         <div class="container">
@@ -140,6 +239,12 @@ $blogs = Blog::select('slug','title')->take(4)->get();
     })();
 </script>
 <!--End of Tawk.to Script-->
+
+
+<script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>
+
+
+
 <script>
     @if (session()->has('success'))
     Toastify({
