@@ -58,7 +58,7 @@ $seo_meta=[
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="radar-icop">
-                    <h4 class="text-uppercase text-center">  Vehicle-Actuated Speed Display (VASD)  </h4>
+                    <h4 class="text-uppercase text-center">   LED TICKER TAPES </h4>
                     <p class="mt-4 text-center">
                         LED Stock Ticker's are one of the key factors in creating the university business environment. It is a medium through which live scrolling stocks, bonds, shares, CMEs etc. may really be seen. The ambiance is so lovely that you merely stick to a led stock ticker while viewing it. Tickerplay presents one of the industry's most seamless scrolling and streamings display. Differing in many alternatives and sizes may be tailored to your taste and budget standards.
 
