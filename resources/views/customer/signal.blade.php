@@ -42,6 +42,7 @@ $seo_meta = [
         <div class="row justify-content-center text-center">
             <div class="col-lg-10">
                 <div>
+                    <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold"> Emergency Tunnel Signage: Lighting the Way to Safety</h2>
                     <p style="text-align: justify;">
                         Tunnel signage is a crucial component of tunnel safety since it assists vehicles in securely and
                         effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage from
