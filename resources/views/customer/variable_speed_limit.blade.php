@@ -178,6 +178,152 @@ $seo_meta=[
 @include('customer.layout2.get_in_touch')
     <!-- Contact form end -->
 
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="fs-md-2 mt-3 text-center">  FAQ  </h2>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1.	What is the purpose of the variable speed limit sign?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The variable speed restriction sign's goal is to make driving safer by updating speed recommendations based on real-time conditions.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2.	How can we improve safety on the road?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Safety on the road can be improved by adhering to speed limits, avoiding distractions, using seat belts, maintaining a safe following distance, and obeying traffic rules.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3.	What is the meaning of variable speed limit and camera?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The term "variable speed limit and camera" denotes a system where speed limits are enforced by cameras and change according to conditions.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            4.	What is a variable speed sign?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: An electronic traffic sign that displays flexible speed limits to reflect the state of the road and the volume of traffic is known as a variable speed sign.
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            5.	What does variable mean in speed?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: When an object travels a different distance at equal intervals of time, it is said to be moving at a variable speed. Variable speed aims to ensure safer driving by tailoring the speed limit to the current situation, promoting better road safety.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            6.	Where is the end of the minimum speed limit sign?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The end of the minimum speed limit sign is usually placed after zones with mandatory minimum speeds, where drivers can resume normal speeds. You will see this sign at the end of the 30 miles per hour minimum speed requirement. After this point, the speed limit becomes whatever is indicated by subsequent signs or the type of road.
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            7.	What are the five importance of road safety?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Reducing accidents, saving lives, preventing injuries, ensuring smooth traffic flow, and promoting responsible driving behavior are the five key importance of road safety.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEightA">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEightA" aria-expanded="false" aria-controls="collapseEightAx`blue ">
+                            8.	What is an exit speed limit sign?
+                        </button>
+                    </h2>
+                    <div id="collapseEightA" class="accordion-collapse collapse" aria-labelledby="headingEightA" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: An exit speed limit sign indicates the maximum safe speed for vehicles approaching an exit ramp. An Exit Ramp Speed Limit sign means that you should slow down to the speed listed on the sign when you reach the end of the exit ramp.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            9.	What is VSLS's maximum speed?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The maximum speed for Variable Speed Limit Systems (VSLS) varies depending on the road, traffic, and conditions at any given time. The VSLS displays variable speed limits from a minimum of 20km/h to a maximum of 110km/h in 10K increments. The LED display uses ultra-bright, high-intensity LEDs with flicker-free technology to ensure maximum visibility for the approaching motorist.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            10.	What is the variable speed rule?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: According to the variable speed rule, drivers must adjust their speed by changing traffic and road conditions as indicated by variable speed limit signs. An electronic traffic sign shows the current speed limit, which is adjusted based on the weather and road conditions. The minimum and maximum speeds are frequently listed on signs.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
     <!-- _____________________ourclint-last-start___________________ -->
 @include('customer.layout2.our_clients')
     <!-- _____________________ourclint-last-end___________________ -->
