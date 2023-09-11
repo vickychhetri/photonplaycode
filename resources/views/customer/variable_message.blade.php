@@ -44,7 +44,7 @@ $seo_meta=[
                 <div class="col-lg-10">
                     <h2 class="text-center mb-2"> Variable Message Signs (VMS) </h2>
                     <div class="p-4 m-2">
-                        <p>
+                        <p style="text-align: justify;">
                             Viewed by millions of eyes every day and guiding millions of motorists back home safely every day, Photonplay is contributing its part to humanity in its own way by enhancing road and traffic safety. Photonplay’s outperforming VMS signs are highly reliable and rugged components of the traffic management ecosystem for motorways, tunnels, and urban traffic management systems.VMS are typically made of durable materials, such as aluminum or steel, and they are equipped with bright LED lights that can be seen from a long distance. Traffic managers can easily and quickly update the information displayed on the signs because they are controlled remotely. Around the world, variable message signs (VMS) now play a significant role in traffic control.
                             </p>
                             <p style="text-align: left;">
