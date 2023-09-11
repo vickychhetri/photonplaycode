@@ -65,7 +65,7 @@ $seo_meta=[
                 <div class="col-lg-12 ">
                     <div class="radar-icop">
                         <h4 class="text-uppercase text-center">MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGN EVER BUILT !</h4>
-                        <p class="mt-4">
+                        <p class="mt-4" style="text-align: justify;">
                             The sign has all the standard features combined in one product to make it industry's best
                             Radar
                             Speed Sign. The sign acts like a Variable Message Sign to display graphics and text along
