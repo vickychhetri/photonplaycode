@@ -46,6 +46,30 @@ $seo_meta=[
                     <div class="p-4 m-2">
                         <p>
                             Viewed by millions of eyes every day and guiding millions of motorists back home safely every day, Photonplay is contributing its part to humanity in its own way by enhancing road and traffic safety. Photonplay’s outperforming VMS signs are highly reliable and rugged components of the traffic management ecosystem for motorways, tunnels, and urban traffic management systems.
+
+                            VMS are typically made of durable materials, such as aluminum or steel, and they are equipped with bright LED lights that can be seen from a long distance. Traffic managers can easily and quickly update the information displayed on the signs because they are controlled remotely. Around the world, variable message signs (VMS) now play a significant role in traffic control.
+                            <br/>
+                            Here are some specific ways that our VMS can be used to improve road safety:
+                                <br/>
+                            <ul>
+                            <li>
+                                To warn drivers of upcoming roadwork, accidents, or other hazards. This could motivate drivers to slow down and use caution, which can help avoid accidents.
+                            </li>
+                            <li>
+                                To direct traffic around road closures or other obstructions, which can help maintain traffic flow and avoid congestion.
+                            </li>
+                            <li>
+                                To display speed limits or other speed restrictions that can aid in lowering speeding, which is a key contributor to accidents.
+                            </li>
+                            <li>
+                                To provide drivers with real-time traffic updates, such as delays or road closures. Drivers can use this information to plan routes and stay clear of traffic.
+                            </li>
+                            <li>
+                                VMS is a valuable tool for improving road safety. By providing drivers with timely and accurate information, VMS can help prevent accidents, reduce congestion, and keep motorists safe.
+
+                            </li>
+                        </ul>
+
                         </p>
 
                     </div>

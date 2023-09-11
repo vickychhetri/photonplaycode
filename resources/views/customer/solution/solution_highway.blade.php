@@ -55,6 +55,7 @@ $seo_meta=[
 
                         <p style="text-align: justify;">
                             Variable Message Signs play a crucial role in displaying messages, warning signals, and information about specific events to commuters on roads. At Photonplay, our Variable Message Signs (VMS) enhance road and traffic safety by guiding millions of motorists every day. Our VMS product range includes a variety of highly reliable and rugged solutions designed specifically for traffic guidance and information purposes. Explore our VMS product range and choose from our Standard VMS, Solar VMS, and Smart City VMS solutions. Each of our solutions is designed to cater to the unique needs of traffic management systems.
+
                         </p>
 {{--                        <p class="mb-0 fs-6">EXPLORE PRODUCTS:</p>--}}
 {{--                        <ul class="ps-3">--}}
