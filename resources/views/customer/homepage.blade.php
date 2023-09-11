@@ -40,21 +40,21 @@ $seo_meta=[
                             <div class="project-details d-flex d-lg-block flex-column align-items-center">
                                 <div class="d-flex mt-md-5 mt-lg-0 mt-4 one-kk">
                                     <div class="order-address text-center bg-white p-4 border px-5">
-                                        <h1 class="fw-bold text-dark">1K+</h1>
+                                        <h2 class="title_home_page_banner fw-bold text-dark">1K+</h2>
                                         <p>Global Expertise with 1K+ Successful Projects</p>
                                     </div>
                                     <div class="order-address text-center bg-white p-4 border px-5">
-                                        <h1 class="fw-bold text-dark">12+</h1>
+                                        <h2 class="title_home_page_banner fw-bold text-dark">12+</h2>
                                         <p class="mb-0">Executing Excellence Worldwide for 12+ Years and Counting</p>
                                     </div>
                                 </div>
                                 <div class="d-flex mt-0 one-kk">
                                     <div class="order-address text-center bg-white p-4 border px-5 border-top-0 ">
-                                        <h1 class="fw-bold text-dark">120+</h1>
+                                        <h2 class="title_home_page_banner fw-bold text-dark">120+</h2>
                                         <p>120+ Experts, One Mission: To Deliver Outstanding Results</p>
                                     </div>
                                     <div class="order-address text-center bg-white p-4 border px-5 border-top-0">
-                                        <h1 class="fw-bold text-dark">50+</h1>
+                                        <h2 class="title_home_page_banner fw-bold text-dark">50+</h2>
                                         <p class="mb-0">Endless Choices, 50+ Products to Explore</p>
                                     </div>
                                 </div>
