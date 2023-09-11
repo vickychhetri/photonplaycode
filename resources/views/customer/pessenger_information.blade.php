@@ -95,6 +95,91 @@ $seo_meta=[
     <!-- Feature -->
     @include('customer.layout2.features_page')
     <!-- Feature end -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+                <div>
+                    <p>The effectiveness and convenience of public transport systems, including buses, trains, and airports, are significantly improved by the use of passenger information display signs (PIDS).</p>
+                        <table class="table table-bordered">
+                            <tbody>
+                                    <tr>
+                                        <td>Display Type </td>
+                                        <td> Function </td>
+                                    </tr>
+                            <tr>
+                                <th>
+                                    Departure Board
+                                </th>
+                                    <td>
+                                        Shows scheduled departure times and platform information for different modes of transportation.
+                                    </td>
+                            </tr>
+
+                                    <tr>
+                                        <th>
+                                            Arrival Board
+                                        </th>
+                                        <td>
+                                            Shows estimated arrival times and gate details for incoming journeys
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>
+                                            Route map
+                                        </th>
+                                        <td>
+                                            Shows the entire route, including all stops
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>
+                                            Real-time update
+                                        </th>
+                                        <td>
+                                            Notifies passengers of any schedule changes, delays, or disruptions
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>
+                                            Information screen
+                                        </th>
+                                        <td>
+                                            Provides general information about the transportation network, such as fare structures, timetables, and connection points
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>
+                                            Advertising screen
+                                        </th>
+                                        <td>
+                                            Displays advertisements and promotional content
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>
+                                            Wayfinding sign
+                                        </th>
+                                        <td>
+                                            Helps passengers navigate complex transportation hubs
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+
+                    <p>
+                        Passenger Information Display Signs are the bedrock of efficient and well-informed public transportation. These displays empower travelers to make informed decisions and navigate complex transportation networks with confidence, ensuring road safety.
+                    </p>
+                </div>
+        </div>
+
+    </div>
+</div>
+
 
     <!-- Application -->
     <section class="application-section pt-4 pb-4">
