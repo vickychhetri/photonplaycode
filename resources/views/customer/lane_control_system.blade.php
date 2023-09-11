@@ -186,13 +186,16 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            1.	What is a lane control sign?
+                            1. What is a lane control sign?
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                          data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Answer: The function of lane control signs is to permit or prohibit the use of specific lanes on roadways or highways. These signs are typically used for reversible lane control, according to the Manual on Uniform Traffic Control Devices (MUTCD), though they can also be seen in nonreversible freeway lane situations.
+                            Answer: The function of lane control signs is to permit or prohibit the use of specific
+                            lanes on roadways or highways. These signs are typically used for reversible lane control,
+                            according to the Manual on Uniform Traffic Control Devices (MUTCD), though they can also be
+                            seen in nonreversible freeway lane situations.
                         </div>
                     </div>
                 </div>
@@ -200,13 +203,14 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            2.	Why are lane signals used?
+                            2. Why are lane signals used?
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                          data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Answer: They are often placed at consistent intervals to continually remind drivers about lane conditions.
+                            Answer: They are often placed at consistent intervals to continually remind drivers about
+                            lane conditions.
                         </div>
                     </div>
                 </div>
@@ -214,7 +218,7 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            3.	What is the meaning of 4 lanes?
+                            3. What is the meaning of 4 lanes?
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
@@ -230,13 +234,15 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            4.	What are the lane-use signs at an intersection?
+                            4. What are the lane-use signs at an intersection?
                         </button>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                          data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Answer: Lane use control signs are rectangular, black, and white signs that indicate if turning motions are necessary or unusual turning actions are allowed from certain lanes at an intersection.
+                            Answer: Lane use control signs are rectangular, black, and white signs that indicate if
+                            turning motions are necessary or unusual turning actions are allowed from certain lanes at
+                            an intersection.
                         </div>
                     </div>
                 </div>
@@ -246,13 +252,16 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            5.	How does lane control work?
+                            5. How does lane control work?
                         </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                          data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Answer: In lane-keeping technology's steering takeover scenario, the car is controlled by its electronic steering system. In some vehicles, lane-keep assist makes use of the antilock brakes. It pulls the car back towards the lane center by giving brake pressure to a particular wheel.
+                            Answer: In lane-keeping technology's steering takeover scenario, the car is controlled by
+                            its electronic steering system. In some vehicles, lane-keep assist makes use of the antilock
+                            brakes. It pulls the car back towards the lane center by giving brake pressure to a
+                            particular wheel.
                         </div>
                     </div>
                 </div>
@@ -260,13 +269,15 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            6.	What color are destination signs?
+                            6. What color are destination signs?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
                          data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Answer: Green traffic signs denote authorized movements as well as directions or instructions, such as the proximity of upcoming destinations to highway or tunnel entrances and exits.
+                            Answer: Green traffic signs denote authorized movements as well as directions or
+                            instructions, such as the proximity of upcoming destinations to highway or tunnel entrances
+                            and exits.
                         </div>
                     </div>
                 </div>
@@ -276,13 +287,14 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingSeven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            7.	What is the meaning of lane end?
+                            7. What is the meaning of lane end?
                         </button>
                     </h2>
                     <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
                          data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Answer: Lane Ends signs are frequently used to alert drivers to the termination of a lane from the right or left side of the road downstream of their direction of travel.
+                            Answer: Lane Ends signs are frequently used to alert drivers to the termination of a lane
+                            from the right or left side of the road downstream of their direction of travel.
                         </div>
                     </div>
                 </div>
@@ -292,13 +304,14 @@ $seo_meta = [
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseEightA" aria-expanded="false"
                                 aria-controls="collapseEightAx`blue ">
-                            8.	What is the meaning of a double, solid yellow line?
+                            8. What is the meaning of a double, solid yellow line?
                         </button>
                     </h2>
                     <div id="collapseEightA" class="accordion-collapse collapse" aria-labelledby="headingEightA"
                          data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Answer: A double, solid yellow line marks the center of a two-lane road where traffic moves in both directions. Crossing or passing over this line is not allowed at any time.
+                            Answer: A double, solid yellow line marks the center of a two-lane road where traffic moves
+                            in both directions. Crossing or passing over this line is not allowed at any time.
                         </div>
                     </div>
                 </div>
@@ -306,7 +319,7 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingEight">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            9.	Is lane-driving safe?
+                            9. Is lane-driving safe?
                         </button>
                     </h2>
                     <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
@@ -320,7 +333,7 @@ $seo_meta = [
                     <h2 class="accordion-header" id="headingNine">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                            10.	What is the full form of "LANE"?
+                            10. What is the full form of "LANE"?
                         </button>
                     </h2>
                     <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
