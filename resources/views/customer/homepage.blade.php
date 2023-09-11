@@ -27,6 +27,9 @@ $seo_meta=[
                                 <h4 class="text-uppercase">Our 12+ Years of Undefeated Success</h4>
                                 <p style="text-align: justify;">
                                     PhotonPlay, a family-owned company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 12 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
+                                    Step into a safer future with us, your trusted partner and No. 1 choice in Intelligent Transportation Systems. At the forefront of road safety, we offer a comprehensive suite of solutions, including accurate speed limit signs, radar speed signs, and state-of-the-art Variable Message Signs (VMS). Our signs are intended to increase motorist awareness and serve as a reminder to obey the speed limit. To help drivers navigate varying road conditions and unforeseen incidents, our dynamic VMS offers real-time updates on traffic situations, road closures, and emergencies. Our VMS can be used to display a variety of messages, such as traffic updates, road closures, and emergency alerts. This can help drivers stay informed and make better decisions about their travel. We are constantly innovating to develop new and better solutions. We are always looking for ways to improve road safety.
+
+
                                 </p>
                                 <a href="{{route('customer.contact.us')}}" class="btn btn-whites bg-white rounded-0 text-uppercase btn-light px-4">WORK
                                     WITH
