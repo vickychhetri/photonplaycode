@@ -73,7 +73,7 @@ $seo_meta=[
         <div class="container overflow-hidden pb-4 pt-0">
             <div class="col-lg-12">
                 <div class="text-center mb-lg-5">
-                        <div>
+                        <div class="mb-3">
                             <h2 class="fs-md-2 mt-3 text-uppercase">How Our Signs Help In Road Safety</h2>
                             <p style="text-align: justify;">
                                 Step into a safer future with us, your trusted partner and No. 1 choice in Intelligent Transportation Systems. At the forefront of road safety, we offer a comprehensive suite of solutions, including accurate speed limit signs, radar speed signs, and state-of-the-art Variable Message Signs (VMS). Our signs are intended to increase motorist awareness and serve as a reminder to obey the speed limit. To help drivers navigate varying road conditions and unforeseen incidents, our dynamic VMS offers real-time updates on traffic situations, road closures, and emergencies. Our VMS can be used to display a variety of messages, such as traffic updates, road closures, and emergency alerts. This can help drivers stay informed and make better decisions about their travel. We are constantly innovating to develop new and better solutions. We are always looking for ways to improve road safety.
