@@ -135,6 +135,202 @@ $seo_meta = [
 <!-- contact form -->
 @include('customer.layout2.get_in_touch')
 <!-- Contact form end -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="fs-md-2 mt-3 text-center"> FAQ </h2>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1. What is an emergency signage?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: A safety sign that says "Exit Signs" or "First Aid" is an example of an emergency
+                            sign. Emergency signs also provide instructions to nearby emergency-related facilities. An
+                            emergency sign provides guidance and directions to keep everyone safe in public and business
+                            settings.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2. What is emergency exit signage?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: In a public space (such as a building, airplane, or boat), an exit sign is a symbol
+                            or brief text indicating the location of the closest emergency exit to be utilized in the
+                            event of a fire or other emergency requiring a speedy evacuation.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3. What is the emergency directional signage displayed as?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The closest emergency evacuation route is indicated by emergency directional arrow
+                            indicators.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            4. What is the importance of emergency signage?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: These signs must be used to aid people in leaving a dangerous situation since they
+                            act as a source of knowledge, direction, and assurance along the fire exit route.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            5. What are the 3 Categories of Fire Evacuation?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer:
+                            <ul>
+                                <li>Safe Assembly</li>
+                                <li>Escape Routes</li>
+                                <li>Emergency Exit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            6. What color are fire exit signs?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Fire Exit Signs are typically green and white and include directional arrows to show
+                            which way to go.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            7. What are three signage functions?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer:
+                            <ul>
+                                <li>Information: Signage conveys important information, such as directions,
+                                    instructions, warnings, or identification, to help people navigate and understand
+                                    their surroundings.
+                                </li>
+                                <li>Advertising: Signage promotes products, services, or events, acting as a visual
+                                    advertisement to attract potential customers and generate interest.
+                                </li>
+                                <li>Wayfinding: Signage assists in guiding individuals to their desired destinations,
+                                    ensuring efficient navigation within environments such as buildings, campuses, or
+                                    public spaces.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEightA">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEightA" aria-expanded="false"
+                                aria-controls="collapseEightAx`blue ">
+                            8. What is the importance of emergency and exit lighting?
+                        </button>
+                    </h2>
+                    <div id="collapseEightA" class="accordion-collapse collapse" aria-labelledby="headingEightA"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Emergency lighting acts as a lifeline in difficult conditions created by this
+                            complex environment. Its vital function is to guarantee the quick, efficient, and safe
+                            evacuation of areas and buildings. This is true not just in cases where power outages leave
+                            us in the dark, but even when natural lighting such as daylight is still present.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            9. What size should fire exit signs be?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Ten inches
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            10. What is code red?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: "Code Red" is a term often used to indicate a severe or critical situation that
+                            requires immediate attention and action. It can refer to various emergencies, such as a
+                            fire, smoke, a medical emergency, a security breach, or a high-level alert, in different
+                            contexts.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 <!-- _____________________ourclint-last-start___________________ -->
 
 <!-- _____________________ourclint-last-end___________________ -->
