@@ -51,7 +51,7 @@ $seo_meta=[
                             <br/>
                             Here are some specific ways that our VMS can be used to improve road safety:
                                 <br/>
-                            <ul>
+                            <ul style="text-align: left;">
                             <li>
                                 To warn drivers of upcoming roadwork, accidents, or other hazards. This could motivate drivers to slow down and use caution, which can help avoid accidents.
                             </li>
