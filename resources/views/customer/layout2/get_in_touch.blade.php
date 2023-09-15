@@ -59,7 +59,7 @@ $setting = Setting::first();
                         </div>
                     </div>
                     <!-- Google Recaptcha -->
-                    <div class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+                    <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
 
                     <div class="text-start">
                     <button type="submit" class="btn btn-primary px-5 rounded-0">Send Now</button>
