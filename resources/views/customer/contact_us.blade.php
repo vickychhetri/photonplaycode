@@ -160,7 +160,7 @@ $seo_meta=[
 
 
 
-                                        <div class="message-last py-5">
+                                        <div class="message-last">
                                             <textarea name="message" class="form-control shadow-none rounded-0 mb-4" rows="4" placeholder="Message" aria-describedby="textHelpBlock" required></textarea>
                                         </div>
 
