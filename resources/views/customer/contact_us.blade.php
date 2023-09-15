@@ -154,8 +154,18 @@ $seo_meta=[
 
                                         </div>
                                         <div class="message-last py-5">
+                                            <input name="subject" type="text" id="inputtext5" placeholder="Subject*"
+                                                   class="form-control shadow-none rounded-0 mb-4" aria-describedby="textHelpBlock"  required>
+                                        </div>
+
+
+
+                                        <div class="message-last py-5">
                                             <textarea name="message" class="form-control shadow-none rounded-0 mb-4" rows="4" placeholder="Message" aria-describedby="textHelpBlock" required></textarea>
                                         </div>
+
+                                        <!-- Google Recaptcha -->
+                                        <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
 
                                         <div class="d-flex align-items-center justify-content-between pt-5">
                                             <div class="form-check">
