@@ -153,7 +153,7 @@ $seo_meta=[
                                             </div>
 
                                         </div>
-                                        <div class="message-last py-5">
+                                        <div class="message-last">
                                             <input name="subject" type="text" id="inputtext5" placeholder="Subject*"
                                                    class="form-control shadow-none rounded-0 mb-4" aria-describedby="textHelpBlock"  required>
                                         </div>
