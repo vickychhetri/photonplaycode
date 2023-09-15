@@ -55,5 +55,7 @@ return [
         'stripe_key' => env('STRIPE_KEY'),
         'stripe_secret' => env('STRIPE_SECRET'),
     ],
-
-];
+    'recaptcha' => [
+        'key' => env('RECAPTCHA_SITE_KEY'),
+        'secret' => env('RECAPTCHA_SITE_SECRET'),
+    ]];

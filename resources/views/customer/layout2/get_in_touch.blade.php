@@ -58,6 +58,9 @@ $setting = Setting::first();
                             <textarea name="message" class="form-control rounded-0 mb-4" rows="4" placeholder="Message" aria-describedby="textHelpBlock"></textarea>
                         </div>
                     </div>
+                    <!-- Google Recaptcha -->
+                    <div class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+
                     <div class="text-start">
                     <button type="submit" class="btn btn-primary px-5 rounded-0">Send Now</button>
                 </div>
