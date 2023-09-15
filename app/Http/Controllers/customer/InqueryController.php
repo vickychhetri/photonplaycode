@@ -16,7 +16,8 @@ class InqueryController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'first_name'=>'max:50',
-            'last_name'=>'max:50'
+            'last_name'=>'max:50',
+            'g-recaptcha-response' => ['required', new ReCaptcha]
         ]);
 
         if($validator->fails()){
