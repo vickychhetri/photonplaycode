@@ -758,11 +758,7 @@ $seo_meta = [
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <input name="phone_number" type="text" id="inputtext5"
-                                       placeholder="Phone Number*"
-                                       class="form-control rounded-2 mb-4" aria-describedby="textHelpBlock">
-                            </div>
+
 
                             <div class="col-md-12">
                                 <input name="first_name" type="text" id="inputtext5"
@@ -771,6 +767,12 @@ $seo_meta = [
                             </div>
                             <div class="col-md-12">
                                 <input name="email" type="text" id="inputtext5" placeholder="Email Address*"
+                                       class="form-control rounded-2 mb-4" aria-describedby="textHelpBlock">
+                            </div>
+
+                            <div class="col-md-12">
+                                <input name="phone_number" type="text" id="inputtext5"
+                                       placeholder="Phone Number*"
                                        class="form-control rounded-2 mb-4" aria-describedby="textHelpBlock">
                             </div>
                             <div class="col-md-12">

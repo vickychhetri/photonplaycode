@@ -55,6 +55,10 @@ $setting = Setting::first();
                             <input name="phone_number" type="text" id="inputtext5" placeholder="Phone Number*" class="form-control rounded-0 mb-4" aria-describedby="textHelpBlock">
                         </div>
                         <div class="col-md-12">
+                            <input name="subject" type="text" id="inputtext5" placeholder="Subject*"
+                                   class="form-control rounded-2 mb-4" aria-describedby="textHelpBlock">
+                        </div>
+                        <div class="col-md-12">
                             <textarea name="message" class="form-control rounded-0 mb-4" rows="4" placeholder="Message" aria-describedby="textHelpBlock"></textarea>
                         </div>
                     </div>
