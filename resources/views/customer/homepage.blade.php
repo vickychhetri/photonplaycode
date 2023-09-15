@@ -759,6 +759,12 @@ $seo_meta = [
                             </div>
 
 
+                            <div class="col-md-12">
+                                <input name="company_name" type="text" id="inputtext5" placeholder="Company Name / Organization*" class="form-control rounded-0 mb-4" aria-describedby="textHelpBlock">
+                            </div>
+                            <div class="col-md-12">
+                                <input name="country" type="text" id="inputtext5" placeholder="Country*" class="form-control rounded-0 mb-4" aria-describedby="textHelpBlock">
+                            </div>
 
                             <div class="col-md-12">
                                 <input name="first_name" type="text" id="inputtext5"
