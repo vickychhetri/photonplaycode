@@ -757,6 +757,13 @@ $seo_meta = [
                                     <p>Ready to work together? Build a project with us!</p>
                                 </div>
                             </div>
+
+                            <div class="col-md-12">
+                                <input name="phone_number" type="text" id="inputtext5"
+                                       placeholder="Phone Number*"
+                                       class="form-control rounded-2 mb-4" aria-describedby="textHelpBlock">
+                            </div>
+
                             <div class="col-md-12">
                                 <input name="first_name" type="text" id="inputtext5"
                                        placeholder="Your Name* / Organization*"
@@ -775,6 +782,9 @@ $seo_meta = [
                             <textarea name="message" class="form-control rounded-2 mb-4 " rows="4" placeholder="Message"
                                       aria-describedby="passwordHelpBlock"></textarea>
                             </div>
+                            <!-- Google Recaptcha -->
+                            <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+
                             <div class="text-center">
                                 <button type="submit" class="btn text-colorr bg-white px-5 fw-bold py-3 rounded-pill">
                                     Contact
