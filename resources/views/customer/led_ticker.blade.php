@@ -28,7 +28,7 @@ $seo_meta=[
                     <a  href="#inquiry" class="btn-primary-rounded  p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                 </div>
                 <div class=" m-auto desktop-display " >
-                    <img src="{{ asset('assets/customer/images/F-SOLAR (1).png') }}" alt="alt"
+                    <img src="https://www.tickerplay.com/img/LED%20Ticker%20Types.jpg" alt="alt"
                          class="d-block mx-auto product-feature-model-image "  style="transform: scale(1.1);" >
                 </div>
                 {{--                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 " >--}}
