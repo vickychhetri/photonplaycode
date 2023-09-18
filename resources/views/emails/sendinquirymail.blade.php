@@ -3,12 +3,24 @@
 
 **Hey Admin, **
 
-{{$body['message']}}
+Subject: Inquiry - {{$body['subject']}}
 
-- {{$body['company_name']}}
-- {{$body['first_name']}} {{$body['last_name']}}
-- {{$body['phone_number']}}
-- {{$body['url']}}
+Name: {{$body['first_name']}} {{$body['last_name']}}
+Email: {{$body['email']}}
+Company: {{$body['company_name']}}
+Mobile: {{$body['phone_number']}}
+Message: {{$body['message']}}
+
+
+
+Page URL: {{$body['url']}}
+
+
+
+-
+-
+-
+-
 
 Thanks,<br>
 {{ config('app.name') }}
