@@ -65,7 +65,11 @@ $seo_meta=[
             <div class="col-lg-12">
                 <div class="text-center ">
                     <!-- <h6 class="fs-6 text-colorr">photonplay’s </h6> -->
-                    <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold">VMS Series</h2>
+                    <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold">
+
+                        Transform Your Business Environment with Mesmerizing LED Tickers Series
+
+                    </h2>
                 </div>
             </div>
 
