@@ -134,8 +134,7 @@ $seo_meta=[
         <p class="text-center mb-4"> Our LED stock ticker is designed with specific applications in mind, whether it's for financial institutions, sports arenas, newsrooms, or other specialized settings, our application-wise LED stock ticker delivers real-time stock updates.
         </p>
         <div class="row d-flex justify-content-center">
-            <div class="col-md-3">
-            </div>
+
             <div class="col-md-6">
                 <div class="application-item">
                     <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">
