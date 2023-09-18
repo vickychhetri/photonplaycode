@@ -131,28 +131,12 @@ $seo_meta=[
 <section class="application-section mt-0 pt-0">
     <div class="container">
         <h2 class="fs-md-2 mt-0 mb-2 text-center text-uppercase">Special Applications</h2>
-        <p class="text-center mb-4">Variable signs for special needs in work zones safety and speed calming
-            applications
+        <p class="text-center mb-4"> Our LED stock ticker is designed with specific applications in mind, whether it's for financial institutions, sports arenas, newsrooms, or other specialized settings, our application-wise LED stock ticker delivers real-time stock updates.
         </p>
         <div class="row d-flex justify-content-center">
-
-            <div class="col-md-3">
-                <div class="application-item">
-                    <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
-                    <div class="content-application-items">
-                        <h4 class="text-uppercase">Highways </h4>
-                    </div>
-                </div>
+            <div class="col-md-4">
             </div>
-            <div class="col-md-3">
-                <div class="application-item">
-                    <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
-                    <div class="content-application-items">
-                        <h4 class="text-uppercase">Tunnels </h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="application-item">
                     <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">
                     <div class="content-application-items">
