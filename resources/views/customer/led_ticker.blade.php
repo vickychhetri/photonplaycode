@@ -19,9 +19,11 @@ $seo_meta=[
 
             <div class="imaged m-auto">
                 <div class="city-wrap flex-wrap">
-                    <h1 class=" text-white fw-normal mb-1 title-text-h2">Variable Message Signs (VMS)</h1>
+                    <h1 class=" text-white fw-normal mb-1 title-text-h2">
+                        LED TICKER TAPES
+                    </h1>
                     <h5 class=" text-white fw-normal mt-2 mb-2 ">
-                        Highly visible and innovative, creating instant awareness <br/> about  specific events to the people commuting on the roads.
+                        Explore the LED Stock Ticker for Real-Time Market Updates
                     </h5>
                     <a  href="#inquiry" class="btn-primary-rounded  p-0 m-0 d-flex align-items-center justify-content-center get-quote-button-header-model" >GET QUOTE</a>
                 </div>
@@ -42,10 +44,10 @@ $seo_meta=[
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-10">
-                <h2 class="text-center mb-2"> Variable Message Signs (VMS) </h2>
+                <h2 class="text-center mb-2"> Transform Your University Business Environment with Mesmerizing LED Stock Tickers from Tickerplay </h2>
                 <div class="p-4 m-2">
                     <p>
-                        Viewed by millions of eyes every day and guiding millions of motorists back home safely every day, Photonplay is contributing its part to humanity in its own way by enhancing road and traffic safety. Photonplay’s outperforming VMS signs are highly reliable and rugged components of the traffic management ecosystem for motorways, tunnels, and urban traffic management systems.
+                        Enhance the university business environment with the captivating power of LED Stock Tickers. Experience the dynamic display of live-scrolling stocks, bonds, shares, CMEs, and more through our cutting-edge LED Ticker Tape. Immerse yourself in the mesmerizing ambiance created by our high-quality LED Ticker signs, designed to keep you engaged and informed. At Tickerplay, we offer seamless scrolling and streaming displays, ensuring an exceptional viewing experience. Our LED Stock Ticker displays, available in various sizes and customizable options, cater to your preferences and budgetary requirements. Stay in sync with the market using our advanced LED Ticker technology, taking your university business environment to new heights.
                     </p>
 
                 </div>
@@ -141,11 +143,9 @@ $seo_meta=[
             </div>
             <div class="col-lg-6 d-flex align-items-center ">
                 <div class="radar-icop">
-                    <h4 class="fs-6 mb-3 text-dark">GANTRY DESIGNS & MOUNTING</h4>
+                    <h4 class="fs-6 mb-3 text-dark">LED Ticker Types</h4>
                     <p class="mt-4 mb-lg-0 mb-5">
-                        VMS as the most visible product on an ITS Road, Design and aesthetics are on the most
-                        important part along with the functionality, hundreds of designs to choose from. Free
-                        Consultation on Gantry design and approvals by our dedicated team of CAD engineers
+                        We have a variety of LED Ticker tapes that can be used in various settings to convey information effectively. Used by organizations to enhance communication, engage viewers, and effectively deliver information in an eye-catching and dynamic manner such as.
                     </p>
 
                 </div>
