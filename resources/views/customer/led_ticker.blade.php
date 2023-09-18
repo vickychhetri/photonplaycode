@@ -88,6 +88,40 @@ $seo_meta=[
                             </div>
                         </div>
 
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="text-start p-4 list-unsorted">
+                            <div class="d-flex justify-content-center">
+                                <img src="https://www.tickerplay.com/img/Circular_outer_jpg.png" alt="Not Found"
+                                     class="img-fluid" style="max-height: 250px">
+                            </div>
+                            <div class="my-3 list-bacgunded px-4 py-4">
+                                <h5 class="fw-bold text-capitalize"> CIRCULAR LED TICKERS</h5>
+                                <p> Experience news and other updates come alive with the Circular LED Ticker. </p>
+                                {{--                                    <a href="#" style="text-decoration: none;">--}}
+                                {{--                                        <a href="#" style="text-decoration: none;"><h6 class="text-colorr">Know More >></h6></a>--}}
+                                {{--                                    </a>--}}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="text-start p-4 list-unsorted">
+                            <div class="d-flex justify-content-center">
+                                <img src="https://www.tickerplay.com/img/90deg_outter_jpg.png" alt="Not Found"
+                                     class="img-fluid" style="max-height: 250px">
+                            </div>
+                            <div class="my-3 list-bacgunded px-4 py-4">
+                                <h5 class="fw-bold text-capitalize">   CUSTOM ANGLES</h5>
+                                <p> Choose from various ticker display options tailored to your specifications. </p>
+                                {{--                                    <a href="#" style="text-decoration: none;">--}}
+                                {{--                                        <a href="#" style="text-decoration: none;"><h6 class="text-colorr">Know More >></h6></a>--}}
+                                {{--                                    </a>--}}
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
