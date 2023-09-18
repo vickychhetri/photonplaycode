@@ -47,7 +47,7 @@ $seo_meta=[
                 <h2 class="text-center mb-2"> Enhancing Road Safety with LED Tickers: A Game-Changer in Traffic Management</h2>
                 <div class="p-4 m-2">
                     <p >
-                        LED tickers are a type of electronic sign that can be used to show information like the posted speed limit, weather alerts, construction updates, traffic data, and important announcements like those about upcoming exits, gas stations, restrooms, dining options, etc. They frequently go hand in hand with radar speed signs to increase traffic safety. By encouraging safer driving habits and reducing potential hazards, these announcements hope to keep motorists informed about various circumstances they might run into on the road. To modify their speed and behavior effectively, drivers can stay informed about changing road conditions, potential risks, and traffic congestion. <br/>
+                        LED tickers are a type of electronic sign that can be used to show information like the posted speed limit, weather alerts, construction updates, traffic data, and important announcements like those about upcoming exits, gas stations, restrooms, dining options, etc. They frequently go hand in hand with radar speed signs to increase traffic safety. By encouraging safer driving habits and reducing potential hazards, these announcements hope to keep motorists informed about various circumstances they might run into on the road. To modify their speed and behavior effectively, drivers can stay informed about changing road conditions, potential risks, and traffic congestion. <br/><br/>
                         The risk of accidents is decreased by the immediate and simple-to-read information provided by LED tickers, which helps to improve traffic flow and minimize unexpected braking or lane changes. Studies have shown that LED tickers can significantly increase traffic safety. LED tickers were found to lower speeding by 15% and road accidents by 10%, according to US research. Although LED tickers are a relatively new invention, they have the potential to be a useful tool for enhancing traffic safety. They are flexible enough to be tailored to the requirements of certain sites and are simple to install and maintain. We may anticipate even more creative use of LED tickers to improve road safety as the technology behind them continues to advance
 
                     </p>
@@ -59,40 +59,41 @@ $seo_meta=[
 </section>
 <!-- banner-text-end -->
 <!-- Our Product-start -->
-{{--<section class="our-product">--}}
-{{--    <div class="container">--}}
-{{--        <div class="row justify-content-center">--}}
-{{--            <div class="col-lg-12">--}}
-{{--                <div class="text-center ">--}}
-{{--                    <!-- <h6 class="fs-6 text-colorr">photonplay’s </h6> -->--}}
-{{--                    <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold">VMS Series</h2>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+<section class="our-product">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="text-center ">
+                    <!-- <h6 class="fs-6 text-colorr">photonplay’s </h6> -->
+                    <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold">VMS Series</h2>
+                </div>
+            </div>
 
-{{--            <div class="col-lg-10">--}}
-{{--                <div class="row">--}}
-{{--                    @foreach ($page as $i)--}}
-{{--                        <div class="col-lg-4 col-md-6 col-12">--}}
-{{--                            <div class="text-start p-4 list-unsorted">--}}
-{{--                                <div class="d-flex justify-content-center">--}}
-{{--                                    <img src="{{asset('storage/'.$i->cover_image)}}" alt="Not Found"--}}
-{{--                                         class="img-fluid" style="max-height: 250px">--}}
-{{--                                </div>--}}
-{{--                                <div class="my-3 list-bacgunded px-4 py-4">--}}
-{{--                                    <h5 class="fw-bold text-capitalize">{{ $i->title }}</h5>--}}
-{{--                                    <p>{{ substr($i->description, 0, 60) }} ... </p>--}}
-{{--                                    <a href="{{route('customer.vms.sub.page', $i->slug)}}" style="text-decoration: none;">--}}
-{{--                                        <a href="{{route('customer.vms.sub.page', $i->slug)}}" style="text-decoration: none;"><h6 class="text-colorr">Know More >></h6></a>--}}
+            <div class="col-lg-10">
+                <div class="row">
+
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="text-start p-4 list-unsorted">
+                                <div class="d-flex justify-content-center">
+                                    <img src="https://www.tickerplay.com/img/led-stock-ticker.png" alt="Not Found"
+                                         class="img-fluid" style="max-height: 250px">
+                                </div>
+                                <div class="my-3 list-bacgunded px-4 py-4">
+                                    <h5 class="fw-bold text-capitalize"> STRAIGHT TICKERS</h5>
+                                    <p> Stay informed with science, sports, and global news at your fingertips. </p>
+{{--                                    <a href="#" style="text-decoration: none;">--}}
+{{--                                        <a href="#" style="text-decoration: none;"><h6 class="text-colorr">Know More >></h6></a>--}}
 {{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
+                                </div>
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Our Product -->
 
 <!-- Application -->
