@@ -67,15 +67,15 @@ $seo_meta=[
     <section class="sepeicification bg-light position-relative">
         <div class="container ">
             <div class="accodion-wrapper">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-12">
                         <div>
 {{--                            <h4 class="text-capitalize">Description</h4>--}}
                             <p style="text-align: justify;">
                                 {{$product->description}}
                             </p>
-                            <div class="thumb-image">
-                                <div class="row">
+                            <div class="thumb-image d-flex justify-content-center">
+                                <div class="row ">
                                     @forelse ($product->images as $image)
                                         <div class="col-md-4">
                                             <div class="thumb-image-item mb-3 " onclick="showModal('{{asset('storage/'.$image->image)}}')" >
@@ -94,9 +94,9 @@ $seo_meta=[
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="">
-                            <h4>Specification</h4>
+                    <div class="col-md-8">
+                        <div class="mt-4 d-flex justify-content-center">
+                            <h2 class="fs-md-2  mb-5 text-center">Specification</h2>
                         </div>
                         <div class="circle-floow foloowers position-relative">
                             <div class="accordion accordion-flush" id="accordionFlushExample1">
