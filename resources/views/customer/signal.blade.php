@@ -40,23 +40,27 @@ $seo_meta = [
 <section class="bg-white">
     <div class="container">
         <div class="row justify-content-center text-center">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div>
                     <h2 class="fs-md-2 fs-lg-1 mt-3 fw-bold"> Emergency Tunnel Signage: Lighting the Way to Safety</h2>
                     <p style="text-align: justify;">
                         Tunnel signage is a crucial component of tunnel safety since it assists vehicles in securely and
                         effectively navigating tunnels. Photonplay additionally serves to ensure a safe passage from
                         road and rail tunnels. To ensure a safe passage through the tunnel, it's essential to follow the
-                        instructions on these signs. When it comes to emergencies, every second counts. Our Emergency
+                        instructions on these signs.
+                        <br/><br/>
+                        When it comes to emergencies, every second counts. Our Emergency
                         Signages are intelligently crafted to provide clear and unmistakable guidance to individuals
                         navigating through tunnels in critical situations. The ultra-bright illumination ensures maximum
                         visibility, even in low light or smoke-filled conditions, making it easier for people to locate
                         the nearest exit points swiftly.
-
+<br/><br/>
                         On the road and in tunnels, consider our emergency signs to be your safety heroes. Imagine
                         you're driving through a tunnel, and suddenly there's a problem like a fire. Our signs act as
                         friendly guides by lighting up and pointing you in the direction of the nearest exit, allowing
-                        you to evacuate the premises quickly and safely. And it's not only about tunnels; if something
+                        you to evacuate the premises quickly and safely.
+                        <br/><br/>
+                        And it's not only about tunnels; if something
                         unexpected occurs while you're walking through one, these emergency signs will direct you to
                         safety.
 
