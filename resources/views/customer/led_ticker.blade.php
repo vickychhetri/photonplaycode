@@ -19,8 +19,8 @@ $seo_meta=[
 
             <div class="imaged m-auto">
                 <div class="city-wrap flex-wrap">
-                    <h1 class=" text-white fw-normal mb-1 title-text-h2">
-                        LED TICKER TAPES
+                    <h1 class=" text-white fw-normal mb-1 title-text-h2 ">
+                      <b>   LED TICKER TAPES</b>
                     </h1>
                     <h5 class=" text-white fw-normal mt-2 mb-2 ">
                         Explore the LED Stock Ticker for Real-Time Market Updates
@@ -74,56 +74,81 @@ $seo_meta=[
             </div>
 
             <div class="col-lg-10">
-                <div class="row">
+                <div class="row ">
 
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="text-start p-4 list-unsorted">
-                                <div class="d-flex justify-content-center">
-                                    <img src="{{asset('/assets/customer/images/led/led-stock-ticker.webp')}}"   alt="Not Found"
-                                         class="img-fluid" style="max-height: 250px;min-height: 120px">
-                                </div>
-                                <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
-                                    <h5 class="fw-bold text-capitalize"> STRAIGHT TICKERS</h5>
-                                    <p> Stay informed with science, sports, and global news at your fingertips. </p>
-                                </div>
-                            </div>
+                        <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center">
+
+                            <img src="{{asset('/assets/customer/images/led/led-stock-ticker.webp')}}"   alt="Not Found"
+                                 class="img-fluid" style="max-height: 250px;min-height: 120px">
                         </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="text-start p-4 list-unsorted">
-                            <div class="d-flex justify-content-center">
-                                <img src="{{asset('/assets/customer/images/led/Circular_outer_jpg.webp')}}" alt="Not Found"
-                                     class="img-fluid" style="max-height: 250px;min-height: 120px">
-                            </div>
-                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
-                                <h5 class="fw-bold text-capitalize"> CIRCULAR LED TICKERS</h5>
-                                <p> Experience news and other updates come alive with the Circular LED Ticker. </p>
+                    <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center">
+                        <img src="{{asset('/assets/customer/images/led/Circular_outer_jpg.webp')}}" alt="Not Found"
+                             class="img-fluid" style="max-height: 250px;min-height: 120px">
+                    </div>
 
-                            </div>
-                        </div>
+                    <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-center">
+                        <img src="{{asset('/assets/customer/images/led/90deg_outter_jpg.webp')}}" alt="Not Found"
+                             class="img-fluid" style="max-height: 250px;min-height: 120px">
                     </div>
 
 
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="text-start p-4 list-unsorted">
-                            <div class="d-flex justify-content-center">
-                                <img src="{{asset('/assets/customer/images/led/90deg_outter_jpg.webp')}}" alt="Not Found"
-                                     class="img-fluid" style="max-height: 250px;min-height: 120px">
-                            </div>
-                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
-                                <h5 class="fw-bold text-capitalize">  CUSTOM ANGLES</h5>
-                                <p> Choose from various ticker display options tailored to your specifications. </p>
 
-                            </div>
+
+{{--                            <div class="text-start p-4 list-unsorted">--}}
+{{--                                <div class="d-flex justify-content-center">--}}
+{{--                                    <img src="{{asset('/assets/customer/images/led/led-stock-ticker.webp')}}"   alt="Not Found"--}}
+{{--                                         class="img-fluid" style="max-height: 250px;min-height: 120px">--}}
+{{--                                </div>--}}
+{{--                                <div class="my-3 list- px-4 py-2" style="min-height: 140px;">--}}
+{{--                                    <h5 class="fw-bold text-capitalize"> STRAIGHT TICKERS</h5>--}}
+{{--                                    <p> Stay informed with science, sports, and global news at your fingertips. </p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
-                    </div>
+
+{{--                    <div class="col-lg-4 col-md-6 col-12">--}}
+{{--                        <div class="text-start p-4 list-unsorted">--}}
+{{--                            <div class="d-flex justify-content-center">--}}
+
+{{--                            </div>--}}
+{{--                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">--}}
+{{--                                <h5 class="fw-bold text-capitalize"> CIRCULAR LED TICKERS</h5>--}}
+{{--                                <p> Experience news and other updates come alive with the Circular LED Ticker. </p>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+
+
+{{--                    <div class="col-lg-4 col-md-6 col-12">--}}
+{{--                        <div class="text-start p-4 list-unsorted">--}}
+{{--                            <div class="d-flex justify-content-center">--}}
+
+{{--                            </div>--}}
+{{--                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">--}}
+{{--                                <h5 class="fw-bold text-capitalize">  CUSTOM ANGLES</h5>--}}
+{{--                                <p> Choose from various ticker display options tailored to your specifications. </p>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
 
                 </div>
             </div>
+
+        <p class="text-center">
+            Tickerplay do customize the ticker to fit any architectural requirement including custom angles, custom curves, custom shapes, one ticker can have a straight, curve and a custom angle, all at once. Viewers can see the beauty of scrolling data easily from any direction whether the ticker designed by us are inside corners, outside corners, custom angles etc. It will be much appreciated if you share your layout or idea with us. We will simulate the real time depiction using 3D techniques before placing the order.
+        </p>
         </div>
+
+
     </div>
+
+
 </section>
 <!-- Our Product -->
 
@@ -149,8 +174,9 @@ $seo_meta=[
 </section>
 <!-- Application end -->
 <!-- Photon play radar-start -->
-<section class="portable px-lg-5 mt-4">
+<section class="portable px-lg-5">
     <div class="container">
+        <h2 class="text-center mb-3"> Flexible LED Ticker Tapes: Shaping Your Message, Shaping Your Space</h2>
         <div class="row">
             <div class="col-lg-6 ">
                 <div class="d-flex justify-content-center align-items-center">

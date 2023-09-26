@@ -14,7 +14,7 @@ $seo_meta=[
         <div class="slider-content ">
             <div class="imaged m-auto">
                 <div class="city-wrap flex-wrap">
-                    <h1 class=" text-white fw-normal mb-1 title-text-h2">Bus Signs</h1>
+                    <h1 class=" text-white fw-normal mb-1 title-text-h2"> <b> Bus Signs </b></h1>
                     <p class=" text-white fw-normal"> Provides real-time information of public transport <br/> and make your
                         daily commute hassle free </p>
                     <a href="#inquiry"
