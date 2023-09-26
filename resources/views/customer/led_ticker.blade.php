@@ -29,7 +29,7 @@ $seo_meta=[
                 </div>
                 <div class=" m-auto desktop-display " >
                     <img src="https://www.photonplay.com/assets/customer/images/products_home/Circular_outer_led_ticker.webp" alt="alt"
-                         class="d-block mx-auto product-feature-model-image "  style="transform: scale(1.1);" >
+                         class="d-block mx-auto product-feature-model-image "  style="transform: scale(1.8);" >
                 </div>
                 {{--                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 " >--}}
             </div>
