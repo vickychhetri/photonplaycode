@@ -22,7 +22,7 @@ $seo_meta=[
                         QUOTE</a>
                 </div>
                 <div class="desktop-display">
-                    <img src="{{asset('assets/customer/images/bus/Bus-Sign-2.webp')}}" alt="alt"
+                    <img src="{{asset('assets/customer/images/bus/Bus-Sign-_1_.webp')}}" alt="alt"
                          class="d-block img-fluid h-75 product-feature-model-image">
                 </div>
 
