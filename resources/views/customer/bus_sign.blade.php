@@ -52,7 +52,7 @@ $seo_meta=[
                             <li><b>Route signs: </b>These signs display the route taken by the bus, such as "Route 10" or "Express." </li>
                             <li><b>Real-time signs:</b> These signs display real-time information about the arrival time of the next bus, the current location of the bus, or any service disruptions. </li>
                             <li><b>  Bus stop signs:</b> These signs indicate where buses stop to pick up and drop off passengers. They are typically blue and have a white "bus" symbol on them.</li>
-                            <li><b>Bus lane signs: </b>These signs indicate lanes that are reserved for buses only. They are typically yellow and have a white "bus" symbol on them. </li>
+                              <li><b>Bus lane signs: </b>These signs indicate lanes that are reserved for buses only. They are typically yellow and have a white "bus" symbol on them. </li>
                             <li><b> School bus signs: </b>These signs warn drivers that a school bus is stopped ahead and that children are getting on or off the bus. They are typically red and have a white "school bus" symbol on them.</li>
                             <li> <b>Do not pass school bus signs:</b> These signs prohibit drivers from passing a school bus that is stopped with its red lights flashing. They are typically red and have a white "do not pass" symbol on them.</li>
                         </ol>
@@ -103,35 +103,35 @@ $seo_meta=[
                 <div class="application-item">
                     <img src="{{ asset('assets/customer/images/application-img-1.png') }}" alt="image">
                     <div class="content-application-items">
-                        <h4 class="text-uppercase">Bus and Rail Transits </h4>
+                        <h4 class="text-uppercase"> Transits </h4>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-3">
-                <div class="application-item">
-                    <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
-                    <div class="content-application-items">
-                        <h4 class="text-uppercase">Highways </h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="application-item">
-                    <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
-                    <div class="content-application-items">
-                        <h4 class="text-uppercase">Tunnels </h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="application-item">
-                    <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">
-                    <div class="content-application-items">
-                        <h4 class="text-uppercase">Smart Cities </h4>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col-md-3">--}}
+{{--                <div class="application-item">--}}
+{{--                    <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">--}}
+{{--                    <div class="content-application-items">--}}
+{{--                        <h4 class="text-uppercase">Highways </h4>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3">--}}
+{{--                <div class="application-item">--}}
+{{--                    <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">--}}
+{{--                    <div class="content-application-items">--}}
+{{--                        <h4 class="text-uppercase">Tunnels </h4>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3">--}}
+{{--                <div class="application-item">--}}
+{{--                    <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">--}}
+{{--                    <div class="content-application-items">--}}
+{{--                        <h4 class="text-uppercase">Smart Cities </h4>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
         </div>
