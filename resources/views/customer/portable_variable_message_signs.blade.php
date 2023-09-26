@@ -66,7 +66,7 @@ $seo_meta=[
     <div class="container">
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <div class="radar-icop w-75 ">
+                <div class="radar-icop  ">
                     <h5 class="mb-2 text-center">
                         Photonplay's Portable Variable Message Signs: Enhancing Traffic Management with Dynamic
                         Messaging Solutions
