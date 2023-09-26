@@ -219,7 +219,7 @@
                                                 <li><a href="{{route('customer.variable.message')}}"
                                                        class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
                                                         Message Sign (VMS) </a></li>
-                                                <li><a href="#"
+                                                <li><a href="{{route('customer.led_ticker_tape')}}"
                                                        class="text-wrap dropdown-item px-0 text-uppercase mb-2">LED
                                                         Tickers </a></li>
 
@@ -378,7 +378,7 @@
                                         <li><a href="{{route('customer.variable.message')}}"
                                                class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
                                                 Message Sign (VMS) </a></li>
-                                        <li><a href="#" class="text-wrap dropdown-item px-0 text-uppercase mb-2">LED
+                                        <li><a href="{{route('customer.led_ticker_tape')}}" class="text-wrap dropdown-item px-0 text-uppercase mb-2">LED
                                                 Tickers </a></li>
 
                                     </ul>

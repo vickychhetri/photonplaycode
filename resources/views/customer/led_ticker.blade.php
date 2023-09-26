@@ -13,7 +13,7 @@ $seo_meta=[
 
 <!-- iCop Series Features Start -->
 <!-- Banner sec -->
-<section class="highyway-imageses py-5" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
+<section class="led_ticker_image py-5" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
     <div class="container" >
         <div class="slider-content">
 
@@ -79,8 +79,8 @@ $seo_meta=[
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="text-start p-4 list-unsorted">
                                 <div class="d-flex justify-content-center">
-                                    <img src="https://www.tickerplay.com/img/led-stock-ticker.png" alt="Not Found"
-                                         class="img-fluid" style="max-height: 250px">
+                                    <img src="{{asset('/assets/customer/images/led/led-stock-ticker.webp')}}"   alt="Not Found"
+                                         class="img-fluid" style="max-height: 250px;min-height: 120px">
                                 </div>
                                 <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
                                     <h5 class="fw-bold text-capitalize"> STRAIGHT TICKERS</h5>
@@ -92,8 +92,8 @@ $seo_meta=[
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="text-start p-4 list-unsorted">
                             <div class="d-flex justify-content-center">
-                                <img src="https://www.tickerplay.com/img/Circular_outer_jpg.png" alt="Not Found"
-                                     class="img-fluid" style="max-height: 250px">
+                                <img src="{{asset('/assets/customer/images/led/Circular_outer_jpg.webp')}}" alt="Not Found"
+                                     class="img-fluid" style="max-height: 250px;min-height: 120px">
                             </div>
                             <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
                                 <h5 class="fw-bold text-capitalize"> CIRCULAR LED TICKERS</h5>
@@ -108,11 +108,11 @@ $seo_meta=[
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="text-start p-4 list-unsorted">
                             <div class="d-flex justify-content-center">
-                                <img src="https://www.tickerplay.com/img/90deg_outter_jpg.png" alt="Not Found"
-                                     class="img-fluid" style="max-height: 250px">
+                                <img src="{{asset('/assets/customer/images/led/90deg_outter_jpg.webp')}}" alt="Not Found"
+                                     class="img-fluid" style="max-height: 250px;min-height: 120px">
                             </div>
                             <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
-                                <h5 class="fw-bold text-capitalize">   CUSTOM ANGLES</h5>
+                                <h5 class="fw-bold text-capitalize">  CUSTOM ANGLES</h5>
                                 <p> Choose from various ticker display options tailored to your specifications. </p>
 
                             </div>
@@ -154,7 +154,7 @@ $seo_meta=[
         <div class="row">
             <div class="col-lg-6 ">
                 <div class="d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('assets/customer/images/VMS_Gantry.png') }}" alt="Not Found"
+                    <img src="{{asset('/assets/customer/images/led/LED-Ticker-Types.webp')}}" alt="Not Found"
                          class="img-fluid bg-white">
                 </div>
             </div>
@@ -164,6 +164,22 @@ $seo_meta=[
                     <p class="mt-4 mb-lg-0 mb-5">
                         We have a variety of LED Ticker tapes that can be used in various settings to convey information effectively. Used by organizations to enhance communication, engage viewers, and effectively deliver information in an eye-catching and dynamic manner such as.
                     </p>
+
+<ul>
+    <li> LED Ticker Tape- Mesmerizing strips of light that display scrolling messages, stock quotes, or personalized greetings, adding a vibrant energy to any space. </li>
+    <li>
+        Indoor Ticker Tapes- Sleek and slender strips that elevate indoor settings, bringing elegance, charm, and a captivating ambiance.
+    </li>
+    <li>
+        Outdoor Ticker Tapes- Weather-resistant strips that light up outdoor areas, creating an enchanting spectacle for vibrant events and bustling streets.
+    </li>
+    <li>
+        Flexible Ticker Tapes- Bendable strips that offer ultimate versatility, allowing creative shaping and designing to transform any space into a stunning visual masterpiece.
+    </li>
+</ul>
+
+
+
 
                 </div>
             </div>

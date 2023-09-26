@@ -675,6 +675,31 @@ a.nav-link.dropdown-toggle.show img,
 .title-text-h2{
     font-size: 45px;
 }
+
+
+
+ .led_ticker_image {
+     position: relative;
+     overflow: hidden;
+     height: 100%;
+ }
+
+.led_ticker_image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/led/LED-Sign.webp");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); /* Adjust the blur intensity as desired */
+    z-index: -1;
+}
+
+
+
 .highyway-imageses {
     position: relative;
     overflow: hidden;
