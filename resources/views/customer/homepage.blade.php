@@ -17,7 +17,7 @@ $seo_meta = [
 {{--Banner end--}}
 <!-- undefeated-section-start -->
 <section class="undefeated-wrapper pt-lg-0 shadow-lg">
-    <div class="container ">
+    <div class="container  ">
         <div class="row justify-content-center align-items-center ">
             <div class="col-lg-10">
                 <div class="row align-items-center ">
