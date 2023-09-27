@@ -15,8 +15,6 @@ $seo_meta = [
 {{--    Banner Start --}}
 <x-Customer.HomePageBanner/>
 {{--Banner end--}}
-
-<!-- enddd -->
 <!-- undefeated-section-start -->
 <section class="undefeated-wrapper pt-lg-0 shadow-lg">
     <div class="container ">
@@ -33,8 +31,6 @@ $seo_meta = [
                                 government authorities, OEMs, and corporations across 30+ countries, focusing on safer,
                                 more efficient, and sustainable mobility solutions. Our expertise, innovation, and
                                 commitment to smarter transportation make us a trusted partner.
-
-
                             </p>
                             <a href="{{route('customer.contact.us')}}"
                                class="btn btn-whites bg-white rounded-0 text-uppercase btn-light px-4">WORK
@@ -152,10 +148,6 @@ $seo_meta = [
                             </div>
                             <div class="d-lg-flex align-self-center common-wdth inner-col">
                                 <div class="ms-md-5">
-                                    {{--                                    <h6 class="text-capitalize">Description</h6>--}}
-                                    {{--                                    <p>{!! substr(strip_tags($product->description), 0, 100) !!}</p>--}}
-                                    {{--                                    <p>{{ \Illuminate\Support\Str::limit(strip_tags($product->description), 200, '...') }}</p>--}}
-
                                     <p style="text-align: justify;">
                                         The sign has all the standard features combined in one product to make it the
                                         industry's best Radar Speed Sign. The sign acts like a Variable Message Sign to
@@ -179,8 +171,6 @@ $seo_meta = [
                         </div>
                     </div>
                 @endforeach
-
-                {{--Start Static--}}
                 {{--VMS--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
@@ -199,7 +189,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of
                                     traffic management ecosystem for motorways, tunnels and urban traffic management
                                     systems.</p>
@@ -220,7 +209,6 @@ $seo_meta = [
                     </div>
                 </div>
                 {{-- VMS END--}}
-
                 {{--PVMS--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
@@ -239,21 +227,15 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify"> Depending on the traffic situation, signs are
                                     efficiently used to warn and guide about traffic congestion, routing information,
                                     speed limits, road work zones, accidents and other incidents on highways,
                                     expressways and arterial roads of cities.</p>
                                 <div class="social-two">
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
                                             src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
                                 </div>
@@ -262,14 +244,12 @@ $seo_meta = [
                     </div>
                 </div>
                 {{--PVMS End--}}
-
                 {{--VSLS Start--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase"> Variable Speed Limit Sign (VSLS)
                             </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/Variable-Speed-Limit-Sign.webp" alt="VSLS"
@@ -281,7 +261,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p> The ultra-bright and excellent-quality variable speed limit sign is a sign with a
                                     full matrix display area that allows speed limits and graphics to display
                                     practically any speed.</p>
@@ -289,11 +268,8 @@ $seo_meta = [
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
                                             src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
                                 </div>
@@ -309,7 +285,6 @@ $seo_meta = [
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase"> LANE CONTROL SIGN (LCS)
                             </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/LCS-front-2.webp" alt="LCS" class="">
@@ -320,7 +295,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p> These signs should be given legitimate consideration by drivers, and people on foot
                                     for their own security and for the wellbeing of others. There are various types of
                                     traffic control signs, one of which is the lane control signs.</p>
@@ -328,8 +302,6 @@ $seo_meta = [
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
 
@@ -341,7 +313,6 @@ $seo_meta = [
                     </div>
                 </div>
                 {{--LCS End--}}
-
                 {{--  PIDS Start--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
@@ -360,7 +331,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify;"> PIDS is a digital and electronic system that provides
                                     information to passengers in various modes of transportation, such as airports,
                                     train stations, bus terminals, and subway stations.</p>
@@ -368,12 +338,8 @@ $seo_meta = [
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
                                             src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
                                 </div>
@@ -382,14 +348,12 @@ $seo_meta = [
                     </div>
                 </div>
                 {{--  PIDS End--}}
-
                 {{-- Emergency Telephone Sign--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase">EMERGENCY TELEPHONE SIGN
                             </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/Emergency Telephone Signs.png" alt="Portable Variable
@@ -401,7 +365,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify;"> An emergency telephone sign is a sort of tunnel signage
                                     that indicates where emergency phones may be found.The emergency telephone sign's
                                     aim is to direct travellers to the nearest emergency phone in the event of an
@@ -424,14 +387,12 @@ $seo_meta = [
                     </div>
                 </div>
                 {{-- Emergency Telephone Sign End--}}
-
                 {{-- Emergency Exit Sign--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase">EMERGENCY EXIT SIGN
                             </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/Emergency Exit Sign.png" alt="Portable Variable
@@ -443,15 +404,12 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify;"> These signs identify the location of emergency exits as
                                     well as exits going to different destinations outside the tunnel.</p>
                                 <div class="social-two">
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
 
@@ -463,14 +421,11 @@ $seo_meta = [
                     </div>
                 </div>
                 {{-- Emergency Exit sign End--}}
-
-
                 {{-- Way Finder--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase">WAY FINDER</h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/Way-Finder-Light-Glow.webp" alt="WAY FINDER"
@@ -482,7 +437,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify"> Way finders is a crucial component of tunnel safety
                                     since it assists vehicles in securely and effectively navigating tunnels. Photonplay
                                     additionally serves to ensure a safe passage from road and rail tunnels. </p>
@@ -490,7 +444,6 @@ $seo_meta = [
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
@@ -510,7 +463,6 @@ $seo_meta = [
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase">Vehicle Actuated Speed Display (VASD)
                             </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/VASD.webp" alt="Bus Sign" class="">
@@ -521,7 +473,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify;">VASD is a highly reliable and efficient traffic calming
                                     and enforcement system, ideal for roads, highways, and tunnels. Let us help you
                                     enhance road safety and traffic flow with this advanced ITS technology. </p>
@@ -529,8 +480,6 @@ $seo_meta = [
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
 
@@ -542,15 +491,12 @@ $seo_meta = [
                     </div>
                 </div>
                 {{-- Vehicle Actuated Speed Display (VASD) END --}}
-
-
                 {{-- Bus Sign--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase">Bus Sign
                             </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/FDU-AMBER FRONT.png" alt="Bus Sign"
@@ -562,7 +508,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify;">Bus Signs are designed to provide real-time information
                                     to commuters and improve their overall transit experience. Our LED bus signs are
                                     highly visible, even in bright sunlight, and can display various types of
@@ -572,8 +517,6 @@ $seo_meta = [
 
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
                                             src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
                                     <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
                                         <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
 
@@ -585,14 +528,12 @@ $seo_meta = [
                     </div>
                 </div>
                 {{-- Bus Sign End--}}
-
                 {{--  LED Ticker --}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase"> LED Ticker
                             </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
                             <img src="/assets/customer/images/products_home/Circular_outer_led_ticker.webp"
@@ -604,7 +545,6 @@ $seo_meta = [
                         </div>
                         <div class="d-lg-flex align-self-center common-wdth inner-col">
                             <div class="ms-md-5">
-                                {{--                                        <h6 class="text-capitalize">Description</h6>--}}
                                 <p style="text-align: justify;"> Designed for both indoor and outdoor use, our Tickers
                                     are durable, energy-efficient, and easy to install. They can be integrated with
                                     existing systems or operated as standalone displays, They are versatile solution for
@@ -627,9 +567,6 @@ $seo_meta = [
                     </div>
                 </div>
                 {{--  LED Ticker End --}}
-
-
-
                 {{--   end static--}}
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -798,52 +735,14 @@ $seo_meta = [
                         </div>
                     </form>
                 </div>
-                {{--                <div class="col-md-5">--}}
-                {{--                    <div class="imge-qutes h-100">--}}
-                {{--                        <img src="/assets/customer/images/businessman.jpg" alt="Not Found">--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
             </div>
         </div>
 
     </div>
 </section>
-<!-- team-members-start -->
-{{--    <section class="team-members">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div class="text-center mb-lg-5">--}}
-{{--                        <h2 class="fs-md-2 mt-3">Team Members</h2>--}}
-{{--                        <p class="text-mutedd">A break from all your worries sure would help a lot and you know <br>--}}
-{{--                            then a--}}
-{{--                            tale of a fateful trip this tropic port</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                @foreach($team_members as $member)--}}
-
-{{--                <div class="col-xl-3 col-lg-4 col-sm-6 col-xs-12 mb-xl-0 mb-4">--}}
-{{--                    <div class="members-profile h-100">--}}
-{{--                        <div class="p-4 ">--}}
-{{--                            <img class="profile-placeholder" src="{{asset('storage/'.$member->image)}}" alt="{{$member->name}}">--}}
-{{--                            <h6 class="text-capitalize">{{$member->name}}</h6>--}}
-{{--                            <p class="text-center"> {{$member->detail}}--}}
-{{--                            </p>--}}
-{{--                            <img class="tripple-icons" src="/assets/customer/images/tripple-icons.png" alt="Not Found">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-<!-- team-members-end -->
-
 <!-- Key-projects-start -->
-
 <x-Customer.KeyProject/>
 <!--___________________ key-project-end_________________ -->
-
 <!-- _____________________Our clint Says start______________________ -->
 @include('customer.layout2.client_testimonials')
 
@@ -866,7 +765,6 @@ $seo_meta = [
                     </div>
                 </div>
             </div>
-
             @foreach($blogs as $blog)
                 <div class="col-lg-4">
                     <div class="inner-cqategory mb-lg-0 mb-4">
@@ -897,7 +795,6 @@ $seo_meta = [
 <!-- _____________________ourclint-last-start___________________ -->
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
-
 
 <script src="/assets/customer/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/customer/js/jquery.js"></script>
