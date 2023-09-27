@@ -115,7 +115,7 @@
     }
 </style>
 <section class="pt-0 pb-sm-4 pb-lg-5"  >
-    <div class="clints-content clints-content-banner mb-0"  >
+    <div class=" mb-0"  >
         <div class="" >
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
 
@@ -125,13 +125,12 @@
                     </video>
                 </div>
 
+            </div>
 
-                <div class="slider-content position-absolute   start-50 translate-middle text-center"   style="z-index:44;top: 50%;">
-                    <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
-                    <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
-                    <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
-                </div>
-
+            <div class="  position-absolute   start-50 translate-middle text-center"   style="z-index:44;top: 50%;">
+                <h1 class="title_home_page_banner">FROM TOKYO TO LOS ANGELES</h1>
+                <h6 class="text-white mb-3">"Contributing to an efficient road and transit network"</h6>
+                <a href="{{route('customer.about.us')}}" class="btn-primary-rounded text-capitalize" >About US</a>
             </div>
         </div>
 
