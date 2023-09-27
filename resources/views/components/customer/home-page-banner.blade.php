@@ -74,7 +74,7 @@
                                             const videoPlayer = document.getElementById('videoPlayer');
                                             const fallbackImage = document.getElementById('fallback-image');
                                             videoPlayer.style.display = 'none';
-                                            fallbackImage.style.display = 'block';
+                                            // fallbackImage.style.display = 'block';
                                         }
 
                                         // Check if the video loaded properly after a specific time (in milliseconds)
@@ -120,36 +120,36 @@
             </div>
         </div>
 <script>
-    // Function to hide the fallback image and show the video player
-    function showVideoPlayer() {
-        const videoPlayer = document.getElementById('video-player');
-        const fallbackImage = document.getElementById('fallback-image');
-        videoPlayer.style.display = 'block';
-        fallbackImage.style.display = 'none';
-    }
-
-    // Function to show the fallback image and hide the video player
-    function showFallbackImage() {
-        const videoPlayer = document.getElementById('video-player');
-        const fallbackImage = document.getElementById('fallback-image');
-        videoPlayer.style.display = 'none';
-        fallbackImage.style.display = 'block';
-    }
-
-    // Check if the video loaded properly after a specific time (in milliseconds)
-    const checkVideoLoading = setTimeout(showFallbackImage, 10000); // Set to 10 seconds, you can adjust this time
-
-    // Add an event listener to the video to check if it successfully loads
-    const videoPlayer = document.getElementById('video-player');
-    videoPlayer.addEventListener('loadedmetadata', () => {
-        clearTimeout(checkVideoLoading); // If the video loads, clear the timeout
-        showVideoPlayer(); // Show the video player
-    });
-
-    // If an error occurs during video loading, show the fallback image
-    videoPlayer.addEventListener('error', () => {
-        showFallbackImage();
-    });
+    // // Function to hide the fallback image and show the video player
+    // function showVideoPlayer() {
+    //     const videoPlayer = document.getElementById('video-player');
+    //     const fallbackImage = document.getElementById('fallback-image');
+    //     videoPlayer.style.display = 'block';
+    //     fallbackImage.style.display = 'none';
+    // }
+    //
+    // // Function to show the fallback image and hide the video player
+    // function showFallbackImage() {
+    //     const videoPlayer = document.getElementById('video-player');
+    //     const fallbackImage = document.getElementById('fallback-image');
+    //     videoPlayer.style.display = 'none';
+    //     // fallbackImage.style.display = 'block';
+    // }
+    //
+    // // Check if the video loaded properly after a specific time (in milliseconds)
+    // const checkVideoLoading = setTimeout(showFallbackImage, 10000); // Set to 10 seconds, you can adjust this time
+    //
+    // // Add an event listener to the video to check if it successfully loads
+    // const videoPlayer = document.getElementById('video-player');
+    // videoPlayer.addEventListener('loadedmetadata', () => {
+    //     clearTimeout(checkVideoLoading); // If the video loads, clear the timeout
+    //     showVideoPlayer(); // Show the video player
+    // });
+    //
+    // // If an error occurs during video loading, show the fallback image
+    // videoPlayer.addEventListener('error', () => {
+    //     showFallbackImage();
+    // });
 </script>
 
 {{--        @foreach($banners as $banner)--}}
