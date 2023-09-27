@@ -489,7 +489,7 @@ $seo_meta = [
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0">
                 <a href="{{route('customer.solution.highway')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Highway-Icons.png') }}" alt="image">
+                        <img src="{{ asset('assets/customer/images/Highway-Icons.webp') }}" alt="image">
                         <div class="content-application-items members-profile" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Highways </h6>
                             <p class="mb-0 text-center">
@@ -503,7 +503,7 @@ $seo_meta = [
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0 gap-5">
                 <a href="{{route('customer.solution.tunnel')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Tunnels-Icons.png') }}" alt="image">
+                        <img src="{{ asset('assets/customer/images/Tunnels-Icons.webp') }}" alt="image">
                         <div class="content-application-items members-profile " style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Tunnels </h6>
                             <p class="mb-0 text-center">
@@ -526,7 +526,7 @@ $seo_meta = [
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0">
                 <a href="{{route('customer.solution.city')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Smart-cities-icon.png') }}" alt="image">
+                        <img src="{{ asset('assets/customer/images/Smart-cities-icon.webp') }}" alt="image">
                         <div class="content-application-items members-profile application-item" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Smart Cities </h6>
                             <p class="mb-0 text-center">
@@ -550,7 +550,7 @@ $seo_meta = [
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0">
                 <a href="{{route('customer.solution.tunnel')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Transits-Icons.png') }}" alt="image">
+                        <img src="{{ asset('assets/customer/images/Transits-Icons.webp') }}" alt="image">
                         <div class="content-application-items members-profile application-item" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Transit</h6>
                             <p class="mb-0 text-center">
