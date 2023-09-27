@@ -269,7 +269,7 @@
                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Passenger
                                                     Information Display
                                                     Sign <br> (PIDS) </a></li>
-                                            <li><a href="#" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus
+                                            <li><a href="{{route('customer.bus_signs')}}" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus
                                                     Signs</a></li>
                                             <li>
                                         </ul>
@@ -412,7 +412,7 @@
                                                class="text-wrap dropdown-item px-0 text-uppercase mb-2">Passenger
                                                 Information Display
                                                 Sign <br> (PIDS) </a></li>
-                                        <li><a href="#" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus
+                                        <li><a href="{{route('customer.bus_signs')}}" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus
                                                 Signs</a></li>
                                         <li>
                                     </ul>

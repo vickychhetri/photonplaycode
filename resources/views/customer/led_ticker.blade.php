@@ -19,8 +19,8 @@ $seo_meta=[
 
             <div class="imaged m-auto">
                 <div class="city-wrap flex-wrap">
-                    <h1 class=" text-white fw-normal mb-1 title-text-h2">
-                        LED TICKER TAPES
+                    <h1 class=" text-white fw-normal mb-1 title-text-h2 ">
+                      <b>   LED TICKER TAPES</b>
                     </h1>
                     <h5 class=" text-white fw-normal mt-2 mb-2 ">
                         Explore the LED Stock Ticker for Real-Time Market Updates
@@ -29,7 +29,7 @@ $seo_meta=[
                 </div>
                 <div class=" m-auto desktop-display " >
                     <img src="https://www.photonplay.com/assets/customer/images/products_home/Circular_outer_led_ticker.webp" alt="alt"
-                         class="d-block mx-auto product-feature-model-image "  style="transform: scale(1.1);" >
+                         class="d-block mx-auto product-feature-model-image "  style="transform: scale(1.8);" >
                 </div>
                 {{--                    <img src="{{asset('storage/'.$page->cover_image)}}"  alt="alt" class="d-block img-fluid h-75 " >--}}
             </div>
@@ -43,12 +43,12 @@ $seo_meta=[
 <section class="bg-white pb-0">
     <div class="container">
         <div class="row justify-content-center text-center">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <h2 class="text-center mb-2"> Enhancing Road Safety with LED Tickers: A Game-Changer in Traffic Management</h2>
-                <div class="p-4 m-2">
+                <div class="p-4">
                     <p >
                         LED tickers are a type of electronic sign that can be used to show information like the posted speed limit, weather alerts, construction updates, traffic data, and important announcements like those about upcoming exits, gas stations, restrooms, dining options, etc. They frequently go hand in hand with radar speed signs to increase traffic safety. By encouraging safer driving habits and reducing potential hazards, these announcements hope to keep motorists informed about various circumstances they might run into on the road. To modify their speed and behavior effectively, drivers can stay informed about changing road conditions, potential risks, and traffic congestion. <br/><br/>
-                        The risk of accidents is decreased by the immediate and simple-to-read information provided by LED tickers, which helps to improve traffic flow and minimize unexpected braking or lane changes. Studies have shown that LED tickers can significantly increase traffic safety. LED tickers were found to lower speeding by 15% and road accidents by 10%, according to US research. Although LED tickers are a relatively new invention, they have the potential to be a useful tool for enhancing traffic safety. They are flexible enough to be tailored to the requirements of certain sites and are simple to install and maintain. We may anticipate even more creative use of LED tickers to improve road safety as the technology behind them continues to advance
+                        The risk of accidents is decreased by the immediate and simple-to-read information provided by LED tickers, which helps to improve traffic flow and minimize unexpected braking or lane changes. Studies have shown that LED tickers can significantly increase traffic safety. LED tickers were found to lower speeding by 15% and road accidents by 10%, according to US research. Although LED tickers are a relatively new invention, they have the potential to be a useful tool for enhancing traffic safety. They are flexible enough to be tailored to the requirements of certain sites and are simple to install and maintain. We may anticipate even more creative use of LED tickers to improve road safety as the technology behind them continues to advance.
 
                     </p>
 
@@ -74,56 +74,81 @@ $seo_meta=[
             </div>
 
             <div class="col-lg-10">
-                <div class="row">
+                <div class="row ">
 
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="text-start p-4 list-unsorted">
-                                <div class="d-flex justify-content-center">
-                                    <img src="{{asset('/assets/customer/images/led/led-stock-ticker.webp')}}"   alt="Not Found"
-                                         class="img-fluid" style="max-height: 250px;min-height: 120px">
-                                </div>
-                                <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
-                                    <h5 class="fw-bold text-capitalize"> STRAIGHT TICKERS</h5>
-                                    <p> Stay informed with science, sports, and global news at your fingertips. </p>
-                                </div>
-                            </div>
+                        <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center">
+
+                            <img src="{{asset('/assets/customer/images/led/led-stock-ticker.webp')}}"   alt="Not Found"
+                                 class="img-fluid" style="max-height: 250px;min-height: 120px">
                         </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="text-start p-4 list-unsorted">
-                            <div class="d-flex justify-content-center">
-                                <img src="{{asset('/assets/customer/images/led/Circular_outer_jpg.webp')}}" alt="Not Found"
-                                     class="img-fluid" style="max-height: 250px;min-height: 120px">
-                            </div>
-                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
-                                <h5 class="fw-bold text-capitalize"> CIRCULAR LED TICKERS</h5>
-                                <p> Experience news and other updates come alive with the Circular LED Ticker. </p>
+                    <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center">
+                        <img src="{{asset('/assets/customer/images/led/Circular_outer_jpg.webp')}}" alt="Not Found"
+                             class="img-fluid" style="max-height: 250px;min-height: 120px">
+                    </div>
 
-                            </div>
-                        </div>
+                    <div class="col-lg-12 col-md-12 col-12 d-flex justify-content-center">
+                        <img src="{{asset('/assets/customer/images/led/90deg_outter_jpg.webp')}}" alt="Not Found"
+                             class="img-fluid" style="max-height: 250px;min-height: 120px">
                     </div>
 
 
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="text-start p-4 list-unsorted">
-                            <div class="d-flex justify-content-center">
-                                <img src="{{asset('/assets/customer/images/led/90deg_outter_jpg.webp')}}" alt="Not Found"
-                                     class="img-fluid" style="max-height: 250px;min-height: 120px">
-                            </div>
-                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">
-                                <h5 class="fw-bold text-capitalize">  CUSTOM ANGLES</h5>
-                                <p> Choose from various ticker display options tailored to your specifications. </p>
 
-                            </div>
+
+{{--                            <div class="text-start p-4 list-unsorted">--}}
+{{--                                <div class="d-flex justify-content-center">--}}
+{{--                                    <img src="{{asset('/assets/customer/images/led/led-stock-ticker.webp')}}"   alt="Not Found"--}}
+{{--                                         class="img-fluid" style="max-height: 250px;min-height: 120px">--}}
+{{--                                </div>--}}
+{{--                                <div class="my-3 list- px-4 py-2" style="min-height: 140px;">--}}
+{{--                                    <h5 class="fw-bold text-capitalize"> STRAIGHT TICKERS</h5>--}}
+{{--                                    <p> Stay informed with science, sports, and global news at your fingertips. </p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
-                    </div>
+
+{{--                    <div class="col-lg-4 col-md-6 col-12">--}}
+{{--                        <div class="text-start p-4 list-unsorted">--}}
+{{--                            <div class="d-flex justify-content-center">--}}
+
+{{--                            </div>--}}
+{{--                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">--}}
+{{--                                <h5 class="fw-bold text-capitalize"> CIRCULAR LED TICKERS</h5>--}}
+{{--                                <p> Experience news and other updates come alive with the Circular LED Ticker. </p>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+
+
+{{--                    <div class="col-lg-4 col-md-6 col-12">--}}
+{{--                        <div class="text-start p-4 list-unsorted">--}}
+{{--                            <div class="d-flex justify-content-center">--}}
+
+{{--                            </div>--}}
+{{--                            <div class="my-3 list-bacgunded px-4 py-2" style="min-height: 140px;">--}}
+{{--                                <h5 class="fw-bold text-capitalize">  CUSTOM ANGLES</h5>--}}
+{{--                                <p> Choose from various ticker display options tailored to your specifications. </p>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
 
                 </div>
             </div>
+
+        <p class="text-center">
+            Tickerplay do customize the ticker to fit any architectural requirement including custom angles, custom curves, custom shapes, one ticker can have a straight, curve and a custom angle, all at once. Viewers can see the beauty of scrolling data easily from any direction whether the ticker designed by us are inside corners, outside corners, custom angles etc. It will be much appreciated if you share your layout or idea with us. We will simulate the real time depiction using 3D techniques before placing the order.
+        </p>
         </div>
+
+
     </div>
+
+
 </section>
 <!-- Our Product -->
 
@@ -149,8 +174,9 @@ $seo_meta=[
 </section>
 <!-- Application end -->
 <!-- Photon play radar-start -->
-<section class="portable px-lg-5 mt-4">
+<section class="portable px-lg-5">
     <div class="container">
+        <h2 class="text-center mb-3"> Flexible LED Ticker Tapes: Shaping Your Message, Shaping Your Space</h2>
         <div class="row">
             <div class="col-lg-6 ">
                 <div class="d-flex justify-content-center align-items-center">
@@ -191,6 +217,174 @@ $seo_meta=[
 <!-- contact form -->
 @include('customer.layout2.get_in_touch')
 <!-- Contact form end -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="fs-md-2 mt-3 text-center"> FAQ </h2>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1. What is an LED ticker?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: A message medium known as an LED ticker display uses LED technology as its primary digital display device. A ticker often displays a line of text, numbers, or pictures that scroll past the viewer.
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2. What size are LED tickers?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The most typical LED tickers have a height of 32, 48, or 64 pixels. The distance between pixels determines the character's height.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3. What is an LED scrolling display?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Examples of scrolling LED displays include simple outdoor LED message moving or scrolling sign boards, electronic projects that use an LED scroller generator for outdoor digital signage, and marketable LED sign boards with message scrolling.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            4. Why use an LED display?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The fact that an LED display consumes so little energy is one of its greatest benefits. An LED bulb uses 10 times less energy than a conventional light bulb.
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            5. Why is it called a ticker?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: The term "Ticker Symbol" refers to the distinctive one- to five-letter symbol used by stock exchanges to identify a corporation. The reason it is termed a ticker symbol is that historically, stock quotes were written on a ticker tape machine.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            6. How do LED signs work?
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Each LED receives pulsating electronic signals from complex integrated electronic circuits and software, which, when activated, light up the individual LED lamp. Each LED bulb (pixel) is assembled in a matrix to form the LED Display's length and height.
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            7. Are LED tickers only used for traffic-related information?
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: No, LED tickers have a wide range of applications beyond traffic information. They can highlight crucial notifications like forthcoming exits, food options, neighborhood events, stock updates, and speed limits, in addition to the usual weather updates, traffic advisories, and speed limits.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEightA">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEightA" aria-expanded="false"
+                                aria-controls="collapseEightAx`blue ">
+                            8. How do LED tickers contribute to safer driving habits?
+                        </button>
+                    </h2>
+                    <div id="collapseEightA" class="accordion-collapse collapse" aria-labelledby="headingEightA"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Drivers can learn a lot about the state of the road and potential dangers via LED tickers. They urge drivers to alter their speed and behavior by presenting real-time statistics and alarms, which lower the likelihood of unexpected braking or lane changes that might cause accidents.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            9. How are LED tickers powered and controlled?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: Electricity is often used to power LED tickers, and specialized gear or software is used to control them. This enables operators to change the messages they display, update data, and change settings as necessary.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            10. What makes LED tickers suitable for outdoor use in various weather conditions?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Answer: LED tickers are designed to be durable and weather-resistant. They are frequently constructed out of durable materials and sealed to guard against moisture, dust, and temperature changes. Because of their sturdy design, they can function dependably outside in a variety of weather conditions.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
 <!-- _____________________ourclint-last-start___________________ -->
 @include('customer.layout2.our_clients')
 <!-- _____________________ourclint-last-end___________________ -->
