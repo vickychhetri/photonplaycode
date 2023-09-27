@@ -153,19 +153,7 @@ $seo_meta = [
                                         industry's best Radar Speed Sign. The sign acts like a Variable Message Sign to
                                         display graphics and custom text
                                     </p>
-                                    <div class="social-two">
-
-                                        <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                                src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                        <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                            <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
-                                        <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                                src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                    </div>
+                                    <x-Customer.Socialshare/>
                                 </div>
                             </div>
                         </div>
@@ -192,18 +180,7 @@ $seo_meta = [
                                 <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of
                                     traffic management ecosystem for motorways, tunnels and urban traffic management
                                     systems.</p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -231,14 +208,7 @@ $seo_meta = [
                                     efficiently used to warn and guide about traffic congestion, routing information,
                                     speed limits, road work zones, accidents and other incidents on highways,
                                     expressways and arterial roads of cities.</p>
-                                <div class="social-two">
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -264,15 +234,7 @@ $seo_meta = [
                                 <p> The ultra-bright and excellent-quality variable speed limit sign is a sign with a
                                     full matrix display area that allows speed limits and graphics to display
                                     practically any speed.</p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -298,16 +260,7 @@ $seo_meta = [
                                 <p> These signs should be given legitimate consideration by drivers, and people on foot
                                     for their own security and for the wellbeing of others. There are various types of
                                     traffic control signs, one of which is the lane control signs.</p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -334,15 +287,7 @@ $seo_meta = [
                                 <p style="text-align: justify;"> PIDS is a digital and electronic system that provides
                                     information to passengers in various modes of transportation, such as airports,
                                     train stations, bus terminals, and subway stations.</p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -368,19 +313,7 @@ $seo_meta = [
                                     that indicates where emergency phones may be found.The emergency telephone sign's
                                     aim is to direct travellers to the nearest emergency phone in the event of an
                                     emergency or breakdown.</p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -404,16 +337,7 @@ $seo_meta = [
                             <div class="ms-md-5">
                                 <p style="text-align: justify;"> These signs identify the location of emergency exits as
                                     well as exits going to different destinations outside the tunnel.</p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -474,16 +398,7 @@ $seo_meta = [
                                 <p style="text-align: justify;">VASD is a highly reliable and efficient traffic calming
                                     and enforcement system, ideal for roads, highways, and tunnels. Let us help you
                                     enhance road safety and traffic flow with this advanced ITS technology. </p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -511,16 +426,7 @@ $seo_meta = [
                                     highly visible, even in bright sunlight, and can display various types of
                                     information, including bus routes, arrival times, and other important
                                     information. </p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
@@ -547,19 +453,7 @@ $seo_meta = [
                                     are durable, energy-efficient, and easy to install. They can be integrated with
                                     existing systems or operated as standalone displays, They are versatile solution for
                                     businesses of all types.</p>
-                                <div class="social-two">
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',1)"> <img
-                                            src="/assets/customer/images/facebook2.png" class="ms-0" alt="facebook"></a>
-
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',2)">
-                                        <img src="/assets/customer/images/twitter2.png" alt="Twitter"></a>
-
-
-                                    <a href="#" onclick="shareOnSocialMedia('{{ url()->current() }}',4)"> <img
-                                            src="/assets/customer/images/pintrest2.png" alt="Pinterest"></a>
-                                </div>
+                                    <x-Customer.Socialshare/>
                             </div>
                         </div>
                     </div>
