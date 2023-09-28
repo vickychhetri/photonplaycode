@@ -158,7 +158,7 @@ $seo_meta=[
                         </div>
 
                     </div>
-                    <img src="{{asset('assets/images/radar/RSS4.jpg')}}"  class="img-fluid p-2"/>
+                    <img src="{{asset('assets/images/radar/RSS4.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
 
@@ -171,7 +171,7 @@ $seo_meta=[
                             <p class="mb-0"> All time access to the device</p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS3.jpg')}}"  class="img-fluid p-2"/>
+                        <img src="{{asset('assets/images/radar/RSS3.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@ $seo_meta=[
 
                         </div>
                          </div>
-                        <img src="{{asset('assets/images/radar/RSS2.jpg')}}"  class="img-fluid p-2"/>
+                        <img src="{{asset('assets/images/radar/RSS2.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
 
@@ -199,7 +199,7 @@ $seo_meta=[
                             <p class="mb-0"> Long battery backup increases operational hours </p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS5.jpg')}}"  class="img-fluid p-2"/>
+                        <img src="{{asset('assets/images/radar/RSS5.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -211,7 +211,7 @@ $seo_meta=[
                             <p class="mb-0"> Comply standard norms with other industries</p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS6.jpg')}}"  class="img-fluid p-2"/>
+                        <img src="{{asset('assets/images/radar/RSS6.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -223,7 +223,7 @@ $seo_meta=[
                             <p class="mb-0"> The sign operates efficiently in all the weathers</p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS1.jpg')}}"  class="img-fluid p-2"/>
+                        <img src="{{asset('assets/images/radar/RSS1.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
 
@@ -236,7 +236,7 @@ $seo_meta=[
                                 <p class="mb-0"> Designed to withstand extreme weather conditions </p>
                             </div>
                         </div>
-                        <img src="{{asset('assets/images/radar/RSS7.jpg')}}"  class="img-fluid p-2"/>
+                        <img src="{{asset('assets/images/radar/RSS7.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
 
@@ -249,7 +249,7 @@ $seo_meta=[
                                 <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
                             </div>
                         </div>
-                        <img src="{{asset('assets/images/radar/RSS8.jpg')}}"  class="img-fluid p-2"/>
+                        <img src="{{asset('assets/images/radar/RSS8.webp')}}"  class="img-fluid p-2"/>
                     </div>
                 </div>
 
