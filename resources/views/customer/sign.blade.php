@@ -41,7 +41,7 @@ $seo_meta=[
                                 </div>
                             </div>
                             <div class="desktop-display">
-                                <img src="{{asset('assets\customer\images\Radar-Speed-Signs-with-Pole.png')}}" alt="Not Found" class="mt-3 mt-sm-0" style="height: 110%;">
+                                <img src="{{asset('assets\customer\images\Radar-Speed-Signs-with-Pole.webp')}}" alt="Not Found" class="mt-3 mt-sm-0" style="height: 110%;">
                             </div>
                             <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                                  class="img-fluid d-none d-md-block">
