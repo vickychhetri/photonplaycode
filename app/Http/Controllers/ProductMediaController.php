@@ -17,7 +17,7 @@ class ProductMediaController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'cover_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'cover_image' => 'required|image|mimes:jpg,png,jpeg,webp,gif,svg|max:2048',
         ]);
         $product=Product::find($request->product_id);
         $image_path = $request->file('cover_image')->store('image', 'public');
