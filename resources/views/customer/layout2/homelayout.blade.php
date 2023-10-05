@@ -828,9 +828,9 @@
     <section class="sec-copyright py-3 border-top px-2 text-center">
         <div>Photon Play Systems - © 2023 All Rights Reserved <a href="#">Privacy Policy</a></div>
     </section>
-    <script src="/assets/customer/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/customer/js/jquery.js"></script>
-    <script src="/assets/customer/slick/slick.min.js"></script>
+    <script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>
+    <script src="/assets/customer/js/jquery.js" async defer></script>
+    <script src="/assets/customer/slick/slick.min.js" async defer></script>
     <script>
 
         $('.clint-wrapperr').slick({

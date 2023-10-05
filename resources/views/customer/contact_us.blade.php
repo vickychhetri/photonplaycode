@@ -318,9 +318,9 @@ $seo_meta=[
 <!-- _____________________ourclint-last-start___________________ -->
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
-<script src="/assets/customer/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/customer/js/jquery.js"></script>
-<script src="/assets/customer/slick/slick.min.js"></script>
+<script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>
+<script src="/assets/customer/js/jquery.js" async defer></script>
+<script src="/assets/customer/slick/slick.min.js" async defer></script>
 <script>
     $(document ).ready( function(){
         $('.clint-wrapperr').slick({
