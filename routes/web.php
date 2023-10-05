@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CMSHomeController;
 use App\Http\Controllers\customer\Auth\LoginController;
 use App\Http\Controllers\customer\CartController;
+use App\Http\Controllers\customer\ContactUsController;
 use App\Http\Controllers\customer\CustomerProfileController;
 use App\Http\Controllers\customer\SignController;
 use App\Http\Controllers\DBBackupController;
@@ -32,6 +33,29 @@ use App\Http\Controllers\CommonController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ShippingRateController;
 use App\Models\AllCountryPincode;
+
+
+use App\Http\Controllers\customer\InqueryController;
+use App\Http\Controllers\customer\NewsletterController;
+
+use App\Http\Controllers\customer\SolutionController;
+use App\Models\Newsletter;
+use App\Models\Order;
+use Illuminate\Http\Request;
+
+
+use App\Http\Controllers\BlogLikeController;
+use App\Http\Controllers\BussignContorller;
+use App\Http\Controllers\ContentPageController;
+
+use App\Http\Controllers\customer\CustomerOrderController;
+
+use App\Http\Controllers\LedController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SearchItemsController;
+use App\Http\Controllers\ThankYouController;
+use App\Http\Controllers\VASDController;
+
 
 /*
 * New Route
@@ -150,8 +174,78 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::post('forgot-password', 'PasswordController@forgotPassword')->name('forgot_password');
         Route::post('change-password', 'PasswordController@changePassword')->name('change_password');
 
+        Route::get('company', [ContactUsController::class, 'aboutUs'])->name('about.us');
 
-        require_once "customer/api.php";
+        Route::any('shopping-bag', [CartController::class, 'shoppingBag'])->name('shopping.bag');
+
+        Route::get('confirmation/{order_id}', [CartController::class, 'confirmation'])->name('confirmation');
+        Route::post('add-shopping-bag', [CartController::class, 'addShoppingBag'])->name('store.shopping.bag');
+        Route::get('remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cartitem');
+        Route::get('specification-ajax', [SignController::class, 'specificationAjax'])->name('specification.ajax');
+
+#solution-highway  -- highways
+        Route::get('highways', [SolutionController::class, 'solutionHighway'])->name('solution.highway');
+
+
+#solution-tunnels - tunnels
+        Route::get('tunnels', [SolutionController::class, 'solutionTunnel'])->name('solution.tunnel');
+
+#smart-cities
+//Route::get('solution-city', [SolutionController::class, 'solutionCity'])->name('solution.city');
+        Route::get('smart-cities', [SolutionController::class, 'solutionCity'])->name('solution.city');
+
+#solution-transit - transit
+        Route::get('transit', [SolutionController::class, 'solutionTransit'])->name('solution.transit');
+
+#contact-us - contact
+        Route::get('contact', [ContactUsController::class, 'contactUs'])->name('contact.us');
+
+
+//about-us
+
+//Route::get('blog-detail', [ContactUsController::class, 'blogDetail'])->name('blog.detail');
+//
+//
+//Route::get('blog', [ContactUsController::class, 'blog'])->name('blog');
+
+//signages emergency-signage
+        Route::get('emergency-signage', [ContactUsController::class, 'signal'])->name('signal');
+
+
+#smartcity - smart-cities
+//Route::get('smart-cities', [ContactUsController::class, 'smartcity'])->name('smartcity');
+
+
+
+#variable-sign-language - variable-message-signs
+        Route::get('variable-message-signs', [ContactUsController::class, 'variableMessage'])->name('variable.message');
+
+
+        Route::get('variable-speed-limit-signs', [ContactUsController::class, 'variableSpeedLimit'])->name('variable.speed.limit');
+
+#passenger-information-display-system - passenger-information-display-systems
+        Route::get('passenger-information-display-systems', [ContactUsController::class, 'pasengerInformationDisplay'])->name('pasenger.information.display.system');
+
+#portable-variable-message-signs-portable-variable-message-sign
+        Route::get('portable-variable-message-sign', [ContactUsController::class, 'portableVariableMessageSigns'])->name('portable.variable.message.signs');
+
+#lane-control-system - lane-control-sign
+        Route::get('lane-control-sign', [ContactUsController::class, 'laneControlSystem'])->name('lane.control.system');
+        Route::get('portable-variable-message-sign/model/{id}', [ContactUsController::class, 'pvmsICop'])->name('pvms.i.cop');
+        Route::post('newsletter', [NewsletterController::class, 'newsletter'])->name('newsletter.store');
+        Route::post('submit-inquery', [InqueryController::class, 'store'])->name('inquery.submit');
+        Route::any('success-response', [CartController::class, 'checkoutSuccess'])->name('success.response');
+        Route::any('cancel-response', [CartController::class, 'checkoutCancel'])->name('cancel.response');
+//Route::get('solution/{slug}', [ContactUsController::class, 'vmsSubPage']);
+        Route::get('variable-message-signs/model/{slug}', [ContactUsController::class, 'vmsSubPage'])->name('vms.sub.page');
+
+        Route::get('emergency-signage/product/{slug}', [ContactUsController::class, 'signagesSubPage'])->name('signages.sub.page');
+
+        Route::get('get-saved-address/{addressId}', [CartController::class, 'getSavedAddress'])->name('get-saved-address');
+        Route::get('get-postal-code/{postalCode}', [CartController::class, 'getUserPostalCode'])->name('get.user.postal.code');
+
+
+
         require_once "customer/api2.php";
 
     });
@@ -163,8 +257,45 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     });
 
 
-    require_once "guest/api.php";
-    require_once "guest/api2.php";
+//    require_once "guest/api.php";
+//    require_once "guest/api2.php";
+
+
+
+    Route::get('blog/{page_name}', [ContactUsController::class, 'blog_show'])->name('blog_show');
+    Route::get('blog/{blog_id}/like-unlike', [BlogLikeController::class, 'like_unlike'])->name('blog_like_unlike');
+//Route::get('blog', [ContactUsController::class, 'blog_listing'])->name('blog');
+    Route::get('blogs', [ContactUsController::class, 'blog_listing'])->name('blog');
+    Route::get('/content/search', [SearchItemsController::class, 'search_index'])->name('search_photon_things');
+
+    Route::get('/photon/{page_name}', [CustomerProfileController::class, 'page_show'])->name('page_show_content');
+
+
+//Route::get('/photon-system/{page_name}/', [ContentPageController::class, 'index_guest'])->name("show_page_policy");
+
+    Route::get('/term-conditions', [ContentPageController::class, 'term_conditions'])->name("show_page_policy_term_conditions");
+    Route::get('/about-us', [ContentPageController::class, 'about_us'])->name("show_page_policy_about_us");
+    Route::get('/privacy-policy', [ContentPageController::class, 'privacy_policy'])->name("show_page_policy_privacy_policy");
+    Route::get('/shipping', [ContentPageController::class, 'shipping'])->name("show_page_policy_shipping");
+    Route::get('/return-policy', [ContentPageController::class, 'return_policy'])->name("show_page_policy_return_policy");
+
+
+    Route::get('/thank-you', [ThankYouController::class, 'index'])->name("show_thank_you_page");
+
+    Route::get('/order/show/{id}', [CustomerOrderController::class, 'show_order'])->name("show.order");
+
+    Route::get('/reports/order/customer/invoice/{id}', [OrderController::class,'generateCustomerInvoice'])->name("customer_order_invoice");
+
+
+
+//VASD
+    Route::get('/vehicle-actuated-speed-displays', [VASDController::class, 'vehicle_actuated_speed_displays'])->name("vehicle_actuated_speed_displays");
+
+    Route::get('/led-ticker-tape', [LedController::class, 'led'])->name("led_ticker_tape");
+
+    Route::get('/bus-signs', [BussignContorller::class, 'bus_sign'])->name("bus_signs");
+
+
 
     //    Route::get('/', [HomePageController::class,'index'])->name('homepage');
 
