@@ -1,6 +1,6 @@
-<script src="{{ asset('assets\customer\js\bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets\customer\js\bootstrap.jquery.js') }}"></script>
-    <script src="{{ asset('assets\customer\js\bootstrap.slick.min.js') }}"></script>
+<script src="{{ asset('assets\customer\js\bootstrap.bundle.min.js') }}" async defer></script>
+    <script src="{{ asset('assets\customer\js\bootstrap.jquery.js') }}" async defer></script>
+    <script src="{{ asset('assets\customer\js\bootstrap.slick.min.js') }}" async defer></script>
 
 
 <script>
