@@ -45,13 +45,10 @@
         <div class="" >
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
 
-{{--                background-image: url("{{asset('assets/videos/video_back.webp')}}")--}}
-{{--                poster="{{asset('assets/videos/video_back.webp')}}"--}}
-                <div class="d-flex justify-content-center overlay-video-img" style="background: grey"; >
-                    <img src="{{asset('assets/images/motion.webp')}}" style="width: 100%;height: 650px;"/>
-{{--                    <video   id="videoHeaderPlay"  preload="metadata"  autoplay loop muted playsinline>--}}
-{{--                        <source src="{{asset('assets/videos/video2.mp4#t=0.5')}}" type="video/mp4">--}}
-{{--                    </video>--}}
+                <div class="d-flex justify-content-center overlay-video-img"  >
+                    <video   id="videoHeaderPlay"  preload="metadata" poster="{{asset('assets/videos/video_back.webp')}}"   autoplay loop muted playsinline>
+                        <source src="{{asset('assets/videos/video2.mp4#t=0.5')}}" type="video/mp4">
+                    </video>
                 </div>
 
             </div>
