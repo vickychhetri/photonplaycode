@@ -65,13 +65,6 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NJZBCGR');</script>
     <!-- End Google Tag Manager -->
-
-{{--    <script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>--}}
-
-{{--    <iframe src=https://client.consolto.com/expert/photonplay.systems allow="camera;microphone;fullscreen;autoplay;display-capture" frameborder="0" scrolling="no" style="width: 100%; height: 100%;"></iframe>--}}
-
-
-
     <style>
         #startvideochat{
             position: fixed;
@@ -87,11 +80,6 @@
     </style>
 </head>
 <body>
-
-
-{{--<script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>--}}
-
-{{--href="{{ url()->current()}}?consolto-start=videocall&consolto-agent-id=64e312c8c0265947a3d8f05f"--}}
 
 {{--data-bs-toggle="modal" data-bs-target="#staticBackdrop"--}}
 <span id="startvideochat"  >
