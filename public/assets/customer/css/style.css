@@ -3215,12 +3215,18 @@ input:focus {
         position: fixed !important;
         left: 0;
         width: 100%;
-        top: 96px;
+        top: 66px;
         right: 0;
         margin: auto;
         width: 75%;
-    }
+        background: transparent;
+        border: none;
 
+    }
+.mega-menu-list{
+    margin-top: 20px;
+    background: white;
+}
     section {
         padding: 35px 0px;
     }

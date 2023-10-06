@@ -133,7 +133,7 @@
                             </a>
 
                             <ul class="dropdown-menu mega-menu">
-                                <li class="d-flex justify-content-between flex-wrap p-3">
+                                <li class="d-flex justify-content-between flex-wrap p-3 mega-menu-list">
 
                                     <div class="col-md-3">
                                         <h4><a class="dropdown-item px-0 text-uppercase"
@@ -249,8 +249,8 @@
                             </div> -->
 
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {{Request::is('blog') ? 'active':''}}"
-                               href="{{route('customer.blog')}}">NEWS & EVENTS</a>
+                            <a class="nav-link text-uppercase text-nowrap {{Request::is('blog') ? 'active':''}}"
+                               href="{{route('customer.blog')}}" >NEWS & EVENTS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-uppercase {{Request::is('contact-us') ? 'active':''}}"
