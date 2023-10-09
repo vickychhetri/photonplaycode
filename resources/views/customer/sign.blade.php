@@ -56,325 +56,325 @@ $seo_meta=[
 
 {{--Radar Banner End--}}
     <!-- Photon play radar-start -->
-    <section class="portable px-lg-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-lg-12">
-                    <p class="text-center"> A radar speed sign, also known as a radar speed display or a driver feedback sign, is a device that gives drivers real-time feedback on the speed of their vehicle. These signs are frequently put on roadways, mainly where speeding is a concern or speed limits must be enforced. Radar speed signs' main purpose is to encourage drivers to slow down and obey imposed speed limits, improving road safety.</p>
-                </div>
-                <div class="col-lg-12 ">
-                    <div class="radar-icop">
-                        <h4 class="text-uppercase text-center">MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGN EVER BUILT !</h4>
-                        <p class="mt-4" style="text-align: justify;">
-                            The sign has all the standard features combined in one product to make it industry's best
-                            Radar
-                            Speed Sign. The sign acts like a Variable Message Sign to display graphics and text along
-                            with
-                            white Alert Flashing Lights . The sign acts as a Smart Traffic data collector and analyzer.
-                            It
-                            is a cloud controlled and highly secured Radar Speed Sign.
-                            Radar speed signs act as friendly guides on city streets, prioritizing our safety. Instead of punishing us, they gently encourage us to drive more responsibly. These signs can be set up in various places where safety might be a concern, like schools and busy spots. Radar speed signs,  which are located on the rear of the sign, use radar technology to determine the speed of approaching vehicles by measuring the amount of time it takes for the radar signal to return. Studies have shown that radar speed signs can reduce average speeds by 10-20%. This can help prevent accidents caused by distracted or inattentive driving.
-                            <br/>
-                            Radar speed signs may enforce speed limits, instruct drivers on good driving habits, and build a sense of community by boosting safety and awareness, in addition to being more affordable than alternatives like speed bumps or roundabouts. Controlling traffic on the road is the best way to improve safety. So, these signs aren't just about numbers—they're about helping us drive better, keeping everyone happy and safe, and being part of the cool technology that makes our cities smarter and our roads accident-free.
+{{--    <section class="portable px-lg-5">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12 col-lg-12">--}}
+{{--                    <p class="text-center"> A radar speed sign, also known as a radar speed display or a driver feedback sign, is a device that gives drivers real-time feedback on the speed of their vehicle. These signs are frequently put on roadways, mainly where speeding is a concern or speed limits must be enforced. Radar speed signs' main purpose is to encourage drivers to slow down and obey imposed speed limits, improving road safety.</p>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-12 ">--}}
+{{--                    <div class="radar-icop">--}}
+{{--                        <h4 class="text-uppercase text-center">MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGN EVER BUILT !</h4>--}}
+{{--                        <p class="mt-4" style="text-align: justify;">--}}
+{{--                            The sign has all the standard features combined in one product to make it industry's best--}}
+{{--                            Radar--}}
+{{--                            Speed Sign. The sign acts like a Variable Message Sign to display graphics and text along--}}
+{{--                            with--}}
+{{--                            white Alert Flashing Lights . The sign acts as a Smart Traffic data collector and analyzer.--}}
+{{--                            It--}}
+{{--                            is a cloud controlled and highly secured Radar Speed Sign.--}}
+{{--                            Radar speed signs act as friendly guides on city streets, prioritizing our safety. Instead of punishing us, they gently encourage us to drive more responsibly. These signs can be set up in various places where safety might be a concern, like schools and busy spots. Radar speed signs,  which are located on the rear of the sign, use radar technology to determine the speed of approaching vehicles by measuring the amount of time it takes for the radar signal to return. Studies have shown that radar speed signs can reduce average speeds by 10-20%. This can help prevent accidents caused by distracted or inattentive driving.--}}
+{{--                            <br/>--}}
+{{--                            Radar speed signs may enforce speed limits, instruct drivers on good driving habits, and build a sense of community by boosting safety and awareness, in addition to being more affordable than alternatives like speed bumps or roundabouts. Controlling traffic on the road is the best way to improve safety. So, these signs aren't just about numbers—they're about helping us drive better, keeping everyone happy and safe, and being part of the cool technology that makes our cities smarter and our roads accident-free.--}}
 
-                        </p>
-                    </div>
-                </div>
+{{--                        </p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
-        </div>
-    </section>
-    <!-- Photon play radar-end -->
-    <!-- Our Product-start -->
-    <section class="icop-series pt-1 mt-1" >
-        <div class="container"  id="our_products">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center mb-lg-5">
-                        <h2 class="fs-md-2">Our Products</h2>
-                        <h6 class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your needs and exceed your expectations.
-                        </h6>
-                    </div>
-                </div>
-                <div class="responsive">
-                    @foreach ($products as $product)
-                    <div >
-                        <div class="p-2">
-                            <div class="product_highlight inner-product bg-white">
-                                <div class=" w-75 h-75 light-product m-auto" style="background: url('{{ asset('storage/'. $product->cover_image) }}') no-repeat center;
-                                    background-size: cover;">
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- Photon play radar-end -->--}}
+{{--    <!-- Our Product-start -->--}}
+{{--    <section class="icop-series pt-1 mt-1" >--}}
+{{--        <div class="container"  id="our_products">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="text-center mb-lg-5">--}}
+{{--                        <h2 class="fs-md-2">Our Products</h2>--}}
+{{--                        <h6 class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your needs and exceed your expectations.--}}
+{{--                        </h6>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="responsive">--}}
+{{--                    @foreach ($products as $product)--}}
+{{--                    <div >--}}
+{{--                        <div class="p-2">--}}
+{{--                            <div class="product_highlight inner-product bg-white">--}}
+{{--                                <div class=" w-75 h-75 light-product m-auto" style="background: url('{{ asset('storage/'. $product->cover_image) }}') no-repeat center;--}}
+{{--                                    background-size: cover;">--}}
 {{--                                    <img class=""  src="" alt="">--}}
-                                </div>
-                                <div class="speed-sign text-center mt-3">
-                                    <span class="d-block weight-font">
-                                        Radar Speed Sign
-                                    </span>
-                                    <span class="d-block">{{$product->title}}</span>
-                                    <div class="d-flex justify-content-center align-items-center my-2 gap-1">
-                                        <img   data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
-                                            width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
-                                            width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
-                                            width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
-                                            width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
-                                            width="14px">
-                                    </div>
-                                    <span class="d-block weight-font">${{$product->price}}</span>
-                                    <a href="{{route('customer.radar.sign', $product->slug)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Our Product -->
-    <!-- iCop Series Features Start -->
-    <section class=" pt-4">
-        <div class="container">
-            <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;" >
-                <div class="col-lg-12">
-                    <div class="text-center mb-lg-4">
-                        <h2 class="fs-md-2 mt-3">iCop Series Features</h2>
-                        <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect your device to various networks and devices,
-                            enabling easy data transfer and integration with other smart devices.
-                        </p>
+{{--                                </div>--}}
+{{--                                <div class="speed-sign text-center mt-3">--}}
+{{--                                    <span class="d-block weight-font">--}}
+{{--                                        Radar Speed Sign--}}
+{{--                                    </span>--}}
+{{--                                    <span class="d-block">{{$product->title}}</span>--}}
+{{--                                    <div class="d-flex justify-content-center align-items-center my-2 gap-1">--}}
+{{--                                        <img   data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"--}}
+{{--                                            width="14px">--}}
+{{--                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"--}}
+{{--                                            width="14px">--}}
+{{--                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"--}}
+{{--                                            width="14px">--}}
+{{--                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"--}}
+{{--                                            width="14px">--}}
+{{--                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"--}}
+{{--                                            width="14px">--}}
+{{--                                    </div>--}}
+{{--                                    <span class="d-block weight-font">${{$product->price}}</span>--}}
+{{--                                    <a href="{{route('customer.radar.sign', $product->slug)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    @endforeach--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- Our Product -->--}}
+{{--    <!-- iCop Series Features Start -->--}}
+{{--    <section class=" pt-4">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;" >--}}
+{{--                <div class="col-lg-12">--}}
+{{--                    <div class="text-center mb-lg-4">--}}
+{{--                        <h2 class="fs-md-2 mt-3">iCop Series Features</h2>--}}
+{{--                        <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect your device to various networks and devices,--}}
+{{--                            enabling easy data transfer and integration with other smart devices.--}}
+{{--                        </p>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-lg-6  ">
-                    <div class="feature-card p-4 bg-white">
-                    <div class="d-flex align-items-center ">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/TRAFIC.png')}}"  class="lazyload" style="height: 70px;"  alt="Not Found"></div>
-                        <div class="">
-                            <h6>Traffic Data Analysis</h6>
-                            <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
-                        </div>
+{{--                <div class="col-lg-6  ">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                    <div class="d-flex align-items-center ">--}}
+{{--                        <div class="me-3"><img data-src="{{asset('assets/customer/images/TRAFIC.png')}}"  class="lazyload" style="height: 70px;"  alt="Not Found"></div>--}}
+{{--                        <div class="">--}}
+{{--                            <h6>Traffic Data Analysis</h6>--}}
+{{--                            <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>--}}
+{{--                        </div>--}}
 
-                    </div>
-                    <img data-src="{{asset('assets/images/radar/RSS4.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                    <img data-src="{{asset('assets/images/radar/RSS4.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-lg-6">
-                    <div class="feature-card p-4 bg-white">
-                    <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found" class="lazyload"></div>
-                        <div class="">
-                            <h6>24x7 Cloud Connectivity</h6>
-                            <p class="mb-0"> All time access to the device</p>
-                        </div>
-                    </div>
-                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6">
-                    <div class="feature-card p-4 bg-white">
-                    <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" class="lazyload" alt="Not Found"></div>
-                        <div class="">
-                            <h6>Solar Powered</h6>
-                            <p class="mb-0"> Makes the device cost effective</p>
-
-                        </div>
-                         </div>
-                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="feature-card p-4 bg-white">
-                    <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/BATTERY.png')}}"  class="lazyload" style="height: 70px;"  ></div>
-                        <div class="">
-                            <h6>Battery Backup</h6>
-                            <p class="mb-0"> Long battery backup increases operational hours </p>
-                        </div>
-                    </div>
-                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="feature-card p-4 bg-white">
-                    <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/COMPLIANCE.png')}}" class="lazyload"  style="height: 70px;" alt="Not Found"></div>
-                        <div class="">
-                            <h6>Fully Compliance</h6>
-                            <p class="mb-0"> Comply standard norms with other industries</p>
-                        </div>
-                    </div>
-                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="feature-card p-4 bg-white">
-                    <div class="d-flex align-items-center ">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
-                        <div class="">
-                            <h6>All Weather Operation</h6>
-                            <p class="mb-0"> The sign operates efficiently in all the weathers</p>
-                        </div>
-                    </div>
-                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="feature-card p-4 bg-white">
-                        <div class="d-flex align-items-center ">
-                            <div class="me-3"><img data-src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
-                            <div class="">
-                                <h6>Robust</h6>
-                                <p class="mb-0"> Designed to withstand extreme weather conditions </p>
-                            </div>
-                        </div>
-                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="feature-card p-4 bg-white">
-                        <div class="d-flex align-items-center ">
-                            <div class="me-3"><img data-src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
-                            <div class="">
-                                <h6>Easy Installation</h6>
-                                <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
-                            </div>
-                        </div>
-                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}"  class="lazyload img-fluid p-2"/>
-                    </div>
-                </div>
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <div class="me-3"><img data-src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found" class="lazyload"></div>--}}
+{{--                        <div class="">--}}
+{{--                            <h6>24x7 Cloud Connectivity</h6>--}}
+{{--                            <p class="mb-0"> All time access to the device</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
 
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <div class="me-3"><img data-src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" class="lazyload" alt="Not Found"></div>--}}
+{{--                        <div class="">--}}
+{{--                            <h6>Solar Powered</h6>--}}
+{{--                            <p class="mb-0"> Makes the device cost effective</p>--}}
 
-            </div>
-        </div>
-    </section>
-    <!-- iCop Series Features End -->
-    <!-- SPECIFICATION Sec Accordion -->
-    <section class="sepeicification  pt-md-4 pt-0  pb-0 position-relative">
-        <div class="message-sign text-center text-primary">
-            <!-- <h6 class="fs-6">photonplay’s</h6> -->
-        </div>
-        <div class="heading-sec">
-            <h2 class="fs-md-2 mt-3">Multi Functional Display</h2>
-            <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
-        </div>
-        <div class="container ">
-            <div class="accodion-wrapper pb-5">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="accordion accordion-flush position-relative" id="accordionFlushExample">
-                            <div class="accordion-item border-0">
-                                <h2 class="accordion-header">
-                                    <button
-                                        class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapseOne">
-                                        GRAPHICS
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0">
-                                        <p>
-                                            Option to display graphic content with custom-made and standard graphic library like "SLOW DOWN", "THANK YOU", "WORK ZONE", etc.
-                                        </p>
-                                        <img data-src="{{asset('assets/images/radar/RSS display.png')}}"  class="lazyload img-fluid p-2"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <h2 class="accordion-header" id="flush-headingTwo">
-                                    <button
-                                        class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                        aria-expanded="false" aria-controls="flush-collapseTwo">
-                                        TEXT MESSAGES
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0">
-                                        <p>
-                                            Option to display custom text messages like community notifications, traffic updates, etc.
-                                        </p>
-                                        <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"  class="lazyload img-fluid p-2"/>
+{{--                        </div>--}}
+{{--                         </div>--}}
+{{--                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                                    </div>
-                                </div>
-                            </div>
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <div class="me-3"><img data-src="{{asset('assets/customer/images/BATTERY.png')}}"  class="lazyload" style="height: 70px;"  ></div>--}}
+{{--                        <div class="">--}}
+{{--                            <h6>Battery Backup</h6>--}}
+{{--                            <p class="mb-0"> Long battery backup increases operational hours </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <div class="me-3"><img data-src="{{asset('assets/customer/images/COMPLIANCE.png')}}" class="lazyload"  style="height: 70px;" alt="Not Found"></div>--}}
+{{--                        <div class="">--}}
+{{--                            <h6>Fully Compliance</h6>--}}
+{{--                            <p class="mb-0"> Comply standard norms with other industries</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                    <div class="d-flex align-items-center ">--}}
+{{--                        <div class="me-3"><img data-src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>--}}
+{{--                        <div class="">--}}
+{{--                            <h6>All Weather Operation</h6>--}}
+{{--                            <p class="mb-0"> The sign operates efficiently in all the weathers</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="circle-floow position-relative">
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                        <div class="d-flex align-items-center ">--}}
+{{--                            <div class="me-3"><img data-src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>--}}
+{{--                            <div class="">--}}
+{{--                                <h6>Robust</h6>--}}
+{{--                                <p class="mb-0"> Designed to withstand extreme weather conditions </p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                            <div class="accordion accordion-flush position-relative" id="accordionFlushExampleSecond">
-                                <div class="accordion-item border-0">
-                                    <h2 class="accordion-header">
-                                        <button
-                                            class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseOneSecond"
-                                            aria-expanded="false"
-                                            aria-controls="flush-collapseOneSecond">
-                                            MULTI-COLOUR
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOneSecond" class="accordion-collapse collapse show"
-                                         aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExampleSecond">
-                                        <div class="accordion-body pt-0">
-                                            <p>
-                                                Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options.
-                                            </p>
+{{--                <div class="col-lg-6">--}}
+{{--                    <div class="feature-card p-4 bg-white">--}}
+{{--                        <div class="d-flex align-items-center ">--}}
+{{--                            <div class="me-3"><img data-src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>--}}
+{{--                            <div class="">--}}
+{{--                                <h6>Easy Installation</h6>--}}
+{{--                                <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
 
-                                            <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"  class="lazyload img-fluid p-2"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item border-0">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button
-                                            class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
-                                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwoThird"
-                                            aria-expanded="false" aria-controls="flush-collapseTwoThird">
-                                            FLASHING LIGHTS
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwoThird" class="accordion-collapse collapse"
-                                         aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExampleSecond">
-                                        <div class="accordion-body pt-0">
-                                            <p>
-                                                White high bright flashing lights to alert the drivers, so one can never miss the attention
-                                            </p>
-                                            <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"  class="lazyload img-fluid p-2"/>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- iCop Series Features End -->--}}
+{{--    <!-- SPECIFICATION Sec Accordion -->--}}
+{{--    <section class="sepeicification  pt-md-4 pt-0  pb-0 position-relative">--}}
+{{--        <div class="message-sign text-center text-primary">--}}
+{{--            <!-- <h6 class="fs-6">photonplay’s</h6> -->--}}
+{{--        </div>--}}
+{{--        <div class="heading-sec">--}}
+{{--            <h2 class="fs-md-2 mt-3">Multi Functional Display</h2>--}}
+{{--            <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>--}}
+{{--        </div>--}}
+{{--        <div class="container ">--}}
+{{--            <div class="accodion-wrapper pb-5">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <div class="accordion accordion-flush position-relative" id="accordionFlushExample">--}}
+{{--                            <div class="accordion-item border-0">--}}
+{{--                                <h2 class="accordion-header">--}}
+{{--                                    <button--}}
+{{--                                        class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"--}}
+{{--                                        type="button"--}}
+{{--                                        data-bs-toggle="collapse"--}}
+{{--                                        data-bs-target="#flush-collapseOne"--}}
+{{--                                        aria-expanded="false"--}}
+{{--                                        aria-controls="flush-collapseOne">--}}
+{{--                                        GRAPHICS--}}
+{{--                                    </button>--}}
+{{--                                </h2>--}}
+{{--                                <div id="flush-collapseOne" class="accordion-collapse collapse show"--}}
+{{--                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">--}}
+{{--                                    <div class="accordion-body pt-0">--}}
+{{--                                        <p>--}}
+{{--                                            Option to display graphic content with custom-made and standard graphic library like "SLOW DOWN", "THANK YOU", "WORK ZONE", etc.--}}
+{{--                                        </p>--}}
+{{--                                        <img data-src="{{asset('assets/images/radar/RSS display.png')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="accordion-item border-0">--}}
+{{--                                <h2 class="accordion-header" id="flush-headingTwo">--}}
+{{--                                    <button--}}
+{{--                                        class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"--}}
+{{--                                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"--}}
+{{--                                        aria-expanded="false" aria-controls="flush-collapseTwo">--}}
+{{--                                        TEXT MESSAGES--}}
+{{--                                    </button>--}}
+{{--                                </h2>--}}
+{{--                                <div id="flush-collapseTwo" class="accordion-collapse collapse"--}}
+{{--                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">--}}
+{{--                                    <div class="accordion-body pt-0">--}}
+{{--                                        <p>--}}
+{{--                                            Option to display custom text messages like community notifications, traffic updates, etc.--}}
+{{--                                        </p>--}}
+{{--                                        <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"  class="lazyload img-fluid p-2"/>--}}
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img class="lazyload dotted-imag img-fluid d-none d-md-inline" data-src="/assets/customer/images/dotted-tran.png" alt="not-found">
-        </div>
-    </section>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <div class="circle-floow position-relative">--}}
+
+{{--                            <div class="accordion accordion-flush position-relative" id="accordionFlushExampleSecond">--}}
+{{--                                <div class="accordion-item border-0">--}}
+{{--                                    <h2 class="accordion-header">--}}
+{{--                                        <button--}}
+{{--                                            class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"--}}
+{{--                                            type="button"--}}
+{{--                                            data-bs-toggle="collapse"--}}
+{{--                                            data-bs-target="#flush-collapseOneSecond"--}}
+{{--                                            aria-expanded="false"--}}
+{{--                                            aria-controls="flush-collapseOneSecond">--}}
+{{--                                            MULTI-COLOUR--}}
+{{--                                        </button>--}}
+{{--                                    </h2>--}}
+{{--                                    <div id="flush-collapseOneSecond" class="accordion-collapse collapse show"--}}
+{{--                                         aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExampleSecond">--}}
+{{--                                        <div class="accordion-body pt-0">--}}
+{{--                                            <p>--}}
+{{--                                                Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options.--}}
+{{--                                            </p>--}}
+
+
+{{--                                            <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"  class="lazyload img-fluid p-2"/>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="accordion-item border-0">--}}
+{{--                                    <h2 class="accordion-header" id="flush-headingTwo">--}}
+{{--                                        <button--}}
+{{--                                            class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"--}}
+{{--                                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwoThird"--}}
+{{--                                            aria-expanded="false" aria-controls="flush-collapseTwoThird">--}}
+{{--                                            FLASHING LIGHTS--}}
+{{--                                        </button>--}}
+{{--                                    </h2>--}}
+{{--                                    <div id="flush-collapseTwoThird" class="accordion-collapse collapse"--}}
+{{--                                         aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExampleSecond">--}}
+{{--                                        <div class="accordion-body pt-0">--}}
+{{--                                            <p>--}}
+{{--                                                White high bright flashing lights to alert the drivers, so one can never miss the attention--}}
+{{--                                            </p>--}}
+{{--                                            <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"  class="lazyload img-fluid p-2"/>--}}
+
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <img class="lazyload dotted-imag img-fluid d-none d-md-inline" data-src="/assets/customer/images/dotted-tran.png" alt="not-found">--}}
+{{--        </div>--}}
+{{--    </section>--}}
 {{--content_gallery_001897.txt   :: here content availble in txt file --}}
 @include('customer.layout2.get_in_touch')
 
@@ -649,43 +649,7 @@ $seo_meta=[
         autoplay:true,
         adaptiveHeight: true
     });
-    //
-    // $('.key-slider-sign-radar').slick({
-    //     dots: true,
-    //     infinite: true,
-    //     speed: 300,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     arrows: false,
-    //     responsive: [
-    //         {
-    //             breakpoint: 1024,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1,
-    //                 infinite: true,
-    //                 dots: true
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 600,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 480,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1
-    //             }
-    //         }
-    //         // You can unslick at a given breakpoint now by adding:
-    //         // settings: "unslick"
-    //         // instead of a settings object
-    //     ]
-    // });
+
     </script>
 </body>
 </html>

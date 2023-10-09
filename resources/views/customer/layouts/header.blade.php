@@ -121,12 +121,6 @@ $productLists = Product::take(5)->get();
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="/"><img src="{{asset('assets\customer\images\logo-dark.webp')}}" alt="Not Found" class="img-navbar-icon-logo"></a>
-{{--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"--}}
-{{--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--}}
-{{--                    aria-expanded="false" aria-label="Toggle navigation">--}}
-{{--                  --}}
-{{--                </button>--}}
-
                 <a id="menu-toggle" class="mobile-display">
                     <span class="navbar-toggler-icon"></span>
                 </a>
@@ -257,7 +251,6 @@ $productLists = Product::take(5)->get();
                     @forelse ($productLists as $list)
                         <li class=""><a class="btn text-decoration-none" href="{{route('customer.radar.sign', $list->id)}}">{{$list->title}}</a></li>
                     @empty
-
                     @endforelse
 
                 </ul>
@@ -272,8 +265,6 @@ $productLists = Product::take(5)->get();
                 @if (!Session::get('user'))
                     <li class="nav-item mobile-menu-items">
                         <div class="d-flex align-items-center">
-
-
                         <input type="hidden" name="grand_total" value="{{$cartPrice}}">
                         <p class="me-2 mb-0">{{$cartPrice}}</p>
                         <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>
@@ -285,17 +276,9 @@ $productLists = Product::take(5)->get();
                     <a href="{{route('customer.loginForm')}}" class="nav-link text-uppercase"> Login</a>
                     </li>
                 @else
-{{--                    <div class="d-flex align-items-center">--}}
-{{--                        <p class="me-2 mb-0">{{$cartPrice}}</p>--}}
-{{--                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\shoping.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
-{{--                    </div>--}}
-
-
-
                 <li class="nav-item mobile-menu-items">
                     <a  href="{{route('customer.logout')}}" class="nav-link text-uppercase">
                         Logout</a></li>
-
                 @endif
 
 0
