@@ -26,8 +26,8 @@
                                         {{--    <img src="#" alt="Not Found">--}}
                                     </div>
                                     <div class="d-flex">
-                                        <img class="lazyload profile-placeholder rounded-circle  cicles"
-                                             src="{{asset('storage/'.$says->image)}}" alt="Not Found">
+                                        <img class="profile-placeholder rounded-circle  cicles"
+                                             src="{{asset('storage/'.$says->image)}}" alt="Not Found" loading="lazy">
                                         <div class="ms-2 d-flex flex-column align-items-center justify-content-start">
                                             <div class="five-star text-left w-100">
 
