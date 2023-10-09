@@ -111,15 +111,15 @@ $seo_meta=[
                                     </span>
                                     <span class="d-block">{{$product->title}}</span>
                                     <div class="d-flex justify-content-center align-items-center my-2 gap-1">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img   data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
                                             width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
                                             width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
                                             width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
                                             width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
                                             width="14px">
                                     </div>
                                     <span class="d-block weight-font">${{$product->price}}</span>
@@ -151,27 +151,27 @@ $seo_meta=[
                 <div class="col-lg-6  ">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/TRAFIC.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/TRAFIC.png')}}"  class="lazyload" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
                             <h6>Traffic Data Analysis</h6>
                             <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
                         </div>
 
                     </div>
-                    <img src="{{asset('assets/images/radar/RSS4.webp')}}"  class="img-fluid p-2"/>
+                    <img data-src="{{asset('assets/images/radar/RSS4.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found" class="lazyload"></div>
                         <div class="">
                             <h6>24x7 Cloud Connectivity</h6>
                             <p class="mb-0"> All time access to the device</p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS3.webp')}}"  class="img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
 
@@ -179,77 +179,77 @@ $seo_meta=[
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" class="lazyload" alt="Not Found"></div>
                         <div class="">
                             <h6>Solar Powered</h6>
                             <p class="mb-0"> Makes the device cost effective</p>
 
                         </div>
                          </div>
-                        <img src="{{asset('assets/images/radar/RSS2.webp')}}"  class="img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/BATTERY.png')}}" style="height: 70px;"  ></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/BATTERY.png')}}"  class="lazyload" style="height: 70px;"  ></div>
                         <div class="">
                             <h6>Battery Backup</h6>
                             <p class="mb-0"> Long battery backup increases operational hours </p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS5.webp')}}"  class="img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/COMPLIANCE.png')}}"  style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/COMPLIANCE.png')}}" class="lazyload"  style="height: 70px;" alt="Not Found"></div>
                         <div class="">
                             <h6>Fully Compliance</h6>
                             <p class="mb-0"> Comply standard norms with other industries</p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS6.webp')}}"  class="img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
                         <div class="">
                             <h6>All Weather Operation</h6>
                             <p class="mb-0"> The sign operates efficiently in all the weathers</p>
                         </div>
                     </div>
-                        <img src="{{asset('assets/images/radar/RSS1.webp')}}"  class="img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                         <div class="d-flex align-items-center ">
-                            <div class="me-3"><img src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                            <div class="me-3"><img data-src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
                             <div class="">
                                 <h6>Robust</h6>
                                 <p class="mb-0"> Designed to withstand extreme weather conditions </p>
                             </div>
                         </div>
-                        <img src="{{asset('assets/images/radar/RSS7.webp')}}"  class="img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                         <div class="d-flex align-items-center ">
-                            <div class="me-3"><img src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found"></div>
+                            <div class="me-3"><img data-src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
                             <div class="">
                                 <h6>Easy Installation</h6>
                                 <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
                             </div>
                         </div>
-                        <img src="{{asset('assets/images/radar/RSS8.webp')}}"  class="img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}"  class="lazyload img-fluid p-2"/>
                     </div>
                 </div>
 
@@ -291,7 +291,7 @@ $seo_meta=[
                                         <p>
                                             Option to display graphic content with custom-made and standard graphic library like "SLOW DOWN", "THANK YOU", "WORK ZONE", etc.
                                         </p>
-                                        <img src="{{asset('assets/images/radar/RSS display.png')}}"  class="img-fluid p-2"/>
+                                        <img data-src="{{asset('assets/images/radar/RSS display.png')}}"  class="lazyload img-fluid p-2"/>
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +310,7 @@ $seo_meta=[
                                         <p>
                                             Option to display custom text messages like community notifications, traffic updates, etc.
                                         </p>
-                                        <img src="{{asset('assets/images/radar/RSS Text.png')}}"  class="img-fluid p-2"/>
+                                        <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"  class="lazyload img-fluid p-2"/>
 
                                     </div>
                                 </div>
@@ -342,7 +342,7 @@ $seo_meta=[
                                             </p>
 
 
-                                            <img src="{{asset('assets/images/radar/RSS Multicolor.png')}}"  class="img-fluid p-2"/>
+                                            <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"  class="lazyload img-fluid p-2"/>
                                         </div>
                                     </div>
                                 </div>
@@ -361,22 +361,18 @@ $seo_meta=[
                                             <p>
                                                 White high bright flashing lights to alert the drivers, so one can never miss the attention
                                             </p>
-                                            <img src="{{asset('assets/images/radar/RSS Strobes.png')}}"  class="img-fluid p-2"/>
+                                            <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"  class="lazyload img-fluid p-2"/>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-{{--                            <div class="stone-accordian position-absolute d-flex align-items-center ">--}}
-{{--                                <img src="{{asset('assets/customer/images/object.png')}}" class="img-fluid circle-image d-none d-md-block"--}}
-{{--                                    alt="not-found">--}}
-{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
             </div>
-            <img class="dotted-imag img-fluid d-none d-md-inline" src="/assets/customer/images/dotted-tran.png" alt="not-found">
+            <img class="lazyload dotted-imag img-fluid d-none d-md-inline" data-src="/assets/customer/images/dotted-tran.png" alt="not-found">
         </div>
     </section>
 {{--content_gallery_001897.txt   :: here content availble in txt file --}}
