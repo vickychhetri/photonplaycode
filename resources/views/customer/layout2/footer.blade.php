@@ -7,32 +7,6 @@ $categories = Category::select('title')->take(3)->get();
 $blogs = Blog::select('slug','title')->take(4)->get();
 @endphp
 
-{{--<div class="chat_modal" id="chat_videoModal">--}}
-{{--    <div class="chat_modal-content">--}}
-{{--        <span class="chat_close">&times;</span>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-<!-- Modal -->
-{{--<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">--}}
-{{--    <div class="modal-dialog  modal-fullscreen">--}}
-{{--        <div class="modal-content">--}}
-{{--            <div class="modal-header">--}}
-{{--                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>--}}
-{{--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
-{{--            </div>--}}
-{{--            <div class="modal-body" >--}}
-{{--                <iframe src=https://client.consolto.com/expert/photonplay.systems allow="camera;microphone;fullscreen;autoplay;display-capture" frameborder="0" scrolling="no" style="width: 100%; height: 100%;"></iframe>--}}
-{{--            </div>--}}
-{{--            <div class="modal-footer">--}}
-{{--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Minimize</button>--}}
-{{--                <button type="button" class="btn btn-primary">Understood</button>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-
-
 <script>
     // Add a click event listener to the button
 
@@ -59,51 +33,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         });
     });
 
-    // document.getElementById('startvideochat').addEventListener('click', function () {
-    //     console.log("hitted");
-    //     // Create the custom event with 'consoltoReady' set to true
-    //     var consoltoReadyEvent = new CustomEvent('consoltoEvent', {
-    //         detail: {
-    //             'et-click-type': 'open-widget', // One of the 5 available actions
-    //         }
-    //     });
-    //
-    //     // Dispatch the custom event
-    //     window.dispatchEvent(consoltoReadyEvent);
-    // });
 </script>
-
-
-<script>
-    // const openModalBtn = document.getElementById("startvideochat");
-    // const videoModal = document.getElementById("chat_videoModal");
-    // // const videoIframe = document.getElementById("chat_videoIframe");
-    // const closeModal = document.querySelector(".close");
-    //
-    // openModalBtn.addEventListener("click", () => {
-    //     // alert("hit");
-    //     videoModal.style.display = "block";
-    // });
-    //
-    //
-    // closeModal.addEventListener("click", () => {
-    //     // videoIframe.src = "";
-    //     videoModal.style.display = "none";
-    // });
-    //
-    // // Close the modal if the user clicks outside of it
-    // window.addEventListener("click", (event) => {
-    //     if (event.target === videoModal) {
-    //         // videoIframe.src = "";
-    //         videoModal.style.display = "none";
-    //     }
-    // });
-
-</script>
-
-
-
-
 
 <!-- _____________________ourclint-last-end___________________ -->
     <section class="subscribe-section" id="subscribed">
@@ -133,7 +63,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         <div class="footer-section-inner d-lg-flex justify-content-center">
             <div class="footer-item mb-0 mb-md-5 footer-item-1">
                 <div class="logo-bottom mb-lg-4 w-100">
-                    <img src="{{asset('assets\customer\images\logo-dark.png')}}" alt="">
+                    <img src="{{asset('assets\customer\images\logo-dark.png')}}"  class="lazyload" alt="">
                 </div>
                 <div class="description" style="text-align: justify;word-spacing:-1px;clear: both;">
                     <p>
@@ -204,10 +134,10 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                     </div>
 {{--                    <a href="{{route('customer.contact.us')}}" class="btn btn-primary mt-3">Contact Now</a>--}}
                     <ul class="social-media w-100">
-                    <li><a class="" href="{{$setting->facebook ?? ''}}"><img src="{{asset('assets\customer\images\facebook.svg')}}" /></a></li>
-                    <li><a class="" href="{{$setting->twitter  ?? ''}}"><img src="{{asset('assets\customer\images\twitter.jpg')}}" /></a></li>
-                    <li><a class="" href="{{$setting->linkedin ?? ''}}"><img src="{{asset('assets\customer\images\linkdin.jpg')}}" /></a></li>
-                    <li><a class="" href="{{$setting->instagram ?? ''}}"><img src="{{asset('assets\customer\images\instagram.png')}}" /></a></li>
+                    <li><a class="" href="{{$setting->facebook ?? ''}}"><img src="{{asset('assets\customer\images\facebook.svg')}}" class="lazyload" /></a></li>
+                    <li><a class="" href="{{$setting->twitter  ?? ''}}"><img src="{{asset('assets\customer\images\twitter.jpg')}}" class="lazyload" /></a></li>
+                    <li><a class="" href="{{$setting->linkedin ?? ''}}"><img src="{{asset('assets\customer\images\linkdin.jpg')}}" class="lazyload" /></a></li>
+                    <li><a class="" href="{{$setting->instagram ?? ''}}"><img src="{{asset('assets\customer\images\instagram.png')}}" class="lazyload" /></a></li>
 
                 </ul>
                 </div>
@@ -345,4 +275,3 @@ $blogs = Blog::select('slug','title')->take(4)->get();
     });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-

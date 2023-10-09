@@ -14,7 +14,7 @@ $clients = Client::get();
                     @forelse ($clients as $client)
                     <div>
                         <div class="px-2 branding-diss shadow-sm" id="{{$client->index}}">
-                            <img src="{{asset('storage/'.$client->image)}}" class="d-block mx-auto image-client-logo" />
+                            <img src="{{asset('storage/'.$client->image)}}" class="lazyload d-block mx-auto image-client-logo" />
                         </div>
                     </div>
                     @empty
