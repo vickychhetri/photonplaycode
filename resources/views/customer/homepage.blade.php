@@ -138,7 +138,7 @@ $seo_meta = [
                                 {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                             </div>
                             <div class="mask-layer common-wdth inner-col text-center">
-                                <img src="/assets/customer/images/products_home/Radar-Speed-Sign.webp"
+                                <img data-src="/assets/customer/images/products_home/Radar-Speed-Sign.webp"
                                      alt="Radar Speed Sign" class="lazyload">
                                 <div>
                                     <a href="{{route('customer.radar.sign',$product->slug)}}"
@@ -168,7 +168,7 @@ $seo_meta = [
                             {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/Smart-City-VMS-Front.webp" alt="Portable Variable
+                            <img data-src="/assets/customer/images/products_home/Smart-City-VMS-Front.webp" alt="Portable Variable
                                         Message Signs" class="lazyload">
                             <div>
                                 <a href="{{route('customer.variable.message')}}"
@@ -195,7 +195,7 @@ $seo_meta = [
                             {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/iCop-MTO-Side-front.webp" alt="Portable Variable
+                            <img data-src="/assets/customer/images/products_home/iCop-MTO-Side-front.webp" alt="Portable Variable
                                         Message Signs" class="lazyload">
                             <div>
                                 <a href="{{route('customer.portable.variable.message.signs')}}"
@@ -222,7 +222,7 @@ $seo_meta = [
                             </h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/Variable-Speed-Limit-Sign.webp" alt="VSLS"
+                            <img data-src="/assets/customer/images/products_home/Variable-Speed-Limit-Sign.webp" alt="VSLS"
                                  class="lazyload">
                             <div>
                                 <a href="{{route('customer.variable.speed.limit')}}"
@@ -249,7 +249,7 @@ $seo_meta = [
                             </h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/LCS-front-2.webp" alt="LCS" class="lazyload">
+                            <img data-src="/assets/customer/images/products_home/LCS-front-2.webp" alt="LCS" class="lazyload">
                             <div>
                                 <a href="{{route('customer.lane.control.system')}}"
                                    class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -275,7 +275,7 @@ $seo_meta = [
                             {{--                                <p class="mb-0">{{$product->title}}</p>--}}
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/PIDS.webp" alt="Portable Variable
+                            <img data-src="/assets/customer/images/products_home/PIDS.webp" alt="Portable Variable
                                         Message Signs" class="lazyload">
                             <div>
                                 <a href="/passenger-information-display-systems"
@@ -301,7 +301,7 @@ $seo_meta = [
                             </h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/Emergency-Telephone-Signs.webp" alt="EMERGENCY TELEPHONE SIGN" class="lazyload">
+                            <img data-src="/assets/customer/images/products_home/Emergency-Telephone-Signs.webp" alt="EMERGENCY TELEPHONE SIGN" class="lazyload">
                             <div>
                                 <a href="/emergency-signage/product/emergency-telephone-sign"
                                    class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -327,7 +327,7 @@ $seo_meta = [
                             </h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/Emergency-Exit-Sign.webp" alt="EMERGENCY Signs" class="lazyload">
+                            <img data-src="/assets/customer/images/products_home/Emergency-Exit-Sign.webp" alt="EMERGENCY Signs" class="lazyload">
                             <div>
                                 <a href="emergency-signage/product/emergency-exit-sign"
                                    class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -350,7 +350,7 @@ $seo_meta = [
                             <h6 class="text-uppercase">WAY FINDER</h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/Way-Finder-Light-Glow.webp" alt="WAY FINDER"
+                            <img data-src="/assets/customer/images/products_home/Way-Finder-Light-Glow.webp" alt="WAY FINDER"
                                  class="lazyload">
                             <div>
                                 <a href="emergency-signage/product/way-finders"
@@ -387,7 +387,7 @@ $seo_meta = [
                             </h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/VASD.webp" alt="Bus Sign" class="lazyload">
+                            <img data-src="/assets/customer/images/products_home/VASD.webp" alt="Bus Sign" class="lazyload">
                             <div>
                                 <a href="{{route('customer.solution.transit')}}"
                                    class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
@@ -412,7 +412,7 @@ $seo_meta = [
                             </h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/FDU-AMBER-FRONT.webp" alt="Bus Sign"
+                            <img data-src="/assets/customer/images/products_home/FDU-AMBER-FRONT.webp" alt="Bus Sign"
                                  class="lazyload">
                             <div>
                                 <a href="{{route('customer.solution.transit')}}"
@@ -440,7 +440,7 @@ $seo_meta = [
                             </h6>
                         </div>
                         <div class="mask-layer common-wdth inner-col text-center">
-                            <img src="/assets/customer/images/products_home/Circular_outer_led_ticker.webp"
+                            <img data-src="/assets/customer/images/products_home/Circular_outer_led_ticker.webp"
                                  alt=" LED Tickers" class="lazyload">
                             <div>
                                 <a href="{{route('customer.solution.city')}}"
@@ -489,7 +489,7 @@ $seo_meta = [
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0">
                 <a href="{{route('customer.solution.highway')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Highway-Icons.webp') }}" alt="image" class="lazyload">
+                        <img data-src="{{ asset('assets/customer/images/Highway-Icons.webp') }}" alt="image" class="lazyload">
                         <div class="content-application-items members-profile" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Highways </h6>
                             <p class="mb-0 text-center">
@@ -503,7 +503,7 @@ $seo_meta = [
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0 gap-5">
                 <a href="{{route('customer.solution.tunnel')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Tunnels-Icons.webp') }}" alt="image" class="lazyload">
+                        <img data-src="{{ asset('assets/customer/images/Tunnels-Icons.webp') }}" alt="image" class="lazyload">
                         <div class="content-application-items members-profile " style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Tunnels </h6>
                             <p class="mb-0 text-center">
@@ -512,21 +512,13 @@ $seo_meta = [
                             </p>
                         </div>
                     </div>
-                    <!-- <div class="members-profile h-100">
-                        <div class="p-4 ">
-                            <img class="profile-placeholderss mb-5" src="/assets/images/tunnels-Icon.png" alt="Not Found">
-                            <h6 class="text-uppercase">Tunnels</h6>
-                            <p class="mb-0 text-center">
-                            Navigating tunnels becomes easier and safer with our intelligent ITS solutions that offer comprehensive monitoring, ventilation control, and incident management.
-                            </p>
-                        </div>
-                    </div> -->
+
                 </a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0">
                 <a href="{{route('customer.solution.city')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Smart-cities-icon.webp') }}" alt="image" class="lazyload">
+                        <img data-src="{{ asset('assets/customer/images/Smart-cities-icon.webp') }}" alt="image" class="lazyload">
                         <div class="content-application-items members-profile application-item" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Smart Cities </h6>
                             <p class="mb-0 text-center">
@@ -535,22 +527,13 @@ $seo_meta = [
                             </p>
                         </div>
                     </div>
-                    <!-- <div class="members-profile h-100">
-                        <div class="p-4 ">
-                            <img class="profile-placeholderss mb-5" src="/assets/customer/images/Smart-cities-icon.png"
-                                 alt="Not Found">
-                            <h6 class="text-uppercase">Smart Cities</h6>
-                            <p class="mb-0 text-center">
-                            From intelligent traffic management to efficient public transportation, we provide innovative solutions that improve urban mobility and reduce environmental impact.
-                           </p>
-                        </div>
-                    </div> -->
+
                 </a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4 mb-xl-0">
                 <a href="{{route('customer.solution.tunnel')}}" style="text-decoration: none;">
                     <div class="application-item">
-                        <img src="{{ asset('assets/customer/images/Transits-Icons.webp') }}" alt="image" class="lazyload">
+                        <img data-src="{{ asset('assets/customer/images/Transits-Icons.webp') }}" alt="image" class="lazyload">
                         <div class="content-application-items members-profile application-item" style="height: 310px;">
                             <h6 class="text-uppercase text-dark">Transit</h6>
                             <p class="mb-0 text-center">
