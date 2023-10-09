@@ -33,15 +33,15 @@ $seo_meta=[
                                 <a href="#our_products" type="button"
                                    class="py-2 rounded border-0 px-4 mt-5 bg-white outline-1 btn-light text-decoration-none border-1" >Shop Now <img class="fs-4 ms-2" width="10" src="{{asset('assets\customer\images\downarrow.png')}}"
                                                   alt=""></a>
-                                <div class="zigzack d-flex justify-content-start"><img src="{{asset('assets\customer\images\ziczac.png')}}"
-                                                                                       class="img-fluid d-none d-md-block" alt="not-found"></div>
+                                <div class="zigzack d-flex justify-content-start"><img data-src="{{asset('assets\customer\images\ziczac.png')}}"
+                                                                                       class="lazyload img-fluid d-none d-md-block " alt="not-found"></div>
                                 <div
                                     class="circle-dotted position-absolute w-100 d-none d-md-flex align-items-center justify-content-start">
-{{--                                    <img src="{{asset('assets\customer\images\circles.png')}}" alt="Not Found" class="img-fluid">--}}
+
                                 </div>
                             </div>
                             <div class="desktop-display">
-                                <img src="{{asset('assets\customer\images\Radar-Speed-Signs-with-Pole.webp')}}" alt="Not Found" class="mt-3 mt-sm-0" style="height: 110%;">
+                                <img data-src="{{asset('assets\customer\images\Radar-Speed-Signs-with-Pole.webp')}}" alt="Not Found" class="lazyload mt-3 mt-sm-0" style="height: 110%;">
                             </div>
                             <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Not Found"
                                  class="img-fluid d-none d-md-block">
