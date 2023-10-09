@@ -10,7 +10,7 @@
     <div class="key-slider mb-0">
         @foreach($page->galleries as $banner)
             <div>
-                <img src="{{asset('storage/'.$banner->image)}}" alt="{{$banner->tagline}}" class="img-fluid w-100 h-100 slide-images-key" loading="lazy">
+                <img  data-src="{{asset('storage/'.$banner->image)}}" alt="{{$banner->tagline}}" class="lazyload img-fluid w-100 h-100 slide-images-key">
             </div>
         @endforeach
     </div>
