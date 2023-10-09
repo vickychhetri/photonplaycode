@@ -662,7 +662,7 @@ $seo_meta = [
                     <div class="inner-cqategory mb-lg-0 mb-4">
                         <div class="">
                             <a href="{{route("customer.blog_show",$blog->slug)}}"> <img
-                                    src="{{asset("storage/".$blog->image)}}" alt=""
+                                    data-src=="{{asset("storage/".$blog->image)}}" alt=""
                                     class="lazyload mb-4 category-image img-fluid w-100 "> </a>
                         </div>
                         <div class="p-4">
