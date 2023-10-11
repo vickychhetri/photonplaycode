@@ -18,4 +18,8 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Prevent access to /public/ and force the root domain
+    RewriteCond %{THE_REQUEST} /public/
+    RewriteRule ^(.*)$ https://www.photonplay.com [R=301,L]
 </IfModule>
