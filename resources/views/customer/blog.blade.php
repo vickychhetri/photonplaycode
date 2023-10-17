@@ -47,11 +47,6 @@ $seo_meta=[
                                             <span>    <a href="/blog?tags={{strtolower($tag)}}" class="text-decoration-none"> {{$tag}} </a></span>
                                         @endforeach
 
-{{--                                        <span>development</span>--}}
-{{--                                        <span>ui</span>--}}
-{{--                                        <span>photography</span>--}}
-{{--                                        <span>template</span>--}}
-                                        <!-- <span>branding</span> -->
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +96,7 @@ $seo_meta=[
                             <ul class="m-0 p-0">
 
                                 @foreach($categories as $category)
-                                    <li class=" "><a href="/blog?category={{$category->slug}}" class="text-decoration-none text-uppercase">{{$category->category}}</a></li>
+                                    <li class=" "><a href="/blogs?category={{$category->slug}}" class="text-decoration-none text-uppercase">{{$category->category}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -135,7 +130,7 @@ $seo_meta=[
                                     <?php $i=1;?>
                                 @foreach($tags as $tag)
                                         <span class="tagskeyslinks">
-                                            <a href="/blog?tags={{strtolower($tag)}}" class="text-decoration-none " style="color: white">{{$tag}}</a></span>
+                                            <a href="/blogs?tags={{strtolower($tag)}}" class="text-decoration-none " style="color: white">{{$tag}}</a></span>
                                     @if($i%3==0)
                                 </div>
                                             <div class="mb-3">
@@ -151,7 +146,7 @@ $seo_meta=[
                             <ul class="m-0 p-0">
 
                                 @foreach($groupedPosts as $postarchive)
-                                    <li><a href="/blog?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>
+                                    <li><a href="/blogs?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>
                                 @endforeach
 
 {{--                                <li><a hre="">April 2023</a></li>--}}
@@ -201,59 +196,6 @@ $seo_meta=[
         </div>
     </section>
 
-    <!-- related posted-end -->
-    <!-- blog-banner end  -->
-{{--    <section class="our-clints-last">--}}
-{{--        <div class="mb-lg-5 text-center">--}}
-{{--            <h2 class="fs-md-2 mt-3">Our Clients</h2>--}}
-{{--        </div>--}}
-{{--        <div class="container">--}}
-{{--            <div class="px-4">--}}
-{{--                <div class="clints-content mb-0 d-flex align-items-center">--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/adani.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/afkons.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/ASHOKA.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/CTU.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/adani.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/afkons.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/ASHOKA.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div>--}}
-{{--                        <div class="px-2 branding-diss">--}}
-{{--                            <img src="./assets/images/CTU.png" class="d-block mx-auto" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>

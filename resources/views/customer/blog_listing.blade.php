@@ -62,7 +62,7 @@ $seo_meta=[
                         <div class="side-bar-title">Categories</div>
                         <ul class="m-0 p-0">
                             @foreach($categories as $category)
-                                <li class=" "><a href="/blog?category={{$category->slug}}" class="text-decoration-none text-uppercase">{{$category->category}}</a></li>
+                                <li class=" "><a href="/blogs?category={{$category->slug}}" class="text-decoration-none text-uppercase">{{$category->category}}</a></li>
                             @endforeach
 
                         </ul>
@@ -75,7 +75,7 @@ $seo_meta=[
                                     <a href="{{route('customer.blog_show',$lt_blog->slug)}}" class="d-flex align-items-center text-decoration-none text-secondary">
                                         <img src="{{asset("storage/".$lt_blog->image)}}" />
                                         <div class="latest-post-content ms-2">
-                                            <h4>{{$lt_blog->title}}</h4>
+                                            <h4>{{$lt_blog->title}}9</h4>
                                             <span>
                                                 <?php
                                                     $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$lt_blog->created_at);
@@ -94,7 +94,7 @@ $seo_meta=[
                         <div class="side-bar-title">Archive</div>
                         <ul class="m-0 p-0">
                             @foreach($groupedPosts as $postarchive)
-                                <li><a href="/blog?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>
+                                <li><a href="/blogs?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>
                             @endforeach
 
                         </ul>
