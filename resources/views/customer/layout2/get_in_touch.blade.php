@@ -8,7 +8,7 @@ $setting = Setting::first();
             <div class="col-md-6">
                 <div class="contact-sec-info">
                     <div class="text-start pb-2">
-                        <h2 class="fs-md-2 mt-3">Request a Demo</h2>
+                        <h4 class="fs-md-2 mt-3" style="font-size: 40px;">Request a Demo</h4>
                         <p class="opacity-50">We're dedicated to creating meaningful connections
                             that propel your success forward.</p>
                     </div>
@@ -29,7 +29,7 @@ $setting = Setting::first();
             </div>
             <div class="col-md-6">
                 <div class="text-start pb-2">
-                    <h2 class="fs-md-2 mt-3">GET IN TOUCH</h2>
+                    <h4 class="fs-md-2 mt-3" style="font-size: 40px;">GET IN TOUCH</h4>
                     <p class="opacity-50">Empowering connections that drive your success.</p>
                 </div>
                 <form action="{{route('customer.inquery.submit')}}" method="post">

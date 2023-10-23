@@ -40,8 +40,8 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         <div class="container">
             <div class="row">
                 <div class="subscribe-wrapper text-center">
-                    <h3 class="subscribe-title">Don’t miss our weekly updates about <br>
-                        New Products</h3>
+                    <p class="subscribe-title" style="font-size: 24px;">Don’t miss our weekly updates about <br>
+                        New Products</p>
                     <form action="{{route('customer.newsletter.store')}}" class="subscribr-form" method="post">
                         @csrf
                         <input type="hidden" name="url" value="{{\Illuminate\Support\Facades\URL::full()}}">
@@ -84,7 +84,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 </ul>
             </div> -->
             <div class="footer-item mb-0 mb-md-5 footer-item-2">
-                <h2>QUICK LINKS</h2>
+                <h5 style="font-size: 20px;">QUICK LINKS</h5>
                 <ul class="p-0">
                     <li><a href="/" class="text-capitalize">Home</a></li>
                     <li><a href="{{route('customer.about.us')}}" class="text-capitalize">About us</a></li>
@@ -99,7 +99,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 </ul>
             </div>
             <div class="footer-item mb-0 mb-md-5 footer-item-2">
-                <h2 class="text-uppercase">SOLUTIONS</h2>
+                <h5 class="text-uppercase" style="font-size: 20px;">SOLUTIONS</h5>
                 <ul class="p-0">
                     <li><a href="{{route('customer.solution.highway')}}">Highways</a></li>
                     <li><a href="{{route('customer.solution.tunnel')}}">Tunnels</a></li>
@@ -119,7 +119,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 </ul>
             </div> -->
             <div class="footer-item mb-0 mb-md-5 footer-item-5">
-                <h2 class="w-100">Get in Touch with Us</h2>
+                <h5 class="w-100" style="font-size: 20px;">Get in Touch with Us</h5>
                 <div class="contact-info w-100">
                     <div class="contact-info-item w-100">
                         @if ($setting)

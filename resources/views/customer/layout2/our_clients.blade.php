@@ -5,7 +5,7 @@ $clients = Client::get();
 
 <section class="{{Request::is('/') ||  Route::currentRouteName() === 'customer.about.us' ||Route::currentRouteName() === 'customer.contact.us'? 'our-clints-last':''}} ">
         <div class="mb-lg-5 text-center">
-            <h2 class="fs-md-2 mt-3">Our Clients</h2>
+            <h3 class="fs-md-2 mt-3" style="font-size: 40px;">Our Clients</h3>
         </div>
         <div class="container">
             <div class="px-2">

@@ -91,9 +91,9 @@ $seo_meta=[
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center mb-lg-5">
-                        <h2 class="fs-md-2">Our Products</h2>
-                        <h6 class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your needs and exceed your expectations.
-                        </h6>
+                        <h2 class="fs-md-2">Our Radar Speed Signs Products</h2>
+                        <p class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your needs and exceed your expectations.
+                        </p>
                     </div>
                 </div>
                 <div class="responsive">
@@ -106,9 +106,9 @@ $seo_meta=[
 {{--                                    <img class=""  src="" alt="">--}}
                                 </div>
                                 <div class="speed-sign text-center mt-3">
-                                    <span class="d-block weight-font">
+                                    <h3 class="d-block weight-font" style="font-size: 20px;">
                                         Radar Speed Sign
-                                    </span>
+                                    </h3>
                                     <span class="d-block">{{$product->title}}</span>
                                     <div class="d-flex justify-content-center align-items-center my-2 gap-1">
                                         <img   data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
@@ -140,7 +140,7 @@ $seo_meta=[
             <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;" >
                 <div class="col-lg-12">
                     <div class="text-center mb-lg-4">
-                        <h2 class="fs-md-2 mt-3">iCop Series Features</h2>
+                        <h2 class="fs-md-2 mt-3">Radar Speed Signs Series Features</h2>
                         <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect your device to various networks and devices,
                             enabling easy data transfer and integration with other smart devices.
                         </p>
@@ -153,7 +153,7 @@ $seo_meta=[
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img data-src="{{asset('assets/customer/images/TRAFIC.png')}}"  class="lazyload" style="height: 70px;"  alt="Not Found"></div>
                         <div class="">
-                            <h6>Traffic Data Analysis</h6>
+                            <h3 style="font-size: 16px;">Traffic Data Analysis</h3>
                             <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
                         </div>
 
@@ -167,7 +167,7 @@ $seo_meta=[
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img data-src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found" class="lazyload"></div>
                         <div class="">
-                            <h6>24x7 Cloud Connectivity</h6>
+                            <h3 style="font-size: 16px;">24x7 Cloud Connectivity</h3>
                             <p class="mb-0"> All time access to the device</p>
                         </div>
                     </div>
@@ -181,7 +181,7 @@ $seo_meta=[
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img data-src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" class="lazyload" alt="Not Found"></div>
                         <div class="">
-                            <h6>Solar Powered</h6>
+                            <h3 style="font-size: 16px;">Solar Powered</h3>
                             <p class="mb-0"> Makes the device cost effective</p>
 
                         </div>
@@ -195,7 +195,7 @@ $seo_meta=[
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img data-src="{{asset('assets/customer/images/BATTERY.png')}}"  class="lazyload" style="height: 70px;"  ></div>
                         <div class="">
-                            <h6>Battery Backup</h6>
+                            <h3 style="font-size: 16px;">Battery Backup</h3>
                             <p class="mb-0"> Long battery backup increases operational hours </p>
                         </div>
                     </div>
@@ -207,7 +207,7 @@ $seo_meta=[
                     <div class="d-flex align-items-center">
                         <div class="me-3"><img data-src="{{asset('assets/customer/images/COMPLIANCE.png')}}" class="lazyload"  style="height: 70px;" alt="Not Found"></div>
                         <div class="">
-                            <h6>Fully Compliance</h6>
+                            <h3 style="font-size: 16px;">Fully Compliance</h3>
                             <p class="mb-0"> Comply standard norms with other industries</p>
                         </div>
                     </div>
@@ -219,7 +219,7 @@ $seo_meta=[
                     <div class="d-flex align-items-center ">
                         <div class="me-3"><img data-src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
                         <div class="">
-                            <h6>All Weather Operation</h6>
+                            <h3 style="font-size: 16px;">All Weather Operation</h3>
                             <p class="mb-0"> The sign operates efficiently in all the weathers</p>
                         </div>
                     </div>
@@ -232,7 +232,7 @@ $seo_meta=[
                         <div class="d-flex align-items-center ">
                             <div class="me-3"><img data-src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
                             <div class="">
-                                <h6>Robust</h6>
+                                <h3 style="font-size: 16px;">Robust</h3>
                                 <p class="mb-0"> Designed to withstand extreme weather conditions </p>
                             </div>
                         </div>
@@ -245,7 +245,7 @@ $seo_meta=[
                         <div class="d-flex align-items-center ">
                             <div class="me-3"><img data-src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
                             <div class="">
-                                <h6>Easy Installation</h6>
+                                <h3 style="font-size: 16px;">Easy Installation</h3>
                                 <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
                             </div>
                         </div>
@@ -265,7 +265,7 @@ $seo_meta=[
             <!-- <h6 class="fs-6">photonplay’s</h6> -->
         </div>
         <div class="heading-sec">
-            <h2 class="fs-md-2 mt-3">Multi Functional Display</h2>
+            <h2 class="fs-md-2 mt-3">Radar Speed Signs Multi Functional Display</h2>
             <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
         </div>
         <div class="container ">
@@ -274,7 +274,7 @@ $seo_meta=[
                     <div class="col-md-6">
                         <div class="accordion accordion-flush position-relative" id="accordionFlushExample">
                             <div class="accordion-item border-0">
-                                <h2 class="accordion-header">
+                                <h3 class="accordion-header">
                                     <button
                                         class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"
                                         type="button"
@@ -284,7 +284,7 @@ $seo_meta=[
                                         aria-controls="flush-collapseOne">
                                         GRAPHICS
                                     </button>
-                                </h2>
+                                </h3>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body pt-0">
@@ -296,14 +296,14 @@ $seo_meta=[
                                 </div>
                             </div>
                             <div class="accordion-item border-0">
-                                <h2 class="accordion-header" id="flush-headingTwo">
+                                <h3 class="accordion-header" id="flush-headingTwo">
                                     <button
                                         class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                         aria-expanded="false" aria-controls="flush-collapseTwo">
                                         TEXT MESSAGES
                                     </button>
-                                </h2>
+                                </h3>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body pt-0">
@@ -323,7 +323,7 @@ $seo_meta=[
 
                             <div class="accordion accordion-flush position-relative" id="accordionFlushExampleSecond">
                                 <div class="accordion-item border-0">
-                                    <h2 class="accordion-header">
+                                    <h3 class="accordion-header">
                                         <button
                                             class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"
                                             type="button"
@@ -333,7 +333,7 @@ $seo_meta=[
                                             aria-controls="flush-collapseOneSecond">
                                             MULTI-COLOUR
                                         </button>
-                                    </h2>
+                                    </h3>
                                     <div id="flush-collapseOneSecond" class="accordion-collapse collapse show"
                                          aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExampleSecond">
                                         <div class="accordion-body pt-0">
@@ -347,14 +347,14 @@ $seo_meta=[
                                     </div>
                                 </div>
                                 <div class="accordion-item border-0">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                    <h3 class="accordion-header" id="flush-headingTwo">
                                         <button
                                             class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
                                             type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwoThird"
                                             aria-expanded="false" aria-controls="flush-collapseTwoThird">
                                             FLASHING LIGHTS
                                         </button>
-                                    </h2>
+                                    </h3>
                                     <div id="flush-collapseTwoThird" class="accordion-collapse collapse"
                                          aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExampleSecond">
                                         <div class="accordion-body pt-0">
@@ -381,14 +381,14 @@ $seo_meta=[
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="fs-md-2 mt-3 text-center">  FAQ  </h2>
+            <h3 class="fs-md-2 mt-3 text-center">  FAQ'S  </h3>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
+                    <h4 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             How does a radar speed sign work?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Radar speed signs detect vehicle speed and show it on a digital sign using radar.
@@ -396,11 +396,11 @@ $seo_meta=[
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
+                    <h4 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             How accurate are radar speed signs?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Radar speed indications are usually accurate to within 1-2 miles per hour.
@@ -408,11 +408,11 @@ $seo_meta=[
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
+                    <h4 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             What are the speed digital signs?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Speed digital signs promote safe driving by displaying speed restrictions or vehicle speeds.
@@ -422,11 +422,11 @@ $seo_meta=[
 
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
+                    <h4 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             What does radar speed limit sign mean?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Radar speed limit signs display speed restrictions and warn drivers when they exceed them.
@@ -437,11 +437,11 @@ $seo_meta=[
 
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
+                    <h4 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                             What are the signs that show your speed?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Radar technology is used to indicate the speed of your vehicle on speed display signs.
@@ -449,11 +449,11 @@ $seo_meta=[
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSix">
+                    <h4 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                             What is a speed control sign?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             A speed control sign displays the area's specified speed restriction.
@@ -463,11 +463,11 @@ $seo_meta=[
 
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSeven">
+                    <h4 class="accordion-header" id="headingSeven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                             What is the speed flashing sign?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             A speed flashing sign is one that flashes your current speed to warn you if you're going too fast.
@@ -476,11 +476,11 @@ $seo_meta=[
                 </div>
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEightA">
+                    <h4 class="accordion-header" id="headingEightA">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEightA" aria-expanded="false" aria-controls="collapseEightAx`blue ">
                             How effective are radar speed signs?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseEightA" class="accordion-collapse collapse" aria-labelledby="headingEightA" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Radar speed signs are excellent in getting cars to slow down and obey speed restrictions.
@@ -488,11 +488,11 @@ $seo_meta=[
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEight">
+                    <h4 class="accordion-header" id="headingEight">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                             What is a driver feedback sign?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             A driver feedback sign is a sign that gives drivers with real-time speed information.
@@ -500,11 +500,11 @@ $seo_meta=[
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingNine">
+                    <h4 class="accordion-header" id="headingNine">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                             How effective are driver feedback signs?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Driver feedback signs can help reduce speeding and improve road safety.
@@ -513,11 +513,11 @@ $seo_meta=[
                 </div>
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTen">
+                    <h4 class="accordion-header" id="headingTen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
                             What are speed feedback signs?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             Speed feedback indicators provide drivers with real-time speed information in order to encourage safe driving.
@@ -526,11 +526,11 @@ $seo_meta=[
                 </div>
 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEleven">
+                    <h4 class="accordion-header" id="headingEleven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
                             What is a driver feedback sign?
                         </button>
-                    </h2>
+                    </h4>
                     <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             A driver feedback sign displays the driver's current speed, encouraging safer driving.
