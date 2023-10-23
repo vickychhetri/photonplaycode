@@ -24,11 +24,11 @@ $seo_meta=[
 
                             <div class="position-relative heading-banner  ">
 
-                                <h1 class="text-dark">iCop | RADAR SPEED SIGN
+                                <h1 class="text-dark">iCop | RADAR SPEED SIGNS
                                     <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
                                 </h1>
                                 <div class="">
-                                    <p class="text-dark">Best safety score with standout visibility and features.</p>
+{{--                                    <p class="text-dark">Best safety score with standout visibility and features.</p>--}}
                                 </div>
                                 <a href="#our_products" type="button"
                                    class="py-2 rounded border-0 px-4 mt-5 bg-white outline-1 btn-light text-decoration-none border-1" >Shop Now <img class="fs-4 ms-2" width="10" src="{{asset('assets\customer\images\downarrow.png')}}"
@@ -60,12 +60,12 @@ $seo_meta=[
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-12">
-                    <p class="text-center"> A radar speed sign, also known as a radar speed display or a driver feedback sign, is a device that gives drivers real-time feedback on the speed of their vehicle. These signs are frequently put on roadways, mainly where speeding is a concern or speed limits must be enforced. Radar speed signs' main purpose is to encourage drivers to slow down and obey imposed speed limits, improving road safety.</p>
+                    <p class="text-center"> A radar speed signs, also known as a radar speed display or a driver feedback sign, is a device that gives drivers real-time feedback on the speed of their vehicle. These signs are frequently put on roadways, mainly where speeding is a concern or speed limits must be enforced. Radar speed signs' main purpose is to encourage drivers to slow down and obey imposed speed limits, improving road safety.</p>
                 </div>
                 <div class="col-lg-12 ">
                     <div class="radar-icop">
-                        <h4 class="text-uppercase text-center">MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGN EVER BUILT !</h4>
-                        <p class="mt-4" style="text-align: justify;">
+                        <h2 class="text-uppercase text-center">MOST CAPABLE AND HIGHLY-EQUIPPED RADAR SPEED SIGNS EVER BUILT !</h2>
+                        <p class="text-center" style="text-align: justify;color: black;font-size: 16px;">
                             The sign has all the standard features combined in one product to make it industry's best
                             Radar
                             Speed Sign. The sign acts like a Variable Message Sign to display graphics and text along
