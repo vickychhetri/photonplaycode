@@ -1,6 +1,10 @@
 User-agent: *
 Disallow: /cgi-bin/
 Disallow: /index.php
-Disallow: /tag
+Disallow: /public
+Disallow: /blog?category
+Disallow: /blog?months
+Disallow: /blog?tag
+Disallow: /blog/*/like-unlike
 Disallow: /admin/login
 Sitemap: https://www.photonplay.com/sitemap.xml
