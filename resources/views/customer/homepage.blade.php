@@ -130,7 +130,7 @@ $seo_meta = [
             </div>
             <div class="carousel-inner">
                 {{--VMS--}}
-                <div class="carousel-item">
+                <div class="carousel-item active">
                     <div class="products-two d-lg-flex justify-content-between">
                         <div class="common-wdth common-wdth_ inner-col align-self-center">
                             <h6 class="text-uppercase">VARIABLE MESSAGE SIGN (VMS)
@@ -158,7 +158,7 @@ $seo_meta = [
                 {{-- VMS END--}}
                 @foreach($products as $product)
 
-                    <div class="carousel-item {{ $loop->index === 0 ? 'active' : ''}}">
+                    <div class="carousel-item">
                         <div class="products-two d-lg-flex justify-content-between">
                             <div class="common-wdth common-wdth_ inner-col align-self-center">
                                 <h6 class="text-uppercase">{{$product->category->title}}</h6>
