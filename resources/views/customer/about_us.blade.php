@@ -114,7 +114,7 @@ $seo_meta=[
         <div class="container">
             <div class="col-lg-12">
                 <div class="text-center mb-lg-5">
-                    <h2 class="fs-md-2 mt-3">SOLUTIONS</h2>
+                    <h2 class="fs-md-2 mt-3">SOLUTION</h2>
                 </div>
             </div>
             <div class="row">
