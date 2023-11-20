@@ -129,6 +129,33 @@ $seo_meta = [
 
             </div>
             <div class="carousel-inner">
+                {{--VMS--}}
+                <div class="carousel-item">
+                    <div class="products-two d-lg-flex justify-content-between">
+                        <div class="common-wdth common-wdth_ inner-col align-self-center">
+                            <h6 class="text-uppercase">VARIABLE MESSAGE SIGN (VMS)
+                            </h6>
+                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
+                        </div>
+                        <div class="mask-layer common-wdth inner-col text-center">
+                            <img data-src="/assets/customer/images/products_home/Smart-City-VMS-Front.webp" alt="Portable Variable
+                                        Message Signs" class="lazyload">
+                            <div>
+                                <a href="{{route('customer.variable.message')}}"
+                                   class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
+                            </div>
+                        </div>
+                        <div class="d-lg-flex align-self-center common-wdth inner-col">
+                            <div class="ms-md-5">
+                                <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of
+                                    traffic management ecosystem for motorways, tunnels and urban traffic management
+                                    systems.</p>
+                                <x-Customer.Socialshare/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- VMS END--}}
                 @foreach($products as $product)
 
                     <div class="carousel-item {{ $loop->index === 0 ? 'active' : ''}}">
@@ -159,33 +186,7 @@ $seo_meta = [
                         </div>
                     </div>
                 @endforeach
-                {{--VMS--}}
-                <div class="carousel-item">
-                    <div class="products-two d-lg-flex justify-content-between">
-                        <div class="common-wdth common-wdth_ inner-col align-self-center">
-                            <h6 class="text-uppercase">VARIABLE MESSAGE SIGN (VMS)
-                            </h6>
-                            {{--                                <p class="mb-0">{{$product->title}}</p>--}}
-                        </div>
-                        <div class="mask-layer common-wdth inner-col text-center">
-                            <img data-src="/assets/customer/images/products_home/Smart-City-VMS-Front.webp" alt="Portable Variable
-                                        Message Signs" class="lazyload">
-                            <div>
-                                <a href="{{route('customer.variable.message')}}"
-                                   class="btn btn-primary text-capitalize  py-0 px-3 m-auto mt-3 mb-4"> Know More</a>
-                            </div>
-                        </div>
-                        <div class="d-lg-flex align-self-center common-wdth inner-col">
-                            <div class="ms-md-5">
-                                <p> Photonplay’s outperforming VMS signs are highly reliable and rugged components of
-                                    traffic management ecosystem for motorways, tunnels and urban traffic management
-                                    systems.</p>
-                                <x-Customer.Socialshare/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- VMS END--}}
+
                 {{--PVMS--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
