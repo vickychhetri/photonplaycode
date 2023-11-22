@@ -100,8 +100,7 @@ $seo_meta=[
                     <div >
                         <div class="p-2">
                             <div class="product_highlight inner-product bg-white">
-                                <div class=" w-75 h-75 light-product m-auto" style="background: url('{{ asset('storage/'. $product->cover_image) }}') no-repeat center;
-                                    background-size: cover;">
+                                <div class=" w-75 h-75 light-product m-auto" style="background: url('{{ asset('storage/'. $product->cover_image) }}') no-repeat center;">
 {{--                                    <img class=""  src="" alt="">--}}
                                 </div>
                                 <div class="speed-sign text-center mt-3">
