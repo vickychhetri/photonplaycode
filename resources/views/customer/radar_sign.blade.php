@@ -60,13 +60,13 @@ if(isset($seo_record)){
                                 @foreach($product->images as $im_g)
                                     <div>
                                         <div class="radar-item-box">
-                                            <img src="{{asset('storage/'.$im_g->image)}}" alt="Image" class="img-fluid">
+                                            <img src="{{asset('storage/'.$im_g->image)}}"  class="img-fluid" alt="{{$product->title}}">
                                         </div>
                                     </div>
                                 @endforeach
                                     <div>
                                         <div class="radar-item-box mb-0">
-                                            <img src="{{ asset('storage/'. $product->cover_image) }}" alt="Image" class="img-fluid">
+                                            <img src="{{ asset('storage/'. $product->cover_image) }}"  class="img-fluid" alt="{{$product->title}}">
                                         </div>
                                     </div>
                             </div>
@@ -78,7 +78,7 @@ if(isset($seo_record)){
                                 <div>
                                     <div class="p-2">
                                         <div class="img-leften  d-flex justify-content-center align-items-center">
-                                            <img src="{{ asset('storage/'. $product->cover_image) }}" alt="Not Found" class="img-fluid" style="max-height: 600px;" id="big-img-radar-product">
+                                            <img src="{{ asset('storage/'. $product->cover_image) }}"  class="img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{$product->title}}">
                                         </div>
                                     </div>
                                 </div>
@@ -94,11 +94,11 @@ if(isset($seo_record)){
                         @foreach($product->images as $im_g)
 
                             <div class="radar-item-box">
-                                <img src="{{asset('storage/'.$im_g->image)}}" alt="Image" class="img-fluid">
+                                <img src="{{asset('storage/'.$im_g->image)}}"  class="img-fluid" alt="{{$product->title}}">
                             </div>
                         @endforeach
                             <div class="radar-item-box">
-                                <img src="{{ asset('storage/'. $product->cover_image) }}" alt="Image" class="img-fluid">
+                                <img src="{{ asset('storage/'. $product->cover_image) }}"  class="img-fluid" alt="{{$product->title}}">
                             </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ if(isset($seo_record)){
                     @if($product->brochure)
                         <div>
                             <a href="{{asset('storage/'.$product->brochure)}}" class="d-flex align-items-center text-decoration-none text-dark"  style="height: 40px;padding:8px; width: 200px;" target="_blank">
-                                <img src="/assets/images/radar/pdf_icon.png" style="height:40px;"> &nbsp
+                                <img src="/assets/images/radar/pdf_icon.png" style="height:40px;" alt="PDF"> &nbsp
                                 <span class="font-weight-bold"><u> {{$product->title}} PDF </u> </span>
 
                                 </a>
@@ -125,11 +125,11 @@ if(isset($seo_record)){
                         {{$product->title}}
                     </span>
                     <div class="d-flex justify-content-start align-items-center gap-1">
-                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
-                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
-                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
-                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
-                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="Not Found" class="img-fluid" width="14px">
+                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="1 Star" class="img-fluid" width="14px">
+                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="2 Star" class="img-fluid" width="14px">
+                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="3 Star" class="img-fluid" width="14px">
+                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="4 Star" class="img-fluid" width="14px">
+                        <img src="{{asset('assets\customer\images\star.svg')}}" alt="5 Star" class="img-fluid" width="14px">
                         <span>( 150+ Customers Reviews)</span>
                     </div>
                     <p class="fw-bold fs-5"  id="total_price2">${{$product->price}}</p>
@@ -171,7 +171,7 @@ if(isset($seo_record)){
                                     <input type="hidden" name="color" value="Amber" id="colorchoose">
                                     <div class="selected-anc d-flex border-1 p-2 shadow-smm " >
                                         <div>
-                                            <img src="{{asset('/assets/images/radar/color/Amber-Color.png')}}" style="height:40px;" id="imgicon_color_st" />
+                                            <img src="{{asset('/assets/images/radar/color/Amber-Color.png')}}" style="height:40px;" id="imgicon_color_st" alt="color" />
                                         </div>
 
                                         <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none;
@@ -332,7 +332,7 @@ if(isset($seo_record)){
                         <div class="p-2">
                             <div class="product_highlight inner-product bg-white">
                                 <div class=" w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
-                                    background-size: cover;">
+                                    background-size: contain;">
                                     {{--                                    <img class=""  src="" alt="">--}}
                                 </div>
                                 <div class="speed-sign text-center mt-3">
@@ -341,15 +341,15 @@ if(isset($seo_record)){
                                     </span>
                                     <span class="d-block">{{$more_product->title}}</span>
                                     <div class="d-flex justify-content-center align-items-center my-2 gap-1">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="1 Star" class="img-fluid"
                                              width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="2 Star" class="img-fluid"
                                              width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="3 Star" class="img-fluid"
                                              width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="4 Star" class="img-fluid"
                                              width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="img-fluid"
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="5 Star" class="img-fluid"
                                              width="14px">
                                     </div>
                                     <span class="d-block weight-font">$ {{$more_product->price}}</span>
