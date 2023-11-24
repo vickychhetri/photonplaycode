@@ -109,15 +109,15 @@ $seo_meta=[
                                     </h3>
                                     <span class="d-block">{{$product->title}}</span>
                                     <div class="d-flex justify-content-center align-items-center my-2 gap-1">
-                                        <img   data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
+                                        <img   data-src="{{ asset('assets\customer\images\star.svg') }}" alt="1" class="lazyload img-fluid"
                                             width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="2" class="lazyload img-fluid"
                                             width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="3" class="lazyload img-fluid"
                                             width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="4" class="lazyload img-fluid"
                                             width="14px">
-                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="Not Found" class="lazyload img-fluid"
+                                        <img  data-src="{{ asset('assets\customer\images\star.svg') }}" alt="5" class="lazyload img-fluid"
                                             width="14px">
                                     </div>
                                     <span class="d-block weight-font">${{$product->price}}</span>
@@ -149,27 +149,27 @@ $seo_meta=[
                 <div class="col-lg-6  ">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/TRAFIC.png')}}"  class="lazyload" style="height: 70px;"  alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/TRAFIC.png')}}"  class="lazyload" style="height: 70px;"  alt="Traffic"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Traffic Data Analysis</h3>
                             <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
                         </div>
 
                     </div>
-                    <img data-src="{{asset('assets/images/radar/RSS4.webp')}}"  class="lazyload img-fluid p-2"/>
+                    <img data-src="{{asset('assets/images/radar/RSS4.webp')}}"  class="lazyload img-fluid p-2" alt="Traffic Data Analysis"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Not Found" class="lazyload"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/CLUDE.png')}}" style="height: 70px;" alt="Cloud Connectivity" class="lazyload"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">24x7 Cloud Connectivity</h3>
                             <p class="mb-0"> All time access to the device</p>
                         </div>
                     </div>
-                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}"  class="lazyload img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}"  class="lazyload img-fluid p-2" alt="24x7 Cloud Connectivity"/>
                     </div>
                 </div>
 
@@ -177,77 +177,78 @@ $seo_meta=[
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" class="lazyload" alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/icon.png')}}" style="height: 70px;" class="lazyload" alt="Solar Powered
+"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Solar Powered</h3>
                             <p class="mb-0"> Makes the device cost effective</p>
 
                         </div>
                          </div>
-                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}"  class="lazyload img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}"  class="lazyload img-fluid p-2" alt="Solar Powered"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/BATTERY.png')}}"  class="lazyload" style="height: 70px;"  ></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/BATTERY.png')}}"  class="lazyload" style="height: 70px;"  alt="Battery Backup"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Battery Backup</h3>
                             <p class="mb-0"> Long battery backup increases operational hours </p>
                         </div>
                     </div>
-                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}"  class="lazyload img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}"  class="lazyload img-fluid p-2" alt="Battery Backup"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/COMPLIANCE.png')}}" class="lazyload"  style="height: 70px;" alt="Not Found"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/COMPLIANCE.png')}}" class="lazyload"  style="height: 70px;" alt="Fully Compliance"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Fully Compliance</h3>
                             <p class="mb-0"> Comply standard norms with other industries</p>
                         </div>
                     </div>
-                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}"  class="lazyload img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}"  class="lazyload img-fluid p-2" alt="Fully Compliance"/>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                     <div class="d-flex align-items-center ">
-                        <div class="me-3"><img data-src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
+                        <div class="me-3"><img data-src="{{asset('assets/customer/images/WEATHER.png')}}" style="height: 70px;"  alt="All Weather Operation" class="lazyload"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">All Weather Operation</h3>
                             <p class="mb-0"> The sign operates efficiently in all the weathers</p>
                         </div>
                     </div>
-                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}"  class="lazyload img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}"  class="lazyload img-fluid p-2" alt="All Weather Operation"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                         <div class="d-flex align-items-center ">
-                            <div class="me-3"><img data-src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
+                            <div class="me-3"><img data-src="{{asset('assets/customer/images/robust_01_02.png')}}" style="height: 70px;"  alt="Robust" class="lazyload"></div>
                             <div class="">
                                 <h3 style="font-size: 16px;">Robust</h3>
                                 <p class="mb-0"> Designed to withstand extreme weather conditions </p>
                             </div>
                         </div>
-                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}"  class="lazyload img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}"  class="lazyload img-fluid p-2" alt="Robust"/>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
                     <div class="feature-card p-4 bg-white">
                         <div class="d-flex align-items-center ">
-                            <div class="me-3"><img data-src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Not Found" class="lazyload"></div>
+                            <div class="me-3"><img data-src="{{asset('assets/customer/images/easy_install_01_02.png')}}" style="height: 70px;"  alt="Easy Installation" class="lazyload"></div>
                             <div class="">
                                 <h3 style="font-size: 16px;">Easy Installation</h3>
                                 <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
                             </div>
                         </div>
-                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}"  class="lazyload img-fluid p-2"/>
+                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}"  class="lazyload img-fluid p-2" alt="Easy Installation"/>
                     </div>
                 </div>
 
@@ -289,7 +290,7 @@ $seo_meta=[
                                         <p>
                                             Option to display graphic content with custom-made and standard graphic library like "SLOW DOWN", "THANK YOU", "WORK ZONE", etc.
                                         </p>
-                                        <img data-src="{{asset('assets/images/radar/RSS display.png')}}"  class="lazyload img-fluid p-2"/>
+                                        <img data-src="{{asset('assets/images/radar/RSS display.png')}}"  class="lazyload img-fluid p-2" alt="Option to display graphic content with custom-made and standard graphic"/>
                                     </div>
                                 </div>
                             </div>
@@ -308,7 +309,7 @@ $seo_meta=[
                                         <p>
                                             Option to display custom text messages like community notifications, traffic updates, etc.
                                         </p>
-                                        <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"  class="lazyload img-fluid p-2"/>
+                                        <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"  class="lazyload img-fluid p-2" alt="Option to display custom text messages like community notifications, traffic updates, etc"/>
 
                                     </div>
                                 </div>
@@ -340,7 +341,7 @@ $seo_meta=[
                                             </p>
 
 
-                                            <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"  class="lazyload img-fluid p-2"/>
+                                            <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"  class="lazyload img-fluid p-2" alt="Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options"/>
                                         </div>
                                     </div>
                                 </div>
@@ -359,7 +360,7 @@ $seo_meta=[
                                             <p>
                                                 White high bright flashing lights to alert the drivers, so one can never miss the attention
                                             </p>
-                                            <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"  class="lazyload img-fluid p-2"/>
+                                            <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"  class="lazyload img-fluid p-2" alt="White high bright flashing lights to alert the drivers, so one can never miss the attention"/>
 
                                         </div>
                                     </div>
@@ -370,7 +371,7 @@ $seo_meta=[
                     </div>
                 </div>
             </div>
-            <img class="lazyload dotted-imag img-fluid d-none d-md-inline" data-src="/assets/customer/images/dotted-tran.png" alt="not-found">
+            <img class="lazyload dotted-imag img-fluid d-none d-md-inline" data-src="/assets/customer/images/dotted-tran.png" alt="dotted">
         </div>
     </section>
 {{--content_gallery_001897.txt   :: here content availble in txt file --}}

@@ -63,7 +63,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
         <div class="footer-section-inner d-lg-flex justify-content-center">
             <div class="footer-item mb-0 mb-md-5 footer-item-1">
                 <div class="logo-bottom mb-lg-4 w-100">
-                    <img src="{{asset('assets\customer\images\logo-dark.png')}}"  class="lazyload" alt="">
+                    <img src="{{asset('assets\customer\images\logo-dark.png')}}"  class="lazyload" alt="Photonplay System">
                 </div>
                 <div class="description" style="text-align: justify;word-spacing:-1px;clear: both;">
                     <p>
