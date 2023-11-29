@@ -17,6 +17,8 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
 use function Webmozart\Assert\Tests\StaticAnalysis\integer;
 
 class ContactUsController extends Controller
@@ -48,29 +50,36 @@ class ContactUsController extends Controller
         $blogs=Blog::select();
 
         if(isset($request->category)){
-            $blogs_category_id=BlogCategory::where('slug',$request->category)->first();
-            if(isset($blogs_category_id)){
-                $blogs=$blogs->where('blog_category_id',$blogs_category_id->id);
+            // $blogs_category_id=BlogCategory::where('slug',$request->category)->first();
+            // if(isset($blogs_category_id)){
+            //     $blogs=$blogs->where('blog_category_id',$blogs_category_id->id);
+            // }
+            $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
+            foreach($categories as $category){
+                if($category['slug'] == $request->category){
+                    $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json(); 
+                }
+
             }
+            
+        }elseif(isset($request->months)){
+            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+                // $data = array();
+                // foreach($dates as $date){
+                //     $i =  date('F d Y', strtotime($date['date']));
+                //     array_push($data, $i);
+                // }
+        }else{
+            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
         }
+
+
 
         if(isset($request->tags)){
             $blogs=$blogs->where('keywords', 'LIKE', '%' . $request->tags . '%');
         }
 
-        if(isset($request->months)){
-            // Get the "month" parameter from the URL
-            $monthParam = request()->query('months');
-
-            // Extract the month and year values from the parameter
-            $monthYear = urldecode($monthParam);
-            $monthYear = explode(' ', $monthYear);
-            $month = date('m', strtotime($monthYear[0]));
-            $year = $monthYear[1];
-
-            $blogs = $blogs->whereMonth('created_at', $month)
-                ->whereYear('created_at', $year);
-        }
+        
 
 
         $blogs=$blogs->orderBy('id','DESC')->paginate(5);
@@ -82,16 +91,20 @@ class ContactUsController extends Controller
             $blog["likes"]=BlogLike::where('blog_id',$blog->id)->count();
 
         }
-        $categories=BlogCategory::take(5)->get();
-        $latestBlogRecords = Blog::latest()->take(3)->get();
+        
+        $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
+
+        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+
+        $latestBlogRecords = array_slice($postsSlice, 0 , 3);
 
         // Group posts by month-year
         $groupedPosts = Blog::selectRaw('DATE_FORMAT(created_at, "%M %Y") as month_year, COUNT(*) as count')
             ->groupBy('month_year')
             ->orderBy('month_year', 'desc')
             ->get();
-
-        return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts'));
+             
+        return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
     }
 
     /**
@@ -99,29 +112,32 @@ class ContactUsController extends Controller
      * @return Application|Factory|View
      */
     public function blog_show(Request  $request,$page_name){
-
-        $blog=Blog::where('slug',$page_name)->first();
+        $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?slug=' . $page_name)->json();
+        $s_blog = $blogs[0]; 
         $categories=BlogCategory::take(5)->get();
 
         if(!isset($blog)){
             abort(404);
         }
-        $tags=explode(",",$blog->keywords);
+        // $tags=explode(",",$blog->keywords);
+        $tags = [];
         $date = Carbon::createFromFormat('Y-m-d H:i:s', '2023-04-27 17:43:36');
         $blog_created_date = $date->format('d F, Y');
         $latestBlogRecords = Blog::latest()->take(3)->get();
-        $relatedBlogRecords = Blog::where('blog_category_id',$blog->blog_category_id)->latest()->take(5)->get();
-        $like=BlogLike::where('session_id',$request->getSession()->getId())
-            ->where('blog_id',$blog->id)->exists();
-        $count=BlogLike::where('blog_id',$blog->id)->count();
-
+        // $relatedBlogRecords = Blog::where('blog_category_id',$blog->blog_category_id)->latest()->take(5)->get();
+        $relatedBlogRecords = [];
+        // $like=BlogLike::where('session_id',$request->getSession()->getId())
+        //     ->where('blog_id',$blog->id)->exists();
+        $like = [];
+        // $count=BlogLike::where('blog_id',$blog->id)->count();
+        $count = [];
         // Group posts by month-year
         $groupedPosts = Blog::selectRaw('DATE_FORMAT(created_at, "%M %Y") as month_year, COUNT(*) as count')
             ->groupBy('month_year')
             ->orderBy('month_year', 'desc')
             ->get();
 
-        return view('customer.blog',compact('blog','tags','blog_created_date','categories','latestBlogRecords','relatedBlogRecords','like','count','groupedPosts'));
+        return view('customer.blog',compact('s_blog','tags','blog_created_date','categories','latestBlogRecords','relatedBlogRecords','like','count','groupedPosts'));
     }
 
     public function signal(){
@@ -177,6 +193,9 @@ class ContactUsController extends Controller
         // dd($page);
         return view('customer.signages_sub_page', compact('page'));
     }
+
+
+
 
 
 }

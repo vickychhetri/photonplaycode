@@ -1,18 +1,18 @@
 <?php
 
-$seo_meta=[
-    "title"=>$blog->title,
-    "description"=>$blog->description,
-    "keywords"=>$blog->keywords,
-    "schema"=>$blog->schema,
-];
+// $seo_meta=[
+//     "title"=>$blog->title,
+//     "description"=>$blog->description,
+//     "keywords"=>$blog->keywords,
+//     "schema"=>$blog->schema,
+// ];
 ?>
 @include('customer.layout2.header')
 
     <!-- Banner sec -->
     <section class="inner-banner-bg">
         <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
-        <h6 class="text-white text-center text-uppercase mt-2">{{$blog->title}}</h6>
+        <h6 class="text-white text-center text-uppercase mt-2">{{$s_blog['title']['rendered']}}</h6>
     </section>
     <!-- Banner Sec End -->
     <section class="blog-content-list position-relative pb-4">
@@ -23,17 +23,17 @@ $seo_meta=[
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="post-item mb-5">
-                        <img src="{{asset("storage/".$blog->image)}}" alt="{{$blog->image}}" class="mb-4 img-fluid" style="max-height: 400px;">
+                        <img src="" alt="" class="mb-4 img-fluid" style="max-height: 400px;">
                         <div class="pb-3 post-info border-0">
-                            <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$blog->title}} </h1>
+                            <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
                             <div class="mb-4">
-                              {{$blog_created_date}} by {{$blog->author}}
+                            {{$s_blog['date']}} by 
 {{--                                @foreach($tags as $tag)--}}
 {{--                                    {{$tag}},--}}
 {{--                                @endforeach--}}
                             </div>
                             <hr/>
-                            {!! $blog->body !!}
+                            {!! $s_blog['content']['rendered'] !!}
                         </div>
 
                         <div class="post-action d-flex justify-content-between pt-4">
@@ -44,7 +44,7 @@ $seo_meta=[
 
 
                                         @foreach($tags as $tag)
-                                            <span>    <a href="/blog?tags={{strtolower($tag)}}" class="text-decoration-none"> {{$tag}} </a></span>
+                                            <span>    <a href="/blog?tags=" class="text-decoration-none"> {{$tag}} </a></span>
                                         @endforeach
 
                                     </div>

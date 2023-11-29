@@ -22,32 +22,35 @@ $seo_meta=[
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12">
-                @foreach($blogs as $s_blog)
+                @foreach($posts as $s_blog)
+                    @if ($s_blog['status'] == "publish")
                     <div class="post-item mb-4" >
-                        <a href="{{route("customer.blog_show",$s_blog->slug)}}"  > <img src="{{asset("storage/".$s_blog->image)}}" alt="" class="mb-4 img-fluid" style="max-height: 350px;"> </a>
-                        <div class="mb-4 pb-4 post-info">
-                            <a href="{{route("customer.blog_show",$s_blog->slug)}}"   class="text-decoration-none">   <h2 class="text-uppercase"> <b>   {{$s_blog->title}} </b></h2></a>
-                            <div>{{$s_blog->blog_created_date}} by {{$s_blog->author}}</div>
-                            <p>
-                                {{$s_blog->description}}
-                            </p>
-                        </div>
-                        <div class="post-action d-flex justify-content-between">
-                            <a href="{{route("customer.blog_show",$s_blog->slug)}}" class="text-decoration-none text-secondary">READ MORE</a>
-                            <div class="post-action-fire">
-                                <ul class="d-flex p-0 m-0 align-items-center">
-                                    <a href="{{route('customer.blog_show',$s_blog->slug)}}" class="text-decoration-none">
-                                    <li class="text-secondary">  <i class="bi bi-suit-heart-fill"></i> {{$s_blog->likes}}</li>
-                                    </a>
-                                </ul>
+                        
+                            <div class="mb-4 pb-4 post-info">
+                                <a href="{{route('customer.blog_show', $s_blog['slug'])}}"   class="text-decoration-none">   <h2 class="text-uppercase"> <b>   {{$s_blog['title']['rendered']}} </b></h2></a>
+                                <div>{{$s_blog['date']}} by {{$s_blog['_embedded']['author'][0]['name']}}</div>
+                                <p>
+                                    {!! $s_blog['excerpt']['rendered'] !!}
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                        @endforeach
+                            <div class="post-action d-flex justify-content-between">
+                                <a href="" class="text-decoration-none text-secondary">READ MORE</a>
+                                <div class="post-action-fire">
+                                    <ul class="d-flex p-0 m-0 align-items-center">
+                                        <a href="{{route('customer.blog_show',$s_blog['slug'])}}" class="text-decoration-none">
+                                        <li class="text-secondary">  <i class="bi bi-suit-heart-fill"></i> </li>
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>    
+                @endif
+                    
+                @endforeach
 
-                    <div class="d-flex justify-content-center ">
+                    <!-- <div class="d-flex justify-content-center ">
                         {!! $blogs->links() !!}
-                    </div>
+                    </div> -->
             </div>
             <div class="col-lg-4 col-md-12 position-sticky top-0 h-100">
                 <form method="get" action="{{route('customer.search_photon_things')}}">
@@ -62,7 +65,7 @@ $seo_meta=[
                         <div class="side-bar-title">Categories</div>
                         <ul class="m-0 p-0">
                             @foreach($categories as $category)
-                                <li class=" "><a href="/blogs?category={{$category->slug}}" class="text-decoration-none text-uppercase">{{$category->category}}</a></li>
+                                <li class=" "><a href="/blogs?category={{$category['slug']}}" class="text-decoration-none text-uppercase">{{$category['name']}}</a></li>
                             @endforeach
 
                         </ul>
@@ -72,14 +75,13 @@ $seo_meta=[
                         <ul class="m-0 p-0 latest-post">
                             @foreach($latestBlogRecords as $lt_blog)
                                 <li>
-                                    <a href="{{route('customer.blog_show',$lt_blog->slug)}}" class="d-flex align-items-center text-decoration-none text-secondary">
-                                        <img src="{{asset("storage/".$lt_blog->image)}}" />
+                                    <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="d-flex align-items-center text-decoration-none text-secondary">
+                                        <!-- <img src="" /> -->
                                         <div class="latest-post-content ms-2">
-                                            <h4>{{$lt_blog->title}}9</h4>
+                                            <h4>{{$lt_blog['title']['rendered']}}</h4>
                                             <span>
                                                 <?php
-                                                    $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$lt_blog->created_at);
-                                                    $blog_created_date = $date->format('d F, Y');
+                                                    $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
                                                     echo $blog_created_date;
                                                     ?>
                                                 </span>
