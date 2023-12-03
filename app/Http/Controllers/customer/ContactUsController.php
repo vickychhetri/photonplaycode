@@ -112,25 +112,28 @@ class ContactUsController extends Controller
      * @return Application|Factory|View
      */
     public function blog_show(Request  $request,$page_name){
-        $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?slug=' . $page_name)->json();
-        $s_blog = $blogs[0]; 
-        $categories=BlogCategory::take(5)->get();
+        $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed&slug=' . $page_name)->json();
 
-        if(!isset($blog)){
+        $s_blog = $blogs[0]; 
+        $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
+
+        if(!isset($s_blog)){
             abort(404);
         }
         // $tags=explode(",",$blog->keywords);
         $tags = [];
         $date = Carbon::createFromFormat('Y-m-d H:i:s', '2023-04-27 17:43:36');
         $blog_created_date = $date->format('d F, Y');
-        $latestBlogRecords = Blog::latest()->take(3)->get();
+        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+
+        $latestBlogRecords = array_slice($postsSlice, 0 , 3);
         // $relatedBlogRecords = Blog::where('blog_category_id',$blog->blog_category_id)->latest()->take(5)->get();
-        $relatedBlogRecords = [];
+        $relatedBlogRecords = 0;
         // $like=BlogLike::where('session_id',$request->getSession()->getId())
         //     ->where('blog_id',$blog->id)->exists();
-        $like = [];
+        $like = 0;
         // $count=BlogLike::where('blog_id',$blog->id)->count();
-        $count = [];
+        $count = 0;
         // Group posts by month-year
         $groupedPosts = Blog::selectRaw('DATE_FORMAT(created_at, "%M %Y") as month_year, COUNT(*) as count')
             ->groupBy('month_year')

@@ -8,7 +8,6 @@
 // ];
 ?>
 @include('customer.layout2.header')
-
     <!-- Banner sec -->
     <section class="inner-banner-bg">
         <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
@@ -23,17 +22,18 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="post-item mb-5">
-                        <img src="" alt="" class="mb-4 img-fluid" style="max-height: 400px;">
+                        <img src="" alt="" class="mb-4 img-fluid" style="max-height: 100px;">
                         <div class="pb-3 post-info border-0">
                             <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
                             <div class="mb-4">
-                            {{$s_blog['date']}} by 
+                            {{date('d M Y', strtotime($s_blog['date']))}} by {{$s_blog['_embedded']['author'][0]['name']}}
 {{--                                @foreach($tags as $tag)--}}
 {{--                                    {{$tag}},--}}
 {{--                                @endforeach--}}
                             </div>
                             <hr/>
-                            {!! $s_blog['content']['rendered'] !!}
+                            <p>{!! $s_blog['content']['rendered'] !!}</p>
+                            
                         </div>
 
                         <div class="post-action d-flex justify-content-between pt-4">
@@ -63,21 +63,10 @@
                             </div>
                         </div>
                     </div>
-@php
-    // Assuming you have a $currentPost variable representing the current blog post
-
-    $nextPost = $blog->next(); // Retrieve the next blog post
-    $previousPost = $blog->previous(); // Retrieve the previous blog post
-@endphp
+<!--  -->
     <!-- Next and Previous Links -->
                     <div class="d-flex justify-content-between">
-                        @if($previousPost)
-                            <a href="{{ route('customer.blog_show', $previousPost->slug) }}" class="btn btn-primary">Previous</a>
-                        @endif
-
-                        @if($nextPost)
-                            <a href="{{ route('customer.blog_show',$nextPost->slug) }}" class="btn btn-primary">Next</a>
-                        @endif
+                       
                     </div>
                 <hr/>
 
@@ -95,32 +84,30 @@
                             <div class="side-bar-title">categoriEs</div>
                             <ul class="m-0 p-0">
 
-                                @foreach($categories as $category)
-                                    <li class=" "><a href="/blogs?category={{$category->slug}}" class="text-decoration-none text-uppercase">{{$category->category}}</a></li>
-                                @endforeach
+                            @foreach($categories as $category)
+                                <li class=" "><a href="/blogs?category={{$category['slug']}}" class="text-decoration-none text-uppercase">{{$category['name']}}</a></li>
+                            @endforeach
                             </ul>
                         </div>
                         <div class="sidebar-item">
                             <div class="side-bar-title text-uppercase">RECENT POSTS</div>
                             <ul class="m-0 p-0 latest-post">
-                                @foreach($latestBlogRecords as $lt_blog)
-                                    <li>
-
-                                        <a href="{{route('customer.blog_show',$lt_blog->slug)}}" class="d-flex align-items-center text-decoration-none text-secondary">
-                                            <img src="{{asset("storage/".$lt_blog->image)}}" />
-                                            <div class="latest-post-content ms-2">
-                                                <h4>{{$lt_blog->title}}</h4>
-                                                <span>
+                            @foreach($latestBlogRecords as $lt_blog)
+                                <li>
+                                    <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="d-flex align-items-center text-decoration-none text-secondary">
+                                        <!-- <img src="" /> -->
+                                        <div class="latest-post-content ms-2">
+                                            <h4>{{$lt_blog['title']['rendered']}}</h4>
+                                            <span>
                                                 <?php
-                                                        $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$lt_blog->created_at);
-                                                        $blog_created_date = $date->format('d F, Y');
-                                                        echo $blog_created_date;
+                                                    $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
+                                                    echo $blog_created_date;
                                                     ?>
                                                 </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                @endforeach
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
                             </ul>
                         </div>
                         <div class="sidebar-item">
@@ -166,28 +153,7 @@
                     <h5 class="mb-4 text-uppercase">Related Posts</h5>
                 </div>
                 <div class="row">
-                    @foreach($relatedBlogRecords as $relatedBlog)
-                     <div class="col-md-4">
-                         <a href="{{route('customer.blog_show',$relatedBlog->slug)}}" class="text-decoration-none">
-                             <div>
-                                 {{--               below class removed: branding-diss--}}
-                                 <div class="px-2 ">
-                                     <div>
-                                         <img src="{{asset("storage/".$relatedBlog->image)}}" class="d-block mx-auto" style="max-height: 200px;max-width: 100%;"/>
-                                     </div>
-
-                                     <div class="py-4">
-                                         <h6 class="text-uppercase mb-0">{{$relatedBlog->title}}</h6>
-                                         <span class="text-lights">{{$relatedBlog->created_at}}  / {{$relatedBlog->author}} </span>
-                                     </div>
-                                 </div>
-                             </div>
-
-                         </a>
-                     </div>
-
-
-                    @endforeach
+                    
 
                 </div>
                 <div class="rules-content mb-0 border-0 border-bottom">
@@ -410,32 +376,7 @@
         });
 
     </script>
-<script>
-    $(document).ready(function() {
-        $('#like-unlike-btn').click(function() {
-            $.ajax({
-                url: '/blog/{{$blog->id}}/like-unlike',
-                method: 'GET',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(response) {
-                    console.log(response);
-                    $('#like-totals').text(response.total);
-                    if (response.liked) {
-                        $('#like-unlike-btn').attr('class','bi bi-suit-heart-fill text-danger');
-                    } else {
-                        $('#like-unlike-btn').attr('class','bi bi-suit-heart');
-                    }
-
-                },
-                error: function(xhr, status, error) {
-                    console.log(xhr.responseText);
-                }
-            });
-        });
-    });
-</script>
+<!--  -->
 
 <script>
     $('.clints-content-branding').slick({

@@ -17,16 +17,16 @@ class CountryRedirect
      */
     public function handle(Request $request, Closure $next)
     {
-        $reader = new Reader(storage_path('app/GeoLite2-Country.mmdb')); // Path to the GeoIP database
+        // $reader = new Reader(storage_path('app/GeoLite2-Country.mmdb')); // Path to the GeoIP database
 
-        $visitorIP = $request->ip();
+        // $visitorIP = $request->ip();
 
-        $record = $reader->country($visitorIP);
-        $countryCode = $record->country->isoCode;
+        // $record = $reader->country($visitorIP);
+        // $countryCode = $record->country->isoCode;
 
-        if ($countryCode === 'IN') {
-            return redirect('https://www.photonplayinc.com/traffic-signs/radar-speed-signs/');
-        }
+        // if ($countryCode === 'IN') {
+        //     return redirect('https://www.photonplayinc.com/traffic-signs/radar-speed-signs/');
+        // }
 
         return $next($request);
     }
