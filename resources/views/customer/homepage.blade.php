@@ -16,6 +16,7 @@ $seo_meta = [
 <x-Customer.HomePageBanner/>
 {{--Banner end--}}
 <!-- undefeated-section-start -->
+
 <section class="undefeated-wrapper pt-lg-0 shadow-lg">
     <div class="container  ">
         <div class="row justify-content-center align-items-center ">
@@ -642,21 +643,26 @@ $seo_meta = [
                 </div>
             </div>
             @foreach($blogs as $blog)
+           <?php
+                $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
+                // dd($image['media_details']['sizes']['medium']['source_url']);
+            // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
+            ?>
                 <div class="col-lg-4">
                     <div class="inner-cqategory mb-lg-0 mb-4">
                         <div class="">
-                            <a href="{{route("customer.blog_show",$blog->slug)}}"> <img
-                                    data-src="{{asset("storage/".$blog->image)}}" alt=""
+                            <a href="{{route("customer.blog_show",$blog['slug'])}}"> <img
+                                    data-src="{{$image['media_details']['sizes']['medium']['source_url'] ?? null}}" alt=""
                                     class="mb-4 category-image img-fluid w-100 lazyload"  > </a>
                         </div>
                         <div class="p-4">
-                            <p class="btn-light">{{$blog->category}}</p>
-                            <a href="{{route("customer.blog_show",$blog->slug)}}" class="text-decoration-none"><p
-                                    class="dollor-seat"> {{$blog->title}}
+                            <!-- <p class="btn-light">category</p> -->
+                            <a href="{{route("customer.blog_show",$blog['slug'])}}" class="text-decoration-none"><p
+                                    class="dollor-seat"> {{$blog['title']['rendered']}}
                                 </p>
                             </a>
                             <p>
-                                {{$blog->description}} <a href="{{route("customer.blog_show",$blog->slug)}}">Read
+                            {!! $blog['excerpt']['rendered'] !!} <a href="{{route("customer.blog_show",$blog['slug'])}}">Read
                                     More..</a>
                             </p>
                         </div>
