@@ -9,6 +9,11 @@
 ?>
 @include('customer.layout2.header')
     <!-- Banner sec -->
+<style>
+    .image-full-size img{
+        width:100%;
+    }
+</style>
     <section class="inner-banner-bg">
         <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
         <h6 class="text-white text-center text-uppercase mt-2">{{$s_blog['title']['rendered']}}</h6>
@@ -33,7 +38,7 @@
                             </div>
                             <hr/>
                             <p>{!! $s_blog['content']['rendered'] !!}</p>
-                            
+
                         </div>
 
                         <div class="post-action d-flex justify-content-between pt-4">
@@ -66,7 +71,7 @@
 <!--  -->
     <!-- Next and Previous Links -->
                     <div class="d-flex justify-content-between">
-                       
+
                     </div>
                 <hr/>
 
@@ -153,7 +158,7 @@
                     <h5 class="mb-4 text-uppercase">Related Posts</h5>
                 </div>
                 <div class="row">
-                    
+
 
                 </div>
                 <div class="rules-content mb-0 border-0 border-bottom">
