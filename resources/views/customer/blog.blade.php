@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Http;
 ?>
 @include('customer.layout2.header')
     <!-- Banner sec -->
+<style>
+    .image-full-size img{
+        width:100%;
+    }
+</style>
     <section class="inner-banner-bg">
         <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
         <h6 class="text-white text-center text-uppercase mt-2">{{$s_blog['title']['rendered']}}</h6>
@@ -42,7 +47,7 @@ use Illuminate\Support\Facades\Http;
                             </div>
                             <hr/>
                             <p>{!! $s_blog['content']['rendered'] !!}</p>
-                            
+
                         </div>
 
                         <div class="post-action d-flex justify-content-between pt-4">
@@ -75,7 +80,7 @@ use Illuminate\Support\Facades\Http;
 <!--  -->
     <!-- Next and Previous Links -->
                     <div class="d-flex justify-content-between">
-                       
+
                     </div>
                 <hr/>
 

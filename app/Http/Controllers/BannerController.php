@@ -38,7 +38,8 @@ class BannerController extends Controller
             return redirect()->back()->with('error',  $validator->errors()->first());
         }
 
-        $image_path = $request->file('image')->store('image', 'public');
+//        $image_path = $request->file('image')->store('image', 'public');
+        $image_path=$this->storeImageWithName($request->image);
         Banner::insert([
             'image' => $image_path,
             'tagline' => $request->tagline??null,

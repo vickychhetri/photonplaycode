@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Client;
+use App\Traits\UploadImageNameTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ClientsLogosController extends Controller
 {
+    use UploadImageNameTrait;
     public function index(Request $request){
         $records=Client::get();
         $Sr=1;
@@ -41,7 +43,8 @@ class ClientsLogosController extends Controller
             return redirect()->back()->with('error',  $validator->errors()->first());
         }
 
-        $image_path = $request->file('image')->store('image', 'public');
+//        $image_path = $request->file('image')->store('image', 'public');
+        $image_path=$this->storeImageWithName($request->image);
         Client::create([
             'image' => $image_path,
             'name' => $request->name??null,
@@ -64,7 +67,8 @@ class ClientsLogosController extends Controller
         }
 
         if(isset($request->image)){
-            $image_path = $request->file('image')->store('image', 'public');
+//            $image_path = $request->file('image')->store('image', 'public');
+            $image_path=$this->storeImageWithName($request->image);
             $cat->update([
                 'image' =>$image_path,
             ]);
