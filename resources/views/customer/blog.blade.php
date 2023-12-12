@@ -6,6 +6,9 @@
 //     "keywords"=>$blog->keywords,
 //     "schema"=>$blog->schema,
 // ];
+
+use Illuminate\Support\Facades\Http;
+
 ?>
 @include('customer.layout2.header')
     <!-- Banner sec -->
@@ -22,6 +25,12 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="post-item mb-5">
+                                <?php
+                                        $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $s_blog['featured_media'])->json();
+                                        
+                                        // dd($imagee['media_details']['sizes']['full']['source_url']);
+                                    // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
+                                ?>
                         <img src="" alt="" class="mb-4 img-fluid" style="max-height: 100px;">
                         <div class="pb-3 post-info border-0">
                             <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
@@ -53,11 +62,11 @@
                             <div class="post-action-fire">
                                 <ul class="d-flex p-0 m-0 align-items-center">
                                     <!-- <li class="text-secondary"> <img src="./assets/images/chat-gpt.png" />21 </li> -->
-                                    <li class="text-secondary" ><span id="like-totals">{{$count}} </span>  </li>
+                                    <!-- <li class="text-secondary" ><span id="like-totals">{{$count}} </span>  </li>
 
                                     <li class="text-secondary d-flex align-items-center">
                                         <i id="like-unlike-btn" class="bi bi-suit-heart{{$like?"-fill text-danger":""}}"  style="font-size: 25px;"></i>
-                                    </li>
+                                    </li> -->
 
                                 </ul>
                             </div>
@@ -111,7 +120,7 @@
                             </ul>
                         </div>
                         <div class="sidebar-item">
-                            <div class="side-bar-title">Tags</div>
+                            <!-- <div class="side-bar-title">Tags</div> -->
                             <div class="p-1 m-1"  >
                                 <div class="mb-3">
                                     <?php $i=1;?>
@@ -128,7 +137,7 @@
 
                             </div>
                         </div>
-                        <div class="sidebar-item">
+                        <!-- <div class="sidebar-item">
                             <div class="side-bar-title">Archive</div>
                             <ul class="m-0 p-0">
 
@@ -139,7 +148,7 @@
 {{--                                <li><a hre="">April 2023</a></li>--}}
 {{--                                <li><a hre="">March 2023</a></li>--}}
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -153,8 +162,36 @@
                     <h5 class="mb-4 text-uppercase">Related Posts</h5>
                 </div>
                 <div class="row">
+                @foreach ($relatedBlogRecords as $lt_blog)
+                <div class="col-md-4">
                     
+                        
+                         <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="text-decoration-none">
+                             <div>
+                             <?php
+                                    $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $lt_blog['featured_media'])->json();
+                                    // dd($image['media_details']['sizes']['medium']['source_url']);
+                                // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
+                                ?>
+                                 <div class="px-2 ">
+                                     <div>
+                                         <img src="{{$image['media_details']['sizes']['medium']['source_url']}}" class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
+                                     </div>
 
+                                     <div class="py-4">
+                                         <h6 class="text-uppercase mb-0">{{$lt_blog['title']['rendered']}}</h6>
+                                         <span class="text-lights"><?php
+                                                    $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
+                                                    echo $blog_created_date;
+                                                    ?>  / Photonplay </span>
+                                     </div>
+                                 </div>
+                             </div>
+
+                         </a>
+                         
+                     </div>
+                     @endforeach
                 </div>
                 <div class="rules-content mb-0 border-0 border-bottom">
                 </div>

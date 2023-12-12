@@ -127,8 +127,8 @@ class ContactUsController extends Controller
         $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 
         $latestBlogRecords = array_slice($postsSlice, 0 , 3);
-        // $relatedBlogRecords = Blog::where('blog_category_id',$blog->blog_category_id)->latest()->take(5)->get();
-        $relatedBlogRecords = 0;
+        $relatedBlogRecords = array_slice($postsSlice, 0 , 5);
+        
         // $like=BlogLike::where('session_id',$request->getSession()->getId())
         //     ->where('blog_id',$blog->id)->exists();
         $like = 0;
