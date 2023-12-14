@@ -30,13 +30,20 @@ use Illuminate\Support\Facades\Http;
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="post-item mb-5">
+
                                 <?php
                                         $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $s_blog['featured_media'])->json();
-                                        
+
                                         // dd($imagee['media_details']['sizes']['full']['source_url']);
                                     // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
                                 ?>
+
                         <img src="" alt="" class="mb-4 img-fluid" style="max-height: 100px;">
+                        <div class="">
+                            <a href="{{route("customer.blog_show",$s_blog['slug'])}}"> <img
+                                    data-src="{{$s_blog['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']}}" alt=""
+                                    class="mb-4 w-100 img-fluid lazyload"  > </a>
+                        </div>
                         <div class="pb-3 post-info border-0">
                             <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
                             <div class="mb-4">
@@ -169,8 +176,8 @@ use Illuminate\Support\Facades\Http;
                 <div class="row">
                 @foreach ($relatedBlogRecords as $lt_blog)
                 <div class="col-md-4">
-                    
-                        
+
+
                          <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="text-decoration-none">
                              <div>
                              <?php
@@ -194,7 +201,7 @@ use Illuminate\Support\Facades\Http;
                              </div>
 
                          </a>
-                         
+
                      </div>
                      @endforeach
                 </div>
