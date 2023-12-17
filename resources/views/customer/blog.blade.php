@@ -42,7 +42,7 @@ use Illuminate\Support\Facades\Http;
                         <div class="">
                             <a href="{{route("customer.blog_show",$s_blog['slug'])}}"> <img
                                     data-src="{{$s_blog['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']}}" alt=""
-                                    class="mb-4 w-100 img-fluid lazyload"  > </a>
+                                    class="mb-4 img-fluid lazyload"  > </a>
                         </div>
                         <div class="pb-3 post-info border-0">
                             <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
