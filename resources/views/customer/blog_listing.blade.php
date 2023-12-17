@@ -31,7 +31,7 @@ $seo_meta=[
                                                 <div class="">
                             <a href="{{route("customer.blog_show",$s_blog['slug'])}}"> <img
                                     data-src="{{$s_blog['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']}}" alt=""
-                                    class="mb-4 w-100 img-fluid lazyload"  > </a>
+                                    class="mb-4 img-fluid lazyload"  > </a>
                         </div>
 
                             <div class="mb-4 pb-4 post-info">
@@ -100,15 +100,15 @@ $seo_meta=[
                         </ul>
                     </div>
 
-                    <div class="sidebar-item">
-                        <div class="side-bar-title">Archive</div>
-                        <ul class="m-0 p-0">
-                            @foreach($groupedPosts as $postarchive)
-                                <li><a href="/blogs?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>
-                            @endforeach
+{{--                    <div class="sidebar-item">--}}
+{{--                        <div class="side-bar-title">Archive</div>--}}
+{{--                        <ul class="m-0 p-0">--}}
+{{--                            @foreach($groupedPosts as $postarchive)--}}
+{{--                                <li><a href="/blogs?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>--}}
+{{--                            @endforeach--}}
 
-                        </ul>
-                    </div>
+{{--                        </ul>--}}
+{{--                    </div>--}}
                 </div>
             </div>
             <!-- </div> -->
