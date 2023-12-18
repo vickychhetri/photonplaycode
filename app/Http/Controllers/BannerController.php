@@ -75,7 +75,8 @@ class BannerController extends Controller
         if(isset($request->order)){$input['order']=$request->order;}
         if(isset($request->type)){$input['type']=$request->type;}
         if(isset($request->image)){
-            $image_path = $request->file('image')->store('image', 'public');
+//            $image_path = $request->file('image')->store('image', 'public');
+            $image_path=$this->storeImageWithName($request->image);
             $input['image']=$image_path;
         }
 
