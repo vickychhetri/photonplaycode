@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Traits\UploadImageNameTrait;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Validator;
 
 class BannerController extends Controller
 {
-
+    use UploadImageNameTrait;
     /**
      * @param Request $request
      * @return Application|Factory|View
