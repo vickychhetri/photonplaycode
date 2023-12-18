@@ -132,7 +132,7 @@ class PagesController extends Controller
             PageImage::where('page_id', $request->page_id)->delete();
             foreach($request->file('images') as $file) {
 //                $image_path = $file->store('image', 'public');
-                $image_path=$this->storeImageWithName($request->image);
+                $image_path=$this->storeImageWithName($file);
                 $files[] = $image_path;
                 if(isset($image_path)){
                     PageImage::create([
