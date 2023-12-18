@@ -38,7 +38,7 @@
                             @csrf
                             <input type="hidden" name="page_id" value="{{$id}}">
                             <div class="row mb-3 form-group  d-flex align-items-center">
-                                <label for="brochure" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Brochure') }}</label>
+                                <label for="brochure" class="col-md-2 col-form-label text-md-end"><span>* </span>{{  __('Brochure') }}</label>
 
                                 <div class="col-md-3">
                                     <input type="file" name="brochure" class="form-control" >

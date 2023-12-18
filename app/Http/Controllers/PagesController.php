@@ -8,6 +8,7 @@ use App\Models\PageGallery;
 use App\Models\PageImage;
 use App\Models\PageSpec;
 use App\Models\PageType;
+use App\Traits\UploadImageNameTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +18,7 @@ use Dompdf\Dompdf;
 
 class PagesController extends Controller
 {
-
+    use UploadImageNameTrait;
     public function createSpecificationSubPage($id){
         $specs = PageSpec::where('page_id', $id)->get();
         // dd($specs);
@@ -130,7 +131,8 @@ class PagesController extends Controller
         {
             PageImage::where('page_id', $request->page_id)->delete();
             foreach($request->file('images') as $file) {
-                $image_path = $file->store('image', 'public');
+//                $image_path = $file->store('image', 'public');
+                $image_path=$this->storeImageWithName($request->image);
                 $files[] = $image_path;
                 if(isset($image_path)){
                     PageImage::create([
@@ -150,7 +152,8 @@ class PagesController extends Controller
 
         $sub_page = Page::find($request->sub_page_id);
         if($request->file('cover_image')){
-            $image_path = $request->file('cover_image')->store('image', 'public') ?? null;
+//            $image_path = $request->file('cover_image')->store('image', 'public') ?? null;
+            $image_path=$this->storeImageWithName($request->cover_image);
         }else{
             $image_path = $sub_page->cover_image;
         }
