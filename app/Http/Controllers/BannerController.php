@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Traits\UploadImageNameTrait;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Validator;
 
 class BannerController extends Controller
 {
-
+    use UploadImageNameTrait;
     /**
      * @param Request $request
      * @return Application|Factory|View
@@ -74,7 +75,8 @@ class BannerController extends Controller
         if(isset($request->order)){$input['order']=$request->order;}
         if(isset($request->type)){$input['type']=$request->type;}
         if(isset($request->image)){
-            $image_path = $request->file('image')->store('image', 'public');
+//            $image_path = $request->file('image')->store('image', 'public');
+            $image_path=$this->storeImageWithName($request->image);
             $input['image']=$image_path;
         }
 
