@@ -75,34 +75,38 @@ class ContactUsController extends Controller
 
 
 
-        if(isset($request->tags)){
-            $blogs=$blogs->where('keywords', 'LIKE', '%' . $request->tags . '%');
-        }
+        // if(isset($request->tags)){
+        //     $blogs=$blogs->where('keywords', 'LIKE', '%' . $request->tags . '%');
+        // }
 
         
 
 
         $blogs=$blogs->orderBy('id','DESC')->paginate(5);
 
-        foreach ($blogs as $blog){
-            $date = Carbon::createFromFormat('Y-m-d H:i:s', $blog->created_at);
-            $blog_created_date = $date->format('d F, Y');
-            $blog["blog_created_date"]=$blog_created_date;
-            $blog["likes"]=BlogLike::where('blog_id',$blog->id)->count();
-
-        }
         
+        $blog_created_date1 = array();
+        foreach ($posts as $blog){
+            // dd(date('F, Y', strtotime($blog['date'])));
+            $blog_created_date = date('F, Y', strtotime($blog['date']));
+            array_push($blog_created_date1, $blog_created_date);
+        }
+        $groupedPosts["blog_created_date"] = array();
+        if($blog_created_date1){
+            $groupedPosts = array_unique($blog_created_date1);
+        }
+
         $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
 
         $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 
         $latestBlogRecords = array_slice($postsSlice, 0 , 3);
 
-        // Group posts by month-year
-        $groupedPosts = Blog::selectRaw('DATE_FORMAT(created_at, "%M %Y") as month_year, COUNT(*) as count')
-            ->groupBy('month_year')
-            ->orderBy('month_year', 'desc')
-            ->get();
+        // // Group posts by month-year
+        // $groupedPosts = Blog::selectRaw('DATE_FORMAT(created_at, "%M %Y") as month_year, COUNT(*) as count')
+        //     ->groupBy('month_year')
+        //     ->orderBy('month_year', 'desc')
+        //     ->get();
              
         return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
     }

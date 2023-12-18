@@ -100,15 +100,15 @@ $seo_meta=[
                         </ul>
                     </div>
 
-{{--                    <div class="sidebar-item">--}}
-{{--                        <div class="side-bar-title">Archive</div>--}}
-{{--                        <ul class="m-0 p-0">--}}
-{{--                            @foreach($groupedPosts as $postarchive)--}}
-{{--                                <li><a href="/blogs?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>--}}
-{{--                            @endforeach--}}
+                    <div class="sidebar-item">
+                        <div class="side-bar-title">Archive</div>
+                        <ul class="m-0 p-0">
+                            @foreach($groupedPosts as $postarchive)
+                                <li><a href="#" class="text-decoration-none">{{$postarchive}} </a></li>
+                            @endforeach
 
-{{--                        </ul>--}}
-{{--                    </div>--}}
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- </div> -->
