@@ -1,148 +1,155 @@
 <?php
 
-// $seo_meta=[
-//     "title"=>$blog->title,
-//     "description"=>$blog->description,
-//     "keywords"=>$blog->keywords,
-//     "schema"=>$blog->schema,
-// ];
-
 use Illuminate\Support\Facades\Http;
+//http://demo.wp-api.org/wp-json/wp/v2/tags/TagID
+$tagss = array();
+if ($s_blog) {
+    foreach ($s_blog['tags'] as $item) {
+        $tags1 = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/tags/' . $item)->json();
+        array_push($tagss, $tags1['name']);
+    }
+}
+$seo_meta = [
+    "title" => $s_blog['title']['rendered'] ?? '',
+    "description" => $s_blog['excerpt']['rendered'] ?? '',
+    "keywords" => implode(",", $tagss) ?? '',
+    // "schema"=>$blog->schema,
+];
 
 ?>
 @include('customer.layout2.header')
-    <!-- Banner sec -->
+<!-- Banner sec -->
 <style>
-    .image-full-size img{
-        width:100%;
+    .image-full-size img {
+        width: 100%;
     }
 </style>
-    <section class="inner-banner-bg">
-        <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
-        <h6 class="text-white text-center text-uppercase mt-2">{{$s_blog['title']['rendered']}}</h6>
-    </section>
-    <!-- Banner Sec End -->
-    <section class="blog-content-list position-relative pb-4">
-        <div class="social-icons position-absolute start-0">
-            <img src="./assets/images/soxcial-media iconss.png" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-12">
-                    <div class="post-item mb-5">
-                                <?php
-                                        $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $s_blog['featured_media'])->json();
-                                        
-                                        // dd($imagee['media_details']['sizes']['full']['source_url']);
-                                    // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
-                                ?>
-                        <img src="" alt="" class="mb-4 img-fluid" style="max-height: 100px;">
-                        <div class="pb-3 post-info border-0">
-                            <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
-                            <div class="mb-4">
+<section class="inner-banner-bg">
+    <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
+    <h6 class="text-white text-center text-uppercase mt-2">{{$s_blog['title']['rendered']}}</h6>
+</section>
+<!-- Banner Sec End -->
+<section class="blog-content-list position-relative pb-4">
+    <div class="social-icons position-absolute start-0">
+        <img src="./assets/images/soxcial-media iconss.png" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="post-item mb-5">
+                    <?php
+                    $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
+
+                    // dd($imagee['media_details']['sizes']['full']['source_url']);
+                    // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
+                    ?>
+                    <img src="" alt="" class="mb-4 img-fluid" style="max-height: 100px;">
+                    <div class="pb-3 post-info border-0">
+                        <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
+                        <div class="mb-4">
                             {{date('d M Y', strtotime($s_blog['date']))}} by {{$s_blog['_embedded']['author'][0]['name']}}
-{{--                                @foreach($tags as $tag)--}}
-{{--                                    {{$tag}},--}}
-{{--                                @endforeach--}}
-                            </div>
-                            <hr/>
-                            <p>{!! $s_blog['content']['rendered'] !!}</p>
-
+                            {{-- @foreach($tags as $tag)--}}
+                            {{-- {{$tag}},--}}
+                            {{-- @endforeach--}}
                         </div>
+                        <hr />
+                        <p>{!! $s_blog['content']['rendered'] !!}</p>
 
-                        <div class="post-action d-flex justify-content-between pt-4">
-                            <div class="sec-sidebar">
-                                <div class="sidebar-item">
-                                    <!-- <div class="side-bar-title">Tags</div> -->
-                                    <div class="tags">
+                    </div>
+
+                    <div class="post-action d-flex justify-content-between pt-4">
+                        <div class="sec-sidebar">
+                            <div class="sidebar-item">
+                                <!-- <div class="side-bar-title">Tags</div> -->
+                                <div class="tags">
 
 
-                                        @foreach($tags as $tag)
-                                            <span>    <a href="/blog?tags=" class="text-decoration-none"> {{$tag}} </a></span>
-                                        @endforeach
+                                    @foreach($tags as $tag)
+                                    <span> <a href="/blog?tags=" class="text-decoration-none"> {{$tag}} </a></span>
+                                    @endforeach
 
-                                    </div>
                                 </div>
                             </div>
-                            <div class="post-action-fire">
-                                <ul class="d-flex p-0 m-0 align-items-center">
-                                    <!-- <li class="text-secondary"> <img src="./assets/images/chat-gpt.png" />21 </li> -->
-                                    <!-- <li class="text-secondary" ><span id="like-totals">{{$count}} </span>  </li>
+                        </div>
+                        <div class="post-action-fire">
+                            <ul class="d-flex p-0 m-0 align-items-center">
+                                <!-- <li class="text-secondary"> <img src="./assets/images/chat-gpt.png" />21 </li> -->
+                                <!-- <li class="text-secondary" ><span id="like-totals">{{$count}} </span>  </li>
 
                                     <li class="text-secondary d-flex align-items-center">
                                         <i id="like-unlike-btn" class="bi bi-suit-heart{{$like?"-fill text-danger":""}}"  style="font-size: 25px;"></i>
                                     </li> -->
 
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
                     </div>
-<!--  -->
-    <!-- Next and Previous Links -->
-                    <div class="d-flex justify-content-between">
-
-                    </div>
-                <hr/>
+                </div>
+                <!--  -->
+                <!-- Next and Previous Links -->
+                <div class="d-flex justify-content-between">
 
                 </div>
+                <hr />
 
-                <div class="col-lg-4 col-md-12 position-sticky top-0 h-100">
-                  <form method="get" action="{{route('customer.search_photon_things')}}">
+            </div>
+
+            <div class="col-lg-4 col-md-12 position-sticky top-0 h-100">
+                <form method="get" action="{{route('customer.search_photon_things')}}">
                     <div class="search mb-5 position-relative">
                         <input type="text" name="search" placeholder="Search" class="border-0 ">
                         <i class="bi bi-search"></i>
                     </div>
-                  </form>
-                    <div class="sec-sidebar">
-                        <div class="sidebar-item">
-                            <div class="side-bar-title">categoriEs</div>
-                            <ul class="m-0 p-0">
+                </form>
+                <div class="sec-sidebar">
+                    <div class="sidebar-item">
+                        <div class="side-bar-title">categoriEs</div>
+                        <ul class="m-0 p-0">
 
                             @foreach($categories as $category)
-                                <li class=" "><a href="/blogs?category={{$category['slug']}}" class="text-decoration-none text-uppercase">{{$category['name']}}</a></li>
+                            <li class=" "><a href="/blogs?category={{$category['slug']}}" class="text-decoration-none text-uppercase">{{$category['name']}}</a></li>
                             @endforeach
-                            </ul>
-                        </div>
-                        <div class="sidebar-item">
-                            <div class="side-bar-title text-uppercase">RECENT POSTS</div>
-                            <ul class="m-0 p-0 latest-post">
+                        </ul>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="side-bar-title text-uppercase">RECENT POSTS</div>
+                        <ul class="m-0 p-0 latest-post">
                             @foreach($latestBlogRecords as $lt_blog)
-                                <li>
-                                    <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="d-flex align-items-center text-decoration-none text-secondary">
-                                        <!-- <img src="" /> -->
-                                        <div class="latest-post-content ms-2">
-                                            <h4>{{$lt_blog['title']['rendered']}}</h4>
-                                            <span>
-                                                <?php
-                                                    $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
-                                                    echo $blog_created_date;
-                                                    ?>
-                                                </span>
-                                        </div>
-                                    </a>
-                                </li>
+                            <li>
+                                <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="d-flex align-items-center text-decoration-none text-secondary">
+                                    <!-- <img src="" /> -->
+                                    <div class="latest-post-content ms-2">
+                                        <h4>{{$lt_blog['title']['rendered']}}</h4>
+                                        <span>
+                                            <?php
+                                            $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
+                                            echo $blog_created_date;
+                                            ?>
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
                             @endforeach
-                            </ul>
-                        </div>
-                        <div class="sidebar-item">
-                            <!-- <div class="side-bar-title">Tags</div> -->
-                            <div class="p-1 m-1"  >
-                                <div class="mb-3">
-                                    <?php $i=1;?>
+                        </ul>
+                    </div>
+                    <div class="sidebar-item">
+                        <!-- <div class="side-bar-title">Tags</div> -->
+                        <div class="p-1 m-1">
+                            <div class="mb-3">
+                                <?php $i = 1; ?>
                                 @foreach($tags as $tag)
-                                        <span class="tagskeyslinks">
-                                            <a href="/blogs?tags={{strtolower($tag)}}" class="text-decoration-none " style="color: white">{{$tag}}</a></span>
-                                    @if($i%3==0)
-                                </div>
-                                            <div class="mb-3">
-                                    @endif
-                                    <?php $i++; ?>
-                                @endforeach
-                                </div>
-
+                                <span class="tagskeyslinks">
+                                    <a href="/blogs?tags={{strtolower($tag)}}" class="text-decoration-none " style="color: white">{{$tag}}</a></span>
+                                @if($i%3==0)
                             </div>
+                            <div class="mb-3">
+                                @endif
+                                <?php $i++; ?>
+                                @endforeach
+                            </div>
+
                         </div>
-                        <!-- <div class="sidebar-item">
+                    </div>
+                    <!-- <div class="sidebar-item">
                             <div class="side-bar-title">Archive</div>
                             <ul class="m-0 p-0">
 
@@ -154,270 +161,263 @@ use Illuminate\Support\Facades\Http;
 {{--                                <li><a hre="">March 2023</a></li>--}}
                             </ul>
                         </div> -->
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- related posted-start -->
-    <section class="content-rules pt-0 p-0 m-0">
-        <div class="container">
-            <div class="px-4 col-lg-8">
-                <div>
-                    <h5 class="mb-4 text-uppercase">Related Posts</h5>
-                </div>
-                <div class="row">
+    </div>
+</section>
+<!-- related posted-start -->
+<section class="content-rules pt-0 p-0 m-0">
+    <div class="container">
+        <div class="px-4 col-lg-8">
+            <div>
+                <h5 class="mb-4 text-uppercase">Related Posts</h5>
+            </div>
+            <div class="row">
                 @foreach ($relatedBlogRecords as $lt_blog)
                 <div class="col-md-4">
-                    
-                        
-                         <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="text-decoration-none">
-                             <div>
-                             <?php
-                                    $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $lt_blog['featured_media'])->json();
-                                    // dd($image['media_details']['sizes']['medium']['source_url']);
-                                // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
-                                ?>
-                                 <div class="px-2 ">
-                                     <div>
-                                         <img src="{{$image['media_details']['sizes']['medium']['source_url']}}" class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
-                                     </div>
 
-                                     <div class="py-4">
-                                         <h6 class="text-uppercase mb-0">{{$lt_blog['title']['rendered']}}</h6>
-                                         <span class="text-lights"><?php
-                                                    $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
-                                                    echo $blog_created_date;
-                                                    ?>  / Photonplay </span>
-                                     </div>
-                                 </div>
-                             </div>
 
-                         </a>
-                         
-                     </div>
-                     @endforeach
+                    <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="text-decoration-none">
+                        <div>
+                            <?php
+                            $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $lt_blog['featured_media'])->json();
+                            // dd($image['media_details']['sizes']['medium']['source_url']);
+                            // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
+                            ?>
+                            <div class="px-2 ">
+                                <div>
+                                    <img src="{{$image['media_details']['sizes']['medium']['source_url']}}" class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
+                                </div>
+
+                                <div class="py-4">
+                                    <h6 class="text-uppercase mb-0">{{$lt_blog['title']['rendered']}}</h6>
+                                    <span class="text-lights"><?php
+                                                                $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
+                                                                echo $blog_created_date;
+                                                                ?> / Photonplay </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+
                 </div>
-                <div class="rules-content mb-0 border-0 border-bottom">
-                </div>
+                @endforeach
+            </div>
+            <div class="rules-content mb-0 border-0 border-bottom">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
-    <script>
-
-        $('.clint-wrapperr').slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
-            nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
-            arrows: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        infinite: true,
-                        arrows: false,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false,
-                    }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $('.clint-wrapperr').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
+        arrows: true,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    arrows: false,
+                    dots: true
                 }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-            ]
-        });
-        $('.key-slider').slick({
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
                 }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-            ]
-        });
-
-        $('.clints-content').slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4,
-            prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
-            nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
-            slidesToScroll: 1,
-            arrows: true,
-            autoplay: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
-        })
-        $('.rules-content').slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
-            nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
-            slidesToScroll: 1,
-            arrows: true,
-            autoplay: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
-        })
-
-        $('.clints-content-gallery').slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
-            nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
-            slidesToScroll: 1,
-            arrows: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
-        })
-
-        window.addEventListener('click', function (e) {
-            if (window.innerWidth > 992) {
-                if ($('.navbar-collapse').hasClass('show')) {
-                    $('.navbar-toggler').click();
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
                 }
             }
-
-        })
-
-        // Hover attribute
-        $('.dropdown .dropdown-toggle').mouseenter(function () {
-            if (window.innerWidth > 991) {
-                $(this).addClass('show');
-                $(this).attr({
-                    'aria-expanded': true
-                })
-                $(this).siblings('.dropdown-menu').addClass('show');
-                $(this).siblings('.dropdown-menu').attr({
-                    'data-bs-popper': "static"
-                })
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+    $('.key-slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
 
-        });
-        $('.dropdown-menu').mouseleave(function () {
-            if (window.innerWidth > 991) {
-                $(this).removeAttr('data-bs-popper');
-                $(this).siblings('.nav-link ').removeClass('show');
-                $(this).removeClass('show');
-                $(this).siblings('.nav-link').attr({
-                    'aria-expanded': false
-                });
+    $('.clints-content').slick({
+        dots: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
             }
-        });
+        ]
+    })
+    $('.rules-content').slick({
+        dots: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    })
 
-    </script>
+    $('.clints-content-gallery').slick({
+        dots: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        prevArrow: "<button type='button' class='slick-prev pull-left'><img src='./assets/images/left-chevron.png'/></button>",
+        nextArrow: "<button type='button' class='slick-next pull-right'><img src='./assets/images/right-chevron.png'/></button>",
+        slidesToScroll: 1,
+        arrows: true,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    })
+
+    window.addEventListener('click', function(e) {
+        if (window.innerWidth > 992) {
+            if ($('.navbar-collapse').hasClass('show')) {
+                $('.navbar-toggler').click();
+            }
+        }
+
+    })
+
+    // Hover attribute
+    $('.dropdown .dropdown-toggle').mouseenter(function() {
+        if (window.innerWidth > 991) {
+            $(this).addClass('show');
+            $(this).attr({
+                'aria-expanded': true
+            })
+            $(this).siblings('.dropdown-menu').addClass('show');
+            $(this).siblings('.dropdown-menu').attr({
+                'data-bs-popper': "static"
+            })
+        }
+
+    });
+    $('.dropdown-menu').mouseleave(function() {
+        if (window.innerWidth > 991) {
+            $(this).removeAttr('data-bs-popper');
+            $(this).siblings('.nav-link ').removeClass('show');
+            $(this).removeClass('show');
+            $(this).siblings('.nav-link').attr({
+                'aria-expanded': false
+            });
+        }
+    });
+</script>
 <!--  -->
 
 <script>
@@ -430,10 +430,9 @@ use Illuminate\Support\Facades\Http;
         nextArrow: "<button type='button' class='slick-next pull-right'><img src='/assets/customer/images/right-chevron.png'/></button>",
         slidesToScroll: 1,
         arrows: true,
-        autoplay:true,
+        autoplay: true,
         // fade:true,
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 6,
@@ -453,7 +452,7 @@ use Illuminate\Support\Facades\Http;
             }
         ]
     })
-    window.addEventListener('click', function (e) {
+    window.addEventListener('click', function(e) {
         if ($('.navbar-collapse').hasClass('show')) {
             $('.navbar-toggler').click();
         }

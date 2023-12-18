@@ -10,6 +10,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Http;
 
 class SearchItemsController extends Controller
 {
@@ -33,20 +34,26 @@ class SearchItemsController extends Controller
         }
 
 
-        $blogs = Blog::where('title', 'LIKE', '%'.$query.'%')->orWhere('body', 'LIKE', '%'.$query.'%')->get();
-
+        // $blogs = Blog::where('title', 'LIKE', '%'.$query.'%')->orWhere('body', 'LIKE', '%'.$query.'%')->get();
+        $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?search='. $query)->json();
         foreach ($blogs as $blog){
+            $image = '';
+            if($blog['featured_media']){
+                $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $blog['featured_media'])->json();
+                $image= $imagee['media_details']['sizes']['medium']['source_url'];
+            }
+            
             $data1=array();
             $data1['sr']=$Sr++;
-            $data1['type']=2;
-            $data1['title']=$blog->title;
-            $data1['description']=$blog->description;
-            $data1['image']=$blog->image;
-            $data1['id']=$blog->id;
-            $data1['slug']=$blog->slug;
-            $data1['author']=$blog->author;
-            $data1["likes"]=BlogLike::where('blog_id',$blog->id)->count();
-            $data1['created_at']=$blog->created_at;
+            $data1['type']=$blog['type'];
+            $data1['title']=$blog['title']['rendered'];
+            $data1['description']=$blog['excerpt']['rendered'];
+            $data1['image']=$image;
+            $data1['id']=$blog['id'];
+            $data1['slug']=$blog['slug'];
+            // $data1['author']=$blog->author;
+            // $data1["likes"]=BlogLike::where('blog_id',$blog->id)->count();
+            $data1['created_at']=$blog['date'];
             array_push($data,$data1);
         }
 
