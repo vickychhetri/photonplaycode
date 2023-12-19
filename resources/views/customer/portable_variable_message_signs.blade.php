@@ -105,7 +105,7 @@ $seo_meta=[
             <div class="row">
                 @foreach ($products->reverse() as $item)
                     <div class="col-lg-3 col-md-6 col-12">
-                        <a href="{{route('customer.pvms.i.cop', $item->id)}}" class="text-decoration-none">
+                        <a href="{{route('customer.pvms.i.cop', $item->slug)}}" class="text-decoration-none">
                             <div class="text-start p-4 list-unsorted">
                                 <div class="">
                                     <img src="{{asset('storage/'.$item->cover_image)}}" alt="Not Found"
