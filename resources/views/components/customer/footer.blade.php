@@ -4,7 +4,7 @@
             <div class="logo-bottom">
                 <img src="{{ asset('assets\customer\images\logo-dark.png') }}" alt="">
             </div>
-            <div class="description">
+            <div class="description_footer">
                 PHOTONPLAY is a family owned, India based design, develop and manufacturing of Systems for the ITS
                 industry since 2006. With subsidiary offices in US, Australia and Norway plus distribution facility
                 in
