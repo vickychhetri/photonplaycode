@@ -65,7 +65,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 <div class="logo-bottom mb-lg-4 w-100">
                     <img src="{{asset('assets\customer\images\logo-dark.png')}}"  class="lazyload" alt="Photonplay System">
                 </div>
-                <div class="description_footer" style="text-align: left;word-spacing:-1px;clear: both;">
+                <div class="description_footer" style="text-align: justify;word-spacing:-1px;clear: both;">
                     <p>
                         PhotonPlay, a family-owned company, delivers high quality intelligent transportation systems (ITS) worldwide. For over 12 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions.
                         Our expertise,innovation, and commitment to smarter transportation make us a trusted partner.
