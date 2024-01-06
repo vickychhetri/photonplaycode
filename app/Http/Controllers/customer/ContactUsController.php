@@ -97,7 +97,6 @@ class ContactUsController extends Controller
         }
 
         $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
-
         $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 
         $latestBlogRecords = array_slice($postsSlice, 0 , 3);

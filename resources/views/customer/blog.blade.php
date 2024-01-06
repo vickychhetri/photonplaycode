@@ -2,22 +2,24 @@
 
 use Illuminate\Support\Facades\Http;
 //http://demo.wp-api.org/wp-json/wp/v2/tags/TagID
-$tagss = array();
-if ($s_blog) {
-    foreach ($s_blog['tags'] as $item) {
-        $tags1 = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/tags/' . $item)->json();
-        array_push($tagss, $tags1['name']);
-    }
-}
+// $tagss = array();
+// if ($s_blog) {
+//     foreach ($s_blog['tags'] as $item) {
+//         $tags1 = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/tags/' . $item)->json();
+//         array_push($tagss, $tags1['name']);
+//     }
+// }
 $seo_meta = [
-    "title" => $s_blog['title']['rendered'] ?? '',
-    "description" => $s_blog['excerpt']['rendered'] ?? '',
-    "keywords" => implode(",", $tagss) ?? '',
-    // "schema"=>$blog->schema,
+    "title" => $s_blog['rank_math_title']?? '',
+    "description" => $s_blog['rank_math_description'] ?? '',
+    "keywords" => $s_blog['rank_math_focus_keyword'] ?? '',
+    // "schema"=>$s_blog['rank_math_schema_BlogPosting']['headline'] ?? '',
 ];
 
+$schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
 ?>
-@include('customer.layout2.header')
+@include('customer.layout2.header',compact(['schema']))
+
 <!-- Banner sec -->
 <style>
     .image-full-size img {
@@ -457,4 +459,6 @@ $seo_meta = [
             $('.navbar-toggler').click();
         }
     })
+
+    
 </script>

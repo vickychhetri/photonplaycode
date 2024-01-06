@@ -78,9 +78,21 @@
             /*min-width: 150px;*/
         }
     </style>
-
-
-
+@if ($schema)
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{$schema['headline']}}",
+    "image": "{{$schema['image']['url']}}",  
+    "author": {
+        "@type": "{{$schema['author']['@type']}}",
+        "name": "{{$schema['author']['name']}}"
+    },  
+    Published": "{{$schema['datePublished']}}"
+    }
+    </script>
+@endif
 
 </head>
 <body>

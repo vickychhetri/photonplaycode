@@ -1,3 +1,4 @@
+
 <?php
 use App\Models\ManageSeo;
 $data_record = ManageSeo::where('page_name',ManageSeo::NEWS_EVENT)->first();
