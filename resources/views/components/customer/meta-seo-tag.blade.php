@@ -43,8 +43,7 @@
 <meta name="revisit-after" content="7 days">
 <meta name="author" content="Photonplay">
 
-
-
+ 
 <meta property="og:image" content="{{asset($seodata['feature_image']??'assets\images\photonshare_image.png')}}">
 <meta property="twitter:image" content="{{asset($seodata['feature_image']??'assets\images\photonshare_image.png')}}">
 {{--Schema--}}

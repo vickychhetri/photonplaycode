@@ -8,7 +8,7 @@ $seo_meta = [
     "description" => $data_record->description ?? '',
     "keywords" => $data_record->keyword ?? '',
     "schema" => $data_record->schema ?? '',
-    "feature_image"=>"assets\images\Radar-Speed-Signs-Image_1.webp"
+    "feature_image"=>"assets\customer\images\Radar-Speed-Signs-Image_1.webp"
 ];
 ?>
 @include('customer.layouts.header')
