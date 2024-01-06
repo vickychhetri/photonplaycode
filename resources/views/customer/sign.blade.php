@@ -11,6 +11,9 @@ $seo_meta = [
 ];
 ?>
 @include('customer.layouts.header')
+<meta property="og:image" content="{{asset('assets\images\Radar-Speed-Signs-Image_1.webp')}}">
+<meta property="twitter:image" content="{{asset('assets\images\Radar-Speed-Signs-Image_1.webp')}}">
+
 {{--Radar Banner Start--}}
 {{--<x-Customer.Radar.RadarBanner/>--}}
 

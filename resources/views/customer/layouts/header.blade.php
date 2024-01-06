@@ -50,10 +50,6 @@ $productLists = Product::take(5)->get();
     {{--            Start meta--}}
     <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
     {{--        End    Start meta--}}
-
-    <meta property="og:image" content="{{asset('assets\images\Radar-Speed-Signs-Image_1.webp')}}">
-    <meta property="twitter:image" content="{{asset('assets\images\Radar-Speed-Signs-Image_1.webp')}}">
-
     <style>
         #mobile-menu {
             position: fixed;
