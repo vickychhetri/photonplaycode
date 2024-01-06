@@ -145,6 +145,10 @@ $seo_meta=[
             <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;" >
                 <div class="col-lg-12">
                     <div class="text-center mb-lg-4">
+                        <div>
+                            <iframe width="996" height="560" src="https://www.youtube.com/embed/TRLuZV_qSaE" title="RADAR SPEED SIGNS - iCop - PHOTONPLAY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+
                         <h2 class="fs-md-2 mt-3">Radar Speed Signs Series Features</h2>
                         <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect your device to various networks and devices,
                             enabling easy data transfer and integration with other smart devices.
