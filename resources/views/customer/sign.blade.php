@@ -167,21 +167,20 @@ $seo_meta = [
     </div>
 </section>
 <!-- Our Product -->
+<div class="d-flex justify-content-center mb-4">
+    <div style="max-width: 100%;width:700px;">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/TRLuZV_qSaE"
+                title="RADAR SPEED SIGNS - iCop - PHOTONPLAY" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+    </div>
+</div>
 <!-- iCop Series Features Start -->
 <section class=" pt-4">
     <div class="container">
         <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;">
             <div class="col-lg-12">
                 <div class="text-center mb-lg-4">
-                    <div class="d-flex justify-content-center mb-4">
-                        <div style="max-width: 100%;width:700px;">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/TRLuZV_qSaE"
-                                    title="RADAR SPEED SIGNS - iCop - PHOTONPLAY" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                        </div>
-                    </div>
-
                     <h2 class="fs-md-2 mt-3">Radar Speed Signs Series Features</h2>
                     <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect
                         your device to various networks and devices,
