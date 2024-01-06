@@ -78,7 +78,7 @@
             /*min-width: 150px;*/
         }
     </style>
-@if ($schema)
+@if (!empty($schema))
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
