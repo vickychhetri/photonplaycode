@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="en-US">
 @php
 use App\Models\Product;
 $currency = '$';

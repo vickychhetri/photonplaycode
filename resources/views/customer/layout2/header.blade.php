@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en-US">
 <head>
     @php
         $currency = '$';
@@ -84,11 +84,11 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "{{$schema['headline']}}",
-    "image": "{{$schema['image']['url']}}",  
+    "image": "{{$schema['image']['url']}}",
     "author": {
         "@type": "{{$schema['author']['@type']}}",
         "name": "{{$schema['author']['name']}}"
-    },  
+    },
     Published": "{{$schema['datePublished']}}"
     }
     </script>
