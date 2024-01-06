@@ -7,12 +7,11 @@ $seo_meta = [
     "title" => $data_record->title ?? '',
     "description" => $data_record->description ?? '',
     "keywords" => $data_record->keyword ?? '',
-    "schema" => $data_record->schema ?? ''
+    "schema" => $data_record->schema ?? '',
+    "feature_image"=>"assets\images\Radar-Speed-Signs-Image_1.webp"
 ];
 ?>
 @include('customer.layouts.header')
-<meta property="og:image" content="{{asset('assets\images\Radar-Speed-Signs-Image_1.webp')}}">
-<meta property="twitter:image" content="{{asset('assets\images\Radar-Speed-Signs-Image_1.webp')}}">
 
 {{--Radar Banner Start--}}
 {{--<x-Customer.Radar.RadarBanner/>--}}
