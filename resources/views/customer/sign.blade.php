@@ -67,9 +67,9 @@ $seo_meta = [
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12">
-                <p style="text-align: justify"> Experience the future of road safety with Radar Speed Signs, where innovation meets responsibility and driving becomes not just a journey but a shared commitment to a safer, smarter, and accident-free community.
+                <p class="text-center" style="text-align: justify;color: black;font-size: 16px;"> Experience the future of road safety with <b> Radar Speed Signs </b>, where innovation meets responsibility and driving becomes not just a journey but a shared commitment to a safer, smarter, and accident-free community.
                 </p>
-                <p style="text-align: justify">
+                <p class="text-center" style="text-align: justify;color: black;font-size: 16px;">
                     Our innovative Radar Speed Signs, a revolutionary device engineered to redefine road safety and revolutionize your driving experience. More than just a speed display, our radar speed signs are the epitome of innovation, seamlessly combining advanced features to create the industry's most capable and highly-equipped device ever built.
                 </p>
             </div>
@@ -180,7 +180,7 @@ $seo_meta = [
                                                class="lazyload" style="height: 70px;" alt="Traffic"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Traffic Data Analysis</h3>
-                            <p class="mb-0"> Cloud based powerful tool for traffic data analysis</p>
+                            <p class="mb-0"> Cloud-powered insights for precision traffic data analysis</p>
                         </div>
 
                     </div>
@@ -196,7 +196,7 @@ $seo_meta = [
                                                style="height: 70px;" alt="Cloud Connectivity" class="lazyload"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">24x7 Cloud Connectivity</h3>
-                            <p class="mb-0"> All time access to the device</p>
+                            <p class="mb-0"> Seamless connection, 24/7 device access</p>
                         </div>
                     </div>
                     <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload img-fluid p-2"
@@ -213,7 +213,7 @@ $seo_meta = [
 "></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Solar Powered</h3>
-                            <p class="mb-0"> Makes the device cost effective</p>
+                            <p class="mb-0">Cost-effective, solar-charged performance</p>
 
                         </div>
                     </div>
@@ -229,7 +229,7 @@ $seo_meta = [
                                                class="lazyload" style="height: 70px;" alt="Battery Backup"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Battery Backup</h3>
-                            <p class="mb-0"> Long battery backup increases operational hours </p>
+                            <p class="mb-0"> Extended operations with robust battery support </p>
                         </div>
                     </div>
                     <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload img-fluid p-2"
@@ -243,7 +243,7 @@ $seo_meta = [
                                                class="lazyload" style="height: 70px;" alt="Fully Compliance"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Fully Compliance</h3>
-                            <p class="mb-0"> Comply standard norms with other industries</p>
+                            <p class="mb-0"> Embrace industry standards effortlessly with seamless integration</p>
                         </div>
                     </div>
                     <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload img-fluid p-2"
@@ -257,7 +257,7 @@ $seo_meta = [
                                                style="height: 70px;" alt="All Weather Operation" class="lazyload"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">All Weather Operation</h3>
-                            <p class="mb-0"> The sign operates efficiently in all the weathers</p>
+                            <p class="mb-0"> Efficient performance in any weather condition</p>
                         </div>
                     </div>
                     <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload img-fluid p-2"
@@ -272,7 +272,7 @@ $seo_meta = [
                                                style="height: 70px;" alt="Robust" class="lazyload"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Robust</h3>
-                            <p class="mb-0"> Designed to withstand extreme weather conditions </p>
+                            <p class="mb-0"> Built tough for enduring extreme conditions </p>
                         </div>
                     </div>
                     <img data-src="{{asset('assets/images/radar/RSS7.webp')}}" class="lazyload img-fluid p-2"
@@ -287,7 +287,7 @@ $seo_meta = [
                                                style="height: 70px;" alt="Easy Installation" class="lazyload"></div>
                         <div class="">
                             <h3 style="font-size: 16px;">Easy Installation</h3>
-                            <p class="mb-0"> Easy to handle and Install with efficient mounting fixture </p>
+                            <p class="mb-0"> Effortless setup with user-friendly installation </p>
                         </div>
                     </div>
                     <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload img-fluid p-2"
