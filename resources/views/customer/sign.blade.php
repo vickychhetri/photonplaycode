@@ -118,10 +118,12 @@ $seo_meta = [
                                     {{--                                    <img class=""  src="" alt="">--}}
                                 </div>
                                 <div class="speed-sign text-center mt-3">
-                                    <h3 class="d-block weight-font" style="font-size: 20px;">
+                                    <span class="d-block weight-font" style="font-size: 20px;">
                                         Radar Speed Sign
-                                    </h3>
-                                    <span class="d-block">{{$product->title}}</span>
+                                    </span>
+
+
+                                    <h3 class="d-block" style="font-size: 20px;">{{$product->title}}</h3>
                                     <div class="d-flex justify-content-center align-items-center my-2 gap-1">
                                         <img data-src="{{ asset('assets\customer\images\star.svg') }}" alt="1"
                                              class="lazyload img-fluid"
