@@ -28,7 +28,7 @@ $seo_meta = [
 
                         <div class="position-relative heading-banner  ">
 
-                            <h1 class="text-dark">iCop | RADAR SPEED SIGNS</h1>
+                            <h1 class="text-dark">iCop RADAR SPEED SIGNS</h1>
                             <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
                             <div class="">
                                 {{--                                    <p class="text-dark">Best safety score with standout visibility and features.</p>--}}
@@ -69,10 +69,10 @@ $seo_meta = [
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12">
-                <p class="text-center" style="text-align: justify;color: black;font-size: 16px;"> Experience the future of road safety with <b> Radar Speed Signs </b>, where innovation meets responsibility and driving becomes not just a journey but a shared commitment to a safer, smarter, and accident-free community.
+                <p class="text-center" style="text-align: justify;color: black;font-size: 16px;"> Experience the future of road safety with <b> iCop Radar Speed Signs </b>, where innovation meets responsibility and driving becomes not just a journey but a shared commitment to a safer, smarter, and accident-free community.
                 </p>
                 <p class="text-center" style="text-align: justify;color: black;font-size: 16px;">
-                    Our innovative Radar Speed Signs, a revolutionary device engineered to redefine road safety and revolutionize your driving experience. More than just a speed display, our radar speed signs are the epitome of innovation, seamlessly combining advanced features to create the industry's most capable and highly-equipped device ever built.
+                    Our innovative iCop Radar Speed Signs, a revolutionary device engineered to redefine road safety and revolutionize your driving experience. More than just a speed display, our radar speed signs are the epitome of innovation, seamlessly combining advanced features to create the industry's most capable and highly-equipped device ever built.
                 </p>
             </div>
             <div class="col-lg-12 ">
