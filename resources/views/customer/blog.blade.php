@@ -45,7 +45,8 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                     // dd($imagee['media_details']['sizes']['full']['source_url']);
                     // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
                     ?>
-                    <img src="" alt="" class="mb-4 img-fluid" style="max-height: 100px;">
+
+                    <img data-src="{{$imagee['media_details']['sizes']['full']['source_url']}}" alt="" class="mb-4 img-fluid lazyload" style="max-height: 100px;">
                     <div class="pb-3 post-info border-0">
                         <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
                         <div class="mb-4">
@@ -460,5 +461,5 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
         }
     })
 
-    
+
 </script>
