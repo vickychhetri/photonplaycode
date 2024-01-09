@@ -58,9 +58,20 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                         <hr />
 
                         <?php
-                            $desc_data=$s_blog['content']['rendered'];
-                        $modifiedString = str_replace('https://blog.photonplay.com/', 'https://photonplay.com/blog/', $desc_data);
-                        $modifiedString = str_replace('/#', '?#', $modifiedString);
+                        $desc_data=$s_blog['content']['rendered'];
+                        // Define the pattern to match URLs starting with https://blog.photonplay.com and ending with /#
+                        $pattern = '/https:\/\/blog\.photonplay\.com\/[^"]*\/#/';
+
+// Define the replacement string with ?# and additional text after #
+                        $replacement = '#';
+
+// Replace the URLs in the string using preg_replace
+                        $modifiedString = preg_replace($pattern, $replacement, $desc_data);
+
+//
+//
+//                        $modifiedString = str_replace('https://blog.photonplay.com/', 'https://photonplay.com/blog/', $desc_data);
+//                        $modifiedString = str_replace('/#', '?#', $modifiedString);
                             ?>
                         <p>{!! $modifiedString !!}</p>
 
