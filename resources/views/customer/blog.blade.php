@@ -56,7 +56,13 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                             {{-- @endforeach--}}
                         </div>
                         <hr />
-                        <p>{!! $s_blog['content']['rendered'] !!}</p>
+
+                        <?php
+                            $desc_data=$s_blog['content']['rendered'];
+                        $modifiedString = str_replace('https://blog.photonplay.com', 'https://photonplay.com', $desc_data);
+                        $modifiedString = str_replace('/#', '?#', $modifiedString);
+                            ?>
+                        <p>{!! $modifiedString !!}</p>
 
                     </div>
 
