@@ -310,7 +310,7 @@ $seo_meta = [
         <!-- <h6 class="fs-6">photonplay’s</h6> -->
     </div>
     <div class="heading-sec">
-        <h2 class="fs-md-2 mt-3">Radar Speed Signs Multi Functional Display</h2>
+        <h2 class="fs-md-2 mt-3">ICOP Radar Speed Signs Multi Functional Display</h2>
         <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional
             <br/>display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
     </div>
