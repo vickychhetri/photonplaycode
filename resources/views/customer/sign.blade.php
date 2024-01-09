@@ -102,7 +102,7 @@ $seo_meta = [
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center mb-lg-5">
-                    <h2 class="fs-md-2">Our Radar Speed Signs Products</h2>
+                    <h2 class="fs-md-2">iCop Radar Speed Signs Products</h2>
                     <p class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your
                         needs and exceed your expectations.
                     </p>
