@@ -48,7 +48,7 @@ $seo_meta = [
                         </div>
                         <div class="desktop-display">
                             <img data-src="{{asset('assets\customer\images\Radar-Speed-Signs-Image_1.webp')}}"
-                                 alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0" style="height: 80%;">
+                                 alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0 h-50" >
                         </div>
                         <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Color"
                              class="img-fluid d-none d-md-block">
