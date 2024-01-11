@@ -61,20 +61,20 @@ class ContactUsController extends Controller
             $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
             foreach($categories as $category){
                 if($category['slug'] == $request->category){
-                    $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&filter[limit]=100&categories='.$category['id'])->json();
+                    $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
                 }
 
             }
 
         }elseif(isset($request->months)){
-            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&filter[limit]=100&order=desc')->json();
+            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
                 // $data = array();
                 // foreach($dates as $date){
                 //     $i =  date('F d Y', strtotime($date['date']));
                 //     array_push($data, $i);
                 // }
         }else{
-            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&filter[limit]=100&orderby=date&order=desc')->json();
+            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
         }
 
 
@@ -120,7 +120,7 @@ class ContactUsController extends Controller
         return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
     }
 
-    public function paginate($items, $perPage = 5, $page = null, $options = [])
+    public function paginate($items, $perPage = 10, $page = null, $options = [])
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
         $items = $items instanceof Collection ? $items : Collection::make($items);
