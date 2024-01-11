@@ -112,7 +112,7 @@ class ContactUsController extends Controller
         //     ->get();
         $posts = $this->paginate($posts);
         $posts->withPath(url()->current());
-
+        dd($posts);
         return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
     }
 
