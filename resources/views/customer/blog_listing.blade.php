@@ -57,9 +57,9 @@ $seo_meta=[
 
                 @endforeach
 
-                    <!-- <div class="d-flex justify-content-center ">
-                        {!! $posts->links() !!}
-                    </div> -->
+                   <div class="d-flex justify-content-center ">
+                      pag  {!! $posts->links() !!}
+                    </div>
             </div>
             <div class="col-lg-4 col-md-12 position-sticky top-0 h-100">
                 <form method="get" action="{{route('customer.search_photon_things')}}">
