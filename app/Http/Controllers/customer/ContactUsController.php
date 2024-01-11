@@ -61,7 +61,7 @@ class ContactUsController extends Controller
             $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
             foreach($categories as $category){
                 if($category['slug'] == $request->category){
-                    $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
+                    $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&filter[posts_per_page]=100&categories='.$category['id'])->json();
                 }
 
             }
