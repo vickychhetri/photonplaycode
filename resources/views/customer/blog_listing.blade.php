@@ -58,7 +58,7 @@ $seo_meta=[
                 @endforeach
 
                     <!-- <div class="d-flex justify-content-center ">
-                        {!! $blogs->links() !!}
+                        {!! $posts->links() !!}
                     </div> -->
             </div>
             <div class="col-lg-4 col-md-12 position-sticky top-0 h-100">

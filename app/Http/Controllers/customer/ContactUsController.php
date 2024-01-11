@@ -112,12 +112,12 @@ class ContactUsController extends Controller
         //     ->get();
         $posts = $this->paginate($post_without);
         $posts->withPath(url()->current());
-
-        return response()->json([
-            'status'=>true,
-            'data'=>$posts,
-        ],200);
-//        return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
+//
+//        return response()->json([
+//            'status'=>true,
+//            'data'=>$posts,
+//        ],200);
+        return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
     }
 
     public function paginate($items, $perPage = 10, $page = null, $options = [])
