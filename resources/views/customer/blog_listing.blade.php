@@ -23,7 +23,7 @@ $seo_meta=[
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12">
-                @foreach($posts as $s_blog)
+                @foreach($posts["data"] as $s_blog)
                     @if ($s_blog['status'] == "publish")
                     <div class="post-item mb-4" >
 <?php

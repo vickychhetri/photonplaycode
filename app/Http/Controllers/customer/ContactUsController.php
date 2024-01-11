@@ -19,6 +19,10 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+
 use function Webmozart\Assert\Tests\StaticAnalysis\integer;
 
 class ContactUsController extends Controller
@@ -57,11 +61,11 @@ class ContactUsController extends Controller
             $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
             foreach($categories as $category){
                 if($category['slug'] == $request->category){
-                    $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json(); 
+                    $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
                 }
 
             }
-            
+
         }elseif(isset($request->months)){
             $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
                 // $data = array();
@@ -79,12 +83,12 @@ class ContactUsController extends Controller
         //     $blogs=$blogs->where('keywords', 'LIKE', '%' . $request->tags . '%');
         // }
 
-        
+
 
 
         $blogs=$blogs->orderBy('id','DESC')->paginate(5);
 
-        
+
         $blog_created_date1 = array();
         foreach ($posts as $blog){
             // dd(date('F, Y', strtotime($blog['date'])));
@@ -106,8 +110,18 @@ class ContactUsController extends Controller
         //     ->groupBy('month_year')
         //     ->orderBy('month_year', 'desc')
         //     ->get();
-             
+        $posts = $this->paginate($posts);
+        $posts->withPath(url()->current());
+
         return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
+    }
+
+    public function paginate($items, $perPage = 10, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+
+        return new LengthAwarePaginator($items->forPage($page, $perPage)->values(), $items->count(), $perPage, $page, $options);
     }
 
     /**
@@ -117,7 +131,7 @@ class ContactUsController extends Controller
     public function blog_show(Request  $request,$page_name){
         $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed&slug=' . $page_name)->json();
 
-        $s_blog = $blogs[0]; 
+        $s_blog = $blogs[0];
         $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
 
         if(!isset($s_blog)){
@@ -131,7 +145,7 @@ class ContactUsController extends Controller
 
         $latestBlogRecords = array_slice($postsSlice, 0 , 3);
         $relatedBlogRecords = array_slice($postsSlice, 0 , 5);
-        
+
         // $like=BlogLike::where('session_id',$request->getSession()->getId())
         //     ->where('blog_id',$blog->id)->exists();
         $like = 0;
