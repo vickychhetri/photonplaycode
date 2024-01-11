@@ -67,14 +67,14 @@ class ContactUsController extends Controller
             }
 
         }elseif(isset($request->months)){
-            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&filter[posts_per_page]=100&order=desc')->json();
                 // $data = array();
                 // foreach($dates as $date){
                 //     $i =  date('F d Y', strtotime($date['date']));
                 //     array_push($data, $i);
                 // }
         }else{
-            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&filter[posts_per_page]=100&orderby=date&order=desc')->json();
         }
 
 
