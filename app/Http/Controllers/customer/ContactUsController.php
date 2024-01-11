@@ -61,20 +61,20 @@ class ContactUsController extends Controller
             $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
             foreach($categories as $category){
                 if($category['slug'] == $request->category){
-                    $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
+                    $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
                 }
 
             }
 
         }elseif(isset($request->months)){
-            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
                 // $data = array();
                 // foreach($dates as $date){
                 //     $i =  date('F d Y', strtotime($date['date']));
                 //     array_push($data, $i);
                 // }
         }else{
-            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
         }
 
 
@@ -90,7 +90,7 @@ class ContactUsController extends Controller
 
 
         $blog_created_date1 = array();
-        foreach ($posts as $blog){
+        foreach ($post_without as $blog){
             // dd(date('F, Y', strtotime($blog['date'])));
             $blog_created_date = date('F, Y', strtotime($blog['date']));
             array_push($blog_created_date1, $blog_created_date);
@@ -110,9 +110,14 @@ class ContactUsController extends Controller
         //     ->groupBy('month_year')
         //     ->orderBy('month_year', 'desc')
         //     ->get();
-        $posts = $this->paginate($posts);
+        $posts = $this->paginate($post_without);
         $posts->withPath(url()->current());
-        return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
+
+        return response()->json([
+            'status'=>true,
+            'data'=>$posts,
+        ],200);
+//        return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
     }
 
     public function paginate($items, $perPage = 10, $page = null, $options = [])
