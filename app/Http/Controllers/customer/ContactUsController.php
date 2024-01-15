@@ -27,6 +27,16 @@ use function Webmozart\Assert\Tests\StaticAnalysis\integer;
 
 class ContactUsController extends Controller
 {
+
+    public static function checkBlogCount(){
+        $sum = 0;
+        $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
+        foreach($categories as $category){
+            $sum += $category['count'];
+        }
+        return $sum;
+    }
+
     public function contactUs(){
         $setting = Setting::first();
         return view('customer.contact_us', compact('setting'));
@@ -51,47 +61,28 @@ class ContactUsController extends Controller
     }
 
     public function blog_listing(Request $request){
+        $page = $_GET['page'] ?? 1;
+        // dd($page);
         $blogs=Blog::select();
 
         if(isset($request->category)){
-            // $blogs_category_id=BlogCategory::where('slug',$request->category)->first();
-            // if(isset($blogs_category_id)){
-            //     $blogs=$blogs->where('blog_category_id',$blogs_category_id->id);
-            // }
             $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
             foreach($categories as $category){
                 if($category['slug'] == $request->category){
-                    $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
+                    $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
                 }
 
             }
 
         }elseif(isset($request->months)){
-            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
-                // $data = array();
-                // foreach($dates as $date){
-                //     $i =  date('F d Y', strtotime($date['date']));
-                //     array_push($data, $i);
-                // }
+            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+
         }else{
-            $post_without = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&page='. $page)->json();
         }
 
-
-
-        // if(isset($request->tags)){
-        //     $blogs=$blogs->where('keywords', 'LIKE', '%' . $request->tags . '%');
-        // }
-
-
-
-
-        $blogs=$blogs->orderBy('id','DESC')->paginate(5);
-
-
         $blog_created_date1 = array();
-        foreach ($post_without as $blog){
-            // dd(date('F, Y', strtotime($blog['date'])));
+        foreach ($posts as $blog){
             $blog_created_date = date('F, Y', strtotime($blog['date']));
             array_push($blog_created_date1, $blog_created_date);
         }
@@ -105,18 +96,9 @@ class ContactUsController extends Controller
 
         $latestBlogRecords = array_slice($postsSlice, 0 , 3);
 
-        // // Group posts by month-year
-        // $groupedPosts = Blog::selectRaw('DATE_FORMAT(created_at, "%M %Y") as month_year, COUNT(*) as count')
-        //     ->groupBy('month_year')
-        //     ->orderBy('month_year', 'desc')
-        //     ->get();
-        $posts = $this->paginate($post_without);
-        $posts->withPath(url()->current());
-//
-//        return response()->json([
-//            'status'=>true,
-//            'data'=>$posts,
-//        ],200);
+        // $posts = $this->paginate($posts);
+        // $posts->withPath(url()->current());
+
         return view('customer.blog_listing',compact('blogs','categories','latestBlogRecords','groupedPosts','posts'));
     }
 

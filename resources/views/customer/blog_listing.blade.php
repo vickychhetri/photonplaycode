@@ -8,6 +8,8 @@ $seo_meta=[
     "keywords"=>$data_record->keyword,
     "schema"=>$data_record->schema
 ];
+
+$page = $_GET['page'] ?? 1;
 ?>
 @include('customer.layout2.header')
 
@@ -31,7 +33,7 @@ $seo_meta=[
 
                                                 <div class="">
                             <a href="{{route("customer.blog_show",$s_blog['slug'])}}"> <img
-                                    data-src="{{$s_blog['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url']}}" alt=""
+                                    data-src="{{$s_blog['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'] ?? ''}}" alt=""
                                     class="mb-4 img-fluid lazyload"  > </a>
                         </div>
 
@@ -58,7 +60,12 @@ $seo_meta=[
                 @endforeach
 
                    <div class="d-flex justify-content-center ">
-                        {!! $posts->links() !!}
+                   <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="{{route('customer.blog', ['page' => ($page == 1) ? 1 : $page - 1])}}">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="{{route('customer.blog', ['page' => $page + 1])}}">Next</a></li>
+                        </ul>
+                    </nav>
                     </div>
             </div>
             <div class="col-lg-4 col-md-12 position-sticky top-0 h-100">
@@ -112,6 +119,7 @@ $seo_meta=[
                     </div>
                 </div>
             </div>
+           
             <!-- </div> -->
         </div>
     </div>
