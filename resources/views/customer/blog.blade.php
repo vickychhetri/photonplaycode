@@ -25,7 +25,7 @@ $imgurl = $imagee['media_details']['sizes']['full']['source_url'];
 
 if (!empty($schema)) {
     $schema['image']['url'] = $imgurl ?? "";
-    $schema['datePublished'] = date('d/m/Y', strtotime($s_blog['date']))??"";
+    $schema['datePublished'] = date('Y-m-dTH:i:sP', strtotime($s_blog['date']))??"";
     $schema['author']['name'] = "Photonplay";
     $schema['author']['@type'] = "Organization";
 }
