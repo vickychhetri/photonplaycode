@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Http;
+
 //http://demo.wp-api.org/wp-json/wp/v2/tags/TagID
 // $tagss = array();
 // if ($s_blog) {
@@ -10,13 +11,26 @@ use Illuminate\Support\Facades\Http;
 //     }
 // }
 $seo_meta = [
-    "title" => $s_blog['rank_math_title']?? '',
+    "title" => $s_blog['rank_math_title'] ?? '',
     "description" => $s_blog['rank_math_description'] ?? '',
     "keywords" => $s_blog['rank_math_focus_keyword'] ?? '',
     // "schema"=>$s_blog['rank_math_schema_BlogPosting']['headline'] ?? '',
 ];
 
+#wordpress
+$imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
 $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
+
+$imageUrl = $schema['image']['url']; // Get the original image URL
+$imgurl = $imagee['media_details']['sizes']['full']['source_url'];
+
+if (isset($schema)) {
+    $schema['image']['url'] = $imageUrl ?? "";
+    $schema['datePublished'] = date('d M Y', strtotime($s_blog['date'];
+    $schema['author']['name'] = "Photonplay";
+    $schema['author']['@type'] = "Organization";
+}
+
 ?>
 @include('customer.layout2.header',compact(['schema']))
 
@@ -40,25 +54,27 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
             <div class="col-lg-8 col-md-12">
                 <div class="post-item mb-5">
                     <?php
-                    $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
 
                     // dd($imagee['media_details']['sizes']['full']['source_url']);
                     // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
                     ?>
 
-                    <img data-src="{{$imagee['media_details']['sizes']['full']['source_url']}}" alt="" class="mb-4 img-fluid lazyload" >
+                    <img data-src="{{$imagee['media_details']['sizes']['full']['source_url']}}" alt=""
+                         class="mb-4 img-fluid lazyload">
                     <div class="pb-3 post-info border-0">
-                        <h1 class="text-uppercase mb-3 text-dark" style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
+                        <h1 class="text-uppercase mb-3 text-dark"
+                            style="font-size: 24px;"> {{$s_blog['title']['rendered']}} </h1>
                         <div class="mb-4">
-                            {{date('d M Y', strtotime($s_blog['date']))}} by {{$s_blog['_embedded']['author'][0]['name']}}
+                            {{date('d M Y', strtotime($s_blog['date']))}}
+                            by {{$s_blog['_embedded']['author'][0]['name']}}
                             {{-- @foreach($tags as $tag)--}}
                             {{-- {{$tag}},--}}
                             {{-- @endforeach--}}
                         </div>
-                        <hr />
+                        <hr/>
 
                         <?php
-                        $desc_data=$s_blog['content']['rendered'];
+                        $desc_data = $s_blog['content']['rendered'];
                         // Define the pattern to match URLs starting with https://blog.photonplay.com and ending with /#
                         $pattern = '/https:\/\/blog\.photonplay\.com\/[^"]*\/#/';
 
@@ -72,7 +88,7 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
 //
 //                        $modifiedString = str_replace('https://blog.photonplay.com/', 'https://photonplay.com/blog/', $desc_data);
 //                        $modifiedString = str_replace('/#', '?#', $modifiedString);
-                            ?>
+                        ?>
                         <p>{!! $modifiedString !!}</p>
 
                     </div>
@@ -85,7 +101,7 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
 
 
                                     @foreach($tags as $tag)
-                                    <span> <a href="/blog?tags=" class="text-decoration-none"> {{$tag}} </a></span>
+                                        <span> <a href="/blog?tags=" class="text-decoration-none"> {{$tag}} </a></span>
                                     @endforeach
 
                                 </div>
@@ -109,7 +125,7 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                 <div class="d-flex justify-content-between">
 
                 </div>
-                <hr />
+                <hr/>
 
             </div>
 
@@ -126,7 +142,9 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                         <ul class="m-0 p-0">
 
                             @foreach($categories as $category)
-                            <li class=" "><a href="/blogs?category={{$category['slug']}}" class="text-decoration-none text-uppercase">{{$category['name']}}</a></li>
+                                <li class=" "><a href="/blogs?category={{$category['slug']}}"
+                                                 class="text-decoration-none text-uppercase">{{$category['name']}}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -134,20 +152,21 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                         <div class="side-bar-title text-uppercase">RECENT POSTS</div>
                         <ul class="m-0 p-0 latest-post">
                             @foreach($latestBlogRecords as $lt_blog)
-                            <li>
-                                <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="d-flex align-items-center text-decoration-none text-secondary">
-                                    <!-- <img src="" /> -->
-                                    <div class="latest-post-content ms-2">
-                                        <h4>{{$lt_blog['title']['rendered']}}</h4>
-                                        <span>
+                                <li>
+                                    <a href="{{route('customer.blog_show',$lt_blog['slug'])}}"
+                                       class="d-flex align-items-center text-decoration-none text-secondary">
+                                        <!-- <img src="" /> -->
+                                        <div class="latest-post-content ms-2">
+                                            <h4>{{$lt_blog['title']['rendered']}}</h4>
+                                            <span>
                                             <?php
-                                            $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
-                                            echo $blog_created_date;
-                                            ?>
+                                                    $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
+                                                    echo $blog_created_date;
+                                                    ?>
                                         </span>
-                                    </div>
-                                </a>
-                            </li>
+                                        </div>
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -157,13 +176,14 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                             <div class="mb-3">
                                 <?php $i = 1; ?>
                                 @foreach($tags as $tag)
-                                <span class="tagskeyslinks">
-                                    <a href="/blogs?tags={{strtolower($tag)}}" class="text-decoration-none " style="color: white">{{$tag}}</a></span>
-                                @if($i%3==0)
+                                    <span class="tagskeyslinks">
+                                    <a href="/blogs?tags={{strtolower($tag)}}" class="text-decoration-none "
+                                       style="color: white">{{$tag}}</a></span>
+                                    @if($i%3==0)
                             </div>
                             <div class="mb-3">
                                 @endif
-                                <?php $i++; ?>
+                                    <?php $i++; ?>
                                 @endforeach
                             </div>
 
@@ -174,13 +194,14 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
                             <ul class="m-0 p-0">
 
                                 @foreach($groupedPosts as $postarchive)
-                                    <li><a href="/blogs?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>
-                                @endforeach
+                        <li><a href="/blogs?months={{$postarchive->month_year}}" class="text-decoration-none">{{$postarchive->month_year}} ({{$postarchive->count}})</a></li>
 
-{{--                                <li><a hre="">April 2023</a></li>--}}
-{{--                                <li><a hre="">March 2023</a></li>--}}
-                            </ul>
-                        </div> -->
+                    @endforeach
+
+                    {{--                                <li><a hre="">April 2023</a></li>--}}
+                    {{--                                <li><a hre="">March 2023</a></li>--}}
+                    </ul>
+                </div> -->
                 </div>
             </div>
         </div>
@@ -195,34 +216,35 @@ $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
             </div>
             <div class="row">
                 @foreach ($relatedBlogRecords as $lt_blog)
-                <div class="col-md-4">
+                    <div class="col-md-4">
 
 
-                    <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="text-decoration-none">
-                        <div>
-                            <?php
-                            $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $lt_blog['featured_media'])->json();
-                            // dd($image['media_details']['sizes']['medium']['source_url']);
-                            // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
-                            ?>
-                            <div class="px-2 ">
-                                <div>
-                                    <img src="{{$image['media_details']['sizes']['medium']['source_url']}}" class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
-                                </div>
+                        <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="text-decoration-none">
+                            <div>
+                                    <?php
+                                    $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $lt_blog['featured_media'])->json();
+                                    // dd($image['media_details']['sizes']['medium']['source_url']);
+                                    // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
+                                    ?>
+                                <div class="px-2 ">
+                                    <div>
+                                        <img src="{{$image['media_details']['sizes']['medium']['source_url']}}"
+                                             class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
+                                    </div>
 
-                                <div class="py-4">
-                                    <h6 class="text-uppercase mb-0">{{$lt_blog['title']['rendered']}}</h6>
-                                    <span class="text-lights"><?php
-                                                                $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
-                                                                echo $blog_created_date;
-                                                                ?> / Photonplay </span>
+                                    <div class="py-4">
+                                        <h6 class="text-uppercase mb-0">{{$lt_blog['title']['rendered']}}</h6>
+                                        <span class="text-lights"><?php
+                                                                      $blog_created_date = date('F d Y', strtotime($lt_blog['date']));
+                                                                      echo $blog_created_date;
+                                                                      ?> / Photonplay </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </a>
+                        </a>
 
-                </div>
+                    </div>
                 @endforeach
             </div>
             <div class="rules-content mb-0 border-0 border-bottom">
