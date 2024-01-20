@@ -21,11 +21,10 @@ $seo_meta = [
 $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
 $schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
 
-$imageUrl = $schema['image']['url']; // Get the original image URL
 $imgurl = $imagee['media_details']['sizes']['full']['source_url'];
 
-if (isset($schema)) {
-    $schema['image']['url'] = $imageUrl ?? "";
+if (!empty($schema)) {
+    $schema['image']['url'] = $imgurl ?? "";
     $schema['datePublished'] = date('d M Y', strtotime($s_blog['date'];
     $schema['author']['name'] = "Photonplay";
     $schema['author']['@type'] = "Organization";
