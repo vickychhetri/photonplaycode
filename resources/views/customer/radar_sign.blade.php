@@ -229,7 +229,7 @@ if(isset($seo_record)){
         <div class="row w-100">
             <!-- <div class=" px-3"> -->
             <div class="col-lg-8 col-md-8">
-                <div class="d-flex align-items-md-center order-summery ">
+                <div class="d-flex align-items-md-center order-summery gap-2 ">
                     {{--                    <span class="border-1 border-right d-block  pe-lg-5 pe-4">Order--}}
                     {{--                        Summary</span>--}}
                     <div class="border-left  ">
@@ -237,6 +237,10 @@ if(isset($seo_record)){
                         <p class="mb-0 opacity-50">{{$product->color}} | {{$product->warranty}}
                             Warranty</p>
                     </div>
+                    <div class="border-left  ">
+                        <a href="#inquiry" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Inquiry</a>
+                    </div>
+
                 </div>
             </div>
             <div class=" col-lg-4 col-md-4">
@@ -316,6 +320,9 @@ if(isset($seo_record)){
         </div>
     </div>
 </section>
+
+@include('customer.layout2.get_in_touch')
+
 <section class="icop-series pt-4">
     <div class="container"  id="our_products">
         <div class="row">
