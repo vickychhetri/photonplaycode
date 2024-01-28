@@ -122,8 +122,14 @@ if(isset($seo_record)){
 
 
                     <span class="text-capitalize d-block">
-                        {{$product->title}}
+                        {{$product->title}} 
                     </span>
+                    @if ($product && $product->sku)
+                        <span class="text-capitalize d-block">
+                            <b>SKU : </b>{{$product->sku}}
+                        </span>
+                    @endif
+                    
                     <div class="d-flex justify-content-start align-items-center gap-1">
                         <img src="{{asset('assets\customer\images\star.svg')}}" alt="1 Star" class="img-fluid" width="14px">
                         <img src="{{asset('assets\customer\images\star.svg')}}" alt="2 Star" class="img-fluid" width="14px">

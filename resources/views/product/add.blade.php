@@ -11,13 +11,13 @@
 @endsection
 
 @section('breadcrumb-title')
-    <h3>Add Specilization</h3>
+<h3>Add Specilization</h3>
 @endsection
 
 @section('breadcrumb-items')
-    <li class="breadcrumb-item">Dashboard</li>
-    <li class="breadcrumb-item">Settings</li>
-    <li class="breadcrumb-item active">Add Product</li>
+<li class="breadcrumb-item">Dashboard</li>
+<li class="breadcrumb-item">Settings</li>
+<li class="breadcrumb-item active">Add Product</li>
 @endsection
 
 @section('content')
@@ -28,18 +28,18 @@
                 <div class="card-header">
                     <h5>New Product</h5>
                     {{--<div class="row">--}}
-                    {{--    <div class="col-md-3 mb-3">--}}
-                    {{--        <a href="#" class="btn btn-info w-100" > Product Information </a>--}}
-                    {{--    </div>--}}
-                    {{--    <div class="col-md-3 mb-3">--}}
-                    {{--        <a href="#" class="btn btn-info w-100" >Specifications </a>--}}
-                    {{--    </div>--}}
-                    {{--    <div class="col-md-3 mb-3">--}}
-                    {{--        <a href="#" class="btn btn-info w-100"  > Shipping </a>--}}
-                    {{--    </div>--}}
-                    {{--    <div class="col-md-3 mb-3">--}}
-                    {{--        <a href="#" class="btn btn-info w-100"> Vat/Tax </a>--}}
-                    {{--    </div>--}}
+                    {{-- <div class="col-md-3 mb-3">--}}
+                    {{-- <a href="#" class="btn btn-info w-100" > Product Information </a>--}}
+                    {{-- </div>--}}
+                    {{-- <div class="col-md-3 mb-3">--}}
+                    {{-- <a href="#" class="btn btn-info w-100" >Specifications </a>--}}
+                    {{-- </div>--}}
+                    {{-- <div class="col-md-3 mb-3">--}}
+                    {{-- <a href="#" class="btn btn-info w-100"  > Shipping </a>--}}
+                    {{-- </div>--}}
+                    {{-- <div class="col-md-3 mb-3">--}}
+                    {{-- <a href="#" class="btn btn-info w-100"> Vat/Tax </a>--}}
+                    {{-- </div>--}}
                     {{--</div>--}}
                 </div>
 
@@ -60,16 +60,16 @@
                                         <div class="col-md-10">
                                             <select id="category" name="category_id" class="form-select form-select" aria-label=".form-select-sm">
                                                 <option selected disabled> Product Category</option>
-                                              @foreach($categories as $category)
-                                                    <option value="{{$category->id}}">{{$category->title}}</option>
-                                              @endforeach
+                                                @foreach($categories as $category)
+                                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                                @endforeach
 
                                             </select>
 
                                             @error('category_selected')
                                             <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
                                         </div>
                                     </div>
@@ -82,8 +82,8 @@
 
                                             @error('title')
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
                                         </div>
 
@@ -97,8 +97,8 @@
 
                                             @error('slug')
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
                                         </div>
 
@@ -112,8 +112,26 @@
 
                                             @error('price')
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row mb-2 form-group">
+                                        <label for="sku" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('SKU') }}</label>
+
+                                        <div class="col-md-10">
+                                            <input id="sku" type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" value="{{ old('sku') }}" required autocomplete="sku" autofocus>
+
+                                            @error('sku')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
 
 
@@ -130,13 +148,13 @@
 
                                             @error('brochure')
                                             <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
                                         </div>
                                         <div class="col-md-2">
                                             @if(isset($product->brochure))
-                                                <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-dark-gradien">Download</a>
+                                            <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-dark-gradien">Download</a>
                                             @endif
                                         </div>
 
@@ -147,73 +165,73 @@
 
 
 
-                                                            <div class="row mb-0">
-                                                                <div class="col-md-6 offset-md-4">
-                                                                    <button type="submit" class="btn btn-primary">
-                                                                        {{ __('Add Product') }}
-                                                                    </button>
-                                                                </div>
-                                                            </div>
+                                    <div class="row mb-0">
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Add Product') }}
+                                            </button>
+                                        </div>
+                                    </div>
                                 </form>
 
                             </div>
 
                         </div>
-{{--                        <div class="col-md-5">--}}
-{{--                            <div class="border-2 shadow-lg p-4">--}}
-{{--                                <div class="col-md-12 ">--}}
-{{--                                    <h6> Product Specifications</h6>--}}
-{{--                                </div>--}}
+                        {{-- <div class="col-md-5">--}}
+                        {{-- <div class="border-2 shadow-lg p-4">--}}
+                        {{-- <div class="col-md-12 ">--}}
+                        {{-- <h6> Product Specifications</h6>--}}
+                        {{-- </div>--}}
 
-{{--                                <div class="row mb-3 form-group">--}}
-{{--                                    <div class="col-md-12">--}}
+                        {{-- <div class="row mb-3 form-group">--}}
+                        {{-- <div class="col-md-12">--}}
 
-{{--                                        <select id="color" name="color" class="form-select form-select" aria-label=".form-select-sm">--}}
-{{--                                            <option selected disabled>-- Select Specification --</option>--}}
-{{--                                            <option>Batteries</option>--}}
-{{--                                            <option>Power</option>--}}
+                        {{-- <select id="color" name="color" class="form-select form-select" aria-label=".form-select-sm">--}}
+                        {{-- <option selected disabled>-- Select Specification --</option>--}}
+                        {{-- <option>Batteries</option>--}}
+                        {{-- <option>Power</option>--}}
 
-{{--                                        </select>--}}
+                        {{-- </select>--}}
 
-{{--                                        @error('color')--}}
-{{--                                        <span class="invalid-feedback" role="alert">--}}
-{{--                                            <strong>{{ $message }}</strong>--}}
-{{--                                        </span>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                @for($i=0;$i<3;$i++)--}}
-{{--                                    <div class="row mb-3 form-group">--}}
-{{--                                        <div class="col-md-12">--}}
-{{--                                            <div class="row">--}}
+                        {{-- @error('color')--}}
+                        {{-- <span class="invalid-feedback" role="alert">--}}
+                        {{-- <strong>{{ $message }}</strong>--}}
+                        {{-- </span>--}}
+                        {{-- @enderror--}}
+                        {{-- </div>--}}
+                        {{-- </div>--}}
+                        {{-- @for($i=0;$i<3;$i++)--}}
+                        {{-- <div class="row mb-3 form-group">--}}
+                        {{-- <div class="col-md-12">--}}
+                        {{-- <div class="row">--}}
 
-{{--                                                <div class="col-md-5">--}}
-{{--                                                    <select id="color" name="color" class="form-select form-select" aria-label=".form-select-sm">--}}
-{{--                                                        <option selected disabled>--Option--</option>--}}
-{{--                                                        <option>3 Days</option>--}}
-{{--                                                        <option>5 Days</option>--}}
+                        {{-- <div class="col-md-5">--}}
+                        {{-- <select id="color" name="color" class="form-select form-select" aria-label=".form-select-sm">--}}
+                        {{-- <option selected disabled>--Option--</option>--}}
+                        {{-- <option>3 Days</option>--}}
+                        {{-- <option>5 Days</option>--}}
 
-{{--                                                    </select>--}}
+                        {{-- </select>--}}
 
-{{--                                                </div>--}}
-{{--                                                <div class="col-md-5">--}}
-{{--                                                    <input type="text" class="form-control" placeholder="$">--}}
-{{--                                                </div>--}}
+                        {{-- </div>--}}
+                        {{-- <div class="col-md-5">--}}
+                        {{-- <input type="text" class="form-control" placeholder="$">--}}
+                        {{-- </div>--}}
 
-{{--                                                <div class="col-md-2 p-1">--}}
-{{--                                                    <button class="btn btn-sm btn-dark">+ </button>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endfor--}}
-
-
-{{--                            </div>--}}
+                        {{-- <div class="col-md-2 p-1">--}}
+                        {{-- <button class="btn btn-sm btn-dark">+ </button>--}}
+                        {{-- </div>--}}
+                        {{-- </div>--}}
+                        {{-- </div>--}}
+                        {{-- </div>--}}
+                        {{-- @endfor--}}
 
 
+                        {{-- </div>--}}
 
-{{--                        </div>--}}
+
+
+                        {{-- </div>--}}
                     </div>
 
 
@@ -238,6 +256,5 @@
         });
 
     });
-
 </script>
 @endsection

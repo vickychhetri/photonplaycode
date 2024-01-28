@@ -48,6 +48,7 @@ class ProductController extends Controller
             'title' => 'required|max:255',
             'price' => 'required|max:255',
             'slug' => 'required|max:255',
+            'sku' => 'nullable'
         ]);
 
         $product= new Product();
@@ -55,6 +56,7 @@ class ProductController extends Controller
         $product->title=$request->title;
         $product->price=$request->price;
         $product->slug=$request->slug;
+        $product->sku=$request->sku;
         if (isset($request->brochure)) {
             $originalName = $request->file('brochure')->getClientOriginalName();
             $extension = $request->file('brochure')->getClientOriginalExtension();
@@ -119,6 +121,7 @@ class ProductController extends Controller
             'title' => 'required|max:255',
             'price' => 'required|max:255',
             'slug' => 'required|max:255',
+            'sku' => 'nullable'
         ]);
 
 
@@ -128,6 +131,7 @@ class ProductController extends Controller
         $product->title=$request->title;
         $product->price=$request->price;
         $product->slug=$request->slug;
+        $product->sku=$request->sku;
         if (isset($request->brochure)) {
             $originalName = $request->file('brochure')->getClientOriginalName();
             $extension = $request->file('brochure')->getClientOriginalExtension();

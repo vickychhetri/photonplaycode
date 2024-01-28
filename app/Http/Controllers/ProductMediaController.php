@@ -23,12 +23,11 @@ class ProductMediaController extends Controller
         $image_path = $request->file('cover_image')->store('image', 'public');
         $product->cover_image=$image_path;
         $product->save();
-
         return back()->with('success', 'Images are successfully uploaded');
     }
 
     public function store_all_images(Request $request){
-        print("run store ");
+        print("run store ");    
 //
 //        $request->validate([
 //            'product_id'=>'required',
@@ -47,7 +46,8 @@ class ProductMediaController extends Controller
                 if(isset($image_path)){
                     ProductImage::create([
                         'image' => $image_path,
-                        'product_id' => $product->id
+                        'product_id' => $product->id,
+                        'color' => $request->color
                     ]);
                 }
             }}
