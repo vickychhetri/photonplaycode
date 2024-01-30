@@ -11,8 +11,18 @@ class ProductMediaController extends Controller
 {
     public function open_media_form(Request $request,$id){
         $product=Product::find($id);
-        $product_images=ProductImage::where('product_id',$id)->get();
+        $color =  $request->color ?? 'amber';
+        $product_images=ProductImage::where('product_id',$id)->where('color', $color)->get();
+        // dd($product_images);
         return view('product.media.index',compact('product','product_images'));
+    }
+    public function open_media_form_ajax(Request $request,$id){
+        $product=Product::find($id);
+        $color =  $request->color ?? 'amber';
+        $product_images=ProductImage::where('product_id',$id)->where('color', $color)->get();
+        // dd($product_images);
+        return view('partials.pro_gallery',compact('product_images'));
+        // return response()->json($product_images);
     }
 
     public function store(Request $request){

@@ -41,7 +41,8 @@
                                 <div class="col-md-12 mt-3">
                                     <h6> Product Media</h6>
                                 </div>
-                                <form method="POST" action="{{route('admin.product_media_store')}}" enctype="multipart/form-data">
+                                {{-- <form method="POST" action="{{route('admin.product_media_store')}}" enctype="multipart/form-data"> --}}
+                                <form enctype="multipart/form-data">
                                 <div class="col-md-6 mt-3">
                                     <select name="color" id="dropDownIdColor" class="form-select" required>
                                         @foreach(\App\Models\ProductImage::COLOR as $color)
@@ -90,7 +91,7 @@
                                 <form method="POST" action="{{route('admin.product_media_store_images')}}" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" value="{{\App\Models\ProductImage::COLOR[0]}}" name="color" id="colorMultipleImages">
-                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                    <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">
                                     <div class="row mb-3 form-group  d-flex align-items-center">
                                         <label for="moreimage" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('More Images') }}</label>
 
@@ -108,15 +109,9 @@
                                                 {{ __('Upload Images') }}
                                             </button>
                                         </div>
-
-                                        @foreach($product_images as $img)
-                                        <div class="col-md-3 m-3" id="prodImg-{{$img->id}}">
-                                            <div style="height: 300px;width: 300px;" class="border position-relative ">
-                                                <a href="#" onclick="deleteImg({{$img->id}})" class="position-absolute text-danger border p-1 m-1" style="right: 10px;"> <b> X </b> </a>
-                                                <img src="{{asset('storage/'.$img->image)}}" class="w-100 h-100 " />
-                                            </div>
-                                        </div>
-                                        @endforeach
+                                    <div id="prodImg-gallery" class="row">
+                                        @include('partials.pro_gallery')
+                                    </div>
                                     </div>
 
                                     {{-- /admin/product/delete/media/images/{id}--}}
@@ -128,6 +123,7 @@
                         </div>
 
                     </div>
+
 
 
                 </div>
@@ -142,11 +138,27 @@ $(document).ready(function() {
     
     $("#dropDownIdColor").change (function () {  
         var color = $(this).children("option:selected").val();
+        var id = $('#product_id').val();
         $("#colorMultipleImages").val(color);
+
+        $.ajax({
+        url: "/admin/product/" + id + "/edit/media-ajax",
+        type: "GET",
+        data: {'id': id, 'color': color},
+        success: function(response) {
+            $('#prodImg-gallery').html(response)
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+        }
+    });
+
+
     });  
 
 
 });
+
 
     function deleteImg(id) {
         console.log(id)
