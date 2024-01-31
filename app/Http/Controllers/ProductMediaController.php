@@ -20,9 +20,12 @@ class ProductMediaController extends Controller
         $product=Product::find($id);
         $color =  $request->color ?? 'amber';
         $product_images=ProductImage::where('product_id',$id)->where('color', $color)->get();
-        // dd($product_images);
+        
+        if($request->frontSlider){
+            return response()->json($product_images);
+        }
         return view('partials.pro_gallery',compact('product_images'));
-        // return response()->json($product_images);
+        
     }
 
     public function store(Request $request){

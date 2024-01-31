@@ -71,20 +71,9 @@ if (isset($seo_record)) {
                     <div class="row">
                         <div class="col-md-3">
                             <div class="desktop-display ">
-                                @foreach($product->images as $im_g)
-                                    <div>
-                                        <div class="radar-item-box">
-                                            <img src="{{asset('storage/'.$im_g->image)}}" class="img-fluid"
-                                                 alt="{{$product->title}}">
-                                        </div>
-                                    </div>
-                                @endforeach
-                                <div>
-                                    <div class="radar-item-box mb-0">
-                                        <img src="{{ asset('storage/'. $product->cover_image) }}" class="img-fluid"
-                                             alt="{{$product->title}}">
-                                    </div>
-                                </div>
+                                <slider>
+                                    @include('partials.slider')
+                                </slider>
                             </div>
                         </div>
 
@@ -613,6 +602,47 @@ if (isset($seo_record)) {
 
 
         });
+
+
+        $("#select-color").change(function() {
+                    var color = $(this).children("option:selected").text().toLocaleLowerCase();
+                    // console.log(color)
+                    var id = $('#product_id').val();
+                    $("#colorMultipleImages").val(color);
+
+                    $.ajax({
+                        url: "/product/" + id + "/edit/media-ajax",
+                        type: "GET",
+                        data: {
+                            'id': id,
+                            'color': color,
+                            'frontSlider':true
+                        },
+                        success: function(response) {
+                            // console.log(response);
+                            $('slider').html('');
+                            
+                            response.map((res)=>{
+                                $('slider').append(
+                                    `<div>
+                                        <div class="radar-item-box">
+                                            <img src="/storage/${res.image}" class="img-fluid"
+                                                    alt="{{$product->title}}">
+                                        </div>
+                                    </div>`
+                                )
+                                
+                                console.log(res.image)
+                            })
+                            $('#prodImg-gallery').html(response)
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                        }
+                    });
+
+        });
+
     });
 
     /**************************************

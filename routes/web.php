@@ -52,6 +52,7 @@ use App\Http\Controllers\customer\CustomerOrderController;
 
 use App\Http\Controllers\LedController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductMediaController;
 use App\Http\Controllers\SearchItemsController;
 use App\Http\Controllers\ThankYouController;
 use App\Http\Controllers\VASDController;
@@ -365,3 +366,4 @@ Route::get('csv', function(){
 Route::get('php', function() {
     return phpinfo();
 });
+Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'open_media_form_ajax'])->name("product_media_page_ajax");

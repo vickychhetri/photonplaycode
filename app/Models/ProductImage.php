@@ -13,7 +13,6 @@ class ProductImage extends Model
         'amber',
         'white',
         'green',
-        'red',
     ];
 
     protected $guarded = ['id'];

@@ -23,7 +23,7 @@ class SignController extends Controller
 
     public function radarSigns($id){
         $sessionId = Session::getId();
-        $product = Product::with('images','specilizations.specilization','specilizations.options','specilizations.options.specializationoptions','category')->where('slug',$id)->first();
+        $product = Product::with(['images'=>fn($r) => $r->where('color', 'amber'),'specilizations.specilization','specilizations.options','specilizations.options.specializationoptions','category'])->where('slug',$id)->first();
         $productLists = Product::where('category_id', 1)->take(5)->get();
         // dd($product);
         $postalCode = '';

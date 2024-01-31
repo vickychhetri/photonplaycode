@@ -142,7 +142,7 @@ $(document).ready(function() {
         $("#colorMultipleImages").val(color);
 
         $.ajax({
-        url: "/admin/product/" + id + "/edit/media-ajax",
+        url: "/product/" + id + "/edit/media-ajax",
         type: "GET",
         data: {'id': id, 'color': color},
         success: function(response) {

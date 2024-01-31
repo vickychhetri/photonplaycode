@@ -39,7 +39,6 @@ Route::delete('/product-specification-options-delete/{id}', [ProductSetupControl
 
 
 Route::get('/product/{id}/edit/media', [ProductMediaController::class, 'open_media_form'])->name("product_media_page");
-Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'open_media_form_ajax'])->name("product_media_page_ajax");
 Route::post('/product/edit/media', [ProductMediaController::class, 'store'])->name("product_media_store");
 Route::post('/product/edit/media/images', [ProductMediaController::class, 'store_all_images'])->name("product_media_store_images");
 Route::delete('/product/delete/media/images/{id}', [ProductMediaController::class, 'delete_images'])->name("product_media_delete_images");
