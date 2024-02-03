@@ -1,35 +1,46 @@
 <?php
+    use Illuminate\Support\Facades\Http;
+    $title_default_blog = "";
+    if (!isset($s_blog['rank_math_title'])) {
+        $title_default_blog = $s_blog["title"]["rendered"];
+    }
+    $seo_meta = [
+        "title" => $s_blog['rank_math_title'] ?? $title_default_blog,
+        "description" => $s_blog['rank_math_description'] ?? $title_default_blog,
+        "keywords" => $s_blog['rank_math_focus_keyword'] ?? $title_default_blog,
+        // "schema"=>$s_blog['rank_math_schema_BlogPosting']['headline'] ?? '',
+    ];
 
-use Illuminate\Support\Facades\Http;
+    #wordpress
+    $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
+    //$schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
 
-//http://demo.wp-api.org/wp-json/wp/v2/tags/TagID
-// $tagss = array();
-// if ($s_blog) {
-//     foreach ($s_blog['tags'] as $item) {
-//         $tags1 = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/tags/' . $item)->json();
-//         array_push($tagss, $tags1['name']);
-//     }
-// }
-$seo_meta = [
-    "title" => $s_blog['rank_math_title'] ?? '',
-    "description" => $s_blog['rank_math_description'] ?? '',
-    "keywords" => $s_blog['rank_math_focus_keyword'] ?? '',
-    // "schema"=>$s_blog['rank_math_schema_BlogPosting']['headline'] ?? '',
-];
+    $imgurl = $imagee['media_details']['sizes']['full']['source_url'];
+    #SET RENDER PART
+    $desc_data = $s_blog['content']['rendered'];
+    // Define the pattern to match URLs starting with https://blog.photonplay.com and ending with /#
+    $pattern = '/https:\/\/blog\.photonplay\.com\/[^"]*\/#/';
+    // Define the replacement string with ?# and additional text after #
+    $replacement = '#';
+    // Replace the URLs in the string using preg_replace
+    $modifiedString = preg_replace($pattern, $replacement, $desc_data);
 
-#wordpress
-$imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
-$schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
-
-$imgurl = $imagee['media_details']['sizes']['full']['source_url'];
-
-if (!empty($schema)) {
-    $schema['image']['url'] = $imgurl ?? "";
-    $schema['datePublished'] = date('Y-m-dTH:i:sP', strtotime($s_blog['date']))??"";
-    $schema['author']['name'] = "Photonplay";
-    $schema['author']['@type'] = "Organization";
-}
-
+    $schema = [
+        "headline" => $seo_meta["title"],
+        "image" => [
+            "url" => $imgurl ?? "",
+        ],
+        "datePublished" => date('Y-m-dTH:i:sP', strtotime($s_blog['date'])) ?? "",
+        "dateModified" => date('Y-m-dTH:i:sP', strtotime($s_blog['modified'])) ?? "",
+        "author" => [
+            "name" => "Photonplay",
+            "@type" => "Organization"
+        ],
+        "full_blog" => $modifiedString,
+        "meta_description" => $seo_meta["description"],
+        "keywords" => $seo_meta["keywords"],
+        "page_url" => \Illuminate\Support\Facades\URL::full()
+    ];
 ?>
 @include('customer.layout2.header',compact(['schema']))
 
@@ -71,23 +82,6 @@ if (!empty($schema)) {
                             {{-- @endforeach--}}
                         </div>
                         <hr/>
-
-                        <?php
-                        $desc_data = $s_blog['content']['rendered'];
-                        // Define the pattern to match URLs starting with https://blog.photonplay.com and ending with /#
-                        $pattern = '/https:\/\/blog\.photonplay\.com\/[^"]*\/#/';
-
-// Define the replacement string with ?# and additional text after #
-                        $replacement = '#';
-
-// Replace the URLs in the string using preg_replace
-                        $modifiedString = preg_replace($pattern, $replacement, $desc_data);
-
-//
-//
-//                        $modifiedString = str_replace('https://blog.photonplay.com/', 'https://photonplay.com/blog/', $desc_data);
-//                        $modifiedString = str_replace('/#', '?#', $modifiedString);
-                        ?>
                         <p>{!! $modifiedString !!}</p>
 
                     </div>
@@ -501,3 +495,5 @@ if (!empty($schema)) {
 
 
 </script>
+</body>
+</html>
