@@ -28,7 +28,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-{{--    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">--}}
+    {{--    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">--}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -78,21 +78,53 @@
             /*min-width: 150px;*/
         }
     </style>
-@if (!empty($schema))
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{{$schema['headline']}}",
-    "image": "{{$schema['image']['url']}}",
-    "author": {
-        "@type": "{{$schema['author']['@type']}}",
-        "name": "{{$schema['author']['name']}}"
-    },
-    Published": "{{$schema['datePublished']}}"
-    }
-    </script>
-@endif
+
+    @if (!empty($schema))
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "BlogPosting",
+          "@id": "{{$schema['page_url']}}",
+          "inLanguage": "en-US",
+          "mainEntityOfPage": "{{$schema['page_url']   }}",
+          "headline": "{{$schema['headline']}}",
+          "description": "{{$schema['meta_description']}}",
+          "articleBody": "{{ $schema['full_blog']}}",
+          "keywords": "{{$schema['keywords']}}",
+          "name": "{{$schema['headline']}}",
+          "url": "{{\Illuminate\Support\Facades\URL::full()}}",
+          "datePublished": "{{$schema['datePublished']}}",
+          "dateModified": "{{$schema['datePublished']}}",
+          "publisher": {
+            "@type": "Organization",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.photonplay.com/assets/customer/images/logo-dark.png",
+              "width": "512",
+              "height": "512"
+            },
+            "name": "{{$schema['author']['name']}}"
+          },
+          "image": "{{$schema['image']['url']}}",
+          "author": {
+            "@type": "{{$schema['author']['@type']}}",
+            "name": "{{$schema['author']['name']}}",
+            "url": "https://www.photonplay.com/company",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://www.photonplay.com/assets/customer/images/logo-dark.png",
+              "height": "512",
+              "width": "512"
+            }
+          }
+
+        }
+</script>
+
+
+
+
+    @endif
 
 </head>
 <body>
@@ -682,4 +714,3 @@
             });
         });
     </script>
-
