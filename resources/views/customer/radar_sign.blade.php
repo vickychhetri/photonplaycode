@@ -81,9 +81,9 @@ if (isset($seo_record)) {
                         <div class="col-md-9 bg-white">
                             <div class="responsive-two">
                                 <div>
-                                    <div class="p-2">
-                                        <div class="img-leften  d-flex justify-content-center align-items-center">
-                                            <img src="{{ asset('storage/'. $product->cover_image) }}" class="img-fluid"
+                                    <div class="p-2" id="slider_static">
+                                    <div class="img-leften  d-flex justify-content-center align-items-center">
+                                            <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}" class="img-fluid"
                                                  style="max-height: 600px;" id="big-img-radar-product"
                                                  alt="{{$product->title}}">
                                         </div>
@@ -593,17 +593,7 @@ if (isset($seo_record)) {
 
     // CODE TO CHANGE IMAGE ON HOVER
     $(document).ready(function () {
-        $('.radar-item-box').hover(function () {
-            $('.radar-item-box').removeClass("radar-item-box-highlight");
-            $(this).addClass("radar-item-box-highlight");
-            let image = $(this).find('img');
-            let src = image.attr('src');
-            $('#big-img-radar-product').attr('src', src)
-
-
-        });
-
-
+        
         $("#select-color").change(function() {
                     var color = $(this).children("option:selected").text().toLocaleLowerCase();
                     // console.log(color)
@@ -621,27 +611,56 @@ if (isset($seo_record)) {
                         success: function(response) {
                             // console.log(response);
                             $('slider').html('');
+                            $('#slider_static').html('');
                             
                             response.map((res)=>{
                                 $('slider').append(
                                     `<div>
                                         <div class="radar-item-box">
-                                            <img src="/storage/${res.image}" class="img-fluid"
+                                            <img src="{{asset('storage/${res.image}')}}" class="img-fluid"
                                                     alt="{{$product->title}}">
                                         </div>
                                     </div>`
                                 )
                                 
-                                console.log(res.image)
+                                // console.log(res)
                             })
+                            $('#slider_static').append(
+                                    `<div class="img-leften  d-flex justify-content-center align-items-center">
+                                            <img src="{{ asset('storage/${response[0].image}') }}" class="img-fluid"
+                                                 style="max-height: 600px;" id="big-img-radar-product"
+                                                 alt="{{$product->title}}">
+                                        </div>`
+                                )
                             $('#prodImg-gallery').html(response)
                         },
                         error: function(xhr, status, error) {
                             console.error(xhr.responseText);
+                        },
+                        complete: function() {
+                            $('.radar-item-box').hover(function () {
+                                $('.radar-item-box').removeClass("radar-item-box-highlight");
+                                $(this).addClass("radar-item-box-highlight");
+                                let image = $(this).find('img');
+                                let src = image.attr('src');
+                                $('#big-img-radar-product').attr('src', src)
+                            });
                         }
                     });
 
         });
+
+
+        $('.radar-item-box').hover(function () {
+            $('.radar-item-box').removeClass("radar-item-box-highlight");
+            $(this).addClass("radar-item-box-highlight");
+            let image = $(this).find('img');
+            let src = image.attr('src');
+            $('#big-img-radar-product').attr('src', src)
+
+
+        });
+
 
     });
 
