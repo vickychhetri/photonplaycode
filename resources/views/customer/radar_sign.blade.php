@@ -32,6 +32,77 @@ if (isset($seo_record)) {
     <meta property="og:site_name" content="Photonplay"/>
     <meta property="product:category" content="Radar Speed Signs"/>
     <meta property="product:availability" content="in stock"/>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Radar Speed Signs {{$seo_record->meta_title}}",
+  "image": "{{ asset('storage/'. $product->cover_image) }}",
+  "description": "{{$seo_record->meta_description}}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Photonplay"
+  },
+  "sku": "{{$product->title}}",
+  "offers": {
+    "@type": "Offer",
+    "url": "{{route('customer.radar.sign', $product->slug)}}",
+    "priceCurrency": "USD",
+    "price": "{{$product->price}}",
+    "priceValidUntil": "2024-02-29",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": {{$product->price}},
+        "currency": "USD"
+      },
+      "shippingDestination":[ {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        }, {
+          "@type": "DefinedRegion",
+          "addressCountry": "CA"
+        }],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 7,
+          "maxValue": 10,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 5,
+          "maxValue": 10,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "CH",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 60,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    }
+  },
+
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.75",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "2",
+    "reviewCount": "2"
+  }
+  }]
+}
+</script>
 @endpush
 @include('customer.layouts.header')
 <style>
