@@ -21,15 +21,8 @@ if (isset($seo_record)) {
 @endphp
 @push('header_meta_content')
     <meta property="og:type" content="product.item"/>
-    <meta property="og:title" content="{{$seo_record->meta_title}}"/>
-    <meta property="og:description" content="{{$seo_record->meta_description}}"/>
-    <meta property="og:url" content="{{route('customer.radar.sign', $product->slug)}}"/>
     <meta property="product:price:amount" content="{{$product->price}}"/>
     <meta property="product:price:currency" content="USD"/>
-    <meta property="og:image" content="{{ asset('storage/'. $product->cover_image) }}"/>
-    <meta property="og:image:width" content="265"/>
-    <meta property="og:image:height" content="265"/>
-    <meta property="og:site_name" content="Photonplay"/>
     <meta property="product:category" content="Radar Speed Signs"/>
     <meta property="product:availability" content="in stock"/>
     <script type="application/ld+json">
