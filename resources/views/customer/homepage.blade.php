@@ -760,4 +760,4 @@ $seo_meta = [
 
 </div>
 </body>
-
+</html>

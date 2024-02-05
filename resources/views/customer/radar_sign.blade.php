@@ -707,3 +707,5 @@ if (isset($seo_record)) {
         // innerPrice.innerHTML=`$${totl-totalPrice-selectedValue.reduce((a,b)=>a+b,0)}`
     }
 </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
     @php
         $currency = '$';
@@ -16,16 +16,23 @@
                 }
         }
     @endphp
-
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="English">
+    <meta name="author" content="Photonplay">
+    <meta property="og:site_name" content="PHOTONPLAY" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="webpage" />
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    <meta property="article:publisher" content="https://www.facebook.com/photonplaygroup/" />
+
     {{--            Start meta--}}
     <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
     {{--        End    Start meta--}}
 
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src ="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     {{--    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">--}}

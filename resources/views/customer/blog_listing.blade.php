@@ -119,7 +119,7 @@ $page = $_GET['page'] ?? 1;
                     </div>
                 </div>
             </div>
-           
+
             <!-- </div> -->
         </div>
     </div>
@@ -376,3 +376,5 @@ $page = $_GET['page'] ?? 1;
     })
 
 </script>
+</body>
+</html>
