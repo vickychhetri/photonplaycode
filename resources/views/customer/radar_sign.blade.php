@@ -43,7 +43,7 @@ if (isset($seo_record)) {
     "@type": "Brand",
     "name": "Photonplay"
   },
-  "sku": "{{$product->title}}",
+  "sku": "{{strtolower(str_replace(' ', '', $product->title))}}",
   "offers": {
     "@type": "Offer",
     "url": "{{route('customer.radar.sign', $product->slug)}}",
