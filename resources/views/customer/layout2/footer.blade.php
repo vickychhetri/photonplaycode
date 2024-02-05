@@ -122,15 +122,21 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 <h5 class="w-100" style="font-size: 20px;">Get in Touch with Us</h5>
                 <div class="contact-info w-100">
                     <div class="contact-info-item w-100">
-                        @if ($setting)
-                        <a href="tel:{{$setting->sales_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->sales_phone}}</a>
-                        @if ($setting->support_phone !=null)
-                        <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
+                            @php
+                                $url_open=\Illuminate\Support\Facades\URL::full();
+                            @endphp
+                            @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
+                                <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (US)</a>
+                            @else
+                            @if ($setting)
+                                <a href="tel:{{$setting->sales_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->sales_phone}}</a>
+                                @if ($setting->support_phone !=null)
+                                    <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
+                                @endif
+                                <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
+                                  @endif
+                            @endif
 
-                                <a href="tel:+16473230527"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (647) 323-0527 (CANADA)</a>
-                        @endif
-                        <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
-                        @endif
                     </div>
 {{--                    <a href="{{route('customer.contact.us')}}" class="btn btn-primary mt-3">Contact Now</a>--}}
                     <ul class="social-media w-100">
