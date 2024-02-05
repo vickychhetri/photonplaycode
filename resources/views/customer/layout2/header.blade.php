@@ -130,10 +130,9 @@
 <body>
 
 {{--data-bs-toggle="modal" data-bs-target="#staticBackdrop"--}}
-<span id="startvideochat"  >
-    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">
-</span>
-
+{{--<span id="startvideochat"  >--}}
+{{--    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">--}}
+{{--</span>--}}
 
 
 <!-- Google Tag Manager (noscript) -->
