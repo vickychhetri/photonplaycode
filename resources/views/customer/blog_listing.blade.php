@@ -6,7 +6,8 @@ $seo_meta=[
     "title"=>$data_record->title,
     "description"=>$data_record->description,
     "keywords"=>$data_record->keyword,
-    "schema"=>$data_record->schema
+    "schema"=>$data_record->schema,
+    "feature_image"=>"assets/customer/images/products_home/iCop-MTO-Side-front.webp"
 ];
 
 $page = $_GET['page'] ?? 1;

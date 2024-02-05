@@ -5,7 +5,8 @@ if (isset($seo_record)) {
         "title" => "{$seo_record->meta_title}",
         "description" => "{$seo_record->meta_description}",
         "keywords" => "{$seo_record->meta_keywords}",
-        "schema" => "{$seo_record->schema}"
+        "schema" => "{$seo_record->schema}",
+        "feature_image"=>'storage/'. $product->cover_image
     ];
 }
 

@@ -3,7 +3,8 @@ $seo_meta=[
     "title"=>"{$product->meta_title}",
     "description"=>"{$product->meta_description}",
     "keywords"=>"{$product->meta_keyword}",
-    "schema"=>"{$product->schema}"
+    "schema"=>"{$product->schema}",
+    "feature_image"=>'storage/'.$product->cover_image
 ];
 ?>
 @include('customer.layout2.header')

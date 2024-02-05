@@ -7,7 +7,8 @@ $seo_meta = [
     "title" => $data_record->title,
     "description" => $data_record->description,
     "keywords" => $data_record->keyword,
-    "schema" => $data_record->schema
+    "schema" => $data_record->schema,
+    "feature_image"=>"assets/customer/images/F-SOLAR%20(1).png"
 ];
 ?>
 

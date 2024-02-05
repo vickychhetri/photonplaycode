@@ -1,8 +1,8 @@
 <?php
 $seo_meta=[
-    "title"=>"iCop | RADAR SPEED SIGN - No.1 In Traffic Claiming Solution",
-    "description"=>" The sign acts like a Variable Message Sign to display graphics and text along with white Alert Flashing Lights . The sign acts as a Smart Traffic data collector and analyzer. It is a cloud controlled and highly secured Radar Speed Sign.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "title"=>"RADAR CLOUD MANAGEMENT Manage Your Speed Sign Anywhere, Anytime",
+    "description"=>"The complete sign management includes basic sign configuration and settings, alert management, data analysis and data collection from anywhere for the connected device without installing any application.",
+    "feature_image"=>"assets/customer/images/cloudmanager/c5.png"
 ];
 
 ?>

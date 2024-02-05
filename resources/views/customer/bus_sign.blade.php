@@ -2,7 +2,8 @@
 $seo_meta=[
     "title"=>"Innovative and Reliable Bus Signs for Your Transit System",
     "description"=>"Transform your transit system with our innovative and reliable Bus Signs. Customize them to fit your unique needs and trust in our advanced ITS technology.",
-    "keywords"=>"Transit, pids display, bus sign, led bus sign display, passenger information display systems, led passenger information display,"
+    "keywords"=>"Transit, pids display, bus sign, led bus sign display, passenger information display systems, led passenger information display,",
+    "feature_image"=>"assets/customer/images/bus/Bus-Sign-_1_.webp"
 ];
 
 ?>
