@@ -41,8 +41,8 @@
                                 <div class="col-md-12 mt-3">
                                     <h6> Product Media</h6>
                                 </div>
-                                {{-- <form method="POST" action="{{route('admin.product_media_store')}}" enctype="multipart/form-data"> --}}
-                                <form enctype="multipart/form-data">
+                                <form method="POST" action="{{route('admin.product_media_store')}}" enctype="multipart/form-data">
+                                <!-- <form enctype="multipart/form-data"> -->
                                 <div class="col-md-6 mt-3">
                                     <select name="color" id="dropDownIdColor" class="form-select" required>
                                         @foreach(\App\Models\ProductImage::COLOR as $color)
@@ -55,10 +55,10 @@
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{$product->id}}">
                                     <div class="row mb-3 form-group  d-flex align-items-center">
-                                        <label for="category" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Cover Image') }}</label>
+                                        <label for="category" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Solar Image') }}</label>
 
                                         <div class="col-md-3">
-                                            <input type="file" name="cover_image" class="form-control">
+                                            <input type="file" name="solar_image" class="form-control">
 
                                             @error('category_selected')
                                             <span class="invalid-feedback" role="alert">
@@ -69,14 +69,14 @@
 
                                         <div class="col-md-3">
                                             <button type="submit" class="btn btn-primary">
-                                                {{ __('Upload Cover Image') }}
+                                                {{ __('Upload Solar Image') }}
                                             </button>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div style="height: 300px;width: 300px;" class="border d-flex align-items-center justify-content-center">
-                                                @if(isset($product->cover_image))
-                                                <img src="{{asset('storage/'.$product->cover_image)}}" class="w-100 h-100" />
+                                                @if(isset($product->solar_image))
+                                                <img src="{{asset('storage/'.$product->solar_image)}}" class="w-100 h-100" />
                                                 @else
                                                 <p> No Image uploaded yet</p>
                                                 @endif

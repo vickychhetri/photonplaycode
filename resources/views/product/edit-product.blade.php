@@ -1,6 +1,6 @@
 @extends('user-master')
 
-@section('title', 'Welcome to Photon Playa')
+@section('title', 'Welcome to Photon Play')
 
 @section('css')
 
@@ -144,6 +144,31 @@
                                                 <a href="{{asset('storage/'.$product->brochure)}}" class="btn btn-dark-gradien">Download</a>
                                                 @endif
                                             </div>
+
+                                            
+
+
+                                        </div>
+
+                                        <div class="row mb-2 form-group">
+                                            <label for="cover_image" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Cover Image') }}</label>
+
+                                            <div class="col-md-7">
+                                                <input id="cover_image" type="file" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" value=""  autocomplete="cover_image" autofocus>
+
+                                                @error('cover_image')
+                                                <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                            <div class="col-md-2">
+                                                @if(isset($product->cover_image))
+                                                <a href="{{asset('storage/'.$product->cover_image)}}" class="btn btn-dark-gradien">View</a>
+                                                @endif
+                                            </div>
+
+                                            
 
 
                                         </div>

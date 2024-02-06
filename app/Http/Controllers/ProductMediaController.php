@@ -30,13 +30,13 @@ class ProductMediaController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'cover_image' => 'required|image|mimes:jpg,png,jpeg,webp,gif,svg|max:2048',
+            'solar_image' => 'required|image|mimes:jpg,png,jpeg,webp,gif,svg|max:2048',
         ]);
         $product=Product::find($request->product_id);
-        $image_path = $request->file('cover_image')->store('image', 'public');
-        $product->cover_image=$image_path;
+        $image_path = $request->file('solar_image')->store('image', 'public');
+        $product->solar_image=$image_path;
         $product->save();
-        return back()->with('success', 'Images are successfully uploaded');
+        return back()->with('success', 'Solar Image is successfully uploaded');
     }
 
     public function store_all_images(Request $request){

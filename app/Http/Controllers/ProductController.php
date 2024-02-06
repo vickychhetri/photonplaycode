@@ -121,7 +121,8 @@ class ProductController extends Controller
             'title' => 'required|max:255',
             'price' => 'required|max:255',
             'slug' => 'required|max:255',
-            'sku' => 'nullable'
+            'sku' => 'nullable',
+            'cover_image' => 'required|image|mimes:jpg,png,jpeg,webp,gif,svg|max:2048',
         ]);
 
 
@@ -132,6 +133,8 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->slug=$request->slug;
         $product->sku=$request->sku;
+        $image_path = $request->file('cover_image')->store('image', 'public');
+        $product->cover_image=$image_path;
         if (isset($request->brochure)) {
             $originalName = $request->file('brochure')->getClientOriginalName();
             $extension = $request->file('brochure')->getClientOriginalExtension();
