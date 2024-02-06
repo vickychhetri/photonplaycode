@@ -70,7 +70,7 @@ if (isset($seo_record)) {
 
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="desktop-display ">
+                            <div class="desktop-display " style="max-height: 400px; overflow-y: auto;">
                                 <slider>
                                     @include('partials.slider')
                                 </slider>
