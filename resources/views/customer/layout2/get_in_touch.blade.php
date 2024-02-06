@@ -14,15 +14,22 @@ $setting = Setting::first();
                     </div>
                     <div class="contact-info">
                         <div class="contact-info-item">
+                            @php
+                                $url_open=\Illuminate\Support\Facades\URL::full();
+                            @endphp
+                            @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
+                                <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (US)</a>
+                            @else
                             @if ($setting)
                             <a href="tel:{{$setting->sales_phone}}" class="text-decoration-none"> <i class="bi bi-telephone-inbound-fill text-primary"></i> &nbsp {{$setting->sales_phone}}</a>
 
                             <a href="tel:{{$setting->support_phone ?? ''}}" class="text-decoration-none">
                                 <i class="bi bi-telephone-inbound-fill text-primary"></i> &nbsp{{$setting->support_phone}}</a>
 
+                            @endif
+                            @endif
                             <a href="mailto:{{$setting->sales_email ?? ''}}" class="text-decoration-none">
                                 <i class="bi bi-envelope-fill text-primary"></i> &nbsp {{$setting->sales_email}}</a>
-                            @endif
                         </div>
                     </div>
                 </div>

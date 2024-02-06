@@ -133,10 +133,9 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                                 @if ($setting->support_phone !=null)
                                     <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
                                 @endif
-                                <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
                                   @endif
                             @endif
-
+                        <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
                     </div>
 {{--                    <a href="{{route('customer.contact.us')}}" class="btn btn-primary mt-3">Contact Now</a>--}}
                     <ul class="social-media w-100">
