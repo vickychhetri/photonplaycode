@@ -16,7 +16,7 @@ $page = $_GET['page'] ?? 1;
 
 <!-- Banner sec -->
 <section class="inner-banner-bg">
-    <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
+    <h5 class="text-white text-center mb-0 h1">NEWS & EVENTS</h5>
 </section>
 <!-- Banner Sec End -->
 <section class="blog-content-list position-relative">
