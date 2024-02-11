@@ -1,6 +1,6 @@
 <?php
 if(!isset($product)){
-    return redirect()->route('radar.speed.signs');
+    return redirect()->route('customer.radar.speed.signs');
 }
 $seo_record = \App\Models\ProductSeo::where('product_id', $product->id)->first();
 if (isset($seo_record)) {
