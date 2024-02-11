@@ -1,7 +1,7 @@
 <?php
 if(!isset($product)){
     ?>
-    <div class="d-flex justify-content-center align-items-center m-4 p-4  text-center" style="height: 100vh;">
+    <div style="height: 100vh;text-align: center;display: flex;justify-content: center;align-items: center;">
         <h3>Sorry, This page not exist! </h3>
         <p> Visit <a href="https://photonplay.com">photonplay.com</a> for more information. </p>
     </div>
