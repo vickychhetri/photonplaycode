@@ -64,7 +64,7 @@ class ContactUsController extends Controller
         $page = $_GET['page'] ?? 1;
         // dd($page);
         $blogs=Blog::select();
-
+        $posts=null;
         if(isset($request->category)){
             $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
             foreach($categories as $category){
@@ -83,7 +83,7 @@ class ContactUsController extends Controller
 
         $blog_created_date1 = array();
 
-        if(!(count($posts)>0)){
+        if(!isset($posts)){
             abort(404);
         }
         foreach ($posts as $blog){
