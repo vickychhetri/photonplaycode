@@ -41,11 +41,12 @@ class SignController extends Controller
 
     public function specificationAjax(Request $request){
         $specs = $request->dict;
+        $data = array();
         if(!isset($specs)){
-            abort(404);
+            return $data;
         }
         // dd($specs);
-        $data = array();
+
         foreach($specs as $key => $spec){
            $ids =  DB::table('product_spcialization_options')->where('id', $spec)->orderBy('id', 'asc')->value('id');
            array_push($data, $ids);
