@@ -117,6 +117,10 @@ class ContactUsController extends Controller
     public function blog_show(Request  $request,$page_name){
         $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed&slug=' . $page_name)->json();
 
+        if(!(count($blogs)>0)){
+            abort(404);
+        }
+
         $s_blog = $blogs[0];
         $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
 
