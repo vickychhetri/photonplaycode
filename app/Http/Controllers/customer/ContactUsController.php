@@ -82,6 +82,10 @@ class ContactUsController extends Controller
         }
 
         $blog_created_date1 = array();
+
+        if(!(count($posts)>0)){
+            abort(404);
+        }
         foreach ($posts as $blog){
             $blog_created_date = date('F, Y', strtotime($blog['date']));
             array_push($blog_created_date1, $blog_created_date);
