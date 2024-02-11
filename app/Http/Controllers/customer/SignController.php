@@ -41,6 +41,9 @@ class SignController extends Controller
 
     public function specificationAjax(Request $request){
         $specs = $request->dict;
+        if(!isset($specs)){
+            abort(404);
+        }
         // dd($specs);
         $data = array();
         foreach($specs as $key => $spec){
