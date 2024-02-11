@@ -1,6 +1,13 @@
 <?php
 if(!isset($product)){
-    return redirect()->route('customer.radar.speed.signs');
+    ?>
+<script>
+    // Define the URL you want to redirect to
+    var redirectTo = "https://www.photonplay.com/radar-speed-signs";
+    // Perform the redirection
+    window.location.href = redirectTo;
+</script>
+<?php
 }
 $seo_record = \App\Models\ProductSeo::where('product_id', $product->id)->first();
 if (isset($seo_record)) {
