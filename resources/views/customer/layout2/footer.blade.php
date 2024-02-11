@@ -122,15 +122,20 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 <h5 class="w-100" style="font-size: 20px;">Get in Touch with Us</h5>
                 <div class="contact-info w-100">
                     <div class="contact-info-item w-100">
-                        @if ($setting)
-                        <a href="tel:{{$setting->sales_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->sales_phone}}</a>
-                        @if ($setting->support_phone !=null)
-                        <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
-
-                                <a href="tel:+16473230527"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (647) 323-0527 (CANADA)</a>
-                        @endif
+                            @php
+                                $url_open=\Illuminate\Support\Facades\URL::full();
+                            @endphp
+                            @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
+                                <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (US)</a>
+                            @else
+                            @if ($setting)
+                                <a href="tel:{{$setting->sales_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->sales_phone}}</a>
+                                @if ($setting->support_phone !=null)
+                                    <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
+                                @endif
+                                  @endif
+                            @endif
                         <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
-                        @endif
                     </div>
 {{--                    <a href="{{route('customer.contact.us')}}" class="btn btn-primary mt-3">Contact Now</a>--}}
                     <ul class="social-media w-100">
@@ -151,12 +156,22 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                  <a href="{{route('customer.show_page_policy_term_conditions')}}"> Terms </a>
                   |    <a href="{{route('customer.show_page_policy_privacy_policy')}}">Privacy </a> |    <a href="{{route('customer.show_page_policy_shipping')}}">Shipping </a>|    <a href="{{route('customer.show_page_policy_return_policy')}}">Refund/Return Policy</a>
               </p>
-              <p>© 2023 Photonplay Systems Inc. All right reserved</p>
+              <p>© 2024 Photonplay Systems Inc. All right reserved</p>
           </div>
        </div>
-<script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>
+{{--<script>window.addEventListener('load', function () { var el = document.createElement('script'); el.setAttribute('src', 'https://client.consolto.com/iframeApp/iframeApp.js'); el.id = 'et-iframe'; el.async = true; el.setAttribute('data-widgetId', '64e312c9c0265947a3d8f062'); el.setAttribute('data-version', 0.5); el.setAttribute('data-test', false); document.body.appendChild(el); }); </script>--}}
 
-
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5da70a23df22d913399f714f/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
 
 <script>
     @if (session()->has('success'))

@@ -5,7 +5,8 @@ if (isset($seo_record)) {
         "title" => "{$seo_record->meta_title}",
         "description" => "{$seo_record->meta_description}",
         "keywords" => "{$seo_record->meta_keywords}",
-        "schema" => "{$seo_record->schema}"
+        "schema" => "{$seo_record->schema}",
+        "feature_image"=>'storage/'. $product->cover_image
     ];
 }
 
@@ -20,17 +21,81 @@ if (isset($seo_record)) {
 @endphp
 @push('header_meta_content')
     <meta property="og:type" content="product.item"/>
-    <meta property="og:title" content="{{$seo_record->meta_title ?? '' }}"/>
-    <meta property="og:description" content="{{$seo_record->meta_description ?? ''}}"/>
-    <meta property="og:url" content="{{route('customer.radar.sign', $product->slug)}}"/>
-    <meta property="product:price:amount" content="{{$product->price ?? ''}}"/>
+    <meta property="product:price:amount" content="{{$product->price}}"/>
     <meta property="product:price:currency" content="USD"/>
-    <meta property="og:image" content="{{ asset('storage/'. $product->cover_image) }}"/>
-    <meta property="og:image:width" content="265"/>
-    <meta property="og:image:height" content="265"/>
-    <meta property="og:site_name" content="Photonplay"/>
     <meta property="product:category" content="Radar Speed Signs"/>
     <meta property="product:availability" content="in stock"/>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Radar Speed Signs {{$seo_record->meta_title}}",
+  "image": "{{ asset('storage/'. $product->cover_image) }}",
+  "description": "{{$seo_record->meta_description}}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Photonplay"
+  },
+  "sku": "{{strtolower(str_replace(' ', '', $product->title))}}",
+  "offers": {
+    "@type": "Offer",
+    "url": "{{route('customer.radar.sign', $product->slug)}}",
+    "priceCurrency": "USD",
+    "price": "{{$product->price}}",
+    "priceValidUntil": "2024-02-29",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": {{$product->price}},
+        "currency": "USD"
+      },
+      "shippingDestination":[ {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        }, {
+          "@type": "DefinedRegion",
+          "addressCountry": "CA"
+        }],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 7,
+          "maxValue": 10,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 5,
+          "maxValue": 10,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "CH",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 60,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    }
+  },
+
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.75",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "2",
+    "reviewCount": "2"
+  }
+  }]
+}
+</script>
 @endpush
 @include('customer.layouts.header')
 <style>
@@ -141,7 +206,7 @@ if (isset($seo_record)) {
                             <b>SKU : </b>{{$product->sku}}
                         </span>
                     @endif
-                    
+
                         <div class="d-flex justify-content-start align-items-center gap-1">
                             <img src="{{asset('assets\customer\images\star.svg')}}" alt="1 Star" class="img-fluid"
                                  width="14px">
@@ -593,7 +658,7 @@ if (isset($seo_record)) {
 
     // CODE TO CHANGE IMAGE ON HOVER
     $(document).ready(function () {
-        
+
         $("#select-color").change(function() {
                     var color = $(this).children("option:selected").text().toLocaleLowerCase();
                     // console.log(color)
@@ -612,7 +677,7 @@ if (isset($seo_record)) {
                             // console.log(response);
                             $('slider').html('');
                             $('#slider_static').html('');
-                            
+
                             response.map((res)=>{
                                 $('slider').append(
                                     `<div>
@@ -622,7 +687,7 @@ if (isset($seo_record)) {
                                         </div>
                                     </div>`
                                 )
-                                
+
                                 // console.log(res)
                             })
                             $('#slider_static').append(
@@ -762,3 +827,5 @@ if (isset($seo_record)) {
         // innerPrice.innerHTML=`$${totl-totalPrice-selectedValue.reduce((a,b)=>a+b,0)}`
     }
 </script>
+</body>
+</html>

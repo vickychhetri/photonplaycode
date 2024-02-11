@@ -5,7 +5,8 @@ $seo_meta=[
     "title"=>$data_record->title,
     "description"=>$data_record->description,
     "keywords"=>$data_record->keyword,
-    "schema"=>$data_record->schema
+    "schema"=>$data_record->schema,
+    "feature_image"=>"storage/image/banner%202.webp"
 ];
 ?>
 @include('customer.layout2.header')
@@ -441,3 +442,5 @@ $seo_meta=[
         }
     })
 </script>
+</body>
+</html>

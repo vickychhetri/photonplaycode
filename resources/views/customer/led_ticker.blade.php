@@ -5,7 +5,8 @@ $seo_meta=[
     "title"=>$data_record->title,
     "description"=>$data_record->description,
     "keywords"=>$data_record->keyword,
-    "schema"=>$data_record->schema
+    "schema"=>$data_record->schema,
+    "feature_image"=>"assets/customer/images/products_home/Circular_outer_led_ticker.webp"
 ];
 ?>
 
@@ -572,3 +573,5 @@ $seo_meta=[
     })
 
 </script>
+</body>
+</html>

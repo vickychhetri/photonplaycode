@@ -3,7 +3,8 @@ $seo_meta = [
     "title" => "{$page->meta_title}",
     "description" => "{$page->meta_description}",
     "keywords" => "{$page->meta_keyword}",
-    "schema" => "{$page->schema}" ?? ''
+    "schema" => "{$page->schema}" ?? '',
+    "feature_image"=>"storage/image/lane%20control%20sign.png"
 ];
 ?>
 @include('customer.layout2.header')
@@ -499,3 +500,5 @@ $seo_meta = [
     //     console.log(this)
     // })
 </script>
+</body>
+</html>

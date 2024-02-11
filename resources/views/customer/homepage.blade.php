@@ -7,7 +7,8 @@ $seo_meta = [
     "title" => $data_record->title ?? '',
     "description" => $data_record->description ?? '',
     "keywords" => $data_record->keyword ?? '',
-    "schema" => $data_record->schema ?? ''
+    "schema" => $data_record->schema ?? '',
+     "feature_image"=>"assets/customer/images/products_home/Smart-City-VMS-Front.webp"
 ];
 ?>
 @include('customer.layout2.header')
@@ -760,4 +761,4 @@ $seo_meta = [
 
 </div>
 </body>
-
+</html>

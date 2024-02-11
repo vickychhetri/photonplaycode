@@ -2,7 +2,8 @@
 $seo_meta=[
     "title"=>"Vehicle Actuated Speed Display",
     "description"=>"Enhance road safety with our Vehicle Actuated Speed Displays (VASD). Instantly recognize vehicle speed for efficient traffic flow on roads, highways, and tunnels.",
-    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback"
+    "keywords"=>"photonplay, radar speed sign, variable message signs, driver feedback",
+    "feature_image"=>"assets/customer/images/vasd/camerab.webp"
 ];
 
 ?>

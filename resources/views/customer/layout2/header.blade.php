@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
     @php
         $currency = '$';
@@ -16,19 +16,18 @@
                 }
         }
     @endphp
-
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{--            Start meta--}}
     <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
     {{--        End    Start meta--}}
 
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src ="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-{{--    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">--}}
+    {{--    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">--}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -79,8 +78,8 @@
         }
     </style>
 
-@if (!empty($schema))
-    <script type="application/ld+json">
+    @if (!empty($schema))
+        <script type="application/ld+json">
         {
           "@context": "https://schema.org/",
           "@type": "BlogPosting",
@@ -120,20 +119,15 @@
 
         }
 </script>
-
-
-
-
-@endif
+    @endif
 
 </head>
 <body>
 
 {{--data-bs-toggle="modal" data-bs-target="#staticBackdrop"--}}
-<span id="startvideochat"  >
-    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">
-</span>
-
+{{--<span id="startvideochat"  >--}}
+{{--    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">--}}
+{{--</span>--}}
 
 
 <!-- Google Tag Manager (noscript) -->
@@ -714,4 +708,3 @@
             });
         });
     </script>
-

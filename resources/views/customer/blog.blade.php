@@ -1,46 +1,46 @@
 <?php
-    use Illuminate\Support\Facades\Http;
-    $title_default_blog = "";
-    if (!isset($s_blog['rank_math_title'])) {
-        $title_default_blog = $s_blog["title"]["rendered"];
-    }
-    $seo_meta = [
-        "title" => $s_blog['rank_math_title'] ?? $title_default_blog,
-        "description" => $s_blog['rank_math_description'] ?? $title_default_blog,
-        "keywords" => $s_blog['rank_math_focus_keyword'] ?? $title_default_blog,
-        // "schema"=>$s_blog['rank_math_schema_BlogPosting']['headline'] ?? '',
-    ];
+use Illuminate\Support\Facades\Http;
+$title_default_blog = "";
+if (!isset($s_blog['rank_math_title'])) {
+    $title_default_blog = $s_blog["title"]["rendered"];
+}
+$seo_meta = [
+    "title" => $s_blog['rank_math_title'] ?? $title_default_blog,
+    "description" => $s_blog['rank_math_description'] ?? $title_default_blog,
+    "keywords" => $s_blog['rank_math_focus_keyword'] ?? $title_default_blog,
+    // "schema"=>$s_blog['rank_math_schema_BlogPosting']['headline'] ?? '',
+];
 
-    #wordpress
-    $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
-    //$schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
+#wordpress
+$imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
+//$schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
 
-    $imgurl = $imagee['media_details']['sizes']['full']['source_url'];
-    #SET RENDER PART
-    $desc_data = $s_blog['content']['rendered'];
-    // Define the pattern to match URLs starting with https://blog.photonplay.com and ending with /#
-    $pattern = '/https:\/\/blog\.photonplay\.com\/[^"]*\/#/';
-    // Define the replacement string with ?# and additional text after #
-    $replacement = '#';
-    // Replace the URLs in the string using preg_replace
-    $modifiedString = preg_replace($pattern, $replacement, $desc_data);
+$imgurl = $imagee['media_details']['sizes']['full']['source_url'];
+#SET RENDER PART
+$desc_data = $s_blog['content']['rendered'];
+// Define the pattern to match URLs starting with https://blog.photonplay.com and ending with /#
+$pattern = '/https:\/\/blog\.photonplay\.com\/[^"]*\/#/';
+// Define the replacement string with ?# and additional text after #
+$replacement = '#';
+// Replace the URLs in the string using preg_replace
+$modifiedString = preg_replace($pattern, $replacement, $desc_data);
 
-    $schema = [
-        "headline" => $seo_meta["title"],
-        "image" => [
-            "url" => $imgurl ?? "",
-        ],
-        "datePublished" => date('Y-m-dTH:i:sP', strtotime($s_blog['date'])) ?? "",
-        "dateModified" => date('Y-m-dTH:i:sP', strtotime($s_blog['modified'])) ?? "",
-        "author" => [
-            "name" => "Photonplay",
-            "@type" => "Organization"
-        ],
-        "full_blog" => $modifiedString,
-        "meta_description" => $seo_meta["description"],
-        "keywords" => $seo_meta["keywords"],
-        "page_url" => \Illuminate\Support\Facades\URL::full()
-    ];
+$schema = [
+    "headline" => $seo_meta["title"],
+    "image" => [
+        "url" => $imgurl ?? "",
+    ],
+    "datePublished" => date('Y-m-dTH:i:sP', strtotime($s_blog['date'])) ?? "",
+    "dateModified" => date('Y-m-dTH:i:sP', strtotime($s_blog['modified'])) ?? "",
+    "author" => [
+        "name" => "Photonplay",
+        "@type" => "Organization"
+    ],
+    "full_blog" => $modifiedString,
+    "meta_description" => $seo_meta["description"],
+    "keywords" => $seo_meta["keywords"],
+    "page_url" => \Illuminate\Support\Facades\URL::full()
+];
 ?>
 @include('customer.layout2.header',compact(['schema']))
 
@@ -300,14 +300,14 @@
         slidesToScroll: 1,
         arrows: false,
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },
             {
                 breakpoint: 600,
                 settings: {
@@ -339,11 +339,11 @@
         arrows: true,
         autoplay: true,
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
             {
                 breakpoint: 600,
                 settings: {
@@ -369,11 +369,11 @@
         arrows: true,
         autoplay: true,
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
             {
                 breakpoint: 600,
                 settings: {
@@ -399,11 +399,11 @@
         slidesToScroll: 1,
         arrows: true,
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
             {
                 breakpoint: 600,
                 settings: {
@@ -468,11 +468,11 @@
         autoplay: true,
         // fade:true,
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 6,
-                }
-            },
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 6,
+            }
+        },
             {
                 breakpoint: 600,
                 settings: {
