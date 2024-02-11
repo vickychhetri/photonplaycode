@@ -86,6 +86,11 @@ class ContactUsController extends Controller
         if(!isset($posts)){
             abort(404);
         }
+        if(isset($posts['code'])){
+            if($posts['code']=='rest_post_invalid_page_number'){
+                return redirect()->to('https://www.photonplay.com/blogs');
+            }
+        }
         foreach ($posts as $blog){
             $blog_created_date = date('F, Y', strtotime($blog['date']));
             array_push($blog_created_date1, $blog_created_date);
