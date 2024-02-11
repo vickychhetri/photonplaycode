@@ -1,4 +1,7 @@
 <?php
+if(!isset($product)){
+    abort(404);
+}
 $seo_record = \App\Models\ProductSeo::where('product_id', $product->id)->first();
 if (isset($seo_record)) {
     $seo_meta = [
