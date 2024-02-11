@@ -15,7 +15,14 @@ $seo_meta = [
 $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
 //$schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
 
-$imgurl = $imagee['media_details']['sizes']['full']['source_url'];
+
+if (isset($imagee) && isset($imagee['media_details']) && isset($imagee['media_details']['sizes']) && isset($imagee['media_details']['sizes']['full'])) {
+    $imgurl = $imagee['media_details']['sizes']['full']['source_url'];
+} else {
+    // Set a default value or handle the null case here
+    $imgurl = asset('assets/images/defaultblog.webp');
+    // Or throw an exception or log an error
+}
 #SET RENDER PART
 $desc_data = $s_blog['content']['rendered'];
 // Define the pattern to match URLs starting with https://blog.photonplay.com and ending with /#
@@ -69,7 +76,7 @@ $schema = [
                     // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
                     ?>
 
-                    <img data-src="{{$imagee['media_details']['sizes']['full']['source_url']}}" alt=""
+                    <img data-src="{{$imgurl}}" alt=""
                          class="mb-4 img-fluid lazyload">
                     <div class="pb-3 post-info border-0">
                         <h1 class="text-uppercase mb-3 text-dark"
