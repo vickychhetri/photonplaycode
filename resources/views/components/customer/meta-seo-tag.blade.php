@@ -35,7 +35,7 @@
 
 <meta property="og:image:width" content="900" />
 <meta property="og:image:height" content="596" />
-<meta property="og:image:alt" content="{{$seodata['title']}}" />
+<meta property="og:image:alt" content="{{$seodata['title'] ?? ''}}" />
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:updated_time" content="2024-01-23T12:24:26+00:00" />
 <meta property="article:published_time" content="2024-01-03T07:12:54+00:00" />
