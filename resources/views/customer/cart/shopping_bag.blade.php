@@ -144,14 +144,14 @@
                             <h3>Checkout</h3>
                             <label for="" class=" d-block mb-4 opacity-50">Click to proceed</label>
                             @if (!Session::get('user'))
-                                <a href="{{route('customer.loginForm', ['p' => 1, 's' => Session::getId()])}}" class=" btn btn-primary rounded-0" >Proceed to buy</a>
+                                <a href="{{route('customer.loginForm', ['p' => 1, 's' => Session::getId()])}}" class=" btn btn-primary rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?> ">Proceed to buy</a>
                             @else
                             <!-- confirmation form -->
                                 <form action="{{route('customer.checkout')}}" method="any">
                                     @csrf
                                     <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
                                     <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
-                                    <button type="submit" class=" btn btn-primary rounded-0" >Proceed to buy</button>
+                                    <button type="submit" class=" btn btn-primary rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Proceed to buy</button>
                                 </form>
                             <!-- confirmation form ends-->
 
