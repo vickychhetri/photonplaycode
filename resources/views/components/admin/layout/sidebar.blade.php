@@ -84,11 +84,11 @@
 
                             <div class="collapse" id="dashboard-collapse">
                                 <ul class="btn-toggle-nav fw-normal pb-1">
-                                    <li class="p-2"><a href="{{route('admin.show_page_content','about-us')}}" class="link-dark rounded " >1. About us</a></li>
-                                    <li class="p-2"><a href="{{route('admin.show_page_content','term-conditions')}}" class="link-dark rounded">2. Terms & Conditions</a></li>
-                                    <li class="p-2"><a href="{{route('admin.show_page_content','privacy-policy')}}" class="link-dark rounded">3. Privacy Policy</a></li>
-                                    <li class="p-2"><a href="{{route('admin.show_page_content','shipping')}}" class="link-dark rounded">4. Shipping</a></li>
-                                    <li class="p-2"><a href="{{route('admin.show_page_content','return-policy')}}" class="link-dark rounded">5. Refund/Return Policy</a></li>
+{{--                                    <li class="p-2"><a href="{{route('admin.show_page_content','about-us')}}" class="link-dark rounded " >1. About us</a></li>--}}
+                                    <li class="p-2"><a href="{{route('admin.show_page_content','term-conditions')}}" class="link-dark rounded">1. Terms & Conditions</a></li>
+                                    <li class="p-2"><a href="{{route('admin.show_page_content','privacy-policy')}}" class="link-dark rounded">2. Privacy Policy</a></li>
+                                    <li class="p-2"><a href="{{route('admin.show_page_content','shipping')}}" class="link-dark rounded">3. Shipping</a></li>
+                                    <li class="p-2"><a href="{{route('admin.show_page_content','return-policy')}}" class="link-dark rounded">4. Refund/Return Policy</a></li>
                                 </ul>
                             </div>
 
