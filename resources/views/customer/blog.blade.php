@@ -58,7 +58,7 @@ $schema = [
     }
 </style>
 <section class="inner-banner-bg">
-    <h1 class="text-white text-center mb-0">NEWS & EVENTS</h1>
+    <h5 class="text-white text-center mb-0 h1">NEWS & EVENTS</h5>
     <h6 class="text-white text-center text-uppercase mt-2">{{$s_blog['title']['rendered']}}</h6>
 </section>
 <!-- Banner Sec End -->
