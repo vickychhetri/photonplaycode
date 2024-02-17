@@ -37,8 +37,8 @@ $schema = [
     "image" => [
         "url" => $imgurl ?? "",
     ],
-    "datePublished" => date('Y-m-dTH:i:sP', strtotime($s_blog['date'] - 6 * 3600)) ?? "",
-    "dateModified" => date('Y-m-dTH:i:sP', strtotime($s_blog['modified'] - 6 * 3600)) ?? "",
+    "datePublished" => date('Y-m-dTH:i:sP', strtotime($s_blog['date'])- 6 * 3600) ?? "",
+    "dateModified" => date('Y-m-dTH:i:sP', strtotime($s_blog['modified']) - 6 * 3600) ?? "",
     "author" => [
         "name" => "Photonplay",
         "@type" => "Organization"
