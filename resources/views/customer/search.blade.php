@@ -32,9 +32,15 @@ $seo_meta=[
                 <hr/>
                 @forelse($data_page as $item)
                     <div class="post-item mb-4">
-                        <img src="{{asset("storage/".$item['image'])}}" class="mb-4" style="max-height: 300px;">
+                        @if($item['type']=="post")
+                            <img src="{{$item['image']}}" class="mb-4" style="max-height: 300px;">
+                        @else
+                            <img src="{{asset("storage/".$item['image'])}}" class="mb-4" style="max-height: 300px;">
+                        @endif
+
+
                         <div class="mb-4 pb-4 post-info">
-                            @if($item['type']==2)
+                            @if($item['type']=="post")
                             <a href="{{route("customer.blog_show",$item['slug'])}}"   class="text-decoration-none">   <h2 class="text-uppercase"> <b>   {{$item['title']}} </b></h2></a>
                                 <div>{{$item['created_at']}}  {{$item['author']?"By ".$item['author']:""}}</div>
                             @elseif($item['type']==1)
@@ -45,7 +51,7 @@ $seo_meta=[
 
                                 {{ \Illuminate\Support\Str::limit(strip_tags($item['description']), 200, '...') }}
                             </p>
-                                @if($item['type']==2)
+                                @if($item['type']=="post")
                                     <a href="{{route("customer.blog_show",$item['slug'])}}" class="btn btn-primary">
                                         Read More
                                     </a>

@@ -42,7 +42,7 @@ class SearchItemsController extends Controller
                 $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $blog['featured_media'])->json();
                 $image= $imagee['media_details']['sizes']['medium']['source_url'];
             }
-            
+
             $data1=array();
             $data1['sr']=$Sr++;
             $data1['type']=$blog['type'];
@@ -51,7 +51,7 @@ class SearchItemsController extends Controller
             $data1['image']=$image;
             $data1['id']=$blog['id'];
             $data1['slug']=$blog['slug'];
-            // $data1['author']=$blog->author;
+            $data1['author']="Photonplay System";
             // $data1["likes"]=BlogLike::where('blog_id',$blog->id)->count();
             $data1['created_at']=$blog['date'];
             array_push($data,$data1);
