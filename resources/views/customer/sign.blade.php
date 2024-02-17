@@ -30,11 +30,12 @@ $seo_meta = [
 
                             <span class="h1 text-dark font-weight-bold"> iCop</span> <h1 class="text-dark"> RADAR SPEED SIGNS</h1>
                             <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
-                            <div class="">
-                                {{--                                    <p class="text-dark">Best safety score with standout visibility and features.</p>--}}
+                            <div class="desktop-mobile">
+                                <img data-src="{{asset('assets\customer\images\Radar-Speed-Signs-Image_1.webp')}}"
+                                     alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0 " style="height: 100px;" >
                             </div>
                             <a href="#our_products" type="button"
-                               class="py-2 rounded border-0 px-4 mt-5 bg-white outline-1 btn-light text-decoration-none border-1">Shop
+                               class="py-2 rounded border-0 px-4 mt-2 bg-white outline-1 btn-light text-decoration-none border-1">Shop
                                 Now <img class="fs-4 ms-2" width="10"
                                          src="{{asset('assets\customer\images\downarrow.png')}}"
                                          alt="Down Arrow"></a>
