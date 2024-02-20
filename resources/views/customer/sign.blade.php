@@ -27,13 +27,13 @@ $seo_meta = [
                         class="banner-image-new-radar d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-around p-2 ">
 
                         <div class="position-relative heading-banner  ">
-
-                            <span class="h1 text-dark font-weight-bold"> iCop</span> <h1 class="text-dark"> RADAR SPEED SIGNS</h1>
-                            <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
                             <div class="mobile-display">
                                 <img data-src="{{asset('assets\customer\images\Radar-Speed-Signs-Image_1.webp')}}"
                                      alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0 " style="height: 100px;" >
                             </div>
+                            <span class="h1 text-dark font-weight-bold"> iCop</span> <h1 class="text-dark"> RADAR SPEED SIGNS</h1>
+                            <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
+
                             <a href="#our_products" type="button"
                                class="py-2 rounded border-0 px-4 mt-2 bg-white outline-1 btn-light text-decoration-none border-1">Shop
                                 Now <img class="fs-4 ms-2" width="10"
