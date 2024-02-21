@@ -49,7 +49,7 @@
 {{--                    <video   id="videoHeaderPlay"  preload="metadata" poster="{{asset('assets/videos/video_back.webp')}}"   autoplay loop muted playsinline>--}}
 {{--                        <source src="{{asset('assets/videos/video2.mp4#t=0.5')}}" type="video/mp4">--}}
 {{--                    </video>--}}
-                <img src="/assets/home.webp" style="max-height: 700px;width: 100%;" />
+                <img  id="videoHeaderPlay" src="/assets/home3.webp" style="max-height: 800px;width: 100%;" />
                 </div>
 
             </div>
