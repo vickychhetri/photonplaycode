@@ -22,4 +22,7 @@ class ManageSeo extends Model
     public const TRANSIT="TRANSIT";    //4
     public const CONTACT="CONTACT";
     public const NEWS_EVENT="NEWS_EVENT";
+    public const LED_TICKER_TAPES="LED_TICKER_TAPES";
+
+
 }

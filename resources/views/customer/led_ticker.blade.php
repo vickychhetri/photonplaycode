@@ -1,6 +1,6 @@
 <?php
 use App\Models\ManageSeo;
-$data_record = ManageSeo::where('LED_TICKER_TAPES',ManageSeo::VMS)->first();
+$data_record = ManageSeo::where('page_name',ManageSeo::LED_TICKER_TAPES)->first();
 $seo_meta=[
     "title"=>$data_record->title,
     "description"=>$data_record->description,
