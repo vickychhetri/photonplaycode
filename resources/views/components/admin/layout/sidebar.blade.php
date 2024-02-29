@@ -128,6 +128,14 @@
                         </li>
 
                         <li class="sidebar-list">
+                            <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/manage-seo','manage-seo') ? 'active':''}}" href="{{route('admin.manage_seo_form') }}">
+                                <i data-feather="database"></i>
+                                <span>Manage SEO</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/db-backup','db-backup') ? 'active':''}}" href="{{route('admin.dbbackupform') }}">
                                 <i data-feather="database"></i>
                                 <span>DB Backup</span>

@@ -13,6 +13,7 @@ use App\Http\Controllers\customer\CustomerProfileController;
 use App\Http\Controllers\customer\SignController;
 use App\Http\Controllers\DBBackupController;
 use App\Http\Controllers\Guest\HomePageController;
+use App\Http\Controllers\ManageSeoController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RadarCloudManagementController;
@@ -118,7 +119,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         // db-backups
         Route::get('/download-db-backup', [DBBackupController::class, 'download'])->name('dbbackup');
         Route::get('/db-backup', [DBBackupController::class, 'db_backup_page'])->name('dbbackupform');
-
+        Route::get('/manage-seo', [ManageSeoController::class, 'index'])->name('manage_seo_form');
+        Route::get('/manage-seo/{id}', [ManageSeoController::class, 'edit'])->name('manage_seo_edit_form');
+        Route::post('/manage-seo/{id}', [ManageSeoController::class, 'store'])->name('manage_seo_edit_store');
         //settings
         Route::get('/settings', [SettingsController::class, 'setting_home_page'])->name('setting-home-page');
         Route::post('/settings', [SettingsController::class, 'store'])->name('store_setting_data');

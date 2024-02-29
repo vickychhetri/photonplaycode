@@ -21,8 +21,6 @@
 @section('content')
     <div class="container-fluid">
 
-
-
         <!-- All Client Table Start -->
         <div class="row">
             <div class="col-12">
