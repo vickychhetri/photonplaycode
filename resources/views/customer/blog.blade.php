@@ -228,7 +228,7 @@ $schema = [
                                     ?>
                                 <div class="px-2 ">
                                     <div>
-                                        <img src="{{$image['media_details']['sizes']['medium']['source_url']}}"
+                                        <img src="{{$imgurl}}"
                                              class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
                                     </div>
 
