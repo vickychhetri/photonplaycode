@@ -228,8 +228,16 @@ $schema = [
                                     ?>
                                 <div class="px-2 ">
                                     <div>
-                                        <img src="{{$imgurl}}"
-                                             class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
+
+                                        @if(isset($image['media_details']))
+                                            <img src="{{$image['media_details']['sizes']['medium']['source_url']??$image}}"
+                                                 class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
+                                        @else
+                                            <img src="{{$imgurl}}"
+                                                 class="d-block mx-auto" style="max-height: 200px;max-width: 100%;">
+                                        @endif
+
+
                                     </div>
 
                                     <div class="py-4">
