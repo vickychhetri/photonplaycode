@@ -8,7 +8,7 @@ $seo_meta = [
     "description" => $data_record->description ?? '',
     "keywords" => $data_record->keyword ?? '',
     "schema" => $data_record->schema ?? '',
-    "feature_image"=>"assets\customer\images\Radar-Speed-Signs-Image_1.webp"
+    "feature_image" => "assets\customer\images\Radar-Speed-Signs-Image_1.webp"
 ];
 ?>
 @include('customer.layouts.header')
@@ -29,21 +29,22 @@ $seo_meta = [
                         <div class="position-relative heading-banner  ">
                             <div class="mobile-display">
                                 <img data-src="{{asset('assets\customer\images\Radar-Speed-Signs-Image_1.webp')}}"
-                                     alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0 " style="height: 100px;" >
+                                     alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0 " style="height: 100px;">
                             </div>
-                            <span class="h1 text-dark font-weight-bold"> iCop</span> <h1 class="text-dark"> RADAR SPEED SIGNS</h1>
+                            <span class="h1 text-dark font-weight-bold"> iCop</span>
+                            <h1 class="text-dark"> RADAR SPEED SIGNS</h1>
                             <p class="mb-0 h4 font-weight-bold"><span> No. 1 in Traffic Calming Solution </span></p>
 
-                            <a href="#our_products" type="button"
+                            <a href="#our_products_check" type="button"
                                class="py-2 rounded border-0 px-4 mt-2 bg-white outline-1 btn-light text-decoration-none border-1">Shop
                                 Now <img class="fs-4 ms-2" width="10"
                                          src="{{asset('assets\customer\images\downarrow.png')}}"
                                          alt="Down Arrow"></a>
-{{--                            <div class="zigzack d-flex justify-content-start">--}}
-{{--                                <img--}}
-{{--                                    data-src="{{asset('assets\customer\images\ziczac.png')}}"--}}
-{{--                                    class="lazyload img-fluid d-none d-md-block " alt="Zic zac">--}}
-{{--                            </div>--}}
+                            {{--                            <div class="zigzack d-flex justify-content-start">--}}
+                            {{--                                <img--}}
+                            {{--                                    data-src="{{asset('assets\customer\images\ziczac.png')}}"--}}
+                            {{--                                    class="lazyload img-fluid d-none d-md-block " alt="Zic zac">--}}
+                            {{--                            </div>--}}
                             <div
                                 class="circle-dotted position-absolute w-100 d-none d-md-flex align-items-center justify-content-start">
 
@@ -51,10 +52,10 @@ $seo_meta = [
                         </div>
                         <div class="desktop-display">
                             <img data-src="{{asset('assets\customer\images\Radar-Speed-Signs-Image_1.webp')}}"
-                                 alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0 " style="height: 500px;" >
+                                 alt="Radar Speed Signs" class="lazyload mt-3 mt-sm-0 " style="height: 500px;">
                         </div>
-{{--                        <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Color"--}}
-{{--                             class="img-fluid d-none d-md-block">--}}
+                        {{--                        <img src="{{asset('assets\customer\images\circlecolor.png')}}" alt="Color"--}}
+                        {{--                             class="img-fluid d-none d-md-block">--}}
                     </div>
 
                 </div>
@@ -70,26 +71,36 @@ $seo_meta = [
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12">
-                <p class="text-center" style="text-align: justify;color: black;font-size: 16px;"> Experience the future of road safety with <b> iCop Radar Speed Signs </b>, where innovation meets responsibility and driving becomes not just a journey but a shared commitment to a safer, smarter, and accident-free community.
-                </p>
-                <p class="text-center" style="text-align: justify;color: black;font-size: 16px;">
-                    Our innovative iCop Radar Speed Signs, a revolutionary device engineered to redefine road safety and revolutionize your driving experience. More than just a speed display, our radar speed signs are the epitome of innovation, seamlessly combining advanced features to create the industry's most capable and highly-equipped device ever built.
+                <p style="text-align: justify;">
+                    What sets Photonplay apart is our unrelenting dedication to quality. We understand that safety is
+                    not a compromise, and neither is the quality of our products. We are committed to pushing the
+                    boundaries of innovation while maintaining a steadfast focus on reliability and longevity, and we
+                    proudly stand as the high-end choice in the industry. This reputation stems from our commitment to
+                    uncompromising quality.
                 </p>
             </div>
             <div class="col-lg-12 ">
                 <div class="radar-icop">
                     <h2 class="text-uppercase text-center">
-                        Traffic Management with Advanced iCop Radar Speed Signs</h2>
-                    <p class="text-center" style="text-align: justify;color: black;font-size: 16px;">
-                        Radar Speed Signs serves as a beacon of safety on roadways, delivering real-time feedback to drivers about their vehicle's speed. Nestled seamlessly into various environments, from bustling city streets to school zones, Radar speed signs act as friendly guides, gently encouraging responsible driving habits instead of resorting to punitive measures.
-                    </p>
-                    <p class="text-center" style="text-align: justify;color: black;font-size: 16px;">
-                        Radar Speed Signs serves as a beacon of safety on roadways, delivering real-time feedback to drivers about their vehicle's speed. Nestled seamlessly into various environments, from bustling city streets to school zones, Radar speed signs act as friendly guides, gently encouraging responsible driving habits instead of resorting to punitive measures.
-                    </p>
-                    <p class="text-center" style="text-align: justify;color: black;font-size: 16px;">
-                        Beyond its role as a speed monitor, this sign transforms into a smart traffic data collector and analyzer, seamlessly integrated into the cloud for enhanced control and security.
+                        The Results Speak for Themselves</h2>
+                    <center>
+                        <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
+                    </center>
+                    <ul>
+                        <li> Speeders slow down up to 80% of the time when alerted by a radar speed sign</li>
+                        <li> Typical speed reductions range from 10% to 20%.</li>
+                        <li> Overall compliance with posted speed limits increases by a remarkable 30% to 60%.</li>
+                        <li> Photonplay is particularly effective at getting “super speeders” — those driving 20 mph or
+                            more over the limit — to slow down.
+                        </li>
+                    </ul>
 
-                    </p>
+                    <div class="mt-4 text-center">
+                        <iframe width="840" height="474" style="max-width: 100%;" src="https://www.youtube.com/embed/TRLuZV_qSaE"
+                                title="iCop Radar Speed Signs - PHOTONPLAY | Driver Feedback Signs" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
 
@@ -97,82 +108,21 @@ $seo_meta = [
     </div>
 </section>
 <!-- Photon play radar-end -->
-<!-- Our Product-start -->
-<section class="icop-series pt-1 mt-1">
-    <div class="container" id="our_products">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="text-center mb-lg-5">
-                    <h2 class="fs-md-2">iCop Radar Speed Signs Products</h2>
-                    <p class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your
-                        needs and exceed your expectations.
-                    </p>
-                </div>
-            </div>
-            <div class="responsive">
-                @foreach ($products as $product)
-                    <div>
-                        <div class="p-2">
-                            <div class="product_highlight inner-product bg-white">
-                                <div class=" w-75 h-75 light-product m-auto"
-                                     style="background: url('{{ asset('storage/'. $product->cover_image) }}') no-repeat center; background-size: cover;">
-                                    {{--                                    <img class=""  src="" alt="">--}}
-                                </div>
-                                <div class="speed-sign text-center mt-3">
-                                    <span class="d-block weight-font" style="font-size: 20px;">
-                                        Radar Speed Sign
-                                    </span>
 
+@include('customer.layout2.product_listing')
 
-                                    <h3 class="d-block" style="font-size: 20px;">{{$product->title}}</h3>
-                                    <div class="d-flex justify-content-center align-items-center my-2 gap-1">
-                                        <img data-src="{{ asset('assets\customer\images\star.svg') }}" alt="1"
-                                             class="lazyload img-fluid"
-                                             width="14px">
-                                        <img data-src="{{ asset('assets\customer\images\star.svg') }}" alt="2"
-                                             class="lazyload img-fluid"
-                                             width="14px">
-                                        <img data-src="{{ asset('assets\customer\images\star.svg') }}" alt="3"
-                                             class="lazyload img-fluid"
-                                             width="14px">
-                                        <img data-src="{{ asset('assets\customer\images\star.svg') }}" alt="4"
-                                             class="lazyload img-fluid"
-                                             width="14px">
-                                        <img data-src="{{ asset('assets\customer\images\star.svg') }}" alt="5"
-                                             class="lazyload img-fluid"
-                                             width="14px">
-                                    </div>
-                                    <span class="d-block weight-font">${{$product->price}}</span>
-                                    <a href="{{route('customer.radar.sign', $product->slug)}}"
-                                       class="btn btn-primary text-capitalize mt-3">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Our Product -->
-<div class="d-flex justify-content-center mb-4">
-    <div style="max-width: 100%;width:700px;">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/TRLuZV_qSaE"
-                title="RADAR SPEED SIGNS - iCop - PHOTONPLAY" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-    </div>
-</div>
 <!-- iCop Series Features Start -->
 <section class=" pt-4">
     <div class="container">
         <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;">
             <div class="col-lg-12">
                 <div class="text-center mb-lg-4">
-                    <h2 class="fs-md-2 mt-3">iCop Features</h2>
-                    <p class="fs-6">Our product offers innovative solutions to meet your needs and seamlessly connect
-                        your device to various networks and devices,
-                        enabling easy data transfer and integration with other smart devices.
+                    <h2 class="fs-md-2 mt-3">Series Features</h2>
+                    <center>
+                        <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
+                    </center>
+                    <p class="fs-6">iCop Radar Speed Signs enhance road safety, displaying real-time speeds to foster
+                        responsible driving and create safer communities for all.
                     </p>
 
                 </div>
@@ -306,330 +256,132 @@ $seo_meta = [
 </section>
 <!-- iCop Series Features End -->
 <!-- SPECIFICATION Sec Accordion -->
-<section class="sepeicification  pt-md-4 pt-0  pb-0 position-relative">
+<section class="sepeicification pt-md-4 pt-0  pb-0 position-relative mb-4">
     <div class="message-sign text-center text-primary">
         <!-- <h6 class="fs-6">photonplay’s</h6> -->
     </div>
     <div class="heading-sec">
-        <h2 class="fs-md-2 mt-3">ICOP Radar Speed Signs Multi Functional Display</h2>
+        <h2 class="fs-md-2 mt-3">Multifunctional Display</h2>
+        <center>
+            <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
+        </center>
         <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional
-            <br/>display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
+            display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
     </div>
-    <div class="container ">
-        <div class="accodion-wrapper pb-5">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="accordion accordion-flush position-relative" id="accordionFlushExample">
-                        <div class="accordion-item border-0">
-                            <h3 class="accordion-header">
-                                <button
-                                    class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne"
-                                    aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    GRAPHICS
-                                </button>
-                            </h3>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse show"
-                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body pt-0">
-                                    <p>
-                                        Option to display graphic content with custom-made and standard graphic library
-                                        like "SLOW DOWN", "THANK YOU", "WORK ZONE", etc.
-                                    </p>
-                                    <img data-src="{{asset('assets/images/radar/RSS display.png')}}"
-                                         class="lazyload img-fluid p-2"
-                                         alt="Option to display graphic content with custom-made and standard graphic"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item border-0">
-                            <h3 class="accordion-header" id="flush-headingTwo">
-                                <button
-                                    class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                    aria-expanded="false" aria-controls="flush-collapseTwo">
-                                    TEXT MESSAGES
-                                </button>
-                            </h3>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body pt-0">
-                                    <p>
-                                        Option to display custom text messages like community notifications, traffic
-                                        updates, etc.
-                                    </p>
-                                    <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"
-                                         class="lazyload img-fluid p-2"
-                                         alt="Option to display custom text messages like community notifications, traffic updates, etc"/>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="circle-floow position-relative">
-
-                        <div class="accordion accordion-flush position-relative" id="accordionFlushExampleSecond">
-                            <div class="accordion-item border-0">
-                                <h3 class="accordion-header">
-                                    <button
-                                        class="accordion-button collapsed bg-white shadow-none py-3 pb-2 shadow-none"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOneSecond"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapseOneSecond">
-                                        MULTI-COLOUR
-                                    </button>
-                                </h3>
-                                <div id="flush-collapseOneSecond" class="accordion-collapse collapse show"
-                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExampleSecond">
-                                    <div class="accordion-body pt-0">
-                                        <p>
-                                            Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour
-                                            options.
-                                        </p>
-
-
-                                        <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"
-                                             class="lazyload img-fluid p-2"
-                                             alt="Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <h3 class="accordion-header" id="flush-headingTwo">
-                                    <button
-                                        class="accordion-button collapsed bg-white shadow-none ty-3 pb-2 shadow-none"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwoThird"
-                                        aria-expanded="false" aria-controls="flush-collapseTwoThird">
-                                        FLASHING LIGHTS
-                                    </button>
-                                </h3>
-                                <div id="flush-collapseTwoThird" class="accordion-collapse collapse"
-                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExampleSecond">
-                                    <div class="accordion-body pt-0">
-                                        <p>
-                                            White high bright flashing lights to alert the drivers, so one can never
-                                            miss the attention
-                                        </p>
-                                        <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"
-                                             class="lazyload img-fluid p-2"
-                                             alt="White high bright flashing lights to alert the drivers, so one can never miss the attention"/>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <div class="border p-2" style="background-color: white;">
+                    <img data-src="{{asset('assets/images/radar/RSS display.png')}}"
+                         class="lazyload img-fluid p-2"
+                         alt="Option to display graphic content with custom-made and standard graphic"/>
+                    <h3> GRAPHICS</h3>
+                    <p>
+                        Option to display graphic content with custom-made and standard graphic library like "SLOW
+                        DOWN", "THANK YOU", "WORK ZONE", etc.
+                    </p>
                 </div>
             </div>
+
+            <div class="col-md-6 mb-2">
+                <div class="border p-2" style="background-color: white;">
+                    <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"
+                         class="lazyload img-fluid p-2"
+                         alt="Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options"/>
+                    <h3> Multi-colour</h3>
+                    <p>
+                        Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 mb-2">
+                <div class="border p-2" style="background-color: white;">
+                    <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"
+                         class="lazyload img-fluid p-2"
+                         alt="Option to display custom text messages like community notifications, traffic updates, etc"/>
+                    <h3>Text Messages</h3>
+                    <p>
+                        Option to display custom text messages like community notifications, traffic updates, etc.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="border p-2" style="background-color: white;">
+                    <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"
+                         class="lazyload img-fluid p-2"
+                         alt="White high bright flashing lights to alert the drivers, so one can never miss the attention"/>
+                    <h3>Flashing Lights</h3>
+                    <p>
+                        White high bright flashing lights to alert the drivers, so one can never miss the attention
+                    </p>
+                </div>
+            </div>
+
         </div>
-        <img class="lazyload dotted-imag img-fluid d-none d-md-inline"
-             data-src="/assets/customer/images/dotted-tran.png" alt="dotted">
+
     </div>
+
+
 </section>
 {{--content_gallery_001897.txt   :: here content availble in txt file --}}
-@include('customer.layout2.get_in_touch')
+<section class="contact-form  mt-1 pt-1" id="faq">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="fs-md-2 mt-3 mb-3 text-center"> People also ask</h2>
+                <center>
+                    <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
+                </center>
+                <div class="mb-3 mt-3">
+                    <h3 class="mt-3">
+                        What does a radar speed sign mean? </h3>
+                    <p class="mt-2 mb-2">
+                        A radar speed sign is an interactive sign, typically made of LEDs, that displays vehicle speed
+                        as driver’s approach and enhance road safety.
+                    </p>
+                </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="fs-md-2 mt-3 text-center"> FAQ'S </h3>
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            1.	What does a radar speed sign mean?
-                        </button>
-                    </h4>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: A radar speed sign is an interactive sign, typically made of LEDs, that displays vehicle speed as driver’s approach and enhance road safety.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            2.	How effective are radar speed signs?
-                        </button>
-                    </h4>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: Radar speed signs are highly effective in reducing speeds, with studies showing decreases of up to 9 mph. They serve as impactful tools for traffic calming in various environments, including neighborhoods, school zones, and roadways, which can reduce average speeds by 10–20%.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            3.	Do radar speed signs collect data?
-                        </button>
-                    </h4>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: Yes, radar speed signs analyze and record traffic data, offering insights for informed decision-making and improved road management. However, they may not capture factors like road design or traffic volume contributing to speeding.
-                        </div>
-                    </div>
+                <div class="mb-3 mt-3">
+                    <h3 class="mt-3">
+                        How effective are radar speed signs? </h3>
+                    <p class="mt-2 mb-2">
+                        Radar speed signs are highly effective in reducing speeds, with studies showing decreases of up
+                        to 9 mph. They serve as impactful tools for traffic calming in various environments, including
+                        neighborhoods, school zones, and roadways, which can reduce average speeds by 10–20%.
+                    </p>
                 </div>
 
 
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            4.	What is the electronic speed limit sign?
-                        </button>
-                    </h4>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: An electronic speed limit sign is a dynamic road sign that digitally displays current speed limits, providing real-time information to drivers and enhancing overall traffic safety.
-                        </div>
-                    </div>
+                <div class="mb-3 mt-3">
+                    <h3 class="mt-3">
+                        Do radar speed signs collect data? </h3>
+                    <p class="mt-2 mb-2">
+                        Yes, radar speed signs analyze and record traffic data, offering insights for informed
+                        decision-making and improved road management. However, they may not capture factors like road
+                        design or traffic volume contributing to speeding.
+                    </p>
                 </div>
 
-
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            5.	How does a police radar measure speed?
-                        </button>
-                    </h4>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: Police radar measures speed using the Doppler effect, bouncing radio waves off moving vehicles and calculating their speed based on the frequency shift in the reflected waves.
-                        </div>
-                    </div>
+                <div class="mb-3 mt-3">
+                    <h3 class="mt-3">
+                        What is the electronic speed limit sign?</h3>
+                    <p class="mt-2 mb-2">
+                        An electronic speed limit sign is a dynamic road sign that digitally displays current speed
+                        limits, providing real-time information to drivers and enhancing overall traffic safety.
+                    </p>
                 </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingSix">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            6.	What is a radar detector on a highway?
-                        </button>
-                    </h4>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: A radar detector is an electronic device that motorists use to identify if their speed is being monitored by police or law enforcement with a radar gun. It helps drivers proactively adjust their speed to avoid potential speeding tickets.
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingSeven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            7.	Does Google Maps show speed signs?
-                        </button>
-                    </h4>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: If the Speed Limits feature is available in your location, the speedometer in the app will indicate if you're driving too fast, with color changes for exceeding the speed limit. Additionally, Apple users can explore the Bye-Bye Ticket app, while Android users can use the Waze app for similar functionality.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingEightA">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseEightA" aria-expanded="false"
-                                aria-controls="collapseEightAx`blue ">
-                            8.	What is the purpose of electronic speed signs?
-                        </button>
-                    </h4>
-                    <div id="collapseEightA" class="accordion-collapse collapse" aria-labelledby="headingEightA"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: The primary goal of electronic speed signs is to influence driver behavior and mitigate speeding. By prominently displaying near-road signs, they serve as reminders for drivers to adhere to posted speed limits, fostering informed decision-making while driving.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingEight">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            9.	Where is the highest speed limit sign?
-                        </button>
-                    </h4>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: The highest speed limit sign is found in Abu Dhabi, United Arab Emirates, where the maximum speed on freeways is 140 km/h for cars. Heavy vehicles are restricted to the far right lane with a maximum speed of 80 km/h, while the minimum limit is set at 120 km/h.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingNine">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                            10.	What is the long-term effectiveness of radar speed feedback signs for speed management?
-                        </button>
-                    </h4>
-                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: Radar speed feedback signs have demonstrated long-term effectiveness in managing speed by consistently alerting drivers to their speed, leading to sustained reductions and contributing to safer road conditions over time.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingTen">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                            11.	What is the electronic speed awareness sign?
-                        </button>
-                    </h4>
-                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: The electronic speed awareness sign has been purposefully designed to decrease the speed of motorists as they approach job sites. It stands as the most effective solution for reducing speed, thereby enhancing safety for frontline workers on project sites.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h4 class="accordion-header" id="headingEleven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                            12.	What sign is a speed limit sign?
-                        </button>
-                    </h4>
-                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven"
-                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Answer: A speed limit sign is a regulatory traffic sign that displays the maximum allowed speed for vehicles on a specific road or in a particular area, ensuring compliance with designated speed restrictions.
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
 
         </div>
 
     </div>
+</section>
 
-</div>
+@include('customer.layout2.get_in_touch')
 
 
 <!-- _____________________ourclint-last-start___________________ -->

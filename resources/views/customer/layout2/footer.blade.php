@@ -65,14 +65,35 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 <div class="logo-bottom mb-lg-4 w-100">
                     <img src="{{asset('assets\customer\images\logo-dark.png')}}"  class="lazyload" alt="Photonplay System">
                 </div>
-                <div class="footer_Desc" style="text-align: justify;word-spacing:-1px;clear: both;">
-                    <p>
-                        PhotonPlay, a family-owned company, delivers high quality intelligent transportation systems (ITS) worldwide. For over 12 years, we've catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions.
-                        Our expertise,innovation, and commitment to smarter transportation make us a trusted partner.
-                    </p>
+                <div class="contact-info w-100">
+                    <div class="contact-info-item w-100">
+                        @php
+                            $url_open=\Illuminate\Support\Facades\URL::full();
+                        @endphp
+                        @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
+                            <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (US)</a>
+                        @else
+                            @if ($setting)
+                                <a href="tel:{{$setting->sales_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->sales_phone}}</a>
+                                @if ($setting->support_phone !=null)
+                                    <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
+                                @endif
+                            @endif
+                        @endif
+                        <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
+                    </div>
+                    {{--                    <a href="{{route('customer.contact.us')}}" class="btn btn-primary mt-3">Contact Now</a>--}}
+                    <ul class="social-media w-100">
+                        <li><a class="" href="{{$setting->facebook ?? ''}}"><img src="{{asset('assets\customer\images\facebook.svg')}}" class="lazyload" /></a></li>
+                        <li><a class="" href="{{$setting->twitter  ?? ''}}"><img src="{{asset('assets\customer\images\twitter.jpg')}}" class="lazyload" /></a></li>
+                        <li><a class="" href="{{$setting->linkedin ?? ''}}"><img src="{{asset('assets\customer\images\linkdin.jpg')}}" class="lazyload" /></a></li>
+                        <li><a class="" href="{{$setting->instagram ?? ''}}"><img src="{{asset('assets\customer\images\instagram.png')}}" class="lazyload" /></a></li>
+
+                    </ul>
                 </div>
 
             </div>
+
             <!-- <div class="footer-item mb-0 mb-md-5 footer-item-three">
                 <h2>SHOP</h2>
                 <ul class="p-0">
@@ -119,43 +140,21 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 </ul>
             </div> -->
             <div class="footer-item mb-0 mb-md-5 footer-item-5">
-                <h5 class="w-100" style="font-size: 20px;">Get in Touch with Us</h5>
-                <div class="contact-info w-100">
-                    <div class="contact-info-item w-100">
-                            @php
-                                $url_open=\Illuminate\Support\Facades\URL::full();
-                            @endphp
-                            @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
-                                <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (US)</a>
-                            @else
-                            @if ($setting)
-                                <a href="tel:{{$setting->sales_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->sales_phone}}</a>
-                                @if ($setting->support_phone !=null)
-                                    <a href="tel:{{$setting->support_phone}}"><img src="{{asset('assets\customer\images\phone.svg')}}" /> {{$setting->support_phone}} </a>
-                                @endif
-                                  @endif
-                            @endif
-                        <a href="mailto:{{$setting->sales_email}}"><img src="{{asset('assets\customer\images\message.png')}}" /> {{$setting->sales_email}}</a>
-                    </div>
-{{--                    <a href="{{route('customer.contact.us')}}" class="btn btn-primary mt-3">Contact Now</a>--}}
-                    <ul class="social-media w-100">
-                    <li><a class="" href="{{$setting->facebook ?? ''}}"><img src="{{asset('assets\customer\images\facebook.svg')}}" class="lazyload" /></a></li>
-                    <li><a class="" href="{{$setting->twitter  ?? ''}}"><img src="{{asset('assets\customer\images\twitter.jpg')}}" class="lazyload" /></a></li>
-                    <li><a class="" href="{{$setting->linkedin ?? ''}}"><img src="{{asset('assets\customer\images\linkdin.jpg')}}" class="lazyload" /></a></li>
-                    <li><a class="" href="{{$setting->instagram ?? ''}}"><img src="{{asset('assets\customer\images\instagram.png')}}" class="lazyload" /></a></li>
+                <h5 class="w-100" style="font-size: 20px;">Important Links</h5>
 
+                <ul class="p-0">
+                    <li><a href="{{route('customer.show_page_policy_shipping')}}">Shipping Policy</a></li>
+                    <li><a href="{{route('customer.show_page_policy_return_policy')}}">Return/Refund Policy</a></li>
+                    <li><a href="{{route('customer.show_page_policy_term_conditions')}}">Terms & Conditions</a></li>
+                    <li><a href="{{route('customer.show_page_policy_privacy_policy')}}">Privacy Policy
+                        </a></li>
                 </ul>
-                </div>
             </div>
         </div>
     </footer>
 
        <div class="contain0er-fluid">
           <div class="sec-copyright py-3 text-center m-auto d-flex justify-content-between align-items-center">
-              <p>
-                 <a href="{{route('customer.show_page_policy_term_conditions')}}"> Terms </a>
-                  |    <a href="{{route('customer.show_page_policy_privacy_policy')}}">Privacy </a> |    <a href="{{route('customer.show_page_policy_shipping')}}">Shipping </a>|    <a href="{{route('customer.show_page_policy_return_policy')}}">Refund/Return Policy</a>
-              </p>
               <p>© 2024 Photonplay Systems Inc. All right reserved</p>
           </div>
        </div>
