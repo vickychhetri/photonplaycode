@@ -93,7 +93,7 @@ $seo_meta = [
                     </ul>
 
                     <div class="mt-4 text-center">
-VIDEO                         <iframe width="840" height="474" style="max-width: 100%;" src="https://www.youtube.com/embed/TRLuZV_qSaE?autoplay=1"
+                        <iframe width="840" height="474" style="max-width: 100%;" src="https://www.youtube.com/embed/TRLuZV_qSaE?autoplay=1"
                                 title="iCop Radar Speed Signs - PHOTONPLAY | Driver Feedback Signs" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen autoplay></iframe>
