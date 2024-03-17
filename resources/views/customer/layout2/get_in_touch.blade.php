@@ -5,7 +5,7 @@ $setting = Setting::first();
 <section class="contact-form bg-light mt-1 pt-1" id="inquiry">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
                 <div class="contact-sec-info">
                     <div class="text-start pb-2">
                         <h4 class="fs-md-2 mt-3" style="font-size: 40px;">Request a Demo</h4>
@@ -18,17 +18,17 @@ $setting = Setting::first();
                                 $url_open=\Illuminate\Support\Facades\URL::full();
                             @endphp
                             @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
-                                <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (US)</a>
+                                <a href="tel:+18009669329" class="font-weight-bold"><img src="{{asset('assets\customer\images\phone.svg')}}" />+1 (800) 966-9329 (US)</a>
                             @else
                             @if ($setting)
-                            <a href="tel:{{$setting->sales_phone}}" class="text-decoration-none"> <i class="bi bi-telephone-inbound-fill text-primary"></i> &nbsp {{$setting->sales_phone}}</a>
+                            <a href="tel:{{$setting->sales_phone}}" class="text-decoration-none font-weight-bold"> <i class="bi bi-telephone-inbound-fill text-primary"></i> &nbsp {{$setting->sales_phone}}</a>
 
-                            <a href="tel:{{$setting->support_phone ?? ''}}" class="text-decoration-none">
+                            <a href="tel:{{$setting->support_phone ?? ''}}" class="text-decoration-none font-weight-bold">
                                 <i class="bi bi-telephone-inbound-fill text-primary"></i> &nbsp{{$setting->support_phone}}</a>
 
                             @endif
                             @endif
-                            <a href="mailto:{{$setting->sales_email ?? ''}}" class="text-decoration-none">
+                            <a href="mailto:{{$setting->sales_email ?? ''}}" class="text-decoration-none font-weight-bold">
                                 <i class="bi bi-envelope-fill text-primary"></i> &nbsp {{$setting->sales_email}}</a>
                         </div>
                     </div>
