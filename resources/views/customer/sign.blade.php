@@ -135,18 +135,20 @@ $seo_meta = [
 <!-- iCop Series Features Start -->
 <section class=" pt-4">
     <div class="container">
-        <div class="row" style="margin-right: 12%;margin-left: 7%;">
+        <div class="row" >
             <div class="col-lg-12">
                 <div class="text-center mb-lg-4">
-                    <h2 class="fs-md-2 mt-3 font-f-choose30">Series Features</h2><center>  <span class="black-line" style="width: 60px;"></span> </center>
+                    <h4 class="fs-md-2 mt-3 font-f-choose30" style="font-weight: bold;">Series Features</h4><center>  <span class="black-line" style="width: 60px;"></span> </center>
                     <p class="get-in-font-para mt-4">iCop Radar Speed Signs enhance road safety, displaying real-time speeds to foster
                         responsible driving and create safer communities for all.
                     </p>
 
                 </div>
             </div>
-
-            <div class="col-md-6  desktop-display">
+        </div>
+        <div class=" desktop-display">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-end " >
                 <div class="d-flex" >
                     <div style="text-align: right;">
                         <h4 class="font-f-choose26"> Traffic Data Analysis</h4>
@@ -158,22 +160,8 @@ $seo_meta = [
                     </div>
                 </div>
             </div>
-            <div class="col-md-6  mobile-display">
-                <div>
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS4.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity"  />
-                    </div>
-
-                    <div style="text-align: center;">
-                        <h4 class="font-f-choose26"> Traffic Data Analysis</h4>
-                        <p class="get-in-font-para"> Cloud based powerful tool for traffic data analysis</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 desktop-display">
-                <div class="d-flex">
+            <div class="col-md-5  ">
+                <div class="d-flex ">
                     <div>
                         <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity"/>
@@ -186,53 +174,24 @@ $seo_meta = [
 
                 </div>
             </div>
-            <div class="col-md-6 mobile-display">
-                <div class="">
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload  feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
-
-                    </div>
-                    <div class="text-center "   >
-                        <h4 class="font-f-choose26"> 24x7 Cloud Connectivity</h4>
-                        <p class="get-in-font-para"> All time access to the device</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-6 desktop-display">
+            <div class="col-md-6  d-flex justify-content-end">
                 <div class="d-flex">
                     <div style="text-align: right;">
                         <h4 class="font-f-choose26"> Solar Powered</h4>
                         <p class="get-in-font-para"> Cost-effective, solar-charged performance</p>
                     </div>
-                    <div>
+                    <div class="">
                         <img data-src="{{asset('assets/images/radar/RSS2.webp')}}" class="lazyload feature-image-radar  p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                             alt="24x7 Cloud Connectivity" />
                     </div>
 
                 </div>
             </div>
-            <div class="col-md-6 mobile-display">
-                <div class="">
-
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
-                    </div>
-                    <div style="text-align: center;">
-                        <h4 class="font-f-choose26"> Solar Powered</h4>
-                        <p class="get-in-font-para"> Cost-effective, solar-charged performance</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 desktop-display">
+            <div class="col-md-6 ">
                 <div class="d-flex">
                     <div>
                         <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                             alt="24x7 Cloud Connectivity"/>
 
                     </div>
                     <div>
@@ -242,22 +201,7 @@ $seo_meta = [
 
                 </div>
             </div>
-            <div class="col-md-6 mobile-display">
-                <div class="">
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
-
-                    </div>
-                    <div class="text-center">
-                        <h4 class="font-f-choose26"> Battery Backup</h4>
-                        <p class="get-in-font-para"> Extended operations with robust battery support</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-6 desktop-display">
+            <div class="col-md-6  d-flex justify-content-end">
                 <div class="d-flex">
                     <div style="text-align: right;">
                         <h4 class="font-f-choose26"> Fully Compliance</h4>
@@ -265,26 +209,12 @@ $seo_meta = [
                     </div>
                     <div>
                         <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload feature-image-radar  p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                             alt="24x7 Cloud Connectivity" />
                     </div>
 
                 </div>
             </div>
-            <div class="col-md-6 mobile-display">
-                <div class="">
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
-                    </div>
-                    <div  class="text-center">
-                        <h4 class="font-f-choose26"> Fully Compliance</h4>
-                        <p class="get-in-font-para" > Embrace industry standards effortlessly with seamless integration</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-6 desktop-display">
+            <div class="col-md-6 ">
                 <div class="d-flex">
                     <div>
                         <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload feature-image-radar p-2"
@@ -298,23 +228,7 @@ $seo_meta = [
 
                 </div>
             </div>
-
-            <div class="col-md-6 mobile-display">
-                <div class="">
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
-
-                    </div>
-                    <div class="text-center">
-                        <h4 class="font-f-choose26">All Weather Operation</h4>
-                        <p class="get-in-font-para"> Efficient performance in any weather condition</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-6 desktop-display">
+            <div class="col-md-6  d-flex justify-content-end">
                 <div class="d-flex">
                     <div style="text-align: right;">
                         <h4 class="font-f-choose26"> Robust</h4>
@@ -322,29 +236,16 @@ $seo_meta = [
                     </div>
                     <div>
                         <img data-src="{{asset('assets/images/radar/RSS7.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                             alt="24x7 Cloud Connectivity" />
                     </div>
 
                 </div>
             </div>
-            <div class="col-md-6 mobile-display">
-                <div class="">
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
-                    </div>
-                    <div style="text-align: center;">
-                        <h4 class="font-f-choose26"> Robust</h4>
-                        <p class="get-in-font-para"> Built tough for enduring extreme conditions</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-6 desktop-display">
+            <div class="col-md-6 ">
                 <div class="d-flex">
                     <div>
                         <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                             alt="24x7 Cloud Connectivity" />
 
                     </div>
                     <div>
@@ -354,21 +255,106 @@ $seo_meta = [
 
                 </div>
             </div>
+        </div>
+        </div>
+            <div class="row mobile-display">
+                            <div class="col-md-6 ">
+                                <div>
+                                    <div class="d-flex justify-content-center">
+                                        <img data-src="{{asset('assets/images/radar/RSS4.webp')}}" class="lazyload feature-image-radar p-2"
+                                             alt="24x7 Cloud Connectivity"  />
+                                    </div>
 
-            <div class="col-md-6 mobile-display">
-                <div class="">
-                    <div>
-                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload feature-image-radar p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                                    <div style="text-align: center;">
+                                        <h4 class="font-f-choose26"> Traffic Data Analysis</h4>
+                                        <p class="get-in-font-para"> Cloud based powerful tool for traffic data analysis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="">
+                                    <div class="d-flex justify-content-center">
+                                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload  feature-image-radar p-2"
+                                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                                    </div>
+                                    <div class="text-center "   >
+                                        <h4 class="font-f-choose26"> 24x7 Cloud Connectivity</h4>
+                                        <p class="get-in-font-para"> All time access to the device</p>
+                                    </div>
 
-                    </div>
-                    <div class="text-center">
-                        <h4 class="font-f-choose26"> Easy Installation</h4>
-                        <p class="get-in-font-para">Effortless setup with user-friendly installation</p>
-                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="">
 
-                </div>
+                                    <div class="d-flex justify-content-center">
+                                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}" class="lazyload feature-image-radar p-2"
+                                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <h4 class="font-f-choose26"> Solar Powered</h4>
+                                        <p class="get-in-font-para"> Cost-effective, solar-charged performance</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="">
+                                    <div class="d-flex justify-content-center">
+                                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload feature-image-radar p-2"
+                                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 class="font-f-choose26"> Battery Backup</h4>
+                                        <p class="get-in-font-para"> Extended operations with robust battery support</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="">
+                                    <div class="d-flex justify-content-center">
+                                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload feature-image-radar p-2"
+                                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                                    </div>
+                                    <div  class="text-center">
+                                        <h4 class="font-f-choose26"> Fully Compliance</h4>
+                                        <p class="get-in-font-para" > Embrace industry standards effortlessly with seamless integration</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="">
+                                    <div class="d-flex justify-content-center">
+                                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload feature-image-radar p-2"
+                                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 class="font-f-choose26">All Weather Operation</h4>
+                                        <p class="get-in-font-para"> Efficient performance in any weather condition</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="">
+                                    <div class="d-flex justify-content-center">
+                                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload feature-image-radar p-2"
+                                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 class="font-f-choose26"> Easy Installation</h4>
+                                        <p class="get-in-font-para">Effortless setup with user-friendly installation</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
             </div>
+
 
             </div>
         </div>
