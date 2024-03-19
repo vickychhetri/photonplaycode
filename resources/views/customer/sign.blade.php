@@ -16,8 +16,8 @@ $seo_meta = [
 {{--Radar Banner Start--}}
 {{--<x-Customer.Radar.RadarBanner/>--}}
 
-<section class="banner-inner pt-0 pb-0">
-    <div id="carouselExampleDark" class="carousel slide banner-image-new-radar-parent" data-bs-ride="carousel">
+<section class="banner-inner pt-0 pb-0" >
+    <div id="carouselExampleDark" class="carousel slide banner-image-new-radar-parent" data-bs-ride="carousel" style="min-height: 650px;">
         <div class="carousel-indicators">
         </div>
         <div class="carousel-inner">
@@ -28,17 +28,15 @@ $seo_meta = [
 
                         <div class="position-relative heading-banner  ">
                             <div class="d-flex ml-0">
-                                    <div>
+                                    <div class="px-2 mx-2">
                                         <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/icop-photonplay-logo.png" class="img-fluid" style="height: 100px;"/>
                                     </div>
                                 <div>
                                     <h1 class="text-white"> RADAR SPEED SIGNS</h1>
-                                    <p class="mb-0 h4 font-weight-bold text-white"><span> No. 1 in Traffic Calming Solution </span></p>
+                                    <p class="mb-3 h4 font-weight-bold text-white "><span> No. 1 in Traffic Calming Solution </span></p>
 
                                     <a href="#our_products_check" type="button"
-                                       class="py-2 rounded border-0 px-4 mt-2 bg-primary text-white outline-1 btn-light text-decoration-none border-1">Explore Products<img class="fs-4 ms-2" width="10"
-                                                 src="{{asset('assets\customer\images\downarrow.png')}}"
-                                                 alt="Down Arrow"></a>
+                                       class="py-2 rounded border-0 px-4 pt-2 pb-2 text-white outline-1 btn-light text-decoration-none border-1 elementor-button-radar">Explore Products</a>
                                 </div>
                             </div>
 
@@ -68,7 +66,7 @@ $seo_meta = [
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12">
-                <p style="text-align: justify;">
+                <p style="text-align: justify;" class="font-f-choose">
                     What sets Photonplay apart is our unrelenting dedication to quality. We understand that safety is
                     not a compromise, and neither is the quality of our products. We are committed to pushing the
                     boundaries of innovation while maintaining a steadfast focus on reliability and longevity, and we
@@ -78,12 +76,12 @@ $seo_meta = [
             </div>
             <div class="col-lg-12 ">
                 <div class="radar-icop">
-                    <h2 class="text-uppercase text-center">
+                    <h2 class="text-center font-f-choose32 mt-4 ">
                         The Results Speak for Themselves</h2>
                     <center>
                         <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
                     </center>
-                    <ul>
+                    <ul class="font-f-choose mt-4">
                         <li> Speeders slow down up to 80% of the time when alerted by a radar speed sign</li>
                         <li> Typical speed reductions range from 10% to 20%.</li>
                         <li> Overall compliance with posted speed limits increases by a remarkable 30% to 60%.</li>
@@ -136,15 +134,12 @@ $seo_meta = [
 
 <!-- iCop Series Features Start -->
 <section class=" pt-4">
-    <div class="container-fluid">
-        <div class="row gy-5" style="margin-right: 12%;margin-left: 7%;">
+    <div class="container">
+        <div class="row" style="margin-right: 12%;margin-left: 7%;">
             <div class="col-lg-12">
                 <div class="text-center mb-lg-4">
-                    <h2 class="fs-md-2 mt-3">Series Features</h2>
-                    <center>
-                        <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
-                    </center>
-                    <p class="fs-6">iCop Radar Speed Signs enhance road safety, displaying real-time speeds to foster
+                    <h2 class="fs-md-2 mt-3 font-f-choose30">Series Features</h2><center>  <span class="black-line" style="width: 60px;"></span> </center>
+                    <p class="get-in-font-para mt-4">iCop Radar Speed Signs enhance road safety, displaying real-time speeds to foster
                         responsible driving and create safer communities for all.
                     </p>
 
@@ -154,25 +149,25 @@ $seo_meta = [
             <div class="col-md-6  desktop-display">
                 <div class="d-flex" >
                     <div style="text-align: right;">
-                        <h4> Traffic Data Analysis</h4>
-                        <p > Cloud based powerful tool for traffic data analysis</p>
+                        <h4 class="font-f-choose26"> Traffic Data Analysis</h4>
+                        <p class="get-in-font-para" > Cloud based powerful tool for traffic data analysis</p>
                     </div>
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS4.webp')}}" class="lazyload  p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                        <img data-src="{{asset('assets/images/radar/RSS4.webp')}}" class="lazyload feature-image-radar p-2"
+                             alt="Traffic Data Analysis" />
                     </div>
                 </div>
             </div>
             <div class="col-md-6  mobile-display">
                 <div>
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS4.webp')}}" class="lazyload  p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                        <img data-src="{{asset('assets/images/radar/RSS4.webp')}}" class="lazyload feature-image-radar p-2"
+                             alt="24x7 Cloud Connectivity"  />
                     </div>
 
                     <div style="text-align: center;">
-                        <h4> Traffic Data Analysis</h4>
-                        <p > Cloud based powerful tool for traffic data analysis</p>
+                        <h4 class="font-f-choose26"> Traffic Data Analysis</h4>
+                        <p class="get-in-font-para"> Cloud based powerful tool for traffic data analysis</p>
                     </div>
                 </div>
             </div>
@@ -180,13 +175,13 @@ $seo_meta = [
             <div class="col-md-6 desktop-display">
                 <div class="d-flex">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload p-2"
-                             alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
+                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload feature-image-radar p-2"
+                             alt="24x7 Cloud Connectivity"/>
 
                     </div>
                     <div>
-                        <h4> 24x7 Cloud Connectivity</h4>
-                        <p> All time access to the device</p>
+                        <h4 class="font-f-choose26"> 24x7 Cloud Connectivity</h4>
+                        <p class="get-in-font-para"> All time access to the device</p>
                     </div>
 
                 </div>
@@ -194,13 +189,13 @@ $seo_meta = [
             <div class="col-md-6 mobile-display">
                 <div class="">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS3.webp')}}" class="lazyload  feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
 
                     </div>
                     <div class="text-center "   >
-                        <h4> 24x7 Cloud Connectivity</h4>
-                        <p> All time access to the device</p>
+                        <h4 class="font-f-choose26"> 24x7 Cloud Connectivity</h4>
+                        <p class="get-in-font-para"> All time access to the device</p>
                     </div>
 
                 </div>
@@ -209,11 +204,11 @@ $seo_meta = [
             <div class="col-md-6 desktop-display">
                 <div class="d-flex">
                     <div style="text-align: right;">
-                        <h4> Solar Powered</h4>
-                        <p > Cost-effective, solar-charged performance</p>
+                        <h4 class="font-f-choose26"> Solar Powered</h4>
+                        <p class="get-in-font-para"> Cost-effective, solar-charged performance</p>
                     </div>
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}" class="lazyload  p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}" class="lazyload feature-image-radar  p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
                     </div>
 
@@ -223,12 +218,12 @@ $seo_meta = [
                 <div class="">
 
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}" class="lazyload  p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS2.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
                     </div>
                     <div style="text-align: center;">
-                        <h4> Solar Powered</h4>
-                        <p > Cost-effective, solar-charged performance</p>
+                        <h4 class="font-f-choose26"> Solar Powered</h4>
+                        <p class="get-in-font-para"> Cost-effective, solar-charged performance</p>
                     </div>
                 </div>
             </div>
@@ -236,13 +231,13 @@ $seo_meta = [
             <div class="col-md-6 desktop-display">
                 <div class="d-flex">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
 
                     </div>
                     <div>
-                        <h4> Battery Backup</h4>
-                        <p> Extended operations with robust battery support</p>
+                        <h4 class="font-f-choose26"> Battery Backup</h4>
+                        <p class="get-in-font-para"> Extended operations with robust battery support</p>
                     </div>
 
                 </div>
@@ -250,13 +245,13 @@ $seo_meta = [
             <div class="col-md-6 mobile-display">
                 <div class="">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS5.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
 
                     </div>
                     <div class="text-center">
-                        <h4> Battery Backup</h4>
-                        <p> Extended operations with robust battery support</p>
+                        <h4 class="font-f-choose26"> Battery Backup</h4>
+                        <p class="get-in-font-para"> Extended operations with robust battery support</p>
                     </div>
 
                 </div>
@@ -265,11 +260,11 @@ $seo_meta = [
             <div class="col-md-6 desktop-display">
                 <div class="d-flex">
                     <div style="text-align: right;">
-                        <h4> Fully Compliance</h4>
-                        <p > Embrace industry standards effortlessly with seamless integration</p>
+                        <h4 class="font-f-choose26"> Fully Compliance</h4>
+                        <p class="get-in-font-para" > Embrace industry standards effortlessly with seamless integration</p>
                     </div>
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload  p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload feature-image-radar  p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
                     </div>
 
@@ -278,12 +273,12 @@ $seo_meta = [
             <div class="col-md-6 mobile-display">
                 <div class="">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload  p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS6.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
                     </div>
                     <div  class="text-center">
-                        <h4> Fully Compliance</h4>
-                        <p > Embrace industry standards effortlessly with seamless integration</p>
+                        <h4 class="font-f-choose26"> Fully Compliance</h4>
+                        <p class="get-in-font-para" > Embrace industry standards effortlessly with seamless integration</p>
                     </div>
 
                 </div>
@@ -292,13 +287,13 @@ $seo_meta = [
             <div class="col-md-6 desktop-display">
                 <div class="d-flex">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
 
                     </div>
                     <div>
-                        <h4>All Weather Operation</h4>
-                        <p> Efficient performance in any weather condition</p>
+                        <h4 class="font-f-choose26">All Weather Operation</h4>
+                        <p class="get-in-font-para"> Efficient performance in any weather condition</p>
                     </div>
 
                 </div>
@@ -307,13 +302,13 @@ $seo_meta = [
             <div class="col-md-6 mobile-display">
                 <div class="">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS1.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
 
                     </div>
                     <div class="text-center">
-                        <h4>All Weather Operation</h4>
-                        <p> Efficient performance in any weather condition</p>
+                        <h4 class="font-f-choose26">All Weather Operation</h4>
+                        <p class="get-in-font-para"> Efficient performance in any weather condition</p>
                     </div>
 
                 </div>
@@ -322,11 +317,11 @@ $seo_meta = [
             <div class="col-md-6 desktop-display">
                 <div class="d-flex">
                     <div style="text-align: right;">
-                        <h4> Robust</h4>
-                        <p > Built tough for enduring extreme conditions</p>
+                        <h4 class="font-f-choose26"> Robust</h4>
+                        <p class="get-in-font-para"> Built tough for enduring extreme conditions</p>
                     </div>
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}" class="lazyload  p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
                     </div>
 
@@ -335,12 +330,12 @@ $seo_meta = [
             <div class="col-md-6 mobile-display">
                 <div class="">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}" class="lazyload  p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS7.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
                     </div>
                     <div style="text-align: center;">
-                        <h4> Robust</h4>
-                        <p > Built tough for enduring extreme conditions</p>
+                        <h4 class="font-f-choose26"> Robust</h4>
+                        <p class="get-in-font-para"> Built tough for enduring extreme conditions</p>
                     </div>
 
                 </div>
@@ -348,13 +343,13 @@ $seo_meta = [
             <div class="col-md-6 desktop-display">
                 <div class="d-flex">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
 
                     </div>
                     <div>
-                        <h4> Easy Installation</h4>
-                        <p>Effortless setup with user-friendly installation</p>
+                        <h4 class="font-f-choose26"> Easy Installation</h4>
+                        <p class="get-in-font-para">Effortless setup with user-friendly installation</p>
                     </div>
 
                 </div>
@@ -363,13 +358,13 @@ $seo_meta = [
             <div class="col-md-6 mobile-display">
                 <div class="">
                     <div>
-                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload p-2"
+                        <img data-src="{{asset('assets/images/radar/RSS8.webp')}}" class="lazyload feature-image-radar p-2"
                              alt="24x7 Cloud Connectivity" style="max-height: 150px;"/>
 
                     </div>
                     <div class="text-center">
-                        <h4> Easy Installation</h4>
-                        <p>Effortless setup with user-friendly installation</p>
+                        <h4 class="font-f-choose26"> Easy Installation</h4>
+                        <p class="get-in-font-para">Effortless setup with user-friendly installation</p>
                     </div>
 
                 </div>
@@ -381,65 +376,67 @@ $seo_meta = [
 </section>
 <!-- iCop Series Features End -->
 <!-- SPECIFICATION Sec Accordion -->
-<section class="sepeicification pt-md-4 pt-0  pb-0 position-relative mb-4">
+<section class="sepeicification bg-light pt-md-4 pt-0  pb-0 position-relative mb-4">
     <div class="message-sign text-center text-primary">
         <!-- <h6 class="fs-6">photonplay’s</h6> -->
     </div>
     <div class="heading-sec">
-        <h2 class="fs-md-2 mt-3">Multifunctional Display</h2>
-        <center>
-            <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
-        </center>
-        <p>Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional
+        <h2 class="fs-md-2 mt-3 font-f-choose32">Multifunctional Display</h2>
+        <center>  <span class="black-line" style="width: 100px;"></span> </center>
+        <p class="get-in-font-para mt-4">Acts like a Messenger and a Speed Sign Full matrix-based Digital Speed Limit Sign with multi-functional <br/>
             display in 4 colors with high bright in-built warning FLASHING LIGHTS.</p>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-2">
-                <div class="border p-2" style="background-color: white;">
+            <div class="col-md-6 mb-2 mt-2">
+                <div class="border p-2 m-2 shadow-lg" style="background-color: white;">
                     <img data-src="{{asset('assets/images/radar/RSS display.png')}}"
-                         class="lazyload img-fluid p-2"
+                         class="lazyload p-2"
+                         style="height: 85px;"
                          alt="Option to display graphic content with custom-made and standard graphic"/>
-                    <h3> GRAPHICS</h3>
-                    <p>
+                    <h3 class="font-f-choose26"> GRAPHICS</h3>
+                    <p class="get-in-font-para">
                         Option to display graphic content with custom-made and standard graphic library like "SLOW
                         DOWN", "THANK YOU", "WORK ZONE", etc.
                     </p>
                 </div>
             </div>
 
-            <div class="col-md-6 mb-2">
-                <div class="border p-2" style="background-color: white;">
+            <div class="col-md-6 mb-2 mt-2">
+                <div class="border p-2 m-2  shadow-lg" style="background-color: white;">
                     <img data-src="{{asset('assets/images/radar/RSS Multicolor.png')}}"
-                         class="lazyload img-fluid p-2"
+                         class="lazyload p-2"
+                         style="height: 85px;"
                          alt="Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options"/>
-                    <h3> Multi-colour</h3>
-                    <p>
+                    <h3 class="font-f-choose26"> Multi-colour</h3>
+                    <p class="get-in-font-para">
                         Multi-color Electronic Speed Signs display with GREEN, RED and AMBER colour options.
                     </p>
                 </div>
             </div>
 
 
-            <div class="col-md-6 mb-2">
-                <div class="border p-2" style="background-color: white;">
+            <div class="col-md-6 mb-2 mt-2">
+                <div class="border p-2 m-2  shadow-lg" style="background-color: white;">
                     <img data-src="{{asset('assets/images/radar/RSS Text.png')}}"
-                         class="lazyload img-fluid p-2"
+                         class="lazyload p-2"
+                         style="height: 85px;"
                          alt="Option to display custom text messages like community notifications, traffic updates, etc"/>
-                    <h3>Text Messages</h3>
-                    <p>
+                    <h3 class="font-f-choose26">Text Messages</h3>
+                    <p class="get-in-font-para">
                         Option to display custom text messages like community notifications, traffic updates, etc.
                     </p>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="border p-2" style="background-color: white;">
+            <div class="col-md-6 mt-2">
+                <div class="border p-2 m-2  shadow-lg" style="background-color: white;">
                     <img data-src="{{asset('assets/images/radar/RSS Strobes.png')}}"
-                         class="lazyload img-fluid p-2"
+                         class="lazyload p-2"
+                         style="height: 85px;"
                          alt="White high bright flashing lights to alert the drivers, so one can never miss the attention"/>
-                    <h3>Flashing Lights</h3>
-                    <p>
+                    <h3 class="font-f-choose26">Flashing Lights</h3>
+                    <p class="get-in-font-para">
                         White high bright flashing lights to alert the drivers, so one can never miss the attention
                     </p>
                 </div>
@@ -452,27 +449,29 @@ $seo_meta = [
 
 </section>
 {{--content_gallery_001897.txt   :: here content availble in txt file --}}
-<section class="contact-form  mt-1 pt-1" id="faq">
-    <div class="container ">
-        <div class="row">
+
+
+@include('customer.layout2.r_gallery')
+
+<section class="contact-form bg-light  mt-1 pt-1" id="faq">
+    <div class="container">
+        <div class="row mt-4">
             <div class="col-md-12">
-                <h2 class="fs-md-2 mt-3 mb-3 text-center"> People also ask</h2>
-                <center>
-                    <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;">
-                </center>
-                <div class="mb-3 mt-3">
-                    <h3 class="mt-3">
+                <h3 class="fs-md-2 mt-3 text-center font-f-choose32" style="font-weight: bold;"> People also ask</h3>
+                <center>  <span class="black-line" style="width: 100px;"></span> </center>
+                <div class="mb-3 mt-3  pt-3">
+                     <h3 class="mt-3 font-f-choose26">
                         What does a radar speed sign mean? </h3>
-                    <p class="mt-2 mb-2">
+                    <p class="mt-2 mb-2 get-in-font-para">
                         A radar speed sign is an interactive sign, typically made of LEDs, that displays vehicle speed
                         as driver’s approach and enhance road safety.
                     </p>
                 </div>
 
-                <div class="mb-3 mt-3">
-                    <h3 class="mt-3">
+                <div class="mb-3 mt-3 pt-3">
+                    <h3 class="mt-3 font-f-choose26">
                         How effective are radar speed signs? </h3>
-                    <p class="mt-2 mb-2">
+                    <p class="mt-2 mb-2 get-in-font-para">
                         Radar speed signs are highly effective in reducing speeds, with studies showing decreases of up
                         to 9 mph. They serve as impactful tools for traffic calming in various environments, including
                         neighborhoods, school zones, and roadways, which can reduce average speeds by 10–20%.
@@ -480,20 +479,20 @@ $seo_meta = [
                 </div>
 
 
-                <div class="mb-3 mt-3">
-                    <h3 class="mt-3">
+                <div class="mb-3 mt-3  pt-3">
+                    <h3 class="mt-3 font-f-choose26">
                         Do radar speed signs collect data? </h3>
-                    <p class="mt-2 mb-2">
+                    <p class="mt-2 mb-2 get-in-font-para">
                         Yes, radar speed signs analyze and record traffic data, offering insights for informed
                         decision-making and improved road management. However, they may not capture factors like road
                         design or traffic volume contributing to speeding.
                     </p>
                 </div>
 
-                <div class="mb-3 mt-3">
-                    <h3 class="mt-3">
+                <div class="mb-3 mt-3  pt-3">
+                    <h3 class="mt-3 font-f-choose26">
                         What is the electronic speed limit sign?</h3>
-                    <p class="mt-2 mb-2">
+                    <p class="mt-2 mb-2 get-in-font-para">
                         An electronic speed limit sign is a dynamic road sign that digitally displays current speed
                         limits, providing real-time information to drivers and enhancing overall traffic safety.
                     </p>
@@ -506,7 +505,7 @@ $seo_meta = [
     </div>
 </section>
 
-@include('customer.layout2.get_in_touch')
+@include('customer.layout2.get_in_touch_r')
 
 
 <!-- _____________________ourclint-last-start___________________ -->
@@ -602,10 +601,20 @@ $seo_meta = [
         dots: true,
         infinite: true,
         speed: 300,
-        slidesToShow: 1,
-        autoplay: true,
-        adaptiveHeight: true
+        slidesToShow: 3,
+        // autoplay: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 768, // Adjust as per your mobile breakpoint
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
+
 
 </script>
 </body>

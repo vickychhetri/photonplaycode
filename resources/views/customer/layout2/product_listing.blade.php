@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div>
                     <div class="pb-2 text-center">
-                        <h4 class="fs-md-2 mt-3" style="font-size: 40px;">Explore Our Radar Speed Signs Products</h4>
+                        <h4 class="fs-md-2 mt-3 font-f-choose32" style="font-weight: bold;s">Explore Our Radar Speed Signs Products</h4>
                         <center> <hr style="width: 50px; height: 5px; background-color: black !important; color: black !important;"></center>
                         <p class="opacity-50">Radar Speed Signs enhance road safety, displaying real-time speeds to foster responsible driving and
                             create safer communities for all.</p>

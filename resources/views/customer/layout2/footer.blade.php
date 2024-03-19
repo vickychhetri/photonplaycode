@@ -140,7 +140,7 @@ $blogs = Blog::select('slug','title')->take(4)->get();
                 </ul>
             </div> -->
             <div class="footer-item mb-0 mb-md-5 footer-item-2">
-                <h5 class="" style="font-size: 20px;">Important Links</h5>
+                <h5 class="w-75 pl-3" style="font-size: 20px;padding-left: 15px;">Important Links</h5>
                 <ul class="p-0">
                     <li><a href="{{route('customer.show_page_policy_shipping')}}">Shipping Policy</a></li>
                     <li><a href="{{route('customer.show_page_policy_return_policy')}}">Return/Refund Policy</a></li>

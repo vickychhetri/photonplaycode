@@ -2674,7 +2674,10 @@ input:focus {
     max-height: 650px;
     min-height: 650px;
 }
-
+.slide-images-key2 {
+    max-height: 400px;
+    min-height: 400px;
+}
 .bus-radious img {
     width: 100%;
     height: 100%;
@@ -3432,4 +3435,53 @@ table {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
+}
+.get-in-touch-form2 {
+    background-color: #F5F3FD;
+}
+.get-in-font-para{
+    color: #7A7A7A;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+}
+
+.font-f-choose {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+}
+
+.font-f-choose32 {
+    font-family: Roboto, sans-serif;
+    font-size: 32px;
+}
+
+.font-f-choose30 {
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+}
+
+.font-f-choose26 {
+    font-family: Roboto, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+}
+.font-f-choose-robo {
+    font-family: Roboto, sans-serif;
+}
+
+.elementor-button-radar {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #1D76C6 0%, #2674BB 100%);
+    border-style: none;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.feature-image-radar {
+    height: 120px;
+}
+.black-line {
+    display: block;
+    height: 4px;
+    background-color: black;
 }
