@@ -759,6 +759,41 @@ $seo_meta = [
 
 
 
+
+<script src="/dashjs/dash.all.min.js"></script>
+{{--<script src="https://reference.dashif.org/dash.js/latest/contrib/akamai/controlbar/ControlBar.js"> </script>--}}
+{{--<script src="https://reference.dashif.org/dash.js/latest/dist/dash.all.debug.js"> </script>--}}
+
+
+<script>
+    $(document).ready(function() {
+        init();
+    });
+    var player;
+    function init() {
+        // var timerS='#'+timer;
+        var url = '{{asset('assets/videos/data/output.mpd')}}';
+        // var videoElement = document.querySelector('.videoContainer video');
+        var videoElement = document.getElementById('videoHeaderPlay');
+        player = dashjs.MediaPlayer().create();
+
+        player.initialize(videoElement, url, true);
+        player.updateSettings({
+            'debug': {
+                'logLevel': dashjs.Debug.LOG_LEVEL_NONE /* turns off console logging */
+            },
+            'streaming': {
+                'scheduling': {
+                    'scheduleWhilePaused': true,
+                    /* stops the player from loading segments while paused */
+                },
+                'buffer': {
+                    'fastSwitchEnabled': true /* enables buffer replacement when switching bitrates for faster switching */
+                }
+            }
+        });
+    }
+</script>
 </div>
 </body>
 </html>
