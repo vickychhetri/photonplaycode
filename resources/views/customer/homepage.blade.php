@@ -757,10 +757,8 @@ $seo_meta = [
     }
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.4/dash.all.min.js" integrity="sha512-LyDgm9kfqyKlZOe+QjpNA6L/ZpcjNj+cKSJ/bQLTGkKXaxYNpYGN9Fe6DpI0H0w3Da2WcXVX8ACjL14y3iWGBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
-
-<script src="/dashjs/dash.all.min.js"></script>
 {{--<script src="https://reference.dashif.org/dash.js/latest/contrib/akamai/controlbar/ControlBar.js"> </script>--}}
 {{--<script src="https://reference.dashif.org/dash.js/latest/dist/dash.all.debug.js"> </script>--}}
 

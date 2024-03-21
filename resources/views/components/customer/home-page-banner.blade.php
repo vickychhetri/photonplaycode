@@ -46,7 +46,7 @@
             <div class="clider-content-wrapper w-100 position-relative " style="margin-top: -100px;">
 
                 <div class="d-flex justify-content-center overlay-video-img"  >
-                    <video   id="videoHeaderPlay"  preload="metadata" poster="{{asset('assets/videos/video_back.webp')}}"    data-dashjs-player autoplay loop muted playsinline>
+                    <video   id="videoHeaderPlay"  preload="metadata"   data-dashjs-player autoplay loop muted playsinline>
                     </video>
                 </div>
 
