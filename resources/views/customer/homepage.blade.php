@@ -632,9 +632,9 @@ $seo_meta = [
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
 
-<script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>
-<script src="/assets/customer/js/jquery.js" ></script>
-<script src="/assets/customer/slick/slick.min.js"  ></script>
+{{--<script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>--}}
+{{--<script src="/assets/customer/js/jquery.js" ></script>--}}
+{{--<script src="/assets/customer/slick/slick.min.js"  ></script>--}}
 <script>
     $(document).ready(function () {
         $('.clint-wrapperr').slick({
@@ -732,8 +732,6 @@ $seo_meta = [
         }
     })
 </script>
-
-
 <script>
     function shareOnSocialMedia(url, mode) {
         // Define the social media share URL based on the platform
@@ -756,14 +754,7 @@ $seo_meta = [
 
     }
 </script>
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.4/dash.all.min.js" integrity="sha512-LyDgm9kfqyKlZOe+QjpNA6L/ZpcjNj+cKSJ/bQLTGkKXaxYNpYGN9Fe6DpI0H0w3Da2WcXVX8ACjL14y3iWGBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-{{--<script src="https://reference.dashif.org/dash.js/latest/contrib/akamai/controlbar/ControlBar.js"> </script>--}}
-{{--<script src="https://reference.dashif.org/dash.js/latest/dist/dash.all.debug.js"> </script>--}}
-
-
 <script>
     $(document).ready(function() {
         init();
