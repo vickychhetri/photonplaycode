@@ -12,12 +12,10 @@ $seo_meta = [
 ];
 ?>
 @include('customer.layout2.header')
-<!-- banner-text-start -->
 {{--    Banner Start --}}
 <x-Customer.HomePageBanner/>
 {{--Banner end--}}
 <!-- undefeated-section-start -->
-
 <section class="undefeated-wrapper pt-lg-0 shadow-lg">
     <div class="container  ">
         <div class="row justify-content-center align-items-center ">
@@ -69,10 +67,7 @@ $seo_meta = [
         </div>
     </div>
 </section>
-
 <!-- slider-start -->
-
-
 <section class="products bg-white pt-0">
     <div class="container overflow-hidden pb-4 pt-0">
         <div class="col-lg-12">
@@ -92,11 +87,9 @@ $seo_meta = [
                         solutions. We are always looking for ways to improve road safety.
                     </p>
                 </div>
-
                 <h2 class="fs-md-2 mt-3 text-uppercase">Products</h2>
                 <h6 class="fs-6 text-colorr">Empowering Smarter Mobility with Innovative Product Solutions that Exceed
                     Expectations</h6>
-
             </div>
         </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-interval="3000" data-bs-ride="carousel">
@@ -127,8 +120,6 @@ $seo_meta = [
                         aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11"
                         aria-label="Slide 2"></button>
-
-
             </div>
             <div class="carousel-inner">
                 {{--VMS--}}
@@ -243,7 +234,6 @@ $seo_meta = [
                     </div>
                 </div>
                 {{--VSLS End--}}
-
                 {{--LCS Start--}}
                 <div class="carousel-item">
                     <div class="products-two d-lg-flex justify-content-between">
@@ -766,7 +756,6 @@ $seo_meta = [
         // var videoElement = document.querySelector('.videoContainer video');
         var videoElement = document.getElementById('videoHeaderPlay');
         player = dashjs.MediaPlayer().create();
-
         player.initialize(videoElement, url, true);
         player.updateSettings({
             'debug': {

@@ -23,11 +23,9 @@
     <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
     {{--        End    Start meta--}}
 
-
     <script src ="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    {{--    <link href="/assets/customer/css/bootstrap.min.css" rel="stylesheet">--}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -38,7 +36,7 @@
     <link rel="stylesheet" href="/assets/customer/css/style.css">
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">--}}
     <style>
         .product-pvms-icop:hover {
             transform: scale(2);
@@ -47,12 +45,12 @@
     </style>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" ></script>
+{{--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>--}}
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" ></script>--}}
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" >
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" ></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>--}}
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -64,20 +62,6 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NJZBCGR');</script>
     <!-- End Google Tag Manager -->
-    <style>
-        #startvideochat{
-            position: fixed;
-            bottom: 120px;
-            /*border: 10px solid rgba(28,117,199,1);*/
-            right: 50px;
-            z-index: 999;
-            /*border-radius: 50px 50px 0px 50px;*/
-            height: 50px;
-            /*padding-inline: 35px;*/
-            /*min-width: 150px;*/
-        }
-    </style>
-
     @if (!empty($schema))
         <script type="application/ld+json">
         {
@@ -123,13 +107,6 @@
 
 </head>
 <body>
-
-{{--data-bs-toggle="modal" data-bs-target="#staticBackdrop"--}}
-{{--<span id="startvideochat"  >--}}
-{{--    <img src="{{asset('assets/images/video_icon_chat.webp')}}" style="height: 60px;">--}}
-{{--</span>--}}
-
-
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJZBCGR" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
