@@ -7,7 +7,6 @@ use Illuminate\View\Component;
 
 class HomePageBanner extends Component
 {
-    public $banners;
     /**
      * Create a new component instance.
      *
@@ -15,7 +14,7 @@ class HomePageBanner extends Component
      */
     public function __construct()
     {
-        $this->banners=Banner::where('type',1)->orderBy('order')->take(3)->get();
+//        $this->banners=Banner::where('type',1)->orderBy('order')->take(3)->get();
     }
 
     /**

@@ -1,7 +1,5 @@
 <?php
-
 use App\Models\ManageSeo;
-
 $data_record = ManageSeo::where('page_name', ManageSeo::HOME)->first();
 $seo_meta = [
     "title" => $data_record->title ?? '',
@@ -12,9 +10,7 @@ $seo_meta = [
 ];
 ?>
 @include('customer.layout2.header')
-{{--    Banner Start --}}
 <x-Customer.HomePageBanner/>
-{{--Banner end--}}
 <!-- undefeated-section-start -->
 <section class="undefeated-wrapper pt-lg-0 shadow-lg">
     <div class="container  ">
@@ -610,15 +606,8 @@ $seo_meta = [
 </section>
 <!-- Key-projects-start -->
 <x-Customer.KeyProject/>
-<!--___________________ key-project-end_________________ -->
-<!-- _____________________Our clint Says start______________________ -->
 @include('customer.layout2.client_testimonials')
-
-<!-- _____________________Our clint Says End______________________ -->
-<!-- _____________________latest News start______________________ -->
 @include('customer.layout2.latest_blog')
-<!-- _____________________latest News end______________________ -->
-<!-- _____________________ourclint-last-start___________________ -->
 @include('customer.layout2.our_clients')
 @include('customer.layout2.footer')
 
