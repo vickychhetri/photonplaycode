@@ -1,6 +1,17 @@
 @php
     use App\Models\ClientTestimonial;
-    $client_says=ClientTestimonial::latest()->take(10)->get();
+    use Illuminate\Support\Facades\Cache;
+     function getClientTestimonials() {
+    $key = 'client_testimonials';
+    if (Cache::has($key)) {
+        $client_says = Cache::get($key);
+    } else {
+        $client_says = ClientTestimonial::latest()->take(10)->get();
+        Cache::put($key, $client_says, now()->addMinutes(60*24*365));
+    }
+    return $client_says;
+}
+$client_says = getClientTestimonials();
 @endphp
 
 
@@ -19,7 +30,7 @@
 
                     @foreach($client_says->reverse() as $says)
                         <div class="col-lg-4 ">
-                            <div class="  members-profile mx-3  h-100" >
+                            <div class="  members-profile mx-3  h-100">
                                 <div class="p-4 position-re lative  inner-max-width">
                                     <div class="qutess position-absolute top-0 translate-middle">
                                         {{--   Icon ""--}}
@@ -38,7 +49,7 @@
                                                         <i class="bi bi-star text-primary"></i>
                                                     @endif
                                                 @endfor
-{{--                                                <img src="/assets/customer/images/fivestar.png" alt="Not Found">--}}
+                                                {{--                                                <img src="/assets/customer/images/fivestar.png" alt="Not Found">--}}
                                             </div>
                                             <p class="text-capitalize mb-0 fs-6 full-names">{{$says->name}}</p>
                                             <p class="mb-0">{{$says->position}}</p>

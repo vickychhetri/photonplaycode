@@ -33,7 +33,7 @@ $seo_meta = [
                                     </div>
                                 <div>
                                     <h1 class="text-white"> RADAR SPEED SIGNS</h1>
-                                    <p class="mb-3 h4 font-weight-bold text-white "><span> No. 1 in Traffic Calming Solution </span></p>
+                                    <p class="mb-3 h4 font-weight-bold text-white " style="font-family: Roboto, sans-serif"><span> No. 1 in Traffic Calming Solution </span></p>
 
                                     <a href="#our_products_check" type="button"
                                        class="py-2 rounded border-0 px-4 pt-2 pb-2 text-white outline-1 btn-light text-decoration-none border-1 elementor-button-radar">Explore Products</a>
