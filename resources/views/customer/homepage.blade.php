@@ -1,13 +1,17 @@
 <?php
+use Illuminate\Support\Facades\Cache;
 use App\Models\ManageSeo;
-$data_record = ManageSeo::where('page_name', ManageSeo::HOME)->first();
-$seo_meta = [
-    "title" => $data_record->title ?? '',
-    "description" => $data_record->description ?? '',
-    "keywords" => $data_record->keyword ?? '',
-    "schema" => $data_record->schema ?? '',
-     "feature_image"=>"assets/customer/images/products_home/Smart-City-VMS-Front.webp"
-];
+$seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
+    $data_record = ManageSeo::where('page_name', ManageSeo::HOME)->first();
+    $seo_meta = [
+        "title" => $data_record->title ?? '',
+        "description" => $data_record->description ?? '',
+        "keywords" => $data_record->keyword ?? '',
+        "schema" => $data_record->schema ?? '',
+        "feature_image" => "assets/customer/images/products_home/Smart-City-VMS-Front.webp"
+    ];
+    return $seo_meta;
+});
 ?>
 @include('customer.layout2.header')
 <x-Customer.HomePageBanner/>
