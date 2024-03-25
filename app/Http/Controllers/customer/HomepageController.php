@@ -3,13 +3,7 @@
 namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\customer\SignController;
-use App\Models\Blog;
-use App\Models\BlogCategory;
 use App\Models\Product;
-use App\Models\TeamMember;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 
