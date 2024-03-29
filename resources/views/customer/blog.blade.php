@@ -51,12 +51,7 @@ $schema = [
 <!-- Banner sec -->
 <style>
     .image-full-size img {
-        width: 100%;
-    }
-
-    img {
         max-width: 100% !important;
-        max-height: 100% !important;
     }
 </style>
 <section class="inner-banner-bg">
