@@ -56,6 +56,7 @@ $schema = [
 
     img {
         max-width: 100% !important;
+        height: auto;
     }
 
 </style>
