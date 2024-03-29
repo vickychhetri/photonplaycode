@@ -13,9 +13,6 @@ $seo_meta = [
 
 #wordpress
 $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
-//$schema = $s_blog['rank_math_schema_BlogPosting'] ?? [];
-
-
 if (isset($imagee) && isset($imagee['media_details']) && isset($imagee['media_details']['sizes']) && isset($imagee['media_details']['sizes']['full'])) {
     $imgurl = $imagee['media_details']['sizes']['full']['source_url'];
 } else {
@@ -55,6 +52,10 @@ $schema = [
 <style>
     .image-full-size img {
         width: 100%;
+    }
+
+    img {
+        max-width: 100%;
     }
 </style>
 <section class="inner-banner-bg">
