@@ -51,12 +51,12 @@ $schema = [
 <!-- Banner sec -->
 <style>
     .image-full-size img {
-        max-width: 100% !important;
+        height: auto;
     }
 
     img {
         max-width: 100% !important;
-        height: auto;
+
     }
 
 </style>
