@@ -53,21 +53,21 @@
                         $url_open=\Illuminate\Support\Facades\URL::full();
                     @endphp
                     @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
-                        <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" height="15px;"/>+1 (800)
+                        <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" style="height: 15px;"/>+1 (800)
                             966-9329 (US)</a>
                     @else
                         @if ($setting)
                             <a href="tel:{{$setting->sales_phone}}"><img
-                                    src="{{asset('assets\customer\images\phone.svg')}}" height="15px;"/> {{$setting->sales_phone}}</a>
+                                    src="{{asset('assets\customer\images\phone.svg')}}" style="height: 15px;"/> {{$setting->sales_phone}}</a>
                             @if ($setting->support_phone !=null)
                                 <a href="tel:{{$setting->support_phone}}"><img
-                                        src="{{asset('assets\customer\images\phone.svg')}}" height="15px;"/> {{$setting->support_phone}}
+                                        src="{{asset('assets\customer\images\phone.svg')}}" style="height: 15px;"/> {{$setting->support_phone}}
                                 </a>
                             @endif
                         @endif
                     @endif
                     <a href="mailto:{{$setting->sales_email}}"><img
-                            src="{{asset('assets\customer\images\message.png')}}"/> {{$setting->sales_email}}</a>
+                            src="{{asset('assets\customer\images\message.png')}}" style="height: 15px;"/> {{$setting->sales_email}}</a>
                 </div>
                 {{--                    <a href="{{route('customer.contact.us')}}" class="btn btn-primary mt-3">Contact Now</a>--}}
                 <ul class="social-media w-100">
