@@ -53,6 +53,11 @@ $schema = [
     .image-full-size img {
         max-width: 100% !important;
     }
+
+    img {
+        max-width: 100% !important;
+    }
+
 </style>
 <section class="inner-banner-bg">
     <h5 class="text-white text-center mb-0 h1">NEWS & EVENTS</h5>
