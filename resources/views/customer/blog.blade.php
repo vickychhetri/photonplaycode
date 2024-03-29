@@ -56,6 +56,7 @@ $schema = [
 
     img {
         max-width: 100% !important;
+        max-height: 100% !important;
     }
 </style>
 <section class="inner-banner-bg">
