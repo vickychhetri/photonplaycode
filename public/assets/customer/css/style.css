@@ -542,13 +542,22 @@ a.nav-link.dropdown-toggle.show img,
 }
 
 .banner-image-new-radar-parent {
-    background-image: url("https://www.photonplay.com/assets/images/radar-speed-signs-main-page-img.webp");
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
     background-size: cover;
 }
+.banner-image-new-radar-parent-mobile {
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+}
+
 .banner-image-info-company-radar {
     background-image: url("https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/pexels-nicolas-postiglioni-1537979.jpg");
     background-repeat: no-repeat;
