@@ -40,7 +40,7 @@ $seo_meta = [
 
 <section class="banner-inner pt-0 pb-0">
     <!-- For mobile -->
-    <div id="carouselExampleDarkMobile" class="carousel slide banner-image-new-radar-parent-mobile" data-bs-ride="carousel" style="min-height: 650px;display:none; background-image: url('{{ asset('assets/home_image/radar-speed-signs-mobile-img.jpg') }}');">
+    <div id="carouselExampleDarkMobile" class="carousel slide banner-image-new-radar-parent-mobile" data-bs-ride="carousel" style="min-height: 500px;display:none; background-image: url('{{ asset('assets/home_image/radar-speed-signs-mobile-img.jpg') }}');">
         <div class="carousel-indicators">
         </div>
         <div class="carousel-inner">
@@ -51,7 +51,7 @@ $seo_meta = [
                         <div class="position-relative heading-banner  ">
                             <div class="d-flex ml-0">
                                 <div class="px-2 mx-2">
-                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/icop-photonplay-logo.png" class="img-fluid" style="height: 100px;" />
+                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/icop-photonplay-logo.png" class="img-fluid" style="height: 100px;width: 100px;" />
                                 </div>
                                 <div>
                                     <h1 class="text-white"> RADAR SPEED SIGNS</h1>
@@ -169,7 +169,10 @@ $seo_meta = [
                 <div>
                     <h3 class="font-weight-bold"> Welcome to Photonplay </h3>
                     <hr style="width: 100px;background-color: black;height: 5px;border: black;" class="border" />
-                    <p style="text-align: justify;font-family: Roboto,sans-serif;font-size: 20px;">
+                    <p class="banner-image-new-radar-parent" style="text-align: justify;font-family: Roboto,sans-serif;font-size: 20px;">
+                        Photonplay, a family-owned company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 12 years, we’ve catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
+                    </p>
+                    <p class=".banner-image-new-radar-parent-mobile" style="text-align: justify;font-family: Roboto,sans-serif;font-size: 15px;">
                         Photonplay, a family-owned company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 12 years, we’ve catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
                     </p>
 
