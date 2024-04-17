@@ -16,7 +16,7 @@
             <div class="col-md-2 text-center">
             </div>
             <div class="col-md-4 text-center">
-            <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/radar-speed-sign-12.webp"  class="img-fluid mb-4"/>
+            <img src="{{asset('assets/home_image/radar-speed-sign-12.webp')}}"  class="img-fluid mb-4"/>
             </div>
             <div class="col-md-6">
                 <h3>Radar Speed Sign - R1200</h3>
@@ -36,7 +36,7 @@
         </div>
         <div class="row mt-4 mb-4">
             <div class="col-sm-12 text-center mobile-display">
-                <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/radar-speed-sign-15.webp"  class="img-fluid"/>
+                <img src="{{asset('assets/home_image/radar-speed-sign-15.webp')}}"  class="img-fluid"/>
             </div>
             <div class="col-md-6">
                 <h3>Radar Speed Sign - R1500</h3>
@@ -54,7 +54,7 @@
                 <a href="https://www.photonplay.com/radar-speed-signs/model/r1500" class="btn btn-primary  m-4"> Shop Now</a>
             </div>
             <div class="col-md-6 col-lg-6 text-center desktop-display">
-                <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/radar-speed-sign-15.webp"  class="img-fluid mb-4"/>
+                <img src="{{asset('assets/home_image/radar-speed-sign-15.webp')}}"  class="img-fluid mb-4"/>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
             <div class="col-md-2 text-center">
             </div>
             <div class="col-md-4 text-center">
-                <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/radar-speed-sign-15-metrix.webp"  class="img-fluid mb-4"/>
+                <img src="{{asset('assets/home_image/radar-speed-signs-18-metrix.webp')}}"  class="img-fluid mb-4"/>
             </div>
             <div class="col-md-6">
                 <h3>Radar Speed Sign - R1500M</h3>
@@ -83,7 +83,7 @@
 
         <div class="row mt-4 mb-4">
             <div class="col-sm-12 col-xs-12 text-center mobile-display">
-                <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/radar-speed-sign-15.webp"  class="img-fluid mb-4"/>
+                <img src="{{asset('assets/home_image/radar-speed-signs-15.webp')}}"  class="img-fluid mb-4"/>
             </div>
             <div class="col-md-6">
                 <h3>Radar Speed Sign - R1800M</h3>
@@ -101,7 +101,7 @@
                 <a href="https://www.photonplay.com/radar-speed-signs/model/r1800m" class="btn btn-primary  m-4"> Shop Now</a>
             </div>
             <div class="col-md-6 col-lg-6 text-center desktop-display">
-                <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/radar-speed-sign-15.webp"  class="img-fluid mb-4"/>
+                <img src="{{asset('assets/home_image/radar-speed-sign-15.webp')}}"  class="img-fluid mb-4"/>
             </div>
         </div>
 
