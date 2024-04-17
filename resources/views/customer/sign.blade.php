@@ -51,7 +51,7 @@ $seo_meta = [
                         <div class="position-relative heading-banner  ">
                             <div class="d-flex ml-0">
                                 <div class="px-2 mx-2">
-                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/icop-photonplay-logo.png" class="img-fluid" style="height: 100px;width: 100px;" />
+                                    <img src="{{asset('assets/home_image/icop-photonplay-logo.png')}}" class="img-fluid" style="height: 100px;width: 100px;" />
                                 </div>
                                 <div>
                                     <h1 class="text-white"> RADAR SPEED SIGNS</h1>
@@ -90,7 +90,7 @@ $seo_meta = [
                         <div class="position-relative heading-banner  ">
                             <div class="d-flex ml-0">
                                 <div class="px-2 mx-2">
-                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/icop-photonplay-logo.png" class="img-fluid" style="height: 100px;" />
+                                    <img src="{{asset('assets/home_image/icop-photonplay-logo.png')}}" class="img-fluid" style="height: 100px;" />
                                 </div>
                                 <div>
                                     <h1 class="text-white"> RADAR SPEED SIGNS</h1>
@@ -163,8 +163,9 @@ $seo_meta = [
     <div class="container-fluid banner-image-info-company-radar">
         <div class="row mt-4 mb-4 pb-4  pt-4" style="background-color: rgba(255,255,255,.4); height: 400px;">
             <div class="col-md-6 d-flex align-items-center justify-content-center">
-                <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/cropped-Photonplay-logo.webp" class="img-fluid" style="max-height: 100px;" />
+                <img src="{{asset('assets/home_image/cropped-Photonplay-logo.webp')}}" class="img-fluid" style="max-height: 100px;" />
             </div>
+            <!-- https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2023/12/cropped-Photonplay-logo.webp -->
             <div class="col-md-5 d-flex justify-content-center align-items-center   ">
                 <div>
                     <h3 class="font-weight-bold"> Welcome to Photonplay </h3>
