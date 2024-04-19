@@ -173,7 +173,7 @@ $seo_meta = [
                     <p class="banner-image-new-radar-parent" style="text-align: justify;font-family: Roboto,sans-serif;font-size: 20px;">
                         Photonplay, a family-owned company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 12 years, we’ve catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
                     </p>
-                    <p class=".banner-image-new-radar-parent-mobile" style="text-align: justify;font-family: Roboto,sans-serif;font-size: 15px;">
+                    <p class="banner-image-new-radar-parent-mobile" style="text-align: justify;font-family: Roboto,sans-serif;font-size: 15px; display:none;">
                         Photonplay, a family-owned company, delivers high-quality intelligent transportation systems (ITS) worldwide. For over 12 years, we’ve catered to system integrators, government authorities, OEMs, and corporations across 30+ countries, focusing on safer, more efficient, and sustainable mobility solutions. Our expertise, innovation, and commitment to smarter transportation make us a trusted partner.
                     </p>
 

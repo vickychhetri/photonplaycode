@@ -266,11 +266,7 @@ if (isset($seo_record)) {
                                                 <img src="{{asset('/assets/images/radar/color/Amber-Color.png')}}" style="height:40px;" id="imgicon_color_st" alt="color" />
                                             </div>
 
-                                            <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none;
-    border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;width: 120px;">
+                                            <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none;border-radius: 0;-webkit-appearance: none;-moz-appearance: none;appearance: none;width: 120px;">
                                                 <option value="Amber-Color.png"> Amber</option>
                                                 <option value="White-Color.png"> White</option>
                                                 <option value="Green-Color.png"> Green</option>
@@ -286,7 +282,7 @@ if (isset($seo_record)) {
                                             const selectElement = document.getElementById('select-color');
                                             const iconElement = document.querySelector('#imgicon_color_st');
                                             const colorHolderElement = document.querySelector('#colorchoose');
-                                            const baseurl = '{{asset(' / assets / images / radar / color / ')}}';
+                                            const baseurl = '{{asset('/assets/images/radar/color/')}}';
 
                                             selectElement.addEventListener('change', function() {
                                                 const selectedOption = this.options[this.selectedIndex];
@@ -437,7 +433,7 @@ if (isset($seo_record)) {
                 <div>
                     <div class="p-2">
                         <div class="product_highlight inner-product bg-white">
-                            <div class=" w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
+                            <div class="w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
                                     background-size: contain;">
                                 {{-- <img class=""  src="" alt="">--}}
                             </div>
