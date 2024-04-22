@@ -57,11 +57,7 @@ if (isset($seo_record)) {
                 "@type": "OfferShippingDetails",
                 "shippingRate": {
                     "@type": "MonetaryAmount",
-                    "value": {
-                        {
-                            $product - > price
-                        }
-                    },
+                    "value": {{$product->price}},
                     "currency": "USD"
                 },
                 "shippingDestination": [{
