@@ -112,6 +112,12 @@
 
                         </li>
 
+                        <li class="sidebar-list">
+                            <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/brochure','brochure') ? 'active':''}}" href="{{route('admin.brochure.index') }}">
+                                <i data-feather="settings"></i>
+                                <span>Brochure Downloads</span>
+                            </a>
+                        </li>
 
                         <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/settings','settings') ? 'active':''}}" href="{{route('admin.setting-home-page') }}">

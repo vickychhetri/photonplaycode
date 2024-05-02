@@ -132,6 +132,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('manage-pages', [PagesController::class, 'index'])->name('manage.solution.pages');
         Route::get('sub-page/{id}', [PagesController::class, 'subPage'])->name('manage.solution.sub.page');
 
+        Route::get('brochures', [SettingsController::class, 'brochureIndex'])->name('brochure.index');
+
 
         Route::get('create-sub-page/{id}', [PagesController::class, 'createSubPage'])->name('manage.solution.create.sub.page');
         Route::get('delete-sub-page/{id}', [PagesController::class, 'deleteSubPage'])->name('manage.solution.delete.sub.page');
@@ -370,3 +372,4 @@ Route::get('php', function() {
     return phpinfo();
 });
 Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'open_media_form_ajax'])->name("product_media_page_ajax");
+Route::post('download-brochure', [SignController::class, 'downloadBrochure'])->name('download.brochure');

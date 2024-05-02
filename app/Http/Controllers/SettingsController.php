@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BrochureDownload;
 use App\Models\Contact;
 use App\Models\Setting;
 use Illuminate\Database\QueryException;
@@ -40,6 +41,11 @@ class SettingsController extends Controller
         }
 
         return redirect()->route('admin.setting-home-page');
+    }
+
+    public function brochureIndex(){
+        $records = BrochureDownload::orderBy('id','desc')->get();
+        return view('brochure.index', compact('records'));
     }
 
 }

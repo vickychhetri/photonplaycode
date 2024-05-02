@@ -190,7 +190,8 @@ if (isset($seo_record)) {
                         <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
                             @if($product->brochure)
                             <div>
-                                <a href="{{asset('storage/'.$product->brochure)}}" class="d-flex align-items-center text-decoration-none text-dark" style="height: 40px;padding:8px; width: 200px;" target="_blank">
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;" class="d-flex align-items-center text-decoration-none text-dark" style="height: 40px;padding:8px; width: 200px;">
+
                                     <img src="/assets/images/radar/pdf_icon.png" style="height:40px;" alt="PDF">
                                     &nbsp
                                     <span class="font-weight-bold"><u> {{$product->title}} PDF </u> </span>
@@ -459,6 +460,31 @@ if (isset($seo_record)) {
 
 
 @include('customer.layout2.footer')
+<!-- Modal -->
+<form action="{{ route('download.brochure') }}" method="post">
+    @csrf
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: white;">
+        <h5 class="modal-title" id="exampleModalLabel">Download Brouchure</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color: white;">
+        <input class="form-control mt-2"  type="hidden" id="pdfViewer" name="pdf" value="{{$product->brochure}}">
+        <input class="form-control mt-2"  type="text" placeholder="Name" name="name_b" required>
+        <input class="form-control mt-2"  type="text" placeholder="Email" name="email_b" required>
+        <input class="form-control mt-2"  type="number" placeholder="Phone Number" name="phone_number_b" required>
+      </div>
+      <div class="modal-footer" style="background-color: white;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Download</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
