@@ -42,7 +42,7 @@ class SignController extends Controller
             $cartCount = Cart::where('session_id', $sessionId)->count();
         }
 
-        return view('customer.radar_sign', compact('product', 'productLists', 'postalCode', 'cartCount'));
+        return view('customer.radar_sign', compact('product', 'productLists', 'postalCode', 'cartCount','id'));
     }
 
     public function specificationAjax(Request $request)
