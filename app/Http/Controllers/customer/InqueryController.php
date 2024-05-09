@@ -29,7 +29,7 @@ class InqueryController extends Controller
 
         $inquiry = new SendInquiryEmail($data_in);
 //        sales@photonplay.com
-        $recipients = ['info@photonplay.com', 'Pervez.ali@photonplay.com', 'larry@photonplay.com','bksingh@photonplay.com','Afzaal.habibi@photonplay.com'];
+        $recipients = ['info@photonplay.com', 'Pervez.ali@photonplay.com', 'larry@photonplay.com','bksingh@photonplay.com','Afzaal.habibi@photonplay.com','anjali.giri.psi@gmail.com'];
         Mail::to($recipients)->send($inquiry);
 //        Mail::to('Pervez.ali@photonplay.com')->send($inquiry);
 //        Mail::to('larry@photonplay.com')->send($inquiry);
