@@ -461,34 +461,63 @@ if (isset($seo_record)) {
 
 @include('customer.layout2.footer')
 <!-- Modal -->
-<form action="{{ route('download.brochure') }}" method="post">
+<form id="downloadForm">
     @csrf
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" >
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: white;">
-        <h5 class="modal-title" id="exampleModalLabel">Download Brouchure</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" style="background-color: white;">
-        <input class="form-control mt-2"  type="hidden" id="pdfViewer" name="pdf" value="{{$product->brochure}}">
-        <input class="form-control mt-2"  type="text" placeholder="Name" name="name_b" required>
-        <input class="form-control mt-2"  type="text" placeholder="Email" name="email_b" required>
-        <input class="form-control mt-2"  type="number" placeholder="Phone Number" name="phone_number_b" required>
-      </div>
-      <div class="modal-footer" style="background-color: white;">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success">Download</button>
-      </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-3 shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Download Brochure</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <input type="hidden" value="{{ $id }}" name="model_id">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="name_b" class="form-label">Your Name</label>
+                        <input class="form-control" type="text" id="name_b" name="name_b" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email_b" class="form-label">Your Email</label>
+                        <input class="form-control" type="email" id="email_b" name="email_b" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone_number_b" class="form-label">Your Phone Number</label>
+                        <input class="form-control" type="number" id="phone_number_b" name="phone_number_b" required>
+                    </div>
+                    <input type="hidden" name="pdf" value="{{$product->brochure}}">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">Download</button>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </form>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script>
+    $(document).ready(function() {
+        $('#downloadForm').submit(function(e) {
+            e.preventDefault(); 
+            $.ajax({
+                type: 'POST',
+                url: '{{ route("download.brochure") }}',
+                data: $(this).serialize(),
+                success: function(response) {
+                    $('#downloadForm')[0].reset();
+
+                    $('#exampleModal').modal('hide');
+                },
+                error: function(xhr, status, error) {
+                    alert('Error downloading brochure');
+                }
+            });
+        });
+    });
     $('.responsive-two').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
