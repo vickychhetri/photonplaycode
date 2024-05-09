@@ -487,7 +487,7 @@ if (isset($seo_record)) {
                     <input type="hidden" name="pdf" value="{{$product->brochure}}">
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-sm">Download</button>
+                    <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Download</button>
 
                 </div>
             </div>
@@ -508,9 +508,22 @@ if (isset($seo_record)) {
                 url: '{{ route("download.brochure") }}',
                 data: $(this).serialize(),
                 success: function(response) {
-                    $('#downloadForm')[0].reset();
+                    if (response.status && response.download_url) {
+                    var link = document.createElement('a');
+                    link.href = response.download_url;
+                    link.target = '_blank';
+                    link.download = 'brochure.pdf'; 
 
+                    document.body.appendChild(link);
+                    link.click();
+
+                    document.body.removeChild(link);
+
+                    $('#downloadForm')[0].reset();
                     $('#exampleModal').modal('hide');
+                } else {
+                    alert('Error downloading brochure: File not found');
+                }
                 },
                 error: function(xhr, status, error) {
                     alert('Error downloading brochure');

@@ -76,10 +76,17 @@ class SignController extends Controller
             $headers = [
                 'Content-Type' => $mimeType,
             ];
-    
-            return Storage::disk('public')->download($filePath, null, $headers);
+            $url = Storage::disk('public')->url($filePath);
+
+            return response()->json([
+                'download_url' => $url,
+                'status' => true
+            ]);
         } else {
-            //
+            return response()->json([
+                'status' => false,
+                'message' => 'File not found'
+            ], 404);
         }
     }
 }
