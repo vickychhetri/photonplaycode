@@ -211,7 +211,7 @@ $seo_meta=[
                                     <h5 class="text-upercase"><u>INDIA</u></h5>
                                     <div class="d-flex align-items-start"> <img src="{{asset('assets\images\pin-map.png')}}"  class="me-2 mb-2"/>
                                         <p class="">Photonplay Systems (P) Ltd.
-                                            <br> Advant Navis Business Park, B 1010, Noida-Greater Noida Expy, <br> Sector 142, Noida, Uttar Pradesh 201305, India</p>
+                                            <br> G-005 Ground Floor, A-1, Sector 59, Noida, Gautam Buddha Nagar, Uttar Pradesh - 201301, India</p>
                                     </div>
                                     <span><img src="{{asset('assets\customer\images\phone.svg')}}" class="me-2 mb-2"/>+91 989 969 0347</span>
                                     <span class="d-block"><img src="{{asset('assets\customer\images\message.png')}}" class="me-2"/> sales@photonplay.com</span>
