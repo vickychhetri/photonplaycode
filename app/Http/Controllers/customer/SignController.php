@@ -7,6 +7,7 @@ use App\Models\BrochureDownload;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\UserPostalCode;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -89,4 +90,13 @@ class SignController extends Controller
             ], 404);
         }
     }
+
+    public function vendorStore(Request $request){
+        Vendor::create($request->except('token'));
+
+        return response()->json([
+            'message' => 'vendor successully stored'
+        ]);
+    }
+
 }

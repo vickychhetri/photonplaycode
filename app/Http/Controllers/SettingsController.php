@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BrochureDownload;
 use App\Models\Contact;
 use App\Models\Setting;
+use App\Models\Vendor;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -46,6 +47,11 @@ class SettingsController extends Controller
     public function brochureIndex(){
         $records = BrochureDownload::orderBy('id','desc')->get();
         return view('brochure.index', compact('records'));
+    }
+
+    public function vendorIndex(){
+        $records = Vendor::orderBy('id','desc')->get();
+        return view('vendors.index', compact('records'));
     }
 
 }

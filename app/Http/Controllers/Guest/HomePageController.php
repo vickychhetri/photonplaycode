@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
@@ -11,4 +12,6 @@ class HomePageController extends Controller
 
         return view("guest.index");
     }
+
+   
 }

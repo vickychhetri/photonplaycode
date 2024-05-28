@@ -133,6 +133,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('sub-page/{id}', [PagesController::class, 'subPage'])->name('manage.solution.sub.page');
 
         Route::get('brochures', [SettingsController::class, 'brochureIndex'])->name('brochure.index');
+        Route::get('vendors', [SettingsController::class, 'vendorIndex'])->name('vendors.index');
 
 
         Route::get('create-sub-page/{id}', [PagesController::class, 'createSubPage'])->name('manage.solution.create.sub.page');
@@ -299,7 +300,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
     Route::get('/led-ticker-tape', [LedController::class, 'led'])->name("led_ticker_tape");
 
-    Route::get('/bus-signs', [BussignContorller::class, 'bus_sign'])->name("bus_signs");
+    Route::get('/bus-destination-signs', [BussignContorller::class, 'bus_sign'])->name("bus_signs");
 
 
 
@@ -373,3 +374,4 @@ Route::get('php', function() {
 });
 Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'open_media_form_ajax'])->name("product_media_page_ajax");
 Route::post('download-brochure', [SignController::class, 'downloadBrochure'])->name('download.brochure');
+Route::post('vendor-store', [SignController::class, 'vendorStore'])->name('vendor.store');

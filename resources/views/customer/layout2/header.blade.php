@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/customer/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/customer/slick/slick-theme.css"/>
     <link rel="stylesheet" href="/assets/customer/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
 
 
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">--}}
@@ -142,6 +143,7 @@
                             <a class="nav-link text-uppercase  {{Request::is('about-us') ? 'active':''}}"
                                href="{{route('customer.about.us')}}">COMPANY</a>
                         </li>
+                        
                         <!-- hjgjhkl -->
 
                         <li class="nav-item dropdown position-relative solution-pos">
@@ -252,8 +254,7 @@
                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Passenger
                                                     Information Display
                                                     Sign <br> (PIDS) </a></li>
-                                            <li><a href="{{route('customer.bus_signs')}}" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus
-                                                    Signs</a></li>
+                                            <li><a href="{{route('customer.bus_signs')}}" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus Destination Signs</a></li>
                                             <li>
                                         </ul>
                                     </div>
@@ -275,6 +276,9 @@
                             <a class="nav-link text-uppercase {{Request::is('contact-us') ? 'active':''}}"
                                href="{{route('customer.contact.us')}}">CONTACT</a>
                         </li>
+                        <li class="nav-item">
+                            <button class="btn btn-sm btn-primary" style="padding: 0px 25px;    border-radius: 51px;" id="openModalButton">Vendor</button>
+                        </li>
                     </ul>
                     <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
                           action="{{route('customer.search_photon_things')}}">
@@ -293,6 +297,7 @@
                 </div>
             </div>
         </nav>
+
         <div class="ul-mega">
             <!-- <div class="hamburger"> -->
             <div class="container-fluid">
@@ -411,6 +416,7 @@
                         <div class="mega-menu-items">
                             <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}"><h4>CONTACT</h4>
                             </a>
+                            
                         </div>
 
                         <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search">
@@ -430,13 +436,18 @@
                 </li>
             </ul>
         </div>
+       
+    
     </header>
+
     <!-- </html> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
+    
 
+    <script>
+        
         $('.clint-wrapperr').slick({
             dots: false,
             infinite: true,

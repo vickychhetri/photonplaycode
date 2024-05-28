@@ -7,7 +7,7 @@ $seo_meta=[
 ];
 
 ?>
-@include('customer.layouts.header')
+@include('customer.layout2.header')
 {{--Radar Banner Start--}}
 {{--<x-Customer.Radar.RadarBanner/>--}}
 

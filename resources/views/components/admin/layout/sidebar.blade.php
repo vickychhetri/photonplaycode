@@ -120,6 +120,13 @@
                         </li>
 
                         <li class="sidebar-list">
+                            <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/vendors','vendors') ? 'active':''}}" href="{{route('admin.vendors.index') }}">
+                                <i data-feather="settings"></i>
+                                <span>Vendors</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/settings','settings') ? 'active':''}}" href="{{route('admin.setting-home-page') }}">
                                 <i data-feather="settings"></i>
                                 <span>Settings</span>
