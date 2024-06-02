@@ -472,7 +472,7 @@
                             <div class="d-flex justify-content-between flex-column flex-md-row my-4">
                                 <div class="me-1 mb-2 mb-md-0">
                                     <span class="d-block text-secondary mb-1">Phone Number</span>
-                                    <b><input name="phone_number" type="text" placeholder="+12 3456 789" class="form-control shadow-none" required>
+                                    <b><input name="phone_number" type="number" placeholder="+12 3456 789" class="form-control shadow-none" required>
                                     </b>
                                 </div>
                                 <div class="ms-1">
