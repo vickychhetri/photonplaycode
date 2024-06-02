@@ -143,7 +143,7 @@
                             <a class="nav-link text-uppercase  {{Request::is('about-us') ? 'active':''}}"
                                href="{{route('customer.about.us')}}">COMPANY</a>
                         </li>
-                        
+
                         <!-- hjgjhkl -->
 
                         <li class="nav-item dropdown position-relative solution-pos">
@@ -276,9 +276,7 @@
                             <a class="nav-link text-uppercase {{Request::is('contact-us') ? 'active':''}}"
                                href="{{route('customer.contact.us')}}">CONTACT</a>
                         </li>
-                        <li class="nav-item">
-                            <button class="btn btn-sm btn-primary" style="padding: 0px 25px;    border-radius: 51px;" id="openModalButton">Vendor</button>
-                        </li>
+
                     </ul>
                     <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
                           action="{{route('customer.search_photon_things')}}">
@@ -296,6 +294,7 @@
                     </form>
                 </div>
             </div>
+            <span class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a Vendor</span>
         </nav>
 
         <div class="ul-mega">
@@ -416,7 +415,7 @@
                         <div class="mega-menu-items">
                             <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}"><h4>CONTACT</h4>
                             </a>
-                            
+
                         </div>
 
                         <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search">
@@ -436,18 +435,18 @@
                 </li>
             </ul>
         </div>
-       
-    
+
+
     </header>
 
     <!-- </html> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    
+
 
     <script>
-        
+
         $('.clint-wrapperr').slick({
             dots: false,
             infinite: true,
