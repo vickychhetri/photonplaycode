@@ -147,7 +147,7 @@
                             <a class="nav-link text-uppercase  {{Request::is('about-us') ? 'active':''}}"
                                href="{{route('customer.about.us')}}">COMPANY</a>
                         </li>
-                        
+
                         <!-- hjgjhkl -->
 
                         <li class="nav-item dropdown position-relative solution-pos">
@@ -300,6 +300,7 @@
                     </form>
                 </div>
             </div>
+            <button class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px; height: 40px;overflow:hidden;" id="openModalButton"> Become a Vendor</button>
         </nav>
 
         <div class="ul-mega">
@@ -420,9 +421,11 @@
                         <div class="mega-menu-items">
                             <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}"><h4>CONTACT</h4>
                             </a>
-                            
-                        </div>
 
+                        </div>
+                        <div class="mega-menu-items">
+                            <button class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a vendor</button>
+                        </div>
                         <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search">
 
 
@@ -436,12 +439,15 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
+
                 </li>
+
             </ul>
         </div>
-       
-    
+
+
     </header>
 
     <form id="vendorForm">
