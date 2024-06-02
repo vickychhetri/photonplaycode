@@ -294,7 +294,7 @@
                     </form>
                 </div>
             </div>
-            <button class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a Vendor</button>
+            <button class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px; height: 40px;overflow:hidden;" id="openModalButton"> Become a Vendor</button>
         </nav>
 
         <div class="ul-mega">
