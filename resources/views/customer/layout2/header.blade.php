@@ -492,12 +492,15 @@
                             </select>
                             </div>
                         </div>
+
                         
-                        <div class="modal-footer">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <button class="btn btn-primary text-uppercase" type="submit">Submit</button>
+                        <div class="modal-footer justify-content-start">
+                            <div class="">
+                                <div id="g-recaptcha-response" class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+                                <button class="btn btn-primary text-uppercase mt-2" type="submit">Submit</button>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -511,10 +514,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>    
 
     <script>
+        
         $(document).ready(() => {
             $('#country_select').selectize();
         });
         $(document).ready(function() {
+
 
         $('#openModalButton').on('click', function() {
             console.log('clicked');
@@ -525,6 +530,15 @@
             event.preventDefault(); 
 
             var formData = $(this).serialize();
+
+            var recaptcha = $("#g-recaptcha-response").val();
+
+            if (recaptcha === "") {
+                event.preventDefault();
+                toastr.error('Complete the captcha to submit!');
+                return false;
+            }
+
             $.ajax({
                 url: '{{route("vendor.store")}}', 
                 method: 'POST',
