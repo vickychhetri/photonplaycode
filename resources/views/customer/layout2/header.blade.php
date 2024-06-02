@@ -294,7 +294,7 @@
                     </form>
                 </div>
             </div>
-            <span class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a Vendor</span>
+            <button class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a Vendor</button>
         </nav>
 
         <div class="ul-mega">
@@ -417,7 +417,9 @@
                             </a>
 
                         </div>
-
+                        <div class="mega-menu-items">
+                            <button class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a vendor</button>
+                        </div>
                         <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search">
 
 
@@ -431,8 +433,11 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
+
                 </li>
+
             </ul>
         </div>
 

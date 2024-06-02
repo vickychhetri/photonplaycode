@@ -51,7 +51,7 @@
                 <div class="contact-info-item w-100">
                     @php
                         $url_open=\Illuminate\Support\Facades\URL::full();
-                    @endphp
+//                    @endphp
                     @if (preg_match('/.*(radar-speed-signs).*/', $url_open))
                         <a href="tel:+18009669329"><img src="{{asset('assets\customer\images\phone.svg')}}" style="height: 15px;"/>+1 (800)
                             966-9329 (US)</a>
@@ -59,11 +59,11 @@
                         @if ($setting)
                             <a href="tel:{{$setting->sales_phone}}"><img
                                     src="{{asset('assets\customer\images\phone.svg')}}" style="height: 15px;"/> {{$setting->sales_phone}}</a>
-                            @if ($setting->support_phone !=null)
-                                <a href="tel:{{$setting->support_phone}}"><img
-                                        src="{{asset('assets\customer\images\phone.svg')}}" style="height: 15px;"/> {{$setting->support_phone}}
-                                </a>
-                            @endif
+{{--                            @if ($setting->support_phone !=null)--}}
+{{--                                <a href="tel:{{$setting->support_phone}}"><img--}}
+{{--                                        src="{{asset('assets\customer\images\phone.svg')}}" style="height: 15px;"/> {{$setting->support_phone}}--}}
+{{--                                </a>--}}
+{{--                            @endif--}}
                         @endif
                     @endif
                     <a href="mailto:{{$setting->sales_email}}"><img
