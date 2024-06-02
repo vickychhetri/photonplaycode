@@ -618,46 +618,8 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 @include('customer.layout2.footer')
 
  <!-- vendor modal -->
- <form id="vendorForm">
-    @csrf
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-3 shadow">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">Please fill up the details</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="name_b" class="form-label">Name</label>
-                        <input class="form-control" type="text" id="name_b" name="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email_b" class="form-label">Email</label>
-                        <input class="form-control" type="email" id="email_b" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone_number_b" class="form-label">Phone Number</label>
-                        <input class="form-control" type="number" id="phone_number" name="phone_number" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone_number_b" class="form-label">Company Name</label>
-                        <input class="form-control" type="text" id="phone_number" name="company_name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone_number_b" class="form-label">Country</label>
-                        <input class="form-control" type="text" id="phone_number" name="country" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button style="padding: 0px 32px;" type="submit" class="btn btn-primary btn-sm" >Submit</button>
-
-                </div>
-                <div id="success_message" class="ajax_response" style="float:left"></div>
-            </div>
-        </div>
-    </div>
-</form>
+ 
+ 
 
 
 {{--<script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>--}}
@@ -786,33 +748,7 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.4/dash.all.min.js" integrity="sha512-LyDgm9kfqyKlZOe+QjpNA6L/ZpcjNj+cKSJ/bQLTGkKXaxYNpYGN9Fe6DpI0H0w3Da2WcXVX8ACjL14y3iWGBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 <script>
-        $(document).ready(function() {
-
-            $('#openModalButton').on('click', function() {
-                console.log('cliecked');
-                $('#exampleModal').modal('show');
-            });
-
-            $('#vendorForm').on('submit', function(event) {
-                event.preventDefault(); 
-
-                var formData = $(this).serialize();
-                $.ajax({
-                    url: '{{route("vendor.store")}}', 
-                    method: 'POST',
-                    data: formData,
-                    success: function(response) {
-                        $('#vendorForm')[0].reset();
-                        toastr.success('Details successfully submitted!');
-                        $('#exampleModal').modal('hide');                         
-
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        //
-                    }
-                });
-            });
-        });
+        
 
     $(document).ready(function() {
         init();

@@ -9,6 +9,7 @@ $seo_meta=[
     "feature_image"=>"storage/image/banner%202.webp"
 ];
 ?>
+
 @include('customer.layout2.header')
     <!-- Contact Us Banner start -->
     <!-- <section class="contact us">

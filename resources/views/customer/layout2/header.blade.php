@@ -15,6 +15,9 @@
                     $cartPrice += $i->price * $i->quantity;
                 }
         }
+
+        $counties = DB::table('all_country_pincodes')->select('id','country')->get();
+
     @endphp
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -35,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/customer/slick/slick-theme.css"/>
     <link rel="stylesheet" href="/assets/customer/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.bootstrap4.min.css">
 
 
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">--}}
@@ -277,7 +281,7 @@
                                href="{{route('customer.contact.us')}}">CONTACT</a>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-sm btn-primary" style="padding: 0px 25px;    border-radius: 51px;" id="openModalButton">Vendor</button>
+                            <button class="btn btn-sm btn-primary" style="padding: 0px 25px;    border-radius: 51px;" id="openModalButton" data-backdrop="static" data-keyboard="false">Vendor</button>
                         </li>
                     </ul>
                     <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
@@ -440,13 +444,100 @@
     
     </header>
 
+    <form id="vendorForm">
+        @csrf
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="map-messanger p-3 my-2">
+                    <div class="modal-content" style="display: contents">
+                        <div class="modal-header">
+                            <h5>Please fill up the details</h5>
+                            <button type="button" class="btn-close" aria-label="Close"  data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="d-flex justify-content-between flex-column flex-md-row">
+                                <div class="me-1 mb-2 mb-md-0">
+                                    <span class="d-block text-secondary mb-1">Name</span>
+                                    <input class="form-control shadow-none" type="text" id="name_b" name="name" placeholder="jimmynewtron" required>
+                                </div>
+                                <div class="ms-1">
+                                    <span class="d-block text-secondary mb-1">Email Address</span>
+                                    <input name="email" type="text" placeholder="jimmynewtron@mail.com" class="form-control shadow-none" required>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between flex-column flex-md-row my-4">
+                                <div class="me-1 mb-2 mb-md-0">
+                                    <span class="d-block text-secondary mb-1">Phone Number</span>
+                                    <b><input name="phone_number" type="text" placeholder="+12 3456 789" class="form-control shadow-none" required>
+                                    </b>
+                                </div>
+                                <div class="ms-1">
+                                    <span class="d-block text-secondary mb-1" >Company Name</span>
+                                    <b><input name="company_name" type="text" placeholder="Workgroup Studios" class="form-control shadow-none" required>
+                                    </b>
+                                </div>
+    
+                            </div>
+                            <div class="">
+                                <span class="d-block text-secondary mb-2">Country</span>
+                                <select id="country_select" class="form-control" name="country" >
+                                    <option value="" selected disabled>Choose Country</option>
+                                    @foreach($counties ?? [] as $country)
+                                        <option value="{{$country->country}}">{{$country->country}}</option>
+                                    @endforeach
+                            </select>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <button class="btn btn-primary text-uppercase" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
     <!-- </html> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>    
 
     <script>
+        $(document).ready(() => {
+            $('#country_select').selectize();
+        });
+        $(document).ready(function() {
+
+        $('#openModalButton').on('click', function() {
+            console.log('clicked');
+            $('#exampleModal').modal('show'); 
+        });
+
+        $('#vendorForm').on('submit', function(event) {
+            event.preventDefault(); 
+
+            var formData = $(this).serialize();
+            $.ajax({
+                url: '{{route("vendor.store")}}', 
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    $('#vendorForm')[0].reset();
+                    toastr.success('Details successfully submitted!');
+                    $('#exampleModal').modal('hide');                         
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    //
+                }
+            });
+        });
+
+        });
         
         $('.clint-wrapperr').slick({
             dots: false,
