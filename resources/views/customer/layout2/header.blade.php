@@ -125,7 +125,7 @@
 </a>
 <div>
     <header class="header bg-white py-3 sticky-top">
-        <nav class="navbar navbar-expand-lg custome-mega-amenu">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{route('customer.homePage')}}"><img
                         src="{{asset('assets\customer\images\logo-dark.png')}}" alt="Photon Plays System"></a>
@@ -301,7 +301,7 @@
                 </div>
             </div>
 
-        <div class="ul-mega">
+        {{-- <div class="ul-mega">
             <!-- <div class="hamburger"> -->
             <div class="container-fluid">
                 <div class="row ">
@@ -443,7 +443,7 @@
                 </li>
 
             </ul>
-        </div>
+        </div> --}}
 
 
     </header>
