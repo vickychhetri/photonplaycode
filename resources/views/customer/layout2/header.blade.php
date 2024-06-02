@@ -281,7 +281,7 @@
                                href="{{route('customer.contact.us')}}">CONTACT</a>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-sm btn-primary" style="padding: 0px 25px;    border-radius: 51px;" id="openModalButton" data-backdrop="static" data-keyboard="false">Become a Vendor</button>
+                           
                         </li>
                     </ul>
                     <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
@@ -445,7 +445,8 @@
             </ul>
         </div> --}}
 
-
+        <button class="btn btn-sm btn-primary" style="padding: 0px 25px;    border-radius: 51px;" id="openModalButton" data-backdrop="static" data-keyboard="false">Become a Vendor</button>
+        
     </header>
 
     <form id="vendorForm">
