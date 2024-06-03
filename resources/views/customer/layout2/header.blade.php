@@ -473,7 +473,7 @@
                 <div class="map-messanger p-3 my-2">
                     <div class="modal-content" style="display: contents">
                         <div class="modal-header">
-                            <h5>Please fill up the details</h5>
+                            <h5>Vendor Application Form :: fill up the details</h5>
                             <button type="button" class="btn-close" aria-label="Close"  data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
