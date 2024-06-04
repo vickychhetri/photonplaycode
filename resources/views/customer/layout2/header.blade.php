@@ -141,185 +141,187 @@
 </a>
 <div>
     <header class="header bg-white py-3 sticky-top">
-        <nav class="navbar navbar-expand-lg desktop_nav">
-            <div class="container">
-                <a class="navbar-brand" href="{{route('customer.homePage')}}"><img
-                        src="{{asset('assets\customer\images\logo-dark.png')}}" alt="Photon Plays System"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse header-font navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5 mx-4">
-                        <li class="nav-item">
-                            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase {{Request::is('/') ? 'active':''}}"
-                               href="{{route('customer.homePage')}}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase  {{Request::is('about-us') ? 'active':''}}"
-                               href="{{route('customer.about.us')}}">COMPANY</a>
-                        </li>
+        <div class="desktop_nav" style="display: none">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                    <a class="navbar-brand" href="{{route('customer.homePage')}}"><img
+                            src="{{asset('assets\customer\images\logo-dark.png')}}" alt="Photon Plays System"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse header-font navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5 mx-4">
+                            <li class="nav-item">
+                                <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase {{Request::is('/') ? 'active':''}}"
+                                href="{{route('customer.homePage')}}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase  {{Request::is('about-us') ? 'active':''}}"
+                                href="{{route('customer.about.us')}}">COMPANY</a>
+                            </li>
 
-                        <!-- hjgjhkl -->
+                            <!-- hjgjhkl -->
 
-                        <li class="nav-item dropdown position-relative solution-pos">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                SOLUTIONS <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found"
-                                               class="ms-1 mb-">
-                            </a>
+                            <li class="nav-item dropdown position-relative solution-pos">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                    SOLUTIONS <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found"
+                                                class="ms-1 mb-">
+                                </a>
 
-                            <ul class="dropdown-menu mega-menu">
-                                <li class="d-flex justify-content-between flex-wrap p-3 mega-menu-list">
+                                <ul class="dropdown-menu mega-menu">
+                                    <li class="d-flex justify-content-between flex-wrap p-3 mega-menu-list">
 
-                                    <div class="col-md-3">
-                                        <h4><a class="dropdown-item px-0 text-uppercase"
-                                               href="{{route('customer.solution.highway')}}">Highways</a></h4>
-                                        <ul>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
-                                                   href="{{route('customer.variable.message')}}">Variable
-                                                    Message
-                                                    Sign (VMS)</a>
-                                            </li>
-                                            <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2 text-wrap"
-                                                   href="{{route('customer.variable.speed.limit')}}">Variable
-                                                    Speed Limit
-                                                    Sign
-                                                    (VSLS)</a></li>
-                                            <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
-                                                   href="{{route('customer.portable.variable.message.signs')}}">Portable
-                                                    Variable
-                                                    Message Sign
-                                                    (PVMS) </a></li>
-                                            <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
-                                                   href="{{route('customer.vehicle_actuated_speed_displays')}}">Vehicle
-                                                    Actuated
-                                                    Speed Display
-                                                    (VASD) </a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <ul>
+                                        <div class="col-md-3">
                                             <h4><a class="dropdown-item px-0 text-uppercase"
-                                                   href="{{route('customer.solution.city')}}">Smart
-                                                    Cities</a>
-                                            </h4>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
+                                                href="{{route('customer.solution.highway')}}">Highways</a></h4>
                                             <ul>
-                                                <li><a href="{{route('customer.radar.speed.signs')}}"
-                                                       class="text-wrap dropdown-item px-0 text-uppercase mb-2">Radar
-                                                        Speed Sign </a></li>
-                                                <li><a href="{{route('customer.portable.variable.message.signs')}}"
-                                                       class="text-wrap dropdown-item px-0 text-uppercase mb-2">Portable
-                                                        Variable Message Sign (PVMS)</a></li>
-                                                <li><a href="{{route('customer.variable.message')}}"
-                                                       class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
-                                                        Message Sign (VMS) </a></li>
-                                                <li><a href="{{route('customer.led_ticker_tape')}}"
-                                                       class="text-wrap dropdown-item px-0 text-uppercase mb-2">LED
-                                                        Tickers </a></li>
-
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
+                                                    href="{{route('customer.variable.message')}}">Variable
+                                                        Message
+                                                        Sign (VMS)</a>
+                                                </li>
+                                                <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2 text-wrap"
+                                                    href="{{route('customer.variable.speed.limit')}}">Variable
+                                                        Speed Limit
+                                                        Sign
+                                                        (VSLS)</a></li>
+                                                <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
+                                                    href="{{route('customer.portable.variable.message.signs')}}">Portable
+                                                        Variable
+                                                        Message Sign
+                                                        (PVMS) </a></li>
+                                                <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
+                                                    href="{{route('customer.vehicle_actuated_speed_displays')}}">Vehicle
+                                                        Actuated
+                                                        Speed Display
+                                                        (VASD) </a></li>
                                             </ul>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <ul>
-                                            <h4><a class="dropdown-item px-0 text-uppercase"
-                                                   href="{{route('customer.solution.tunnel')}}">Tunnels</a>
-                                            </h4>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a href="{{route('customer.variable.message')}}"
-                                                   class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
-                                                    Message
-                                                    Sign (VMS)</a>
-                                            </li>
-                                            <li><a href="{{route('customer.variable.speed.limit')}}"
-                                                   class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
-                                                    Speed
-                                                    Limit Sign
-                                                    (VSLS)</a></li>
-                                            <!-- <li><a href="#" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Way
-                                                    Finders
-                                                </a>
-                                            </li> -->
-                                            <li><a href="{{route('customer.signal')}}"
-                                                   class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2"> Emergency Signages</a></li>
-                                            <li><a href="{{route('customer.lane.control.system')}}"
-                                                   class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
-                                                    Control
-                                                    Sign (LCS) </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <ul>
-                                            <h4><a class="dropdown-item px-0 text-uppercase"
-                                                   href="{{route('customer.solution.transit')}}">TRANSIT</a>
-                                            </h4>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a href="{{route('customer.pasenger.information.display.system')}}"
-                                                   class="text-wrap dropdown-item px-0 text-uppercase mb-2">Passenger
-                                                    Information Display
-                                                    Sign <br> (PIDS) </a></li>
-                                            <li><a href="{{route('customer.bus_signs')}}" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus Destination Signs</a></li>
-                                            <li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <h4><a class="dropdown-item px-0 text-uppercase"
+                                                    href="{{route('customer.solution.city')}}">Smart
+                                                        Cities</a>
+                                                </h4>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <ul>
+                                                    <li><a href="{{route('customer.radar.speed.signs')}}"
+                                                        class="text-wrap dropdown-item px-0 text-uppercase mb-2">Radar
+                                                            Speed Sign </a></li>
+                                                    <li><a href="{{route('customer.portable.variable.message.signs')}}"
+                                                        class="text-wrap dropdown-item px-0 text-uppercase mb-2">Portable
+                                                            Variable Message Sign (PVMS)</a></li>
+                                                    <li><a href="{{route('customer.variable.message')}}"
+                                                        class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
+                                                            Message Sign (VMS) </a></li>
+                                                    <li><a href="{{route('customer.led_ticker_tape')}}"
+                                                        class="text-wrap dropdown-item px-0 text-uppercase mb-2">LED
+                                                            Tickers </a></li>
+
+                                                </ul>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <h4><a class="dropdown-item px-0 text-uppercase"
+                                                    href="{{route('customer.solution.tunnel')}}">Tunnels</a>
+                                                </h4>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a href="{{route('customer.variable.message')}}"
+                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
+                                                        Message
+                                                        Sign (VMS)</a>
+                                                </li>
+                                                <li><a href="{{route('customer.variable.speed.limit')}}"
+                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Variable
+                                                        Speed
+                                                        Limit Sign
+                                                        (VSLS)</a></li>
+                                                <!-- <li><a href="#" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Way
+                                                        Finders
+                                                    </a>
+                                                </li> -->
+                                                <li><a href="{{route('customer.signal')}}"
+                                                    class="text-wrap dropdown-item px-0 text-uppercase text-wrap mb-2"> Emergency Signages</a></li>
+                                                <li><a href="{{route('customer.lane.control.system')}}"
+                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Lane
+                                                        Control
+                                                        Sign (LCS) </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <h4><a class="dropdown-item px-0 text-uppercase"
+                                                    href="{{route('customer.solution.transit')}}">TRANSIT</a>
+                                                </h4>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a href="{{route('customer.pasenger.information.display.system')}}"
+                                                    class="text-wrap dropdown-item px-0 text-uppercase mb-2">Passenger
+                                                        Information Display
+                                                        Sign <br> (PIDS) </a></li>
+                                                <li><a href="{{route('customer.bus_signs')}}" class="text-wrap dropdown-item px-0 text-uppercase mb-2">Bus Destination Signs</a></li>
+                                                <li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
 
 
-                        <!-- end -->
-                        <!-- <div class="position-absolute down-image">
+                            <!-- end -->
+                            <!-- <div class="position-absolute down-image">
 
-                            </div> -->
+                                </div> -->
 
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase text-nowrap {{Request::is('blog') ? 'active':''}}"
-                               href="{{route('customer.blog')}}" >NEWS & EVENTS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase {{Request::is('contact-us') ? 'active':''}}"
-                               href="{{route('customer.contact.us')}}">CONTACT</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton" data-backdrop="static" data-keyboard="false">Become a Vendor</button>
-                        </li>
-                    </ul>
-                    <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
-                          action="{{route('customer.search_photon_things')}}">
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase text-nowrap {{Request::is('blog') ? 'active':''}}"
+                                href="{{route('customer.blog')}}" >NEWS & EVENTS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase {{Request::is('contact-us') ? 'active':''}}"
+                                href="{{route('customer.contact.us')}}">CONTACT</a>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton" data-backdrop="static" data-keyboard="false">Become a Vendor</button>
+                            </li>
+                        </ul>
+                        <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
+                            action="{{route('customer.search_photon_things')}}">
 
-                        <div class="position-relative search-heading">
-                            <input class="form-control me-2 shadow-none border" name="search" type="search"
-                                   placeholder="Search" aria-label="Search" value="{{$query??""}}"/>
-                            <div class="position-absolute top-50 end-0 translate-middle">
-                                {{-- <img src={SearchBg.src} alt="Not Found" /> --}}
-                                <img src="{{asset('assets\customer\images\search.png')}}" alt="Not Found"
-                                     class="img-fluid me-2" width="18px"
-                                     height="18px">
+                            <div class="position-relative search-heading">
+                                <input class="form-control me-2 shadow-none border" name="search" type="search"
+                                    placeholder="Search" aria-label="Search" value="{{$query??""}}"/>
+                                <div class="position-absolute top-50 end-0 translate-middle">
+                                    {{-- <img src={SearchBg.src} alt="Not Found" /> --}}
+                                    <img src="{{asset('assets\customer\images\search.png')}}" alt="Not Found"
+                                        class="img-fluid me-2" width="18px"
+                                        height="18px">
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-            <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton">Become a Vendor</button>
+                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton">Become a Vendor</button>
 
-        </nav>
+            </nav>
+        </div>
 
         <div class="ul-mega">
             <!-- <div class="hamburger"> -->
@@ -541,6 +543,7 @@
                 $('.desktop_vendor').css('display', 'none');
                 $('.desktop_nav').css('display', 'none');
             } else {
+                $('.desktop_nav').css('display', 'block');
                 $('.mobile_vendor').css('display', 'none');
                 $('.desktop_vendor').css('display', 'block');
             }
