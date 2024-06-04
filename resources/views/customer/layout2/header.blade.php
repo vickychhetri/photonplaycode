@@ -567,11 +567,11 @@
 
             var recaptcha = $("#g-recaptcha-response").val();
 
-            if (recaptcha === "") {
-                event.preventDefault();
-                toastr.error('Complete the captcha to submit!');
-                return false;
-            }
+            // if (recaptcha === "") {
+            //     event.preventDefault();
+            //     toastr.error('Complete the captcha to submit!');
+            //     return false;
+            // }
 
             $.ajax({
                 url: '{{route("vendor.store")}}',

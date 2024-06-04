@@ -57,7 +57,7 @@ use App\Http\Controllers\ProductMediaController;
 use App\Http\Controllers\SearchItemsController;
 use App\Http\Controllers\ThankYouController;
 use App\Http\Controllers\VASDController;
-
+use Illuminate\Mail\Markdown;
 
 /*
 * New Route
@@ -375,3 +375,10 @@ Route::get('php', function() {
 Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'open_media_form_ajax'])->name("product_media_page_ajax");
 Route::post('download-brochure', [SignController::class, 'downloadBrochure'])->name('download.brochure');
 Route::post('vendor-store', [SignController::class, 'vendorStore'])->name('vendor.store');
+
+
+Route::get('mail', function () {
+    $markdown = new Markdown(view(), config('mail.markdown'));
+
+    return $markdown->render('mail.vendor-mail');
+});

@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -58,4 +59,9 @@ return [
     'recaptcha' => [
         'key' => env('RECAPTCHA_SITE_KEY'),
         'secret' => env('RECAPTCHA_SITE_SECRET'),
-    ]];
+    ],
+
+    'vendor' => [
+        'email' => env('VENDOR_EMAIL'),
+    ]
+];

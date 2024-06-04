@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\VendorJob;
 use App\Models\BrochureDownload;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\UserPostalCode;
 use App\Models\Vendor;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -92,7 +94,14 @@ class SignController extends Controller
     }
 
     public function vendorStore(Request $request){
-        Vendor::create($request->except('token'));
+        $vendor = Vendor::create($request->except('token'));
+
+        try{
+            VendorJob::dispatch($vendor);
+        }catch(Exception $e){
+            //
+        }
+        
 
         return response()->json([
             'message' => 'vendor successully stored'
