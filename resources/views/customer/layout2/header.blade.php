@@ -125,7 +125,7 @@
 </a>
 <div>
     <header class="header bg-white py-3 sticky-top">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg desktop_nav">
             <div class="container">
                 <a class="navbar-brand" href="{{route('customer.homePage')}}"><img
                         src="{{asset('assets\customer\images\logo-dark.png')}}" alt="Photon Plays System"></a>
@@ -301,7 +301,11 @@
                 </div>
             </div>
 
-        {{-- <div class="ul-mega">
+            <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton">Become a Vendor</button>
+
+        </nav>
+
+        <div class="ul-mega">
             <!-- <div class="hamburger"> -->
             <div class="container-fluid">
                 <div class="row ">
@@ -422,7 +426,7 @@
 
                         </div>
                         <div class="mega-menu-items">
-                            <button class="btn btn-sm btn-primary" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a vendor</button>
+                            <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a vendor</button>
                         </div>
                         <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search">
 
@@ -443,9 +447,8 @@
                 </li>
 
             </ul>
-        </div> --}}
+        </div>
 
-        <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton">Become a Vendor</button>
         
     </header>
 
@@ -520,6 +523,7 @@
             if ($(window).width() <= 767) {
                 $('.mobile_vendor').css('display', 'block');
                 $('.desktop_vendor').css('display', 'none');
+                $('.desktop_nav').css('display', 'none');
             } else {
                 $('.mobile_vendor').css('display', 'none');
                 $('.desktop_vendor').css('display', 'block');
