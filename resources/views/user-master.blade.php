@@ -8,8 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="_____Name_____">
-    <link rel="icon" src="{{ asset('assets/logo/fav.png') }}" type="image/x-icon">
-    <link rel="shortcut icon" src="{{ asset('assets/logo/fav.png') }}" type="image/x-icon">
+{{--    <link rel="icon" src="{{ asset('assets/logo/fav.png') }}" type="image/x-icon">--}}
+{{--    --}}
+{{--    <link rel="shortcut icon" src="{{ asset('assets/logo/fav.png') }}" type="image/x-icon">--}}
+    <link rel="icon" href=
+        "https://www.photonplay.com/assets/images/photon_small.png"
+          type="image/x-icon">
     <title>
         @yield('title')
     </title>

@@ -47,6 +47,22 @@
             transform: scale(2);
         }
 
+        .content_bootom_sticky_footer {
+            padding: 20px;
+            height: 1500px; /* Just to make the page scrollable */
+        }
+
+        .sticky-bottom_bootom_sticky_footer {
+            z-index: 100;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #036eb1;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+        }
     </style>
 
 
@@ -299,6 +315,7 @@
                         </div>
                     </form>
                 </div>
+                <button  class="btn btn-sm btn-primary desktop_vendor mr-2" style="padding: 0px 25px;    border-radius: 51px; display:none;height: 40px;overflow: hidden;" id="openModalButton">Become a Vendor</button>
             </div>
 
             <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton">Become a Vendor</button>
@@ -459,7 +476,7 @@
                 <div class="map-messanger p-3 my-2">
                     <div class="modal-content" style="display: contents">
                         <div class="modal-header">
-                            <h5>Please fill up the details</h5>
+                            <h5>Vendor Application Form :: fill up the details</h5>
                             <button type="button" class="btn-close" aria-label="Close"  data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
@@ -484,7 +501,7 @@
                                     <b><input name="company_name" type="text" placeholder="Workgroup Studios" class="form-control shadow-none" required>
                                     </b>
                                 </div>
-    
+
                             </div>
                             <div class="">
                                 <span class="d-block text-secondary mb-2">Country</span>
@@ -497,14 +514,14 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="modal-footer justify-content-start">
                             <div class="">
                                 <div id="g-recaptcha-response" class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
                                 <button class="btn btn-primary text-uppercase mt-2" type="submit">Submit</button>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -515,10 +532,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>
 
     <script>
-        
+
         $(document).ready(function() {
             if ($(window).width() <= 767) {
                 $('.mobile_vendor').css('display', 'block');
@@ -538,11 +555,11 @@
 
         $('.desktop_vendor , .mobile_vendor').on('click', function() {
             console.log('clicked');
-            $('#exampleModal').modal('show'); 
+            $('#exampleModal').modal('show');
         });
 
         $('#vendorForm').on('submit', function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
 
             var formData = $(this).serialize();
 
@@ -555,13 +572,13 @@
             }
 
             $.ajax({
-                url: '{{route("vendor.store")}}', 
+                url: '{{route("vendor.store")}}',
                 method: 'POST',
                 data: formData,
                 success: function(response) {
                     $('#vendorForm')[0].reset();
                     toastr.success('Details successfully submitted!');
-                    $('#exampleModal').modal('hide');                         
+                    $('#exampleModal').modal('hide');
 
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -571,7 +588,7 @@
         });
 
         });
-        
+
         $('.clint-wrapperr').slick({
             dots: false,
             infinite: true,
