@@ -318,7 +318,7 @@
                     </div>
                 </div>
 
-                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton">Become a Vendor</button>
+                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px;margin-right:40px; display:none;" id="openModalButton">Become a Vendor</button>
 
             </nav>
         </div>
