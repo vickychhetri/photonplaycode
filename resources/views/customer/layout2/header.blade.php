@@ -303,13 +303,12 @@
                             <li>
                                 <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px;margin-right:40px; display:none; max-width: 192px;max-height: 36px; overflow:hidden; width: 192px;" id="openModalButton">Become a Vendor</button>
                             </li>
-                            <li></li>
                             <li>
                                 <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
                                 action="{{route('customer.search_photon_things')}}">
     
                                 <div class="position-relative search-heading">
-                                    <input class="form-control me-2 shadow-none border" name="search" type="search"
+                                    <input class="form-control me-2 shadow-none border" name="search" type="search" id="search_id"
                                         placeholder="Search" aria-label="Search" value="{{$query??""}}"/>
                                     <div class="position-absolute top-50 end-0 translate-middle">
                                         {{-- <img src={SearchBg.src} alt="Not Found" /> --}}
@@ -544,6 +543,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>
 
     <script>
+        
 
         $(document).ready(function() {
             if ($(window).width() <= 767) {
@@ -555,6 +555,9 @@
                 $('.mobile_vendor').css('display', 'none');
                 $('.desktop_vendor').css('display', 'block');
             }
+
+
+
         });
 
         $(document).ready(() => {
