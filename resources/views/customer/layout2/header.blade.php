@@ -303,6 +303,7 @@
                             <li>
                                 <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px;margin-right:40px; display:none; max-width: 192px;max-height: 36px; overflow:hidden;" id="openModalButton">Become a Vendor</button>
                             </li>
+                            <li></li>
                             <li>
                                 <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
                                 action="{{route('customer.search_photon_things')}}">
