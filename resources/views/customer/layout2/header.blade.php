@@ -301,7 +301,7 @@
                                 <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none; " id="openModalButton" data-backdrop="static" data-keyboard="false">  Become a Vendor  </button>
                             </li>
                             <li>
-                                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px;margin-right:40px; display:none; max-width: 192px;max-height: 36px; overflow:hidden;" id="openModalButton">Become a Vendor</button>
+                                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px;margin-right:40px; display:none; max-width: 192px;max-height: 36px; overflow:hidden; width: 192px;" id="openModalButton">Become a Vendor</button>
                             </li>
                             <li></li>
                             <li>
