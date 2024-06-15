@@ -156,18 +156,18 @@
                             <li class="nav-item">
                                 <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
                             </li>
-                            <li class="nav-item ui_hide">
+                            <li class="nav-item ">
                                 <a class="nav-link text-uppercase {{Request::is('/') ? 'active':''}}"
                                 href="{{route('customer.homePage')}}">Home</a>
                             </li>
-                            <li class="nav-item ui_hide">
+                            <li class="nav-item ">
                                 <a class="nav-link text-uppercase  {{Request::is('about-us') ? 'active':''}}"
                                 href="{{route('customer.about.us')}}">COMPANY</a>
                             </li>
 
                             <!-- hjgjhkl -->
 
-                            <li class="nav-item dropdown position-relative solution-pos ui_hide">
+                            <li class="nav-item dropdown position-relative solution-pos">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                     SOLUTIONS <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found"
@@ -289,7 +289,7 @@
 
                                 </div> -->
 
-                            <li class="nav-item ui_hide">
+                            <li class="nav-item">
                                 <a class="nav-link text-uppercase text-nowrap {{Request::is('blog') ? 'active':''}}"
                                 href="{{route('customer.blog')}}" >NEWS & EVENTS</a>
                             </li>
