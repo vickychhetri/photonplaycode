@@ -298,29 +298,36 @@
                                 href="{{route('customer.contact.us')}}">CONTACT</a>
                             </li>
                             <li class="nav-item">
-                                <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none;" id="openModalButton" data-backdrop="static" data-keyboard="false">Become a Vendor</button>
+                                <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none; " id="openModalButton" data-backdrop="static" data-keyboard="false">  Become a Vendor  </button>
+                            </li>
+                            <li>
+                                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px;margin-right:40px; display:none; max-width: 192px;max-height: 36px; overflow:hidden;" id="openModalButton">Become a Vendor</button>
+                            </li>
+                            <li>
+                                <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
+                                action="{{route('customer.search_photon_things')}}">
+    
+                                <div class="position-relative search-heading">
+                                    <input class="form-control me-2 shadow-none border" name="search" type="search"
+                                        placeholder="Search" aria-label="Search" value="{{$query??""}}"/>
+                                    <div class="position-absolute top-50 end-0 translate-middle">
+                                        {{-- <img src={SearchBg.src} alt="Not Found" /> --}}
+                                        <img src="{{asset('assets\customer\images\search.png')}}" alt="Not Found"
+                                            class="img-fluid me-2" width="18px"
+                                            height="18px">
+                                    </div>
+                                </div>
+                            </form>
                             </li>
                         </ul>
-                        <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
-                            action="{{route('customer.search_photon_things')}}">
-
-                            <div class="position-relative search-heading">
-                                <input class="form-control me-2 shadow-none border" name="search" type="search"
-                                    placeholder="Search" aria-label="Search" value="{{$query??""}}"/>
-                                <div class="position-absolute top-50 end-0 translate-middle">
-                                    {{-- <img src={SearchBg.src} alt="Not Found" /> --}}
-                                    <img src="{{asset('assets\customer\images\search.png')}}" alt="Not Found"
-                                        class="img-fluid me-2" width="18px"
-                                        height="18px">
-                                </div>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
 
-                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px;margin-right:40px; display:none;" id="openModalButton">Become a Vendor</button>
+                
 
             </nav>
+
         </div>
 
         <div class="ul-mega">
