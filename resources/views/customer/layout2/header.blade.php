@@ -156,18 +156,18 @@
                             <li class="nav-item">
                                 <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item ui_hide">
                                 <a class="nav-link text-uppercase {{Request::is('/') ? 'active':''}}"
                                 href="{{route('customer.homePage')}}">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item ui_hide">
                                 <a class="nav-link text-uppercase  {{Request::is('about-us') ? 'active':''}}"
                                 href="{{route('customer.about.us')}}">COMPANY</a>
                             </li>
 
                             <!-- hjgjhkl -->
 
-                            <li class="nav-item dropdown position-relative solution-pos">
+                            <li class="nav-item dropdown position-relative solution-pos ui_hide">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                     SOLUTIONS <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found"
@@ -289,11 +289,11 @@
 
                                 </div> -->
 
-                            <li class="nav-item">
+                            <li class="nav-item ui_hide">
                                 <a class="nav-link text-uppercase text-nowrap {{Request::is('blog') ? 'active':''}}"
                                 href="{{route('customer.blog')}}" >NEWS & EVENTS</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item ui_hide">
                                 <a class="nav-link text-uppercase {{Request::is('contact-us') ? 'active':''}}"
                                 href="{{route('customer.contact.us')}}">CONTACT</a>
                             </li>
@@ -301,29 +301,26 @@
                                 <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none; " id="openModalButton" data-backdrop="static" data-keyboard="false">  Become a Vendor  </button>
                             </li>
                             <li>
-                                <button  class="btn btn-sm btn-primary desktop_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none; max-width: 192px;max-height: 36px; overflow:hidden; width: 192px;" id="openModalButton">Become a Vendor</button>
-                            </li>
-                            <li>
-                                <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
-                                action="{{route('customer.search_photon_things')}}">
-    
-                                <div class="position-relative search-heading">
-                                    <input class="form-control me-2 shadow-none border" name="search" type="search" id="search_id"
-                                        placeholder="Search" aria-label="Search" value="{{$query??""}}"/>
-                                    <div class="position-absolute top-50 end-0 translate-middle">
-                                        {{-- <img src={SearchBg.src} alt="Not Found" /> --}}
-                                        <img src="{{asset('assets\customer\images\search.png')}}" alt="Not Found"
-                                            class="img-fluid me-2" width="18px"
-                                            height="18px">
-                                    </div>
-                                </div>
-                            </form>
+                                <button  class="btn btn-sm btn-primary desktop_vendor ui_hide" style="padding: 0px 25px;    border-radius: 51px; display:none; max-width: 192px;max-height: 36px; overflow:hidden; width: 192px;" id="openModalButton">Become a Vendor</button>
                             </li>
                         </ul>
-                        
                     </div>
-                </div>
+                    <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search" method="get"
+                action="{{route('customer.search_photon_things')}}">
 
+                    <div class="position-relative search-heading">
+                        <input class="form-control me-2 shadow-none border" name="search" type="search" id="search_id"
+                            placeholder="Search" aria-label="Search" value="{{$query??""}}"/>
+                        <div class="position-absolute top-50 end-0 translate-middle">
+                            {{-- <img src={SearchBg.src} alt="Not Found" /> --}}
+                            <img src="{{asset('assets\customer\images\search.png')}}" alt="Not Found"
+                                class="img-fluid me-2" width="18px"
+                                height="18px">
+                        </div>
+                    </div>
+                </form>
+                </div>
+                
                 
 
             </nav>
@@ -491,22 +488,22 @@
                             <div class="d-flex justify-content-between flex-column flex-md-row">
                                 <div class="me-1 mb-2 mb-md-0">
                                     <span class="d-block text-secondary mb-1">Name</span>
-                                    <input class="form-control shadow-none" type="text" id="name_b" name="name" placeholder="jimmynewtron" required>
+                                    <input class="form-control shadow-none" type="text" id="name_b" name="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="ms-1">
                                     <span class="d-block text-secondary mb-1">Email Address</span>
-                                    <input name="email" type="text" placeholder="jimmynewtron@mail.com" class="form-control shadow-none" required>
+                                    <input name="email" type="text" placeholder="Your Email" class="form-control shadow-none" required>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between flex-column flex-md-row my-4">
                                 <div class="me-1 mb-2 mb-md-0">
                                     <span class="d-block text-secondary mb-1">Phone Number</span>
-                                    <b><input name="phone_number" type="number" placeholder="+12 3456 789" class="form-control shadow-none" required>
+                                    <b><input name="phone_number" type="number" placeholder="Your phone number" class="form-control shadow-none" required>
                                     </b>
                                 </div>
                                 <div class="ms-1">
                                     <span class="d-block text-secondary mb-1" >Company Name</span>
-                                    <b><input name="company_name" type="text" placeholder="Workgroup Studios" class="form-control shadow-none" required>
+                                    <b><input name="company_name" type="text" placeholder="Your compnay name" class="form-control shadow-none" required>
                                     </b>
                                 </div>
 
@@ -556,10 +553,20 @@
                 $('.desktop_vendor').css('display', 'block');
             }
 
-
-
         });
 
+        $(document).ready(() => {
+            $('#search_id').on('focus', function() {
+                // console.log('click');
+                $('.ui_hide').css('display', 'none');
+            });
+
+            $('#search_id').on('blur', function() {
+                // console.log('blur');
+                $('.ui_hide').css('display', 'block');
+            });
+        });
+        
         $(document).ready(() => {
             $('#country_select').selectize();
         });
