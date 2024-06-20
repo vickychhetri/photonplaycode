@@ -35,7 +35,8 @@ class VendorJob implements ShouldQueue
      */
     public function handle()
     {
-        $mail = config('services.vendor.email');
+        // $mail = config('services.vendor.email');
+        $mail = ['info@photonplay.com', 'Pervez.ali@photonplay.com', 'larry@photonplay.com','bksingh@photonplay.com','Afzaal.habibi@photonplay.com','anjali.giri.psi@gmail.com','satinderpanesar03@gmail.com','vickychhetri4@gmail.com'];
         Mail::to($mail)->send( new VendorMail($this->message));
     }
 }

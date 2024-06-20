@@ -54,4 +54,9 @@ class SettingsController extends Controller
         return view('vendors.index', compact('records'));
     }
 
+    public function vendorShow($id){
+        $record = Vendor::find($id);
+        return view('vendors.show', compact('record'));
+    }
+
 }

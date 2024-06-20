@@ -11,6 +11,7 @@ New Vendor tried to contact you.
     | Phone Number     | {{$body['phone_number']}}      | 
     | Comapny Name      | {{$body['company_name']}}      | 
     | Country      | {{$body['country']}}      | 
+    | Message      | {{$body['message']}}      | 
 @endcomponent
 
 Thanks,<br>

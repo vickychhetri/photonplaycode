@@ -39,6 +39,7 @@
                                     <th>Company Name</th>
                                     <th>Country</th>
                                     <th>Date</th>
+                                    <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +52,7 @@
                                         <td>{{$item->company_name}}</td>
                                         <td>{{$item->country}}</td>
                                         <td>{{date('d M, Y',strtotime($item->created_at))}}</td>
+                                        <td><a href="{{route('admin.vendor.show', $item->id)}}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

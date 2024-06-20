@@ -517,6 +517,10 @@
                                     @endforeach
                             </select>
                             </div>
+                            <div class="">
+                                <span class="d-block text-secondary mb-1" >Message</span>
+                                        <textarea name="message" rows="4" placeholder="Enter message" class="form-control shadow-none rounded-0 mb-4" aria-describedby="textHelpBlock" required></textarea>
+                                        </div>
                         </div>
 
 

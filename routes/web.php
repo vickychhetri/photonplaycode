@@ -134,6 +134,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::get('brochures', [SettingsController::class, 'brochureIndex'])->name('brochure.index');
         Route::get('vendors', [SettingsController::class, 'vendorIndex'])->name('vendors.index');
+        Route::get('vendor/{id}', [SettingsController::class, 'vendorShow'])->name('vendor.show');
 
 
         Route::get('create-sub-page/{id}', [PagesController::class, 'createSubPage'])->name('manage.solution.create.sub.page');
