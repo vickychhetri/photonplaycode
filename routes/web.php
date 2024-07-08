@@ -208,6 +208,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 #contact-us - contact
         Route::get('contact', [ContactUsController::class, 'contactUs'])->name('contact.us');
 
+        
 
 //about-us
 
@@ -376,3 +377,4 @@ Route::get('php', function() {
 Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'open_media_form_ajax'])->name("product_media_page_ajax");
 Route::post('download-brochure', [SignController::class, 'downloadBrochure'])->name('download.brochure');
 Route::post('vendor-store', [SignController::class, 'vendorStore'])->name('vendor.store');
+Route::get('dealership', [ContactUsController::class, 'dealership'])->name('dealership');

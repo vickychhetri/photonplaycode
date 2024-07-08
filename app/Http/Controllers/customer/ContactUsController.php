@@ -213,6 +213,11 @@ class ContactUsController extends Controller
         return view('customer.signages_sub_page', compact('page'));
     }
 
+    public function dealership(){
+        $setting = Setting::first();
+        return view('customer.dealership',compact('setting'));
+    }
+
 
 
 

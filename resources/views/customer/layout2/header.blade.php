@@ -301,7 +301,10 @@
                                 <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 25px;    border-radius: 51px; display:none; " id="openModalButton" data-backdrop="static" data-keyboard="false">  Become a Vendor  </button>
                             </li>
                             <li>
-                                <button  class="btn btn-sm btn-primary desktop_vendor ui_hide" style="padding: 0px 25px;    border-radius: 51px; display:none; max-width: 192px;max-height: 36px; overflow:hidden; width: 192px;" id="openModalButton">Become a Vendor</button>
+                                <!-- <button  class="btn btn-sm btn-primary desktop_vendor ui_hide" style="padding: 0px 25px;    border-radius: 51px; display:none; max-width: 192px;max-height: 36px; overflow:hidden; width: 192px;" id="openModalButton">Become a Vendor</button> -->
+
+                                 <a href="{{route('dealership')}}" class="btn btn-sm btn-primary desktop_vendor ui_hide" style="padding: 0px 25px;    border-radius: 51px; display:none; max-width: 192px;max-height: 36px; overflow:hidden; width: 192px;" >Dealership</a>
+
                             </li>
                         </ul>
                     </div>
@@ -320,8 +323,8 @@
                     </div>
                 </form>
                 </div>
-                
-                
+
+
 
             </nav>
 
@@ -471,10 +474,10 @@
             </ul>
         </div>
 
-        
+
     </header>
 
-    <form id="vendorForm">
+    {{-- <form id="vendorForm">
         @csrf
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -535,7 +538,7 @@
                 </div>
             </div>
         </div>
-    </form>
+    </form> --}}
 
     <!-- </html> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" async defer></script>
@@ -544,7 +547,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js"></script>
 
     <script>
-        
+
 
         $(document).ready(function() {
             if ($(window).width() <= 767) {
@@ -570,46 +573,46 @@
                 $('.ui_hide').css('display', 'block');
             });
         });
-        
+
         $(document).ready(() => {
             $('#country_select').selectize();
         });
         $(document).ready(function() {
 
 
-        $('.desktop_vendor , .mobile_vendor').on('click', function() {
-            console.log('clicked');
-            $('#exampleModal').modal('show');
-        });
+        // $('.desktop_vendor , .mobile_vendor').on('click', function() {
+        //     console.log('clicked');
+        //     $('#exampleModal').modal('show');
+        // });
 
-        $('#vendorForm').on('submit', function(event) {
-            event.preventDefault();
+        //$('#vendorForm').on('submit', function(event) {
+            // event.preventDefault();
 
-            var formData = $(this).serialize();
+            // var formData = $(this).serialize();
 
-            var recaptcha = $("#g-recaptcha-response").val();
+            // var recaptcha = $("#g-recaptcha-response").val();
 
-            // if (recaptcha === "") {
-            //     event.preventDefault();
-            //     toastr.error('Complete the captcha to submit!');
-            //     return false;
-            // }
+            // // if (recaptcha === "") {
+            // //     event.preventDefault();
+            // //     toastr.error('Complete the captcha to submit!');
+            // //     return false;
+            // // }
 
-            $.ajax({
-                url: '{{route("vendor.store")}}',
-                method: 'POST',
-                data: formData,
-                success: function(response) {
-                    $('#vendorForm')[0].reset();
-                    toastr.success('Details successfully submitted!');
-                    $('#exampleModal').modal('hide');
+            // $.ajax({
+            //     url: '{{route("vendor.store")}}',
+            //     method: 'POST',
+            //     data: formData,
+            //     success: function(response) {
+            //         $('#vendorForm')[0].reset();
+            //         toastr.success('Details successfully submitted!');
+            //         $('#exampleModal').modal('hide');
 
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    //
-                }
-            });
-        });
+            //     },
+            //     error: function(jqXHR, textStatus, errorThrown) {
+            //         //
+            //     }
+            // });
+        //});
 
         });
 

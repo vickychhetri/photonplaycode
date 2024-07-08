@@ -94,6 +94,16 @@ class SignController extends Controller
     }
 
     public function vendorStore(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => ['required', new ReCaptcha]
+        ]);
+
+        if($validator->fails()){
+
+            return redirect()->back()->with('error',  $validator->errors()->first());
+        }
+
         $vendor = Vendor::create($request->except('token'));
 
         try{
@@ -101,11 +111,13 @@ class SignController extends Controller
         }catch(Exception $e){
             //
         }
-        
 
-        return response()->json([
-            'message' => 'vendor successully stored'
-        ]);
+
+        // return response()->json([
+        //     'message' => 'vendor successully stored'
+        // ]);
+        // \toastr()->success('Form submitted');
+        return redirect()->back();
     }
 
 }
