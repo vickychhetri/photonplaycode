@@ -106,10 +106,12 @@ class SignController extends Controller
             return redirect()->back()->with('error',  $validator->errors()->first());
         }
 
-        $vendor = Vendor::create($request->except('token'));
+        $data=$request->except('token');
+        $data["dealer_data"]=$request->except('token');
+        $vendor = Vendor::create($data);
 
         try{
-            VendorJob::dispatch($vendor);
+//            VendorJob::dispatch($vendor);
         }catch(Exception $e){
             //
         }
