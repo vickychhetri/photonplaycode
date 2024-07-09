@@ -2,7 +2,7 @@
 use App\Models\ManageSeo;
 $data_record = ManageSeo::where('page_name', ManageSeo::CONTACT)->first();
 $seo_meta = [
-    'title' => $data_record->title,
+    'title' => 'Dealer Application',
     'description' => $data_record->description,
     'keywords' => $data_record->keyword,
     'schema' => $data_record->schema,
@@ -11,256 +11,164 @@ $seo_meta = [
 ?>
 
 @include('customer.layout2.header')
-<!-- Contact Us Banner start -->
-<!-- <section class="contact us">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="text-center mb-lg-5 mb-5">
-                        <h2 class="fs-2   mt-3">Contact Us</h2>
-                        <p claclints-content-brandingss="text-mutedd">We are waiting to help you and your team
-                            <br> so don't hesitate to reach out!
-                        </p>
-                    </div>
-                    <div
-                        class="d-flex justify-content-center align-items-center gap-5 contact-peraa my-lg-5 contact-wrapper">
-                        <div
-                            class="d-flex justify-lg-content-center justify-content-start align-items-center gap-3 w-100">
-                            <img src="{{ asset('assets\customer\images\iconmap.png') }}" alt="Not Found">
-                            <p class="mb-0">{{ $setting->company_address }}
-                            </p>
-                        </div>
-                        <div
-                            class="d-flex justify-lg-content-center justify-content-start align-items-center gap-3 w-100">
-                            <img src="{{ asset('assets\customer\images\iconTelephone.png') }}" alt="Not Found">
-                            <p class="mb-0">
-                            {{ $setting->sales_phone }}
-                            </p>
-                        </div>
-                        <div
-                            class="d-flex justify-lg-content-center justify-content-start align-items-center gap-3 w-100">
-                            <img src="{{ asset('assets\customer\images\iconmessagesss.png') }}" alt="Not Found">
-                            <p class="mb-0">
-                            {{ $setting->support_email }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-<!-- Contact Us Banner End -->
-<!-- banner-text-start -->
-<section class="pt-0 pb-sm-4 pb-lg-5">
-    <div class="banner">
-
-        <div class="about-wrapper">
-            <div class="d-flex justify-content-center align-items-center"
-                style="background-color: rgba(0, 0, 0, 0.4); height: 100%;">
-                <div>
-                    <h1 class="text-white text-center" style="font-size: 60px;"> Dealer Application </h1>
-                </div>
-            </div>
-
-        </div>
-
-        {{--            <div class="about-wrapper"> --}}
-        {{--                <div class="about-wrapper d-flex justify-content-center align-items-center"> --}}
-        {{--                    <h1 class="text-dark soft-text text-white "  style="text-shadow: black 2px 2px;">Contact us</h1> --}}
-        {{--                </div> --}}
-        {{--            </div> --}}
-    </div>
-    <!-- </div> -->
-</section>
-<!-- undefeated-section-start -->
-<section class="undefeated-wrapper">
-    <div class="container">
+<section class="undefeated-wrapper-dealership ">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-10  pe-lg-0">
-                        <div class="about-undeafeted text-dark">
-                            <div class="text-center">
-                                <h4 class="text-uppercase text-dark mb-4">Reach Our Team </h4>
-                                <p>Contact a Photonplay representative for more detailed information. </br> Although the
-                                    process may be
-                                    a simple one, the benefits are vast. Don't wait, apply to be a dealer today!</p>
-                                <>
-                                    <p>To start the conversation, please fill out the form below so we can get to know
-                                        you </br> and your goals a little better. </br> Once you submit the form, a
-                                        Photonplay representative will contact you with more details of our Authorized
-                                        Dealer program.
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- undefeated-section-send -->
-<!-- map-Contact-start -->
 
-<section style="padding: 20px 400px !important;">
-    <div class="container">
-        <div class="row">
-            <form action="{{ route('vendor.store') }}" method="post">
+            <form action="{{ route('vendor.store') }}" method="post" class="col-lg-11 mx-auto">
+                <h2 style="color: black;"> Dealer Application</h2>
+                <p>Please fill out the form below so we can get to know you and your goals a little better. Once you submit the form, a Photonplay representative will contact you with more details of our Authorized Dealer program. </p>
+                <hr/>
                 @csrf
-                <b><label class="h5">Company Information</label></b>
-                <input type="hidden" name="url" value="{{ \Illuminate\Support\Facades\URL::full() }}">
-                <div class="form-group mt-2">
-                    <label for="company_name">Company Name</label><span style="color: red">*</span>
-                    <input name="company_name" type="text" class="form-control" placeholder="Company Name" required>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="address">Address</label><span style="color: red">*</span>
-                    <textarea name="address" type="text" class="form-control" placeholder="Address" required></textarea>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="city">City</label><span style="color: red">*</span>
-                    <input name="city" type="text" class="form-control" placeholder="City" required>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="state">State</label><span style="color: red">*</span>
-                    <input name="state" type="text" class="form-control" placeholder="State" required>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="postal_code">Postal Code</label><span style="color: red">*</span>
-                    <input name="postal_code" type="text" class="form-control" placeholder="Postal code" required>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="country">Country</label><span style="color: red">*</span>
-                    <input name="country" type="text" class="form-control" placeholder="country" required>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="telephone_number">Telephone Number</label><span style="color: red">*</span>
-                    <input name="telephone_number" type="number" class="form-control" placeholder="+12 3456 789" required>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="fax_number">Fax Number</label>
-                    <input name="fax_number" type="text" class="form-control" placeholder="Fax Number">
-                </div>
-                <div class="form-group mt-2">
-                    <label for="email">Email Address</label><span style="color: red">*</span>
-                    <input name="email" type="email" class="form-control" placeholder="email" required>
-                </div>
 
-                <div class="form-group mt-2">
-                    <label for="website">Website</label>
-                    <input name="website" type="text" class="form-control" placeholder="Website">
-                </div>
+                <!-- Company Information Section -->
+                <div class="mb-4">
+                    <h4 class="mb-3">Company Information</h4>
+                    <input type="hidden" name="url" value="{{ \Illuminate\Support\Facades\URL::full() }}">
 
-                <div class="form-group mt-2">
-                    <label for="year_of_business">Years of Business</label><span style="color: red">*</span>
-                    <input name="year_of_business" type="website" class="form-control" placeholder="Years of Business" required>
-                </div>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="company_name" class="form-label">Company Name <span style="color: red">*</span></label>
+                            <input name="company_name" type="text" class="form-control" placeholder="Company Name" required>
+                        </div>
 
-                <div class="form-group mt-2">
-                    <label for="year_of_business_present_years">Years of Business Under Present Years</label><span style="color: red">*</span>
-                    <input name="year_of_business_present_years" type="website" class="form-control" placeholder="Years of Business Under Present Years" required>
-                </div>
+                        <div class="col-md-4">
+                            <label for="year_of_business" class="form-label">Years of Business <span style="color: red">*</span></label>
+                            <input name="year_of_business" type="number" class="form-control" placeholder="Years of Business" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="year_of_business_present_years" class="form-label">Years of Business Under Present Years <span style="color: red">*</span></label>
+                            <input name="year_of_business_present_years" type="number" class="form-control" placeholder="Years of Business Under Present Years" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="year_of_business_present_location" class="form-label">Years of Business at present location <span style="color: red">*</span></label>
+                            <input name="year_of_business_present_location" type="number" class="form-control" placeholder="Years of Business at present location" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="total_number_of_locations" class="form-label">Total Number of locations <span style="color: red">*</span></label>
+                            <input name="total_number_of_locations" type="number" class="form-control" placeholder="Total Number of locations" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="type_of_ownership" class="form-label">Type of Ownership <span style="color: red">*</span></label>
+                            <input name="type_of_ownership" type="text" class="form-control" placeholder="Type of Ownership" required>
+                        </div>
 
-                <div class="form-group mt-2">
-                    <label for="year_of_business_present_location">Years of Business at present location</label><span style="color: red">*</span>
-                    <input name="year_of_business_present_location" type="website" class="form-control" placeholder="Years of Business at present location" required>
-                </div>
+                        <div class="col-md-4">
+                            <label for="telephone_number" class="form-label">Telephone Number <span style="color: red">*</span></label>
+                            <input name="telephone_number" type="tel" class="form-control" placeholder="+12 3456 789" required>
+                        </div>
 
-                <div class="form-group mt-2">
-                    <label for="total_number_of_locations">Total Number of locations</label><span style="color: red">*</span>
-                    <input name="total_number_of_locations" type="website" class="form-control" placeholder="Total Number of location" required>
-                </div>
+                        <div class="col-md-4">
+                            <label for="fax_number" class="form-label">Fax Number</label>
+                            <input name="fax_number" type="tel" class="form-control" placeholder="Fax Number">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Email Address <span style="color: red">*</span></label>
+                            <input name="email" type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="website" class="form-label">Website</label>
+                            <input name="website" type="url" class="form-control" placeholder="Website">
+                        </div>
 
-                <div class="form-group mt-2">
-                    <label for="type_of_ownership">Type of Ownership</label><span style="color: red"> * </span>
-                    <input name="type_of_ownership" type="website" class="form-control" placeholder="Type of Ownership" required>
-                </div>
+                        <div class="col-md-4">
+                            <label for="city" class="form-label">City <span style="color: red">*</span></label>
+                            <input name="city" type="text" class="form-control" placeholder="City" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="state" class="form-label">State <span style="color: red">*</span></label>
+                            <input name="state" type="text" class="form-control" placeholder="State" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="postal_code" class="form-label">Postal Code <span style="color: red">*</span></label>
+                            <input name="postal_code" type="text" class="form-control" placeholder="Postal code" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="country" class="form-label">Country <span style="color: red">*</span></label>
+                            <input name="country" type="text" class="form-control" placeholder="Country" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="address" class="form-label">Address <span style="color: red">*</span></label>
+                            <textarea name="address" class="form-control" placeholder="Address" required></textarea>
+                        </div>
 
 
-                {{-- key contacts --}}
-                <hr>
-                    <b><label class="h5">Key Contacts</label></b>
 
-                <div class="form-group mt-2">
-                    <label for="president">President / Owner(s)</label>
-                    <input name="president" type="text" class="form-control" placeholder="President / Owner(s)">
+                    </div>
                 </div>
 
-                <div class="form-group mt-2">
-                    <label for="sale_marketing_manager">Sale Marketing Manager</label>
-                    <input name="sale_marketing_manager" type="text" class="form-control" placeholder="Sale Marketing Manager">
+                <!-- Key Contacts Section -->
+                <div class="mb-4">
+                    <h4 class="mb-3">Key Contacts</h4>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="president" class="form-label">President / Owner(s)</label>
+                            <input name="president" type="text" class="form-control" placeholder="President / Owner(s)">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="sale_marketing_manager" class="form-label">Sales Marketing Manager</label>
+                            <input name="sale_marketing_manager" type="text" class="form-control" placeholder="Sales Marketing Manager">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="accounting_manager" class="form-label">Accounting Manager</label>
+                            <input name="accounting_manager" type="text" class="form-control" placeholder="Accounting Manager">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="production_manager" class="form-label">Production Manager</label>
+                            <input name="production_manager" type="text" class="form-control" placeholder="Production Manager">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="installation_manager" class="form-label">Installation Manager</label>
+                            <input name="installation_manager" type="text" class="form-control" placeholder="Installation Manager">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="service_manager" class="form-label">Service Manager</label>
+                            <input name="service_manager" type="text" class="form-control" placeholder="Service Manager">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group mt-2">
-                    <label for="sale_marketing_manager">Accounting Manager</label>
-                    <input name="sale_marketing_manager" type="text" class="form-control" placeholder="Accounting Manager">
+                <!-- How did you know about Tickerplay? Section -->
+                <div class="mb-4">
+                    <h4 class="mb-3">How did you know about Tickerplay?</h4>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="know_about_tickerplay" class="form-label">How did you know about Tickerplay?</label>
+                            <select class="form-select" name="know_about_tickerplay" required>
+                                <option selected disabled>Choose...</option>
+                                <option value="google_search">Google Search</option>
+                                <option value="yahoo">Yahoo</option>
+                                <option value="bing">Bing</option>
+                                <option value="email">Email</option>
+                                <option value="word_of_mouth">Word of Mouth</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Captcha and Terms & Conditions -->
+                <div class="mb-4">
+                    <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
 
-                <div class="form-group mt-2">
-                    <label for="production_manager">Production Manager</label>
-                    <input name="production_manager" type="text" class="form-control" placeholder="Production Manager">
+                    <div class="form-check mt-3 mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Accept terms & conditions
+                        </label>
+                    </div>
                 </div>
 
-                <div class="form-group mt-2">
-                    <label for="installation_manager">Installation Manager</label>
-                    <input name="installation_manager" type="text" class="form-control" placeholder="Installation Manager">
+                <!-- Submit Button -->
+                <div class="mb-4">
+                    <button type="submit" class="btn btn-primary btn-block">Send</button>
                 </div>
-
-                <div class="form-group mt-2">
-                    <label for="service_manager">Service Manager</label>
-                    <input name="service_manager" type="text" class="form-control" placeholder="Service Manager">
-                </div>
-
-                <hr>
-                <b><label class="h5">How did you know about Tickerplay ?</label></b>
-
-                <div class="form-group mt-2">
-                    <label for="know_about_tickerplay">How did you know about Tickerplay</label>
-                    {{-- <input name="know_about_tickerplay" type="text" class="form-control" placeholder="How did you know about Tickerplay"> --}}
-                    <select class="form-control" name="know_about_tickerplay" id="" required>
-                        <option selected disabled >Choose...</option>
-                        <option value="google_search" >Google Search</option>
-                        <option value="yahoo" >Yahoo</option>
-                        <option value="bing" >Bing</option>
-                        <option value="email" >Email</option>
-                        <option value="word_of_mouth" >Word of Mouth</option>
-                    </select>
-                </div>
-
-
-
-                <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
-
-
-                <div class="form-check mt-3 mb-3">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Accept terms & conditions
-                    </label>
-                </div>
-
-
-
-
-
-
-                <button type="submit" class="btn btn-primary btn-block">Send</button>
+                <p> <i> Note: Once you submit the form, a Photonplay representative will contact you with more details of our Authorized Dealer program.
+                        </i>
+                </p>
             </form>
         </div>
     </div>
 </section>
-
-<!-- area-section-start -->
-{{-- <section class="dealership" style="padding-bottom: 0!important; ">
-    <div class="container">
-        <div class="row bodered-classes pb-4">
-            <form action="{{ route('customer.inquery.submit') }}" method="post">
-                @csrf
-            </form>
-        </div>
-    </div>
-</section> --}}
 
 @include('customer.layout2.footer')
 <script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>
