@@ -107,7 +107,7 @@ class SignController extends Controller
         }
 
         $data=$request->except('token');
-        $data["dealer_data"]=$request->except('token');
+        $data["dealer_data"]=json_encode($request->except('token'));
         $vendor = Vendor::create($data);
 
         try{
