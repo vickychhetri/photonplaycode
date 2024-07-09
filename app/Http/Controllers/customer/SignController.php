@@ -111,7 +111,7 @@ class SignController extends Controller
         $vendor = Vendor::create($data);
 
         try{
-//            VendorJob::dispatch($vendor);
+            VendorJob::dispatch($vendor);
         }catch(Exception $e){
             //
         }
