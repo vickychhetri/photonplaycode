@@ -116,12 +116,7 @@ class SignController extends Controller
             //
         }
 
-
-        // return response()->json([
-        //     'message' => 'vendor successully stored'
-        // ]);
-        // \toastr()->success('Form submitted');
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Application submitted successfully.');;
     }
 
 }
