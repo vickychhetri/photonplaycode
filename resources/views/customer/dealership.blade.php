@@ -151,7 +151,7 @@ $seo_meta = [
                     <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
 
                     <div class="form-check mt-3 mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
+                        <input class="form-check-input" type="checkbox" name="i_agree_terms" value="1" id="flexCheckChecked" required>
                         <label class="form-check-label" for="flexCheckChecked">
                             Accept terms & conditions
                         </label>
@@ -160,7 +160,7 @@ $seo_meta = [
 
                 <!-- Submit Button -->
                 <div class="mb-4">
-                    <button type="submit" class="btn btn-primary btn-block">Send</button>
+                    <button type="submit" class="btn btn-primary btn-block" id="dealership_submit_btn" disabled>Submit</button>
                 </div>
                 <p> <i> Note: Once you submit the form, a Photonplay representative will contact you with more details of our Authorized Dealer program.
                         </i>
@@ -174,6 +174,24 @@ $seo_meta = [
 <script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>
 <script src="/assets/customer/js/jquery.js"></script>
 <script src="/assets/customer/slick/slick.min.js"></script>
+
+<script>
+    // Get the checkbox and submit button elements
+    const checkbox = document.getElementById('flexCheckChecked');
+    const submitButton = document.getElementById('dealership_submit_btn');
+
+    // Add event listener to checkbox for change event
+    checkbox.addEventListener('change', function() {
+        // Check if checkbox is checked
+        if (checkbox.checked) {
+            // Enable submit button
+            submitButton.removeAttribute('disabled');
+        } else {
+            // Disable submit button
+            submitButton.setAttribute('disabled', 'disabled');
+        }
+    });
+</script>
 <script>
     $(document).ready(function() {
         $('.clint-wrapperr').slick({
