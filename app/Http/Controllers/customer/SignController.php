@@ -9,6 +9,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\UserPostalCode;
 use App\Models\Vendor;
+use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
