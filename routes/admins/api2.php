@@ -118,6 +118,13 @@ Route::delete('/cms/banners/{id}', [BannerController::class,'destroy'])->name("b
 
 
 Route::get('/contact-us', [AdminContactusController::class,'index'])->name("contact_us_index");
+
+Route::post('/admin/contact_us_bulk_delete', [AdminContactusController::class, 'bulkDelete'])->name('contact_us_bulk_delete');
+Route::post('/admin/contact_us_delete_all', [AdminContactusController::class, 'deleteAll'])->name('contact_us_delete_all');
+
+
+Route::get('/contact-us/{id}/download-pdf', [AdminContactusController::class, 'downloadPdf'])->name('contact_us_download_pdf');
+
 Route::get('/contact-us/{id}', [AdminContactusController::class,'show'])->name("contact_us_show");
 Route::get('/change-inquiry-status/{id}', [AdminContactusController::class,'change_status'])->name("contact_us_change_status");
 
