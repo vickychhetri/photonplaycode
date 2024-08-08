@@ -16,7 +16,7 @@
         <tr id="Item-{{$item->id}}">
             <td><input type="checkbox" class="record-checkbox" value="{{$item->id}}" /></td>
             <td>{{$loop->iteration + $records->firstItem() - 1}}</td>
-            <td>{{$item->id}}</td>
+            <td> <a href="{{route('admin.contact_us_show', $item->id)}}" class="p-1" data-toggle="tooltip" title="View"> {{$item->id}} </a></td>
             <td>{{$item->first_name}}</td>
             <td>{{$item->country }}</td>
             <td>{{$item->subject}}</td>
