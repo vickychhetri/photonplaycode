@@ -241,7 +241,6 @@
 
         $('#select-all').click(function() {
             $('.record-checkbox').prop('checked', this.checked);
-            alert("dds");
         });
 
         $('.record-checkbox').click(function() {
