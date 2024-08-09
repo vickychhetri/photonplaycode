@@ -122,6 +122,8 @@ Route::get('/contact-us', [AdminContactusController::class,'index'])->name("cont
 Route::post('/admin/contact_us_bulk_delete', [AdminContactusController::class, 'bulkDelete'])->name('contact_us_bulk_delete');
 Route::post('/admin/contact_us_delete_all', [AdminContactusController::class, 'deleteAll'])->name('contact_us_delete_all');
 
+Route::get('/inquiries/pie-chart', [AdminContactusController::class, 'showPieAndTrendChart'])->name('inquiries.pie-chart');
+Route::get('/contact-us/month-wise-inquiries', [AdminContactusController::class, 'inquiryMonthWise'])->name('contact_us_month_wise_inquiries');
 
 Route::get('/contact-us/{id}/download-pdf', [AdminContactusController::class, 'downloadPdf'])->name('contact_us_download_pdf');
 

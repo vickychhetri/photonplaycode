@@ -11,6 +11,8 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Mpdf\Mpdf;
 
 class AdminContactusController extends Controller
@@ -128,5 +130,74 @@ class AdminContactusController extends Controller
             ],404);
         }
     }
+
+    public function showPieAndTrendChart()
+    {
+        // Query to get the counts of open and closed inquiries
+        $inquiryData = Inquery::select(
+            DB::raw('status'),
+            DB::raw('count(*) as total')
+        )
+            ->groupBy('status')
+            ->pluck('total', 'status')->all();
+
+        // Prepare data for the pie chart
+        $chartData = [
+            'open' => $inquiryData['Open'] ?? 0,
+            'closed' => $inquiryData['Closed'] ?? 0,
+        ];
+
+        // Get data for the last three months
+        $trendData = Inquery::select(
+            DB::raw('DATE_FORMAT(created_at, "%Y-%m") as month'),
+            DB::raw('count(*) as total')
+        )
+            ->where('created_at', '>=', now()->subMonths(3))
+            ->groupBy('month')
+            ->orderBy('month')
+            ->pluck('total', 'month')->all();
+
+        // Prepare trend data
+        $months = [];
+        $inquiries = [];
+        foreach ($trendData as $month => $total) {
+            $months[] = $month;
+            $inquiries[] = $total;
+        }
+
+        // Get country-wise inquiry data
+        $countryData = Inquery::select(
+            DB::raw('country'),
+            DB::raw('count(*) as total')
+        )
+            ->groupBy('country')
+            ->orderBy('total', 'desc')
+            ->pluck('total', 'country')->all();
+
+        // Prepare country-wise data
+        $countries = array_keys($countryData);
+        $inquiriesByCountry = array_values($countryData);
+
+        return view('contact_us.pie_trend_country', compact('chartData', 'months', 'inquiries', 'countries', 'inquiriesByCountry'));
+    }
+
+
+
+
+    public function inquiryMonthWise()
+    {
+        $data = Inquery::selectRaw('YEAR(created_at) as year, MONTH(created_at) as month, COUNT(*) as count')
+            ->groupBy('year', 'month')
+            ->get();
+
+        $labels = $data->map(function($item) {
+            return $item->year . '-' . str_pad($item->month, 2, '0', STR_PAD_LEFT); // e.g., "2023-01"
+        });
+
+        $values = $data->pluck('count');
+
+        return view('contact_us.month_wise_inquiries', compact('labels', 'values'));
+    }
+
 
 }
