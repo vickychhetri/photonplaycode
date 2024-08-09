@@ -21,6 +21,7 @@ class AdminContactusController extends Controller
      */
     public function index(Request $request)
     {
+        $pageSize = $request->input('page_size', 10); // Default to 10 if not set
         $query = Inquery::query();
 
         if ($request->has('search') && !empty($request->search)) {
@@ -34,7 +35,7 @@ class AdminContactusController extends Controller
             });
         }
 
-        $records = $query->orderBy('id', 'DESC')->paginate(10); // Adjust records per page
+        $records = $query->orderBy('id', 'DESC')->paginate($pageSize); // Adjust records per page
 
         if ($request->ajax()) {
             return response()->json([

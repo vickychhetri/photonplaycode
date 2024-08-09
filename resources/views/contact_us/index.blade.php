@@ -54,21 +54,26 @@
         </div>
 
         <!-- Search Form -->
-        <div class="row mb-3">
-            <div class="col-12">
-                <form id="search-form" method="GET">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">Search</button>
-                        </div>
-                    </div>
-                </form>
+        <form id="search-form" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
+                <select name="page_size" id="page-size" class="form-control ml-2" style="max-width: 100px;">
+                    <option value="10" {{ request('page_size') == 10 ? 'selected' : '' }}>10</option>
+                    <option value="25" {{ request('page_size') == 25 ? 'selected' : '' }}>25</option>
+                    <option value="50" {{ request('page_size') == 50 ? 'selected' : '' }}>50</option>
+                    <option value="100" {{ request('page_size') == 100 ? 'selected' : '' }}>100</option>
+                    <option value="100" {{ request('page_size') == 150 ? 'selected' : '' }}>150</option>
+                    <option value="100" {{ request('page_size') == 200 ? 'selected' : '' }}>250</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
             </div>
-        </div>
+        </form>
+
 
         <!-- Bulk Actions -->
-        <div class="row mb-3">
+        <div class="row mb-3 mt-4">
             <div class="col-12">
                 <button id="bulk-delete-btn" class="btn btn-danger">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
@@ -103,7 +108,7 @@
 @endsection
 
 @section('script')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{--    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>--}}
     <script>
         $(document).ready(function() {
             // Show spinner when AJAX request starts
@@ -126,6 +131,10 @@
                         $('#table-container').html(data.html);
                     }
                 });
+            });
+
+            $('#page-size').change(function() {
+                $('#search-form').submit();
             });
 
             // Individual Delete
@@ -189,7 +198,9 @@
                                     ids.forEach(id => {
                                         $("#Item-" + id).remove();
                                     });
+                                    location.reload();
                                 }
+
                             });
                         }
                     });
@@ -227,5 +238,19 @@
                 });
             });
         });
+
+        $('#select-all').click(function() {
+            $('.record-checkbox').prop('checked', this.checked);
+            alert("dds");
+        });
+
+        $('.record-checkbox').click(function() {
+            if ($('.record-checkbox:checked').length === $('.record-checkbox').length) {
+                $('#select-all').prop('checked', true);
+            } else {
+                $('#select-all').prop('checked', false);
+            }
+        });
+
     </script>
 @endsection
