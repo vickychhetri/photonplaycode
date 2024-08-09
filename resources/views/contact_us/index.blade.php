@@ -62,11 +62,14 @@
                     <option value="25" {{ request('page_size') == 25 ? 'selected' : '' }}>25</option>
                     <option value="50" {{ request('page_size') == 50 ? 'selected' : '' }}>50</option>
                     <option value="100" {{ request('page_size') == 100 ? 'selected' : '' }}>100</option>
-                    <option value="100" {{ request('page_size') == 150 ? 'selected' : '' }}>150</option>
-                    <option value="100" {{ request('page_size') == 200 ? 'selected' : '' }}>250</option>
+                    <option value="150" {{ request('page_size') == 150 ? 'selected' : '' }}>150</option>
+                    <option value="200" {{ request('page_size') == 200 ? 'selected' : '' }}>200</option>
+                    <option value="250" {{ request('page_size') == 250 ? 'selected' : '' }}>250</option>
+                    <option value="350" {{ request('page_size') == 350 ? 'selected' : '' }}>350</option>
+                    <option value="500" {{ request('page_size') == 500 ? 'selected' : '' }}>500</option>
                 </select>
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <button class="btn btn-primary mx-2" type="submit"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                         </svg>
                         Search</button>
