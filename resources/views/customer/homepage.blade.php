@@ -12,11 +12,16 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
     ];
     return $seo_meta;
 });
+
+$startYear = 2012; // The year the company started
+$currentYear = date('Y'); // Get the current year
+$yearsOfExperience = $currentYear - $startYear;
+
 ?>
 @include('customer.layout2.header')
 <x-Customer.HomePageBanner/>
 <!-- undefeated-section-start -->
-<section class="undefeated-wrapper pt-lg-0 shadow-lg">
+<section class="undefeated-wrapper pt-lg-0 shadow-lg pb-3">
     <div class="container  ">
         <div class="row justify-content-center align-items-center ">
             <div class="col-lg-10">
@@ -24,7 +29,7 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
                     <div class="col-lg-6 pe-lg-0">
                         <div class="sucess-undeafeted p-4 py-5 text-white">
                             <p class="text-uppercase">From Idea to Implementation</p>
-                            <h4 class="text-uppercase">Our 12+ Years of Undefeated Success</h4>
+                            <h4 class="text-uppercase">Our <?php echo  $yearsOfExperience; ?>+ Years of Undefeated Success</h4>
                             <p style="text-align: justify;">
                                 PhotonPlay, a family-owned company, delivers high-quality intelligent transportation
                                 systems (ITS) worldwide. For over 12 years, we've catered to system integrators,
@@ -71,7 +76,8 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 @include('customer.layout2.our_clients')
 
 <div class="container-fluid p-4" style="background-color: #036eb1;">
-    <h5 class="fw-bold text-white text-center"> Photonplay is a leading provider of intelligent transportation systems (ITS) with over 12 years of experience.
+    <h5 class="fw-bold text-white text-center">
+        Photonplay is a leading provider of intelligent transportation systems (ITS) with over <?php echo $yearsOfExperience ?> years of experience.
     </h5>
 </div>
 
@@ -79,11 +85,11 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 <section class="team-members bg-white pb-1 pt-2">
     <div class="container">
         <div class="col-lg-12">
-            <div class="text-center ">
-                <h2 class="fs-md-2 mt-3">Vehicle Actuated Speed Display</h2>
-                <p class="text-mutedd">
-                    Tagline - Traffic Enforcement and Calming Solution</p>
-            </div>
+{{--            <div class="text-center ">--}}
+{{--                <h2 class="fs-md-2 mt-3">Vehicle Actuated Speed Display</h2>--}}
+{{--                <p class="text-mutedd mb-0 pb-0">--}}
+{{--                    Tagline - Traffic Enforcement and Calming Solution</p>--}}
+{{--            </div>--}}
             <div class="d-flex justify-content-center">
                 <img src="{{asset("assets/images/vasd.png")}}" style="max-width: 100%;"/>
             </div>
@@ -121,7 +127,7 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 </section>
 
 
-@include('customer.layout2.get_in_touch_r')
+{{--@include('customer.layout2.get_in_touch_r')--}}
 
 <!-- slider-start -->
 <section class="products bg-white pt-4">
@@ -141,7 +147,7 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
                     </p>
 
                 </div>
-                <h2 class="fs-md-2 mt-3 text-uppercase">Products</h2>
+                <h2 class="fs-md-2 mt-3 text-uppercase">Explore Our Products to help traffic calming</h2>
                 <h6 class="fs-6 text-colorr">Empowering Smarter Mobility with Innovative Product Solutions that Exceed
                     Expectations</h6>
             </div>
