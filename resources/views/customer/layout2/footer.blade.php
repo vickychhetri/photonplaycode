@@ -142,7 +142,9 @@
         </div>
     </div>
 </footer>
-<div class="sticky-bottom_bootom_sticky_footer">
+<div class="sticky-bottom_bootom_sticky_footer" style="background-size: 100% 100%;
+background-position: 0px 0px;
+background-image: linear-gradient(90deg, #A100FFFF 0%, #71C4FFFF 100%);">
     TALK TO OUR SALES ::
     <a href="tel:+18009669329" style="text-decoration: none;color: white;" >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound" viewBox="0 0 16 16">
