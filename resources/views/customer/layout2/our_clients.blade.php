@@ -14,7 +14,7 @@
     $clients = getClients();
 @endphp
 <section
-    class="{{Request::is('/') ||  Route::currentRouteName() === 'customer.about.us' ||Route::currentRouteName() === 'customer.contact.us'? 'our-clints-last':''}} ">
+    class="{{Request::is('/') ||  Route::currentRouteName() === 'customer.about.us' ||Route::currentRouteName() === 'customer.contact.us'? 'our-clints-last':''}} bg-white pt-1">
     <div class="mb-lg-5 text-center">
         <h3 class="fs-md-2 mt-3" style="font-size: 40px;">Our Clients</h3>
     </div>
