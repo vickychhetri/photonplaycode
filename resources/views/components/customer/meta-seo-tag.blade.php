@@ -20,7 +20,7 @@
 <meta name="language" content="English">
 <meta name="author" content="Photonplay">
 <meta property="og:site_name" content="PHOTONPLAY" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="en-us" />
 <meta property="og:type" content="webpage" />
 <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
 <meta property="article:publisher" content="https://www.facebook.com/photonplaygroup/" />

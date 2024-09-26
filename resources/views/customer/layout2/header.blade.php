@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<html lang="en-us" prefix="og: https://ogp.me/ns#">
 <head>
     @php
         $currency = '$';
