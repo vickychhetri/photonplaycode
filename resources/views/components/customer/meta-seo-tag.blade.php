@@ -17,6 +17,7 @@
 @if(isset($seodata['keywords']))
     <meta name="keywords" content="{{$seodata['keywords']}}">
 @endif
+<link rel="alternate" hreflang="en-us">
 <meta name="language" content="English">
 <meta name="author" content="Photonplay">
 <meta property="og:site_name" content="PHOTONPLAY" />
