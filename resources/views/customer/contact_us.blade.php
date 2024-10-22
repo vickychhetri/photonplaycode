@@ -207,7 +207,7 @@ $seo_meta=[
                                     <div class="d-flex align-items-start"> <img src="{{asset('assets\images\pin-map.png')}}"  class="me-2 mb-2"/>
 {{--                                        <p class="">Photonplay Systems Ltd. <br>23 Overstone road, Georgetown, Ontario, <br> L7G 0M9 Canada.Photonplay Systems Ltd</p>--}}
                                         <p class="">Photonplay Systems Ltd.<br>
-                                            6733 Mississauga Rd, Mississauga, ON L5N 6J5, &nbsp Canada
+                                            6733 Mississauga Rd, Mississauga, ON L5N 6J5, Canada
                                         </p>
 
                                     </div>
