@@ -1,11 +1,11 @@
 <?php
 if (!isset($product)) {
-?>
-    <div style="height: 100vh;text-align: center;display: flex;justify-content: center;align-items: center;">
-        <h3>Sorry, This page not exist! </h3>
-        <p> Visit <a href="https://photonplay.com">photonplay.com</a> for more information. </p>
-    </div>
-<?php
+    ?>
+<div style="height: 100vh;text-align: center;display: flex;justify-content: center;align-items: center;">
+    <h3>Sorry, This page not exist! </h3>
+    <p> Visit <a href="https://photonplay.com">photonplay.com</a> for more information. </p>
+</div>
+    <?php
 
     return redirect()->route('customer.radar.speed.signs');
 }
@@ -23,23 +23,23 @@ if (isset($seo_record)) {
 ?>
 
 @php
-// foreach($product->specilizations as $specilization){
-// foreach($specilization->options as $option){
-// //dd($option);
-// }
-// }
+    // foreach($product->specilizations as $specilization){
+    // foreach($specilization->options as $option){
+    // //dd($option);
+    // }
+    // }
 @endphp
 @push('header_meta_content')
-<meta property="og:type" content="product.item" />
-<meta property="product:price:amount" content="{{$product->price}}" />
-<meta property="product:price:currency" content="USD" />
-<meta property="product:category" content="Radar Speed Signs" />
-<meta property="product:availability" content="in stock" />
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": "Radar Speed Signs {{$seo_record->meta_title}}",
+    <meta property="og:type" content="product.item" />
+    <meta property="product:price:amount" content="{{$product->price}}" />
+    <meta property="product:price:currency" content="USD" />
+    <meta property="product:category" content="Radar Speed Signs" />
+    <meta property="product:availability" content="in stock" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Radar Speed Signs {{$seo_record->meta_title}}",
         "image": "{{ asset('storage/'. $product->cover_image) }}",
         "description": "{{$seo_record->meta_description}}",
         "brand": {
@@ -105,7 +105,7 @@ if (isset($seo_record)) {
         }
     }]
     }
-</script>
+    </script>
 @endpush
 @include('customer.layouts.header')
 <style>
@@ -120,7 +120,7 @@ if (isset($seo_record)) {
 <section class="pt-0 pb-0">
     <ul class="list-style-ul pt-2 m-0 pb-2 d-flex justify-content-center align-items-center flex-wrap">
         @forelse ($productLists as $list)
-        <a href="{{route('customer.radar.sign', $list->slug)}}" class="gap-1 text-decoration-none text-dark"><span class="p-2  {{ request()->url() == route('customer.radar.sign', [$list->slug]) ? 'bg-dark text-white' : '' }}
+            <a href="{{route('customer.radar.sign', $list->slug)}}" class="gap-1 text-decoration-none text-dark"><span class="p-2  {{ request()->url() == route('customer.radar.sign', [$list->slug]) ? 'bg-dark text-white' : '' }}
  m-2">{{$list->title}}</span></a>
         @empty
 
@@ -174,9 +174,9 @@ if (isset($seo_record)) {
                         <div class="d-flex flex-row flex-wrap">
                             @foreach($product->images as $im_g)
 
-                            <div class="radar-item-box">
-                                <img src="{{asset('storage/'.$im_g->image)}}" class="img-fluid" alt="{{$product->title}}">
-                            </div>
+                                <div class="radar-item-box">
+                                    <img src="{{asset('storage/'.$im_g->image)}}" class="img-fluid" alt="{{$product->title}}">
+                                </div>
                             @endforeach
                             <div class="radar-item-box">
                                 <img src="{{ asset('storage/'. $product->cover_image) }}" class="img-fluid" alt="{{$product->title}}">
@@ -189,15 +189,15 @@ if (isset($seo_record)) {
                     <div class="multiple-optionn pb-0 pt-lg-0 pt-5 pb-0">
                         <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
                             @if($product->brochure)
-                            <div>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;" class="d-flex align-items-center text-decoration-none text-dark" style="height: 40px;padding:8px; width: 200px;">
+                                <div>
+                                    <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor:pointer;" class="d-flex align-items-center text-decoration-none text-dark" style="height: 40px;padding:8px; width: 200px;">
 
-                                    <img src="/assets/images/radar/pdf_icon.png" style="height:40px;" alt="PDF">
-                                    &nbsp
-                                    <span class="font-weight-bold"><u> {{$product->title}} PDF </u> </span>
+                                        <img src="/assets/images/radar/pdf_icon.png" style="height:40px;" alt="PDF">
+                                        &nbsp
+                                        <span class="font-weight-bold"><u> {{$product->title}} PDF </u> </span>
 
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
                             @endif
 
                         </div>
@@ -208,7 +208,7 @@ if (isset($seo_record)) {
                             {{$product->title}}
                         </span>
                         @if ($product && $product->sku)
-                        <span class="text-capitalize d-block small">
+                            <span class="text-capitalize d-block small">
                             <b>SKU : </b>{{strtoupper($product->sku)}}
                         </span>
                         @endif
@@ -221,37 +221,41 @@ if (isset($seo_record)) {
                             <img src="{{asset('assets\customer\images\star.svg')}}" alt="5 Star" class="img-fluid" width="14px">
                             <span>( 150+ Customers Reviews)</span>
                         </div>
-                        <p class="fw-bold fs-5" id="total_price2">${{$product->price}}</p>
+                        @if($product->is_price_hide != 1)
+                            <p class="fw-bold fs-5" id="total_price2">${{$product->price}}</p>
+                        @else
+                            <p class="fw-bold fs-5" id="total_price2"></p>
+                        @endif
                         <div>
                             <p class="specific-heading">Select Specification</p>
                             <div class="row mt-3">
 
                                 {{-- Loop to Start Specifications--}}
                                 @foreach ($product->specilizations->reverse() as $specilization)
-                                <div class="col-md-8 bg-transparent">
-                                    <div class="">
-                                        <h6 class="text-dark"> {{$specilization->specilization->title}} </h6>
-                                        <select class="form-select mb-3 " onchange="changecalculated_amount(this)" name="dynamic_specs[{{$specilization->id}}]" id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;" required>
-                                            <option selected disabled>--Choose an Option--</option>
-                                            @foreach($specilization->options as $option)
+                                    <div class="col-md-8 bg-transparent">
+                                        <div class="">
+                                            <h6 class="text-dark"> {{$specilization->specilization->title}} </h6>
+                                            <select class="form-select mb-3 " onchange="changecalculated_amount(this)" name="dynamic_specs[{{$specilization->id}}]" id="{{$specilization->id}}" style="border: 2px solid black;font-weight: bold;" required>
+                                                <option selected disabled>--Choose an Option--</option>
+                                                @foreach($specilization->options as $option)
 
-                                            <option value="{{$option->id}}">{{$option->specializationoptions->option}}
-                                                (+$<span class="price">{{$option->specialization_price}}</span>)
-                                                @if($specilization->specilization->title=="Cloud-Access")
-                                                @if(strtolower($option->specializationoptions->option)=="yes")
-                                                Subscription Free For 1 Year
-                                                @endif
-                                                @endif
+                                                    <option value="{{$option->id}}">{{$option->specializationoptions->option}}
+                                                        (+$<span class="price">{{$option->specialization_price}}</span>)
+                                                        @if($specilization->specilization->title=="Cloud-Access")
+                                                            @if(strtolower($option->specializationoptions->option)=="yes")
+                                                                Subscription Free For 1 Year
+                                                            @endif
+                                                        @endif
 
-                                            </option>
-                                            @endforeach
-                                        </select>
+                                                    </option>
+                                                @endforeach
+                                            </select>
 
-                                        <!-- <p class="mb-0"><input type="checkbox"> 6 Days
-                                                (+$50)
-                                            </p> -->
+                                            <!-- <p class="mb-0"><input type="checkbox"> 6 Days
+                                                    (+$50)
+                                                </p> -->
+                                        </div>
                                     </div>
-                                </div>
                                 @endforeach
 
                                 <div class="mt-4">
@@ -328,19 +332,22 @@ if (isset($seo_record)) {
 
                 </div>
             </div>
+
             <div class=" col-lg-4 col-md-4">
                 <div class="d-md-flex  justify-content-end mt-lg-0 mt-4 buy-right align-items-center">
-                    <a class="btn btn-dark d-flex align-items-center m-2" onclick="increment()" style="height: 20px;width: 40px;">+</a>
-                    <input id=demoInput type=number class="text-center " name="quantity" value="1" min=1 max=100>
-                    <a class="btn btn-dark m-2 d-flex align-items-center" onclick="decrement()" style="height: 20px;width: 40px;">-</a>
-                    <div class=" px-4 py-lg-0 py-4">
-                        <span class="one-thoshand" id="total_price">${{$product->price}}</span>
-                    </div>
-                    <button type="submit" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Buy
-                        Now
-                    </button>
-                    <button type="button" id="add_to_cart" value="add_to_cart" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Add to Cart
-                    </button>
+                    @if($product->is_price_hide != 1)
+                        <a class="btn btn-dark d-flex align-items-center m-2" onclick="increment()" style="height: 20px;width: 40px;">+</a>
+                        <input id=demoInput type=number class="text-center " name="quantity" value="1" min=1 max=100>
+                        <a class="btn btn-dark m-2 d-flex align-items-center" onclick="decrement()" style="height: 20px;width: 40px;">-</a>
+                        <div class=" px-4 py-lg-0 py-4">
+                            <span class="one-thoshand" id="total_price">${{$product->price}}</span>
+                        </div>
+                        <button type="submit" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Buy
+                            Now
+                        </button>
+                        <button type="button" id="add_to_cart" value="add_to_cart" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Add to Cart
+                        </button>
+                    @endif
                     <div class="border-left  ">
                         <a href="#inquiry" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Inquiry</a>
                     </div>
@@ -427,31 +434,31 @@ if (isset($seo_record)) {
             </div>
             <div class="responsive">
                 @foreach ($productLists as $more_product)
-                <div>
-                    <div class="p-2">
-                        <div class="product_highlight inner-product bg-white">
-                            <div class="w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
+                    <div>
+                        <div class="p-2">
+                            <div class="product_highlight inner-product bg-white">
+                                <div class="w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
                                     background-size: contain;">
-                                {{-- <img class=""  src="" alt="">--}}
-                            </div>
-                            <div class="speed-sign text-center mt-3">
+                                    {{-- <img class=""  src="" alt="">--}}
+                                </div>
+                                <div class="speed-sign text-center mt-3">
                                 <span class="d-block weight-font">
                                     Radar Speed Sign
                                 </span>
-                                <span class="d-block">{{$more_product->title}}</span>
-                                <div class="d-flex justify-content-center align-items-center my-2 gap-1">
-                                    <img src="{{ asset('assets\customer\images\star.svg') }}" alt="1 Star" class="img-fluid" width="14px">
-                                    <img src="{{ asset('assets\customer\images\star.svg') }}" alt="2 Star" class="img-fluid" width="14px">
-                                    <img src="{{ asset('assets\customer\images\star.svg') }}" alt="3 Star" class="img-fluid" width="14px">
-                                    <img src="{{ asset('assets\customer\images\star.svg') }}" alt="4 Star" class="img-fluid" width="14px">
-                                    <img src="{{ asset('assets\customer\images\star.svg') }}" alt="5 Star" class="img-fluid" width="14px">
+                                    <span class="d-block">{{$more_product->title}}</span>
+                                    <div class="d-flex justify-content-center align-items-center my-2 gap-1">
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="1 Star" class="img-fluid" width="14px">
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="2 Star" class="img-fluid" width="14px">
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="3 Star" class="img-fluid" width="14px">
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="4 Star" class="img-fluid" width="14px">
+                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="5 Star" class="img-fluid" width="14px">
+                                    </div>
+                                    <span class="d-block weight-font">$ {{$more_product->price}}</span>
+                                    <a href="{{route('customer.radar.sign', $more_product->slug)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
                                 </div>
-                                <span class="d-block weight-font">$ {{$more_product->price}}</span>
-                                <a href="{{route('customer.radar.sign', $more_product->slug)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -502,28 +509,28 @@ if (isset($seo_record)) {
 <script>
     $(document).ready(function() {
         $('#downloadForm').submit(function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $.ajax({
                 type: 'POST',
                 url: '{{ route("download.brochure") }}',
                 data: $(this).serialize(),
                 success: function(response) {
                     if (response.status && response.download_url) {
-                    var link = document.createElement('a');
-                    link.href = response.download_url;
-                    link.target = '_blank';
-                    link.download = 'brochure.pdf'; 
+                        var link = document.createElement('a');
+                        link.href = response.download_url;
+                        link.target = '_blank';
+                        link.download = 'brochure.pdf';
 
-                    document.body.appendChild(link);
-                    link.click();
+                        document.body.appendChild(link);
+                        link.click();
 
-                    document.body.removeChild(link);
+                        document.body.removeChild(link);
 
-                    $('#downloadForm')[0].reset();
-                    $('#exampleModal').modal('hide');
-                } else {
-                    alert('Error downloading brochure: File not found');
-                }
+                        $('#downloadForm')[0].reset();
+                        $('#exampleModal').modal('hide');
+                    } else {
+                        alert('Error downloading brochure: File not found');
+                    }
                 },
                 error: function(xhr, status, error) {
                     alert('Error downloading brochure');
@@ -667,14 +674,14 @@ if (isset($seo_record)) {
         slidesToScroll: 4,
         arrows: false,
         responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            },
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: true
+            }
+        },
             {
                 breakpoint: 600,
                 settings: {
@@ -870,3 +877,4 @@ if (isset($seo_record)) {
 </body>
 
 </html>
+

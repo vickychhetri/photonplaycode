@@ -7,13 +7,11 @@ use App\Models\Product;
 use App\Models\ProductSpcializationOption;
 use App\Models\ProductSpecilization;
 use App\Models\Specilization;
-use App\Traits\UploadImageNameTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    use UploadImageNameTrait;
     /**
      * Display a listing of the resource.
      *
@@ -53,12 +51,15 @@ class ProductController extends Controller
             'sku' => 'nullable'
         ]);
 
+        $isPriceHidden = $request->is_price_hide == 'on'? 1 : 0;
+
         $product= new Product();
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
         $product->slug=$request->slug;
         $product->sku=$request->sku;
+        $product->is_price_hide=$isPriceHidden;
         if (isset($request->brochure)) {
             $originalName = $request->file('brochure')->getClientOriginalName();
             $extension = $request->file('brochure')->getClientOriginalExtension();
@@ -102,9 +103,9 @@ class ProductController extends Controller
         $product=Product::find($id);
 
         $product_specilizations=ProductSpecilization::with('specilization')->where('product_id',$product->id)->get();
-         foreach ($product_specilizations as $prd){
-             $prd['counts']=ProductSpcializationOption::where('product_specilizations_id',$prd->id) ->where('product_id',$id)->count();
-         }
+        foreach ($product_specilizations as $prd){
+            $prd['counts']=ProductSpcializationOption::where('product_specilizations_id',$prd->id) ->where('product_id',$id)->count();
+        }
         $Sr=1;
         return view('product.edit',compact('specializations','product','product_specilizations','Sr'));
     }
@@ -127,16 +128,17 @@ class ProductController extends Controller
             'cover_image' => 'image|mimes:jpg,png,jpeg,webp,gif,svg|max:2048',
         ]);
 
+        $isPriceHidden = $request->is_price_hide == 'on'? 1 : 0;
 
         $product= Product::find($id);
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
+        $product->is_price_hide=$isPriceHidden;
         $product->slug=$request->slug;
         $product->sku=$request->sku;
         if($request->file('cover_image')){
-//            $image_path = $request->file('cover_image')->store('image', 'public');
-            $image_path=$this->storeImageWithName($request->file('cover_image'));
+            $image_path = $request->file('cover_image')->store('image', 'public');
             $product->cover_image=$image_path;
         }
 
@@ -169,3 +171,4 @@ class ProductController extends Controller
         //
     }
 }
+
