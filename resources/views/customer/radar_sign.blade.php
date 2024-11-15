@@ -221,7 +221,11 @@ if (isset($seo_record)) {
                             <img src="{{asset('assets\customer\images\star.svg')}}" alt="5 Star" class="img-fluid" width="14px">
                             <span>( 150+ Customers Reviews)</span>
                         </div>
+                        @if($product->is_price_hide != 1)
                         <p class="fw-bold fs-5" id="total_price2">${{$product->price}}</p>
+                        @else
+                            <p class="fw-bold fs-5" id="total_price2"></p>
+                        @endif
                         <div>
                             <p class="specific-heading">Select Specification</p>
                             <div class="row mt-3">
@@ -328,8 +332,10 @@ if (isset($seo_record)) {
 
                 </div>
             </div>
+
             <div class=" col-lg-4 col-md-4">
                 <div class="d-md-flex  justify-content-end mt-lg-0 mt-4 buy-right align-items-center">
+                    @if($product->is_price_hide != 1)
                     <a class="btn btn-dark d-flex align-items-center m-2" onclick="increment()" style="height: 20px;width: 40px;">+</a>
                     <input id=demoInput type=number class="text-center " name="quantity" value="1" min=1 max=100>
                     <a class="btn btn-dark m-2 d-flex align-items-center" onclick="decrement()" style="height: 20px;width: 40px;">-</a>
@@ -341,6 +347,7 @@ if (isset($seo_record)) {
                     </button>
                     <button type="button" id="add_to_cart" value="add_to_cart" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Add to Cart
                     </button>
+                    @endif
                     <div class="border-left  ">
                         <a href="#inquiry" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Inquiry</a>
                     </div>
@@ -502,7 +509,7 @@ if (isset($seo_record)) {
 <script>
     $(document).ready(function() {
         $('#downloadForm').submit(function(e) {
-            e.preventDefault(); 
+            e.preventDefault();
             $.ajax({
                 type: 'POST',
                 url: '{{ route("download.brochure") }}',
@@ -512,7 +519,7 @@ if (isset($seo_record)) {
                     var link = document.createElement('a');
                     link.href = response.download_url;
                     link.target = '_blank';
-                    link.download = 'brochure.pdf'; 
+                    link.download = 'brochure.pdf';
 
                     document.body.appendChild(link);
                     link.click();

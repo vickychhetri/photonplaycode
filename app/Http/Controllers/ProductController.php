@@ -125,11 +125,13 @@ class ProductController extends Controller
             'cover_image' => 'image|mimes:jpg,png,jpeg,webp,gif,svg|max:2048',
         ]);
 
+        $isPriceHidden = $request->is_price_hide == 'on'? 1 : 0;
 
         $product= Product::find($id);
         $product->category_id=$request->category_id;
         $product->title=$request->title;
         $product->price=$request->price;
+        $product->is_price_hide=$isPriceHidden;
         $product->slug=$request->slug;
         $product->sku=$request->sku;
         if($request->file('cover_image')){
