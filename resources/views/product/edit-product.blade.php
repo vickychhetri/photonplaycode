@@ -185,13 +185,9 @@
                                             <div class="col-md-10 mt-1">
                                                 <label style="position: relative; display: inline-block; width: 50px; height: 25px;">
                                                     <input name="is_price_hide" type="checkbox"
-                                                           style="opacity: 0; width: 0; height: 0;"
+                                                           style="width: 0; height: 0;"
                                                            @if($product->is_price_hide == 1) checked @endif>
-                                                    <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
-                                                               background-color: #ccc; transition: 0.4s; border-radius: 34px;">
-                                                    <span style="position: absolute; content: ''; height: 15px; width: 15px;
-                                                                border-radius: 50%; left: 4px; bottom: 4px; background-color: white;
-                                                                transition: 0.4s;"></span>
+                                                 </span>
                                                   </span>
                                                 </label>
                                             </div>
