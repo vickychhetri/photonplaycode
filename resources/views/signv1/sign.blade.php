@@ -167,10 +167,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blogs">News & Media</a>
+                        <a class="nav-link" href="/blogs">NEWS & MEDIA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Get In Touch</a>
+                        <a class="nav-link" href="/contact">GET IN TOUCH</a>
                     </li>
                 </ul>
 
