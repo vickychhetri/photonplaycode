@@ -13,6 +13,7 @@ use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -29,6 +30,15 @@ class SignController extends Controller
     {
         $products = Product::where('category_id', 1)->get();
         return view('customer.sign', compact('products'));
+    }
+
+    public function radarSpeedSigns_v1()
+    {
+        $products = Product::where('category_id', 1)->get();
+        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $blogs = array_slice($postsSlice, 0 , 3);
+
+        return view('signv1.sign', compact('products','blogs'));
     }
 
     public function radarSigns($id)

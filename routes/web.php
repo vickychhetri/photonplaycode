@@ -208,7 +208,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 #contact-us - contact
         Route::get('contact', [ContactUsController::class, 'contactUs'])->name('contact.us');
 
-        
+
 
 //about-us
 
@@ -264,6 +264,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('radar-speed-signs/model/{productId}', 'SignController@radarSigns')->name('radar.sign');
 
     });
+
+    Route::get('radar-speed-signsv1', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs_v1');
 
 
 //    require_once "guest/api.php";
