@@ -1455,16 +1455,26 @@
         </div>
     </div>
 </footer>
-<div class="back-to-top">
+<div class="back-to-top" id="backToTop" style="cursor: pointer;">
     <div class="back-to-top-text text-center">
         <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+            </svg>
         </span>
         Back To Top
     </div>
 </div>
+
+<script>
+    document.getElementById("backToTop").addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Enables smooth scrolling
+        });
+    });
+</script>
+
 <div class="footer-copyright px-3 d-flex flex-wrap justify-content-center align-items-center gap-5">
     <p class="text-secondary fs-14">&copy; 2024 Photonplay Systems Inc. All Right Reserved.</p>
     <ul class="list-unstyled m-0 d-flex align-items-center flex-wrap gap-4">
