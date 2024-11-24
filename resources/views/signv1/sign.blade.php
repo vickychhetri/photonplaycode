@@ -1025,19 +1025,22 @@
             <div class="col-md-6">
                 <h4 class="text-white">We are Looking for Dealers/Parterns</h4>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" >
+                <form action="{{ route('customer.dealer.subscriptions.store') }}" method="POST"  >
+                    @csrf
                 <div class="input-box d-flex align-items-center position-relative">
-                    <input type="text" name="" id="" placeholder="E-mail" class="form-control rounded-pill" />
+                    <input type="text" name="email" id="" placeholder="E-mail" class="form-control rounded-pill" />
                     <button class="btn p-0 h-100 position-absolute end-0 me-2"><img
                             src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ---------------------- Faq Section ------------------------- -->
-<section class="faq-section">
+<section class="faq-section" id="dealer-subscribe">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">

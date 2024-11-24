@@ -12,6 +12,7 @@ use App\Http\Controllers\customer\ContactUsController;
 use App\Http\Controllers\customer\CustomerProfileController;
 use App\Http\Controllers\customer\SignController;
 use App\Http\Controllers\DBBackupController;
+use App\Http\Controllers\DealerSubscriptionController;
 use App\Http\Controllers\Guest\HomePageController;
 use App\Http\Controllers\ManageSeoController;
 use App\Http\Controllers\NotificationsController;
@@ -266,7 +267,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     });
 
     Route::get('radar-speed-signsv1', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs_v1');
-
+    Route::post('/dealer-subscriptions', [DealerSubscriptionController::class, 'store'])->name('dealer.subscriptions.store');
 
 //    require_once "guest/api.php";
 //    require_once "guest/api2.php";
