@@ -523,7 +523,7 @@
                             </div>
                             <div class="col-md-3 px-0 position-relative">
                                 <div class="speed-count-image speed-count-image-2">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/speed-12.png" alt="" height="250">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/speed-15.png" alt="" height="250">
                                 </div>
                                 <div class="price-card">
                                     R1500
@@ -555,7 +555,7 @@
                             </div>
                             <div class="col-md-3 ps-0 position-relative">
                                 <div class="speed-count-image  speed-count-image-3">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/speed-15.png" alt="" height="270">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/spedd-18.png" alt="" height="270">
                                 </div>
                                 <div class="price-card">
                                     R1800
