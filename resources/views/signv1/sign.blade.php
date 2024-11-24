@@ -110,7 +110,7 @@
         @media (max-width:767px) {
             .rotated-button {
                 left: auto; /* Reset the left position */
-                right: -100px; /* Move to the right side */
+                right: -110px; /* Move to the right side */
             }
         }
 
