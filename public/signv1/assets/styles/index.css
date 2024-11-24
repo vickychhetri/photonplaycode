@@ -532,7 +532,7 @@ padding: 20px 20px 0 20px;
 @media (max-width:767px) {
   .driver-image{
     height: auto;
-  } 
+  }
   .help-right{
     height: auto;
   }
@@ -547,6 +547,15 @@ padding: 20px 20px 0 20px;
 }
 .brand-image{
   text-align: center;
+
+}
+
+.banner-section {
+    background: url('https://i.pinimg.com/736x/cf/df/71/cfdf7123f69072b4986167c7133b814e.jpg');
+}
+
+.slick-arrow {
+    display: none !important;
 }
 
 .form-container{
