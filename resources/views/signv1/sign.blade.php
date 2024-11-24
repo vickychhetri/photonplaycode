@@ -135,8 +135,6 @@
                 transform: translateY(0);
             }
         }
-
-
     </style>
 
 </head>
@@ -1283,8 +1281,8 @@
                             design</li>
                     </ul>
 
-                    <button class="btn btn-primary mt-5 d-flex align-items-center gap-3">Meet Our Expert <img
-                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></button>
+                    <a href="#requestaquote" class="btn btn-primary mt-5 d-flex align-items-center gap-3" style="max-width: 250px;">Meet Our Expert <img
+                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></a>
                 </div>
             </div>
             <div class="col-md-5">
@@ -1366,16 +1364,18 @@
                         we&apos;re shaping the future of roads safety today.</p>
 
                     <div class="d-flex align-items-center gap-4 fw-semibold justify-content-center flex-wrap">
-                        <button class="btn btn-primary d-flex align-items-center gap-3">Discover More Info <img
-                                src="/signv1/assets/UI-01/UI-Data/Images/E-mail-arrow-icon.png" alt=""></button>
-
-                        <div class="d-flex gap-3 align-items-center ">
-                            <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="">
+                        <a href="#requestaquote" class="btn btn-primary d-flex align-items-center gap-3">Discover More Info <img
+                                src="/signv1/assets/UI-01/UI-Data/Images/E-mail-arrow-icon.png" alt=""></a>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a href="tel:8009669389">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Call Now">
+                            </a>
                             <div class="content text-start">
                                 <p class="text-white opacity-75 fs-14">Call 24HR/7 Days</p>
-                                <p class="text-white fw-semibold">54540504504 (US)</p>
+                                <p class="text-white fw-semibold">8009669389 (US)</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -1435,7 +1435,7 @@
             </div>
             <div class="col-md-2">
                 <h5 class="mb-5">Have A Project</h5>
-                <button class="btn btn-primary">Get A Free Quote</button>
+                <a href="#requestaquote"  style="max-width: 250px;" class="btn btn-primary">Get A Free Quote</a>
 
                 <ul class="list-unstyled d-flex align-items-center gap-3 mt-4">
                     <li><a href=""><img src="/signv1/assets/UI-01/UI-Data/Images/Footer-Facebook.png" alt=""></a></li>
@@ -1448,24 +1448,24 @@
 </footer>
 <div class="back-to-top">
     <div class="back-to-top-text text-center">
-        <span> <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt=""></span>
+        <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+</svg>
+        </span>
         Back To Top
     </div>
 </div>
 <div class="footer-copyright px-3 d-flex flex-wrap justify-content-center align-items-center gap-5">
     <p class="text-secondary fs-14">&copy; 2024 Photonplay Systems Inc. All Right Reserved.</p>
     <ul class="list-unstyled m-0 d-flex align-items-center flex-wrap gap-4">
-        <li><a href="" class="nav-link fs-14 fw-semibold text-black m-0">Terms & Conditions</a></li>
+        <li><a href="/term-conditions" class="nav-link fs-14 fw-semibold text-black m-0">Terms & Conditions</a></li>
         <li>.</li>
-        <li><a href="" class="nav-link fs-14 fw-semibold text-black m-0">Privacy Policy</a></li>
+        <li><a href="/privacy-policy" class="nav-link fs-14 fw-semibold text-black m-0">Privacy Policy</a></li>
         <li>.</li>
-        <li><a href="" class="nav-link fs-14 fw-semibold text-black m-0">Sitemap</a></li>
+        <li><a href="/sitemap.xml" class="nav-link fs-14 fw-semibold text-black m-0">Sitemap</a></li>
     </ul>
 </div>
-
-
-
-
 
 <script src="jquery.min.js"></script>
 <script src="owlcarousel/owl.carousel.min.js"></script>
