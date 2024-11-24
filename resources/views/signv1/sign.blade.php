@@ -678,22 +678,24 @@
                     <p class="mb-4 fs-12 opacity-75 text-white">Please complete the form below, to request a quote,
                         and we&apos;ll be in touch. Or you can
                         call 102124152021 and our specialists will provide the nessasary help!</p>
-
+                    <form action="{{route('customer.inquery.submit')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="url" value="{{\Illuminate\Support\Facades\URL::full()}}">
                     <div class="row gy-4">
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="First Name" />
+                            <input type="text" name="first_name" class="form-control" placeholder="Name" />
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Last Name" />
+                            <input type="text" name="country"  class="form-control" placeholder="Country" />
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Email Address" />
+                            <input type="text" name="email" class="form-control" placeholder="Email Address" />
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Phone Number" />
+                            <input type="text" name="phone_number" class="form-control" placeholder="Phone Number" />
                         </div>
                         <div class="col-12">
-                            <textarea placeholder="Message" class="form-control" rows="4"></textarea>
+                            <textarea name="message" placeholder="Message" class="form-control" rows="4"></textarea>
                         </div>
                         <div class="col-12">
                             <button class="btn btn-primary d-flex align-items-center gap-3"><img
@@ -701,6 +703,7 @@
                                 Request</button>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
