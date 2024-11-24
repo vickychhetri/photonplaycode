@@ -116,6 +116,9 @@
                 left: auto; /* Reset the left position */
                 right: -110px; /* Move to the right side */
             }
+            .best-seller-icon{
+                display: none;
+            }
         }
 
         .not_show_until_load {
@@ -138,6 +141,17 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        .best-seller-icon {
+            position: absolute;
+            top: 20px; /* Adjust the top distance */
+            left: 10px; /* Adjust the left distance */
+            z-index: 10; /* Ensure it's above the image */
+        }
+
+        .best-seller-icon img {
+            width: 50px; /* Set the size of the icon */
+            height: auto;
         }
     </style>
 
@@ -503,9 +517,15 @@
                                 </ul>
                             </div>
                             <div class="col-md-3 px-0 position-relative">
-                                <div class="speed-count-image">
+                                <div class="speed-count-image"  >
+                                    <!-- Best Seller Icon -->
+                                    <div class="best-seller-icon">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/8465/8465733.png" alt="Best Seller" />
+                                    </div>
+                                    <!-- Image -->
                                     <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="" height="220">
                                 </div>
+
                                 <div class="price-card">
                                     R1200
                                 </div>
