@@ -278,7 +278,7 @@
                         <a href="#product_shop" style="text-decoration: none;"> <button class="btn btn-primary d-flex align-items-center gap-3">Shop Now <img
                                     src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt="error"></button> </a>
 
-                        <a href="#requestaquote" class="btn btn-light text-black " style="display: flex;align-items: center;">Get a Free Quote</a>
+                        <a href="#inquiry" class="btn btn-light text-black " style="display: flex;align-items: center;">Get a Free Quote</a>
                     </div>
                 </div>
             </div>
@@ -669,7 +669,7 @@
 
 <!-- --------------------- Form Section ----------------------- -->
 
-<section class="form-section"  id="requestaquote"  >
+<section class="form-section"  id="inquiry"  >
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
@@ -1284,7 +1284,7 @@
                             design</li>
                     </ul>
 
-                    <a href="#requestaquote" class="btn btn-primary mt-5 d-flex align-items-center gap-3" style="max-width: 250px;">Meet Our Expert <img
+                    <a href="#inquiry" class="btn btn-primary mt-5 d-flex align-items-center gap-3" style="max-width: 250px;">Meet Our Expert <img
                             src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></a>
                 </div>
             </div>
@@ -1367,7 +1367,7 @@
                         we&apos;re shaping the future of roads safety today.</p>
 
                     <div class="d-flex align-items-center gap-4 fw-semibold justify-content-center flex-wrap">
-                        <a href="#requestaquote" class="btn btn-primary d-flex align-items-center gap-3">Discover More Info <img
+                        <a href="#inquiry" class="btn btn-primary d-flex align-items-center gap-3">Discover More Info <img
                                 src="/signv1/assets/UI-01/UI-Data/Images/E-mail-arrow-icon.png" alt=""></a>
                         <div class="d-flex gap-3 align-items-center">
                             <a href="tel:8009669389">
@@ -1438,7 +1438,7 @@
             </div>
             <div class="col-md-2">
                 <h5 class="mb-5">Have A Project</h5>
-                <a href="#requestaquote"  style="max-width: 250px;" class="btn btn-primary">Get A Free Quote</a>
+                <a href="#inquiry"  style="max-width: 250px;" class="btn btn-primary">Get A Free Quote</a>
 
                 <ul class="list-unstyled d-flex align-items-center gap-3 mt-4">
                     <li><a href=""><img src="/signv1/assets/UI-01/UI-Data/Images/Footer-Facebook.png" alt=""></a></li>
