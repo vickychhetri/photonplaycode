@@ -107,6 +107,13 @@
             z-index: 1000; /* Ensures the button appears above other elements */
         }
 
+        @media (max-width:767px) {
+            .rotated-button {
+                left: auto; /* Reset the left position */
+                right: -100px; /* Move to the right side */
+            }
+        }
+
         .not_show_until_load {
             display: none;
         }
@@ -128,7 +135,6 @@
                 transform: translateY(0);
             }
         }
-
     </style>
 
 </head>
