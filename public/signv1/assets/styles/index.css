@@ -557,9 +557,10 @@ padding: 20px 20px 0 20px;
 .slick-arrow {
     display: none !important;
 }
-    .slick-dots {
-        display: none !important;
-    }
+
+.slick-dots {
+    display: none !important;
+}
 
 
 .form-container{

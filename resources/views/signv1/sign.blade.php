@@ -1522,7 +1522,7 @@
             autoplay: true, // Enable autoplay
             autoplaySpeed: 3000, // Autoplay interval in milliseconds
             arrows: true, // Show navigation arrows
-            dots: true, // Show dots navigation
+            dots: false, // Show dots navigation
             responsive: [
                 {
                     breakpoint: 1024, // Screen size for medium devices
