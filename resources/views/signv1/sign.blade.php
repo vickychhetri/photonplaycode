@@ -704,7 +704,7 @@
                             <textarea name="message" placeholder="Message" class="form-control" rows="4"></textarea>
                         </div>
                         <!-- Google Recaptcha -->
-                        <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+                        <div class="g-recaptcha mt-4 mb-4" style="max-height: 100px;" data-sitekey={{config('services.recaptcha.key')}}></div>
                         <div class="col-12">
                             <button class="btn btn-primary d-flex align-items-center gap-3"><img
                                     src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""> Submit
