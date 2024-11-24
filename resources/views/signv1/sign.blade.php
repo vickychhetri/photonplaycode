@@ -51,6 +51,9 @@
     <meta name="twitter:site" content="@photonplayinc" />
     <meta name="twitter:creator" content="@photonplayinc" />
 
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1553,9 +1556,10 @@
     });
 </script>
 
-
+<!-- Toastify JS -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script>
-    @if (session()->has('success'))
+@if (session()->has('success'))
     Toastify({
         text: '{{ session('success') }}',
         duration: 3000,
