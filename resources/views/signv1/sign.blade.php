@@ -504,7 +504,7 @@
                             </div>
                             <div class="col-md-3 px-0 position-relative">
                                 <div class="speed-count-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/speed-12.png" alt="" height="220">
+                                    <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="" height="220">
                                 </div>
                                 <div class="price-card">
                                     R1200
@@ -536,7 +536,7 @@
                             </div>
                             <div class="col-md-3 px-0 position-relative">
                                 <div class="speed-count-image speed-count-image-2">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/speed-15.png" alt="" height="250">
+                                    <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1500-amber-front-side.webp" alt="" height="250">
                                 </div>
                                 <div class="price-card">
                                     R1500
@@ -568,7 +568,7 @@
                             </div>
                             <div class="col-md-3 ps-0 position-relative">
                                 <div class="speed-count-image  speed-count-image-3">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/spedd-18.png" alt="" height="270">
+                                    <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1800m-amber-front-side.webp" alt="" height="270">
                                 </div>
                                 <div class="price-card">
                                     R1800
@@ -1349,7 +1349,7 @@
                     </div>
                     <div class="mt-4">
                         <p>
-                            Our team can also provide security integration services for highly complex facilities and offer preventative maintenance plans. Contact Us Now!
+                            Additionally, our team may offer preventative maintenance programs and security integration services for extremely complex sites.  Contact Us Now!
                         </p>
                     </div>
 
