@@ -182,7 +182,8 @@
                         <a class="nav-link" href="/blogs">NEWS & MEDIA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">GET IN TOUCH</a>
+                        <a class="nav-link" href="/contact">GET QUOTE
+                            </a>
                     </li>
                 </ul>
 
@@ -191,7 +192,7 @@
                         <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Phone Icon">
                     </a>
                     <div class="info">
-                        <p class="text-white fw-bold mb-0">8009669329</p>
+                        <p class="text-white fw-bold mb-0"> (800)966-9329</p>
                         <p class="text-secondary fs-14 fw-semibold mb-0">sales@photonplay.com</p>
                     </div>
                 </div>
