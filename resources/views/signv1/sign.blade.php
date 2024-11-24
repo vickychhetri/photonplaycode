@@ -60,6 +60,7 @@
     <link rel="stylesheet" href="/signv1/assets/styles/index.css">
     <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
     <!-- Slick CSS -->
@@ -700,6 +701,8 @@
                         <div class="col-12">
                             <textarea name="message" placeholder="Message" class="form-control" rows="4"></textarea>
                         </div>
+                        <!-- Google Recaptcha -->
+                        <div class="g-recaptcha mt-4 mb-4" data-sitekey={{config('services.recaptcha.key')}}></div>
                         <div class="col-12">
                             <button class="btn btn-primary d-flex align-items-center gap-3"><img
                                     src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""> Submit
