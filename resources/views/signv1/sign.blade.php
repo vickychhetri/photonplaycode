@@ -1253,10 +1253,17 @@
             <div class="col-12">
                 <div class="text-center mt-5">
                     <p class="fs-18 fw-semibold">Still Have Questions?</p>
-                    <p class="fw-semibold text-secondary my-2">Contact our support team today for personalized
-                        assistance!</p>
-                    <p class="fw-semibold">Call Now: +18009669329 | Email: support@photonplay.com</p>
+                    <p class="fw-semibold text-secondary my-2">
+                        Contact our support team today for personalized assistance!
+                    </p>
+                    <p class="fw-semibold">
+                        Call Now:
+                        <a href="tel:+18009669329" class="text-primary">+1 (800) 966-9329</a> |
+                        Email:
+                        <a href="mailto:support@photonplay.com" class="text-primary">support@photonplay.com</a>
+                    </p>
                 </div>
+
             </div>
         </div>
     </div>
@@ -1403,24 +1410,32 @@
             <div class="col-md-3">
                 <h5 class="mb-4">Quick Contact</h5>
 
+
+
+
+
+
+
                 <ul class="list-unstyled">
-                    <li>if you have any questions or need help. feel free to contact with our team.</li>
+                    <li>If you have any questions or need help, feel free to contact our team.</li>
                     <li class="d-flex align-items-center gap-2">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/footer Email.png" alt="">
+                        <a href="mailto:Sales@photonplay.com" class="fs-18 text-primary fw-semibold">Sales@photonplay.com</a>
                     </li>
                     <li class="d-flex align-items-center gap-4">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/footer-Phone-Icon.png" alt="">
-                        <p class="fs-18 text-primary fw-semibold">8451204520 (CA)</p>
+                        <img src="/signv1/assets/UI-01/UI-Data/Images/footer-Phone-Icon.png" alt="Phone Icon">
+                        <a href="tel:+18009669329" class="fs-18 text-primary fw-semibold">(800) 966-9329</a>
                     </li>
-
-                    <li>
-                        2307 Beverly Rd Brookyln, New York 11226 United State.
-                    </li>
+                    <li>6733 Mississauga Rd, Mississauga, ON L5N 6J5, Canada.</li>
                     <li class="d-flex align-items-center gap-2">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/footer-Location-Icon.png" alt="">
-                        <p class=" fw-bold text-white">Get Direction</p>
+                        <img src="/signv1/assets/UI-01/UI-Data/Images/footer-Location-Icon.png" alt="Location Icon">
+                        <a href="https://www.google.com/maps/search/?api=1&query=6733+Mississauga+Rd,+Mississauga,+ON+L5N+6J5,+Canada"
+                           target="_blank"
+                           class="fw-bold text-white">
+                            Get Direction
+                        </a>
                     </li>
                 </ul>
+
             </div>
 
             <div class="col-md-2">
