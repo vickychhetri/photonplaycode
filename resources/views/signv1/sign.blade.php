@@ -682,10 +682,8 @@
                     <h5 class="font-railway mb-3 text-white">Request A Quote</h5>
                     <p class="mb-4 fs-12 opacity-75 text-white">
                         Please complete the form below to request a quote, and we&apos;ll be in touch. Or you can
-                        call <a href="tel:+18009669329" class="text-primary">(800) 966-9329</a>, and our specialists will provide the necessary help!
+                        call <a href="tel:+18009669329" class="text-white">(800) 966-9329</a>, and our specialists will provide the necessary help!
                     </p>
-
-                    call  (800) 966-9329 and our specialists will provide the necessary help!</p>
                     <form action="{{route('customer.inquery.submit')}}" method="post">
                         @csrf
                         <input type="hidden" name="url" value="{{\Illuminate\Support\Facades\URL::full()}}">
