@@ -159,7 +159,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-dark" href="{{route('customer.radar.speed.signs_v1')}}">HOME</a>
+                        <a class="nav-link active text-dark" href="{{route('customer.radar.speed.signs')}}">HOME</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/company">COMPANY</a>
@@ -680,7 +680,7 @@
                 <h5 class="mb-4">Company</h5>
 
                 <ul class="list-unstyled">
-                    <li><a href="{{route('customer.radar.speed.signs_v1')}}" class="nav-link">Home</a></li>
+                    <li><a href="{{route('customer.radar.speed.signs')}}" class="nav-link">Home</a></li>
                     <li><a href="{{route('customer.about.us')}}" class="nav-link">About us</a></li>
                     <li><a href="{{route('customer.contact.us')}}" class="nav-link">Contact us</a></li>
                     <li><a href="{{route('customer.blog')}}" class="nav-link">News & Events</a></li>
