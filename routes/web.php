@@ -261,12 +261,14 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     });
 
     Route::group(['middleware' => 'country.redirect'], function () {
-        Route::get('radar-speed-signs', 'SignController@radarSpeedSigns')->name('radar.speed.signs');
+        Route::get('radar-speed-signs', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs');
         Route::get('radar-speed-signs/model/{productId}', 'SignController@radarSigns')->name('radar.sign');
+
+//        Route::get('radar-speed-signs', 'SignController@radarSpeedSigns')->name('radar.speed.signs');
 
     });
 
-    Route::get('radar-speed-signsv1', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs_v1');
+//    Route::get('radar-speed-signsv1', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs_v1');
 
     Route::get('radar-speed-signs-get-quote', 'SignController@radarSpeedSignsget_quote_v1')->name('radar.speed.signs__get_quote_v1');
 

@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <title> Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay </title>
+    <title>Request A Quote | Radar Speed Signs </title>
     <meta name="title" content="Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay">
     <meta name="description" content="Photonplay offers high-quality radar speed signs for traffic calming. Buy radar speed signs with customizable options and enhance road safety.">
     <meta name="google-site-verification" content="x2TVSaiGBx9F_unjNk_O1mEB64-JF5s3lmTguSQvstw"/>
@@ -27,7 +25,7 @@
 
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay">
+    <meta property="og:title" content="Request A Quote | Radar Speed Signs">
     <meta property="og:description" content="Photonplay offers high-quality radar speed signs for traffic calming. Buy radar speed signs with customizable options and enhance road safety.">
     <meta property="og:url" content="https://www.photonplay.com/radar-speed-signs">
     <meta property="og:image" content="https://www.photonplay.com/assets\customer\images\Radar-Speed-Signs-Image_1.webp" />
@@ -41,7 +39,7 @@
     <meta property="article:published_time" content="2024-01-03T07:12:54+00:00" />
     <meta property="article:modified_time" content="2024-01-23T12:24:26+00:00" />
     <!-- Twitter -->
-    <meta property="twitter:title" content="Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay">
+    <meta property="twitter:title" content="Request A Quote | Radar Speed Signs">
     <meta property="twitter:description" content="Photonplay offers high-quality radar speed signs for traffic calming. Buy radar speed signs with customizable options and enhance road safety.">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.photonplay.com/radar-speed-signs">
@@ -656,11 +654,6 @@
                 <h5 class="mb-4">Quick Contact</h5>
 
 
-
-
-
-
-
                 <ul class="list-unstyled">
                     <li>If you have any questions or need help, feel free to contact our team.</li>
                     <li class="d-flex align-items-center gap-2">
@@ -687,23 +680,22 @@
                 <h5 class="mb-4">Company</h5>
 
                 <ul class="list-unstyled">
-                    <li><a href="" class="nav-link"> About Us</a></li>
-                    <li><a href="" class="nav-link">Leadership Team</a></li>
-                    <li><a href="" class="nav-link">News & Media</a></li>
-                    <li><a href="" class="nav-link">Our Products</a></li>
-                    <li><a href="" class="nav-link">Reviews</a></li>
+                    <li><a href="{{route('customer.radar.speed.signs_v1')}}" class="nav-link">Home</a></li>
+                    <li><a href="{{route('customer.about.us')}}" class="nav-link">About us</a></li>
+                    <li><a href="{{route('customer.contact.us')}}" class="nav-link">Contact us</a></li>
+                    <li><a href="{{route('customer.blog')}}" class="nav-link">News & Events</a></li>
+
                 </ul>
             </div>
             <div class="col-md-2">
                 <h5 class="mb-4">Services</h5>
 
                 <ul class="list-unstyled">
-                    <li><a href="" class="nav-link">Business Security</a></li>
-                    <li><a href="" class="nav-link">Fire Detection</a></li>
-                    <li><a href="" class="nav-link">Access Control</a></li>
-                    <li><a href="" class="nav-link">Alarm Systems</a></li>
-                    <li><a href="" class="nav-link">CCTV & Video</a></li>
-                    <li><a href="" class="nav-link">Smart Home</a></li>
+                    <li><a href="https://www.photonplay.com/radar-cloud-management" class="nav-link"> Cloud SOFTWARE </a></li>
+                    <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1200" class="nav-link"> iCop R1200</a></li>
+                    <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1500" class="nav-link">  iCop R1500</a></li>
+                    <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1500m" class="nav-link"> iCop R1500M</a></li>
+                    <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1800m" class="nav-link"> iCop R1800M</a></li>
                 </ul>
             </div>
             <div class="col-md-2">

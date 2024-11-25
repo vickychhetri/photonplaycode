@@ -1431,12 +1431,6 @@
             <div class="col-md-3">
                 <h5 class="mb-4">Quick Contact</h5>
 
-
-
-
-
-
-
                 <ul class="list-unstyled">
                     <li>If you have any questions or need help, feel free to contact our team.</li>
                     <li class="d-flex align-items-center gap-2">
@@ -1463,7 +1457,7 @@
                 <h5 class="mb-4">Company</h5>
 
                 <ul class="list-unstyled">
-                    <li><a href="{{route('customer.radar.speed.signs_v1')}}" class="nav-link">Home</a></li>
+                    <li><a href="{{route('customer.radar.speed.signs')}}" class="nav-link">Home</a></li>
                     <li><a href="{{route('customer.about.us')}}" class="nav-link">About us</a></li>
                     <li><a href="{{route('customer.contact.us')}}" class="nav-link">Contact us</a></li>
                     <li><a href="{{route('customer.blog')}}" class="nav-link">News & Events</a></li>
@@ -1475,13 +1469,11 @@
                 <h5 class="mb-4">Products</h5>
 
                 <ul class="list-unstyled">
-                    <ul>
+                        <li><a href="https://www.photonplay.com/radar-cloud-management" class="nav-link"> Cloud SOFTWARE </a></li>
                             <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1200" class="nav-link"> iCop R1200</a></li>
                             <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1500" class="nav-link">  iCop R1500</a></li>
                             <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1500m" class="nav-link"> iCop R1500M</a></li>
                             <li><a href="https://www.photonplay.com/radar-speed-signs/model/r1800m" class="nav-link"> iCop R1800M</a></li>
-                    </ul>
-
                 </ul>
             </div>
             <div class="col-md-2">
