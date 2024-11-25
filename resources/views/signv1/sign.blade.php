@@ -189,7 +189,7 @@
                             <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1200">iCop R1200</a></li>
                             <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1500">iCop R1500</a></li>
                             <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1500m">iCop R1500M</a></li>
-                            <li><a class="dropdown-item px-4 py-3 text-black hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1800m">iCop R1800M</a></li>
+                            <li><a class="dropdown-item px-4 py-3 text-black border-bottom  hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1800m">iCop R1800M</a></li>
 
 
 <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="/radar-cloud-management"> Cloud Software  </a></li>
