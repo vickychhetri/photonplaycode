@@ -178,6 +178,13 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/blogs">NEWS & MEDIA</a>
                     </li>
+
+
+ <li class="nav-item">
+                        <a class="nav-link" href="/radar-cloud-management"> CLOUD SOFTWARE 
+                            </a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link active text-dark" href="{{route('customer.radar.speed.signs__get_quote_v1')}}" >GET QUOTE</a>
                     </li>
