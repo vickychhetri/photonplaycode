@@ -169,6 +169,8 @@
                             PRODUCT
                         </a>
                         <ul class="dropdown-menu rounded-3 shadow-lg p-2" aria-labelledby="productDropdown">
+
+     <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="/radar-cloud-management"> CLOUD SOFTWARE  </a></li>
                             <li><a class="dropdown-item px-4 py-3 text-dark border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1200">iCop R1200</a></li>
                             <li><a class="dropdown-item px-4 py-3 text-dark border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1500">iCop R1500</a></li>
                             <li><a class="dropdown-item px-4 py-3 text-dark border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1500m">iCop R1500M</a></li>
@@ -177,12 +179,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/blogs">NEWS & MEDIA</a>
-                    </li>
-
-
- <li class="nav-item">
-                        <a class="nav-link" href="/radar-cloud-management"> CLOUD SOFTWARE 
-                            </a>
                     </li>
 
                     <li class="nav-item">
