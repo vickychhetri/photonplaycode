@@ -21,7 +21,7 @@ class DealerSubscriptionController extends Controller
             'ip_address' => $ipAddress,  // Capture IP address server-side
             'records_status' => 1, // Active by default
         ]);
-        return redirect()->route('customer.radar.speed.signs_v1')->with('success', 'Dealers/Parterns email added successfully, we will connect you soon.')->withFragment('dealer-subscribe');;
+        return redirect()->route('customer.radar.speed.signs')->with('success', 'Dealers/Parterns email added successfully, we will connect you soon.')->withFragment('dealer-subscribe');;
 
 
     }
