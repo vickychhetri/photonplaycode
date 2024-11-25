@@ -195,10 +195,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/blogs">NEWS & MEDIA</a>
                     </li>
+
+ <li class="nav-item">
+                        <a class="nav-link" href="/radar-cloud-management"> CLOUD SOFTWARE 
+                            </a>
+                    </li>
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('customer.radar.speed.signs__get_quote_v1')}}">GET QUOTE
                             </a>
                     </li>
+
+
+
+
+
                 </ul>
 
                 <div class="personal-information d-flex align-items-center gap-2">
