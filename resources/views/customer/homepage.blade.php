@@ -610,16 +610,16 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 </section>
 <!-- Key-projects-start -->
 <x-Customer.KeyProject/>
-        
+
 
 @include('customer.layout2.client_testimonials')
 @include('customer.layout2.latest_blog')
 @include('customer.layout2.our_clients')
-@include('customer.layout2.footer')
+@include('customer.layout2.footer_photon')
 
  <!-- vendor modal -->
- 
- 
+
+
 
 
 {{--<script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>--}}
@@ -748,7 +748,7 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/4.7.4/dash.all.min.js" integrity="sha512-LyDgm9kfqyKlZOe+QjpNA6L/ZpcjNj+cKSJ/bQLTGkKXaxYNpYGN9Fe6DpI0H0w3Da2WcXVX8ACjL14y3iWGBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 <script>
-        
+
 
     $(document).ready(function() {
         init();
