@@ -74,6 +74,88 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+    <style>
+        .slick-slider .brand-image img {
+            max-height: 100px;        /* Set a consistent maximum height */
+            width: auto;              /* Allow width to adjust based on aspect ratio */
+            display: block;           /* Center the image */
+            margin: auto;             /* Center the image horizontally */
+            object-fit: contain;      /* Ensures images fit within the box without distorting */
+        }
+
+
+        .slick-arrow {
+            background: #ddd;
+            border-radius: 50%;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .slick-prev {
+            left: -40px;
+        }
+
+        .slick-next {
+            right: -40px;
+        }
+
+        .rotated-button {
+            position: fixed; /* Keeps the button fixed on the screen */
+            top: 50%; /* Center the button vertically */
+            left: -120px; /* Fixed position on the left side of the screen */
+            transform: translateY(-90%) rotate(-90deg); /* Center vertically and apply rotation */
+            background-color: #206bbd; /* Button color */
+            color: #fff; /* Text color */
+            padding: 10px 20px;
+            text-decoration: none;
+            z-index: 1000; /* Ensures the button appears above other elements */
+        }
+
+        @media (max-width:767px) {
+            .rotated-button {
+                left: auto; /* Reset the left position */
+                right: -110px; /* Move to the right side */
+            }
+            .best-seller-icon{
+                display: none;
+            }
+        }
+
+        .not_show_until_load {
+            display: none;
+        }
+        .navbar {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar .dropdown-menu {
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .best-seller-icon {
+            position: absolute;
+            top: 20px; /* Adjust the top distance */
+            left: 10px; /* Adjust the left distance */
+            z-index: 10; /* Ensure it's above the image */
+        }
+
+        .best-seller-icon img {
+            width: 50px; /* Set the size of the icon */
+            height: auto;
+        }
+    </style>
+
     @stack('styles')
        <!-- Google Tag Manager -->     <script>(function (w, d, s, l, i) {             w[l] = w[l] || []; w[l].push({                 'gtm.start':                     new Date().getTime(), event: 'gtm.js'             }); var f = d.getElementsByTagName(s)[0],                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);         })(window, document, 'script', 'dataLayer', 'GTM-NJZBCGR');</script>     <!-- End Google Tag Manager -->
 </head>
