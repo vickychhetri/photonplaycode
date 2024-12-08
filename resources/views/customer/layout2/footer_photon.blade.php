@@ -16,6 +16,12 @@
     // Retrieve setting
     $setting = getSetting();
 @endphp
+<style>
+    .footer-section-inner .footer-item ul {
+        padding: 0;
+        margin-top: 18px;
+    }
+</style>
     <!-- _____________________ourclint-last-end___________________ -->
 <section class="subscribe-section" id="subscribed">
     <div class="container">
