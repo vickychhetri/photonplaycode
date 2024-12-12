@@ -139,7 +139,23 @@
         }
     </style>
 
-   <!-- Google Tag Manager -->     <script>(function (w, d, s, l, i) {             w[l] = w[l] || []; w[l].push({                 'gtm.start':                     new Date().getTime(), event: 'gtm.js'             }); var f = d.getElementsByTagName(s)[0],                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);         })(window, document, 'script', 'dataLayer', 'GTM-NJZBCGR');</script>     <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NJZBCGR');
+    </script>
+    <!-- End Google Tag Manager -->
 
 </head>
 
@@ -175,7 +191,7 @@
                         </a>
                         <ul class="dropdown-menu rounded-3 shadow-lg p-2" aria-labelledby="productDropdown">
 
-     
+
                             <li><a class="dropdown-item px-4 py-3 text-dark border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1200">iCop R1200</a></li>
                             <li><a class="dropdown-item px-4 py-3 text-dark border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1500">iCop R1500</a></li>
                             <li><a class="dropdown-item px-4 py-3 text-dark border-bottom hover-bg-light" href="https://www.photonplay.com/radar-speed-signs/model/r1500m">iCop R1500M</a></li>
