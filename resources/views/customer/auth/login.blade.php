@@ -3,7 +3,7 @@
     <!-- header-end -->
     <div class="container-cus pt-lg-5 pt-3">
         <div class="login-sec">
-            <div class="form-section p-3" >
+            <div class="form-section2 p-3" >
                 <div class="d-flex form-section-inner" >
                     <div class="login-parent">
                         <div class="login-parent-inner">

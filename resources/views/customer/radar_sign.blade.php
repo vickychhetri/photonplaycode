@@ -453,7 +453,9 @@ if (isset($seo_record)) {
                                     <img src="{{ asset('assets\customer\images\star.svg') }}" alt="4 Star" class="img-fluid" width="14px">
                                     <img src="{{ asset('assets\customer\images\star.svg') }}" alt="5 Star" class="img-fluid" width="14px">
                                 </div>
+                                @if($more_product->is_price_hide != 1)
                                 <span class="d-block weight-font">$ {{$more_product->price}}</span>
+                                @endif
                                 <a href="{{route('customer.radar.sign', $more_product->slug)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
                             </div>
                         </div>

@@ -7,11 +7,13 @@ use App\Models\Product;
 use App\Models\ProductSpcializationOption;
 use App\Models\ProductSpecilization;
 use App\Models\Specilization;
+use App\Traits\UploadImageNameTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    use UploadImageNameTrait;
     /**
      * Display a listing of the resource.
      *
@@ -126,7 +128,6 @@ class ProductController extends Controller
         ]);
 
         $isPriceHidden = $request->is_price_hide == 'on'? 1 : 0;
-
         $product= Product::find($id);
         $product->category_id=$request->category_id;
         $product->title=$request->title;
@@ -135,7 +136,8 @@ class ProductController extends Controller
         $product->slug=$request->slug;
         $product->sku=$request->sku;
         if($request->file('cover_image')){
-            $image_path = $request->file('cover_image')->store('image', 'public');
+//            $image_path = $request->file('cover_image')->store('image', 'public');
+            $image_path=$this->storeImageWithName($request->file('cover_image'));
             $product->cover_image=$image_path;
         }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use GeoIp2\Exception\AddressNotFoundException;
 use Illuminate\Http\Request;
 //use Closure;
 use GeoIp2\Database\Reader;
@@ -17,17 +18,26 @@ class CountryRedirect
      */
     public function handle(Request $request, Closure $next)
     {
-          $reader = new Reader(storage_path('app/GeoLite2-Country.mmdb')); // Path to the GeoIP database
+        $reader = new Reader(storage_path('app/GeoLite2-Country.mmdb')); // Path to the GeoIP database
 
-          $visitorIP = $request->ip();
+        $visitorIP = $request->ip();
 
-          $record = $reader->country($visitorIP);
-          $countryCode = $record->country->isoCode;
+            // Handle local IP addresses separately
+        if ($visitorIP === '127.0.0.1' || $visitorIP === '::1') {
+            $countryCode = 'IN'; // Assuming 'IN' for local testing, change as needed
+        } else {
+            try {
+                $record = $reader->country($visitorIP);
+                $countryCode = $record->country->isoCode;
+            } catch (AddressNotFoundException $e) {
+                // Handle cases where the IP address is not found in the GeoIP database
+                $countryCode = 'UNKNOWN'; // Default fallback
+            }
+        }
 
-          if ($countryCode === 'IN') {
-              return redirect('https://www.photonplayinc.com/traffic-signs/radar-speed-signs/');
-          }
-
+        if ($countryCode === 'IN') {
+            return redirect('https://www.photonplayinc.com/traffic-signs/radar-speed-signs/');
+        }
         return $next($request);
     }
 }

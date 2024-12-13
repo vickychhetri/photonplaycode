@@ -542,7 +542,7 @@ a.nav-link.dropdown-toggle.show img,
 }
 
 .banner-image-new-radar-parent {
-    
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -550,7 +550,7 @@ a.nav-link.dropdown-toggle.show img,
     background-size: cover;
 }
 .banner-image-new-radar-parent-mobile {
-    
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1907,6 +1907,10 @@ input:focus {
 
 .undefeated-wrapper {
     margin-top: -172px;
+}
+
+.undefeated-wrapper-dealership {
+    margin-top: -50px;
 }
 
 .map-wrapper h6 {
