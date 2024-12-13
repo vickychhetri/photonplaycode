@@ -9,11 +9,14 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\UserPostalCode;
 use App\Models\Vendor;
+use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Psy\VersionUpdater\Downloader;
 
 class SignController extends Controller
@@ -28,6 +31,25 @@ class SignController extends Controller
         $products = Product::where('category_id', 1)->get();
         return view('customer.sign', compact('products'));
     }
+
+    public function radarSpeedSigns_v1()
+    {
+        $products = Product::select('id','slug')->where('category_id', 1)->get();
+        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $blogs = array_slice($postsSlice, 0 , 3);
+
+        return view('signv1.sign', compact('products','blogs'));
+    }
+
+    public function radarSpeedSignsget_quote_v1()
+    {
+        $products = Product::where('category_id', 1)->get();
+        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $blogs = array_slice($postsSlice, 0 , 3);
+
+        return view('signv1.get_quote', compact('products','blogs'));
+    }
+
 
     public function radarSigns($id)
     {
@@ -104,7 +126,9 @@ class SignController extends Controller
             return redirect()->back()->with('error',  $validator->errors()->first());
         }
 
-        $vendor = Vendor::create($request->except('token'));
+        $data=$request->except('token');
+        $data["dealer_data"]=json_encode($request->except('token'));
+        $vendor = Vendor::create($data);
 
         try{
             VendorJob::dispatch($vendor);
@@ -112,12 +136,7 @@ class SignController extends Controller
             //
         }
 
-
-        // return response()->json([
-        //     'message' => 'vendor successully stored'
-        // ]);
-        // \toastr()->success('Form submitted');
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Application submitted successfully.');;
     }
 
 }

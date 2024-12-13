@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-us">
 @php
 use App\Models\Product;
 $currency = '$';
@@ -37,6 +37,7 @@ $productLists = Product::take(5)->get();
     <link href="{{ asset('assets\customer\css\bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets\customer\slick\slick.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets\customer\slick\slick-theme.css') }}" />
+    <link rel="stylesheet" href="/signv1/assets/styles/index.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" async defer></script>
@@ -118,98 +119,205 @@ $productLists = Product::take(5)->get();
       z-index: 99;">
     <img src="{{asset('/assets/images/arrow-up.png')}}" height="50px;"/>
 </a>
-<header class="header bg-white sticky-top w-100" >
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="/"><img src="{{asset('assets\customer\images\logo-dark.webp')}}" alt="Not Found" class="img-navbar-icon-logo"></a>
-                <a id="menu-toggle" class="mobile-display">
-                    <span class="navbar-toggler-icon"></span>
-                </a>
-
-                <div class="collapse header-font navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-5 gap-2 px-4">
-                        <li class="nav-item">
-                            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercasen" href="{{route('customer.homePage')}}">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>
-                        </li>
-
-                        <li class="nav-item dropdown position-relative solution-pos">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                PRODUCTS
-                            </a>
-                            <ul class="dropdown-menu bg-light borderes">
-                                @forelse ($productLists as $list)
-                                    <li><a class="dropdown-item px-lg-3 px-0 pb-4 pb-lg-3" href="{{route('customer.radar.sign', $list->slug)}}">{{$list->title}}</a></li>
-                                @empty
-
-                                @endforelse
-
-                            </ul>
-                            <div class="position-absolute down-image">
-                                <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found">
-                            </div>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"
-                               href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>
-                        </li>
+<nav class="navbar navbar-expand-lg bg-transparent pt-2 pb-0 border-bottom">
+    <div class="container">
+        <a class="navbar-brand me-5" href="#">
+            <img src="https://www.photonplay.com/assets/customer/images/logo-dark.png" alt="Logo" height="30px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/radar-speed-signs">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="/company">COMPANY</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-black dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        PRODUCT
+                    </a>
+                    <ul class="dropdown-menu rounded-3 shadow-lg p-2" aria-labelledby="productDropdown">
+                        @foreach($productLists ?? [] as $product)
+                            <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="{{ route('customer.radar.sign', $product->slug) }}">{{ $product->title }}</a></li>
+                        @endforeach
+                        <li><a class="dropdown-item px-4 py-3 text-black hover-bg-light text-black" href="/radar-cloud-management"> Cloud Software</a></li>
                     </ul>
-                    <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">
-                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="/blogs">NEWS & MEDIA</a>
+                </li>
 
-                        @if (!Session::get('user'))
-                        <div class="d-flex align-items-center">
-                        <input type="hidden" name="grand_total" value="{{$cartPrice}}">
-                            <p class="me-2 mb-0">{{$cartPrice}}</p>
 
-                          <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
-                        </div>
-                        <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
-                        @else
-                        <div class="d-flex align-items-center">
-                            <p class="me-2 mb-0">{{$cartPrice}}</p>
-                            <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="me-2">
-                                <span class="text-capitalize">Good Day!</span>
-                                <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
-                            </div>
-                            <div class="profile-circle">
 
-                                <div class="dropdown">
-                                    <button
-                                        class="btn dropdown-toggle"
-                                        type="button"
-                                        id="dropdownMenuButton"
-                                        data-mdb-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        <a ><img src="{{asset('assets\customer\images\profile.png')}}" alt="Not Found"
-                                                 class="img-fluid rounded-circle d-block" width="36" height="36"></a>
-                                    </button>
-                                    <ul class="dropdown-menu position-absolute end-0" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="{{route('customer.edit.profile')}}">Account</a></li>
-                                        <li><a class="dropdown-item" href="{{route('customer.logout')}}">Logout</a></li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="{{route('customer.radar.speed.signs__get_quote_v1')}}">GET QUOTE
+                    </a>
+                </li>
 
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        @endif
 
-                    </form>
+
+
+
+            </ul>
+
+            <div class="personal-information d-flex align-items-center gap-2">
+                <a href="tel:+8009669329">
+                    <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Phone Icon">
+                </a>
+                <div class="info">
+                    <p class="text-white fw-bold mb-0 text-black"> (800)966-9329</p>
+                    <p class="text-secondary fs-14 fw-semibold mb-0 ">sales@photonplay.com</p>
                 </div>
             </div>
-        </nav>
+
+
+            <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+
+                @if (!Session::get('user'))
+                    <div class="d-flex align-items-center">
+                        <input type="hidden" name="grand_total" value="{{$cartPrice}}">
+                        <p class="me-2 mb-0">{{$cartPrice}}</p>
+
+                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
+                    </div>
+                    <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
+                @else
+                    <div class="d-flex align-items-center">
+
+                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
+                        <p class="me-2 mb-0">{{$cartPrice}}</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="me-2">
+                            <span class="text-capitalize">Good Day!</span>
+                            <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
+                        </div>
+                        <div class="profile-circle">
+
+                            <div class="dropdown">
+                                <button
+                                    class="btn dropdown-toggle"
+                                    type="button"
+                                    id="dropdownMenuButton"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <a ><img src="{{asset('assets\customer\images\profile.png')}}" alt="Not Found"
+                                             class="img-fluid rounded-circle d-block" width="36" height="36"></a>
+                                </button>
+                                <ul class="dropdown-menu position-absolute end-0" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="{{route('customer.edit.profile')}}">Account</a></li>
+                                    <li><a class="dropdown-item" href="{{route('customer.logout')}}">Logout</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+            </form>
+
+        </div>
+    </div>
+</nav>
+<header class="header bg-white sticky-top w-100" >
+{{--        <nav class="navbar navbar-expand-lg">--}}
+{{--            <div class="container">--}}
+{{--                <a class="navbar-brand" href="/"><img src="{{asset('assets\customer\images\logo-dark.webp')}}" alt="Not Found" class="img-navbar-icon-logo"></a>--}}
+{{--                <a id="menu-toggle" class="mobile-display">--}}
+{{--                    <span class="navbar-toggler-icon"></span>--}}
+{{--                </a>--}}
+
+{{--                <div class="collapse header-font navbar-collapse " id="navbarSupportedContent">--}}
+{{--                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-5 gap-2 px-4">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link text-uppercasen" href="{{route('customer.homePage')}}">HOME</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>--}}
+{{--                        </li>--}}
+
+{{--                        <li class="nav-item dropdown position-relative solution-pos">--}}
+{{--                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"--}}
+{{--                                aria-expanded="false">--}}
+{{--                                PRODUCTS--}}
+{{--                            </a>--}}
+{{--                            <ul class="dropdown-menu bg-light borderes">--}}
+{{--                                @forelse ($productLists as $list)--}}
+{{--                                    <li><a class="dropdown-item px-lg-3 px-0 pb-4 pb-lg-3" href="{{route('customer.radar.sign', $list->slug)}}">{{$list->title}}</a></li>--}}
+{{--                                @empty--}}
+
+{{--                                @endforelse--}}
+
+{{--                            </ul>--}}
+{{--                            <div class="position-absolute down-image">--}}
+{{--                                <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found">--}}
+{{--                            </div>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"--}}
+{{--                               href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                    <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">--}}
+{{--                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->--}}
+
+{{--                        @if (!Session::get('user'))--}}
+{{--                        <div class="d-flex align-items-center">--}}
+{{--                        <input type="hidden" name="grand_total" value="{{$cartPrice}}">--}}
+{{--                            <p class="me-2 mb-0">{{$cartPrice}}</p>--}}
+
+{{--                          <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
+{{--                        </div>--}}
+{{--                        <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>--}}
+{{--                        @else--}}
+{{--                        <div class="d-flex align-items-center">--}}
+{{--                            <p class="me-2 mb-0">{{$cartPrice}}</p>--}}
+{{--                            <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="d-flex align-items-center">--}}
+{{--                            <div class="me-2">--}}
+{{--                                <span class="text-capitalize">Good Day!</span>--}}
+{{--                                <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>--}}
+{{--                            </div>--}}
+{{--                            <div class="profile-circle">--}}
+
+{{--                                <div class="dropdown">--}}
+{{--                                    <button--}}
+{{--                                        class="btn dropdown-toggle"--}}
+{{--                                        type="button"--}}
+{{--                                        id="dropdownMenuButton"--}}
+{{--                                        data-mdb-toggle="dropdown"--}}
+{{--                                        aria-expanded="false"--}}
+{{--                                    >--}}
+{{--                                        <a ><img src="{{asset('assets\customer\images\profile.png')}}" alt="Not Found"--}}
+{{--                                                 class="img-fluid rounded-circle d-block" width="36" height="36"></a>--}}
+{{--                                    </button>--}}
+{{--                                    <ul class="dropdown-menu position-absolute end-0" aria-labelledby="dropdownMenuButton">--}}
+{{--                                        <li><a class="dropdown-item" href="{{route('customer.edit.profile')}}">Account</a></li>--}}
+{{--                                        <li><a class="dropdown-item" href="{{route('customer.logout')}}">Logout</a></li>--}}
+
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        @endif--}}
+
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </nav>--}}
 
     <nav id="mobile-menu"  >
         <div class="container">
@@ -345,6 +453,13 @@ $productLists = Product::take(5)->get();
                 console.error('Error fetching IP information:', error);
                 // You can handle errors here
             });
+
+        document.getElementById("backToTop").addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" // Enables smooth scrolling
+            });
+        });
 
     </script>
 
