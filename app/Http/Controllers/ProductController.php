@@ -123,6 +123,9 @@ class ProductController extends Controller
             'title' => 'required|max:255',
             'price' => 'required|max:255',
             'slug' => 'required|max:255',
+            'pdf_download_text' => 'required|max:255',
+            'product_heading_text' => 'required|max:255',
+            'product_breadcrumb_text' => 'required|max:255',
             'sku' => 'nullable',
             'cover_image' => 'image|mimes:jpg,png,jpeg,webp,gif,svg|max:2048',
         ]);
@@ -135,6 +138,12 @@ class ProductController extends Controller
         $product->is_price_hide=$isPriceHidden;
         $product->slug=$request->slug;
         $product->sku=$request->sku;
+
+        $product->product_heading_text=$request->product_heading_text;
+        $product->product_breadcrumb_text=$request->product_breadcrumb_text;
+        $product->shipping_text=$request->shipping_text;
+        $product->pdf_download_text=$request->pdf_download_text;
+
         if($request->file('cover_image')){
 //            $image_path = $request->file('cover_image')->store('image', 'public');
             $image_path=$this->storeImageWithName($request->file('cover_image'));

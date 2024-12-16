@@ -117,12 +117,67 @@
 
                                                 @error('title')
                                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                                 @enderror
                                             </div>
 
                                         </div>
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="product_heading_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Label') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="product_heading_text" type="text" class="form-control @error('product_heading_text') is-invalid @enderror" name="product_heading_text" value="{{$product->product_heading_text}}" required autocomplete="title" autofocus>
+
+                                                @error('product_heading_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="product_breadcrumb_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Breadcrumb') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="product_breadcrumb_text" type="text" class="form-control @error('product_breadcrumb_text') is-invalid @enderror" name="product_breadcrumb_text" value="{{$product->product_breadcrumb_text}}" required autocomplete="title" autofocus>
+
+                                                @error('product_breadcrumb_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="pdf_download_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('PDF Label') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="pdf_download_text" type="text" class="form-control @error('pdf_download_text') is-invalid @enderror" name="pdf_download_text" value="{{$product->pdf_download_text}}" required autocomplete="title" autofocus>
+
+                                                @error('pdf_download_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="shipping_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Shipping Text') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="shipping_text" type="text" class="form-control @error('shipping_text') is-invalid @enderror" name="shipping_text" value="{{$product->shipping_text}}" required autocomplete="title" autofocus>
+
+                                                @error('shipping_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
 
                                         <div class="row mb-3 form-group">
                                             <label for="slug" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Slug') }}</label>
