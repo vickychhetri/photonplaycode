@@ -2,11 +2,14 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Currency;
 use Closure;
 use GeoIp2\Exception\AddressNotFoundException;
 use Illuminate\Http\Request;
 //use Closure;
 use GeoIp2\Database\Reader;
+use Illuminate\Support\Facades\Session;
+
 class CountryRedirect
 {
     /**
@@ -32,6 +35,14 @@ class CountryRedirect
             } catch (AddressNotFoundException $e) {
                 // Handle cases where the IP address is not found in the GeoIP database
                 $countryCode = 'UNKNOWN'; // Default fallback
+            }
+        }
+
+        if (!Session::has('currency')) {
+            $currency_handler = Currency::where('country_code', $countryCode)->first();
+            if ($currency_handler) {
+                Session::put('currency', $currency_handler->currency_code);
+                Session::put('exchange_rate', $currency_handler->exchange_rate);
             }
         }
 
