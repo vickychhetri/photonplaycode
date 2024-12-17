@@ -109,6 +109,84 @@
                                             </div>
                                         </div>
 
+                                        @php
+                                            $disable_category_for_multi_c_p=false;
+                                                $config = \App\Models\MasterConfiguration::where('code',\App\Util\Configure::PRODUCT_CATEGORY_MULTI_NOT_REQUIRED)->first();
+                                                if ($config) {
+                                                    $value = $config->value;
+                                                    if($value==$product->category_id){
+                                                        $disable_category_for_multi_c_p=true;
+                                                    }
+                                                }
+                                        @endphp
+                                        @if(!$disable_category_for_multi_c_p)
+                                            <div class="row mb-3 form-group">
+                                                <label for="categories_linked" class="col-md-2 col-form-label text-md-end">
+                                                    <span>* </span>{{ __('Categories') }}
+                                                </label>
+
+                                                @php
+                                                    $categories_all = \App\Models\Category::where('id', '!=', $product->category_id)->get();
+
+                                                    $selected_categories = json_decode($product->categories_linked, true) ?? [];
+                                                @endphp
+
+                                                <div class="col-md-10">
+                                                    <select id="categories_linked"
+                                                            class="form-control @error('categories_linked') is-invalid @enderror"
+                                                            name="categories_linked[]"
+                                                            multiple="multiple" >
+                                                        @foreach($categories_all as $item)
+                                                            <option value="{{ $item->id }}"
+                                                                    @if(in_array($item->id, $selected_categories)) selected @endif>
+                                                                {{ $item->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+
+                                                    @error('categories_linked')
+                                                    <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3 form-group">
+                                                <label for="products_linked" class="col-md-2 col-form-label text-md-end">
+                                                    <span>* </span>{{ __('Link Product') }}
+                                                </label>
+
+                                                @php
+                                                    $product_all = \App\Models\Product::where('id', '!=', $product->id)->get();
+
+                                                    $selected_products = json_decode($product->products_linked, true) ?? [];
+                                                @endphp
+
+                                                <div class="col-md-10">
+                                                    <select id="products_linked"
+                                                            class="form-control @error('products_linked') is-invalid @enderror"
+                                                            name="products_linked[]"
+                                                            multiple="multiple" >
+                                                        @foreach($product_all as $item)
+                                                            <option value="{{ $item->id }}"
+                                                                    @if(in_array($item->id, $selected_products)) selected @endif>
+                                                                {{ $item->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+
+                                                    @error('products_linked')
+                                                    <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        @endif
+
+
+
                                         <div class="row mb-3 form-group">
                                             <label for="title" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Name') }}</label>
 
@@ -315,6 +393,9 @@
         </div>
     </div>
 
+    <!-- Include Select2 CSS and JS (CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -324,6 +405,15 @@
                 height: 200
             });
 
+        });
+
+            $(document).ready(function() {
+            $('#categories_linked').select2({
+                placeholder: "Select Categories"
+            });
+                $('#products_linked').select2({
+                    placeholder: "Select Products"
+                });
         });
 
     </script>

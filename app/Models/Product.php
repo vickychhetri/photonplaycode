@@ -20,4 +20,10 @@ class Product extends Model
     public function category(){
         return $this->BelongsTo(Category::class);
     }
+
+    public static function getLinkedProducts($productId)
+    {
+        return self::whereJsonContains('products_linked', (string) $productId)->get();
+    }
+
 }
