@@ -4,6 +4,7 @@ namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
 use App\Mail\SendInquiryEmail;
+use App\Models\EmailAddress;
 use App\Models\Inquery;
 use App\Rules\ReCaptcha;
 use Illuminate\Http\Request;
@@ -28,12 +29,15 @@ class InqueryController extends Controller
        $data_in=Inquery::create($request->except('_token'));
 
         $inquiry = new SendInquiryEmail($data_in);
-//        sales@photonplay.com
-        $recipients = ['info@photonplay.com', 'Pervez.ali@photonplay.com', 'larry@photonplay.com','bksingh@photonplay.com','Afzaal.habibi@photonplay.com','anjali.giri.psi@gmail.com'];
-        Mail::to($recipients)->send($inquiry);
-//        Mail::to('Pervez.ali@photonplay.com')->send($inquiry);
-//        Mail::to('larry@photonplay.com')->send($inquiry);
-//        Mail::to('bksingh@photonplay.com')->send($inquiry);
+
+        $recipients = EmailAddress::where('status', 'act')
+            ->where('code', 'general')
+            ->pluck('email')
+            ->toArray();
+        if($recipients){
+            Mail::to($recipients)->send($inquiry);
+        }
+
 
 
        return redirect(route('customer.show_thank_you_page'))->with('success', 'Inquiry successfully submitted.');
