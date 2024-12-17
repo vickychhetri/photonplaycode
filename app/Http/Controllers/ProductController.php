@@ -143,6 +143,8 @@ class ProductController extends Controller
         $product->product_breadcrumb_text=$request->product_breadcrumb_text;
         $product->shipping_text=$request->shipping_text;
         $product->pdf_download_text=$request->pdf_download_text;
+        $product->categories_linked=$request->categories_linked;
+        $product->products_linked=$request->products_linked;
 
         if($request->file('cover_image')){
 //            $image_path = $request->file('cover_image')->store('image', 'public');

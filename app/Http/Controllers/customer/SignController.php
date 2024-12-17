@@ -56,6 +56,10 @@ class SignController extends Controller
         $sessionId = Session::getId();
         $product = Product::with(['images' => fn ($r) => $r->where('color', 'amber'), 'specilizations.specilization', 'specilizations.options', 'specilizations.options.specializationoptions', 'category'])->where('slug', $id)->first();
         $productLists = Product::where('category_id', 1)->take(5)->get();
+
+        //list all accessories
+        $linked_products=Product::getLinkedProducts($product->id);
+
         // dd($product);
         $postalCode = '';
         $cartCount = 0;
@@ -67,7 +71,7 @@ class SignController extends Controller
             $cartCount = Cart::where('session_id', $sessionId)->count();
         }
 
-        return view('customer.radar_sign', compact('product', 'productLists', 'postalCode', 'cartCount','id'));
+        return view('customer.radar_sign', compact('product', 'productLists', 'postalCode', 'cartCount','id','linked_products'));
     }
 
     public function specificationAjax(Request $request)
