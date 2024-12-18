@@ -52,6 +52,37 @@ $productLists = Product::take(5)->get();
     <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
     {{--        End    Start meta--}}
     <style>
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .sticky-header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sticky-header nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .sticky-header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sticky-header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
         #mobile-menu {
             position: fixed;
             top: 0;
@@ -119,7 +150,7 @@ $productLists = Product::take(5)->get();
       z-index: 99;">
     <img src="{{asset('/assets/images/arrow-up.png')}}" height="50px;"/>
 </a>
-<nav class="navbar navbar-expand-lg bg-transparent pt-2 pb-0 border-bottom">
+<nav class="navbar navbar-expand-lg bg-light pt-2 pb-0 border-bottom sticky-header">
     <div class="container">
         <a class="navbar-brand me-5" href="#">
             <img src="https://www.photonplay.com/assets/customer/images/logo-dark.png" alt="Logo" height="30px">
@@ -227,97 +258,6 @@ $productLists = Product::take(5)->get();
     </div>
 </nav>
 <header class="header bg-white sticky-top w-100" >
-{{--        <nav class="navbar navbar-expand-lg">--}}
-{{--            <div class="container">--}}
-{{--                <a class="navbar-brand" href="/"><img src="{{asset('assets\customer\images\logo-dark.webp')}}" alt="Not Found" class="img-navbar-icon-logo"></a>--}}
-{{--                <a id="menu-toggle" class="mobile-display">--}}
-{{--                    <span class="navbar-toggler-icon"></span>--}}
-{{--                </a>--}}
-
-{{--                <div class="collapse header-font navbar-collapse " id="navbarSupportedContent">--}}
-{{--                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-5 gap-2 px-4">--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link text-uppercasen" href="{{route('customer.homePage')}}">HOME</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link text-uppercase  {{Request::is('radar-speed-signs') ? 'active':''}}" href="{{route('customer.radar.speed.signs')}}">THE SIGN</a>--}}
-{{--                        </li>--}}
-
-{{--                        <li class="nav-item dropdown position-relative solution-pos">--}}
-{{--                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"--}}
-{{--                                aria-expanded="false">--}}
-{{--                                PRODUCTS--}}
-{{--                            </a>--}}
-{{--                            <ul class="dropdown-menu bg-light borderes">--}}
-{{--                                @forelse ($productLists as $list)--}}
-{{--                                    <li><a class="dropdown-item px-lg-3 px-0 pb-4 pb-lg-3" href="{{route('customer.radar.sign', $list->slug)}}">{{$list->title}}</a></li>--}}
-{{--                                @empty--}}
-
-{{--                                @endforelse--}}
-
-{{--                            </ul>--}}
-{{--                            <div class="position-absolute down-image">--}}
-{{--                                <img src="{{asset('assets\customer\images\Down-Arrow.png')}}" alt="Not Found">--}}
-{{--                            </div>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"--}}
-{{--                               href="{{route('radar.cloud.management')}}">   Cloud SOFTWARE</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link text-uppercase" href="{{route('customer.contact.us')}}">CONTACT US</a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                    <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">--}}
-{{--                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->--}}
-
-{{--                        @if (!Session::get('user'))--}}
-{{--                        <div class="d-flex align-items-center">--}}
-{{--                        <input type="hidden" name="grand_total" value="{{$cartPrice}}">--}}
-{{--                            <p class="me-2 mb-0">{{$cartPrice}}</p>--}}
-
-{{--                          <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
-{{--                        </div>--}}
-{{--                        <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>--}}
-{{--                        @else--}}
-{{--                        <div class="d-flex align-items-center">--}}
-{{--                            <p class="me-2 mb-0">{{$cartPrice}}</p>--}}
-{{--                            <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="d-flex align-items-center">--}}
-{{--                            <div class="me-2">--}}
-{{--                                <span class="text-capitalize">Good Day!</span>--}}
-{{--                                <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="profile-circle">--}}
-
-{{--                                <div class="dropdown">--}}
-{{--                                    <button--}}
-{{--                                        class="btn dropdown-toggle"--}}
-{{--                                        type="button"--}}
-{{--                                        id="dropdownMenuButton"--}}
-{{--                                        data-mdb-toggle="dropdown"--}}
-{{--                                        aria-expanded="false"--}}
-{{--                                    >--}}
-{{--                                        <a ><img src="{{asset('assets\customer\images\profile.png')}}" alt="Not Found"--}}
-{{--                                                 class="img-fluid rounded-circle d-block" width="36" height="36"></a>--}}
-{{--                                    </button>--}}
-{{--                                    <ul class="dropdown-menu position-absolute end-0" aria-labelledby="dropdownMenuButton">--}}
-{{--                                        <li><a class="dropdown-item" href="{{route('customer.edit.profile')}}">Account</a></li>--}}
-{{--                                        <li><a class="dropdown-item" href="{{route('customer.logout')}}">Logout</a></li>--}}
-
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        @endif--}}
-
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </nav>--}}
 
     <nav id="mobile-menu"  >
         <div class="container">
@@ -460,6 +400,7 @@ $productLists = Product::take(5)->get();
                 behavior: "smooth" // Enables smooth scrolling
             });
         });
+
 
     </script>
 
