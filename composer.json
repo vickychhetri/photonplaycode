@@ -17,7 +17,9 @@
         "laravel/telescope": "^4.14",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
+        "livewire/livewire": "^2.12",
         "mckenziearts/laravel-notify": "^2.3",
+        "mpdf/mpdf": "^8.2",
         "spatie/db-dumper": "^3.3",
         "srmklive/paypal": "^3.0",
         "stripe/stripe-php": "^10.12"
@@ -70,3 +72,4 @@
     "minimum-stability": "dev",
     "prefer-stable": true
 }
+
