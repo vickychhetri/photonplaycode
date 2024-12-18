@@ -13,9 +13,9 @@ class AddIsPriceHideInProducts extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->tinyInteger('is_price_hide')->default(null)->after('price');
-        });
+//        Schema::table('products', function (Blueprint $table) {
+//            $table->tinyInteger('is_price_hide')->default(null)->after('price');
+//        });
     }
 
     /**
@@ -25,8 +25,8 @@ class AddIsPriceHideInProducts extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('is_price_hide');
-        });
+//        Schema::table('products', function (Blueprint $table) {
+//            $table->dropColumn('is_price_hide');
+//        });
     }
 }

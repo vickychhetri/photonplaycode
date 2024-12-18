@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<html lang="en-us" prefix="og: https://ogp.me/ns#">
 <head>
     @php
         $currency = '$';
@@ -451,7 +451,7 @@
 
                         </div>
                         <div class="mega-menu-items">
-                            <button class="btn btn-sm btn-primary mobile_vendor" style="padding: 0px 15px; border-radius: 51px;margin-right: 10px;" id="openModalButton"> Become a vendor</button>
+                            <a href="{{route('dealership')}}" class="btn btn-sm btn-primary" style="padding: 0px 25px;    border-radius: 51px; max-width: 192px;max-height: 36px;" >Dealership</a>
                         </div>
                         <form class=" d-flex mt-lg-0 mt-4 align-items-center" role="search">
 

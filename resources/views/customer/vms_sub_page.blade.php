@@ -252,7 +252,7 @@ $seo_meta=[
 @include('customer.layout2.our_clients')
     <!-- _____________________ourclint-last-end___________________ -->
 
-    @include('customer.layout2.footer')
+    @include('customer.layout2.footer_photon')
 
 <script>
     $('.clints-content-branding').slick({

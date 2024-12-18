@@ -390,7 +390,7 @@ $seo_meta=[
 @include('customer.layout2.our_clients')
 <!-- _____________________ourclint-last-end___________________ -->
 
-@include('customer.layout2.footer')
+@include('customer.layout2.footer_photon')
 <script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>
 <script src="/assets/customer/js/jquery.js" ></script>
 <script src="/assets/customer/slick/slick.min.js" ></script>
