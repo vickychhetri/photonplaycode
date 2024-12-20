@@ -39,4 +39,8 @@
         <a href="{{route('admin.open_product_publish_form',$pid)}}" class="btn btn-outline-{{$page==6?'success':'dark'}} w-100  d-flex align-items-center"  >  <i data-feather="toggle-left"> </i> Publish </a>
     </div>
 
+    <div class="col-md-2 mb-3">
+        <a href="{{route('admin.open_product_features_form_page',$pid)}}" class="btn btn-outline-{{$page==7?'success':'dark'}} w-100  d-flex align-items-center"  >    Features </a>
+    </div>
+
 </div>

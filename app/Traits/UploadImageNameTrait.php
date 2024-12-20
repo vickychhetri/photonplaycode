@@ -31,4 +31,21 @@ trait UploadImageNameTrait
     }
 
 
+    public function deleteImageWithName($imageName)
+    {
+        $image_path = 'image/' . strtolower($imageName); // Image path in the 'public' disk
+
+        // Check if the image exists in the storage and delete it
+        if (Storage::disk('public')->exists($image_path)) {
+            Storage::disk('public')->delete($image_path);
+            return true; // Successfully deleted
+        }
+
+        return false; // Image not found
+    }
+
+
+
+
+
 }
