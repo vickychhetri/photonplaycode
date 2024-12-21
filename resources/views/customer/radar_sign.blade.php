@@ -138,49 +138,29 @@ if (isset($seo_record)) {
 <livewire:radar  :product_id="$id" />
 {{--product details end--}}
 
-
-
-
-@include('customer.layout2.get_in_touch')
-
 <section class="icop-series pt-4">
     <div class="container" id="our_products">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="text-center mb-lg-5">
-                    <h2 class="fs-md-2 mt-3">More Products</h2>
-                    <h6 class="fs-6 text-colorr text-uppercase">Our product offers innovative solutions to meet your
-                        needs and exceed your expectations.
-                    </h6>
-                </div>
+            <div class="col-lg-12 p-0 m-0">
+                <h4>Related Products</h4>
             </div>
             <div class="responsive">
                 @foreach ($productLists as $more_product)
                     <div>
-                        <div class="p-2">
-                            <div class="product_highlight inner-product bg-white">
+                        <div class="">
+                            <a href="{{route('customer.radar.sign', $more_product->slug)}}" class="text-decoration-none text-black">
+                            <div class="inner-product">
                                 <div class="w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
-                                    background-size: contain;">
-                                    {{-- <img class=""  src="" alt="">--}}
+                                    background-size: contain;transform: scale(1.2);">
                                 </div>
-                                <div class="speed-sign text-center mt-3">
-                                <span class="d-block weight-font">
-                                    Radar Speed Sign
-                                </span>
+                                <div class="speed-sign text-center">
                                     <span class="d-block">{{$more_product->title}}</span>
-                                    <div class="d-flex justify-content-center align-items-center my-2 gap-1">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="1 Star" class="img-fluid" width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="2 Star" class="img-fluid" width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="3 Star" class="img-fluid" width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="4 Star" class="img-fluid" width="14px">
-                                        <img src="{{ asset('assets\customer\images\star.svg') }}" alt="5 Star" class="img-fluid" width="14px">
-                                    </div>
                                     @if($more_product->is_price_hide != 1)
                                         <span class="d-block weight-font">$ {{$more_product->price}}</span>
                                     @endif
-                                    <a href="{{route('customer.radar.sign', $more_product->slug)}}" class="btn btn-primary text-capitalize mt-3">Shop Now</a>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach
@@ -188,9 +168,10 @@ if (isset($seo_record)) {
         </div>
     </div>
 </section>
+@include('customer.layout2.get_in_touch3')
 
 
-@include('customer.layout2.footer')
+@include('customer.layout2.footer2')
 <!-- Modal -->
 <form id="downloadForm">
     @csrf
