@@ -137,6 +137,7 @@ if (isset($seo_record)) {
 {{--product details start--}}
 <livewire:radar  :product_id="$id" />
 {{--product details end--}}
+@include('customer.layout2.get_resources')
 
 <section class="icop-series pt-4">
     <div class="container" id="our_products">
@@ -168,6 +169,7 @@ if (isset($seo_record)) {
         </div>
     </div>
 </section>
+
 @include('customer.layout2.get_in_touch3')
 
 
