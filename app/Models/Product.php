@@ -14,6 +14,10 @@ class Product extends Model
     public function specilizations(){
         return $this->hasMany(ProductSpecilization::class);
     }
+
+    public function product_resources(){
+        return $this->hasMany(ProductAvailableResource::class);
+    }
     public function images(){
         return $this->hasMany(ProductImage::class);
     }
