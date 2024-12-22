@@ -87,6 +87,8 @@ class SpecilizationController extends Controller
         $specilization = Specilization::find($id);
         $input = array();
         $input['title']=$request->title;
+        $input['code']=$request->code;
+
         if(isset($request->image)){
             $request->validate([
                 'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:512',
@@ -96,7 +98,7 @@ class SpecilizationController extends Controller
         }
         $specilization->update($input);
 
-        return redirect()->route('admin.specilization.index')->with('status', 'Specilization Successfully updated');
+        return redirect()->route('admin.specilization.index')->with('status', 'Specialization Successfully updated');
     }
 
     /**

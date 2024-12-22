@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\SpecializationOption;
 use App\Models\Specilization;
 use Illuminate\Http\Request;
@@ -84,6 +85,7 @@ class SpecilizationOptionController extends Controller
     {
         $specilization = SpecializationOption::where('id', $id)->update([
             'option' => $request->option,
+            'code' => $request->code,
         ]);
 
         return redirect()->back()->with('status', 'Specilization Successfully updated');

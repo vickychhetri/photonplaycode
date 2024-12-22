@@ -203,6 +203,18 @@
                                         </div>
 
                                         <div class="row mb-3 form-group">
+                                            <label for="code" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Code') }}</label>
+                                            <div class="col-md-10    ">
+                                                <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" value="{{$product->code}}" required autocomplete="code" autofocus>
+                                                @error('code')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3 form-group">
                                             <label for="product_heading_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Label') }}</label>
                                             <div class="col-md-10">
                                                 <input id="product_heading_text" type="text" class="form-control @error('product_heading_text') is-invalid @enderror" name="product_heading_text" value="{{$product->product_heading_text}}" required autocomplete="title" autofocus>
