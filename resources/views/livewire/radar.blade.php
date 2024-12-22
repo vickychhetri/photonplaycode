@@ -174,22 +174,41 @@
             </section>
 
 {{--            modal starts cart--}}
+{{--            start --}}
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                        <div class="modal-header d-flex justify-content-between align-items-center">
+                            <h5 class="modal-title text-black" id="exampleModalLongTitle">Recently Added Item(s)</h5>
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Continue Shopping</button>
                         </div>
-                        <div class="modal-body">
-                            ...
+                        <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                            @for($i = 0; $i < 3; $i++)
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://photonplay.com/assets/customer/images/products_home/Smart-City-VMS-Front.webp"
+                                         alt="Item Image"
+                                         style="width: 50px; height: 50px; margin-right: 10px; display: block;">
+                                    <div>
+                                        <div class="text-black fw-bold">LegendViz Blinker Solar Stop Sign</div>
+                                        <div>Qty: 1</div>
+                                    </div>
+                                    <div class="ms-auto text-black">$2,594.79</div>
+                                </div>
+                                <hr>
+                            @endfor
+
+                            <div class="d-flex justify-content-between text-black fw-bold">
+                                <span>Cart subtotal</span>
+                                <span>$2,594.79</span>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-sm btn-primary">Checkout</button>
+                            <button type="button" class="btn btn-primary w-100">View Cart / Checkout</button>
                         </div>
                     </div>
                 </div>
             </div>
+{{--            End--}}
         </form>
     </section>
     <section>
