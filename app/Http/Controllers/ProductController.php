@@ -145,9 +145,9 @@ class ProductController extends Controller
         $product->pdf_download_text=$request->pdf_download_text;
         $product->categories_linked=$request->categories_linked;
         $product->products_linked=$request->products_linked;
+        $product->code=$request->code;
 
         if($request->file('cover_image')){
-//            $image_path = $request->file('cover_image')->store('image', 'public');
             $image_path=$this->storeImageWithName($request->file('cover_image'));
             $product->cover_image=$image_path;
         }
