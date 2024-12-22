@@ -183,27 +183,34 @@
                             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Continue Shopping</button>
                         </div>
                         <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
-                            @for($i = 0; $i < 3; $i++)
+
+@php
+$cartTotal = 0;
+@endphp
+                            @foreach($cartItems as $item)
+                                @php
+                                    $cartTotal = $item->quantity * $item->price;
+                                @endphp
                                 <div class="d-flex align-items-center mb-3">
-                                    <img src="https://photonplay.com/assets/customer/images/products_home/Smart-City-VMS-Front.webp"
+                                    <img src="{{ asset('storage/' . $item->cover_image )  }}"
                                          alt="Item Image"
                                          style="width: 50px; height: 50px; margin-right: 10px; display: block;">
                                     <div>
-                                        <div class="text-black fw-bold">LegendViz Blinker Solar Stop Sign</div>
-                                        <div>Qty: 1</div>
+                                        <div class="text-black fw-bold">{{ $item->title }}</div>
+                                        <div>Qty: {{ $item->quantity }}</div>
                                     </div>
-                                    <div class="ms-auto text-black">$2,594.79</div>
+                                    <div class="ms-auto text-black">${{ isset($item->price) ? number_format($item->price, 2) : '' }}</div>
                                 </div>
                                 <hr>
-                            @endfor
+                            @endforeach
 
                             <div class="d-flex justify-content-between text-black fw-bold">
                                 <span>Cart subtotal</span>
-                                <span>$2,594.79</span>
+                                <span>${{ $cartTotal }}</span>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary w-100">View Cart / Checkout</button>
+                            <button type="submit" class="btn btn-primary w-100">View Cart / Checkout</button>
                         </div>
                     </div>
                 </div>
