@@ -25,8 +25,8 @@
                                 </div>
                                 <label class="d-block mb-5"><a href="{{ route('customer.forgot_password') }}" class="text-decoration-none text-colorr">Forgot password ?</a></label>
                                 <button type="submit" class="btn btn-primary rounded py-2 w-100 mb-3 fw-normal">Login</button>
-                                <a href="{{ route('customer.social.login') }}" class="btn btn-light rounded py-3 w-100 google-login d-flex align-items-center justify-content-center text-dark bg-white">
-                                    <img src="{{ asset('assets\customer\images\google.png') }}"> Login with google</a>
+{{--                                <a href="{{ route('customer.social.login') }}" class="btn btn-light rounded py-3 w-100 google-login d-flex align-items-center justify-content-center text-dark bg-white">--}}
+{{--                                    <img src="{{ asset('assets\customer\images\google.png') }}"> Login with google</a>--}}
                             </form>
                             <div class="mt-5">
                                 <label class="d-block">Don't have an account? <a href="{{ route('customer.registerForm') }}" class="text-colorr">Signup here.</a></label>

@@ -24,10 +24,20 @@
                                      <i class="bi bi-eye"></i>
                                     </span>
                                 </div>
+
+                                <label for="">Confirm Password</label>
+                                <div class="input-group input-cus-group mb-4">
+                                    <input type="password" name="password_confirmation" class="form-control input-cus" aria-label="Dollar amount (with dot and two decimal places)">
+                                    <span class="input-group-text toggle-password">
+                                     <i class="bi bi-eye"></i>
+                                    </span>
+                                </div>
+
+
                                 <button type="submit" class="btn btn-primary rounded py-2 w-100 mb-3 fw-normal">Register</button>
                                 </form>
-                                <a href="{{ route('customer.social.login') }} "  class="btn btn-light rounded py-3 w-100 google-login d-flex align-items-center justify-content-center text-dark bg-white">
-                                    <img src="{{ asset('assets\customer\images\google.png') }}"> Login with google</a>
+{{--                                <a href="{{ route('customer.social.login') }} "  class="btn btn-light rounded py-3 w-100 google-login d-flex align-items-center justify-content-center text-dark bg-white">--}}
+{{--                                    <img src="{{ asset('assets\customer\images\google.png') }}"> Login with google</a>--}}
                                 <div class="mt-5 ">
                                     <label class="d-block">Already have an account? <a href="{{ route('customer.loginForm') }}" class="text-colorr">Login here.</a></label>
                                 </div>
@@ -44,12 +54,6 @@
 
                                   <img src="{{asset('assets/customer/images/4957136_4957136.webp')}}" class="w-100" style="height: 100%;object-fit: cover;"/>
                               </div>
-{{--                              <div class="carousel-item">--}}
-{{--                                    12--}}
-{{--                              </div>--}}
-{{--                              <div class="carousel-item">--}}
-{{--                                12--}}
-{{--                              </div>--}}
                             </div>
 
                           </div>

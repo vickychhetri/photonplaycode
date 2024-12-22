@@ -55,15 +55,6 @@
                     <div class="col-lg-6">
                         <div class="multiple-optionn pb-0 pt-lg-0 pt-5 pb-0">
                             <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
-                                @if($product->brochure)
-                                    <div>
-                                        <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="d-flex align-items-center text-decoration-none text-dark" style="height: 40px;padding:8px; width: 200px;">
-                                            <img src="/assets/images/radar/pdf_icon.png" style="height:40px;" alt="PDF">
-                                            &nbsp
-                                            <span class="font-weight-bold"><u> {{$product->title}} PDF </u> </span>
-                                        </a>
-                                    </div>
-                                @endif
                             </div>
 
                             <h4 class="font-weight-bold">{{ $product->category->title }}</h4>
@@ -157,8 +148,12 @@
                                                 <div class="px-4 py-lg-0 py-4">
                                                     <span style="display: none" class="one-thousand" id="total_price">${{ $product->price }}</span>
                                                 </div>
-                                                <button type="submit" class="btn rounded-0 text-nowrap align-self-center px-4 m-2" ><img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart_new.png') }}"> </button>
+{{--                                                <button type="submit" class="btn rounded-0 text-nowrap align-self-center px-4 m-2" ><img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}"> </button>--}}
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
+                                                    <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
+                                                </button>
                                             </div>
+
 
                                         </div>
 
@@ -174,35 +169,27 @@
             <section class="pt-lg-4 order-summery pb-4 border-bottom">
                 <div class="container">
                     <div class="row w-100">
-{{--                        <div class="col-lg-8 col-md-8">--}}
-{{--                            <div class="d-flex align-items-md-center order-summery gap-2">--}}
-{{--                                <div class="border-left">--}}
-{{--                                    <h1 class="fw-bold fs-5 mb-0 py-lg-0 py-3 text-dark">{{ $product->category->title }} | {{ $product->title }}</h1>--}}
-{{--                                    <p class="mb-0 opacity-50">{{ $product->color }} | {{ $product->warranty }} Warranty</p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="col-lg-4 col-md-4">--}}
-{{--                            <div class="d-md-flex justify-content-end mt-lg-0 mt-4 buy-right align-items-center">--}}
-{{--                                @if($product->is_price_hide != 1)--}}
-{{--                                    <a class="btn btn-dark d-flex align-items-center m-2" onclick="increment()" style="height: 20px;width: 40px;">+</a>--}}
-{{--                                    <input id="demoInput" type="number" class="text-center" name="quantity" value="1" min="1" max="100">--}}
-{{--                                    <a class="btn btn-dark m-2 d-flex align-items-center" onclick="decrement()" style="height: 20px;width: 40px;">-</a>--}}
-{{--                                    <div class="px-4 py-lg-0 py-4">--}}
-{{--                                        <span class="one-thousand" id="total_price">${{ $product->price }}</span>--}}
-{{--                                    </div>--}}
-{{--                                    <button type="submit" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Buy Now</button>--}}
-{{--                                    <button type="button" id="add_to_cart" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Add to Cart</button>--}}
-{{--                                @endif--}}
-{{--                                <div class="border-left">--}}
-{{--                                    <a href="#inquiry" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Inquiry</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </section>
+
+{{--            modal starts cart--}}
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-sm btn-primary">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </section>
     <section>
@@ -235,5 +222,6 @@
             </div>
         </div>
     </section>
+
 </div>
 

@@ -123,6 +123,7 @@ $productLists = Product::take(5)->get();
             display: none;
             z-index: 999; /* Ensure the overlay is on top of other elements */
         }
+
     </style>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -198,12 +199,8 @@ $productLists = Product::take(5)->get();
 
             <div class="personal-information d-flex align-items-center gap-2">
                 <a href="tel:+8009669329">
-                    <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Phone Icon">
+                    <img src="{{ asset('assets/images/call_now.webp') }}" alt="Phone Icon" style="width: 100%; max-width: 150px; height: auto;">
                 </a>
-                <div class="info">
-                    <p class="text-white fw-bold mb-0 text-black"> (800)966-9329</p>
-                    <p class="text-secondary fs-14 fw-semibold mb-0 ">sales@photonplay.com</p>
-                </div>
             </div>
 
 
@@ -223,12 +220,14 @@ $productLists = Product::take(5)->get();
 
                         <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                         <p class="me-2 mb-0">{{$cartPrice}}</p>
+
                     </div>
+
                     <div class="d-flex align-items-center">
-                        <div class="me-2">
-                            <span class="text-capitalize">Good Day!</span>
-                            <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>
-                        </div>
+{{--                        <div class="me-2">--}}
+{{--                            <span class="text-capitalize">Good Day!</span>--}}
+{{--                            <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>--}}
+{{--                        </div>--}}
                         <div class="profile-circle">
 
                             <div class="dropdown">
