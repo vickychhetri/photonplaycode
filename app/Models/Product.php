@@ -16,7 +16,7 @@ class Product extends Model
     }
 
     public function product_resources(){
-        return $this->hasMany(ProductAvailableResource::class);
+        return $this->hasMany(ProductAvailableResource::class)->where('status', 1)->orderBy('order', 'ASC');
     }
     public function images(){
         return $this->hasMany(ProductImage::class);
@@ -29,5 +29,30 @@ class Product extends Model
     {
         return self::whereJsonContains('products_linked', (string) $productId)->get();
     }
+
+
+    public static function getProductSKU($productId,$specilizations_data,$other_data)
+    {
+        $product = Product::select('code')->find($productId);
+
+        if(!$product) {
+            return false;
+        }
+        $sku = strtoupper($product->code);
+        foreach ($specilizations_data as $key=> $value) {
+            $specialization = Specilization::select('code')->find($key);
+            $specializationOption = SpecializationOption::select('code')->find($value);
+            if (!$specialization || !$specializationOption) {
+                continue;
+            }
+            $sku .= '-' . strtoupper($specialization->code) . '-' . strtoupper($specializationOption->code);
+        }
+        foreach ($other_data as  $key=> $value) {
+            $sku .= '-' . strtoupper($key) . '-' . strtoupper($value);
+        }
+        return $sku;
+    }
+
+
 
 }

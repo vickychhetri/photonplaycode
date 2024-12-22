@@ -40,6 +40,18 @@ Route::delete('/product-specification-options-delete/{id}', [ProductSetupControl
 
 Route::get('/product/{id}/edit/media', [ProductMediaController::class, 'open_media_form'])->name("product_media_page");
 
+Route::get('/product/{id}/edit/available-resources', [ProductMediaController::class, 'open_product_available_resource_form'])->name("open_product_available_resources");
+
+Route::delete('/product/delete/product_resource/{id}', [ProductMediaController::class, 'open_product_available_resource_delete'])->name("open_product_available_resource_delete");
+
+Route::post('/product/edit/store-product-resource', [ProductMediaController::class, 'open_product_available_resource_Store'])->name("open_product_resource_form_store");
+
+Route::get('/product/{id}/edit/open-product-resource/{f_id}', [ProductMediaController::class, 'open_product_resource_edit_form'])->name("open_product_resource_edit_form_page");
+
+Route::put('/product/edit/open-product-resource/{id}', [ProductMediaController::class, 'open_product_resource_edit_form_update'])->name("open_product_resource_edit_form_page_update");
+
+
+
 Route::get('/product/{id}/edit/open-product-features', [ProductMediaController::class, 'open_product_features_form'])->name("open_product_features_form_page");
 Route::post('/product/edit/open-product-features', [ProductMediaController::class, 'open_product_features_Store'])->name("open_product_features_form_store");
 
