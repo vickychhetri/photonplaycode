@@ -169,17 +169,43 @@ $productLists = Product::take(5)->get();
                 <li class="nav-item">
                     <a class="nav-link text-black" href="/company">COMPANY</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-black dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+{{--                <li class="nav-item dropdown">--}}
+{{--                    <a class="nav-link text-black dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
+{{--                        PRODUCT--}}
+{{--                    </a>--}}
+{{--                    <ul class="dropdown-menu rounded-3 shadow-lg p-2" aria-labelledby="productDropdown">--}}
+{{--                        @foreach($productLists ?? [] as $product)--}}
+{{--                            <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="{{ route('customer.radar.sign', $product->slug) }}">{{ $product->title }}</a></li>--}}
+{{--                        @endforeach--}}
+{{--                        <li><a class="dropdown-item px-4 py-3 text-black hover-bg-light text-black" href="/radar-cloud-management"> Cloud Software</a></li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+
+                <li class="nav-item dropdown position-relative solution-pos">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false" style="color: #0c0c0c">
                         PRODUCT
                     </a>
-                    <ul class="dropdown-menu rounded-3 shadow-lg p-2" aria-labelledby="productDropdown">
-                        @foreach($productLists ?? [] as $product)
-                            <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="{{ route('customer.radar.sign', $product->slug) }}">{{ $product->title }}</a></li>
-                        @endforeach
-                        <li><a class="dropdown-item px-4 py-3 text-black hover-bg-light text-black" href="/radar-cloud-management"> Cloud Software</a></li>
+
+                    <ul class="dropdown-menu mega-menu" style="width: 50%">
+                        <li class="d-flex justify-content-between p-3 mega-menu-list">
+
+                            <div class="col-md-6">
+                                <h6><a class="dropdown-item px-0 text-uppercase"
+                                       href="">Radar Speed Signs</a></h6>
+                                <ul>
+                                    @foreach($productLists ?? [] as $product)
+                                    <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
+                                           href="{{ route('customer.radar.sign', $product->slug) }}">{{ $product->title }}</a>
+                                    </li>
+                                    @endforeach
+                                    <li><a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="/radar-cloud-management"> Cloud Software</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-black" href="/blogs">NEWS & MEDIA</a>
                 </li>
