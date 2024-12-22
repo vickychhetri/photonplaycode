@@ -157,7 +157,7 @@
                                                 <div class="px-4 py-lg-0 py-4">
                                                     <span style="display: none" class="one-thousand" id="total_price">${{ $product->price }}</span>
                                                 </div>
-                                                <button type="submit" class="btn btn-dark rounded-0 text-nowrap align-self-center px-4 m-2">Buy Now</button>
+                                                <button type="submit" class="btn rounded-0 text-nowrap align-self-center px-4 m-2" ><img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart_new.png') }}"> </button>
                                             </div>
 
                                         </div>
