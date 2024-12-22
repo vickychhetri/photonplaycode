@@ -16,7 +16,7 @@ class Product extends Model
     }
 
     public function product_resources(){
-        return $this->hasMany(ProductAvailableResource::class);
+        return $this->hasMany(ProductAvailableResource::class)->where('status', 1)->orderBy('order', 'ASC');
     }
     public function images(){
         return $this->hasMany(ProductImage::class);

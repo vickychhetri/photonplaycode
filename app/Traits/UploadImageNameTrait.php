@@ -30,6 +30,44 @@ trait UploadImageNameTrait
         return $image_path;
     }
 
+    public function storeFileWithExtension($file, $extension)
+    {
+        $file_path = '';
+        $folder = '';
+        $fileName = '';
+
+        if (isset($file)) {
+            $originalName = $file->getClientOriginalName();
+
+            // Ensure the file has the specified extension
+            if (strtolower($file->getClientOriginalExtension()) !== strtolower($extension)) {
+                throw new \Exception("The file must be of type: $extension.");
+            }
+
+            $number = 0;
+            $fileName = $originalName;
+
+            // Define the folder path dynamically based on the extension
+            $folder = 'resource/' . strtolower($extension);
+
+            // Ensure the filename is unique by checking if it already exists in the folder
+            while (Storage::disk('public')->exists($folder . '/' . $fileName)) {
+                $number++;
+                $fileName = pathinfo($originalName, PATHINFO_FILENAME) . '_' . $number . '.' . $extension;
+            }
+
+            // Store the file and get the file path
+            $file_path = $file->storeAs($folder, strtolower($fileName), 'public');
+        }
+
+        return [
+            'folder' => $folder,
+            'filename' => $fileName,
+        ];
+    }
+
+
+
 
     public function deleteImageWithName($imageName)
     {

@@ -29,7 +29,7 @@
                         <img src="{{asset("assets/images/PDF_file_icon.svg")}}" alt="{{$item->filename}}">
                         <p class="mb-2">{{$item->filename}}</p>
 
-                        <a href="{{asset('assets/product_resources/'.$item->folder.'/'.$item->filename)}}" download>Download here</a>
+                        <a href="{{asset('storage/'.$item->folder.'/'.$item->filename)}}" download>Download here</a>
                     </div>
                 </div>
                 @endforeach
