@@ -224,10 +224,6 @@ $productLists = Product::take(5)->get();
                     </div>
 
                     <div class="d-flex align-items-center">
-{{--                        <div class="me-2">--}}
-{{--                            <span class="text-capitalize">Good Day!</span>--}}
-{{--                            <p class="text-capitalize mb-0">{{Session::get('user')->name}}</p>--}}
-{{--                        </div>--}}
                         <div class="profile-circle">
 
                             <div class="dropdown">

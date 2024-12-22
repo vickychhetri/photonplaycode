@@ -1,8 +1,8 @@
 @include('customer.layouts.header')
 
     <div class="container-cus pt-lg-5 pt-3">
-        <div class="login-sec px-2"  >
-            <div class="form-section p-3"  >
+        <div class="login-sec"  >
+            <div class="form-section2 p-3"  >
                 <div class="d-flex flex-lg-row form-section-inner" >
                     <div class="login-parent">
                         <div class="login-parent-inner">
@@ -52,7 +52,7 @@
                             <div class="carousel-inner">
                               <div class="carousel-item active">
 
-                                  <img src="{{asset('assets/customer/images/4957136_4957136.webp')}}" class="w-100" style="height: 100%;object-fit: cover;"/>
+                                  <img src="{{asset('assets/customer/images/4957136_4957136.webp')}}" class="w-100" style="height: 100%;object-fit: cover;" alt=""/>
                               </div>
                             </div>
 
