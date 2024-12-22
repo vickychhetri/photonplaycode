@@ -19,19 +19,20 @@
                                 </div>
                                 <label for="">Password</label>
                                 <div class="input-group input-cus-group mb-4">
-                                    <input type="password" name="password" class="form-control input-cus" aria-label="Dollar amount (with dot and two decimal places)">
-                                    <span class="input-group-text toggle-password">
-                                     <i class="bi bi-eye"></i>
-                                    </span>
+                                    <input type="password" name="password" class="form-control input-cus" aria-label="Password">
+                                    <span class="input-group-text toggle-password-password">
+        <i class="bi bi-eye"></i>
+    </span>
                                 </div>
 
                                 <label for="">Confirm Password</label>
                                 <div class="input-group input-cus-group mb-4">
-                                    <input type="password" name="password_confirmation" class="form-control input-cus" aria-label="Dollar amount (with dot and two decimal places)">
-                                    <span class="input-group-text toggle-password">
-                                     <i class="bi bi-eye"></i>
-                                    </span>
+                                    <input type="password" name="password_confirmation" class="form-control input-cus" aria-label="Confirm Password">
+                                    <span class="input-group-text toggle-password-confirmation">
+        <i class="bi bi-eye"></i>
+    </span>
                                 </div>
+
 
 
                                 <button type="submit" class="btn btn-primary rounded py-2 w-100 mb-3 fw-normal">Register</button>
@@ -66,18 +67,32 @@
     @include('customer.layout2.footer')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var eye = document.querySelector('.toggle-password');
+            var eyePassword = document.querySelector('.toggle-password-password');
+            var eyeConfirmation = document.querySelector('.toggle-password-confirmation');
             var password = document.querySelector('input[name="password"]');
+            var confirm_password = document.querySelector('input[name="password_confirmation"]');
 
-            eye.addEventListener('click', function() {
+            eyePassword.addEventListener('click', function() {
                 if (password.type === 'password') {
                     password.type = 'text';
-                    eye.innerHTML = '<i class="bi bi-eye-slash"></i>';
+                    eyePassword.innerHTML = '<i class="bi bi-eye-slash"></i>';
                 } else {
                     password.type = 'password';
-                    eye.innerHTML = '<i class="bi bi-eye"></i>';
+                    eyePassword.innerHTML = '<i class="bi bi-eye"></i>';
+                }
+            });
+
+            eyeConfirmation.addEventListener('click', function() {
+                if (confirm_password.type === 'password') {
+                    confirm_password.type = 'text';
+                    eyeConfirmation.innerHTML = '<i class="bi bi-eye-slash"></i>';
+                } else {
+                    confirm_password.type = 'password';
+                    eyeConfirmation.innerHTML = '<i class="bi bi-eye"></i>';
                 }
             });
         });
+
+
 
     </script>
