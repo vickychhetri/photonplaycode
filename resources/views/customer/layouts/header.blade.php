@@ -278,8 +278,29 @@ $productLists = Product::where('category_id',1)->take(5)->get();
                     <div class="d-flex align-items-center">
                         <input type="hidden" name="grand_total" value="{{$cartPrice}}">
                         <p class="me-2 mb-0">{{$cartPrice}}</p>
+                        <?php
+                            //
+                            $cartCount=15;
+                            ?>
+                        <div style="position: relative; display: inline-block;">
+                            <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>
+                                <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5">
+                                @if($cartCount > 0) <!-- Ensure $cartCount is available in your view -->
+                                <span style="
+                                            position: absolute;
+                                            top: -2px;
+                                            right: 42px;
+                                            background-color: #377fb4;
+                                            color: white;
+                                            border-radius: 50%;
+                                            padding: 2px 6px;
+                                            font-size: 12px;
+                                            font-weight: bold;
+                                        " id="cart_item_counts">{{ $cartCount }}</span>
+                                @endif
+                            </a>
+                        </div>
 
-                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif>  <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>
                     </div>
                     <a href="{{route('customer.loginForm')}}"> <img src="{{asset('assets\customer\images\user.png')}}" alt="Not Found" class="img-fluid "> </a>
                 @else
