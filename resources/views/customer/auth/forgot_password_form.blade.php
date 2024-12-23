@@ -2,11 +2,11 @@
 
     <div class="container-cus pt-lg-5 pt-3">
         <div class="login-sec">
-            <div class="form-section p-3" >
+            <div class="form-section2 p-3" >
                 <div class="d-flex form-section-inner" >
                     <div class="login-parent">
                         <div class="login-parent-inner">
-                            <h2 class="mb-lg-5 mb-4">Enter your <br />Email</h2>
+                            <h4 class="mb-lg-5 mb-4">Enter your Email</h4>
                             <form action="{{ route('customer.forgot_password') }}" method="post">
                                 @csrf
                                 <label for="">Email</label>
@@ -31,14 +31,6 @@
 
                             </div>
 
-{{--                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">--}}
-{{--                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--                                <span class="visually-hidden">Previous</span>--}}
-{{--                            </button>--}}
-{{--                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">--}}
-{{--                                <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--                                <span class="visually-hidden">Next</span>--}}
-{{--                            </button>--}}
                         </div>
                     </div>
                 </div>
