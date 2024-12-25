@@ -1,13 +1,14 @@
 <div>
     <section class="our-product pt-2 pb-2">
-        <form id="myForm" action="{{ route('customer.store.shopping.bag') }}" method="post">
+{{--        <form id="myForm" action="{{ route('customer.store.shopping.bag') }}" method="post">--}}
+        <form wire:submit.prevent="addToCart">
             @csrf
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
-            <input type="hidden" name="title" id="title" value="{{ $product->title }}">
-            <input type="hidden" name="category" id="category" value="{{ $product->category->title }}">
-            <input type="hidden" name="price" id="price" value="{{ $product->price }}">
-            <input type="hidden" name="cover_image" id="cover_image" value="{{ $product->cover_image }}">
+            <input type="hidden" wire:model="title" name="title" id="title" value="{{ $product->title }}">
+            <input type="hidden" wire:model="category" name="category" id="category" value="{{ $product->category->title }}">
+            <input type="hidden" wire:model="price" name="price" id="price" value="{{ $product->price }}">
+            <input type="hidden" wire:model="cover_image" name="cover_image" id="cover_image" value="{{ $product->cover_image }}">
 
             <div class="container">
                 <div class="row">
@@ -74,7 +75,7 @@
 
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
-                                <p class="fw-bold fs-5" id="total_price2">${{ $product->price }}</p>
+                                <p class="fw-bold fs-5" id="total_price2">${{ $price }}</p>
                             @else
                                 <p class="fw-bold fs-5" id="total_price2"></p>
                             @endif
@@ -86,11 +87,11 @@
                                     @foreach ($product->specilizations->reverse() as $specilization)
                                         <div class="col-md-8 bg-transparent">
                                             <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
-                                            <select class="form-select mb-3" onchange="changecalculated_amount(this)" name="dynamic_specs[{{ $specilization->id }}]" id="{{ $specilization->id }}" style="border: 2px solid black;font-weight: bold;" required>
+                                            <select class="form-select mb-3" onchange="changecalculated_amount(this)" name="dynamic_specs[{{ $specilization->id }}]" wire:model="dynamic_specs.{{ $specilization->id }}" id="{{ $specilization->id }}" style="border: 2px solid black;font-weight: bold;" required>
                                                 <option selected disabled>--Choose an Option--</option>
                                                 @foreach($specilization->options as $option)
                                                     <option value="{{ $option->id }}">
-                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price }}</span>)
+                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $exchange_rate *$option->specialization_price }}</span>)
                                                         @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                             Subscription Free For 1 Year
                                                         @endif
@@ -104,17 +105,37 @@
                                     <div class="mt-4">
                                         <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>
                                         <div class="d-flex align-items-center">
-                                            <input type="hidden" name="color" value="Amber" id="colorchoose">
+                                            <input type="hidden" wire:model="color" name="color" value="Amber" id="colorchoose">
                                             <div class="selected-anc d-flex border-1 p-2 shadow-smm">
                                                 <div>
                                                     <img src="{{ asset('/assets/images/radar/color/Amber-Color.png') }}" style="height:40px;" id="imgicon_color_st" alt="color" />
                                                 </div>
 
-                                                <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 120px;">
-                                                    <option value="Amber-Color.png"> Amber</option>
-                                                    <option value="White-Color.png"> White</option>
-                                                    <option value="Green-Color.png"> Green</option>
-                                                </select>
+{{--                                                <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 120px;" wire:model="color">--}}
+{{--                                                    <option value="Amber-Color.png"> Amber</option>--}}
+{{--                                                    <option value="White-Color.png"> White</option>--}}
+{{--                                                    <option value="Green-Color.png"> Green</option>--}}
+{{--                                                </select>--}}
+                                                <div x-data="{
+                                                            color: @entangle('color'),
+                                                            productId: @entangle('product_id'),
+                                                            changeColor() {
+                                                                changeColorJS(this.color, this.productId);
+                                                            }
+                                                        }"
+                                                     x-init="changeColor()"
+                                                     class="d-flex align-items-center">
+
+                                                    <select class="form-select shadow-none" wire:model="color"
+                                                            id="select-color" aria-label="Color select" required
+                                                            style="background-color: transparent; border: none; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 120px;">
+                                                        <option value="Amber-Color.png">Amber</option>
+                                                        <option value="White-Color.png">White</option>
+                                                        <option value="Green-Color.png">Green</option>
+                                                    </select>
+
+                                                </div>
+
                                             </div>
                                         </div>
 
@@ -134,22 +155,46 @@
                                     </div>
                                         <div class="col-lg-8 col-md-8">
                                             <div class="d-md-flex justify-content-start mt-lg-0 mt-4 buy-right align-items-center">
-                                                <div class="d-flex align-items-center border  p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-                                                    <a class="btn d-flex align-items-center justify-content-center m-0" onclick="increment()" style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
+{{--                                                <div class="d-flex align-items-center border  p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">--}}
+{{--                                                    <a class="btn d-flex align-items-center justify-content-center m-0" onclick="increment()" style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">--}}
+{{--                                                        +--}}
+{{--                                                    </a>--}}
+
+{{--                                                    <input id="demoInput" type="number" class="text-center border-0 m-0" wire:model="quantity" name="quantity" value="1" min="1" max="100" style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">--}}
+
+{{--                                                    <a class="btn d-flex align-items-center justify-content-center m-0" onclick="decrement()" style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">--}}
+{{--                                                        ---}}
+{{--                                                    </a>--}}
+{{--                                                </div>--}}
+                                                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                                                    <a class="btn d-flex align-items-center justify-content-center m-0"
+                                                       @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
+                                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
                                                         +
                                                     </a>
 
-                                                    <input id="demoInput" type="number" class="text-center border-0 m-0" name="quantity" value="1" min="1" max="100" style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">
+                                                    <input id="uniqueQuantityInput"
+                                                           type="number"
+                                                           class="text-center border-0 m-0"
+                                                           wire:model="quantity"
+                                                           x-model="quantity"
+                                                           min="1"
+                                                           max="100"
+                                                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">
 
-                                                    <a class="btn d-flex align-items-center justify-content-center m-0" onclick="decrement()" style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
+                                                    <a class="btn d-flex align-items-center justify-content-center m-0"
+                                                       @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
+                                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
                                                         -
                                                     </a>
                                                 </div>
+
+
+
                                                 <div class="px-4 py-lg-0 py-4">
                                                     <span style="display: none" class="one-thousand" id="total_price">${{ $product->price }}</span>
                                                 </div>
-{{--                                                <button type="submit" class="btn rounded-0 text-nowrap align-self-center px-4 m-2" ><img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}"> </button>--}}
-                                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
+                                                <button data-bs-toggle="modal" data-bs-target="#exampleModalCenter" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
                                                     <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
                                                 </button>
                                             </div>
@@ -164,7 +209,7 @@
                     </div>
                 </div>
             </div>
-
+        </form>
             <!-- Order Summary Section -->
             <section class="pt-lg-4 order-summery pb-4 border-bottom">
                 <div class="container">
@@ -184,9 +229,9 @@
                         </div>
                         <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
 
-@php
-$cartTotal = 0;
-@endphp
+                            @php
+                            $cartTotal = 0;
+                            @endphp
                             @foreach($cartItems as $item)
                                 @php
                                     $cartTotal = $item->quantity * $item->price;
@@ -210,15 +255,15 @@ $cartTotal = 0;
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary w-100">View Cart / Checkout</button>
+                            <button wire:click="navigateToShopping" class="btn btn-primary w-100">View Cart / Checkout</button>
                         </div>
                     </div>
                 </div>
             </div>
 {{--            End--}}
-        </form>
-    </section>
-    <section>
+
+        </section>
+        <section>
         <div class='container'>
             <div class='row'>
                 <div class='col-lg-12'>
@@ -250,4 +295,54 @@ $cartTotal = 0;
     </section>
 
 </div>
+<script>
+    function changeColorJS(selectedColor, productId) {
+        var color = selectedColor.toLocaleLowerCase();
+        var id = productId;
+
+        document.getElementById('colorMultipleImages').value = color;
+
+        fetch(`/product/${id}/edit/media-ajax?id=${id}&color=${color}&frontSlider=true`)
+            .then(response => response.json())
+            .then(data => {
+                const slider = document.querySelector('slider');
+                const sliderStatic = document.getElementById('slider_static');
+                slider.innerHTML = '';
+                sliderStatic.innerHTML = '';
+
+                data.forEach(res => {
+                    const imgBox = document.createElement('div');
+                    imgBox.classList.add('radar-item-box');
+                    imgBox.innerHTML = `
+                        <div class="radar-item-box">
+                            <img src="{{ asset('storage/${res.image}') }}" class="img-fluid" alt="{{$product->title}}">
+                        </div>
+                    `;
+                    slider.appendChild(imgBox);
+                });
+
+                sliderStatic.innerHTML = `
+                    <div class="img-leften d-flex justify-content-center align-items-center">
+                        <img src="{{ asset('storage/${data[0].image}') }}" class="img-fluid"
+                             style="max-height: 600px;" id="big-img-radar-product" alt="{{$product->title}}">
+                    </div>
+                `;
+
+                document.getElementById('prodImg-gallery').innerHTML = JSON.stringify(data);
+            })
+            .catch(error => {
+                console.error('Error fetching images:', error);
+            });
+
+        document.querySelectorAll('.radar-item-box').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                document.querySelectorAll('.radar-item-box').forEach(i => i.classList.remove('radar-item-box-highlight'));
+                item.classList.add('radar-item-box-highlight');
+                const img = item.querySelector('img');
+                const src = img.getAttribute('src');
+                document.getElementById('big-img-radar-product').setAttribute('src', src);
+            });
+        });
+    }
+</script>
 

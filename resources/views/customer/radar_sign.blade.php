@@ -363,7 +363,7 @@ if (isset($seo_record)) {
                 data: formData,
                 success: function(response) {
                     // Handle the success response from the server
-                    location.reload();
+                    // location.reload();
                 },
                 error: function(xhr, status, error) {
                     // Handle the error response from the server
@@ -411,77 +411,77 @@ if (isset($seo_record)) {
 
 
     // CODE TO CHANGE IMAGE ON HOVER
-    $(document).ready(function() {
+    {{--$(document).ready(function() {--}}
 
-        $("#select-color").change(function() {
-            var color = $(this).children("option:selected").text().toLocaleLowerCase();
-            // console.log(color)
-            var id = $('#product_id').val();
-            $("#colorMultipleImages").val(color);
+    {{--    $("#select-color").change(function() {--}}
+    {{--        var color = $(this).children("option:selected").text().toLocaleLowerCase();--}}
+    {{--        // console.log(color)--}}
+    {{--        var id = $('#product_id').val();--}}
+    {{--        $("#colorMultipleImages").val(color);--}}
 
-            $.ajax({
-                url: "/product/" + id + "/edit/media-ajax",
-                type: "GET",
-                data: {
-                    'id': id,
-                    'color': color,
-                    'frontSlider': true
-                },
-                success: function(response) {
-                    // console.log(response);
-                    $('slider').html('');
-                    $('#slider_static').html('');
+    {{--        $.ajax({--}}
+    {{--            url: "/product/" + id + "/edit/media-ajax",--}}
+    {{--            type: "GET",--}}
+    {{--            data: {--}}
+    {{--                'id': id,--}}
+    {{--                'color': color,--}}
+    {{--                'frontSlider': true--}}
+    {{--            },--}}
+    {{--            success: function(response) {--}}
+    {{--                // console.log(response);--}}
+    {{--                $('slider').html('');--}}
+    {{--                $('#slider_static').html('');--}}
 
-                    response.map((res) => {
-                        $('slider').append(
-                            `<div>
-                                        <div class="radar-item-box">
-                                            <img src="{{asset('storage/${res.image}')}}" class="img-fluid"
-                                                    alt="{{$product->title}}">
-                                        </div>
-                                    </div>`
-                        )
+    {{--                response.map((res) => {--}}
+    {{--                    $('slider').append(--}}
+    {{--                        `<div>--}}
+    {{--                                    <div class="radar-item-box">--}}
+    {{--                                        <img src="{{asset('storage/${res.image}')}}" class="img-fluid"--}}
+    {{--                                                alt="{{$product->title}}">--}}
+    {{--                                    </div>--}}
+    {{--                                </div>`--}}
+    {{--                    )--}}
 
-                        // console.log(res)
-                    })
-                    $('#slider_static').append(
-                        `<div class="img-leften  d-flex justify-content-center align-items-center">
-                                            <img src="{{ asset('storage/${response[0].image}') }}" class="img-fluid"
-                                                 style="max-height: 600px;" id="big-img-radar-product"
-                                                 alt="{{$product->title}}">
-                                        </div>`
-                    )
-                    $('#prodImg-gallery').html(response)
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                },
-                complete: function() {
-                    $('.radar-item-box').hover(function() {
-                        $('.radar-item-box').removeClass("radar-item-box-highlight");
-                        $(this).addClass("radar-item-box-highlight");
-                        let image = $(this).find('img');
-                        let src = image.attr('src');
-                        $('#big-img-radar-product').attr('src', src)
-                    });
-                }
-            });
+    {{--                    // console.log(res)--}}
+    {{--                })--}}
+    {{--                $('#slider_static').append(--}}
+    {{--                    `<div class="img-leften  d-flex justify-content-center align-items-center">--}}
+    {{--                                        <img src="{{ asset('storage/${response[0].image}') }}" class="img-fluid"--}}
+    {{--                                             style="max-height: 600px;" id="big-img-radar-product"--}}
+    {{--                                             alt="{{$product->title}}">--}}
+    {{--                                    </div>`--}}
+    {{--                )--}}
+    {{--                $('#prodImg-gallery').html(response)--}}
+    {{--            },--}}
+    {{--            error: function(xhr, status, error) {--}}
+    {{--                console.error(xhr.responseText);--}}
+    {{--            },--}}
+    {{--            complete: function() {--}}
+    {{--                $('.radar-item-box').hover(function() {--}}
+    {{--                    $('.radar-item-box').removeClass("radar-item-box-highlight");--}}
+    {{--                    $(this).addClass("radar-item-box-highlight");--}}
+    {{--                    let image = $(this).find('img');--}}
+    {{--                    let src = image.attr('src');--}}
+    {{--                    $('#big-img-radar-product').attr('src', src)--}}
+    {{--                });--}}
+    {{--            }--}}
+    {{--        });--}}
 
-        });
-
-
-        $('.radar-item-box').hover(function() {
-            $('.radar-item-box').removeClass("radar-item-box-highlight");
-            $(this).addClass("radar-item-box-highlight");
-            let image = $(this).find('img');
-            let src = image.attr('src');
-            $('#big-img-radar-product').attr('src', src)
+    {{--    });--}}
 
 
-        });
+    {{--    $('.radar-item-box').hover(function() {--}}
+    {{--        $('.radar-item-box').removeClass("radar-item-box-highlight");--}}
+    {{--        $(this).addClass("radar-item-box-highlight");--}}
+    {{--        let image = $(this).find('img');--}}
+    {{--        let src = image.attr('src');--}}
+    {{--        $('#big-img-radar-product').attr('src', src)--}}
 
 
-    });
+    {{--    });--}}
+
+
+    {{--});--}}
 
     /**************************************
      // Vicky Chhetri JS ZONE : Begin
