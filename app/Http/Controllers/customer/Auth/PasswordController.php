@@ -66,9 +66,9 @@ class PasswordController extends Controller
     public function changePassword(Request $request)
     {
         $request->validate([
-            'email' => 'required',
-            'password' => 'required|min:6',
-            'confirm_password' => 'required|same:password|min:6'
+            'email' => 'required|email|exists:customers,email',
+            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:6'
         ]);
         $user = Customer::where('email', $request->email)->first();
 
