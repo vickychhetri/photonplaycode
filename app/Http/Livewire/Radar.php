@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class Radar extends Component
 {
-    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid;
+    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum ;
 
     public $product_id;
     public $color = 'Amber-Color.png';
@@ -20,6 +20,12 @@ class Radar extends Component
     {
         $this->product_id = $product_id;
         $this->sessionId = Session::getId();
+        $this->exchangeRate = Session::get('exchange_rate', 2);
+
+//        $this->sum =  Session::get('options_ids')
+//            ? array_sum(array_column(Session::get('options_ids'), 'specialization_price'))
+//            : 2;
+//dd($this->sum);
         $this->product = Product::with([
             'images' => fn($r) => $r->where('color', 'amber'),
             'specilizations.specilization',
@@ -27,39 +33,32 @@ class Radar extends Component
             'specilizations.options.specializationoptions',
             'category'
         ])
-            ->selectRaw('products.*, products.price * ? as adjusted_price', [$this->exchange_rate]) // Multiply price by exchange rate
             ->where('slug', $this->productId)
             ->first();
 
         $this->quantity = 1;
 
         if ($this->product) {
-            $this->price = $this->product->price;
+            $this->price = $this->product->price * $this->exchangeRate;
+            $this->initial_price = $this->product->price * $this->exchangeRate;
             $this->title = $this->product->title;
             $this->cover_image = $this->product->cover_image;
             $this->category = $this->product->category->id;
             $this->Pid = $this->product->id;
         }
+
     }
 
     public function render()
     {
+        Session::forget('options_ids');
         $this->exchange_rate = Session::get('exchange_rate', 7);
 
-        if ($this->product) {
-            $this->product->price = $this->product->adjusted_price;
-            unset($this->product->adjusted_price);
-        }
-        $this->productLists = Product::selectRaw('products.*, products.price * ? as adjusted_price', [$this->exchange_rate]) // Multiply
-        ->with(['category'])
+        $this->productLists = Product::with(['category'])
             ->where('category_id', 1)
             ->take(5)
             ->get();
 
-        foreach ($this->productLists as $product) {
-            $product->price = $product->adjusted_price;
-            unset($product->adjusted_price);
-        }
 
         $this->postalCode = 0;
         if (Session::get('user')) {
@@ -73,7 +72,6 @@ class Radar extends Component
         }
 
         return view('livewire.radar', [
-//            'product' => $this->product,
             'productLists' => $this->productLists,
             'postalCode' => $this->postalCode,
             'cartCount' => $this->cartCount,
@@ -83,16 +81,18 @@ class Radar extends Component
     }
 
     public function addToCart(){
-        $specPrice = 0;
-
+//        dd(Session::get('options_ids'));
+//        $this->sum =  Session::get('options_ids')
+//            ? array_sum(array_column(Session::get('options_ids'), 'specialization_price'))
+//            : 2;
+//        dd($this->sum);
         $impodeSpec = array();
         if(isset($this->dynamic_specs)){
             foreach($this->dynamic_specs as $specs){
                 $implodeSpec[] = $specs;
-                $specPrice += DB::table('product_spcialization_options')->where('id', $specs)->value('specialization_price');
+                $this->specPrice += DB::table('product_spcialization_options')->where('id', $specs)->value('specialization_price');
             }
         }
-
         if( $this->postalCode){
             if(Session::get('user')){
                 UserPostalCode::where('user_id', Session::get('user')->id)->delete();
@@ -116,7 +116,7 @@ class Radar extends Component
                     'session_id' => $this->sessionId,
                     'option_ids' => serialize($this->dynamic_specs) ?? null,
                     'product_id' => $this->Pid,
-                    'price' => $this->price + $specPrice,
+                    'price' => $this->price + $this->specPrice,
                     'title' => $this->title,
                     'color' => $this->color,
                     'category' => $this->category,
@@ -127,6 +127,7 @@ class Radar extends Component
 
         }else{
             $cart = Cart::where(['user_id' => Session::get('user')->id, 'product_id' => $this->Pid, 'price' => $this->price,])->first();
+
             if($cart){
                 $cart->update(['quantity' => $cart->quantity + $this->quantity]);
             }else{
@@ -134,7 +135,7 @@ class Radar extends Component
                     'user_id' => Session::get('user')->id,
                     'product_id' => $this->Pid,
                     'option_ids' => serialize($this->dynamic_specs) ?? null,
-                    'price' => $this->price + $specPrice,
+                    'price' => $this->price + $this->specPrice,
                     'title' => $this->title,
                     'category' => $this->category,
                     'quantity' => $this->quantity,
@@ -144,6 +145,7 @@ class Radar extends Component
             }
 
         }
+        Session::forget('options_ids');
     }
 
 
@@ -155,5 +157,58 @@ class Radar extends Component
     {
         $this->color = $value;
     }
+//
+//    public function updatedDynamicSpecs($value)
+//    {
+//        $this->price = $this->initial_price;
+//
+//        $spec_id = DB::table('product_spcialization_options')
+//            ->select('id', 'specialization_price', 'product_specilizations_id')
+//            ->find($value);
+//
+//        if ($spec_id) {
+//            Session::put('options_ids',$this->storeIds($spec_id));
+//        }
+//
+//    }
+//
+//    protected function storeIds($spec_id)
+//    {
+//        // Ensure the session has a key for options_ids
+//        if (!Session::has('options_ids')) {
+//            Session::put('options_ids', []);
+//        }
+//
+//        // Get the options stored in session
+//        $options = Session::get('options_ids');
+//
+//        // Log spec_id to inspect the value being passed
+////        dd($spec_id);
+//
+//        // Find the key where product_specilizations_id matches
+//        $existingSpecKey = array_search($spec_id->product_specilizations_id, array_column($options, 'product_specilizations_id'));
+//
+//        if ($existingSpecKey !== false) {
+//            // Update the specialization price for the matching spec_id
+//            $options[$existingSpecKey]->specialization_price = $spec_id->specialization_price;
+//        } else {
+//            // Add the new spec_id if no match is found
+//            $options[] = $spec_id;
+//        }
+//return $options;
+//        // Save the updated options back to the session
+////        $r = Session::put('', $options);
+//
+//        // Debug the result of saving the session
+////        dd($r);
+//    }
+
+
+
+
+
+
+
+
 }
 

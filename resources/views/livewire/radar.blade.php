@@ -88,10 +88,10 @@
                                         <div class="col-md-8 bg-transparent">
                                             <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
                                             <select class="form-select mb-3" onchange="changecalculated_amount(this)" name="dynamic_specs[{{ $specilization->id }}]" wire:model="dynamic_specs.{{ $specilization->id }}" id="{{ $specilization->id }}" style="border: 2px solid black;font-weight: bold;" required>
-                                                <option selected disabled>--Choose an Option--</option>
+                                                <option selected>--Choose an Option--</option>
                                                 @foreach($specilization->options as $option)
                                                     <option value="{{ $option->id }}">
-                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $exchange_rate *$option->specialization_price }}</span>)
+                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price }}</span>)
                                                         @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                             Subscription Free For 1 Year
                                                         @endif
@@ -102,6 +102,7 @@
                                     @endforeach
 
                                     <!-- Color Selection Section -->
+
                                     <div class="mt-4">
                                         <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>
                                         <div class="d-flex align-items-center">
@@ -111,11 +112,6 @@
                                                     <img src="{{ asset('/assets/images/radar/color/Amber-Color.png') }}" style="height:40px;" id="imgicon_color_st" alt="color" />
                                                 </div>
 
-{{--                                                <select class="form-select shadow-none" name="colorselected" id="select-color" aria-label="Default select example" required style="background-color: transparent; border: none; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 120px;" wire:model="color">--}}
-{{--                                                    <option value="Amber-Color.png"> Amber</option>--}}
-{{--                                                    <option value="White-Color.png"> White</option>--}}
-{{--                                                    <option value="Green-Color.png"> Green</option>--}}
-{{--                                                </select>--}}
                                                 <div x-data="{
                                                             color: @entangle('color'),
                                                             productId: @entangle('product_id'),
