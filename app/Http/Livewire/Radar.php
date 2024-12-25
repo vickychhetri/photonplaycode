@@ -90,7 +90,15 @@ class Radar extends Component
         if(isset($this->dynamic_specs)){
             foreach($this->dynamic_specs as $specs){
                 $implodeSpec[] = $specs;
-                $this->specPrice += DB::table('product_spcialization_options')->where('id', $specs)->value('specialization_price');
+                $specss = DB::table('product_spcialization_options')
+                    ->where('id', $specs)
+                    ->get() // returns a collection of results
+                    ->map(function ($item) {
+                        $item->specialization_price *= $this->exchangeRate;
+                        return $item;
+                    });
+
+                $this->specPrice = $specss->sum('specialization_price');
             }
         }
         if( $this->postalCode){
