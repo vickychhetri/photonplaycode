@@ -233,6 +233,15 @@ class CartController extends Controller
                'billing_state' => $request->billing_state,
                'billing_country' => $request->billing_country,
                'billing_postcode' => $request->billing_postcode,
+               //main_shipping_double_address - vicky 26-12-2024 start
+               'is_shipping_same' => $request->is_shipping_same==1?1:0,
+               'shipping_street' => $request->shipping_street,
+               'shipping_flat_suite' => $request->shipping_flat_suite,
+               'shipping_city' => $request->shipping_city,
+               'shipping_state' => $request->shipping_state,
+               'shipping_country' => $request->shipping_country,
+               'shipping_postcode' => $request->shipping_postcode,
+               //main_shipping_double_address - vicky 26-12-2024 end
                'address' => $request->address,
                'order_notes' => $request->order_notes,
            ]);
