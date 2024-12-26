@@ -29,7 +29,14 @@
             <div class="row">
                 <div class="col-md-8">
                     @csrf
-
+                    <div>
+                        <h4>
+                        @if($customer)
+                            {{"Hello, ".$customer->name}}
+                        <hr/>
+                        @endif
+                        </h4>
+                    </div>
                     <h3>billing details</h3>
                     <div class="mb-3">
                         <select name="billing_address" id="saved_address" class="form-select">

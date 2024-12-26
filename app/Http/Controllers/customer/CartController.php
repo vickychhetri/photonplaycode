@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\OrderPlaceMail;
 use App\Models\Cart;
 use App\Models\Coupon;
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderedProduct;
 use App\Models\Product;
@@ -164,6 +165,7 @@ class CartController extends Controller
     }
 
     public function checkout(Request $request){
+        $customer = Customer::find((Session::get('user')->id));
         $addresses = UserAddress::where('user_id', Session::get('user')->id)->get();
         // dd($addresses);
         $coupon_name = $request->coupon_s;
@@ -174,7 +176,7 @@ class CartController extends Controller
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
             }
-        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount', 'addresses'));
+        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount', 'addresses','customer'));
     }
 
     public function removeCartItem($id){
