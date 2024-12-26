@@ -20,6 +20,8 @@ if (isset($seo_record)) {
     ];
 }
 
+$currency_icon = session('currency_icon', '$');
+$exchange_rate = session('exchange_rate', '1');
 ?>
 
 @php
@@ -157,7 +159,9 @@ if (isset($seo_record)) {
                                 <div class="speed-sign text-center">
                                     <span class="d-block">{{$more_product->title}}</span>
                                     @if($more_product->is_price_hide != 1)
-                                        <span class="d-block weight-font">$ {{$more_product->price}}</span>
+                                        <span class="d-block weight-font">
+                                            {{$currency_icon}}{{number_format($more_product->price * $exchange_rate,2)}}
+                                        </span>
                                     @endif
                                 </div>
                             </div>

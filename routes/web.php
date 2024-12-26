@@ -19,6 +19,7 @@ use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RadarCloudManagementController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\ShopBrowseController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -264,6 +265,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('radar-speed-signs', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs');
         Route::get('radar-speed-signs/model/{productId}', 'SignController@radarSigns')->name('radar.sign');
 
+        Route::get('radar-speed-signs/shop', [ShopBrowseController::class,"index"])->name('product.shop');
 //        Route::get('radar-speed-signs', 'SignController@radarSpeedSigns')->name('radar.speed.signs');
 
     });
