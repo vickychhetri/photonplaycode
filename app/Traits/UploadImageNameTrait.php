@@ -29,7 +29,7 @@ trait UploadImageNameTrait
 
             $image_path = $img->storeAs('image', strtolower($imageName), 'public');
 
-            $image = ImageManager::imagick()->read($image_path);
+            $image = ImageManager::imagick()->read(storage_path('app/public/' . $image_path));
 
             // Resize and store thumbnail
             $image->resize(100, 100)->save(storage_path('app/public/' . 'image/thumbnail_' . strtolower($imageName)));
