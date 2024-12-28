@@ -120,24 +120,53 @@ $exchange_rate = session('exchange_rate', '1');
 </style>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">
-    <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
-        <nav aria-label="breadcrumb m-3 p-3">
-{{--            <ol class="breadcrumb m-0">--}}
-{{--                <li class="breadcrumb-item"><a href="#">Home</a></li>--}}
-{{--                <li class="breadcrumb-item"><a href="#">Category</a></li>--}}
-{{--                <li class="breadcrumb-item active" aria-current="page">Current Page</li>--}}
-{{--            </ol>--}}
-        </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
 
-        <div class="text-end">
-            <p class="m-0">Some text on the right side</p>
+                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                    <nav aria-label="breadcrumb m-3 p-3">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">{{$product->category->title}}</a></li>
+                            <li class="breadcrumb-item"><a href="{{route("customer.product.shop")}}">Shop</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{$product->title}}</li>
+                        </ol>
+                    </nav>
+
+                    <div class="text-end">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9165/9165147.png" style="max-width: 50px;">
+                        <button href="#" class="btn btn-primary btn-sm p-1 pt-0 pb-0 " id="liveChatButton" style="border-radius: 15px;"> Live Chat</button>
+                        <script type="text/javascript">
+                            // Wait for the document to load
+                            document.addEventListener('DOMContentLoaded', function () {
+                                // Get the button element
+                                const liveChatButton = document.getElementById('liveChatButton');
+
+                                // Add click event listener
+                                liveChatButton.addEventListener('click', function (event) {
+                                    event.preventDefault(); // Prevent default button behavior
+                                    // Check if the Tawk API is loaded
+                                    if (typeof Tawk_API !== 'undefined') {
+                                        Tawk_API.toggle(); // Open/close the Tawk.to chat widget
+                                    } else {
+                                        console.error('Tawk.to API is not available.');
+                                    }
+                                });
+                            });
+                        </script>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
 
 
 {{--product details start--}}
-<livewire:radar  :product_id="$id" />
+<livewire:radar :product_id="$id"/>
 {{--product details end--}}
 @include('customer.layout2.get_resources')
 
@@ -151,20 +180,21 @@ $exchange_rate = session('exchange_rate', '1');
                 @foreach ($productLists as $more_product)
                     <div>
                         <div class="">
-                            <a href="{{route('customer.radar.sign', $more_product->slug)}}" class="text-decoration-none text-black">
-                            <div class="inner-product">
-                                <div class="w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
+                            <a href="{{route('customer.radar.sign', $more_product->slug)}}"
+                               class="text-decoration-none text-black">
+                                <div class="inner-product">
+                                    <div class="w-100 h-100 light-product m-auto" style="background: url('{{ asset('storage/'. $more_product->cover_image) }}') no-repeat center;
                                     background-size: contain;transform: scale(1.2);">
-                                </div>
-                                <div class="speed-sign text-center">
-                                    <span class="d-block">{{$more_product->title}}</span>
-                                    @if($more_product->is_price_hide != 1)
-                                        <span class="d-block weight-font">
+                                    </div>
+                                    <div class="speed-sign text-center">
+                                        <span class="d-block">{{$more_product->title}}</span>
+                                        @if($more_product->is_price_hide != 1)
+                                            <span class="d-block weight-font">
                                             {{$currency_icon}}{{number_format($more_product->price * $exchange_rate,2)}}
                                         </span>
-                                    @endif
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
                             </a>
                         </div>
                     </div>
@@ -186,7 +216,8 @@ $exchange_rate = session('exchange_rate', '1');
             <div class="modal-content rounded-3 shadow">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="exampleModalLabel">Download Brochure</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                 </div>
                 <input type="hidden" value="{{ $id }}" name="model_id">
                 <div class="modal-body">
@@ -218,14 +249,14 @@ $exchange_rate = session('exchange_rate', '1');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#downloadForm').submit(function(e) {
+    $(document).ready(function () {
+        $('#downloadForm').submit(function (e) {
             e.preventDefault();
             $.ajax({
                 type: 'POST',
                 url: '{{ route("download.brochure") }}',
                 data: $(this).serialize(),
-                success: function(response) {
+                success: function (response) {
                     if (response.status && response.download_url) {
                         var link = document.createElement('a');
                         link.href = response.download_url;
@@ -243,7 +274,7 @@ $exchange_rate = session('exchange_rate', '1');
                         alert('Error downloading brochure: File not found');
                     }
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     alert('Error downloading brochure');
                 }
             });
@@ -303,7 +334,7 @@ $exchange_rate = session('exchange_rate', '1');
                 data: {
                     dict: dict
                 },
-                success: function(response) {
+                success: function (response) {
                     $('#dynamic_specs').html("");
                     var input = document.createElement("input");
                     input.type = "hidden";
@@ -327,7 +358,7 @@ $exchange_rate = session('exchange_rate', '1');
                 data: {
                     dict: dict
                 },
-                success: function(response) {
+                success: function (response) {
                     $('#dynamic_specs').html("");
                     var input = document.createElement("input");
                     input.type = "hidden";
@@ -357,19 +388,19 @@ $exchange_rate = session('exchange_rate', '1');
         });
     }
 
-    $(document).ready(function() {
-        $('#add_to_cart').click(function() {
+    $(document).ready(function () {
+        $('#add_to_cart').click(function () {
             var formData = $('#myForm').serialize(); // Serialize the form data
             var url = "{{ route('customer.store.shopping.bag', ['p' => 1]) }}";
             $.ajax({
                 url: url, // Replace with your API endpoint
                 type: 'POST',
                 data: formData,
-                success: function(response) {
+                success: function (response) {
                     // Handle the success response from the server
                     // location.reload();
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     // Handle the error response from the server
                 }
             });
