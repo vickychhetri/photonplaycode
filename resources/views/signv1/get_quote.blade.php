@@ -605,7 +605,7 @@
 
             @foreach($blogs as $blog)
                     <?php
-                    $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
+                    $image = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
                     ?>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="news-card">

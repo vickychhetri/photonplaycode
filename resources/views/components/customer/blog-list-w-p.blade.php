@@ -17,7 +17,7 @@
             </div>
             @foreach($blogs as $blog)
                     <?php
-                    $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
+                    $image = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
 //                    dd($image);
                     // dd($image['media_details']['sizes']['medium']['source_url']);
                     // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->

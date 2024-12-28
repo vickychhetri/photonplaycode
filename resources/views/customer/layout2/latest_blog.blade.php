@@ -17,7 +17,7 @@
             </div>
             @foreach($blogs as $blog)
                     <?php
-                    $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
+                    $image = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
                     ?>
                 <div class="col-lg-4">
                     <div class="inner-cqategory mb-lg-0 mb-4">

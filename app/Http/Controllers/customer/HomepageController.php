@@ -17,7 +17,7 @@ class HomepageController extends Controller
             $blogs = $cachedData['blogs'];
         } else {
             $products = Product::with('category')->take(1)->get();
-            $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
             $blogs = array_slice($postsSlice, 0 , 3);
             $dataToCache = ['products' => $products, 'blogs' => $blogs];
             Cache::put($cacheKey, $dataToCache, now()->addMinutes(600));
