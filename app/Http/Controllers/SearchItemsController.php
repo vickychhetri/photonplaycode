@@ -35,11 +35,11 @@ class SearchItemsController extends Controller
 
 
         // $blogs = Blog::where('title', 'LIKE', '%'.$query.'%')->orWhere('body', 'LIKE', '%'.$query.'%')->get();
-        $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?search='. $query)->json();
+        $blogs = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?search='. $query)->json();
         foreach ($blogs as $blog){
             $image = '';
             if($blog['featured_media']){
-                $imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $blog['featured_media'])->json();
+                $imagee = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/' . $blog['featured_media'])->json();
                 $image= $imagee['media_details']['sizes']['medium']['source_url'];
             }
 

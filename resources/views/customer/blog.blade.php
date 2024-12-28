@@ -12,7 +12,7 @@ $seo_meta = [
 ];
 
 #wordpress
-$imagee = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
+$imagee = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/' . $s_blog['featured_media'])->json();
 if (isset($imagee) && isset($imagee['media_details']) && isset($imagee['media_details']['sizes']) && isset($imagee['media_details']['sizes']['full'])) {
     $imgurl = $imagee['media_details']['sizes']['full']['source_url'];
 } else {
@@ -225,7 +225,7 @@ $schema = [
                         <a href="{{route('customer.blog_show',$lt_blog['slug'])}}" class="text-decoration-none">
                             <div>
                                     <?php
-                                    $image = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/media/' . $lt_blog['featured_media'])->json();
+                                    $image = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/' . $lt_blog['featured_media'])->json();
                                     // dd($image['media_details']['sizes']['medium']['source_url']);
                                     // <!-- https://blog.photonplay.com/wp-json/wp/v2/media/11 -->
                                     ?>
