@@ -217,9 +217,11 @@ class CartController extends Controller
                 $email = $request->email;
                 $name = $request->name;
                 $userId = $this->createGuestUser($email, $name);
+                $type = 'guest';
             }else{
                 $email = Session::get('user')->email;
                 $userId = Session::get('user')->id;
+                $type = 'user';
             }
 
             $orderId ='#'.mt_rand(1111, 99999);
@@ -241,9 +243,10 @@ class CartController extends Controller
            ]],
            'customer_email' => $email,
            'mode' => 'payment',
-           'success_url' => route('customer.success.response', ['order_id' => $orderId]),
+           'success_url' => route('customer.success.response', ['order_id' => $orderId, 'userId' => $userId, 'email' => $email, 'type' => $type]),
            'cancel_url' => route('customer.cancel.response'),
            ]);
+
            $order = Order::create([
                'user_id' => $userId,
                'trx_id' => $checkout_session->id,
@@ -272,6 +275,7 @@ class CartController extends Controller
                'address' => $request->address,
                'order_notes' => $request->order_notes,
            ]);
+
            if($order){
                if(!Session::get('user')){
                    $token = Str::random(64);
@@ -300,7 +304,9 @@ class CartController extends Controller
                }
 
            }
+
            return redirect()->away($checkout_session->url);
+
         }catch(Stripe\Exception\InvalidRequestException $e){
             if(!Session::get('user') && isset($userId)){
                 Customer::where('id', $userId)->delete();
@@ -319,10 +325,12 @@ class CartController extends Controller
                 'status' => $checkout->status,
                 'payment_status' => $checkout->payment_status
             ]);
+            if($request->type == 'guest'){
+                Cart::where('session_id', $request->userId)->delete();
+            }else{
+                Cart::where('user_id', $request->userId)->delete();
+            }
 
-        $user_io=Session::get('user');
-            Cart::where('user_id', Session::get('user')->id)->delete();
-//            dd($user_io->email);
 
         $order_product=OrderedProduct::where('order_id',$order->id)->get();
                 $products_list=[];
@@ -341,7 +349,7 @@ class CartController extends Controller
 
         $place_order = new OrderPlaceMail($order);
 //dd($order);
-        Mail::to($user_io->email)->send($place_order);
+        Mail::to($request->email)->send($place_order);
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));
     }
@@ -375,8 +383,8 @@ class CartController extends Controller
         $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
 
         $customer = \Stripe\Customer::create([
-            'email' => 'test',
-            'name' => 'satinderpanesar03@gmail.com',
+            'email' => $email,
+            'name' => $name,
         ]);
 
         $customer = Customer::create([

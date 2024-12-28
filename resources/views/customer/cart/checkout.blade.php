@@ -60,19 +60,19 @@
                         <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Name" name="name" value="" required>
                         <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" required>
                     @endif
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" >
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" value="">
                     <div>
-                        <select id="billing_country"  name="billing_country"  class="form-control rounded-0 px-3" >
+                        <select id="billing_country"  name="billing_country"  class="form-control rounded-0 px-3" required>
                             <option value="">Select Country</option>
                         </select>
-                        <select id="billing_state"  name="billing_state" class="form-control rounded-0 px-3" >
+                        <select id="billing_state"  name="billing_state" class="form-control rounded-0 px-3" required>
                             <option value="">Select State</option>
                         </select>
-                        <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3" >
+                        <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3" required>
                             <option value="">Select City</option>
                         </select>
-                        <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" placeholder="Postal Code"  />
+                        <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" placeholder="Postal Code"  required />
                     </div>
 
                     <h3 class="mt-5">Shipping Details</h3>

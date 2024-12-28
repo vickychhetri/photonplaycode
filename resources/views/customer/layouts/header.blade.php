@@ -471,7 +471,6 @@ $productLists = Product::where('category_id',1)->take(5)->get();
                 console.log('City:', city);
                 console.log('Region:', region);
                 console.log('Country:', country);
-                alert("dsd"+ipAddress);
 
                 // Now you can use this information as needed
             })
