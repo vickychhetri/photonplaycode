@@ -211,7 +211,7 @@ class CartController extends Controller
         try{
             if(!Session::get('user')){
                 $this->validate($request, [
-//                    'email' => 'required|email|unique:customers',
+                    'email' => 'required|email|unique:customers',
                     'name' => 'required|string',
                 ]);
                 $email = $request->email;
