@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class Radar extends Component
 {
-    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum ;
+    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price ;
 
     public $product_id;
     public $color = 'Amber-Color.png';
@@ -20,7 +20,7 @@ class Radar extends Component
     {
         $this->product_id = $product_id;
         $this->sessionId = Session::getId();
-        $this->exchangeRate = Session::get('exchange_rate', 2);
+        $this->exchangeRate = Session::get('exchange_rate', 1);
 
 //        $this->sum =  Session::get('options_ids')
 //            ? array_sum(array_column(Session::get('options_ids'), 'specialization_price'))
@@ -52,7 +52,7 @@ class Radar extends Component
     public function render()
     {
         Session::forget('options_ids');
-        $this->exchange_rate = Session::get('exchange_rate', 7);
+        $this->exchange_rate = Session::get('exchange_rate', 1);
 
         $this->productLists = Product::with(['category'])
             ->where('category_id', 1)

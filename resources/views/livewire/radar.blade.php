@@ -75,7 +75,7 @@
 
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
-                                <p class="fw-bold fs-5" id="total_price2">${{ $price }}</p>
+                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">${{ $price }}</span></p>
                             @else
                                 <p class="fw-bold fs-5" id="total_price2"></p>
                             @endif
@@ -83,12 +83,132 @@
                             <!-- Specifications Section -->
                             <div>
                                 <p class="specific-heading">Select Specification</p>
-                                <div class="row mt-3">
+{{--                                <div class="row mt-3">--}}
+{{--                                    @foreach ($product->specilizations->reverse() as $specilization)--}}
+{{--                                        <div class="col-md-8 bg-transparent">--}}
+{{--                                            <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>--}}
+{{--                                            <select class="form-select mb-3" onchange="changecalculated_amount(this)" name="dynamic_specs[{{ $specilization->id }}]" wire:model="dynamic_specs.{{ $specilization->id }}" id="{{ $specilization->id }}" style="border: 2px solid black;font-weight: bold;" required>--}}
+{{--                                                <option selected>--Choose an Option--</option>--}}
+{{--                                                @foreach($specilization->options as $option)--}}
+{{--                                                    <option value="{{ $option->id }}">--}}
+{{--                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price }}</span>)--}}
+{{--                                                        @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")--}}
+{{--                                                            Subscription Free For 1 Year--}}
+{{--                                                        @endif--}}
+{{--                                                    </option>--}}
+{{--                                                @endforeach--}}
+{{--                                            </select>--}}
+{{--                                        </div>--}}
+{{--                                    @endforeach--}}
+
+{{--                                    <!-- Color Selection Section -->--}}
+
+{{--                                    <div class="mt-4">--}}
+{{--                                        <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>--}}
+{{--                                        <div class="d-flex align-items-center">--}}
+{{--                                            <input type="hidden" wire:model="color" name="color" value="Amber" id="colorchoose">--}}
+{{--                                            <div class="selected-anc d-flex border-1 p-2 shadow-smm">--}}
+{{--                                                <div>--}}
+{{--                                                    <img src="{{ asset('/assets/images/radar/color/Amber-Color.png') }}" style="height:40px;" id="imgicon_color_st" alt="color" />--}}
+{{--                                                </div>--}}
+
+{{--                                                <div x-data="{--}}
+{{--                                                            color: @entangle('color'),--}}
+{{--                                                            productId: @entangle('product_id'),--}}
+{{--                                                            changeColor() {--}}
+{{--                                                                changeColorJS(this.color, this.productId);--}}
+{{--                                                            }--}}
+{{--                                                        }"--}}
+{{--                                                     x-init="changeColor()"--}}
+{{--                                                     class="d-flex align-items-center">--}}
+
+{{--                                                    <select class="form-select shadow-none" wire:model="color"--}}
+{{--                                                            id="select-color" aria-label="Color select" required--}}
+{{--                                                            style="background-color: transparent; border: none; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 120px;">--}}
+{{--                                                        <option value="Amber-Color.png">Amber</option>--}}
+{{--                                                        <option value="White-Color.png">White</option>--}}
+{{--                                                        <option value="Green-Color.png">Green</option>--}}
+{{--                                                    </select>--}}
+
+{{--                                                </div>--}}
+
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+
+{{--                                        <script>--}}
+{{--                                            const selectElement = document.getElementById('select-color');--}}
+{{--                                            const iconElement = document.querySelector('#imgicon_color_st');--}}
+{{--                                            const colorHolderElement = document.querySelector('#colorchoose');--}}
+{{--                                            const baseurl = '{{ asset('/assets/images/radar/color/') }}';--}}
+
+{{--                                            selectElement.addEventListener('change', function() {--}}
+{{--                                                const selectedOption = this.options[this.selectedIndex];--}}
+{{--                                                const selectedColor = this.value;--}}
+{{--                                                colorHolderElement.value = selectedOption.text;--}}
+{{--                                                iconElement.src = baseurl + '/' + selectedColor;--}}
+{{--                                            });--}}
+{{--                                        </script>--}}
+{{--                                    </div>--}}
+
+
+                                    <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
+                                </div>
+                                <div x-data="{
+                                        dynamic_specs: {},
+                                        total_amount_single_product: {{ $product->price }},
+                                        product_amount: {{ $product->price }},
+                                        counts: 1,
+                                        total_price: {{ $product->price }},
+
+                                        changeCalculatedAmount(specId, priceElement) {
+                                            const selectedOption = priceElement.options[priceElement.selectedIndex];
+
+                                            let amount = this.extractAmountFromString(selectedOption.text);
+
+                                            this.dynamic_specs[specId] = amount;
+
+                                            let extra_option_amount = 0;
+                                            Object.values(this.dynamic_specs).forEach(value => {
+                                                extra_option_amount += parseInt(value);
+                                            });
+
+                                            this.total_amount_single_product = this.product_amount + extra_option_amount;
+
+                                            this.updateTotalPrice();
+                                        },
+
+                                        extractAmountFromString(inputString) {
+                                            const amountMatch = inputString.match(/\(\+?\$([0-9]+)\)/);
+                                            return amountMatch ? amountMatch[1] : 0;
+                                        },
+
+                                        updateTotalPrice() {
+                                            const total_price = this.counts * this.total_amount_single_product;
+
+                                            @this.set('price', total_price);
+
+                                            this.$nextTick(() => {
+                                                const priceElements = this.$el.querySelectorAll('.total-price');
+                                                priceElements.forEach(priceElement => {
+                                                    priceElement.innerText = '$' + total_price;
+                                                });
+                                            });
+                                        }
+                                    }" class="row">
+
+                                    <!-- Loop through each specialization -->
                                     @foreach ($product->specilizations->reverse() as $specilization)
                                         <div class="col-md-8 bg-transparent">
                                             <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
-                                            <select class="form-select mb-3" onchange="changecalculated_amount(this)" name="dynamic_specs[{{ $specilization->id }}]" wire:model="dynamic_specs.{{ $specilization->id }}" id="{{ $specilization->id }}" style="border: 2px solid black;font-weight: bold;" required>
+                                            <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
+                                                    x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
+                                                    x-model="dynamic_specs.{{ $specilization->id }}"
+                                                    id="{{ $specilization->id }}"
+                                                    class="form-select mb-3"
+                                                    style="border: 2px solid black; font-weight: bold;"
+                                                    required>
                                                 <option selected>--Choose an Option--</option>
+                                                <!-- Loop through each option for this specialization -->
                                                 @foreach($specilization->options as $option)
                                                     <option value="{{ $option->id }}">
                                                         {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price }}</span>)
@@ -100,106 +220,41 @@
                                             </select>
                                         </div>
                                     @endforeach
-
-                                    <!-- Color Selection Section -->
-
-                                    <div class="mt-4">
-                                        <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>
-                                        <div class="d-flex align-items-center">
-                                            <input type="hidden" wire:model="color" name="color" value="Amber" id="colorchoose">
-                                            <div class="selected-anc d-flex border-1 p-2 shadow-smm">
-                                                <div>
-                                                    <img src="{{ asset('/assets/images/radar/color/Amber-Color.png') }}" style="height:40px;" id="imgicon_color_st" alt="color" />
-                                                </div>
-
-                                                <div x-data="{
-                                                            color: @entangle('color'),
-                                                            productId: @entangle('product_id'),
-                                                            changeColor() {
-                                                                changeColorJS(this.color, this.productId);
-                                                            }
-                                                        }"
-                                                     x-init="changeColor()"
-                                                     class="d-flex align-items-center">
-
-                                                    <select class="form-select shadow-none" wire:model="color"
-                                                            id="select-color" aria-label="Color select" required
-                                                            style="background-color: transparent; border: none; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 120px;">
-                                                        <option value="Amber-Color.png">Amber</option>
-                                                        <option value="White-Color.png">White</option>
-                                                        <option value="Green-Color.png">Green</option>
-                                                    </select>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <script>
-                                            const selectElement = document.getElementById('select-color');
-                                            const iconElement = document.querySelector('#imgicon_color_st');
-                                            const colorHolderElement = document.querySelector('#colorchoose');
-                                            const baseurl = '{{ asset('/assets/images/radar/color/') }}';
-
-                                            selectElement.addEventListener('change', function() {
-                                                const selectedOption = this.options[this.selectedIndex];
-                                                const selectedColor = this.value;
-                                                colorHolderElement.value = selectedOption.text;
-                                                iconElement.src = baseurl + '/' + selectedColor;
-                                            });
-                                        </script>
-                                    </div>
-                                        <div class="col-lg-8 col-md-8">
-                                            <div class="d-md-flex justify-content-start mt-lg-0 mt-4 buy-right align-items-center">
-{{--                                                <div class="d-flex align-items-center border  p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">--}}
-{{--                                                    <a class="btn d-flex align-items-center justify-content-center m-0" onclick="increment()" style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">--}}
-{{--                                                        +--}}
-{{--                                                    </a>--}}
-
-{{--                                                    <input id="demoInput" type="number" class="text-center border-0 m-0" wire:model="quantity" name="quantity" value="1" min="1" max="100" style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">--}}
-
-{{--                                                    <a class="btn d-flex align-items-center justify-content-center m-0" onclick="decrement()" style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">--}}
-{{--                                                        ---}}
-{{--                                                    </a>--}}
-{{--                                                </div>--}}
-                                                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-                                                    <a class="btn d-flex align-items-center justify-content-center m-0"
-                                                       @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
-                                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
-                                                        +
-                                                    </a>
-
-                                                    <input id="uniqueQuantityInput"
-                                                           type="number"
-                                                           class="text-center border-0 m-0"
-                                                           wire:model="quantity"
-                                                           x-model="quantity"
-                                                           min="1"
-                                                           max="100"
-                                                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">
-
-                                                    <a class="btn d-flex align-items-center justify-content-center m-0"
-                                                       @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
-                                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
-                                                        -
-                                                    </a>
-                                                </div>
-
-
-
-                                                <div class="px-4 py-lg-0 py-4">
-                                                    <span style="display: none" class="one-thousand" id="total_price">${{ $product->price }}</span>
-                                                </div>
-                                                <button data-bs-toggle="modal" data-bs-target="#exampleModalCenter" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
-                                                    <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
-                                                </button>
-                                            </div>
-
-
-                                        </div>
-
-                                    <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
                                 </div>
+                            </div>
+                        <div class="col-lg-8 col-md-8">
+                            <div class="d-md-flex justify-content-start mt-lg-0 mt-4 buy-right align-items-center">
+                                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                                    <a class="btn d-flex align-items-center justify-content-center m-0"
+                                       @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
+                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
+                                        +
+                                    </a>
+
+                                    <input id="uniqueQuantityInput"
+                                           type="number"
+                                           class="text-center border-0 m-0"
+                                           wire:model="quantity"
+                                           x-model="quantity"
+                                           min="1"
+                                           max="100"
+                                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">
+
+                                    <a class="btn d-flex align-items-center justify-content-center m-0"
+                                       @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
+                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
+                                        -
+                                    </a>
+                                </div>
+
+
+
+                                <div class="px-4 py-lg-0 py-4">
+                                    <span style="display: none" class="one-thousand" id="total_price">${{ $product->price }}</span>
+                                </div>
+                                <button data-bs-toggle="modal" data-bs-target="#exampleModalCenter" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
+                                    <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -288,6 +343,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
 </div>
@@ -339,6 +395,50 @@
                 document.getElementById('big-img-radar-product').setAttribute('src', src);
             });
         });
+        function changecalculated_amount(price_element) {
+            console.log('price_element', price_element);
+            const selectedOption = price_element.options[price_element.selectedIndex];
+            console.log('selectedOption', selectedOption);
+
+            var total_price = document.getElementById('total_price');
+            console.log('total_price', total_price);
+            var total_price2 = document.getElementById('total_price2');
+            console.log('total_price2', total_price2);
+
+            var counts = document.getElementById('demoInput').value;
+            console.log('counts', counts);
+
+            var inputString = selectedOption.text;
+            console.log('inputString', inputString);
+
+            var amount = extractAmountFromString(inputString);
+            console.log('amount', amount);
+
+            single_items_cart[price_element.id] = amount;
+            console.log('single_items_cart', single_items_cart);
+
+            console.log('total_amount_single_product', total_amount_single_product);
+
+            let extra_option_amount = 0;
+            for (let key in single_items_cart) {
+                if (single_items_cart.hasOwnProperty(key)) {
+                    let value = single_items_cart[key];
+                    extra_option_amount += parseInt(value);
+                }
+            }
+            console.log('extra_option_amount', extra_option_amount);
+
+            if (amount != null) {
+                total_amount_single_product = product_amount + extra_option_amount;
+            }
+            console.log('product_amount', product_amount);
+
+            console.log(total_amount_single_product);
+            total_price.innerText = '$' + counts * total_amount_single_product;
+            total_price2.innerText = '$' + counts * total_amount_single_product;
+
+        }
     }
 </script>
+
 

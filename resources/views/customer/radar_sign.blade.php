@@ -502,49 +502,49 @@ if (isset($seo_record)) {
     }
 
 
-    function changecalculated_amount(price_element) {
-        console.log('price_element', price_element);
-        const selectedOption = price_element.options[price_element.selectedIndex];
-        console.log('selectedOption', selectedOption);
-
-        var total_price = document.getElementById('total_price');
-        console.log('total_price', total_price);
-        var total_price2 = document.getElementById('total_price2');
-        console.log('total_price2', total_price2);
-
-        var counts = document.getElementById('demoInput').value;
-        console.log('counts', counts);
-
-        var inputString = selectedOption.text;
-        console.log('inputString', inputString);
-
-        var amount = extractAmountFromString(inputString);
-        console.log('amount', amount);
-
-        single_items_cart[price_element.id] = amount;
-        console.log('single_items_cart', single_items_cart);
-
-        console.log('total_amount_single_product', total_amount_single_product);
-
-        let extra_option_amount = 0;
-        for (let key in single_items_cart) {
-            if (single_items_cart.hasOwnProperty(key)) {
-                let value = single_items_cart[key];
-                extra_option_amount += parseInt(value);
-            }
-        }
-        console.log('extra_option_amount', extra_option_amount);
-
-        if (amount != null) {
-            total_amount_single_product = product_amount + extra_option_amount;
-        }
-        console.log('product_amount', product_amount);
-
-        console.log(total_amount_single_product);
-        total_price.innerText = '$' + counts * total_amount_single_product;
-        total_price2.innerText = '$' + counts * total_amount_single_product;
-
-    }
+    // function changecalculated_amount(price_element) {
+    //     console.log('price_element', price_element);
+    //     const selectedOption = price_element.options[price_element.selectedIndex];
+    //     console.log('selectedOption', selectedOption);
+    //
+    //     var total_price = document.getElementById('total_price');
+    //     console.log('total_price', total_price);
+    //     var total_price2 = document.getElementById('total_price2');
+    //     console.log('total_price2', total_price2);
+    //
+    //     var counts = document.getElementById('demoInput').value;
+    //     console.log('counts', counts);
+    //
+    //     var inputString = selectedOption.text;
+    //     console.log('inputString', inputString);
+    //
+    //     var amount = extractAmountFromString(inputString);
+    //     console.log('amount', amount);
+    //
+    //     single_items_cart[price_element.id] = amount;
+    //     console.log('single_items_cart', single_items_cart);
+    //
+    //     console.log('total_amount_single_product', total_amount_single_product);
+    //
+    //     let extra_option_amount = 0;
+    //     for (let key in single_items_cart) {
+    //         if (single_items_cart.hasOwnProperty(key)) {
+    //             let value = single_items_cart[key];
+    //             extra_option_amount += parseInt(value);
+    //         }
+    //     }
+    //     console.log('extra_option_amount', extra_option_amount);
+    //
+    //     if (amount != null) {
+    //         total_amount_single_product = product_amount + extra_option_amount;
+    //     }
+    //     console.log('product_amount', product_amount);
+    //
+    //     console.log(total_amount_single_product);
+    //     total_price.innerText = '$' + counts * total_amount_single_product;
+    //     total_price2.innerText = '$' + counts * total_amount_single_product;
+    //
+    // }
 
     function increment() {
         let inputV = document.getElementById('demoInput')
