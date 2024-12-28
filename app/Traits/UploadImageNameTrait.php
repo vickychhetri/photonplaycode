@@ -32,10 +32,10 @@ trait UploadImageNameTrait
             $image = ImageManager::imagick()->read(storage_path('app/public/' . $image_path));
 
             // Resize and store thumbnail
-            $image->resize(100, 100)->save(storage_path('app/public/' . 'image/thumbnail_' . strtolower($imageName)));
+            $image->resize(100, 100)->save(storage_path('app/public/' . 'thumbnail/image/' . strtolower($imageName)));
 
             // Resize and store medium image
-            $image->resize(500, 500)->save(storage_path('app/public/' . 'image/medium_' . strtolower($imageName)));
+            $image->resize(500, 500)->save(storage_path('app/public/' . 'medium/image/' . strtolower($imageName)));
         }
         return $image_path;
     }
