@@ -315,9 +315,9 @@
 
         </section>
         <section>
-        <div class='container'>
+        <div class='container '>
             <div class='row'>
-                <div class='col-lg-12'>
+                <div class='col-lg-8'>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link text-dark active ms-0" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
@@ -338,6 +338,77 @@
                             <x-Customer.Radar.Features />
 
 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 pt-4">
+                    <div class="row">
+                        <style>
+                            .feature-item {
+                                display: flex;
+                                align-items: center;
+                                padding: 15px;
+                                border: 1px solid #7c7a7a;
+                                border-radius: 20px;
+                                background-color: #d5d4d4;
+                                margin-bottom: 15px;
+                                width: 100%;
+                            }
+                            .feature-item img {
+                                height: 40px;
+                                margin-right: 10px;
+                            }
+                            .note {
+                                font-size: 0.9rem;
+                                color: #333;
+                            }
+                            .note span {
+                                color: red;
+                                font-weight: bold;
+                            }
+                        </style>
+                        <div class="container mt-5">
+
+                            @foreach($product->product_features as $pf)
+                                <div class="feature-item">
+                                    <img src="{{ asset('storage/' . $pf->icon )  }}" alt="{{$pf->heading_text}}">
+                                    <span style="font-weight: bold;font-size: 20px;">{{$pf->heading_text}}</span>
+                                </div>
+                            @endforeach
+
+                            <p class="note">
+                                Note: All above features <span>worth $1450</span> are included in this product without any extra/hidden cost (limited time offer).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="container text-center my-5">
+                            <h5 class="mb-4 text-black">Compatible Accessories</h5>
+                                    @foreach($linked_products as $ap)
+                                        <div class="col-md-12 mb-3">
+
+                                        <div class="card mx-auto" style="width: 18rem;">
+                                            <div class="d-flex justify-content-center align-items-center w-100 p-2 m-2">
+                                                <img src="{{ asset('storage/' . $pf->icon )  }}" class="card-img-top"
+                                                     alt="SafePace Universal Mounting Bracket"
+                                                     style="max-width: 100%;max-width: 200px;">
+                                            </div>
+
+                                            <div class="card-body">
+                                                @php
+                                                    $currency_icon = session('currency_icon', '$');
+                                                    $exchange_rate = session('exchange_rate', '1');
+                                                @endphp
+                                                <h5 class="card-title"> {{$ap->product_heading_text??$ap->title}}</h5>
+                                                <p class="card-text"> {{$currency_icon}}{{$ap->price*$exchange_rate}}</p>
+                                                <p class="text-muted p-2">{{$ap->category->title}}</p>
+                                                <button class="btn btn-primary">Add to Cart</button>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                    @endforeach
                         </div>
                     </div>
                 </div>
