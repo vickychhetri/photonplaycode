@@ -12,6 +12,7 @@ use Livewire\Component;
 class Radar extends Component
 {
     public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price ;
+    public $linked_products;
 
     public $product_id;
     public $color = 'Amber-Color.png';
@@ -27,7 +28,8 @@ class Radar extends Component
             'specilizations.specilization',
             'specilizations.options',
             'specilizations.options.specializationoptions',
-            'category'
+            'category',
+            'product_features'
         ])
             ->where('slug', $this->productId)
             ->first();
@@ -42,6 +44,9 @@ class Radar extends Component
             $this->category = $this->product->category->id;
             $this->Pid = $this->product->id;
         }
+
+        //list all accessories
+
 
     }
 
@@ -66,12 +71,15 @@ class Radar extends Component
             $this->cartItems = Cart::where('session_id', $this->sessionId)->get();
         }
 
+        $this->linked_products=Product::getLinkedProducts($this->Pid);
+
         return view('livewire.radar', [
             'productLists' => $this->productLists,
             'postalCode' => $this->postalCode,
             'cartCount' => $this->cartCount,
             'id' => $this->productId,
             'cartItems' => $this->cartItems,
+            'linked_products' => $this->linked_products,
         ]);
     }
 
