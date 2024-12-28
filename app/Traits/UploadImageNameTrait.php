@@ -3,6 +3,8 @@
 namespace App\Traits;
 
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Image;
+use Intervention\Image\ImageManager;
 
 trait UploadImageNameTrait
 {
@@ -26,6 +28,14 @@ trait UploadImageNameTrait
             }
 
             $image_path = $img->storeAs('image', strtolower($imageName), 'public');
+
+            $image = ImageManager::imagick()->read(storage_path('app/public/' . $image_path));
+
+            // Resize and store thumbnail
+            $image->resize(100, 100)->save(storage_path('app/public/' . 'thumbnail/image/' . strtolower($imageName)));
+
+            // Resize and store medium image
+            $image->resize(500, 500)->save(storage_path('app/public/' . 'medium/image/' . strtolower($imageName)));
         }
         return $image_path;
     }
