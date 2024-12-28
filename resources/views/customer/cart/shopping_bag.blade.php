@@ -21,7 +21,7 @@
 <section class="step-formation bg-light pb-3">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-9 table-responsive">
+            <div class="col-lg-6 table-responsive">
                 <table class="table border">
                     <thead>
                         <tr>
@@ -82,92 +82,83 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
-</section>
-<!-- End Form -->
-<section class="step-form bg-light pt-0">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-md-6">
-                        <form action="{{route('customer.shopping.bag')}}" method="post">
-                            @csrf
-                            <div class="box-coupon bg-white p-3 py-4 h-100">
-                            <h3>Coupon Discount</h3>
-                            <label class="d-block mb-3 opacity-50">Enter your coupon code if you have one!</label>
-                            <input type="text" name="coupon" class="form-control rounded-0 mb-4" placeholder="Enter your coupon here" @if ($coupon_name != 0) readonly @endif value="@if ($coupon_name != 0) {{strtoupper($coupon_name)}} @endif">
-                            @if ($coupon_name == 0)
-                            <input type="hidden" name="total" value="{{$grand_total}}">
-                                <button class="btn btn-primary rounded-0 ">Apply Coupon</button>
-                            @else
-                            <input type="hidden" name="remove_coupon" value="1">
-                                <span class="text-success"><b> Coupon Successfully Applied</b></span>
-                                <button class="btn btn-sm bg-danger text-white mx-4">Remove</button>
-                            @endif
-                        </div>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="payment-details bg-white p-3 py-4">
-                            <h3>Payment Details</h3>
-                            <ul class="order-details p-0 mb-5">
-                                <li class="d-flex justify-content-between">
-                                    <span class="text">Cart Subtotal</span>
-                                    <span class="text-amount">${{$total}}</span>
-                                </li>
-                                @if($discounted_amount != 0)
-                                <li class="d-flex justify-content-between">
-                                    <span class="text">Discount</span>
-                                    <span class="text-amount text-danger">${{$discounted_amount}}</span>
-                                </li>
-                                @endif
-                                <li class="d-flex justify-content-between">
-                                    <span class="text text-capitalize">Shipping and Handing</span>
-                                    <span class="text-amount">${{$shipping = 00.00}}</span>
-                                </li>
-                                <li class="d-flex justify-content-between">
-                                    <span class="text text-capitalize">VAT</span>
-                                    <span class="text-amount">{{floor($gst = $taxes->gst) ?? 0}}%</span>
-                                </li>
+            <div class="col-lg-4 " >
+                <section class="step-form bg-light pt-0" >
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <div class="row">
 
-                                <li class="d-flex justify-content-between active">
-                                    <span class="text text-capitalize fw-bold">Order total</span>
-                                    <span class="text-amount">${{$grand_total  + (($grand_total * $gst) / 100)}}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="box-coupon bg-white p-3 py-4 my-5">
-                            <h3>Checkout</h3>
-                            <label for="" class=" d-block mb-4 opacity-50">Click to proceed</label>
-{{--                            @if (!Session::get('user'))--}}
-{{--                                <a href="{{route('customer.loginForm', ['p' => 1, 's' => Session::getId()])}}" class=" btn btn-primary rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?> ">Proceed to buy</a>--}}
-{{--                            @else--}}
-{{--                            <!-- confirmation form -->--}}
-{{--                                <form action="{{route('customer.checkout')}}" method="any">--}}
-{{--                                    @csrf--}}
-{{--                                    <input type="hidden" name="coupon_s" value="{{$coupon_name}}">--}}
-{{--                                    <input type="hidden" name="discount_s" value="{{$discounted_amount}}">--}}
-{{--                                    <button type="submit" class=" btn btn-primary rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Proceed to buy</button>--}}
-{{--                                </form>--}}
-{{--                            <!-- confirmation form ends-->--}}
+                                    <div class="col-md-12 " >
+                                        <div class="payment-details bg-white p-3 pb-1 py-4" style="border: 2px solid grey;">
+                                            <h3>Order Summary</h3>
+                                            <ul class="order-details p-0 mb-5">
+                                                <li class="d-flex justify-content-between">
+                                                    <span class="text">Subtotal excluding Tax</span>
+                                                    <span class="text-dark">${{$total}}</span>
+                                                </li>
+                                                @if($discounted_amount != 0)
+                                                    <li class="d-flex justify-content-between">
+                                                        <span class="text">Discount</span>
+                                                        <span class="text-dark text-danger">${{$discounted_amount}}</span>
+                                                    </li>
+                                                @endif
+                                                <li class="d-flex justify-content-between">
+                                                    <span class="text text-capitalize">Estimated Shipping (BEST
+WAY GROUND)</span>
+                                                    @php
+                                                        $shipping = 00.00;
+                                                    @endphp
+                                                    <span class="text-amount"> {{$shipping> 0 ? $shipping : "-"}}</span>
+                                                </li>
+                                                <li class="d-flex justify-content-between">
+                                                    <span class="text text-capitalize">Tax(%)</span>
+                                                    <span class="text-dark">{{floor($gst = $taxes->gst) ?? 0}}%</span>
+                                                </li>
 
-{{--                            @endif--}}
-                            <form action="{{route('customer.checkout')}}" method="any">
-                                @csrf
-                                <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
-                                <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
-                                <button type="submit" class=" btn btn-primary rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Proceed to buy</button>
+                                                <li class="d-flex justify-content-between active">
+                                                    <span class="text text-capitalize fw-bold">Total including Tax</span>
+                                                    <span class="text-dark">${{$grand_total  + (($grand_total * $gst) / 100)}}</span>
+                                                </li>
+                                            </ul>
+                                            <form action="{{route('customer.shopping.bag')}}" method="post">
+                                                @csrf
+                                                <div class="box-coupon bg-white pb-1 pt-1 py-4 h-100">
+                                                    <h3>Promotional Code</h3>
+                                                    <input type="text" name="coupon" class="form-control rounded-0 mb-4" placeholder="Enter your coupon here" @if ($coupon_name != 0) readonly @endif value="@if ($coupon_name != 0) {{strtoupper($coupon_name)}} @endif">
+                                                    @if ($coupon_name == 0)
+                                                        <input type="hidden" name="total" value="{{$grand_total}}">
+                                                        <button class="btn btn-primary rounded-0 w-100 p-1 ">Apply Coupon</button>
+                                                    @else
+                                                        <input type="hidden" name="remove_coupon" value="1">
+                                                        <span class="text-success"><b> Coupon Successfully Applied</b></span>
+                                                        <button class="btn btn-sm bg-danger text-white p-1 w-100">Remove</button>
+                                                    @endif
+                                                </div>
+                                            </form>
+                                            <p class="mt-1 mb-1" style="font-size: 10px;font-weight: bold;">
+                                                Promotional offers cannot be combined with any other offers or discounts, including those in a sales quote. Some exclusions may apply. Products shipped by truck are not eligible for free shipping. Free shipping offers apply only to the continental United States.
+                                            </p>
+                                            <form action="{{route('customer.checkout')}}" method="any">
+                                                @csrf
+                                                <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
+                                                <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
+                                                <button type="submit" class=" btn btn-primary p-1 btn-block w-100 rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Proceed to buy</button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
 </section>
+<!-- End Form -->
+
 
 @include('customer.layout2.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
