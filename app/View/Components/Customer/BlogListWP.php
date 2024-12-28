@@ -26,7 +26,7 @@ class BlogListWP extends Component
      */
     public function render()
     {
-        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 
         $blogs = array_slice($postsSlice, 0 , 3);
         $team_members = TeamMember::take(4)->get();

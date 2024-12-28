@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\OrderPlaceMail;
 use App\Models\Cart;
 use App\Models\Coupon;
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderedProduct;
 use App\Models\Product;
@@ -164,6 +165,7 @@ class CartController extends Controller
     }
 
     public function checkout(Request $request){
+        $customer = Customer::find((Session::get('user')->id));
         $addresses = UserAddress::where('user_id', Session::get('user')->id)->get();
         // dd($addresses);
         $coupon_name = $request->coupon_s;
@@ -174,7 +176,7 @@ class CartController extends Controller
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
             }
-        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount', 'addresses'));
+        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount', 'addresses','customer'));
     }
 
     public function removeCartItem($id){
@@ -233,6 +235,15 @@ class CartController extends Controller
                'billing_state' => $request->billing_state,
                'billing_country' => $request->billing_country,
                'billing_postcode' => $request->billing_postcode,
+               //main_shipping_double_address - vicky 26-12-2024 start
+               'is_shipping_same' => $request->is_shipping_same==1?1:0,
+               'shipping_street' => $request->shipping_street,
+               'shipping_flat_suite' => $request->shipping_flat_suite,
+               'shipping_city' => $request->shipping_city,
+               'shipping_state' => $request->shipping_state,
+               'shipping_country' => $request->shipping_country,
+               'shipping_postcode' => $request->shipping_postcode,
+               //main_shipping_double_address - vicky 26-12-2024 end
                'address' => $request->address,
                'order_notes' => $request->order_notes,
            ]);

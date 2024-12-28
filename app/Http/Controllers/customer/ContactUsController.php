@@ -30,7 +30,7 @@ class ContactUsController extends Controller
 
     public static function checkBlogCount(){
         $sum = 0;
-        $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
+        $categories=Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/categories')->json();
         foreach($categories as $category){
             $sum += $category['count'];
         }
@@ -66,19 +66,19 @@ class ContactUsController extends Controller
         $blogs=Blog::select();
         $posts=null;
         if(isset($request->category)){
-            $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
+            $categories=Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/categories')->json();
             foreach($categories as $category){
                 if($category['slug'] == $request->category){
-                    $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
+                    $posts = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&categories='.$category['id'])->json();
                 }
 
             }
 
         }elseif(isset($request->months)){
-            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $posts = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 
         }else{
-            $posts = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&page='. $page)->json();
+            $posts = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc&page='. $page)->json();
         }
 
         $blog_created_date1 = array();
@@ -100,8 +100,8 @@ class ContactUsController extends Controller
             $groupedPosts = array_unique($blog_created_date1);
         }
 
-        $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
-        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $categories=Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/categories')->json();
+        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 
         $latestBlogRecords = array_slice($postsSlice, 0 , 3);
 
@@ -124,14 +124,14 @@ class ContactUsController extends Controller
      * @return Application|Factory|View
      */
     public function blog_show(Request  $request,$page_name){
-        $blogs = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed&slug=' . $page_name)->json();
+        $blogs = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed&slug=' . $page_name)->json();
 
         if(!(count($blogs)>0)){
             abort(404);
         }
 
         $s_blog = $blogs[0];
-        $categories=Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/categories')->json();
+        $categories=Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/categories')->json();
 
         if(!isset($s_blog)){
             abort(404);
@@ -140,7 +140,7 @@ class ContactUsController extends Controller
         $tags = [];
         $date = Carbon::createFromFormat('Y-m-d H:i:s', '2023-04-27 17:43:36');
         $blog_created_date = $date->format('d F, Y');
-        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 
         $latestBlogRecords = array_slice($postsSlice, 0 , 3);
         $relatedBlogRecords = array_slice($postsSlice, 0 , 5);

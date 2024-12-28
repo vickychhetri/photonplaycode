@@ -35,7 +35,7 @@ class SignController extends Controller
     public function radarSpeedSigns_v1()
     {
         $products = Product::select('id','slug')->where('category_id', 1)->get();
-        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
         $blogs = array_slice($postsSlice, 0 , 3);
 
         return view('signv1.sign', compact('products','blogs'));
@@ -44,7 +44,7 @@ class SignController extends Controller
     public function radarSpeedSignsget_quote_v1()
     {
         $products = Product::where('category_id', 1)->get();
-        $postsSlice = Http::get(env('WORDPRESS_BASE_URL') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
         $blogs = array_slice($postsSlice, 0 , 3);
 
         return view('signv1.get_quote', compact('products','blogs'));
