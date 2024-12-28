@@ -22,10 +22,6 @@ class Radar extends Component
         $this->sessionId = Session::getId();
         $this->exchangeRate = Session::get('exchange_rate', 1);
 
-//        $this->sum =  Session::get('options_ids')
-//            ? array_sum(array_column(Session::get('options_ids'), 'specialization_price'))
-//            : 2;
-//dd($this->sum);
         $this->product = Product::with([
             'images' => fn($r) => $r->where('color', 'amber'),
             'specilizations.specilization',
@@ -51,7 +47,6 @@ class Radar extends Component
 
     public function render()
     {
-        Session::forget('options_ids');
         $this->exchange_rate = Session::get('exchange_rate', 1);
 
         $this->productLists = Product::with(['category'])
@@ -81,11 +76,6 @@ class Radar extends Component
     }
 
     public function addToCart(){
-//        dd(Session::get('options_ids'));
-//        $this->sum =  Session::get('options_ids')
-//            ? array_sum(array_column(Session::get('options_ids'), 'specialization_price'))
-//            : 2;
-//        dd($this->sum);
         $impodeSpec = array();
         if(isset($this->dynamic_specs)){
             foreach($this->dynamic_specs as $specs){
@@ -153,7 +143,6 @@ class Radar extends Component
             }
 
         }
-        Session::forget('options_ids');
     }
 
 
@@ -165,51 +154,6 @@ class Radar extends Component
     {
         $this->color = $value;
     }
-//
-//    public function updatedDynamicSpecs($value)
-//    {
-//        $this->price = $this->initial_price;
-//
-//        $spec_id = DB::table('product_spcialization_options')
-//            ->select('id', 'specialization_price', 'product_specilizations_id')
-//            ->find($value);
-//
-//        if ($spec_id) {
-//            Session::put('options_ids',$this->storeIds($spec_id));
-//        }
-//
-//    }
-//
-//    protected function storeIds($spec_id)
-//    {
-//        // Ensure the session has a key for options_ids
-//        if (!Session::has('options_ids')) {
-//            Session::put('options_ids', []);
-//        }
-//
-//        // Get the options stored in session
-//        $options = Session::get('options_ids');
-//
-//        // Log spec_id to inspect the value being passed
-////        dd($spec_id);
-//
-//        // Find the key where product_specilizations_id matches
-//        $existingSpecKey = array_search($spec_id->product_specilizations_id, array_column($options, 'product_specilizations_id'));
-//
-//        if ($existingSpecKey !== false) {
-//            // Update the specialization price for the matching spec_id
-//            $options[$existingSpecKey]->specialization_price = $spec_id->specialization_price;
-//        } else {
-//            // Add the new spec_id if no match is found
-//            $options[] = $spec_id;
-//        }
-//return $options;
-//        // Save the updated options back to the session
-////        $r = Session::put('', $options);
-//
-//        // Debug the result of saving the session
-////        dd($r);
-//    }
 
 
 

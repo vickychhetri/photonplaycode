@@ -196,7 +196,6 @@
                                         }
                                     }" class="row">
 
-                                    <!-- Loop through each specialization -->
                                     @foreach ($product->specilizations->reverse() as $specilization)
                                         <div class="col-md-8 bg-transparent">
                                             <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
@@ -206,6 +205,7 @@
                                                     id="{{ $specilization->id }}"
                                                     class="form-select mb-3"
                                                     style="border: 2px solid black; font-weight: bold;"
+                                                    wire:ignore
                                                     required>
                                                 <option selected>--Choose an Option--</option>
                                                 <!-- Loop through each option for this specialization -->
@@ -271,7 +271,7 @@
 
 {{--            modal starts cart--}}
 {{--            start --}}
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" wire:ignore.self>
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header d-flex justify-content-between align-items-center">
