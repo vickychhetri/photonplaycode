@@ -317,7 +317,7 @@
         <section>
         <div class='container '>
             <div class='row'>
-                <div class='col-lg-8'>
+                <div class='col-lg-9'>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link text-dark active ms-0" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
@@ -329,6 +329,16 @@
                                 Features
                             </button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#specification-tab-pane" type="button" role="tab" aria-controls="specification-tab-pane" aria-selected="false">
+                                Specifications
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-dark" id="profile-tab" data-bs-toggle="tab" data-bs-target="#shipping-tab-pane" type="button" role="tab" aria-controls="shipping-tab-pane" aria-selected="false">
+                                Shipping & Return
+                            </button>
+                        </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane mt-3 fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -336,12 +346,16 @@
                         </div>
                         <div class="tab-pane fade mt-3" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                             <x-Customer.Radar.Features />
-
-
+                        </div>
+                        <div class="tab-pane fade mt-3" id="specification-tab-pane" role="tabpanel" aria-labelledby="specification-tab-pane" tabindex="0">
+                            {!! $product->specification!!}
+                        </div>
+                        <div class="tab-pane fade mt-3" id="shipping-tab-pane" role="tabpanel" aria-labelledby="shipping-tab-pane" tabindex="0">
+                            {!! $product->feature!!}
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 pt-4">
+                <div class="col-lg-3 pt-4">
                     <div class="row">
                         <style>
                             .feature-item {
@@ -372,7 +386,7 @@
                             @foreach($product->product_features as $pf)
                                 <div class="feature-item">
                                     <img src="{{ asset('storage/' . $pf->icon )  }}" alt="{{$pf->heading_text}}">
-                                    <span style="font-weight: bold;font-size: 20px;">{{$pf->heading_text}}</span>
+                                    <span style="font-weight: bold;font-size: 13px;">{{$pf->heading_text}}</span>
                                 </div>
                             @endforeach
 
