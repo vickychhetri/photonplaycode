@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\ResetPasswordJob;
 use App\Mail\OrderPlaceMail;
 use App\Models\Cart;
 use App\Models\Coupon;
@@ -14,12 +15,16 @@ use App\Models\Setting;
 use App\Models\ShippingRate;
 use App\Models\UserAddress;
 use App\Models\UserPostalCode;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Stripe\StripeClient;
 use Stripe;
 
@@ -165,13 +170,21 @@ class CartController extends Controller
     }
 
     public function checkout(Request $request){
-        $customer = Customer::find((Session::get('user')->id));
-        $addresses = UserAddress::where('user_id', Session::get('user')->id)->get();
+        if(Session::get('user')){
+            $customer = Customer::find((Session::get('user')->id));
+            $addresses = UserAddress::where('user_id', Session::get('user')->id)->get();
+            $cart_table =  Cart::where('user_id', Session::get('user')->id)->get();
+        }else{
+            $customer = Session::getId();
+            $addresses = [];
+            $cart_table =  DB::table('carts')->where('session_id', $customer)->get();
+        }
+
         // dd($addresses);
         $coupon_name = $request->coupon_s;
         $discount = $request->discount_s;
         $taxes = DB::table('settings')->select('shipping_time','gst')->first();
-        $cart_table =  Cart::where('user_id', Session::get('user')->id)->get();
+
         $total = 0;
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
@@ -196,7 +209,19 @@ class CartController extends Controller
 
     public function placeOrder(Request $request){
         try{
-//            dd($request->all());
+            if(!Session::get('user')){
+                $this->validate($request, [
+//                    'email' => 'required|email|unique:customers',
+                    'name' => 'required|string',
+                ]);
+                $email = $request->email;
+                $name = $request->name;
+                $userId = $this->createGuestUser($email, $name);
+            }else{
+                $email = Session::get('user')->email;
+                $userId = Session::get('user')->id;
+            }
+
             $orderId ='#'.mt_rand(1111, 99999);
             $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
                header('Content-Type: application/json');
@@ -214,13 +239,13 @@ class CartController extends Controller
                 'price' => $price->id,
                 'quantity' => 1,
            ]],
-           'customer_email' => Session::get('user')->email,
+           'customer_email' => $email,
            'mode' => 'payment',
            'success_url' => route('customer.success.response', ['order_id' => $orderId]),
            'cancel_url' => route('customer.cancel.response'),
            ]);
            $order = Order::create([
-               'user_id' => Session::get('user')->id,
+               'user_id' => $userId,
                'trx_id' => $checkout_session->id,
                'order_number' => $orderId,
                'coupon' => $request->coupon,
@@ -248,6 +273,20 @@ class CartController extends Controller
                'order_notes' => $request->order_notes,
            ]);
            if($order){
+               if(!Session::get('user')){
+                   $token = Str::random(64);
+                   DB::table('password_resets')->insert([
+                       'email' => $email,
+                       'token' => $token,
+                       'created_at' => Carbon::now()
+                   ]);
+                   $data = [
+                       'token' => $token,
+                       'email' => $email,
+                       'created_at' => now(),
+                   ];
+                   ResetPasswordJob::dispatch($data);
+               }
                foreach($request->product_ids as $product){
                    $carts = Cart::find($product);
                    OrderedProduct::create([
@@ -263,6 +302,9 @@ class CartController extends Controller
            }
            return redirect()->away($checkout_session->url);
         }catch(Stripe\Exception\InvalidRequestException $e){
+            if(!Session::get('user') && isset($userId)){
+                Customer::where('id', $userId)->delete();
+            }
             return redirect()->route('customer.homePage')->with('error', 'Cart is empty, Please add some products');
         }
     }
@@ -326,5 +368,24 @@ class CartController extends Controller
             $shippingPrice = $shipping->shipping_time;
         }
         return response()->json((int)$shippingPrice);
+    }
+
+    public function createGuestUser($email, $name)
+    {
+        $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
+
+        $customer = \Stripe\Customer::create([
+            'email' => 'test',
+            'name' => 'satinderpanesar03@gmail.com',
+        ]);
+
+        $customer = Customer::create([
+            'stripe_id' => $customer->id,
+            'name' => $name,
+            'email' => $email,
+            'password' => Hash::make(rand(10000000, 99999999)),
+        ]);
+
+        return $customer->id;
     }
 }

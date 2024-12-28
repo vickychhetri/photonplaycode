@@ -318,6 +318,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
 
     //    Route::get('/', [HomePageController::class,'index'])->name('homepage');
+    Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
+    Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
 
     Route::group(['middleware' => 'customerCheck'], function () {
         Route::get('edit-overview', [CustomerProfileController::class, 'overview'])->name('overview');
@@ -334,8 +336,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('delete-address/{id}', [CustomerProfileController::class, 'deleteAddress'])->name('delete.address');
         Route::get('default-address/{id}', [CustomerProfileController::class, 'defaultAddress'])->name('default.address');
 
-        Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
-        Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
+
+
 
         Route::get('/account/menu', [SignController::class, 'radarSpeedSigns_menus'])->name("account.menu");
 

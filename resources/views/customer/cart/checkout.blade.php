@@ -26,18 +26,22 @@
 {{--            //main_shipping_double_address - vicky 26-12-2024 start--}}
             <form action="{{route('customer.place.order')}}" method="post">
 {{--                //main_shipping_double_address - vicky 26-12-2024 end--}}
+
             <div class="row">
                 <div class="col-md-8">
                     @csrf
                     <div>
                         <h4>
-                        @if($customer)
-                            {{"Hello, ".$customer->name}}
+                        @if($customer && !is_string($customer))
+                            {{"Hello, ". $customer->name }}
                         <hr/>
+                        @else
+                            {{"Hello, Guest" }}
                         @endif
                         </h4>
                     </div>
                     <h3>billing details</h3>
+                    @if(!is_string($customer))
                     <div class="mb-3">
                         <select name="billing_address" id="saved_address" class="form-select">
                                 <option value="0" selected> --Select Saved Address-- </option>
@@ -46,23 +50,29 @@
                             @empty
                                 <option value="0">No addresses saved.</option>
                             @endforelse
-
                         </select>
                     </div>
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" required>
+                    @endif
+                    @error('email')<span class="text-danger">{{ $message }}</span>@enderror
+                    @if(!is_string($customer))
+                        <input type="hidden" class="form-control rounded-0 px-3" name="email_login" value="{{ $customer->email }}">
+                    @else
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Name" name="name" value="" required>
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" required>
+                    @endif
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" >
                     <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" value="">
-{{--                    //main_shipping_double_address - vicky 26-12-2024 start--}}
                     <div>
-                        <select id="billing_country"  name="billing_country"  class="form-control rounded-0 px-3" required>
+                        <select id="billing_country"  name="billing_country"  class="form-control rounded-0 px-3" >
                             <option value="">Select Country</option>
                         </select>
-                        <select id="billing_state"  name="billing_state" class="form-control rounded-0 px-3" required>
+                        <select id="billing_state"  name="billing_state" class="form-control rounded-0 px-3" >
                             <option value="">Select State</option>
                         </select>
-                        <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3" required>
+                        <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3" >
                             <option value="">Select City</option>
                         </select>
-                        <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" placeholder="Postal Code" required />
+                        <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" placeholder="Postal Code"  />
                     </div>
 
                     <h3 class="mt-5">Shipping Details</h3>
@@ -73,6 +83,7 @@
 
                     <div id="shipping-details" class="mt-3 d-none">
                         <input type="text" class="form-control rounded-0 px-3" name="shipping_street" placeholder="Street Number">
+
                         <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" placeholder="Flat/Suite">
                         <select id="shipping_country" class="form-control rounded-0 px-3" name="shipping_country">
                             <option value="">Select Country</option>
