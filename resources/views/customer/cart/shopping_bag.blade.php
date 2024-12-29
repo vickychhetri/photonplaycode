@@ -36,7 +36,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
+                                @php
+                                    $currency_icon = session('currency_icon', '$');
+                                @endphp
                                 @forelse ($cart_table as $key => $cart)
 
                                     <tr>
@@ -70,9 +72,9 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="border border-end text-center">${{$cart->price}}</td>
+                                        <td class="border border-end text-center">{{$currency_icon}} {{$cart->price}}</td>
                                         <td class="border border-end text-center">{{$cart->quantity}}</td>
-                                        <td class="border border-end text-center">${{$total_price =  $cart->price * $cart->quantity}}</td>
+                                        <td class="border border-end text-center">{{$currency_icon}}  {{$total_price =  $cart->price * $cart->quantity}}</td>
                                         <td class="border border-end text-center"><a href="{{route('customer.delete.cart.table.item', $cart->id ?? $cart->id)}}"><img src="{{asset('assets/customer/images/crosss.png')}}" alt="Not Found" class="cartItem"></a>
 
                                         </td>
