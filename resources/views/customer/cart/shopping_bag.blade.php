@@ -106,7 +106,7 @@
                                                         <input type="hidden" name="product_id" value="{{ $l_product->id }}">
                                                         <input type="hidden" name="price" value="{{ $l_product->price }}">
                                                         <input type="hidden" name="title" value="{{ $l_product->title }}">
-                                                        <input type="hidden" name="category" value="{{ $l_product->category }}">
+                                                        <input type="hidden" name="category" value="{{ $l_product->category->title }}">
                                                         <input type="hidden" name="quantity" value="1">
                                                         <input type="hidden" name="cover_image" value="{{ $l_product->cover_image }}">
                                                         <button class="btn btn-primary  btn-sm p-1 w-100">Add To Cart</button>
