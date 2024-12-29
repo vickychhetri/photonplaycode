@@ -58,7 +58,7 @@ class SignController extends Controller
         $productLists = Product::where('category_id', 1)->take(5)->get();
 
         //list all accessories
-        $linked_products=Product::getLinkedProducts($product->id);
+        $linked_products=Product::getLinkedProducts([$product->id]);
 
         // dd($product);
         $postalCode = '';
