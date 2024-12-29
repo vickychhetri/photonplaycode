@@ -25,7 +25,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <table class="table border">
+                            <table class="table border bg-white">
                                 <thead>
                                 <tr>
                                     <th scope="col" class="text-capitalize text-center">Product</th>
@@ -38,6 +38,7 @@
                                 <tbody>
                                 @php
                                     $currency_icon = session('currency_icon', '$');
+                                    $exchange_rate = session('exchange_rate', '1');
                                 @endphp
                                 @forelse ($cart_table as $key => $cart)
 
@@ -46,7 +47,7 @@
                                             <div class="d-flex align-items-center p-1">
                                                 <img src="{{asset('storage/'.$cart->cover_image)}}" alt="Not Found" class="profile-table me-2 h-25 w-25">
                                                 <div class="d-flex flex-column">
-                                                    <h6 class="text-uppercase">{{$cart->category}}</h6>
+{{--                                                    <h6 class="text-uppercase">{{$cart->category}}</h6>--}}
                                                     <span>Brand : {{$cart->title}}</span>
                                                     {{-- <span>Model: ---</span> --}}
                                                     <span>Color : {{$cart->color}}</span>
@@ -60,7 +61,7 @@
 
                                                                     <span> {{$opp->product_specilization->specilization->title}} :
 
-                                                            {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span>
+                                                            {{$opp->specializationoptions->option}}({{$currency_icon}}{{$opp->specialization_price*$exchange_rate}}) <span>
                                                     @endif
                                                    <br>
                                                                     @empty

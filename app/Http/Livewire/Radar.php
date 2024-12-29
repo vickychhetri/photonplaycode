@@ -13,7 +13,7 @@ class Radar extends Component
 {
     public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price ;
     public $linked_products;
-
+    public  $currency_icon_selected;
     public $product_id;
     public $color = 'Amber-Color.png';
     public $dynamic_specs = [];
@@ -22,6 +22,8 @@ class Radar extends Component
         $this->product_id = $product_id;
         $this->sessionId = Session::getId();
         $this->exchangeRate = Session::get('exchange_rate', 1);
+        $this->currency_icon_selected = Session::get('currency_icon', '$');
+
 
         $this->product = Product::with([
             'images' => fn($r) => $r->where('color', 'amber'),
@@ -53,6 +55,7 @@ class Radar extends Component
     public function render()
     {
         $this->exchange_rate = Session::get('exchange_rate', 1);
+        $this->currency_icon_selected = Session::get('currency_icon', '$');
 
         $this->productLists = Product::with(['category'])
             ->where('category_id', 1)
@@ -128,6 +131,8 @@ class Radar extends Component
                     'category' => $this->category,
                     'quantity' => $this->quantity,
                     'cover_image' => $this->cover_image,
+                    'currency_code'=> $this->currency_icon_selected,
+                    'exchange_rate'=>$this->exchangeRate
                 ]);
             }
 
@@ -147,6 +152,8 @@ class Radar extends Component
                     'quantity' => $this->quantity,
                     'cover_image' => $this->cover_image,
                     'color' => $this->color,
+                    'currency_code'=> $this->currency_icon_selected,
+                    'exchange_rate'=>$this->exchangeRate
                 ]);
             }
 
