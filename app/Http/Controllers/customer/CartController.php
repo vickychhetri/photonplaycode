@@ -103,6 +103,54 @@ $products_list_ids=[];
         return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total','linked_products'));
     }
 
+
+
+    public function addAccessoryBag(Request $request){
+        $sessionId = Session::getId();
+        if(!Session::get('user')){
+            $cart = Cart::where(['session_id' => $sessionId, 'product_id' => $request->product_id, 'price' => $request->price,])->first();
+            if($cart){
+                $cart->update(['quantity' => $cart->quantity + $request->quantity]);
+            }else{
+                Cart::create([
+                    'session_id' => $sessionId,
+                    'option_ids' => null,
+                    'product_id' => $request->product_id,
+                    'price' => $request->price,
+                    'title' => $request->title,
+                    'color' => NULL,
+                    'category' => $request->category,
+                    'quantity' => $request->quantity,
+                    'cover_image' => $request->cover_image,
+                ]);
+            }
+
+        }else{
+            $cart = Cart::where(['user_id' => Session::get('user')->id, 'product_id' => $request->product_id, 'price' => $request->price,])->first();
+            if($cart){
+                $cart->update(['quantity' => $cart->quantity + $request->quantity]);
+            }else{
+                Cart::create([
+                    'user_id' => Session::get('user')->id,
+                    'product_id' => $request->product_id,
+                    'option_ids' =>  null,
+                    'price' => $request->price,
+                    'title' => $request->title,
+                    'category' => $request->category,
+                    'quantity' => $request->quantity,
+                    'cover_image' => $request->cover_image,
+                    'color' => null,
+                ]);
+            }
+
+        }
+        if($request->p == 1){
+            return redirect()->back()->with('success', 'Item added to cart successfully!');
+        }
+        return redirect()->route('customer.shopping.bag');
+    }
+
+
     public function addShoppingBag(Request $request){
         // dd($request->dynamic_specs);
         $specPrice = 0;

@@ -479,10 +479,11 @@
                             <h5 class="mb-4 text-black">Compatible Accessories</h5>
                                     @foreach($linked_products as $ap)
                                         <div class="col-md-12 mb-3">
-
+                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}">
+                                                @csrf
                                         <div class="card mx-auto" style="width: 18rem;">
                                             <div class="d-flex justify-content-center align-items-center w-100 p-2 m-2">
-                                                <img src="{{ asset('storage/' . $pf->icon )  }}" class="card-img-top"
+                                                <img src="{{ asset('storage/' . $ap->cover_image )  }}" class="card-img-top"
                                                      alt="SafePace Universal Mounting Bracket"
                                                      style="max-width: 100%;max-width: 200px;">
                                             </div>
@@ -495,10 +496,17 @@
                                                 <h5 class="card-title"> {{$ap->product_heading_text??$ap->title}}</h5>
                                                 <p class="card-text"> {{$currency_icon}}{{$ap->price*$exchange_rate}}</p>
                                                 <p class="text-muted p-2">{{$ap->category->title}}</p>
+
+                                                <input type="hidden" name="product_id" value="{{ $ap->id }}">
+                                                <input type="hidden" name="price" value="{{ $ap->price }}">
+                                                <input type="hidden" name="title" value="{{ $ap->title }}">
+                                                <input type="hidden" name="category" value="{{ $ap->category }}">
+                                                <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
                                                 <button class="btn btn-primary">Add to Cart</button>
                                             </div>
                                         </div>
-
+                                            </form>
                                         </div>
                                     @endforeach
                         </div>
