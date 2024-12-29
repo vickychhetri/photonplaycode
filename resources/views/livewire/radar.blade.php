@@ -202,6 +202,7 @@
                                             <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
                                                     x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
                                                     x-model="dynamic_specs.{{ $specilization->id }}"
+                                                    wire:model="dynamic_specs.{{ $specilization->id }}"
                                                     id="{{ $specilization->id }}"
                                                     class="form-select mb-3"
                                                     style="border: 2px solid black; font-weight: bold;"
