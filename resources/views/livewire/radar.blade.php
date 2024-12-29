@@ -59,7 +59,7 @@
                             </div>
 
                             <h4 class="font-weight-bold">{{ $product->category->title }}</h4>
-                            <span class="text-capitalize d-block">{{ $product->title }}</span>
+                            <span class="text-capitalize d-block">{{ $product->product_heading_text??$product->title }}</span>
 
                             @if ($product && $product->sku)
                                 <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>
