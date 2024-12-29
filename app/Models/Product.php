@@ -28,10 +28,15 @@ class Product extends Model
         return $this->BelongsTo(Category::class);
     }
 
-    public static function getLinkedProducts($productId)
+    public static function getLinkedProducts(array $productIds)
     {
-        return self::whereJsonContains('products_linked', (string) $productId)->get();
+        return self::where(function ($query) use ($productIds) {
+            foreach ($productIds as $productId) {
+                $query->orWhereJsonContains('products_linked', (string) $productId);
+            }
+        })->get();
     }
+
 
 
     public static function getProductSKU($productId,$specilizations_data,$other_data)

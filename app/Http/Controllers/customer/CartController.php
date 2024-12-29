@@ -59,13 +59,16 @@ class CartController extends Controller
             $discounted_amount = 0;
             $coupon_name = '0';
         }
-
+$products_list_ids=[];
         if(!Session::get('user')){
             $cart_table =  Cart::where('session_id', Session::getId())->get();
             // dd(unserialize($cart_table[0]['option_ids']));
             $total = 0;
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
+                if(!in_array($cart_t->product_id,$products_list_ids)){
+                    $products_list_ids[]=$cart_t->product_id;
+                }
             }
             $grand_total = $total - $discount;
         }else{
@@ -73,9 +76,14 @@ class CartController extends Controller
             $total = 0;
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
+                if(!in_array($cart_t->product_id,$products_list_ids)){
+                    $products_list_ids[]=$cart_t->product_id;
+                }
             }
             $grand_total = $total - $discount;
         }
+
+        $linked_products=Product::getLinkedProducts($products_list_ids);
 
         // if(Session::get('user')){
         //     $postalCode = UserPostalCode::where('user_id', Session::get('user')->id)->first();
@@ -92,7 +100,7 @@ class CartController extends Controller
 
         // $shippingTax = $shippingRate->shipping_rate ?? $taxes->shipping_time;
 
-        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total'));
+        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total','linked_products'));
     }
 
     public function addShoppingBag(Request $request){
@@ -211,12 +219,15 @@ class CartController extends Controller
         try{
             if(!Session::get('user')){
                 $this->validate($request, [
-                    'email' => 'required|email|unique:customers',
+                    'email' => 'required|email',
                     'name' => 'required|string',
                 ]);
                 $email = $request->email;
                 $name = $request->name;
-                $userId = $this->createGuestUser($email, $name);
+                $userId=$this->findAndUseExistUser($request->email);
+                if(!isset($userId)){
+                    $userId = $this->createGuestUser($email, $name);
+                }
                 $type = 'guest';
             }else{
                 $email = Session::get('user')->email;
@@ -378,6 +389,15 @@ class CartController extends Controller
         return response()->json((int)$shippingPrice);
     }
 
+
+    public function findAndUseExistUser($email)
+    {
+        $customer= Customer::select('id')->where('email',$email)->first();
+        if(isset($customer)){
+            return $customer->id;
+        }
+       return null;
+    }
     public function createGuestUser($email, $name)
     {
         $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));

@@ -331,8 +331,8 @@
     })
 
     $(document).ready(function() {
-        $('#saved_address').on('click', function() {
-            var addressId = $('#saved_address').val(); // You might want to make sure this is the correct way to fetch addressId
+        $('#saved_address').on('click', function () {
+            var addressId = $('#saved_address').val(); // Fetch the selected address ID
             var url = "{{ route('customer.get-saved-address', ':id') }}";
             url = url.replace(':id', addressId);
 
@@ -343,35 +343,78 @@
                 url: url,
                 type: 'GET',
                 dataType: 'json',
-                success: function(result) {
+                success: function (result) {
                     if (result) {
-                        // Set text values
+                        // Set text values for street, flat, and postcode
                         $('#billing_street').val(result.street_number);
                         $('#billing_flat_suite').val(result.flat_suite);
                         $('#billing_postcode').val(result.postcode);
 
-                        // Set selected country
+                        // Set the selected country and trigger change event to populate states
                         if (result.country) {
-                            $('#billing_country').val(result.country);
+                            $('#billing_country').val(result.country).trigger('change');
                         }
 
-                        // Load states if available (only if country is selected)
+                        // Load states if a country is selected and set the selected state
+                        function loadStates(selectedCountry, selectedState) {
+                            const apiBaseUrl = "https://countriesnow.space/api/v0.1";
+                            $.ajax({
+                                url: `${apiBaseUrl}/countries/states`,
+                                type: "POST",
+                                contentType: "application/json",
+                                data: JSON.stringify({ country: selectedCountry }),
+                                success: function (data) {
+                                    if (data.data) {
+                                        const stateSelect = $('#billing_state');
+                                        stateSelect.empty().append('<option value="">Select State</option>');
+                                        data.data.states.forEach(state => {
+                                            const option = $('<option>').val(state.name).text(state.name);
+                                            stateSelect.append(option);
+                                        });
+                                        stateSelect.val(selectedState).trigger('change');
+                                    }
+                                }
+                            });
+                        }
+
+                        // Load cities if a state is selected and set the selected city
+                        function loadCities(selectedState, selectedCity) {
+                            const apiBaseUrl = "https://countriesnow.space/api/v0.1";
+                            $.ajax({
+                                url: `${apiBaseUrl}/countries/state/cities`,
+                                type: "POST",
+                                contentType: "application/json",
+                                data: JSON.stringify({ country: result.country, state: selectedState }),
+                                success: function (data) {
+                                    if (data.data) {
+                                        const citySelect = $('#billing_city');
+                                        citySelect.empty().append('<option value="">Select City</option>');
+                                        data.data.forEach(city => {
+                                            const option = $('<option>').val(city).text(city);
+                                            citySelect.append(option);
+                                        });
+                                        citySelect.val(selectedCity);
+                                    }
+                                }
+                            });
+                        }
+
+                        // Load states and cities if necessary
                         if (result.country && result.state) {
                             loadStates(result.country, result.state);
                         }
-
-                        // Load cities if available (only if state is selected)
                         if (result.state && result.city) {
                             loadCities(result.state, result.city);
                         }
                     }
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     console.error("Error fetching address:", status, error);
                     alert("An error occurred while fetching the address data.");
                 }
             });
         });
+
 
         // Function to load states based on country
         function loadStates(country, selectedState) {
