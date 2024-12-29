@@ -50,7 +50,7 @@
 {{--                                                    <h6 class="text-uppercase">{{$cart->category}}</h6>--}}
                                                     <span>Brand : {{$cart->title}}</span>
                                                     {{-- <span>Model: ---</span> --}}
-                                                    <span>Color : {{$cart->color}}</span>
+{{--                                                    <span>Color : {{$cart->color}}</span>--}}
                                                     @if (unserialize($cart->option_ids) != null)
                                                         @forelse (unserialize($cart->option_ids) as $option)
                                                             @php
