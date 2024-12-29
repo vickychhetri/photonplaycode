@@ -17,13 +17,13 @@
                         <div id="dynamic_specs"></div>
                         <div class="row">
                             <div class="col-md-3">
-                                <div class="desktop-display" style="max-height: 400px; overflow-y: auto;">
+                                <div class="desktop-display" style="max-height: 400px; overflow-y: auto;" wire:ignore >
                                     <slider>
                                         @include('partials.slider')
                                     </slider>
                                 </div>
                             </div>
-                            <div class="col-md-9 bg-white">
+                            <div class="col-md-9 bg-white" wire:ignore >
                                 <div class="responsive-two">
                                     <div>
                                         <div class="p-2" id="slider_static">
@@ -42,11 +42,11 @@
                             <div class="d-flex flex-row flex-wrap">
                                 @foreach($product->images as $im_g)
                                     <div class="radar-item-box">
-                                        <img src="{{ asset('storage/'.$im_g->image) }}" class="img-fluid" alt="{{ $product->title }}">
+                                        <img src="{{ asset('storage/'.$im_g->image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore >
                                     </div>
                                 @endforeach
                                 <div class="radar-item-box">
-                                    <img src="{{ asset('storage/'.$product->cover_image) }}" class="img-fluid" alt="{{ $product->title }}">
+                                    <img src="{{ asset('storage/'.$product->cover_image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore>
                                 </div>
                             </div>
                         </div>
@@ -65,17 +65,17 @@
                                 <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>
                             @endif
 
-                            <!-- Star Rating Section -->
-                            <div class="d-flex justify-content-start align-items-center gap-1">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    <img src="{{ asset('assets/customer/images/star.svg') }}" alt="{{ $i }} Star" class="img-fluid" width="14px">
-                                @endfor
-                                <span>( 150+ Customers Reviews)</span>
-                            </div>
+{{--                            <!-- Star Rating Section -->--}}
+{{--                            <div class="d-flex justify-content-start align-items-center gap-1">--}}
+{{--                                @for ($i = 1; $i <= 5; $i++)--}}
+{{--                                    <img src="{{ asset('assets/customer/images/star.svg') }}" alt="{{ $i }} Star" class="img-fluid" width="14px">--}}
+{{--                                @endfor--}}
+{{--                                <span>( 150+ Customers Reviews)</span>--}}
+{{--                            </div>--}}
 
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
-                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">{{$currency_icon_selected}}{{ $price }}</span></p>
+                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price" class="h3 font-weight-bold" style="font-weight: bold;">{{$currency_icon_selected}}{{ $price }}</span></p>
                             @else
                                 <p class="fw-bold fs-5" id="total_price2"></p>
                             @endif
@@ -196,27 +196,105 @@
 
                                     @foreach ($product->specilizations->reverse() as $specilization)
                                         <div class="col-md-8 bg-transparent">
+
                                             <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
-                                            <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
-                                                    x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
-                                                    x-model="dynamic_specs.{{ $specilization->id }}"
-                                                    wire:model="dynamic_specs.{{ $specilization->id }}"
-                                                    id="{{ $specilization->id }}"
-                                                    class="form-select mb-3"
-                                                    style="border: 2px solid black; font-weight: bold;"
-                                                    wire:ignore
-                                                    required>
-                                                <option selected>--Choose an Option--</option>
-                                                <!-- Loop through each option for this specialization -->
-                                                @foreach($specilization->options as $option)
-                                                    <option value="{{ $option->id }}">
-                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
-                                                        @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
-                                                            Subscription Free For 1 Year
-                                                        @endif
-                                                    </option>
-                                                @endforeach
-                                            </select>
+                                            @if($specilization->specilization->code=="CR")
+                                                <div class="d-flex justify-content-center">
+                                                    <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
+                                                            x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
+                                                            x-model="dynamic_specs.{{ $specilization->id }}"
+                                                            wire:model="dynamic_specs.{{ $specilization->id }}"
+                                                            id="{{ $specilization->id }}"
+                                                            class="form-select mb-3 color_select_box_handler"
+                                                            style="border: 2px solid black; font-weight: bold;"
+                                                            wire:ignore
+                                                            required>
+                                                        <option selected>--Choose an Option--</option>
+                                                        <!-- Loop through each option for this specialization -->
+                                                        @foreach($specilization->options as $option)
+                                                            <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code }}">
+                                                                {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                                @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
+                                                                    Subscription Free For 1 Year
+                                                                @endif
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    &nbsp;
+                                                    <span>
+                                                    <img src="{{asset('/assets/images/radar/color/AM.png')}}" style="height:40px;" id="imgicon_color_st-{{ $specilization->id }}"  alt="color" wire:ignore />
+                                                   </span>
+
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function () {
+                                                            // Get the select element and image element
+                                                            const selectElement = document.getElementById('{{ $specilization->id}}');
+                                                            console.log(selectElement);
+                                                            const imgElement = document.getElementById('imgicon_color_st-{{ $specilization->id }}');
+
+                                                            // Add an event listener to handle changes
+                                                            selectElement.addEventListener('change', function () {
+                                                                // Get the selected option
+
+                                                                const selectedOption = selectElement.options[selectElement.selectedIndex];
+
+                                                                // Retrieve the data-code attribute
+                                                                const code = selectedOption.getAttribute('data-code');
+                                                                @php
+                                                                    $base_url_website=env('APP_URL', 'http://127.0.0.1:8000/')
+                                                                @endphp
+                                                                // Update the image source dynamically
+                                                                if (code) {
+                                                                    const newImageSrc = `{{$base_url_website}}/assets/images/radar/color/${code}.png`;
+
+                                                                    console.log('Preloading image:', newImageSrc);
+                                                                    const preloadImage = new Image();
+                                                                    console.log('Preload object created');
+                                                                    preloadImage.src = newImageSrc;
+                                                                    preloadImage.onload = function () {
+                                                                        console.log('Image successfully loaded:', newImageSrc);
+                                                                        imgElement.src = newImageSrc;
+                                                                    };
+                                                                    preloadImage.onerror = function () {
+                                                                        console.error('Failed to preload image:', newImageSrc);
+                                                                    };
+
+
+
+                                                                }
+
+                                                            });
+                                                        });
+
+                                                    </script>
+
+                                                </div>
+
+                                            @else
+                                                <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
+                                                        x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
+                                                        x-model="dynamic_specs.{{ $specilization->id }}"
+                                                        wire:model="dynamic_specs.{{ $specilization->id }}"
+                                                        id="{{ $specilization->id }}"
+                                                        class="form-select mb-3"
+                                                        style="border: 2px solid black; font-weight: bold;"
+                                                        wire:ignore
+                                                        required>
+                                                    <option selected>--Choose an Option--</option>
+                                                    <!-- Loop through each option for this specialization -->
+                                                    @foreach($specilization->options as $option)
+                                                        <option value="{{ $option->id }}">
+                                                            {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                            @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
+                                                                Subscription Free For 1 Year
+                                                            @endif
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            @endif
+
+
+
                                         </div>
                                     @endforeach
                                 </div>
