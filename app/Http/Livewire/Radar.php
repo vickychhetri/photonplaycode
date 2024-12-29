@@ -90,7 +90,7 @@ class Radar extends Component
                 $implodeSpec[] = $specs;
                 $specss = DB::table('product_spcialization_options')
                     ->where('id', $specs)
-                    ->get() // returns a collection of results
+                    ->get()
                     ->map(function ($item) {
                         $item->specialization_price *= $this->exchangeRate;
                         return $item;
@@ -122,7 +122,7 @@ class Radar extends Component
                     'session_id' => $this->sessionId,
                     'option_ids' => serialize($this->dynamic_specs) ?? null,
                     'product_id' => $this->Pid,
-                    'price' => $this->price + $this->specPrice,
+                    'price' => $this->price,
                     'title' => $this->title,
                     'color' => $this->color,
                     'category' => $this->category,
@@ -141,7 +141,7 @@ class Radar extends Component
                     'user_id' => Session::get('user')->id,
                     'product_id' => $this->Pid,
                     'option_ids' => serialize($this->dynamic_specs) ?? null,
-                    'price' => $this->price + $this->specPrice,
+                    'price' => $this->price,
                     'title' => $this->title,
                     'category' => $this->category,
                     'quantity' => $this->quantity,
