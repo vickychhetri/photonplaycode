@@ -29,6 +29,9 @@
                     <li><a href="#" class="text-white text-decoration-none">Check Order Status</a></li>
                     <li><a href="#" class="text-white text-decoration-none">Cart</a></li>
                     <li><a href="#" class="text-white text-decoration-none">Report an Issue</a></li>
+                    <li>
+                       <x-CurrencySelector/>
+                    </li>
                 </ul>
             </div>
 

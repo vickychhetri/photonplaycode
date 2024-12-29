@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CMSHomeController;
+use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\customer\Auth\LoginController;
 use App\Http\Controllers\customer\CartController;
 use App\Http\Controllers\customer\ContactUsController;
@@ -320,6 +321,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     //    Route::get('/', [HomePageController::class,'index'])->name('homepage');
     Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
     Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
+    Route::post('currency-change', [CurrencyController::class, 'changeCurrency'])->name('currency.change');
 
     Route::group(['middleware' => 'customerCheck'], function () {
         Route::get('edit-overview', [CustomerProfileController::class, 'overview'])->name('overview');
