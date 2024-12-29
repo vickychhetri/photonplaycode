@@ -7,7 +7,7 @@
             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
             <input type="hidden" wire:model="title" name="title" id="title" value="{{ $product->title }}">
             <input type="hidden" wire:model="category" name="category" id="category" value="{{ $product->category->title }}">
-            <input type="hidden" wire:model="price" name="price" id="price" value="{{ $product->price }}">
+            <input type="hidden" wire:model="price" name="price" id="price" value="{{ $product->price*$exchange_rate }}">
             <input type="hidden" wire:model="cover_image" name="cover_image" id="cover_image" value="{{ $product->cover_image }}">
 
             <div class="container">
@@ -75,7 +75,7 @@
 
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
-                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">${{ $price }}</span></p>
+                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">{{$currency_icon_selected}}{{ $price }}</span></p>
                             @else
                                 <p class="fw-bold fs-5" id="total_price2"></p>
                             @endif
@@ -150,15 +150,13 @@
 {{--                                        </script>--}}
 {{--                                    </div>--}}
 
-
-                                    <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
                                 </div>
                                 <div x-data="{
                                         dynamic_specs: {},
-                                        total_amount_single_product: {{ $product->price }},
-                                        product_amount: {{ $product->price }},
+                                        total_amount_single_product: {{ $product->price*$exchange_rate }},
+                                        product_amount: {{ $product->price*$exchange_rate }},
                                         counts: 1,
-                                        total_price: {{ $product->price }},
+                                        total_price: {{ $product->price*$exchange_rate }},
 
                                         changeCalculatedAmount(specId, priceElement) {
                                             const selectedOption = priceElement.options[priceElement.selectedIndex];
@@ -212,7 +210,7 @@
                                                 <!-- Loop through each option for this specialization -->
                                                 @foreach($specilization->options as $option)
                                                     <option value="{{ $option->id }}">
-                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price }}</span>)
+                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
                                                         @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                             Subscription Free For 1 Year
                                                         @endif
@@ -251,13 +249,14 @@
 
 
                                 <div class="px-4 py-lg-0 py-4">
-                                    <span style="display: none" class="one-thousand" id="total_price">${{ $product->price }}</span>
+                                    <span style="display: none" class="one-thousand" id="total_price">${{ $product->price*$exchange_rate }}</span>
                                 </div>
                                 <button data-bs-toggle="modal" data-bs-target="#exampleModalCenter" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
                                     <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
                                 </button>
                             </div>
                         </div>
+                        <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
                     </div>
                 </div>
             </div>
