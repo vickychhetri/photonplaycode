@@ -88,20 +88,22 @@ class Radar extends Component
 
     public function addToCart(){
         $impodeSpec = array();
-        if(isset($this->dynamic_specs)){
-            foreach($this->dynamic_specs as $specs){
-                $implodeSpec[] = $specs;
-                $specss = DB::table('product_spcialization_options')
-                    ->where('id', $specs)
-                    ->get()
-                    ->map(function ($item) {
-                        $item->specialization_price *= $this->exchangeRate;
-                        return $item;
-                    });
+//        if(isset($this->dynamic_specs)){
+//            foreach($this->dynamic_specs as $specs){
+//                $implodeSpec[] = $specs;
+//                $specss = DB::table('product_spcialization_options')
+//                    ->where('id', $specs)
+//                    ->get()
+//                    ->map(function ($item) {
+//                        $item->specialization_price *= $this->exchangeRate;
+//                        return $item;
+//                    });
+//
+//                $this->specPrice = $specss->sum('specialization_price');
+//
+//            }
+//        }
 
-                $this->specPrice = $specss->sum('specialization_price');
-            }
-        }
         if( $this->postalCode){
             if(Session::get('user')){
                 UserPostalCode::where('user_id', Session::get('user')->id)->delete();
