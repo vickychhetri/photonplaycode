@@ -96,14 +96,24 @@
                                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                                    @foreach($linked_products as $l_product)
                                         <div class="col-md-4">
-                                            <div class="card text-center">
-                                                <img src="{{asset('storage/'.$l_product->cover_image)}}"  class="card-img-top" alt="Accessory 1" style="max-height: 200px; object-fit: contain;">
-                                                <div class="card-body">
-                                                    <h6 class="card-title">S{{$l_product->product_heading_text??$l_product->title}}</h6>
-                                                    <p class="card-text text-primary">$ {{$l_product->price}}</p>
-                                                    <button class="btn btn-primary  btn-sm p-1 w-100">Add To Cart</button>
+                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}">
+                                                @csrf
+                                                <div class="card text-center">
+                                                    <img src="{{asset('storage/'.$l_product->cover_image)}}"  class="card-img-top" alt="Accessory 1" style="max-height: 200px; object-fit: contain;">
+                                                    <div class="card-body">
+                                                        <h6 class="card-title">S{{$l_product->product_heading_text??$l_product->title}}</h6>
+                                                        <p class="card-text text-primary">$ {{$l_product->price}}</p>
+                                                        <input type="hidden" name="product_id" value="{{ $l_product->id }}">
+                                                        <input type="hidden" name="price" value="{{ $l_product->price }}">
+                                                        <input type="hidden" name="title" value="{{ $l_product->title }}">
+                                                        <input type="hidden" name="category" value="{{ $l_product->category->title }}">
+                                                        <input type="hidden" name="quantity" value="1">
+                                                        <input type="hidden" name="cover_image" value="{{ $l_product->cover_image }}">
+                                                        <button class="btn btn-primary  btn-sm p-1 w-100">Add To Cart</button>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </form>
+
                                         </div>
                                    @endforeach
 

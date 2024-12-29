@@ -191,6 +191,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
         Route::get('confirmation/{order_id}', [CartController::class, 'confirmation'])->name('confirmation');
         Route::post('add-shopping-bag', [CartController::class, 'addShoppingBag'])->name('store.shopping.bag');
+        Route::post('add-accessory-shopping-bag', [CartController::class, 'addAccessoryBag'])->name('store.shopping.accessory.bag');
         Route::get('remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cartitem');
         Route::get('specification-ajax', [SignController::class, 'specificationAjax'])->name('specification.ajax');
 
