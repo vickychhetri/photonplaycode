@@ -71,7 +71,7 @@ class Radar extends Component
             $this->cartItems = Cart::where('session_id', $this->sessionId)->get();
         }
 
-        $this->linked_products=Product::getLinkedProducts($this->Pid);
+        $this->linked_products=Product::getLinkedProducts([$this->Pid]);
 
         return view('livewire.radar', [
             'productLists' => $this->productLists,
