@@ -211,12 +211,15 @@ class CartController extends Controller
         try{
             if(!Session::get('user')){
                 $this->validate($request, [
-//                    'email' => 'required|email|unique:customers',
+                    'email' => 'required|email',
                     'name' => 'required|string',
                 ]);
                 $email = $request->email;
                 $name = $request->name;
-                $userId = $this->createGuestUser($email, $name);
+                $userId=$this->findAndUseExistUser($request->email);
+                if(!isset($userId)){
+                    $userId = $this->createGuestUser($email, $name);
+                }
                 $type = 'guest';
             }else{
                 $email = Session::get('user')->email;
@@ -378,6 +381,15 @@ class CartController extends Controller
         return response()->json((int)$shippingPrice);
     }
 
+
+    public function findAndUseExistUser($email)
+    {
+        $customer= Customer::select('id')->where('email',$email)->first();
+        if(isset($customer)){
+            return $customer->id;
+        }
+       return null;
+    }
     public function createGuestUser($email, $name)
     {
         $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));

@@ -128,7 +128,7 @@ WAY GROUND)</span>
                                                     <input type="text" name="coupon" class="form-control rounded-0 mb-4" placeholder="Enter your coupon here" @if ($coupon_name != 0) readonly @endif value="@if ($coupon_name != 0) {{strtoupper($coupon_name)}} @endif">
                                                     @if ($coupon_name == 0)
                                                         <input type="hidden" name="total" value="{{$grand_total}}">
-                                                        <button class="btn btn-primary rounded-0 w-100 p-1 ">Apply Coupon</button>
+                                                        <button class="btn btn-primary rounded-0 w-100 p-1 " <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Apply Coupon</button>
                                                     @else
                                                         <input type="hidden" name="remove_coupon" value="1">
                                                         <span class="text-success"><b> Coupon Successfully Applied</b></span>
@@ -139,12 +139,65 @@ WAY GROUND)</span>
                                             <p class="mt-1 mb-1" style="font-size: 10px;font-weight: bold;">
                                                 Promotional offers cannot be combined with any other offers or discounts, including those in a sales quote. Some exclusions may apply. Products shipped by truck are not eligible for free shipping. Free shipping offers apply only to the continental United States.
                                             </p>
-                                            <form action="{{route('customer.checkout')}}" method="any">
-                                                @csrf
-                                                <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
-                                                <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
-                                                <button type="submit" class=" btn btn-primary p-1 btn-block w-100 rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Proceed to buy</button>
-                                            </form>
+
+
+                                            @if(Session::get('user'))
+
+                                                <form action="{{route('customer.checkout')}}" method="any">
+                                                    @csrf
+                                                    <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
+                                                    <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
+                                                    <button type="submit" class=" btn btn-primary p-1 btn-block w-100 rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Proceed to buy</button>
+                                                </form>
+
+                                            @else
+                                                <!-- Main Form -->
+                                                <form id="checkoutForm" action="{{ route('customer.checkout') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="coupon_s" value="{{ $coupon_name }}">
+                                                    <input type="hidden" name="discount_s" value="{{ $discounted_amount }}">
+                                                    <input type="hidden" id="loginOption" name="login_option" value=""> <!-- To capture login/guest login -->
+                                                    <button type="button" class="btn btn-primary p-1 btn-block w-100 rounded-0 {{ count($cart_table) <= 0 ? 'disabled' : '' }}" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                                        Proceed to buy
+                                                    </button>
+                                                </form>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="loginModalLabel">Choose Login Option</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <input type="button" class="btn btn-outline-primary w-100 mb-3" value="Login" onclick="handleLoginOption('login')">
+                                                                <input type="button" class="btn btn-outline-secondary w-100" value="Guest Login" onclick="handleLoginOption('guest')">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- JavaScript -->
+                                                <script>
+                                                    function handleLoginOption(option) {
+                                                        if (option === 'login') {
+                                                            // Redirect to the login form
+                                                            const loginUrl = "{{ route('customer.loginForm', ['p' => 1, 's' => Session::getId()]) }}";
+                                                            window.location.href = loginUrl;
+                                                        } else if (option === 'guest') {
+                                                            // Set the value of the hidden field for guest login
+                                                            document.getElementById('loginOption').value = option;
+
+                                                            // Submit the form
+                                                            document.getElementById('checkoutForm').submit();
+                                                        }
+                                                    }
+                                                </script>
+
+                                            @endif
+                                            <!-- Main Form -->
+
 
                                         </div>
                                     </div>
