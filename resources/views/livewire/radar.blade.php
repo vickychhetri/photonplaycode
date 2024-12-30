@@ -58,8 +58,8 @@
                             <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
                             </div>
 
-                            <h4 class="font-weight-bold">{{ $product->category->title }}</h4>
-                            <span class="text-capitalize d-block">{{ $product->product_heading_text??$product->title }}</span>
+                            <h4 class="font-weight-bold">{{ $product->product_heading_text??$product->title }}</h4>
+                            <span class="text-capitalize d-block">{{ $product->category->title }}</span>
 
                             @if ($product && $product->sku)
                                 <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>
@@ -334,7 +334,7 @@
                                 </button>
                             </div>
                         </div>
-                        <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
+                        <p class="mt-4">{{$product->shipping_text??"Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days"}}.</p>
                     </div>
                 </div>
             </div>
@@ -498,10 +498,11 @@
                                                 <p class="text-muted p-2">{{$ap->category->title}}</p>
 
                                                 <input type="hidden" name="product_id" value="{{ $ap->id }}">
-                                                <input type="hidden" name="price" value="{{ $ap->price }}">
+                                                <input type="hidden" name="price" value="{{ $ap->price*$exchange_rate }}">
                                                 <input type="hidden" name="title" value="{{ $ap->title }}">
                                                 <input type="hidden" name="category" value="{{ $ap->category->title }}">
                                                 <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="p" value="1">
                                                 <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
                                                 <button class="btn btn-primary">Add to Cart</button>
                                             </div>

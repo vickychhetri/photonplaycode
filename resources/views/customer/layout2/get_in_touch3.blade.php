@@ -33,31 +33,32 @@ $setting = Setting::first();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="contact-header mt-2">
-                        <h2> HAVE SOME QUESTIONS? </h2>
+                    <div class="contact-header mt-4">
+                        <h2 class="text-center"> HAVE SOME QUESTIONS? </h2>
                     </div>
-                    <div class="row">
-                        <div class="col-md-2"> </div>
-                        <div class="col-md-8 bg-white rounded-4 p-2 m-2">
-                            <div class="d-flex justify-content-around align-items-center gap-3">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8 bg-white rounded-4 p-3 m-2">
+                            <div class="d-flex flex-column flex-md-row justify-content-around align-items-center gap-3">
                                 <div>
                                     <p class="h6 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-telephone-fill text-primary" style=" font-size: 22px;"></i>
+                                        <i class="bi bi-telephone-fill text-primary" style="font-size: 22px;"></i>
                                         &nbsp;
-                                        <a href="tel:800-966-9329" class="text-decoration-none text-black" style=" font-size: 22px;">800-966-9329</a>   &nbsp;(Mon–Fri, 9 AM–6 PM EST)
+                                        <a href="tel:800-966-9329" class="text-decoration-none text-black" style="font-size: 22px;">800-966-9329</a>
+                                        &nbsp;(Mon–Fri, 9 AM–6 PM EST)
                                     </p>
                                 </div>
                                 <div>
                                     <p class="h6 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-envelope-fill text-primary" style=" font-size: 22px;"></i>
+                                        <i class="bi bi-envelope-fill text-primary" style="font-size: 22px;"></i>
                                         &nbsp; &nbsp;
-                                        <a href="mailto:sales@photonplay.com" class="text-decoration-none text-black" style=" font-size: 22px;">sales@photonplay.com</a>
+                                        <a href="mailto:sales@photonplay.com" class="text-decoration-none text-black" style="font-size: 22px;">sales@photonplay.com</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="row contact-container align-items-center">
                 <!-- Left Section -->
