@@ -208,6 +208,7 @@
                                                             class="form-select mb-3 color_select_box_handler"
                                                             style="border: 2px solid black; font-weight: bold;"
                                                             wire:ignore
+                                                            code="{{$specilization->specilization->code}}"
                                                             required>
                                                         <option selected>--Choose an Option--</option>
                                                         <!-- Loop through each option for this specialization -->
@@ -278,12 +279,13 @@
                                                         id="{{ $specilization->id }}"
                                                         class="form-select mb-3"
                                                         style="border: 2px solid black; font-weight: bold;"
+                                                        code="{{$specilization->specilization->code}}"
                                                         wire:ignore
                                                         required>
                                                     <option selected>--Choose an Option--</option>
                                                     <!-- Loop through each option for this specialization -->
                                                     @foreach($specilization->options as $option)
-                                                        <option value="{{ $option->id }}">
+                                                        <option value="{{ $option->id }}" data-code="{{ $option->specializationoptions->code }}">
                                                             {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
                                                             @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                                 Subscription Free For 1 Year
