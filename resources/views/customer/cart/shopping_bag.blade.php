@@ -58,7 +58,7 @@
 
                                                                     <span> {{$opp->product_specilization->specilization->title}} :
 
-                                                            {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span>
+                                                            {{$opp->specializationoptions->option}} {{ $currency_icon }} ({{$opp->specialization_price}}) <span>
                                                     @endif
                                                    <br>
                                                                     @empty
@@ -70,9 +70,9 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="border border-end text-center">${{$cart->price}}</td>
+                                        <td class="border border-end text-center">{{ $currency_icon }}  {{$cart->price}}</td>
                                         <td class="border border-end text-center">{{$cart->quantity}}</td>
-                                        <td class="border border-end text-center">${{$total_price =  $cart->price * $cart->quantity}}</td>
+                                        <td class="border border-end text-center">{{ $currency_icon }}  {{$total_price =  $cart->price * $cart->quantity}}</td>
                                         <td class="border border-end text-center"><a href="{{route('customer.delete.cart.table.item', $cart->id ?? $cart->id)}}"><img src="{{asset('assets/customer/images/crosss.png')}}" alt="Not Found" class="cartItem"></a>
 
                                         </td>
@@ -126,12 +126,12 @@
                                             <ul class="order-details p-0 mb-5">
                                                 <li class="d-flex justify-content-between">
                                                     <span class="text">Subtotal excluding Tax</span>
-                                                    <span class="text-dark">${{$total}}</span>
+                                                    <span class="text-dark"> {{ $currency_icon }}  {{$total}}</span>
                                                 </li>
                                                 @if($discounted_amount != 0)
                                                     <li class="d-flex justify-content-between">
                                                         <span class="text">Discount</span>
-                                                        <span class="text-dark text-danger">${{$discounted_amount}}</span>
+                                                        <span class="text-dark text-danger">{{ $currency_icon }}  {{$discounted_amount}}</span>
                                                     </li>
                                                 @endif
                                                 <li class="d-flex justify-content-between">
@@ -149,7 +149,7 @@ WAY GROUND)</span>
 
                                                 <li class="d-flex justify-content-between active">
                                                     <span class="text text-capitalize fw-bold">Total including Tax</span>
-                                                    <span class="text-dark">${{$grand_total  + (($grand_total * $gst) / 100)}}</span>
+                                                    <span class="text-dark">{{ $currency_icon }}  {{$grand_total  + (($grand_total * $gst) / 100)}}</span>
                                                 </li>
                                             </ul>
                                             <form action="{{route('customer.shopping.bag')}}" method="post">

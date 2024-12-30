@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class Radar extends Component
 {
-    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price ;
+    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price, $currency_icon ;
     public $linked_products;
 
     public $product_id;
@@ -22,6 +22,7 @@ class Radar extends Component
         $this->product_id = $product_id;
         $this->sessionId = Session::getId();
         $this->exchangeRate = Session::get('exchange_rate', 1);
+        $this->currency_icon = Session::get('currency_icon', 'USD');
 
         $this->product = Product::with([
             'images' => fn($r) => $r->where('color', 'amber'),

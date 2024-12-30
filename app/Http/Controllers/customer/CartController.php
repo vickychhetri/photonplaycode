@@ -36,6 +36,7 @@ class CartController extends Controller
         $coupon = Coupon::where('coupon_name', $request->coupon)->first();
         $discount = 0;
         $discounted_amount = 0;
+        $currency_icon = Session::get('currency_icon', 'USD');
         $coupon_name = '0';
         if($coupon){
             if ($coupon->expiry_date < date('Y-m-d')) {
@@ -100,7 +101,7 @@ $products_list_ids=[];
 
         // $shippingTax = $shippingRate->shipping_rate ?? $taxes->shipping_time;
 
-        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total','linked_products'));
+        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total','linked_products', 'currency_icon'));
     }
 
     public function addShoppingBag(Request $request){
@@ -217,6 +218,7 @@ $products_list_ids=[];
 
     public function placeOrder(Request $request){
         try{
+            $currency_code = Session::get('currency_code', 'USD');
             if(!Session::get('user')){
                 $this->validate($request, [
                     'email' => 'required|email',
@@ -240,7 +242,7 @@ $products_list_ids=[];
                header('Content-Type: application/json');
                $price = \Stripe\Price::create([
                    'unit_amount' => $request->grand_total * 100,
-                   'currency' => 'usd',
+                   'currency' => $currency_code,
                    'product_data' => [
                      'name' => 'Total Amount',
                    ],
