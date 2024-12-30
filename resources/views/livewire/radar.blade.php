@@ -58,8 +58,8 @@
                             <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
                             </div>
 
-                            <h4 class="font-weight-bold">{{ $product->category->title }}</h4>
-                            <span class="text-capitalize d-block">{{ $product->product_heading_text??$product->title }}</span>
+                            <h4 class="font-weight-bold">{{ $product->product_heading_text??$product->title }}</h4>
+                            <span class="text-capitalize d-block">{{ $product->category->title }}</span>
 
                             @if ($product && $product->sku)
                                 <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>
