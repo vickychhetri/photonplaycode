@@ -24,7 +24,7 @@ class Radar extends Component
         $this->exchangeRate = Session::get('exchange_rate', 1);
         $this->currency_icon_selected = Session::get('currency_icon', '$');
 
-        $this->currency_icon = Session::get('currency_icon', 'USD');
+        $this->currency_icon = Session::get('currency_icon', '$');
 
         $this->product = Product::with([
             'images' => fn($r) => $r->where('color', 'amber'),

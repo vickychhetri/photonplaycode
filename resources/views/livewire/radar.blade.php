@@ -75,7 +75,7 @@
 
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
-                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">{{$currency_icon}} {{ $price }}</span></p>
+                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">{{$currency_icon}}{{ $price }}</span></p>
                             @else
                                 <p class="fw-bold fs-5" id="total_price2"></p>
                             @endif
@@ -213,7 +213,7 @@
                                                 <!-- Loop through each option for this specialization -->
                                                 @foreach($specilization->options as $option)
                                                     <option value="{{ $option->id }}">
-                                                        {{ $option->specializationoptions->option }} (+ {{$currency_icon}} <span class="price">{{ $option->specialization_price }}</span>)
+                                                        {{ $option->specializationoptions->option }} (+ {{$currency_icon}}<span class="price">{{ $option->specialization_price }}</span>)
                                                         @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                             Subscription Free For 1 Year
                                                         @endif
@@ -298,14 +298,14 @@
                                         <div class="text-black fw-bold">{{ $item->title }}</div>
                                         <div>Qty: {{ $item->quantity }}</div>
                                     </div>
-                                    <div class="ms-auto text-black">${{ isset($item->price) ? number_format($item->price, 2) : '' }}</div>
+                                    <div class="ms-auto text-black">{{$currency_icon}}{{ isset($item->price) ? number_format($item->price, 2) : '' }}</div>
                                 </div>
                                 <hr>
                             @endforeach
 
                             <div class="d-flex justify-content-between text-black fw-bold">
                                 <span>Cart subtotal</span>
-                                <span>${{ $cartTotal }}</span>
+                                <span>{{$currency_icon}}{{ $cartTotal }}</span>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -415,7 +415,7 @@
 
                                             <div class="card-body">
                                                 @php
-                                                    $currency_icon = session('currency_icon', '$');
+//                                                    $currency_icon = session('currency_icon', '$');
                                                     $exchange_rate = session('exchange_rate', '1');
                                                 @endphp
                                                 <h5 class="card-title"> {{$ap->product_heading_text??$ap->title}}</h5>

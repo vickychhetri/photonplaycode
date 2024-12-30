@@ -36,7 +36,7 @@ class CartController extends Controller
         $coupon = Coupon::where('coupon_name', $request->coupon)->first();
         $discount = 0;
         $discounted_amount = 0;
-        $currency_icon = Session::get('currency_icon', 'USD');
+        $currency_icon = Session::get('currency_icon', '$');
         $coupon_name = '0';
         if($coupon){
             if ($coupon->expiry_date < date('Y-m-d')) {

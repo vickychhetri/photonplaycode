@@ -268,7 +268,7 @@
 
                              <li class="d-flex justify-content-between">
                                  <span class="text">{{$item->title}} x {{$item->quantity}}</span>
-                                 <span class="text-amount">{{session("currency_icon","USD")}} {{$item->price * $item->quantity}}</span>
+                                 <span class="text-amount">{{session("currency_icon","$")}}{{$item->price * $item->quantity}}</span>
                              </li>
                          @endforeach
                          <li class="d-flex justify-content-between" >
@@ -278,7 +278,7 @@
                          </li>
                          <li class="d-flex justify-content-between">
                              <span class="text"><b>Subtotal excluding Tax</b></span>
-                             <span class="text-amount">{{session("currency_icon","USD")}} {{$total}}</span>
+                             <span class="text-amount">{{session("currency_icon","$")}}{{$total}}</span>
                          </li>
                              @php
                                  $gst = $taxes->gst??0;
@@ -286,18 +286,18 @@
 
                              <li class="d-flex justify-content-between">
                                  <span class="text">Estimated Tax</span>
-                                 <span class="text-amount">{{session("currency_icon","USD")}} {{ $gstAmount = (($total - $discount) + $shipping) * $gst / 100 }}</span>
+                                 <span class="text-amount">{{session("currency_icon","$")}}{{ $gstAmount = (($total - $discount) + $shipping) * $gst / 100 }}</span>
                              </li>
                          @if($discount != 0)
                              <li class="d-flex justify-content-between">
                                  <span class="text">Discount</span>
-                                 <span class="text-amount text-danger">{{session("currency_icon","USD")}} {{$discount}}</span>
+                                 <span class="text-amount text-danger">{{session("currency_icon","$")}}{{$discount}}</span>
                              </li>
                          @endif
                          <li class="d-flex justify-content-between">
                              <span class="text"><b>Total including Tax</b></span>
                              <span id="grand_total" class="text-amount">
-                                 {{session("currency_icon","USD")}} {{$grand_total = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
+                                 {{session("currency_icon","$")}}{{$grand_total = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
                              <span style="display : none;" id="grand_total_static" class="text-amount">{{$grand_totall = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
                          </li>
                      </ul>

@@ -139,12 +139,12 @@
                                             <ul class="order-details p-0 mb-5">
                                                 <li class="d-flex justify-content-between">
                                                     <span class="text">Subtotal excluding Tax</span>
-                                                    <span class="text-dark"> {{ $currency_icon }}  {{$total}}</span>
+                                                    <span class="text-dark"> {{ $currency_icon }}{{$total}}</span>
                                                 </li>
                                                 @if($discounted_amount != 0)
                                                     <li class="d-flex justify-content-between">
                                                         <span class="text">Discount</span>
-                                                        <span class="text-dark text-danger">{{ $currency_icon }}  {{$discounted_amount}}</span>
+                                                        <span class="text-dark text-danger">{{ $currency_icon }}{{$discounted_amount}}</span>
                                                     </li>
                                                 @endif
                                                 <li class="d-flex justify-content-between">
@@ -162,7 +162,7 @@ WAY GROUND)</span>
 
                                                 <li class="d-flex justify-content-between active">
                                                     <span class="text text-capitalize fw-bold">Total including Tax</span>
-                                                    <span class="text-dark">{{ $currency_icon }}  {{$grand_total  + (($grand_total * $gst) / 100)}}</span>
+                                                    <span class="text-dark">{{ $currency_icon }}{{$grand_total  + (($grand_total * $gst) / 100)}}</span>
                                                 </li>
                                             </ul>
                                             <form action="{{route('customer.shopping.bag')}}" method="post">
