@@ -25,7 +25,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <table class="table border">
+                            <table class="table border bg-white">
                                 <thead>
                                 <tr>
                                     <th scope="col" class="text-capitalize text-center">Product</th>
@@ -36,7 +36,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
+                                @php
+//                                    $currency_icon = session('currency_icon', '$');
+                                    $exchange_rate = session('exchange_rate', '1');
+                                @endphp
                                 @forelse ($cart_table as $key => $cart)
 
                                     <tr>
@@ -58,7 +61,7 @@
 
                                                                     <span> {{$opp->product_specilization->specilization->title}} :
 
-                                                            {{$opp->specializationoptions->option}} {{ $currency_icon }} ({{$opp->specialization_price}}) <span>
+                                                            {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span>
                                                     @endif
                                                    <br>
                                                                     @empty
@@ -70,9 +73,9 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="border border-end text-center">{{ $currency_icon }}  {{$cart->price}}</td>
+                                        <td class="border border-end text-center">${{$cart->price}}</td>
                                         <td class="border border-end text-center">{{$cart->quantity}}</td>
-                                        <td class="border border-end text-center">{{ $currency_icon }}  {{$total_price =  $cart->price * $cart->quantity}}</td>
+                                        <td class="border border-end text-center">${{$total_price =  $cart->price * $cart->quantity}}</td>
                                         <td class="border border-end text-center"><a href="{{route('customer.delete.cart.table.item', $cart->id ?? $cart->id)}}"><img src="{{asset('assets/customer/images/crosss.png')}}" alt="Not Found" class="cartItem"></a>
 
                                         </td>
@@ -93,14 +96,24 @@
                                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                                    @foreach($linked_products as $l_product)
                                         <div class="col-md-4">
-                                            <div class="card text-center">
-                                                <img src="{{asset('storage/'.$l_product->cover_image)}}"  class="card-img-top" alt="Accessory 1" style="max-height: 200px; object-fit: contain;">
-                                                <div class="card-body">
-                                                    <h6 class="card-title">S{{$l_product->product_heading_text??$l_product->title}}</h6>
-                                                    <p class="card-text text-primary">$ {{$l_product->price}}</p>
-                                                    <button class="btn btn-primary  btn-sm p-1 w-100">Add To Cart</button>
+                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}">
+                                                @csrf
+                                                <div class="card text-center">
+                                                    <img src="{{asset('storage/'.$l_product->cover_image)}}"  class="card-img-top" alt="Accessory 1" style="max-height: 200px; object-fit: contain;">
+                                                    <div class="card-body">
+                                                        <h6 class="card-title">S{{$l_product->product_heading_text??$l_product->title}}</h6>
+                                                        <p class="card-text text-primary">$ {{$l_product->price}}</p>
+                                                        <input type="hidden" name="product_id" value="{{ $l_product->id }}">
+                                                        <input type="hidden" name="price" value="{{ $l_product->price }}">
+                                                        <input type="hidden" name="title" value="{{ $l_product->title }}">
+                                                        <input type="hidden" name="category" value="{{ $l_product->category->title }}">
+                                                        <input type="hidden" name="quantity" value="1">
+                                                        <input type="hidden" name="cover_image" value="{{ $l_product->cover_image }}">
+                                                        <button class="btn btn-primary  btn-sm p-1 w-100">Add To Cart</button>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </form>
+
                                         </div>
                                    @endforeach
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CMSHomeController;
+use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\customer\Auth\LoginController;
 use App\Http\Controllers\customer\CartController;
 use App\Http\Controllers\customer\ContactUsController;
@@ -190,6 +191,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
         Route::get('confirmation/{order_id}', [CartController::class, 'confirmation'])->name('confirmation');
         Route::post('add-shopping-bag', [CartController::class, 'addShoppingBag'])->name('store.shopping.bag');
+        Route::post('add-accessory-shopping-bag', [CartController::class, 'addAccessoryBag'])->name('store.shopping.accessory.bag');
         Route::get('remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cartitem');
         Route::get('specification-ajax', [SignController::class, 'specificationAjax'])->name('specification.ajax');
 
@@ -320,6 +322,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     //    Route::get('/', [HomePageController::class,'index'])->name('homepage');
     Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
     Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
+    Route::post('currency-change', [CurrencyController::class, 'changeCurrency'])->name('currency.change');
 
     Route::group(['middleware' => 'customerCheck'], function () {
         Route::get('edit-overview', [CustomerProfileController::class, 'overview'])->name('overview');

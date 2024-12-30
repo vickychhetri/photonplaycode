@@ -13,7 +13,7 @@ class Radar extends Component
 {
     public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price, $currency_icon ;
     public $linked_products;
-
+    public  $currency_icon_selected;
     public $product_id;
     public $color = 'Amber-Color.png';
     public $dynamic_specs = [];
@@ -22,6 +22,8 @@ class Radar extends Component
         $this->product_id = $product_id;
         $this->sessionId = Session::getId();
         $this->exchangeRate = Session::get('exchange_rate', 1);
+        $this->currency_icon_selected = Session::get('currency_icon', '$');
+
         $this->currency_icon = Session::get('currency_icon', 'USD');
 
         $this->product = Product::with([
@@ -54,6 +56,7 @@ class Radar extends Component
     public function render()
     {
         $this->exchange_rate = Session::get('exchange_rate', 1);
+        $this->currency_icon_selected = Session::get('currency_icon', '$');
 
         $this->productLists = Product::with(['category'])
             ->where('category_id', 1)
@@ -86,20 +89,23 @@ class Radar extends Component
 
     public function addToCart(){
         $impodeSpec = array();
-        if(isset($this->dynamic_specs)){
-            foreach($this->dynamic_specs as $specs){
-                $implodeSpec[] = $specs;
-                $specss = DB::table('product_spcialization_options')
-                    ->where('id', $specs)
-                    ->get()
-                    ->map(function ($item) {
-                        $item->specialization_price *= $this->exchangeRate;
-                        return $item;
-                    });
+//        if(isset($this->dynamic_specs)){
+//            foreach($this->dynamic_specs as $specs){
+//                $implodeSpec[] = $specs;
+//                $specss = DB::table('product_spcialization_options')
+//                    ->where('id', $specs)
+//                    ->get()
+//                    ->map(function ($item) {
+//                        $item->specialization_price *= $this->exchangeRate;
+//                        return $item;
+//                    });
+//
+//                $this->specPrice = $specss->sum('specialization_price');
+//
+//            }
+//        }
 
-                $this->specPrice = $specss->sum('specialization_price');
-            }
-        }
+
         if( $this->postalCode){
             if(Session::get('user')){
                 UserPostalCode::where('user_id', Session::get('user')->id)->delete();
@@ -129,6 +135,8 @@ class Radar extends Component
                     'category' => $this->category,
                     'quantity' => $this->quantity,
                     'cover_image' => $this->cover_image,
+                    'currency_code'=> $this->currency_icon,
+                    'exchange_rate'=>$this->exchangeRate
                 ]);
             }
 
@@ -148,6 +156,8 @@ class Radar extends Component
                     'quantity' => $this->quantity,
                     'cover_image' => $this->cover_image,
                     'color' => $this->color,
+                    'currency_code'=> $this->currency_icon,
+                    'exchange_rate'=>$this->exchangeRate
                 ]);
             }
 

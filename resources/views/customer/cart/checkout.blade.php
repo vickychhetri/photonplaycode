@@ -492,10 +492,12 @@
                     dataType: 'json',
                     success: function (result) {
                         // console.log(result);
-                        var resuPrice= parseFloat(result)* parseInt({{$total_counting_product??0}})
+                        var icon_currency =  '{{session('currency_icon', '$')}}';
+                        var exchange_rate = '{{session('exchange_rate', '1')}}';
+                        var resuPrice= parseFloat(result)*parseFloat(exchange_rate) * parseInt({{$total_counting_product??0}})
 
                         $('#submittername').empty();
-                        var shipping = $('#submittername').append('$' + resuPrice);
+                        var shipping = $('#submittername').append(icon_currency + resuPrice);
                         $('#shipping').val(resuPrice);
                         var total = $('#grand_total_static').text();
 

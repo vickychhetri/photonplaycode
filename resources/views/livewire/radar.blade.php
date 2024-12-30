@@ -7,7 +7,7 @@
             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
             <input type="hidden" wire:model="title" name="title" id="title" value="{{ $product->title }}">
             <input type="hidden" wire:model="category" name="category" id="category" value="{{ $product->category->title }}">
-            <input type="hidden" wire:model="price" name="price" id="price" value="{{ $product->price }}">
+            <input type="hidden" wire:model="price" name="price" id="price" value="{{ $product->price*$exchange_rate }}">
             <input type="hidden" wire:model="cover_image" name="cover_image" id="cover_image" value="{{ $product->cover_image }}">
 
             <div class="container">
@@ -17,13 +17,13 @@
                         <div id="dynamic_specs"></div>
                         <div class="row">
                             <div class="col-md-3">
-                                <div class="desktop-display" style="max-height: 400px; overflow-y: auto;">
+                                <div class="desktop-display" style="max-height: 400px; overflow-y: auto;" wire:ignore >
                                     <slider>
                                         @include('partials.slider')
                                     </slider>
                                 </div>
                             </div>
-                            <div class="col-md-9 bg-white">
+                            <div class="col-md-9 bg-white" wire:ignore >
                                 <div class="responsive-two">
                                     <div>
                                         <div class="p-2" id="slider_static">
@@ -42,11 +42,11 @@
                             <div class="d-flex flex-row flex-wrap">
                                 @foreach($product->images as $im_g)
                                     <div class="radar-item-box">
-                                        <img src="{{ asset('storage/'.$im_g->image) }}" class="img-fluid" alt="{{ $product->title }}">
+                                        <img src="{{ asset('storage/'.$im_g->image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore >
                                     </div>
                                 @endforeach
                                 <div class="radar-item-box">
-                                    <img src="{{ asset('storage/'.$product->cover_image) }}" class="img-fluid" alt="{{ $product->title }}">
+                                    <img src="{{ asset('storage/'.$product->cover_image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore>
                                 </div>
                             </div>
                         </div>
@@ -59,19 +59,19 @@
                             </div>
 
                             <h4 class="font-weight-bold">{{ $product->category->title }}</h4>
-                            <span class="text-capitalize d-block">{{ $product->title }}</span>
+                            <span class="text-capitalize d-block">{{ $product->product_heading_text??$product->title }}</span>
 
                             @if ($product && $product->sku)
                                 <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>
                             @endif
 
-                            <!-- Star Rating Section -->
-                            <div class="d-flex justify-content-start align-items-center gap-1">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    <img src="{{ asset('assets/customer/images/star.svg') }}" alt="{{ $i }} Star" class="img-fluid" width="14px">
-                                @endfor
-                                <span>( 150+ Customers Reviews)</span>
-                            </div>
+{{--                            <!-- Star Rating Section -->--}}
+{{--                            <div class="d-flex justify-content-start align-items-center gap-1">--}}
+{{--                                @for ($i = 1; $i <= 5; $i++)--}}
+{{--                                    <img src="{{ asset('assets/customer/images/star.svg') }}" alt="{{ $i }} Star" class="img-fluid" width="14px">--}}
+{{--                                @endfor--}}
+{{--                                <span>( 150+ Customers Reviews)</span>--}}
+{{--                            </div>--}}
 
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
@@ -155,10 +155,10 @@
                                 </div>
                                 <div x-data="{
                                         dynamic_specs: {},
-                                        total_amount_single_product: {{ $product->price }},
-                                        product_amount: {{ $product->price }},
+                                        total_amount_single_product: {{ $product->price*$exchange_rate }},
+                                        product_amount: {{ $product->price*$exchange_rate }},
                                         counts: 1,
-                                        total_price: {{ $product->price }},
+                                        total_price: {{ $product->price*$exchange_rate }},
 
                                         changeCalculatedAmount(specId, priceElement) {
                                             const selectedOption = priceElement.options[priceElement.selectedIndex];
@@ -198,6 +198,7 @@
 
                                     @foreach ($product->specilizations->reverse() as $specilization)
                                         <div class="col-md-8 bg-transparent">
+
                                             <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
                                             <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
                                                     x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
@@ -251,13 +252,14 @@
 
 
                                 <div class="px-4 py-lg-0 py-4">
-                                    <span style="display: none" class="one-thousand" id="total_price">${{ $product->price }}</span>
+                                    <span style="display: none" class="one-thousand" id="total_price">${{ $product->price*$exchange_rate }}</span>
                                 </div>
                                 <button data-bs-toggle="modal" data-bs-target="#exampleModalCenter" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
                                     <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
                                 </button>
                             </div>
                         </div>
+                        <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
                     </div>
                 </div>
             </div>
@@ -296,14 +298,14 @@
                                         <div class="text-black fw-bold">{{ $item->title }}</div>
                                         <div>Qty: {{ $item->quantity }}</div>
                                     </div>
-                                    <div class="ms-auto text-black">{{ $currency_icon }} {{ isset($item->price) ? number_format($item->price, 2) : '' }}</div>
+                                    <div class="ms-auto text-black">${{ isset($item->price) ? number_format($item->price, 2) : '' }}</div>
                                 </div>
                                 <hr>
                             @endforeach
 
                             <div class="d-flex justify-content-between text-black fw-bold">
                                 <span>Cart subtotal</span>
-                                <span>{{ $currency_icon }}  {{ $cartTotal }}</span>
+                                <span>${{ $cartTotal }}</span>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -402,10 +404,11 @@
                             <h5 class="mb-4 text-black">Compatible Accessories</h5>
                                     @foreach($linked_products as $ap)
                                         <div class="col-md-12 mb-3">
-
+                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}">
+                                                @csrf
                                         <div class="card mx-auto" style="width: 18rem;">
                                             <div class="d-flex justify-content-center align-items-center w-100 p-2 m-2">
-                                                <img src="{{ asset('storage/' . $pf->icon )  }}" class="card-img-top"
+                                                <img src="{{ asset('storage/' . $ap->cover_image )  }}" class="card-img-top"
                                                      alt="SafePace Universal Mounting Bracket"
                                                      style="max-width: 100%;max-width: 200px;">
                                             </div>
@@ -418,6 +421,13 @@
                                                 <h5 class="card-title"> {{$ap->product_heading_text??$ap->title}}</h5>
                                                 <p class="card-text"> {{$currency_icon}}{{$ap->price*$exchange_rate}}</p>
                                                 <p class="text-muted p-2">{{$ap->category->title}}</p>
+
+                                                <input type="hidden" name="product_id" value="{{ $ap->id }}">
+                                                <input type="hidden" name="price" value="{{ $ap->price }}">
+                                                <input type="hidden" name="title" value="{{ $ap->title }}">
+                                                <input type="hidden" name="category" value="{{ $ap->category->title }}">
+                                                <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
                                                 <button class="btn btn-primary">Add to Cart</button>
                                             </div>
                                         </div>
