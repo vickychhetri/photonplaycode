@@ -502,6 +502,7 @@
                                                 <input type="hidden" name="title" value="{{ $ap->title }}">
                                                 <input type="hidden" name="category" value="{{ $ap->category->title }}">
                                                 <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="p" value="1">
                                                 <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
                                                 <button class="btn btn-primary">Add to Cart</button>
                                             </div>
