@@ -334,7 +334,7 @@
                                 </button>
                             </div>
                         </div>
-                        <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
+                        <p class="mt-4">{{$product->shipping_text??"Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days"}}.</p>
                     </div>
                 </div>
             </div>
