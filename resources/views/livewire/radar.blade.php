@@ -498,7 +498,7 @@
                                                 <p class="text-muted p-2">{{$ap->category->title}}</p>
 
                                                 <input type="hidden" name="product_id" value="{{ $ap->id }}">
-                                                <input type="hidden" name="price" value="{{ $ap->price }}">
+                                                <input type="hidden" name="price" value="{{ $ap->price*$exchange_rate }}">
                                                 <input type="hidden" name="title" value="{{ $ap->title }}">
                                                 <input type="hidden" name="category" value="{{ $ap->category->title }}">
                                                 <input type="hidden" name="quantity" value="1">
