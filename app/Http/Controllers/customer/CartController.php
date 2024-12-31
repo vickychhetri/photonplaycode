@@ -101,7 +101,7 @@ $products_list_ids=[];
 
         // $shippingTax = $shippingRate->shipping_rate ?? $taxes->shipping_time;
 
-        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total','linked_products', 'currency_icon'));
+        return view('customer.cart.shopping_bag', compact('cart_table','taxes','grand_total', 'discounted_amount', 'coupon_name','total','linked_products'));
     }
 
 
