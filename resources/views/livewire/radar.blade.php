@@ -28,8 +28,10 @@
                                     <div>
                                         <div class="p-2" id="slider_static">
                                             <div class="img-leften d-flex justify-content-center align-items-center">
-                                                <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
-                                                     class="img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}">
+{{--                                                <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"--}}
+{{--                                                     class="img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}">--}}
+                                                <img  src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
+                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}">
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +56,7 @@
 
                     <!-- Product Details and Specifications Section -->
                     <div class="col-lg-6">
-                        <div class="multiple-optionn pb-0 pt-lg-0 pt-5 pb-0">
+                        <div class="multiple-optionn pb-0 pt-lg-0 pt-5 pb-0" >
                             <div class="d-flex justify-content-around align-items-center pt-1" style="float:right;">
                             </div>
 
@@ -83,73 +85,6 @@
                             <!-- Specifications Section -->
                             <div>
                                 <p class="specific-heading">Select Specification</p>
-{{--                                <div class="row mt-3">--}}
-{{--                                    @foreach ($product->specilizations->reverse() as $specilization)--}}
-{{--                                        <div class="col-md-8 bg-transparent">--}}
-{{--                                            <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>--}}
-{{--                                            <select class="form-select mb-3" onchange="changecalculated_amount(this)" name="dynamic_specs[{{ $specilization->id }}]" wire:model="dynamic_specs.{{ $specilization->id }}" id="{{ $specilization->id }}" style="border: 2px solid black;font-weight: bold;" required>--}}
-{{--                                                <option selected>--Choose an Option--</option>--}}
-{{--                                                @foreach($specilization->options as $option)--}}
-{{--                                                    <option value="{{ $option->id }}">--}}
-{{--                                                        {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price }}</span>)--}}
-{{--                                                        @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")--}}
-{{--                                                            Subscription Free For 1 Year--}}
-{{--                                                        @endif--}}
-{{--                                                    </option>--}}
-{{--                                                @endforeach--}}
-{{--                                            </select>--}}
-{{--                                        </div>--}}
-{{--                                    @endforeach--}}
-
-{{--                                    <!-- Color Selection Section -->--}}
-
-{{--                                    <div class="mt-4">--}}
-{{--                                        <h6 class="text-dark fw-bold">Faceplate (Select color):</h6>--}}
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <input type="hidden" wire:model="color" name="color" value="Amber" id="colorchoose">--}}
-{{--                                            <div class="selected-anc d-flex border-1 p-2 shadow-smm">--}}
-{{--                                                <div>--}}
-{{--                                                    <img src="{{ asset('/assets/images/radar/color/Amber-Color.png') }}" style="height:40px;" id="imgicon_color_st" alt="color" />--}}
-{{--                                                </div>--}}
-
-{{--                                                <div x-data="{--}}
-{{--                                                            color: @entangle('color'),--}}
-{{--                                                            productId: @entangle('product_id'),--}}
-{{--                                                            changeColor() {--}}
-{{--                                                                changeColorJS(this.color, this.productId);--}}
-{{--                                                            }--}}
-{{--                                                        }"--}}
-{{--                                                     x-init="changeColor()"--}}
-{{--                                                     class="d-flex align-items-center">--}}
-
-{{--                                                    <select class="form-select shadow-none" wire:model="color"--}}
-{{--                                                            id="select-color" aria-label="Color select" required--}}
-{{--                                                            style="background-color: transparent; border: none; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 120px;">--}}
-{{--                                                        <option value="Amber-Color.png">Amber</option>--}}
-{{--                                                        <option value="White-Color.png">White</option>--}}
-{{--                                                        <option value="Green-Color.png">Green</option>--}}
-{{--                                                    </select>--}}
-
-{{--                                                </div>--}}
-
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-{{--                                        <script>--}}
-{{--                                            const selectElement = document.getElementById('select-color');--}}
-{{--                                            const iconElement = document.querySelector('#imgicon_color_st');--}}
-{{--                                            const colorHolderElement = document.querySelector('#colorchoose');--}}
-{{--                                            const baseurl = '{{ asset('/assets/images/radar/color/') }}';--}}
-
-{{--                                            selectElement.addEventListener('change', function() {--}}
-{{--                                                const selectedOption = this.options[this.selectedIndex];--}}
-{{--                                                const selectedColor = this.value;--}}
-{{--                                                colorHolderElement.value = selectedOption.text;--}}
-{{--                                                iconElement.src = baseurl + '/' + selectedColor;--}}
-{{--                                            });--}}
-{{--                                        </script>--}}
-{{--                                    </div>--}}
-
 
                                     <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
                                 </div>
@@ -444,6 +379,7 @@
 
 </div>
 <script>
+
     function changeColorJS(selectedColor, productId) {
         var color = selectedColor.toLocaleLowerCase();
         var id = productId;
@@ -462,79 +398,57 @@
                     const imgBox = document.createElement('div');
                     imgBox.classList.add('radar-item-box');
                     imgBox.innerHTML = `
-                        <div class="radar-item-box">
-                            <img src="{{ asset('storage/${res.image}') }}" class="img-fluid" alt="{{$product->title}}">
-                        </div>
-                    `;
+                    <div class="radar-item-box">
+                        <img src="{{ asset('storage/${res.image}') }}" class="img-fluid" alt="{{$product->title}}">
+                    </div>
+                `;
                     slider.appendChild(imgBox);
                 });
 
                 sliderStatic.innerHTML = `
-                    <div class="img-leften d-flex justify-content-center align-items-center">
-                        <img src="{{ asset('storage/${data[0].image}') }}" class="img-fluid"
-                             style="max-height: 600px;" id="big-img-radar-product" alt="{{$product->title}}">
-                    </div>
-                `;
+                <div class="img-leften d-flex justify-content-center align-items-center">
+                    <img class="thumb img-fluid"
+                         src="{{ asset('storage/${data[0].image}') }}"
+                         style="max-height: 600px;"
+                         id="big-img-radar-product"
+                         alt="{{$product->title}}">
+                </div>
+            `;
+
+                initializeMagnifier();
+
+                document.querySelectorAll('.radar-item-box').forEach(item => {
+                    item.addEventListener('mouseenter', () => {
+                        document.querySelectorAll('.radar-item-box').forEach(i => i.classList.remove('radar-item-box-highlight'));
+                        item.classList.add('radar-item-box-highlight');
+                        const img = item.querySelector('img');
+                        const src = img.getAttribute('src');
+                        document.getElementById('big-img-radar-product').setAttribute('src', src);
+                    });
+                });
 
                 document.getElementById('prodImg-gallery').innerHTML = JSON.stringify(data);
             })
             .catch(error => {
                 console.error('Error fetching images:', error);
             });
-
-        document.querySelectorAll('.radar-item-box').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                document.querySelectorAll('.radar-item-box').forEach(i => i.classList.remove('radar-item-box-highlight'));
-                item.classList.add('radar-item-box-highlight');
-                const img = item.querySelector('img');
-                const src = img.getAttribute('src');
-                document.getElementById('big-img-radar-product').setAttribute('src', src);
-            });
-        });
-        function changecalculated_amount(price_element) {
-            console.log('price_element', price_element);
-            const selectedOption = price_element.options[price_element.selectedIndex];
-            console.log('selectedOption', selectedOption);
-
-            var total_price = document.getElementById('total_price');
-            console.log('total_price', total_price);
-            var total_price2 = document.getElementById('total_price2');
-            console.log('total_price2', total_price2);
-
-            var counts = document.getElementById('demoInput').value;
-            console.log('counts', counts);
-
-            var inputString = selectedOption.text;
-            console.log('inputString', inputString);
-
-            var amount = extractAmountFromString(inputString);
-            console.log('amount', amount);
-
-            single_items_cart[price_element.id] = amount;
-            console.log('single_items_cart', single_items_cart);
-
-            console.log('total_amount_single_product', total_amount_single_product);
-
-            let extra_option_amount = 0;
-            for (let key in single_items_cart) {
-                if (single_items_cart.hasOwnProperty(key)) {
-                    let value = single_items_cart[key];
-                    extra_option_amount += parseInt(value);
-                }
-            }
-            console.log('extra_option_amount', extra_option_amount);
-
-            if (amount != null) {
-                total_amount_single_product = product_amount + extra_option_amount;
-            }
-            console.log('product_amount', product_amount);
-
-            console.log(total_amount_single_product);
-            total_price.innerText = '$' + counts * total_amount_single_product;
-            total_price2.innerText = '$' + counts * total_amount_single_product;
-
-        }
     }
+
+
+    var evt = new Event(),
+        m = new Magnifier(evt);
+
+    function initializeMagnifier() {
+        m.attach({
+            thumb: '.thumb',
+            large: document.getElementById('big-img-radar-product').src,
+            largeWrapper: 'preview1',
+            zoom: 3,
+            zoomable: false
+        });
+    }
+    initializeMagnifier();
+
 </script>
 
 
