@@ -37,7 +37,7 @@
                                 </thead>
                                 <tbody>
                                 @php
-//                                    $currency_icon = session('currency_icon', '$');
+                                    $currency_icon = session('currency_icon', '$');
                                     $exchange_rate = session('exchange_rate', '1');
                                 @endphp
                                 @forelse ($cart_table as $key => $cart)
@@ -47,10 +47,10 @@
                                             <div class="d-flex align-items-center p-1">
                                                 <img src="{{asset('storage/'.$cart->cover_image)}}" alt="Not Found" class="profile-table me-2 h-25 w-25">
                                                 <div class="d-flex flex-column">
-                                                    <h6 class="text-uppercase">{{$cart->category}}</h6>
+{{--                                                    <h6 class="text-uppercase">{{$cart->category}}</h6>--}}
                                                     <span>Brand : {{$cart->title}}</span>
                                                     {{-- <span>Model: ---</span> --}}
-                                                    <span>Color : {{$cart->color}}</span>
+{{--                                                    <span>Color : {{$cart->color}}</span>--}}
                                                     @if (unserialize($cart->option_ids) != null)
                                                         @forelse (unserialize($cart->option_ids) as $option)
                                                             @php
@@ -61,7 +61,7 @@
 
                                                                     <span> {{$opp->product_specilization->specilization->title}} :
 
-                                                            {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <span>
+                                                            {{$opp->specializationoptions->option}}({{$currency_icon}}{{$opp->specialization_price*$exchange_rate}}) <span>
                                                     @endif
                                                    <br>
                                                                     @empty
@@ -73,9 +73,9 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="border border-end text-center">${{$cart->price}}</td>
+                                        <td class="border border-end text-center">{{$currency_icon}} {{$cart->price}}</td>
                                         <td class="border border-end text-center">{{$cart->quantity}}</td>
-                                        <td class="border border-end text-center">${{$total_price =  $cart->price * $cart->quantity}}</td>
+                                        <td class="border border-end text-center">{{$currency_icon}}  {{$total_price =  $cart->price * $cart->quantity}}</td>
                                         <td class="border border-end text-center"><a href="{{route('customer.delete.cart.table.item', $cart->id ?? $cart->id)}}"><img src="{{asset('assets/customer/images/crosss.png')}}" alt="Not Found" class="cartItem"></a>
 
                                         </td>
@@ -102,9 +102,9 @@
                                                     <img src="{{asset('storage/'.$l_product->cover_image)}}"  class="card-img-top" alt="Accessory 1" style="max-height: 200px; object-fit: contain;">
                                                     <div class="card-body">
                                                         <h6 class="card-title">S{{$l_product->product_heading_text??$l_product->title}}</h6>
-                                                        <p class="card-text text-primary">$ {{$l_product->price}}</p>
+                                                        <p class="card-text text-primary">{{$currency_icon}} {{$l_product->price*$exchange_rate}}</p>
                                                         <input type="hidden" name="product_id" value="{{ $l_product->id }}">
-                                                        <input type="hidden" name="price" value="{{ $l_product->price }}">
+                                                        <input type="hidden" name="price" value="{{ $l_product->price*$exchange_rate }}">
                                                         <input type="hidden" name="title" value="{{ $l_product->title }}">
                                                         <input type="hidden" name="category" value="{{ $l_product->category->title }}">
                                                         <input type="hidden" name="quantity" value="1">
@@ -139,12 +139,12 @@
                                             <ul class="order-details p-0 mb-5">
                                                 <li class="d-flex justify-content-between">
                                                     <span class="text">Subtotal excluding Tax</span>
-                                                    <span class="text-dark"> {{ $currency_icon }}{{$total}}</span>
+                                                    <span class="text-dark">{{$currency_icon}}{{$total}}</span>
                                                 </li>
                                                 @if($discounted_amount != 0)
                                                     <li class="d-flex justify-content-between">
                                                         <span class="text">Discount</span>
-                                                        <span class="text-dark text-danger">{{ $currency_icon }}{{$discounted_amount}}</span>
+                                                        <span class="text-dark text-danger">{{$currency_icon}}{{$discounted_amount}}</span>
                                                     </li>
                                                 @endif
                                                 <li class="d-flex justify-content-between">
@@ -162,7 +162,7 @@ WAY GROUND)</span>
 
                                                 <li class="d-flex justify-content-between active">
                                                     <span class="text text-capitalize fw-bold">Total including Tax</span>
-                                                    <span class="text-dark">{{ $currency_icon }}{{$grand_total  + (($grand_total * $gst) / 100)}}</span>
+                                                    <span class="text-dark">{{$currency_icon}}{{$grand_total  + (($grand_total * $gst) / 100)}}</span>
                                                 </li>
                                             </ul>
                                             <form action="{{route('customer.shopping.bag')}}" method="post">

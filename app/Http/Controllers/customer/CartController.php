@@ -7,6 +7,7 @@ use App\Jobs\ResetPasswordJob;
 use App\Mail\OrderPlaceMail;
 use App\Models\Cart;
 use App\Models\Coupon;
+use App\Models\Currency;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderedProduct;
@@ -36,7 +37,6 @@ class CartController extends Controller
         $coupon = Coupon::where('coupon_name', $request->coupon)->first();
         $discount = 0;
         $discounted_amount = 0;
-        $currency_icon = Session::get('currency_icon', '$');
         $coupon_name = '0';
         if($coupon){
             if ($coupon->expiry_date < date('Y-m-d')) {
@@ -284,13 +284,16 @@ $products_list_ids=[];
                 $userId = Session::get('user')->id;
                 $type = 'user';
             }
+            $icon=Session::get('currency_icon', '$');
+            $currency_handler = Currency::where('currency_code', $icon)->first();
+            $pay_currency=$currency_handler->stripe_currency_code??'usd';
 
             $orderId ='#'.mt_rand(1111, 99999);
             $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
                header('Content-Type: application/json');
                $price = \Stripe\Price::create([
                    'unit_amount' => $request->grand_total * 100,
-                   'currency' => $currency_code,
+                   'currency' => $pay_currency,
                    'product_data' => [
                      'name' => 'Total Amount',
                    ],
