@@ -12,16 +12,11 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
     ];
     return $seo_meta;
 });
-
-$startYear = 2012; // The year the company started
-$currentYear = date('Y'); // Get the current year
-$yearsOfExperience = $currentYear - $startYear;
-
 ?>
 @include('customer.layout2.header')
 <x-Customer.HomePageBanner/>
 <!-- undefeated-section-start -->
-<section class="undefeated-wrapper pt-lg-0 shadow-lg pb-3">
+<section class="undefeated-wrapper pt-lg-0 shadow-lg">
     <div class="container  ">
         <div class="row justify-content-center align-items-center ">
             <div class="col-lg-10">
@@ -29,7 +24,7 @@ $yearsOfExperience = $currentYear - $startYear;
                     <div class="col-lg-6 pe-lg-0">
                         <div class="sucess-undeafeted p-4 py-5 text-white">
                             <p class="text-uppercase">From Idea to Implementation</p>
-                            <h4 class="text-uppercase">Our <?php echo  $yearsOfExperience; ?>+ Years of Undefeated Success</h4>
+                            <h4 class="text-uppercase">Our 12+ Years of Undefeated Success</h4>
                             <p style="text-align: justify;">
                                 PhotonPlay, a family-owned company, delivers high-quality intelligent transportation
                                 systems (ITS) worldwide. For over 12 years, we've catered to system integrators,
@@ -72,82 +67,27 @@ $yearsOfExperience = $currentYear - $startYear;
         </div>
     </div>
 </section>
-
-@include('customer.layout2.our_clients')
-
-<div class="container-fluid p-4" style="background-color: #036eb1;">
-    <h5 class="fw-bold text-white text-center">
-        Photonplay is a leading provider of intelligent transportation systems (ITS) with over <?php echo $yearsOfExperience ?> years of experience.
-    </h5>
-</div>
-
-
-<section class="team-members bg-white pb-1 pt-2">
-    <div class="container">
-        <div class="col-lg-12">
-{{--            <div class="text-center ">--}}
-{{--                <h2 class="fs-md-2 mt-3">Vehicle Actuated Speed Display</h2>--}}
-{{--                <p class="text-mutedd mb-0 pb-0">--}}
-{{--                    Tagline - Traffic Enforcement and Calming Solution</p>--}}
-{{--            </div>--}}
-            <div class="d-flex justify-content-center">
-                <img src="{{asset("assets/images/vasd.png")}}" style="max-width: 100%;"/>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="team-members bg-white mt-1 pb-1">
-    <div class="container">
-        <div class="text-center ">
-            <h2 class="fs-md-2 mt-3">Radar Speed Sign</h2>
-            <p class="text-mutedd">
-                Tagline - Traffic Enforcement and Calming Solution</p>
-        </div>
-        <div class="row">
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <iframe width="100%" height="400px" src="https://www.youtube.com/embed/TRLuZV_qSaE?list=TLGGhWacsAjqt0kwNTA5MjAyNA" title="iCop Radar Speed Signs - PHOTONPLAY | Driver Feedback Signs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-
-        <div class="col-lg-6">
-            <div class="d-flex justify-content-center">
-                <img src="{{asset("assets/images/radar_speed_sign_tri.webp")}}" style="max-width: 100%;"/>
-            </div>
-        </div>
-        </div>
-        <div class="row mt-4">
-            <p class="text-center">
-                What sets Photonplay apart is our unrelenting dedication to quality. We understand that safety is not a compromise, and neither is the quality of our products. We are committed to pushing the boundaries of innovation while maintaining a steadfast focus on reliability and longevity, and we proudly stand as the high-end choice in the industry. This reputation stems from our commitment to uncompromising quality.
-            </p>
-
-        </div>
-    </div>
-</section>
-
-
-{{--@include('customer.layout2.get_in_touch_r')--}}
-
 <!-- slider-start -->
-<section class="products bg-white pt-4">
+<section class="products bg-white pt-0">
     <div class="container overflow-hidden pb-4 pt-0">
         <div class="col-lg-12">
             <div class="text-center mb-lg-5">
                 <div class="mb-4">
-                    <h2 class="fs-md-2 mt-0 text-uppercase">How Our Signs Help In Road Safety</h2>
-                    <p style="text-align: center;">
-                        Step into a safer future with us, your trusted partner and No. 1 choice in Intelligent Transportation Systems. At the forefront of road safety, we offer a comprehensive suite of solutions, including accurate speed limit signs, radar speed signs, and state-of-the-art Variable Message Signs (VMS).
+                    <h2 class="fs-md-2 mt-3 text-uppercase">How Our Signs Help In Road Safety</h2>
+                    <p style="text-align: justify;">
+                        Step into a safer future with us, your trusted partner and No. 1 choice in Intelligent
+                        Transportation Systems. At the forefront of road safety, we offer a comprehensive suite of
+                        solutions, including accurate speed limit signs, radar speed signs, and state-of-the-art
+                        Variable Message Signs (VMS). Our signs are intended to increase motorist awareness and serve as
+                        a reminder to obey the speed limit. To help drivers navigate varying road conditions and
+                        unforeseen incidents, our dynamic VMS offers real-time updates on traffic situations, road
+                        closures, and emergencies. Our VMS can be used to display a variety of messages, such as traffic
+                        updates, road closures, and emergency alerts. This can help drivers stay informed and make
+                        better decisions about their travel. We are constantly innovating to develop new and better
+                        solutions. We are always looking for ways to improve road safety.
                     </p>
-                    <p style="text-align: center;">
-                        Our signs are intended to increase motorist awareness and serve as a re	minder to obey the speed limit. To help drivers navigate varying road conditions and unforeseen incidents, our dynamic VMS offers real-time updates on traffic situations, road closures, and emergencies. Our VMS can be used to display a variety of messages, such as traffic updates, road closures, and emergency alerts.
-                    </p>
-                    <p style="text-align: center;">
-                        This can help drivers stay informed and make better decisions about their travel. We are constantly innovating to develop new and better solutions. We are always looking for ways to improve road safety.
-                    </p>
-
                 </div>
-                <h2 class="fs-md-2 mt-3 text-uppercase">Explore Our Products to help traffic calming</h2>
+                <h2 class="fs-md-2 mt-3 text-uppercase">Products</h2>
                 <h6 class="fs-6 text-colorr">Empowering Smarter Mobility with Innovative Product Solutions that Exceed
                     Expectations</h6>
             </div>
@@ -609,64 +549,7 @@ $yearsOfExperience = $currentYear - $startYear;
 
         <div class="container">
             <div class="row ">
-                <div class="col-md-6 d-flex align-items-center justify-content-center">
-                    <div class="">
-                        <div class="text-start pb-4">
-                            <div class="mb-4 pb-4">
-                                <h4 class="fs-md-2 mt-3 font-weight-bold text-dark" style="font-size: 32px;font-family: Roboto,Sans-Serif;font-weight: bold;">Why Choose Us?</h4>
-                                <hr style="width: 100px; height: 5px; background-color: black !important; color: black !important;">
-                            </div>
-
-                            <div class="d-flex gap-1 mb-4 mt-4">
-                                <div>
-                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/Advanced-Technology.png" style="max-height: 50px;"/>
-                                </div>
-                                <div>
-                                    <h4 class="font-f-choose"> Advanced Technology </h4>
-                                    <p class="get-in-font-para">
-                                        With advanced technology, we provide real-time, accurate, and visually captivating information to enhance your investment experience.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-1 mb-4 mt-4">
-                                <div>
-                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/Need-Icon.png" style="max-height: 50px;"/>
-                                </div>
-                                <div>
-                                    <h4 class="font-f-choose"> Customization Based on Needs</h4>
-                                    <p class="get-in-font-para">
-                                        We understand that every business is distinct, and we are committed to thoroughly studying your needs to develop a solution that perfectly aligns with your objectives.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-1  mb-4 mt-4">
-                                <div>
-                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/CertificationIconLogo.png" style="max-height: 50px;"/>
-                                </div>
-                                <div>
-                                    <h4 class="font-f-choose"> Certified Company </h4>
-                                    <p class="get-in-font-para">
-                                        Have complete confidence in the durability and integrity of our company, as they are tested and meet the stringent requirements set by: ISO 9001:2015, UL-1950, ETL & CE.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-1  mb-4 mt-4">
-                                <div class="pl-2">
-                                    <img src="https://radar-speed-signs.photonplayinc.com/wp-content/uploads/2024/02/Customer-Support.png" style="max-height: 50px;"/>
-                                </div>
-                                <div>
-                                    <h4 class="font-f-choose">
-                                        Customer Support </h4>
-                                    <p class="get-in-font-para">
-                                        Whether you require advice, troubleshooting, or ongoing support, we remain by your side, offering continuous technical assistance and a steadfast commitment to your success.
-                                    </p>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
+                <div class="com-md-3">
                 </div>
                 <div class="col-md-6 mx-auto mb-0 p-4">
                     <form action="{{route('customer.inquery.submit')}}" method="post">
@@ -731,8 +614,8 @@ $yearsOfExperience = $currentYear - $startYear;
 
 @include('customer.layout2.client_testimonials')
 @include('customer.layout2.latest_blog')
-
-@include('customer.layout2.footer')
+@include('customer.layout2.our_clients')
+@include('customer.layout2.footer_photon')
 
  <!-- vendor modal -->
 

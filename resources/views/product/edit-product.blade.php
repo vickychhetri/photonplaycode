@@ -7,7 +7,52 @@
 @endsection
 
 @section('style')
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+        }
 
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: background-color 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider::before {
+            content: '';
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: transform 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #4caf50;
+        }
+
+        input:checked + .slider::before {
+            transform: translateX(25px);
+        }
+    </style>
 @endsection
 
 @section('breadcrumb-title')
@@ -64,6 +109,84 @@
                                             </div>
                                         </div>
 
+                                        @php
+                                            $disable_category_for_multi_c_p=false;
+                                                $config = \App\Models\MasterConfiguration::where('code',\App\Util\Configure::PRODUCT_CATEGORY_MULTI_NOT_REQUIRED)->first();
+                                                if ($config) {
+                                                    $value = $config->value;
+                                                    if($value==$product->category_id){
+                                                        $disable_category_for_multi_c_p=true;
+                                                    }
+                                                }
+                                        @endphp
+                                        @if(!$disable_category_for_multi_c_p)
+                                            <div class="row mb-3 form-group">
+                                                <label for="categories_linked" class="col-md-2 col-form-label text-md-end">
+                                                    <span>* </span>{{ __('Categories') }}
+                                                </label>
+
+                                                @php
+                                                    $categories_all = \App\Models\Category::where('id', '!=', $product->category_id)->get();
+
+                                                    $selected_categories = json_decode($product->categories_linked, true) ?? [];
+                                                @endphp
+
+                                                <div class="col-md-10">
+                                                    <select id="categories_linked"
+                                                            class="form-control @error('categories_linked') is-invalid @enderror"
+                                                            name="categories_linked[]"
+                                                            multiple="multiple" >
+                                                        @foreach($categories_all as $item)
+                                                            <option value="{{ $item->id }}"
+                                                                    @if(in_array($item->id, $selected_categories)) selected @endif>
+                                                                {{ $item->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+
+                                                    @error('categories_linked')
+                                                    <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3 form-group">
+                                                <label for="products_linked" class="col-md-2 col-form-label text-md-end">
+                                                    <span>* </span>{{ __('Link Product') }}
+                                                </label>
+
+                                                @php
+                                                    $product_all = \App\Models\Product::where('id', '!=', $product->id)->get();
+
+                                                    $selected_products = json_decode($product->products_linked, true) ?? [];
+                                                @endphp
+
+                                                <div class="col-md-10">
+                                                    <select id="products_linked"
+                                                            class="form-control @error('products_linked') is-invalid @enderror"
+                                                            name="products_linked[]"
+                                                            multiple="multiple" >
+                                                        @foreach($product_all as $item)
+                                                            <option value="{{ $item->id }}"
+                                                                    @if(in_array($item->id, $selected_products)) selected @endif>
+                                                                {{ $item->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+
+                                                    @error('products_linked')
+                                                    <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        @endif
+
+
+
                                         <div class="row mb-3 form-group">
                                             <label for="title" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Name') }}</label>
 
@@ -72,12 +195,79 @@
 
                                                 @error('title')
                                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                                 @enderror
                                             </div>
 
                                         </div>
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="code" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Code') }}</label>
+                                            <div class="col-md-10    ">
+                                                <input id="code" type="text" class="form-control @error('code') is-invalid @enderror" name="code" value="{{$product->code}}" required autocomplete="code" autofocus>
+                                                @error('code')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="product_heading_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Label') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="product_heading_text" type="text" class="form-control @error('product_heading_text') is-invalid @enderror" name="product_heading_text" value="{{$product->product_heading_text}}" required autocomplete="title" autofocus>
+
+                                                @error('product_heading_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="product_breadcrumb_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Breadcrumb') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="product_breadcrumb_text" type="text" class="form-control @error('product_breadcrumb_text') is-invalid @enderror" name="product_breadcrumb_text" value="{{$product->product_breadcrumb_text}}" required autocomplete="title" autofocus>
+
+                                                @error('product_breadcrumb_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="pdf_download_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('PDF Label') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="pdf_download_text" type="text" class="form-control @error('pdf_download_text') is-invalid @enderror" name="pdf_download_text" value="{{$product->pdf_download_text}}" required autocomplete="title" autofocus>
+
+                                                @error('pdf_download_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row mb-3 form-group">
+                                            <label for="shipping_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Shipping Text') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="shipping_text" type="text" class="form-control @error('shipping_text') is-invalid @enderror" name="shipping_text" value="{{$product->shipping_text}}" required autocomplete="title" autofocus>
+
+                                                @error('shipping_text')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
 
                                         <div class="row mb-3 form-group">
                                             <label for="slug" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Slug') }}</label>
@@ -145,7 +335,7 @@
                                                 @endif
                                             </div>
 
-                                            
+
 
 
                                         </div>
@@ -168,9 +358,20 @@
                                                 @endif
                                             </div>
 
-                                            
 
 
+
+                                        </div>
+
+                                        <div class="row mb-2 form-group">
+                                            <label for="price" class="col-md-2 col-form-label text-md-end">{{ __('Hide Price') }}</label>
+                                            <div class="col-md-10 mt-1">
+                                                <label class="switch">
+                                                    <input name="is_price_hide" type="checkbox"
+                                                           @if($product->is_price_hide == 1) checked @endif>
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
                                         </div>
 
 
@@ -204,6 +405,9 @@
         </div>
     </div>
 
+    <!-- Include Select2 CSS and JS (CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -213,6 +417,15 @@
                 height: 200
             });
 
+        });
+
+            $(document).ready(function() {
+            $('#categories_linked').select2({
+                placeholder: "Select Categories"
+            });
+                $('#products_linked').select2({
+                    placeholder: "Select Products"
+                });
         });
 
     </script>

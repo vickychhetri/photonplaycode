@@ -112,10 +112,14 @@ $seo_meta=[
             <div class="row justify-content-center" id="inquiry">
                 <div class="col-lg-10">
                     <div class="inner-map" >
-                       <iframe class="w-75 py-5" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=23%20Overstone%20road,%20Georgetown,%20Ontario,%20L7G%200M9%20Canada+(Photonplay%20Systems%20Ltd)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"  height="700" style="border:0;" allowfullscreen="" loading="lazy"
-                               referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe class="w-75 py-5" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=6733%20Mississauga%20Rd,%20Mississauga,%20ON%20L5N%206J5,%20Canada&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                                height="700" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
 
-{{--                        <iframe class="w-75 py-5"--}}
+
+                        {{--                        <iframe class="w-75 py-5"--}}
 {{--                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13686.924581218746!2d75.88485906787676!3d30.950072544206556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a84a965aaa167%3A0x5b0c9401857ab0e8!2sMeharban%2C%20Punjab%20141007!5e0!3m2!1sen!2sin!4v1681919215477!5m2!1sen!2sin"--}}
 {{--                            height="700" style="border:0;" allowfullscreen="" loading="lazy"--}}
 {{--                            referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
@@ -201,7 +205,11 @@ $seo_meta=[
                                 <div class="col-lg-6 col-md-12 mb-lg-5 mb-md-4 mb-4">
                                     <h5 class="text-upercase"><u>CANADA</u></h5>
                                     <div class="d-flex align-items-start"> <img src="{{asset('assets\images\pin-map.png')}}"  class="me-2 mb-2"/>
-                                        <p class="">Photonplay Systems Ltd. <br>23 Overstone road, Georgetown, Ontario, <br> L7G 0M9 Canada.Photonplay Systems Ltd</p>
+{{--                                        <p class="">Photonplay Systems Ltd. <br>23 Overstone road, Georgetown, Ontario, <br> L7G 0M9 Canada.Photonplay Systems Ltd</p>--}}
+                                        <p class="">Photonplay Systems Ltd.<br>
+                                            6733 Mississauga Rd, Mississauga, ON L5N 6J5, Canada
+                                        </p>
+
                                     </div>
                                     <span><img src="{{asset('assets\customer\images\phone.svg')}}" class="me-2 mb-2"/>  +1 (800) 966-9329 </span>
                                     <span class="d-block"><img src="{{asset('assets\customer\images\message.png')}}" class="me-2"/> sales@photonplay.com</span>
@@ -319,7 +327,7 @@ $seo_meta=[
 <!-- _____________________latest News end______________________ -->
 <!-- _____________________ourclint-last-start___________________ -->
 @include('customer.layout2.our_clients')
-@include('customer.layout2.footer')
+@include('customer.layout2.footer_photon')
 <script src="/assets/customer/js/bootstrap.bundle.min.js" async defer></script>
 <script src="/assets/customer/js/jquery.js" ></script>
 <script src="/assets/customer/slick/slick.min.js"></script>

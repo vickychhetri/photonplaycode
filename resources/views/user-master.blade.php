@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,6 +28,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css"
         rel="stylesheet"
     />
+    <link rel="alternate" hreflang="en-us">
     <style type="text/css">
         .bootstrap-tagsinput .tag {
             margin-right: 2px;
@@ -36,6 +37,28 @@
             padding: 0.2rem;
         }
     </style>
+
+    <style>
+        /* Fullscreen loader */
+        #page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background: #020818;
+        }
+
+        /* Hide main content until page loads */
+        #pageWrapper {
+            display: none;
+        }
+    </style>
+
     @include('layouts.css')
 
     @yield('style')
@@ -57,6 +80,13 @@
             </svg>
         </div>
     @endif
+    <!-- Loader -->
+    <div id="page-loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <!-- tap on top starts-->
     <div class="tap-top"><i data-feather="chevrons-up"></i></div>
     <!-- tap on tap ends-->
@@ -324,7 +354,17 @@
 
     </script>
 
+    <script>
+        // Show the main content and hide the loader after page load
 
+        // Ensure the loader disappears after the page has fully loaded
+        window.addEventListener('load', function() {
+            console.log('Page has fully loaded'); // Debugging log
+            document.getElementById('page-loader').style.display = 'none';
+            document.getElementById('pageWrapper').style.display = 'block';
+        });
+
+    </script>
 
 
 </body>

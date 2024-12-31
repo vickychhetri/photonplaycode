@@ -48,12 +48,18 @@ class LoginController extends Controller
     {
         $sessionId = Session::getId();
         $validator = Validator::make($request->all(), [
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email|exists:customers,email',
+            'password' => 'required|min:6',
+        ], [
+            'email.required' => 'The email address is required.',
+            'email.email' => 'Please provide a valid email address.',
+            'email.exists' => 'This email does not exist in our records.',
+            'password.required' => 'The password field cannot be empty.',
+            'password.min' => 'The password must be at least 6 characters long.',
         ]);
 
-        if($validator->fails()){
-            return redirect()->back()->with('error',  $validator->errors()->first());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $credentials = $request->only('email', 'password');
@@ -93,13 +99,19 @@ class LoginController extends Controller
         $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|email|unique:customers',
-            'password' => 'required|min:6',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:customers,email',
+            'password' => [
+                'required',
+                'confirmed',
+                'min:8',
+                'regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
+            ],
+            'password_confirmation' => 'required',
         ]);
 
-        if($validator->fails()){
-            return redirect()->back()->with('error',  $validator->errors()->first());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $customer = \Stripe\Customer::create([

@@ -1630,7 +1630,7 @@ ul.slick-dots {
 
 .step-form .order-details li span.text-amount {
     font-weight: 600;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .payment-details ul li {

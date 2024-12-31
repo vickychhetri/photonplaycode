@@ -13,6 +13,7 @@ use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -31,11 +32,34 @@ class SignController extends Controller
         return view('customer.sign', compact('products'));
     }
 
+    public function radarSpeedSigns_v1()
+    {
+        $products = Product::select('id','slug')->where('category_id', 1)->get();
+        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $blogs = array_slice($postsSlice, 0 , 3);
+
+        return view('signv1.sign', compact('products','blogs'));
+    }
+
+    public function radarSpeedSignsget_quote_v1()
+    {
+        $products = Product::where('category_id', 1)->get();
+        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+        $blogs = array_slice($postsSlice, 0 , 3);
+
+        return view('signv1.get_quote', compact('products','blogs'));
+    }
+
+
     public function radarSigns($id)
     {
         $sessionId = Session::getId();
-        $product = Product::with(['images' => fn ($r) => $r->where('color', 'amber'), 'specilizations.specilization', 'specilizations.options', 'specilizations.options.specializationoptions', 'category'])->where('slug', $id)->first();
+        $product = Product::with(['images' => fn ($r) => $r->where('color', 'amber'), 'specilizations.specilization', 'specilizations.options', 'specilizations.options.specializationoptions', 'category','product_resources','product_features'])->where('slug', $id)->first();
         $productLists = Product::where('category_id', 1)->take(5)->get();
+
+        //list all accessories
+        $linked_products=Product::getLinkedProducts([$product->id]);
+
         // dd($product);
         $postalCode = '';
         $cartCount = 0;
@@ -47,7 +71,7 @@ class SignController extends Controller
             $cartCount = Cart::where('session_id', $sessionId)->count();
         }
 
-        return view('customer.radar_sign', compact('product', 'productLists', 'postalCode', 'cartCount','id'));
+        return view('customer.radar_sign', compact('product', 'productLists', 'postalCode', 'cartCount','id','linked_products'));
     }
 
     public function specificationAjax(Request $request)
@@ -120,3 +144,4 @@ class SignController extends Controller
     }
 
 }
+

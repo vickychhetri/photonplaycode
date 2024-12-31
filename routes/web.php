@@ -6,18 +6,21 @@ use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CMSHomeController;
+use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\customer\Auth\LoginController;
 use App\Http\Controllers\customer\CartController;
 use App\Http\Controllers\customer\ContactUsController;
 use App\Http\Controllers\customer\CustomerProfileController;
 use App\Http\Controllers\customer\SignController;
 use App\Http\Controllers\DBBackupController;
+use App\Http\Controllers\DealerSubscriptionController;
 use App\Http\Controllers\Guest\HomePageController;
 use App\Http\Controllers\ManageSeoController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RadarCloudManagementController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\ShopBrowseController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -188,6 +191,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
         Route::get('confirmation/{order_id}', [CartController::class, 'confirmation'])->name('confirmation');
         Route::post('add-shopping-bag', [CartController::class, 'addShoppingBag'])->name('store.shopping.bag');
+        Route::post('add-accessory-shopping-bag', [CartController::class, 'addAccessoryBag'])->name('store.shopping.accessory.bag');
         Route::get('remove-cart-item/{id}', [CartController::class, 'removeCartItem'])->name('remove.cartitem');
         Route::get('specification-ajax', [SignController::class, 'specificationAjax'])->name('specification.ajax');
 
@@ -208,7 +212,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 #contact-us - contact
         Route::get('contact', [ContactUsController::class, 'contactUs'])->name('contact.us');
 
-        
+
 
 //about-us
 
@@ -260,11 +264,20 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     });
 
     Route::group(['middleware' => 'country.redirect'], function () {
-        Route::get('radar-speed-signs', 'SignController@radarSpeedSigns')->name('radar.speed.signs');
+        Route::get('radar-speed-signs', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs');
         Route::get('radar-speed-signs/model/{productId}', 'SignController@radarSigns')->name('radar.sign');
+
+        Route::get('radar-speed-signs/shop', [ShopBrowseController::class,"index"])->name('product.shop');
+//        Route::get('radar-speed-signs', 'SignController@radarSpeedSigns')->name('radar.speed.signs');
 
     });
 
+//    Route::get('radar-speed-signsv1', 'SignController@radarSpeedSigns_v1')->name('radar.speed.signs_v1');
+
+    Route::get('radar-speed-signs-get-quote', 'SignController@radarSpeedSignsget_quote_v1')->name('radar.speed.signs__get_quote_v1');
+
+
+    Route::post('/dealer-subscriptions', [DealerSubscriptionController::class, 'store'])->name('dealer.subscriptions.store');
 
 //    require_once "guest/api.php";
 //    require_once "guest/api2.php";
@@ -307,6 +320,9 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
 
     //    Route::get('/', [HomePageController::class,'index'])->name('homepage');
+    Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
+    Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
+    Route::post('currency-change', [CurrencyController::class, 'changeCurrency'])->name('currency.change');
 
     Route::group(['middleware' => 'customerCheck'], function () {
         Route::get('edit-overview', [CustomerProfileController::class, 'overview'])->name('overview');
@@ -323,8 +339,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('delete-address/{id}', [CustomerProfileController::class, 'deleteAddress'])->name('delete.address');
         Route::get('default-address/{id}', [CustomerProfileController::class, 'defaultAddress'])->name('default.address');
 
-        Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
-        Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
+
+
 
         Route::get('/account/menu', [SignController::class, 'radarSpeedSigns_menus'])->name("account.menu");
 
