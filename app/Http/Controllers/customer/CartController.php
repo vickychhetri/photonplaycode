@@ -390,7 +390,7 @@ $products_list_ids=[];
                 'payment_status' => $checkout->payment_status
             ]);
             if($request->type == 'guest'){
-                Cart::where('session_id', $request->userId)->delete();
+                Cart::where('session_id', $request->userId)->orWhere('user_id', $request->userId)->delete();
             }else{
                 Cart::where('user_id', $request->userId)->delete();
             }
