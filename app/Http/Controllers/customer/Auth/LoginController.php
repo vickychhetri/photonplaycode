@@ -33,6 +33,18 @@ class LoginController extends Controller
 
     public function loginForm(Request $request)
     {
+        $total_cart_count = 0;
+        if(!Session::get('user')){
+            $cart_table =  Cart::select('quantity')->where('session_id', Session::getId())->get();
+            foreach($cart_table as $cart_t){
+                $total_cart_count+= $cart_t->quantity;
+            }
+        }else {
+            $cart_table =  Cart::select('quantity')->where('user_id', Session::get('user')->id)->get();
+            foreach($cart_table as $cart_t){
+                $total_cart_count += $cart_t->quantity;
+            }
+        }
 
         $loginuser_validate=Session::get('user');
         if($loginuser_validate){
@@ -41,7 +53,7 @@ class LoginController extends Controller
 
         $p = $request->p;
         $s = $request->s;
-        return view('customer.auth.login', compact('p', 's'));
+        return view('customer.auth.login', compact('p', 's','total_cart_count'));
     }
 
     public function login(Request $request)
@@ -100,15 +112,21 @@ class LoginController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
+            'last_name'=>'nullable|string|max:255',
             'email' => 'required|email|unique:customers,email',
             'password' => [
                 'required',
                 'confirmed',
                 'min:8',
-                'regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
+                'max:12',  // Ensure the password length is between 8 and 12 characters
+                'regex:/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/',  // Enforce rules for uppercase, number, and special character
             ],
             'password_confirmation' => 'required',
+        ], [
+            'email.unique' => 'This email address is already registered. Please try logging in or use a different email address.',
+            'password.regex' => 'Password must be 8-12 characters long, contain at least one uppercase letter, one number, and one special character (e.g., @$!%*?&).',
         ]);
+
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -121,6 +139,7 @@ class LoginController extends Controller
         $customer = Customer::create([
             'stripe_id' => $customer->id,
             'name' => $request->name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

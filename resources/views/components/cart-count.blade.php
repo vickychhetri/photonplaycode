@@ -6,7 +6,7 @@
                                             top: -2px;
                                             right: 42px;
                                             background-color: #377fb4;
-                                            color: red;
+                                            color: #f3cfcf;
                                             border-radius: 50%;
                                             padding: 2px 8px;
                                             font-size: 12px;

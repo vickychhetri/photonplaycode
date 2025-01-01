@@ -195,50 +195,7 @@ WAY GROUND)</span>
                                                 </form>
 
                                             @else
-                                                <!-- Main Form -->
-                                                <form id="checkoutForm" action="{{ route('customer.checkout') }}" method="POST">
-                                                    @csrf
-                                                    <input type="hidden" name="coupon_s" value="{{ $coupon_name }}">
-                                                    <input type="hidden" name="discount_s" value="{{ $discounted_amount }}">
-                                                    <input type="hidden" id="loginOption" name="login_option" value=""> <!-- To capture login/guest login -->
-                                                    <button type="button" class="btn btn-primary p-1 btn-block w-100 rounded-0 {{ count($cart_table) <= 0 ? 'disabled' : '' }}" data-bs-toggle="modal" data-bs-target="#loginModal">
-                                                        Proceed to buy
-                                                    </button>
-                                                </form>
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="loginModalLabel">Choose Login Option</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body text-center">
-                                                                <input type="button" class="btn btn-outline-primary w-100 mb-3" value="Login" onclick="handleLoginOption('login')">
-                                                                <input type="button" class="btn btn-outline-secondary w-100" value="Guest Login" onclick="handleLoginOption('guest')">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- JavaScript -->
-                                                <script>
-                                                    function handleLoginOption(option) {
-                                                        if (option === 'login') {
-                                                            // Redirect to the login form
-                                                            const loginUrl = "{{ route('customer.loginForm', ['p' => 1, 's' => Session::getId()]) }}";
-                                                            window.location.href = loginUrl;
-                                                        } else if (option === 'guest') {
-                                                            // Set the value of the hidden field for guest login
-                                                            document.getElementById('loginOption').value = option;
-
-                                                            // Submit the form
-                                                            document.getElementById('checkoutForm').submit();
-                                                        }
-                                                    }
-                                                </script>
-
+                                            <a href="{{ route('customer.loginForm') }}"  class="btn btn-primary p-1 btn-block w-100 rounded-0 {{ count($cart_table) <= 0 ? 'disabled' : '' }}">Proceed to buy </a>
                                             @endif
                                             <!-- Main Form -->
 
