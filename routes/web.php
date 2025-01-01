@@ -17,6 +17,7 @@ use App\Http\Controllers\DealerSubscriptionController;
 use App\Http\Controllers\Guest\HomePageController;
 use App\Http\Controllers\ManageSeoController;
 use App\Http\Controllers\NotificationsController;
+use App\Http\Controllers\PostalCodesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RadarCloudManagementController;
 use App\Http\Controllers\SettingsController;
@@ -323,6 +324,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     Route::any('shipping-and-checkout', [CartController::class, 'checkout'])->name('checkout');
     Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
     Route::post('currency-change', [CurrencyController::class, 'changeCurrency'])->name('currency.change');
+
+    Route::get('/search-locations', [PostalCodesController::class, 'index'])->name('postal_code.search');
 
     Route::group(['middleware' => 'customerCheck'], function () {
         Route::get('edit-overview', [CustomerProfileController::class, 'overview'])->name('overview');
