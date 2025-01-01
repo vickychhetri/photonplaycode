@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\customer\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
 use App\Models\Cart;
 use App\Models\Customer;
 use Illuminate\Auth\Events\Validated;
@@ -10,6 +11,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Socialite;
@@ -143,6 +145,9 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        Mail::to($request->email)->send(new WelcomeMail($customer));
+
         $session = Session::put('user', $customer);
         $cart = Cart::where('session_id', $sessionId)->update(['user_id' => Session::get('user')->id]);
         if($cart){
