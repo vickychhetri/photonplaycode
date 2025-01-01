@@ -23,7 +23,7 @@
                                     </slider>
                                 </div>
                             </div>
-                            <div class="col-md-9 bg-white" wire:ignore >
+                            <div class="col-md-9 bg-white" id="main_screen_image_cover_div" wire:ignore >
                                 <div class="responsive-two">
                                     <div>
                                         <div class="p-2" id="slider_static">
@@ -31,7 +31,7 @@
 {{--                                                <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"--}}
 {{--                                                     class="img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}">--}}
                                                 <img  src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
-                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}">
+                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
                                             </div>
                                         </div>
                                     </div>
@@ -444,11 +444,28 @@
             thumb: '.thumb',
             large: document.getElementById('big-img-radar-product').src,
             largeWrapper: 'preview1',
-            zoom: 3,
-            zoomable: false
+            zoom: 2,
+            zoomable: true
         });
     }
     initializeMagnifier();
+
+    const sliderStatic = document.getElementById('main_screen_image_cover_div');
+    const preview1 = document.getElementById('preview1');
+
+    // Set z-index to 999 when mouse enters
+    sliderStatic.addEventListener('mouseover', () => {
+        preview1.style.zIndex = '999';
+        preview1.style.display = 'block';
+    });
+
+    // Reset z-index to -999 when mouse leaves
+    sliderStatic.addEventListener('mouseout', () => {
+        preview1.style.zIndex = '-999';
+        preview1.style.display = 'none';
+    });
+
+
 
 </script>
 

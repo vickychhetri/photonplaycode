@@ -117,7 +117,24 @@ $exchange_rate = session('exchange_rate', '1');
         border: 1px solid black;
         border-collapse: collapse;
     }
+
+    #preview1 {
+        z-index: -999;
+        transition: z-index 0.3s ease;
+        display: none;
+    }
+    @media screen and (min-width: 1024px) {
+        .slider_static:hover #preview1 {
+            z-index: 999;
+            display: block;
+        }
+    }
+
 </style>
+
+
+<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;z-index:999;width: 500px;">
+</div>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">
     <div class="container">
