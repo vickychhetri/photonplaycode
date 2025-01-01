@@ -28,8 +28,7 @@ $productLists = Product::where('category_id',1)->take(5)->get();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/magnifier.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/custom_magnifier.css') }}">
+
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
@@ -49,8 +48,7 @@ $productLists = Product::where('category_id',1)->take(5)->get();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"  async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.0/dist/cdn.min.js" defer></script>
-    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Event.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Magnifier.js') }}"></script>
+
     @livewireStyles
     {{--            Start meta--}}
     <x-Customer.MetaSeoTag :seodata="$seo_meta??0"/>
