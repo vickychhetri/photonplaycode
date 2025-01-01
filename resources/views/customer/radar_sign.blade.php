@@ -111,7 +111,7 @@ $exchange_rate = session('exchange_rate', '1');
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/magnifier.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/custom_magnifier.css') }}">
 
-{{--    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Event.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Event.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/magnifier/Magnifier.js') }}"></script>
 
 
@@ -140,7 +140,7 @@ $exchange_rate = session('exchange_rate', '1');
 </style>
 
 
-<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;z-index:999;width: 500px;">
+<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">
 </div>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">

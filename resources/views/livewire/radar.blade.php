@@ -28,8 +28,6 @@
                                     <div>
                                         <div class="p-2" id="slider_static">
                                             <div class="img-leften d-flex justify-content-center align-items-center">
-{{--                                                <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"--}}
-{{--                                                     class="img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}">--}}
                                                 <img  src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
                                                      class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
                                             </div>
@@ -148,7 +146,7 @@
                                                 <!-- Loop through each option for this specialization -->
                                                 @foreach($specilization->options as $option)
                                                     <option value="{{ $option->id }}">
-                                                        {{ $option->specializationoptions->option }} (+ {{$currency_icon}}<span class="price">{{ $option->specialization_price }}</span>)
+                                                        {{ $option->specializationoptions->option }} (+{{$currency_icon}}<span class="price">{{ $option->specialization_price }}</span>)
                                                         @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                             Subscription Free For 1 Year
                                                         @endif
@@ -435,6 +433,22 @@
             });
     }
 
+    const sliderStatic = document.getElementById('main_screen_image_cover_div');
+    const preview1 = document.getElementById('preview1');
+    // Set z-index to 999 when mouse enters
+    sliderStatic.addEventListener('mouseover', () => {
+        preview1.style.zIndex = '999';
+        preview1.style.display = 'block';
+    });
+
+    // Reset z-index to -999 when mouse leaves
+    sliderStatic.addEventListener('mouseout', () => {
+        preview1.style.zIndex = '-999';
+        preview1.style.display = 'none';
+    });
+
+
+
 
     var evt = new Event(),
         m = new Magnifier(evt);
@@ -449,22 +463,6 @@
         });
     }
     initializeMagnifier();
-
-    const sliderStatic = document.getElementById('main_screen_image_cover_div');
-    const preview1 = document.getElementById('preview1');
-
-    // Set z-index to 999 when mouse enters
-    sliderStatic.addEventListener('mouseover', () => {
-        preview1.style.zIndex = '999';
-        preview1.style.display = 'block';
-    });
-
-    // Reset z-index to -999 when mouse leaves
-    sliderStatic.addEventListener('mouseout', () => {
-        preview1.style.zIndex = '-999';
-        preview1.style.display = 'none';
-    });
-
 
 
 </script>
