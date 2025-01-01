@@ -19,6 +19,7 @@ use App\Http\Controllers\ManageSeoController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\PostalCodesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RadarApplicationAreaPageController;
 use App\Http\Controllers\RadarCloudManagementController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\ShopBrowseController;
@@ -397,3 +398,9 @@ Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'ope
 Route::post('download-brochure', [SignController::class, 'downloadBrochure'])->name('download.brochure');
 Route::post('vendor-store', [SignController::class, 'vendorStore'])->name('vendor.store');
 Route::get('dealership', [ContactUsController::class, 'dealership'])->name('dealership');
+
+
+Route::group(['prefix' => 'radar_speed_sign', 'as' => 'radar_speed_sign.'], function () {
+    Route::get('municipalities', [RadarApplicationAreaPageController::class, 'municipalities'])->name('municipalities');
+
+});
