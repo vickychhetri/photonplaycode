@@ -108,6 +108,13 @@ $exchange_rate = session('exchange_rate', '1');
     }]
     }
     </script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/magnifier.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/custom_magnifier.css') }}">
+
+{{--    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Event.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Magnifier.js') }}"></script>
+
+
 @endpush
 @include('customer.layouts.header')
 <style>
