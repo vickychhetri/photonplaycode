@@ -1,75 +1,90 @@
 @include('customer.layouts.header')
+<style>
+    .input-cus-group .form-control{
+        height: 45px;
+    }
+    .input-cus-group .input-group-text{
+        height: 45px;
+    }
 
-<div class="container-cus pt-lg-5 pt-3">
-    <div class="login-sec">
-        <div class="form-section2 p-3">
-            <div class="d-flex form-section-inner">
-                <div class="login-parent">
-                    <div class="login-parent-inner">
-                        <h1 class="mb-lg-5 mb-4 text-dark">Login in to <br />Your account</h1>
-                        <!-- Display error messages here -->
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        @if(session('error'))
-                            <div class="alert alert-danger">
-                                {{ session('error') }}
-                            </div>
-                        @endif
-
-                        <form id="loginForm" action="{{ route('customer.login') }}" method="post">
-                            @csrf
-                            <input type="hidden" name="p" value="{{$p ?? 0}}">
-                            <input type="hidden" name="s" value="{{$s ?? 0}}">
-
-                            <!-- Email Validation -->
-                            <label for="">Email Address</label><div class="error-message" id="emailError"></div>
-                            <div class="input-group input-cus-group mb-4">
-                                <input type="text" name="email" id="email" class="form-control input-cus" aria-label="Email Address">
-
-                            </div>
-
-                            <!-- Password Validation -->
-                            <label for="">Password</label> <div class="error-message" id="passwordError"></div>
-                            <div class="input-group input-cus-group mb-1">
-                                <input type="password" name="password" id="password" class="form-control input-cus" aria-label="Password">
-                                <span class="input-group-text toggle-password">
-                                    <i class="bi bi-eye"></i>
-                                </span>
-                            </div>
-
-                            <label class="d-block mb-5">
-                                <a href="{{ route('customer.forgot_password') }}" class="text-decoration-none text-colorr">Forgot password?</a>
-                            </label>
-                            <button type="submit" class="btn btn-primary rounded py-2 w-100 mb-3 fw-normal">Login</button>
-                        </form>
-                        <div class="mt-5">
-                            <label class="d-block">Don't have an account? <a href="{{ route('customer.registerForm') }}" class="text-colorr">Signup here.</a></label>
+</style>
+<div class="container py-5">
+    <h3 class="mb-4 pb-4 text-dark">Choose a Secure Checkout Method</h3>
+    <div class="row">
+        <!-- Login Section -->
+        <div class="col-lg-6 border-end">
+            <div class="row">
+                <div class="col-md-7">
+                    <h4 class="mb-3">Sign in for Express Checkout</h4>
+                    <!-- Display error messages -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Image Slider -->
-                <div class="slider d-none d-lg-block">
-                    <div id="carouselExampleCaptions" data-bs-interval="false" data-bs-ride="false" data-bs-pause="hover" class="carousel slide">
-                        <div class="carousel-indicators"></div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{asset('assets/customer/images/login.webp')}}" class="w-100" style="height: 100%;object-fit: cover;" />
-                            </div>
+                    @endif
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
                         </div>
-                    </div>
+                    @endif
+
+                    <form id="loginForm" action="{{ route('customer.login') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="p" value="{{$p ?? 0}}">
+                        <input type="hidden" name="s" value="{{$s ?? 0}}">
+
+                        <!-- Email Input -->
+                        <label for="email">Email Address</label>
+                        <div class="error-message" id="emailError"></div>
+                        <div class="input-group input-cus-group mb-3">
+                            <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}" placeholder="Enter your email">
+                        </div>
+
+                        <!-- Password Input -->
+                        <label for="password">Password</label>
+                        <div class="error-message" id="passwordError"></div>
+                        <div class="input-group input-cus-group mb-3">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password">
+                            <span class="input-group-text toggle-password">
+                        <i class="bi bi-eye"></i>
+                    </span>
+                        </div>
+
+                        <div class="mb-4">
+                            <a href="{{ route('customer.forgot_password') }}" class="text-decoration-none">Forgot your password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary  mb-3">Sign In / Login</button>
+                    </form>
+                    <p>Don’t have an account? <a href="{{ route('customer.registerForm') }}">Sign up here</a></p>
                 </div>
             </div>
+
+        </div>
+
+        <!-- Guest Checkout Section -->
+        <div class="col-lg-6 text-center">
+            <h4 class="mb-3">Checkout as a Guest</h4>
+            <p>Customers checking out as a guest will have the opportunity to create an account after placing your order.</p>
+            @if($total_cart_count >0)
+                <form action="{{ route('customer.checkout') }}" method="POST">
+                    @csrf
+            @else
+                <form action="{{ route('customer.product.shop') }}" method="GET">
+            @endif
+                <button type="submit" class="btn btn-primary mt-3  btn-block rounded-0" >
+                    Checkout as a Guest
+                </button>
+            </form>
+
         </div>
     </div>
 </div>
+
 
 @include('customer.layout2.footer')
 
