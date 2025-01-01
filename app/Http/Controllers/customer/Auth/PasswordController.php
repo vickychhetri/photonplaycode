@@ -35,7 +35,7 @@ class PasswordController extends Controller
         if($validator->fails()){
             return redirect()->back()->with('error',  $validator->errors()->first());
         }
-
+        $customer= Customer::select('name')->where('email',$request->email)->first();
         $token = Str::random(64);
 
         DB::table('password_resets')->insert([
@@ -46,6 +46,7 @@ class PasswordController extends Controller
 
         $data = [
             'token' => $token,
+            'name'=>$customer->name,
             'email' => $request->email,
             'created_at' => now(),
         ];
@@ -53,15 +54,40 @@ class PasswordController extends Controller
         return redirect()->back()->with('success', "We have e-mailed your password reset link!");
     }
 
-    public function resetPassword($token)
-    {
-        $user = DB::table('password_resets')->where('token', $token)->first();
-        if ($user) {
-            $email = $user->email;
-            return view('customer.auth.change_password_form', compact('email'));
-        }
-        return redirect()->route('forgot-password')->with('failed', 'Password reset link is expired');
-    }
+//    public function resetPassword($token)
+//    {
+//        $user = DB::table('password_resets')->where('token', $token)->first();
+//        if ($user) {
+//            $email = $user->email;
+//            return view('customer.auth.change_password_form', compact('email'));
+//        }
+//        return redirect()->route('forgot-password')->with('failed', 'Password reset link is expired');
+//    }
+
+            public function resetPassword($token)
+            {
+                $user = DB::table('password_resets')->where('token', $token)->first();
+                if ($user) {
+                    // Check if the token is older than 15 minutes
+                    $tokenCreatedAt = $user->created_at;
+                    $currentTime = now();
+
+                    // Check if the token is older than 15 minutes
+                    if ($currentTime->diffInMinutes($tokenCreatedAt) > 15) {
+                        // Token has expired
+                        return redirect()->route('forgot-password')->with('failed', 'Password reset link has expired');
+                    }
+
+                    $email = $user->email;
+                    return view('customer.auth.change_password_form', compact('email'));
+                }
+
+                // If the token doesn't exist
+                return redirect()->route('forgot-password')->with('failed', 'Password reset link is invalid');
+            }
+
+
+
 
     public function changePassword(Request $request)
     {
