@@ -4,7 +4,7 @@
     <span style="
                                             position: absolute;
                                             top: 1px;
-                                            right: 42px;
+                                            right: 48px;
                                             background-color: red;
                                             color: white;
                                             border-radius: 50%;
