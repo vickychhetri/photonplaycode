@@ -403,5 +403,12 @@ Route::get('dealership', [ContactUsController::class, 'dealership'])->name('deal
 Route::group(['prefix' => 'radar_speed_sign', 'as' => 'radar_speed_sign.'], function () {
     Route::get('municipalities', [RadarApplicationAreaPageController::class, 'municipalities'])->name('municipalities');
     Route::get('campus', [RadarApplicationAreaPageController::class, 'campus'])->name('campus');
+    Route::get('school-zones', [RadarApplicationAreaPageController::class, 'school_zone'])->name('school_zone');
+    Route::get('parking-lot', [RadarApplicationAreaPageController::class, 'parking_lot'])->name('parking_lot');
+
+    Route::get('neighbourhoods', [RadarApplicationAreaPageController::class, 'neighbourhoods'])->name('neighbourhoods');
+
+
+
 
 });
