@@ -552,7 +552,7 @@ $exchange_rate = session('exchange_rate', '1');
                         $('slider').append(
                             `<div>
                                         <div class="radar-item-box">
-                                            <img src="{{asset('storage/${res.image}')}}" class="img-fluid"
+                                            <img src="{{asset('storage/thumbnail/${res.image}')}}" class="img-fluid"
                                                     alt="{{$product->title}}">
                                         </div>
                                     </div>`
