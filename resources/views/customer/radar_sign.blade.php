@@ -161,10 +161,10 @@ $exchange_rate = session('exchange_rate', '1');
         left: 720px; /* Adjust to position next to the image */
         width: 600px;
         height: 500px;
-        border: 3px solid #ccc;
+        /*border: 3px solid #ccc;*/
         display: none;
         overflow: hidden;
-        background-color: rgba(223, 223, 230, 0.8);
+        /*background-color: rgba(223, 223, 230, 0.8);*/
     }
 
     #v_zoom-zoomed-image {
@@ -177,7 +177,7 @@ $exchange_rate = session('exchange_rate', '1');
 
     .v_zoom-focus-area {
         position: absolute;
-        border: 2px dashed rgba(0, 0, 0, 0.5);
+        /*border: 2px dashed rgba(0, 0, 0, 0.5);*/
         pointer-events: none;
         width: 200px;
         height: 200px;
@@ -191,7 +191,7 @@ $exchange_rate = session('exchange_rate', '1');
 {{--<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">--}}
 {{--</div>--}}
     <div id="v_zoom-zoom-container" class="v_zoom-zoom-container">
-        <img id="v_zoom-zoomed-image" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8zMF8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX2FfZ2lybF9yZWFkaW5nX2NhcnRvb184NDcwYjgzMy01OWI1LTQ1YzItYTI1NC0yZWY3YTgwNjQ5MTIucG5n.png" alt="Zoomed Product Image">
+        <img id="v_zoom-zoomed-image" src="" alt="Zoomed Product Image">
     </div>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">
