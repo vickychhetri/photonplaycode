@@ -17,7 +17,9 @@ use App\Http\Controllers\DealerSubscriptionController;
 use App\Http\Controllers\Guest\HomePageController;
 use App\Http\Controllers\ManageSeoController;
 use App\Http\Controllers\NotificationsController;
+use App\Http\Controllers\PostalCodesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RadarApplicationAreaPageController;
 use App\Http\Controllers\RadarCloudManagementController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\ShopBrowseController;
@@ -324,6 +326,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
     Route::any('place-order', [CartController::class, 'placeOrder'])->name('place.order');
     Route::post('currency-change', [CurrencyController::class, 'changeCurrency'])->name('currency.change');
 
+    Route::get('/search-locations', [PostalCodesController::class, 'index'])->name('postal_code.search');
+
     Route::group(['middleware' => 'customerCheck'], function () {
         Route::get('edit-overview', [CustomerProfileController::class, 'overview'])->name('overview');
         Route::get('edit-address', [CustomerProfileController::class, 'address'])->name('address');
@@ -394,3 +398,10 @@ Route::get('/product/{id}/edit/media-ajax', [ProductMediaController::class, 'ope
 Route::post('download-brochure', [SignController::class, 'downloadBrochure'])->name('download.brochure');
 Route::post('vendor-store', [SignController::class, 'vendorStore'])->name('vendor.store');
 Route::get('dealership', [ContactUsController::class, 'dealership'])->name('dealership');
+
+
+Route::group(['prefix' => 'radar_speed_sign', 'as' => 'radar_speed_sign.'], function () {
+    Route::get('municipalities', [RadarApplicationAreaPageController::class, 'municipalities'])->name('municipalities');
+    Route::get('campus', [RadarApplicationAreaPageController::class, 'campus'])->name('campus');
+
+});

@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class Radar extends Component
 {
-    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price ;
+    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price, $currency_icon ;
     public $linked_products;
     public  $currency_icon_selected;
     public $product_id;
@@ -24,6 +24,7 @@ class Radar extends Component
         $this->exchangeRate = Session::get('exchange_rate', 1);
         $this->currency_icon_selected = Session::get('currency_icon', '$');
 
+        $this->currency_icon = Session::get('currency_icon', '$');
 
         $this->product = Product::with([
             'images' => fn($r) => $r->where('color', 'amber'),
@@ -104,6 +105,7 @@ class Radar extends Component
 //            }
 //        }
 
+
         if( $this->postalCode){
             if(Session::get('user')){
                 UserPostalCode::where('user_id', Session::get('user')->id)->delete();
@@ -133,7 +135,7 @@ class Radar extends Component
                     'category' => $this->category,
                     'quantity' => $this->quantity,
                     'cover_image' => $this->cover_image,
-                    'currency_code'=> $this->currency_icon_selected,
+                    'currency_code'=> $this->currency_icon,
                     'exchange_rate'=>$this->exchangeRate
                 ]);
             }
@@ -154,7 +156,7 @@ class Radar extends Component
                     'quantity' => $this->quantity,
                     'cover_image' => $this->cover_image,
                     'color' => $this->color,
-                    'currency_code'=> $this->currency_icon_selected,
+                    'currency_code'=> $this->currency_icon,
                     'exchange_rate'=>$this->exchangeRate
                 ]);
             }

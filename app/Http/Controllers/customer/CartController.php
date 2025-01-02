@@ -266,6 +266,7 @@ $products_list_ids=[];
 
     public function placeOrder(Request $request){
         try{
+            $currency_code = Session::get('currency_code', 'USD');
             if(!Session::get('user')){
                 $this->validate($request, [
                     'email' => 'required|email',
@@ -350,6 +351,7 @@ $products_list_ids=[];
                    $data = [
                        'token' => $token,
                        'email' => $email,
+                       'name'=>$request->name,
                        'created_at' => now(),
                    ];
                    ResetPasswordJob::dispatch($data);
@@ -394,7 +396,12 @@ $products_list_ids=[];
                 Cart::where('user_id', $request->userId)->delete();
             }
 
-
+        $customer= Customer::where('id',$request->userId)->first();
+            $customer_name="Customer";
+            if(isset($customer)){
+                $customer_name=$customer->name;
+            }
+            $order["customer_first_name"]=$customer_name;
         $order_product=OrderedProduct::where('order_id',$order->id)->get();
                 $products_list=[];
             foreach ($order_product as $product_order){
@@ -410,8 +417,13 @@ $products_list_ids=[];
             }
             $order['item']=$products_list;
 
+            if(!$order['is_shipping_same']){
+                $order['shipping_address']=$order["shipping_flat_suite"]." ".$order["shipping_street"]." ".$order["shipping_city"]." ".$order["shipping_state"]." ".$order["shipping_country"]." ".$order["shipping_postcode"];
+            }else {
+                $order['shipping_address']=$order["billing_flat_suite"]." ".$order["billing_street"]." ".$order["billing_city"]." ".$order["billing_state"]." ".$order["billing_country"]." ".$order["billing_postcode"];
+            }
+
         $place_order = new OrderPlaceMail($order);
-//dd($order);
         Mail::to($request->email)->send($place_order);
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));

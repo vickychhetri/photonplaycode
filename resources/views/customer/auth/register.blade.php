@@ -1,5 +1,12 @@
 @include('customer.layouts.header')
-
+<style>
+    .input-cus-group .form-control{
+            height: 45px;
+    }
+    .input-cus-group .input-group-text{
+        height: 45px;
+    }
+</style>
 <div class="container-cus pt-lg-5 pt-3">
     <div class="login-sec">
         <div class="form-section2 p-3">
@@ -19,54 +26,82 @@
                             </div>
                         @endif
 
-
                         <form id="registerForm" action="{{ route('customer.register') }}" method="post">
                             @csrf
-                            <label for="">Name</label>  <div class="error-message" id="nameError"></div>
-                            <div class="input-group input-cus-group">
-                                <input type="text" name="name" id="name" class="form-control input-cus" aria-label="Name"><br/>
+
+
+                            <div class="row">
+                                <!-- First Name -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="">Name</label>
+                                    <div class="error-message" id="nameError"></div>
+                                    <div class="input-group input-cus-group mb-1">
+                                        <input type="text" name="name" id="name" class="form-control input-cus"
+                                               value="{{ old('name') }}" aria-label="Name">
+                                    </div>
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="last_name">Last Name</label>
+                                    <div class="error-message" id="lastNameError"></div>
+                                    <div class="input-group input-cus-group">
+                                        <input type="text" name="last_name" id="last_name" class="form-control input-cus"
+                                               value="{{ old('last_name') }}" aria-label="Last Name">
+                                    </div>
+                                </div>
                             </div>
 
 
-                            <label for="">Email Address</label> <div class="error-message" id="emailError"></div>
-                            <div class="input-group input-cus-group">
-                                <input type="email" name="email" id="email" class="form-control input-cus" aria-label="Email Address">
-
+                            <label for="">Email Address</label>
+                            <div class="error-message" id="emailError"></div>
+                            <div class="input-group input-cus-group  mb-1">
+                                <input type="email" name="email" id="email" class="form-control input-cus"
+                                       value="{{ old('email') }}" aria-label="Email Address">
                             </div>
 
-                            <label for="">Password</label> <div class="error-message" id="passwordError"></div>
-                            <div class="input-group input-cus-group">
-                                <input type="password" name="password" id="password" class="form-control input-cus" aria-label="Password">
+                            <label for="">Password <span style="font-size: 10px;">  (Password must be 8-12 characters long and must contain one special character)</span></label>
+
+                            <div class="error-message" id="passwordError"></div>
+                            <div class="input-group input-cus-group  mb-1">
+                                <input type="password" name="password" id="password" class="form-control input-cus"
+                                       aria-label="Password">
                                 <span class="input-group-text toggle-password-password">
-                                    <i class="bi bi-eye"></i>
-                                </span>
-
+            <i class="bi bi-eye"></i>
+        </span>
                             </div>
 
-                            <label for="">Confirm Password</label>   <div class="error-message" id="confirmPasswordError"></div>
+                            <label for="">Confirm Password</label>
+                            <div class="error-message" id="confirmPasswordError"></div>
                             <div class="input-group input-cus-group mb-4">
-                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-cus" aria-label="Confirm Password">
+                                <input type="password" name="password_confirmation" id="password_confirmation"
+                                       class="form-control input-cus" aria-label="Confirm Password">
                                 <span class="input-group-text toggle-password-confirmation">
-                                    <i class="bi bi-eye"></i>
-                                </span>
+            <i class="bi bi-eye"></i>
+        </span>
                             </div>
 
-
-                            <button type="submit" class="btn btn-primary rounded py-2 w-100 mb-3 fw-normal">Register</button>
+                            <button type="submit" class="btn btn-primary rounded py-2 w-100 mb-3 fw-normal">Register
+                            </button>
                         </form>
 
+
                         <div class="mt-5">
-                            <label class="d-block">Already have an account? <a href="{{ route('customer.loginForm') }}" class="text-colorr">Login here.</a></label>
+                            <label class="d-block">Already have an account? <a href="{{ route('customer.loginForm') }}"
+                                                                               class="text-colorr">Login
+                                    here.</a></label>
                         </div>
                     </div>
                 </div>
 
                 <div class="slider d-none d-lg-block h-100">
-                    <div id="carouselExampleCaptions" data-bs-interval="false" data-bs-ride="false" data-bs-pause="hover" class="carousel slide">
+                    <div id="carouselExampleCaptions" data-bs-interval="false" data-bs-ride="false"
+                         data-bs-pause="hover" class="carousel slide">
                         <div class="carousel-indicators"></div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{asset('assets/customer/images/4957136_4957136.webp')}}" class="w-100" style="height: 100%;object-fit: cover;" alt=""/>
+                                <img src="{{asset('assets/customer/images/4957136_4957136.webp')}}" class="w-100"
+                                     style="height: 100%;object-fit: cover;" alt=""/>
                             </div>
                         </div>
                     </div>
@@ -79,14 +114,14 @@
 @include('customer.layout2.footer')
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var eyePassword = document.querySelector('.toggle-password-password');
         var eyeConfirmation = document.querySelector('.toggle-password-confirmation');
         var password = document.querySelector('input[name="password"]');
         var confirmPassword = document.querySelector('input[name="password_confirmation"]');
 
         // Toggle password visibility
-        eyePassword.addEventListener('click', function() {
+        eyePassword.addEventListener('click', function () {
             if (password.type === 'password') {
                 password.type = 'text';
                 eyePassword.innerHTML = '<i class="bi bi-eye-slash"></i>';
@@ -96,7 +131,7 @@
             }
         });
 
-        eyeConfirmation.addEventListener('click', function() {
+        eyeConfirmation.addEventListener('click', function () {
             if (confirmPassword.type === 'password') {
                 confirmPassword.type = 'text';
                 eyeConfirmation.innerHTML = '<i class="bi bi-eye-slash"></i>';
@@ -107,11 +142,11 @@
         });
 
         // Form validation
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
             // Clear any previous error messages
-            document.querySelectorAll('.error-message').forEach(function(el) {
+            document.querySelectorAll('.error-message').forEach(function (el) {
                 el.textContent = '';
             });
 
@@ -134,11 +169,12 @@
 
             // Validate Password
             var passwordValue = password.value;
-            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
             if (!passwordValue || !passwordRegex.test(passwordValue)) {
                 isValid = false;
-                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long, include a letter and a number.';
+                document.getElementById('passwordError').textContent = 'Enter Password (Password must be 8-12 characters long, contain at least one letter, one number, and one special character like @$!%*?&)';
             }
+
 
             // Validate Confirm Password
             var confirmPasswordValue = confirmPassword.value;

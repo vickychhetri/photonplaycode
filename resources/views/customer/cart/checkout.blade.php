@@ -8,6 +8,22 @@
         font-family: Roboto, sans-serif;
 
     }
+
+    #suggestions {
+        max-height: 200px; /* Limit height to make scrolling possible for many suggestions */
+        overflow-y: auto;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
+
+    .list-group-item {
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .list-group-item:hover {
+        background-color: #f8f9fa; /* Light gray hover effect */
+    }
 </style>
 {{--//main_shipping_double_address - vicky 26-12-2024 end--}}
 <section class="stepper-form-tabber pt-3 pb-0">
@@ -63,17 +79,150 @@
                     <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" value="">
                     <div>
-                        <select id="billing_country"  name="billing_country"  class="form-control rounded-0 px-3" required>
-                            <option value="">Select Country</option>
-                        </select>
-                        <select id="billing_state"  name="billing_state" class="form-control rounded-0 px-3" required>
-                            <option value="">Select State</option>
-                        </select>
-                        <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3" required>
-                            <option value="">Select City</option>
-                        </select>
-                        <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" placeholder="Postal Code"  required />
+                        <div>
+                            <label for="billing_postcode" class="form-label">Postal Code</label>
+                            <input type="text" class="form-control rounded-0 px-3 pb-0" name="billing_postcode" id="billing_postcode" placeholder="Postal Code" maxlength="8" required />
+                            <span id="billing_postcode_error_msg" class="mb-2"></span>
+                            <ul id="suggestions" class="list-group pt-0 mt-0 mb-2" style="display:none;"></ul>
+                        </div>
+
+                        <div>
+                            <label for="billing_city" class="form-label">City</label>
+                            <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3 mt-2" required>
+                                <option value="">Select City</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="billing_state" class="form-label">State</label>
+                            <select id="billing_state" name="billing_state" class="form-control rounded-0 px-3" required>
+                                <option value="">Select State</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="billing_country" class="form-label">Country</label>
+                            <select id="billing_country" name="billing_country" class="form-control rounded-0 px-3" required>
+                                <option value="">Select Country</option>
+                            </select>
+                        </div>
                     </div>
+                 <script>
+                     let debounceTimeout;
+
+                     // Function to fetch location suggestions based on postal code
+                     document.getElementById('billing_postcode').addEventListener('input', function () {
+                         let postalCode = this.value.trim();
+                         const suggestionsList = document.getElementById('suggestions');
+
+                         // Reset associated fields when the postal code changes
+                         resetFields();
+
+                         // Hide suggestions if no postal code is entered
+                         if (postalCode.length === 0) {
+                             suggestionsList.style.display = 'none';
+                             return;
+                         }
+
+                         // Only trigger the request if the postal code is at least 3 characters
+                         if (postalCode.length >= 3) {
+                             // Debounce: clear previous timeout if the user is still typing
+                             clearTimeout(debounceTimeout);
+
+                             // Set a new timeout to wait for the user to stop typing
+                             debounceTimeout = setTimeout(function () {
+                                 // Send request to backend after user stops typing
+                                 fetch(`/search-locations?postal_code=${postalCode}`)
+                                     .then(response => response.json())
+                                     .then(data => {
+                                         // Check if the response is successful
+                                         if (data.status === 'success' && data.data.length > 0) {
+                                             // Clear previous suggestions
+                                             suggestionsList.innerHTML = '';
+                                             suggestionsList.style.display = 'block';
+
+                                             if (data.data.length === 1) {
+                                                 data.data.forEach(location => {
+                                                     // Populate the form with selected suggestion
+                                                     document.getElementById('billing_postcode').value = location.postal_code;
+
+                                                     document.getElementById('billing_country').innerHTML = `<option value="${location.country_name}">${location.country_name}</option>`;
+                                                     document.getElementById('billing_state').innerHTML = `<option value="${location.province_abbr}">${location.province}</option>`;
+                                                     document.getElementById('billing_city').innerHTML = `<option value="${location.city}">${location.city}</option>`;
+
+                                                     // Hide the suggestions list after selection
+                                                     suggestionsList.style.display = 'none';
+                                                 });
+                                             }else {
+                                                 // Show suggestions for the postal code entered
+                                                 data.data.forEach(location => {
+                                                     const suggestionItem = document.createElement('li');
+                                                     suggestionItem.classList.add('list-group-item', 'cursor-pointer');
+                                                     suggestionItem.textContent = `${location.city}, ${location.postal_code} (${location.country})`;
+                                                     suggestionItem.dataset.postalCode = location.postal_code; // Store postal code in the suggestion
+
+                                                     // Add event listener to select a suggestion
+                                                     suggestionItem.addEventListener('click', function () {
+                                                         // Populate the form with selected suggestion
+                                                         document.getElementById('billing_postcode').value = location.postal_code;
+
+                                                         document.getElementById('billing_country').innerHTML = `<option value="${location.country_name}">${location.country_name}</option>`;
+                                                         document.getElementById('billing_state').innerHTML = `<option value="${location.province_abbr}">${location.province}</option>`;
+                                                         document.getElementById('billing_city').innerHTML = `<option value="${location.city}">${location.city}</option>`;
+
+                                                         // Hide the suggestions list after selection
+                                                         suggestionsList.style.display = 'none';
+                                                     });
+
+                                                     // Append the suggestion item to the list
+                                                     suggestionsList.appendChild(suggestionItem);
+                                                 });
+                                             }
+
+
+                                         } else {
+                                             // No suggestions found, hide the list
+                                             const billingPostcodeErrorMsg = document.getElementById('billing_postcode_error_msg');
+                                             document.getElementById('billing_postcode_error_msg').style.display = "block";
+                                             document.getElementById('billing_postcode_error_msg').style.color = "red";
+                                             document.getElementById('billing_postcode_error_msg').innerText =
+
+                                             billingPostcodeErrorMsg.style.display = 'block';
+                                             billingPostcodeErrorMsg.style.color = 'red';
+                                             billingPostcodeErrorMsg.innerText = "Postal code is invalid. Make sure you’ve entered it correctly!";
+                                             suggestionsList.style.display = 'none';
+                                         }
+                                     })
+                                     .catch(error => {
+                                         console.error('Error fetching location data:', error);
+                                         suggestionsList.style.display = 'none'; // Hide suggestions on error
+                                     });
+                             }, 200); // 200ms delay after the user stops typing
+                         }
+                     });
+
+                     // Function to reset fields
+                     function resetFields() {
+                         document.getElementById('billing_country').innerHTML = '<option value="">Select Country</option>';
+                         document.getElementById('billing_state').innerHTML = '<option value="">Select State</option>';
+                         document.getElementById('billing_city').innerHTML = '<option value="">Select City</option>';
+                     }
+
+                 </script>
+
+
+                    {{--                    <div>--}}
+{{--                        <select id="billing_country"  name="billing_country"  class="form-control rounded-0 px-3" required>--}}
+{{--                            <option value="">Select Country</option>--}}
+{{--                        </select>--}}
+{{--                        <select id="billing_state"  name="billing_state" class="form-control rounded-0 px-3" required>--}}
+{{--                            <option value="">Select State</option>--}}
+{{--                        </select>--}}
+{{--                        <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3" required>--}}
+{{--                            <option value="">Select City</option>--}}
+{{--                        </select>--}}
+{{--                        <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" placeholder="Postal Code"  required />--}}
+{{--                    </div>--}}
 
                     <h3 class="mt-5">Shipping Details</h3>
                     <label>
@@ -82,164 +231,306 @@
                     </label>
 
                     <div id="shipping-details" class="mt-3 d-none">
-                        <input type="text" class="form-control rounded-0 px-3" name="shipping_street" placeholder="Street Number">
 
-                        <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" placeholder="Flat/Suite">
-                        <select id="shipping_country" class="form-control rounded-0 px-3" name="shipping_country">
-                            <option value="">Select Country</option>
-                        </select>
-                        <select id="shipping_state" class="form-control rounded-0 px-3" name="shipping_state">
-                            <option value="">Select State</option>
-                        </select>
-                        <select id="shipping_city" class="form-control rounded-0 px-3" name="shipping_city">
-                            <option value="">Select City</option>
-                        </select>
-                        <input type="text" class="form-control rounded-0 px-3" name="shipping_postcode" id="shipping_postcode" placeholder="Postal Code">
+                        <div>
+                            <label for="shipping_street" class="form-label">Street Number</label>
+                            <input type="text" class="form-control rounded-0 px-3" name="shipping_street" id="shipping_street" placeholder="Street Number">
+                        </div>
+
+                        <div>
+                            <label for="shipping_flat_suite" class="form-label">Flat/Suite</label>
+                            <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" id="shipping_flat_suite" placeholder="Flat/Suite">
+                        </div>
+
+                        <div>
+                            <label for="shipping_postcode" class="form-label">Postal Code</label>
+
+                            <input type="text" class="form-control rounded-0 px-3" name="shipping_postcode" id="shipping_postcode" placeholder="Postal Code"  autocomplete="off"
+                                   autocorrect="off"
+                                   autocapitalize="off" >
+                            <span id="shipping_postcode_error_msg" class="mb-2"></span>
+                            <ul id="shipping-suggestions" class="list-group mt-0 mb-2" style="display:none;"></ul>
+                        </div>
+                        <div>
+                            <label for="shipping_city" class="form-label">City</label>
+                            <select id="shipping_city" class="form-control rounded-0 px-3" name="shipping_city">
+                                <option value="">Select City</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="shipping_state" class="form-label">State</label>
+                            <select id="shipping_state" class="form-control rounded-0 px-3" name="shipping_state">
+                                <option value="">Select State</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="shipping_country" class="form-label">Country</label>
+                            <select id="shipping_country" class="form-control rounded-0 px-3" name="shipping_country">
+                                <option value="">Select Country</option>
+                            </select>
+                        </div>
                     </div>
-
 
                     <script>
                         $(document).ready(function () {
+                            let shippingDebounceTimeout;
+
                             // Toggle Shipping Details
                             $('#is_shipping_same').change(function () {
                                 if ($(this).is(':checked')) {
+                                    // Hide shipping details and reset fields
                                     $('#shipping-details').addClass('d-none');
+                                    resetShippingFields();
                                 } else {
+                                    // Show shipping details
                                     $('#shipping-details').removeClass('d-none');
                                 }
                             });
-                        });
 
-                        $(document).ready(function () {
-                            const apiBaseUrl = "https://countriesnow.space/api/v0.1";
+                            // Function to reset shipping fields
+                            function resetShippingFields() {
+                                // $('#shipping_postcode').val('');
+                                // $('#shipping_street').val('');
+                                // $('#shipping_flat_suite').val('');
+                                $('#shipping_country').html('<option value="">Select Country</option>');
+                                $('#shipping_state').html('<option value="">Select State</option>');
+                                $('#shipping_city').html('<option value="">Select City</option>');
+                                $('#shipping-suggestions').hide().html('');
+                            }
 
-                            // Populate Countries for Billing
-                            fetch(`${apiBaseUrl}/countries`)
-                                .then(response => response.json())
-                                .then(data => {
-                                    const countries = data.data;
-                                    countries.forEach(country => {
-                                        $('#billing_country').append(new Option(country.country, country.country));
-                                        $('#shipping_country').append(new Option(country.country, country.country)); // For Shipping
-                                    });
-                                })
-                                .catch(err => console.error("Error fetching countries:", err));
+                            // Fetch shipping location suggestions based on postal code
+                            $('#shipping_postcode').on('input', function () {
+                                let shippingPostalCode = $(this).val().trim();
+                                const shippingSuggestionsList = $('#shipping-suggestions');
 
-                            // Handle Country Change for Billing
-                            $('#billing_country').change(function () {
-                                const selectedCountry = $(this).val();
-                                if (selectedCountry) {
-                                    $('#billing_state').empty().append(new Option("Select State", ""));
-                                    $('#billing_city').empty().append(new Option("Select City", ""));
-                                    $('#billing_postcode').val("");
+                                // Reset dependent fields when postal code changes
+                                resetShippingFields();
 
-                                    fetch(`${apiBaseUrl}/countries/states`, {
-                                        method: "POST",
-                                        headers: { "Content-Type": "application/json" },
-                                        body: JSON.stringify({ country: selectedCountry })
-                                    })
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            const states = data.data.states || [];
-                                            states.forEach(state => {
-                                                $('#billing_state').append(new Option(state.name, state.name));
-                                            });
-                                        })
-                                        .catch(err => console.error("Error fetching states:", err));
+                                // Hide suggestions if no postal code is entered
+                                if (shippingPostalCode.length === 0) {
+                                    shippingSuggestionsList.hide();
+                                    return;
                                 }
-                            });
 
-                            // Handle State Change for Billing
-                            $('#billing_state').change(function () {
-                                const selectedCountry = $('#billing_country').val();
-                                const selectedState = $(this).val();
-                                if (selectedState) {
-                                    $('#billing_city').empty().append(new Option("Select City", ""));
-                                    $('#billing_postcode').val("");
+                                // Only trigger the request if the postal code is at least 3 characters
+                                if (shippingPostalCode.length >= 3) {
+                                    // Debounce: clear previous timeout if the user is still typing
+                                    clearTimeout(shippingDebounceTimeout);
 
-                                    fetch(`${apiBaseUrl}/countries/state/cities`, {
-                                        method: "POST",
-                                        headers: { "Content-Type": "application/json" },
-                                        body: JSON.stringify({ country: selectedCountry, state: selectedState })
-                                    })
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            const cities = data.data || [];
-                                            cities.forEach(city => {
-                                                $('#billing_city').append(new Option(city, city));
+                                    // Set a new timeout to wait for the user to stop typing
+                                    shippingDebounceTimeout = setTimeout(function () {
+                                        fetch(`/search-locations?postal_code=${shippingPostalCode}`)
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                if (data.status === 'success' && data.data.length > 0) {
+                                                    shippingSuggestionsList.html('').show();
+                                                    if (data.data.length === 1) {
+                                                        data.data.forEach(location => {
+                                                            $('#shipping_postcode').val(location.postal_code);
+                                                            $('#shipping_country').html(`<option value="${location.country_name}">${location.country_name}</option>`);
+                                                            $('#shipping_state').html(`<option value="${location.province_abbr}">${location.province}</option>`);
+                                                            $('#shipping_city').html(`<option value="${location.city}">${location.city}</option>`);
+                                                            document.getElementById('shipping_postcode_error_msg').style.display = "none";
+                                                        });
+                                                    }else {
+                                                        // Show suggestions for the entered postal code
+                                                        data.data.forEach(location => {
+                                                            const suggestionItem = $('<li>')
+                                                                .addClass('list-group-item cursor-pointer')
+                                                                .text(`${location.city}, ${location.postal_code} (${location.country})`)
+                                                                .data('location', location);
+
+                                                            // Add click event to fill fields
+                                                            suggestionItem.click(function () {
+                                                                $('#shipping_postcode').val(location.postal_code);
+                                                                $('#shipping_country').html(`<option value="${location.country_name}">${location.country_name}</option>`);
+                                                                $('#shipping_state').html(`<option value="${location.province_abbr}">${location.province}</option>`);
+                                                                $('#shipping_city').html(`<option value="${location.city}">${location.city}</option>`);
+                                                                document.getElementById('shipping_postcode_error_msg').style.display="none";
+                                                                shippingSuggestionsList.hide();
+                                                            });
+
+                                                            shippingSuggestionsList.append(suggestionItem);
+                                                        });
+                                                    }
+
+                                                } else {
+                                                    shippingSuggestionsList.hide();
+                                                        document.getElementById('shipping_postcode_error_msg').style.display = "block";
+                                                        document.getElementById('shipping_postcode_error_msg').style.color = "red";
+                                                        document.getElementById('shipping_postcode_error_msg').innerText = "Postal code is invalid. Make sure you’ve entered it correctly!";
+                                                }
+                                            })
+                                            .catch(error => {
+                                                console.error('Error fetching location data:', error);
+                                                shippingSuggestionsList.hide();
                                             });
-                                        })
-                                        .catch(err => console.error("Error fetching cities:", err));
-                                }
-                            });
-
-                            // Handle Country Change for Shipping
-                            $('#shipping_country').change(function () {
-                                const selectedCountry = $(this).val();
-                                if (selectedCountry) {
-                                    $('#shipping_state').empty().append(new Option("Select State", ""));
-                                    $('#shipping_city').empty().append(new Option("Select City", ""));
-                                    $('#shipping_postcode').val("");
-
-                                    fetch(`${apiBaseUrl}/countries/states`, {
-                                        method: "POST",
-                                        headers: { "Content-Type": "application/json" },
-                                        body: JSON.stringify({ country: selectedCountry })
-                                    })
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            const states = data.data.states || [];
-                                            states.forEach(state => {
-                                                $('#shipping_state').append(new Option(state.name, state.name));
-                                            });
-                                        })
-                                        .catch(err => console.error("Error fetching states:", err));
-                                }
-                            });
-
-                            // Handle State Change for Shipping
-                            $('#shipping_state').change(function () {
-                                const selectedCountry = $('#shipping_country').val();
-                                const selectedState = $(this).val();
-                                if (selectedState) {
-                                    $('#shipping_city').empty().append(new Option("Select City", ""));
-                                    $('#shipping_postcode').val("");
-
-                                    fetch(`${apiBaseUrl}/countries/state/cities`, {
-                                        method: "POST",
-                                        headers: { "Content-Type": "application/json" },
-                                        body: JSON.stringify({ country: selectedCountry, state: selectedState })
-                                    })
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            const cities = data.data || [];
-                                            cities.forEach(city => {
-                                                $('#shipping_city').append(new Option(city, city));
-                                            });
-                                        })
-                                        .catch(err => console.error("Error fetching cities:", err));
-                                }
-                            });
-
-                            // Optional: Synchronize Shipping with Billing if "is_shipping_same" is checked
-                            $('#is_shipping_same').change(function () {
-                                if (this.checked) {
-                                    $('#shipping_street').val($('#billing_street').val());
-                                    $('#shipping_flat_suite').val($('#billing_flat_suite').val());
-                                    $('#shipping_country').val($('#billing_country').val()).trigger('change');
-                                    $('#shipping_state').val($('#billing_state').val()).trigger('change');
-                                    $('#shipping_city').val($('#billing_city').val()).trigger('change');
-                                    $('#shipping_postcode').val($('#billing_postcode').val());
-                                } else {
-                                    // Clear Shipping fields if unchecked
-                                    $('#shipping_street, #shipping_flat_suite, #shipping_postcode').val("");
-                                    $('#shipping_country, #shipping_state, #shipping_city').val("").trigger('change');
+                                    }, 200); // 200ms delay
                                 }
                             });
                         });
-
-
                     </script>
+
+
+                    {{--                    <div id="shipping-details" class="mt-3 d-none">--}}
+{{--                        <input type="text" class="form-control rounded-0 px-3" name="shipping_street" placeholder="Street Number">--}}
+
+{{--                        <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" placeholder="Flat/Suite">--}}
+{{--                        <select id="shipping_country" class="form-control rounded-0 px-3" name="shipping_country">--}}
+{{--                            <option value="">Select Country</option>--}}
+{{--                        </select>--}}
+{{--                        <select id="shipping_state" class="form-control rounded-0 px-3" name="shipping_state">--}}
+{{--                            <option value="">Select State</option>--}}
+{{--                        </select>--}}
+{{--                        <select id="shipping_city" class="form-control rounded-0 px-3" name="shipping_city">--}}
+{{--                            <option value="">Select City</option>--}}
+{{--                        </select>--}}
+{{--                        <input type="text" class="form-control rounded-0 px-3" name="shipping_postcode" id="shipping_postcode" placeholder="Postal Code">--}}
+{{--                    </div>--}}
+
+
+{{--                    <script>--}}
+{{--                        $(document).ready(function () {--}}
+{{--                            // Toggle Shipping Details--}}
+{{--                            $('#is_shipping_same').change(function () {--}}
+{{--                                if ($(this).is(':checked')) {--}}
+{{--                                    $('#shipping-details').addClass('d-none');--}}
+{{--                                } else {--}}
+{{--                                    $('#shipping-details').removeClass('d-none');--}}
+{{--                                }--}}
+{{--                            });--}}
+{{--                        });--}}
+
+{{--                        $(document).ready(function () {--}}
+{{--                            const apiBaseUrl = "https://countriesnow.space/api/v0.1";--}}
+
+{{--                            // Populate Countries for Billing--}}
+{{--                            fetch(`${apiBaseUrl}/countries`)--}}
+{{--                                .then(response => response.json())--}}
+{{--                                .then(data => {--}}
+{{--                                    const countries = data.data;--}}
+{{--                                    countries.forEach(country => {--}}
+{{--                                        $('#billing_country').append(new Option(country.country, country.country));--}}
+{{--                                        $('#shipping_country').append(new Option(country.country, country.country)); // For Shipping--}}
+{{--                                    });--}}
+{{--                                })--}}
+{{--                                .catch(err => console.error("Error fetching countries:", err));--}}
+
+{{--                            // Handle Country Change for Billing--}}
+{{--                            $('#billing_country').change(function () {--}}
+{{--                                const selectedCountry = $(this).val();--}}
+{{--                                if (selectedCountry) {--}}
+{{--                                    $('#billing_state').empty().append(new Option("Select State", ""));--}}
+{{--                                    $('#billing_city').empty().append(new Option("Select City", ""));--}}
+{{--                                    $('#billing_postcode').val("");--}}
+
+{{--                                    fetch(`${apiBaseUrl}/countries/states`, {--}}
+{{--                                        method: "POST",--}}
+{{--                                        headers: { "Content-Type": "application/json" },--}}
+{{--                                        body: JSON.stringify({ country: selectedCountry })--}}
+{{--                                    })--}}
+{{--                                        .then(response => response.json())--}}
+{{--                                        .then(data => {--}}
+{{--                                            const states = data.data.states || [];--}}
+{{--                                            states.forEach(state => {--}}
+{{--                                                $('#billing_state').append(new Option(state.name, state.name));--}}
+{{--                                            });--}}
+{{--                                        })--}}
+{{--                                        .catch(err => console.error("Error fetching states:", err));--}}
+{{--                                }--}}
+{{--                            });--}}
+
+{{--                            // Handle State Change for Billing--}}
+{{--                            $('#billing_state').change(function () {--}}
+{{--                                const selectedCountry = $('#billing_country').val();--}}
+{{--                                const selectedState = $(this).val();--}}
+{{--                                if (selectedState) {--}}
+{{--                                    $('#billing_city').empty().append(new Option("Select City", ""));--}}
+{{--                                    $('#billing_postcode').val("");--}}
+
+{{--                                    fetch(`${apiBaseUrl}/countries/state/cities`, {--}}
+{{--                                        method: "POST",--}}
+{{--                                        headers: { "Content-Type": "application/json" },--}}
+{{--                                        body: JSON.stringify({ country: selectedCountry, state: selectedState })--}}
+{{--                                    })--}}
+{{--                                        .then(response => response.json())--}}
+{{--                                        .then(data => {--}}
+{{--                                            const cities = data.data || [];--}}
+{{--                                            cities.forEach(city => {--}}
+{{--                                                $('#billing_city').append(new Option(city, city));--}}
+{{--                                            });--}}
+{{--                                        })--}}
+{{--                                        .catch(err => console.error("Error fetching cities:", err));--}}
+{{--                                }--}}
+{{--                            });--}}
+
+{{--                            // Handle Country Change for Shipping--}}
+{{--                            $('#shipping_country').change(function () {--}}
+{{--                                const selectedCountry = $(this).val();--}}
+{{--                                if (selectedCountry) {--}}
+{{--                                    $('#shipping_state').empty().append(new Option("Select State", ""));--}}
+{{--                                    $('#shipping_city').empty().append(new Option("Select City", ""));--}}
+{{--                                    $('#shipping_postcode').val("");--}}
+
+{{--                                    fetch(`${apiBaseUrl}/countries/states`, {--}}
+{{--                                        method: "POST",--}}
+{{--                                        headers: { "Content-Type": "application/json" },--}}
+{{--                                        body: JSON.stringify({ country: selectedCountry })--}}
+{{--                                    })--}}
+{{--                                        .then(response => response.json())--}}
+{{--                                        .then(data => {--}}
+{{--                                            const states = data.data.states || [];--}}
+{{--                                            states.forEach(state => {--}}
+{{--                                                $('#shipping_state').append(new Option(state.name, state.name));--}}
+{{--                                            });--}}
+{{--                                        })--}}
+{{--                                        .catch(err => console.error("Error fetching states:", err));--}}
+{{--                                }--}}
+{{--                            });--}}
+
+{{--                            // Handle State Change for Shipping--}}
+{{--                            $('#shipping_state').change(function () {--}}
+{{--                                const selectedCountry = $('#shipping_country').val();--}}
+{{--                                const selectedState = $(this).val();--}}
+{{--                                if (selectedState) {--}}
+{{--                                    $('#shipping_city').empty().append(new Option("Select City", ""));--}}
+{{--                                    $('#shipping_postcode').val("");--}}
+
+{{--                                    fetch(`${apiBaseUrl}/countries/state/cities`, {--}}
+{{--                                        method: "POST",--}}
+{{--                                        headers: { "Content-Type": "application/json" },--}}
+{{--                                        body: JSON.stringify({ country: selectedCountry, state: selectedState })--}}
+{{--                                    })--}}
+{{--                                        .then(response => response.json())--}}
+{{--                                        .then(data => {--}}
+{{--                                            const cities = data.data || [];--}}
+{{--                                            cities.forEach(city => {--}}
+{{--                                                $('#shipping_city').append(new Option(city, city));--}}
+{{--                                            });--}}
+{{--                                        })--}}
+{{--                                        .catch(err => console.error("Error fetching cities:", err));--}}
+{{--                                }--}}
+{{--                            });--}}
+
+{{--                            // Optional: Synchronize Shipping with Billing if "is_shipping_same" is checked--}}
+{{--                            $('#is_shipping_same').change(function () {--}}
+{{--                                if (this.checked) {--}}
+{{--                                    $('#shipping_street').val($('#billing_street').val());--}}
+{{--                                    $('#shipping_flat_suite').val($('#billing_flat_suite').val());--}}
+{{--                                    $('#shipping_country').val($('#billing_country').val()).trigger('change');--}}
+{{--                                    $('#shipping_state').val($('#billing_state').val()).trigger('change');--}}
+{{--                                    $('#shipping_city').val($('#billing_city').val()).trigger('change');--}}
+{{--                                    $('#shipping_postcode').val($('#billing_postcode').val());--}}
+{{--                                } else {--}}
+{{--                                    // Clear Shipping fields if unchecked--}}
+{{--                                    $('#shipping_street, #shipping_flat_suite, #shipping_postcode').val("");--}}
+{{--                                    $('#shipping_country, #shipping_state, #shipping_city').val("").trigger('change');--}}
+{{--                                }--}}
+{{--                            });--}}
+{{--                        });--}}
+
+
+{{--                    </script>--}}
 {{--                    //main_shipping_double_address - vicky 26-12-2024 end--}}
 
                     <input name="address" type="hidden" value=" "/>
@@ -512,5 +803,96 @@
         });
     });
 
+    //
+    // function isValidPostalCode(postalCode) {
+    //     const usPostalCodeRegex = /^\d{5}(-\d{4})?$/; // US: 5 digits or 5 digits-4 digits
+    //     const canadaPostalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/; // Canada: Format A1A 1A1 or A1A1A1
+    //     if ( usPostalCodeRegex.test(postalCode) || canadaPostalCodeRegex.test(postalCode)) {
+    //          return true;
+    //     }
+    //
+    //     return false;
+    // }
+    //
+    //
+    // // Example usage
+    // document.getElementById('shipping_postcode').addEventListener('input', function () {
+    //     const postalCode = this.value.trim();
+    //     const errorMsg = document.getElementById('shipping_postcode_error_msg');
+    //     if (postalCode) {
+    //         if (isValidPostalCode(postalCode)) {
+    //             errorMsg.style.display = 'block';
+    //             errorMsg.innerText = " Correct";
+    //             errorMsg.style.color = 'green';
+    //         } else {
+    //             errorMsg.style.display = 'block';
+    //             errorMsg.innerText = " Incorrect postal code";
+    //             errorMsg.style.color = 'red'; //
+    //
+    //         }
+    //     }
+    // });
 
 </script>
+
+<script>
+    // Debounce timeout variables
+    let debounceTimeoutShipping;
+    let debounceTimeoutBilling;
+
+    // Function to validate postal code (example for US and Canada)
+    function isValidPostalCode(postalCode) {
+        const usPostalCodeRegex = /^\d{5}(-\d{4})?$/;
+        const canadaPostalCodeRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+
+        // Example validation for US and Canada postal codes
+        return usPostalCodeRegex.test(postalCode) || canadaPostalCodeRegex.test(postalCode);
+    }
+
+    // Function to run the validation for postal code
+    function validatePostalCode(inputId, errorMsgId) {
+        const postalCode = document.getElementById(inputId).value.trim();
+        const errorMsg = document.getElementById(errorMsgId);
+
+        if (postalCode) {
+            if (isValidPostalCode(postalCode)) {
+                errorMsg.style.display = 'none'; // Hide error message if valid
+            } else {
+                errorMsg.style.display = 'block'; // Show error message if invalid
+                errorMsg.innerHTML = "Postal code is invalid. Make sure you’ve entered it correctly!";
+                errorMsg.style.color = 'red';
+            }
+        } else {
+            // Hide the error message if the input is empty
+            errorMsg.style.display = 'none';
+        }
+    }
+
+    // Event listener for shipping postal code input (typing)
+    document.getElementById('shipping_postcode').addEventListener('input', function () {
+        // Clear the previous debounce timeout if the user is still typing
+        clearTimeout(debounceTimeoutShipping);
+
+        // Set a new timeout for 200ms delay
+        debounceTimeoutShipping = setTimeout(function () {
+            // Validate postal code for shipping after 200ms
+            validatePostalCode('shipping_postcode', 'shipping_postcode_error_msg');
+        }, 2000);
+    });
+
+    // Event listener for billing postal code input (typing)
+    document.getElementById('billing_postcode').addEventListener('input', function () {
+        // Clear the previous debounce timeout if the user is still typing
+        clearTimeout(debounceTimeoutBilling);
+
+        // Set a new timeout for 200ms delay
+        debounceTimeoutBilling = setTimeout(function () {
+            // Validate postal code for billing after 200ms
+            validatePostalCode('billing_postcode', 'billing_postcode_error_msg');
+        }, 2000);
+    });
+
+
+</script>
+
+

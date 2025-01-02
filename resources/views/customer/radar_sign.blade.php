@@ -108,6 +108,13 @@ $exchange_rate = session('exchange_rate', '1');
     }]
     }
     </script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/magnifier.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/custom_magnifier.css') }}">
+
+    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Event.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Magnifier.js') }}"></script>
+
+
 @endpush
 @include('customer.layouts.header')
 <style>
@@ -117,7 +124,24 @@ $exchange_rate = session('exchange_rate', '1');
         border: 1px solid black;
         border-collapse: collapse;
     }
+
+    #preview1 {
+        z-index: -999;
+        transition: z-index 0.3s ease;
+        display: none;
+    }
+    @media screen and (min-width: 1024px) {
+        .slider_static:hover #preview1 {
+            z-index: 999;
+            display: block;
+        }
+    }
+
 </style>
+
+
+<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">
+</div>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">
     <div class="container">
