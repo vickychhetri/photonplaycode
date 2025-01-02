@@ -111,8 +111,8 @@ $exchange_rate = session('exchange_rate', '1');
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/magnifier.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/js/magnifier/custom_magnifier.css') }}">
 
-    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Event.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Magnifier.js') }}"></script>
+{{--    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Event.js') }}"></script>--}}
+{{--    <script type="text/javascript" src="{{ asset('assets/js/magnifier/Magnifier.js') }}"></script>--}}
 
 
 @endpush
@@ -136,11 +136,63 @@ $exchange_rate = session('exchange_rate', '1');
             display: block;
         }
     }
+    .v_zoom-product-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .v_zoom-image-container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+    }
+
+    #big-img-radar-product {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .v_zoom-zoom-container {
+        position: absolute;
+        top: 165px;
+        left: 720px; /* Adjust to position next to the image */
+        width: 600px;
+        height: 500px;
+        border: 3px solid #ccc;
+        display: none;
+        overflow: hidden;
+        background-color: rgba(223, 223, 230, 0.8);
+    }
+
+    #v_zoom-zoomed-image {
+        position: absolute;
+        width: 900px; /* Adjust to match zoom scale */
+        height: 900px; /* Adjust to match zoom scale */
+        transform-origin: top left;
+        transition: transform 0.1s ease;
+    }
+
+    .v_zoom-focus-area {
+        position: absolute;
+        border: 2px dashed rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+        width: 150px;
+        height: 150px;
+        visibility: hidden;
+        background: rgba(0, 0, 0, 0.2);
+    }
 
 </style>
 
-<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">
-</div>
+
+{{--<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">--}}
+{{--</div>--}}
+    <div id="v_zoom-zoom-container" class="v_zoom-zoom-container">
+        <img id="v_zoom-zoomed-image" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8zMF8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX2FfZ2lybF9yZWFkaW5nX2NhcnRvb184NDcwYjgzMy01OWI1LTQ1YzItYTI1NC0yZWY3YTgwNjQ5MTIucG5n.png" alt="Zoomed Product Image">
+    </div>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">
     <div class="container">
@@ -644,6 +696,43 @@ $exchange_rate = session('exchange_rate', '1');
         // if(!totalPrice) totalPrice=totl
         // innerPrice.innerHTML=`$${totl-totalPrice-selectedValue.reduce((a,b)=>a+b,0)}`
     }
+
+    const productImage = document.getElementById('big-img-radar-product');
+    const zoomContainer = document.getElementById('v_zoom-zoom-container');
+    const zoomedImage = document.getElementById('v_zoom-zoomed-image');
+    const imageContainer = document.querySelector('.v_zoom-image-container');
+    const focusArea = document.getElementById('v_zoom-focus-area');
+    const scale = 1; // Adjust zoom level
+
+    productImage.addEventListener('mousemove', function(e) {
+        var dynamic_image = productImage.src;
+        zoomedImage.src = dynamic_image;
+        zoomContainer.style.display = 'block';
+        focusArea.style.visibility = 'visible';
+
+        const containerRect = imageContainer.getBoundingClientRect();
+        const mouseX = e.pageX - containerRect.left - window.scrollX;
+        const mouseY = e.pageY - containerRect.top - window.scrollY;
+
+        const focusWidth = focusArea.offsetWidth;
+        const focusHeight = focusArea.offsetHeight;
+
+        const focusX = Math.max(0, Math.min(mouseX - focusWidth / 2, containerRect.width - focusWidth));
+        const focusY = Math.max(0, Math.min(mouseY - focusHeight / 2, containerRect.height - focusHeight));
+
+        focusArea.style.left = `${focusX}px`;
+        focusArea.style.top = `${focusY}px`;
+
+        const zoomX = (focusX / containerRect.width) * (zoomedImage.offsetWidth + zoomContainer.offsetWidth);
+        const zoomY = (focusY / containerRect.height) * (zoomedImage.offsetHeight + zoomContainer.offsetHeight);
+
+        zoomedImage.style.transform = `translate(-${zoomX}px, -${zoomY}px) scale(${scale})`;
+    });
+
+    productImage.addEventListener('mouseleave', function() {
+        zoomContainer.style.display = 'none';
+        focusArea.style.visibility = 'hidden';
+    });
 </script>
 </body>
 
