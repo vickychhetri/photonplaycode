@@ -157,13 +157,14 @@ $exchange_rate = session('exchange_rate', '1');
 
     .v_zoom-zoom-container {
         position: absolute;
-        top: 0;
-        left: 420px; /* Adjust to position next to the image */
-        width: 400px;
-        height: 400px;
-        border: 1px solid #ccc;
+        top: 165px;
+        left: 720px; /* Adjust to position next to the image */
+        width: 600px;
+        height: 500px;
+        border: 3px solid #ccc;
         display: none;
         overflow: hidden;
+        background-color: rgba(223, 223, 230, 0.8);
     }
 
     #v_zoom-zoomed-image {
@@ -178,8 +179,8 @@ $exchange_rate = session('exchange_rate', '1');
         position: absolute;
         border: 2px dashed rgba(0, 0, 0, 0.5);
         pointer-events: none;
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
         visibility: hidden;
         background: rgba(0, 0, 0, 0.2);
     }
