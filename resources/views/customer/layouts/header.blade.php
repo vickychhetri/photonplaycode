@@ -257,10 +257,10 @@
                                     </li>
                                     <li>
                                         <a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
-                                           href="#">Campuses</a>
+                                           href="{{route("radar_speed_sign.campus")}}">Campuses</a>
                                     </li>
                                     <li>
-                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="#">Municipalities</a>
+                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="{{route("radar_speed_sign.municipalities")}}">Municipalities</a>
                                     </li>
                                 </ul>
                             </div>

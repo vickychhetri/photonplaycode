@@ -402,5 +402,6 @@ Route::get('dealership', [ContactUsController::class, 'dealership'])->name('deal
 
 Route::group(['prefix' => 'radar_speed_sign', 'as' => 'radar_speed_sign.'], function () {
     Route::get('municipalities', [RadarApplicationAreaPageController::class, 'municipalities'])->name('municipalities');
+    Route::get('campus', [RadarApplicationAreaPageController::class, 'campus'])->name('campus');
 
 });
