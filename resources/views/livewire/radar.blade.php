@@ -26,10 +26,15 @@
                             <div class="col-md-9 bg-white" id="main_screen_image_cover_div" wire:ignore >
                                 <div class="responsive-two">
                                     <div>
-                                        <div class="p-2" id="slider_static">
-                                            <div class="img-leften d-flex justify-content-center align-items-center">
-                                                <img  src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
-                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
+                                        <div class="p-2 v_zoom-product-container" id="slider_static">
+{{--                                            <div class="img-leften d-flex justify-content-center align-items-center">--}}
+{{--                                                <img  src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"--}}
+{{--                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>--}}
+{{--                                            </div>--}}
+                                            <div class="img-leften d-flex justify-content-center align-items-center v_zoom-image-container">
+                                                <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
+                                                      class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
+                                                <div id="v_zoom-focus-area" class="v_zoom-focus-area"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -449,20 +454,20 @@
 
 
 
-
-    var evt = new Event(),
-        m = new Magnifier(evt);
-
-    function initializeMagnifier() {
-        m.attach({
-            thumb: '.thumb',
-            large: document.getElementById('big-img-radar-product').src,
-            largeWrapper: 'preview1',
-            zoom: 2,
-            zoomable: true
-        });
-    }
-    initializeMagnifier();
+    //
+    // var evt = new Event(),
+    //     m = new Magnifier(evt);
+    //
+    // function initializeMagnifier() {
+    //     m.attach({
+    //         thumb: '.thumb',
+    //         large: document.getElementById('big-img-radar-product').src,
+    //         largeWrapper: 'preview1',
+    //         zoom: 2,
+    //         zoomable: true
+    //     });
+    // }
+    // initializeMagnifier();
 
 
 </script>
