@@ -139,7 +139,6 @@ $exchange_rate = session('exchange_rate', '1');
 
 </style>
 
-
 <div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">
 </div>
 <!-- Our Product-start -->
