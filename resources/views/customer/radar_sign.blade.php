@@ -573,28 +573,47 @@ $exchange_rate = session('exchange_rate', '1');
                     console.error(xhr.responseText);
                 },
                 complete: function() {
-                    $('.radar-item-box').hover(function() {
+                    $('.radar-item-box').click(function() {
+                        // Remove highlight from all items
                         $('.radar-item-box').removeClass("radar-item-box-highlight");
+
+                        // Highlight the clicked item
                         $(this).addClass("radar-item-box-highlight");
+
+                        // Get the image element and its source
                         let image = $(this).find('img');
                         let src = image.attr('src');
-                        $('#big-img-radar-product').attr('src', src)
+
+                        // Remove "thumbnail" from the src
+                        src = src.replace('thumbnail', '');
+
+                        // Set the modified source to the big image
+                        $('#big-img-radar-product').attr('src', src);
                     });
+
                 }
             });
 
         });
 
-
-        $('.radar-item-box').hover(function() {
+        $('.radar-item-box').click(function() {
+            // Remove highlight from all items
             $('.radar-item-box').removeClass("radar-item-box-highlight");
+
+            // Highlight the clicked item
             $(this).addClass("radar-item-box-highlight");
+
+            // Get the image element and its source
             let image = $(this).find('img');
             let src = image.attr('src');
-            $('#big-img-radar-product').attr('src', src)
 
+            // Remove "thumbnail" from the src
+            src = src.replace('thumbnail', '');
 
+            // Set the modified source to the big image
+            $('#big-img-radar-product').attr('src', src);
         });
+
 
 
     });

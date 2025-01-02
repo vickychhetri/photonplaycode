@@ -422,14 +422,25 @@
                 initializeMagnifier();
 
                 document.querySelectorAll('.radar-item-box').forEach(item => {
-                    item.addEventListener('mouseenter', () => {
+                    item.addEventListener('click', () => {
+                        // Remove highlight from all items
                         document.querySelectorAll('.radar-item-box').forEach(i => i.classList.remove('radar-item-box-highlight'));
+
+                        // Highlight the clicked item
                         item.classList.add('radar-item-box-highlight');
+
+                        // Get the image element and its source
                         const img = item.querySelector('img');
-                        const src = img.getAttribute('src');
+                        let src = img.getAttribute('src');
+
+                        // Remove "thumbnail" from the src
+                        src = src.replace('thumbnail', '');
+
+                        // Set the modified source to the big image
                         document.getElementById('big-img-radar-product').setAttribute('src', src);
                     });
                 });
+
 
                 document.getElementById('prodImg-gallery').innerHTML = JSON.stringify(data);
             })
