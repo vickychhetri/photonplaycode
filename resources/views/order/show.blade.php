@@ -78,6 +78,7 @@ use Illuminate\Support\Facades\Log;
                                 <thead>
                                 <tr>
                                     <th>Product Id</th>
+                                    <th>SKU</th>
                                     <th>Product Image</th>
                                     <th>Product Name</th>
                                     <th>Options</th>
@@ -91,6 +92,7 @@ use Illuminate\Support\Facades\Log;
                                 @foreach($order->orderedProducts as $prod)
                                     <tr>
                                         <td>{{ $prod->product_id }}</td>
+                                        <td>{{ $prod->sku_code??"NA" }}</td>
                                         <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="Image not found"  style="max-height: 100px;max-width: 100px;"/></td>
                                         <td>{{ $prod->title }}</td>
                                         <td>
@@ -102,7 +104,7 @@ use Illuminate\Support\Facades\Log;
                                                 @foreach ($options as $opp)
                                                     {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
                                                 @endforeach
-                                            @endforeach    
+                                            @endforeach
                                             @endif
                                         </td>
                                         <td>{{ $prod->quantity }}</td>

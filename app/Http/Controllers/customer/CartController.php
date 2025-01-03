@@ -365,6 +365,7 @@ $products_list_ids=[];
                        'quantity' => $carts->quantity,
                        'price' => $carts->price,
                        'color' => $carts->color,
+                       'sku_code' => $carts->sku_code,
                    ]);
                }
 
