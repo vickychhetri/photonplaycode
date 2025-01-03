@@ -478,13 +478,14 @@
                 });
 
                 sliderStatic.innerHTML = `
-                <div class="img-leften d-flex justify-content-center align-items-center">
+                <div class="img-leften d-flex justify-content-center align-items-center v_zoom-image-container">
                     <img class="thumb img-fluid"
                          src="{{ asset('storage/${data[0].image}') }}"
                          style="max-height: 600px;"
                          id="big-img-radar-product"
                          alt="{{$product->title}}">
                 </div>
+                <div id="v_zoom-focus-area" class="v_zoom-focus-area"></div>
             `;
 
                 initializeMagnifier();

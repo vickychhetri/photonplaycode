@@ -561,11 +561,12 @@ $exchange_rate = session('exchange_rate', '1');
                         // console.log(res)
                     })
                     $('#slider_static').append(
-                        `<div class="img-leften  d-flex justify-content-center align-items-center">
+                        `<div class="img-leften  d-flex justify-content-center align-items-center v_zoom-image-container">
                                             <img src="{{ asset('storage/${response[0].image}') }}" class="img-fluid"
                                                  style="max-height: 600px;" id="big-img-radar-product"
                                                  alt="{{$product->title}}">
-                                        </div>`
+                                        </div>
+                                        <div id="v_zoom-focus-area" class="v_zoom-focus-area"></div>`
                     )
                     $('#prodImg-gallery').html(response)
                 },
@@ -589,6 +590,43 @@ $exchange_rate = session('exchange_rate', '1');
 
                         // Set the modified source to the big image
                         $('#big-img-radar-product').attr('src', src);
+                    });
+
+                    const productImage = document.getElementById('big-img-radar-product');
+                    const zoomContainer = document.getElementById('v_zoom-zoom-container');
+                    const zoomedImage = document.getElementById('v_zoom-zoomed-image');
+                    const imageContainer = document.querySelector('.v_zoom-image-container');
+                    const focusArea = document.getElementById('v_zoom-focus-area');
+                    const scale = 1; // Adjust zoom level
+
+                    productImage.addEventListener('mousemove', function(e) {
+                        var dynamic_image = productImage.src;
+                        zoomedImage.src = dynamic_image;
+                        zoomContainer.style.display = 'block';
+                        focusArea.style.visibility = 'visible';
+
+                        const containerRect = imageContainer.getBoundingClientRect();
+                        const mouseX = e.pageX - containerRect.left - window.scrollX;
+                        const mouseY = e.pageY - containerRect.top - window.scrollY;
+
+                        const focusWidth = focusArea.offsetWidth;
+                        const focusHeight = focusArea.offsetHeight;
+
+                        const focusX = Math.max(0, Math.min(mouseX - focusWidth / 2, containerRect.width - focusWidth));
+                        const focusY = Math.max(0, Math.min(mouseY - focusHeight / 2, containerRect.height - focusHeight));
+
+                        focusArea.style.left = `${focusX}px`;
+                        focusArea.style.top = `${focusY}px`;
+
+                        const zoomX = (focusX / containerRect.width) * (zoomedImage.offsetWidth + zoomContainer.offsetWidth);
+                        const zoomY = (focusY / containerRect.height) * (zoomedImage.offsetHeight + zoomContainer.offsetHeight);
+
+                        zoomedImage.style.transform = `translate(-${zoomX}px, -${zoomY}px) scale(${scale})`;
+                    });
+
+                    productImage.addEventListener('mouseleave', function() {
+                        zoomContainer.style.display = 'none';
+                        focusArea.style.visibility = 'hidden';
                     });
 
                 }
