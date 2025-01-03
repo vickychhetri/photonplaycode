@@ -15,6 +15,7 @@ class Radar extends Component
     public $linked_products;
     public  $currency_icon_selected;
     public $product_id;
+    public $product_sku_code;
     public $color = 'Amber-Color.png';
     public $dynamic_specs = [];
     public function mount($product_id)
@@ -136,7 +137,8 @@ class Radar extends Component
                     'quantity' => $this->quantity,
                     'cover_image' => $this->cover_image,
                     'currency_code'=> $this->currency_icon,
-                    'exchange_rate'=>$this->exchangeRate
+                    'exchange_rate'=>$this->exchangeRate,
+                    'sku_code'=> $this->product_sku_code
                 ]);
             }
 
@@ -157,7 +159,8 @@ class Radar extends Component
                     'cover_image' => $this->cover_image,
                     'color' => $this->color,
                     'currency_code'=> $this->currency_icon,
-                    'exchange_rate'=>$this->exchangeRate
+                    'exchange_rate'=>$this->exchangeRate,
+                    'sku_code'=> $this->product_sku_code
                 ]);
             }
 

@@ -66,18 +66,13 @@
                             <h4 class="font-weight-bold">{{ $product->product_heading_text??$product->title }}</h4>
                             <span class="text-capitalize d-block">{{ $product->category->title }}</span>
 
-                            @if ($product && $product->sku)
-                                <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>
-                            @endif
-
-{{--                            <!-- Star Rating Section -->--}}
-{{--                            <div class="d-flex justify-content-start align-items-center gap-1">--}}
-{{--                                @for ($i = 1; $i <= 5; $i++)--}}
-{{--                                    <img src="{{ asset('assets/customer/images/star.svg') }}" alt="{{ $i }} Star" class="img-fluid" width="14px">--}}
-{{--                                @endfor--}}
-{{--                                <span>( 150+ Customers Reviews)</span>--}}
-{{--                            </div>--}}
-
+{{--                            @if ($product && $product->sku)--}}
+{{--                                <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>--}}
+{{--                            @endif--}}
+                            <div>
+                                <label for="sku">SKU:</label>
+                                <span id="sku-display" style="font-weight: bold; color: #333;"  wire:ignore ></span>
+                            </div>
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
                                 <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">{{$currency_icon}}{{ $price }}</span></p>
@@ -88,8 +83,6 @@
                             <!-- Specifications Section -->
                             <div>
                                 <p class="specific-heading">Select Specification</p>
-
-                                    <p class="mt-4">Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days.</p>
                                 </div>
                                 <div x-data="{
                                         dynamic_specs: {},
@@ -146,8 +139,9 @@
                                                             x-model="dynamic_specs.{{ $specilization->id }}"
                                                             wire:model="dynamic_specs.{{ $specilization->id }}"
                                                             id="{{ $specilization->id }}"
-                                                            class="form-select mb-3 color_select_box_handler"
+                                                            class="form-select mb-3 color_select_box_handler sku-builder"
                                                             style="border: 2px solid black; font-weight: bold;"
+                                                            data-code="{{$specilization->specilization->code}}"
                                                             wire:ignore
                                                             required>
                                                         <option selected>--Choose an Option--</option>
@@ -208,14 +202,15 @@
                                                         x-model="dynamic_specs.{{ $specilization->id }}"
                                                         wire:model="dynamic_specs.{{ $specilization->id }}"
                                                         id="{{ $specilization->id }}"
-                                                        class="form-select mb-3"
+                                                        class="form-select mb-3 sku-builder"
                                                         style="border: 2px solid black; font-weight: bold;"
+                                                        data-code="{{$specilization->specilization->code}}"
                                                         wire:ignore
                                                         required>
                                                     <option selected>--Choose an Option--</option>
                                                     <!-- Loop through each option for this specialization -->
                                                     @foreach($specilization->options as $option)
-                                                        <option value="{{ $option->id }}">
+                                                        <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code }}">
                                                             {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
                                                             @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                                 Subscription Free For 1 Year
@@ -224,10 +219,50 @@
                                                     @endforeach
                                                 </select>
                                             @endif
-
-
                                         </div>
                                     @endforeach
+
+
+                                        <!-- Hidden input to store the SKU -->
+                                        <input type="hidden" id="sku" wire:model="product_sku_code">
+                                        <input type="hidden" id="product_code" name="product_code" value="{{ $product->code}}" readonly>
+
+
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                const selects = document.querySelectorAll('.sku-builder');
+                                                const skuInput = document.getElementById('sku');
+                                                const skuDisplay = document.getElementById('sku-display'); // For displaying the SKU
+                                                const productCodeInput = document.getElementById('product_code');
+
+                                                function updateSKU() {
+                                                    const productCode = productCodeInput.value; // Get product code
+                                                    const skuParts = Array.from(selects).map(select => {
+                                                        const specializationCode = select.getAttribute('data-code'); // Get specialization data-code
+                                                        const selectedOption = select.options[select.selectedIndex];
+                                                        const optionCode = selectedOption ? selectedOption.getAttribute('data-code') : '';
+                                                        return specializationCode + (optionCode ? '/' + optionCode : ''); // Combine specialization and option codes with '/'
+                                                    }).filter(Boolean);
+
+                                                    // Combine product code and other SKU parts with '-' between different specifications
+                                                    const sku = productCode + '-' + skuParts.join('-');
+
+                                                    // Update the hidden input value and the display span
+                                                    skuInput.value = sku;
+                                                    skuDisplay.textContent = sku;
+                                                   @this.set('product_sku_code', sku);
+                                                }
+
+                                                selects.forEach(select => {
+                                                    select.addEventListener('change', updateSKU);
+                                                });
+
+                                                // Initial SKU update
+                                                updateSKU();
+                                            });
+                                        </script>
+
+
                                 </div>
                             </div>
                         <div class="col-lg-8 col-md-8">
