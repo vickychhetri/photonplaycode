@@ -138,26 +138,94 @@
                                         <div class="col-md-8 bg-transparent">
 
                                             <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
-                                            <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
-                                                    x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
-                                                    x-model="dynamic_specs.{{ $specilization->id }}"
-                                                    wire:model="dynamic_specs.{{ $specilization->id }}"
-                                                    id="{{ $specilization->id }}"
-                                                    class="form-select mb-3"
-                                                    style="border: 2px solid black; font-weight: bold;"
-                                                    wire:ignore
-                                                    required>
-                                                <option selected>--Choose an Option--</option>
-                                                <!-- Loop through each option for this specialization -->
-                                                @foreach($specilization->options as $option)
-                                                    <option value="{{ $option->id }}">
-                                                        {{ $option->specializationoptions->option }} (+{{$currency_icon}}<span class="price">{{ $option->specialization_price }}</span>)
-                                                        @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
-                                                            Subscription Free For 1 Year
-                                                        @endif
-                                                    </option>
-                                                @endforeach
-                                            </select>
+
+                                            @if($specilization->specilization->code=="CR")
+                                                <div class="d-flex justify-content-center">
+                                                    <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
+                                                            x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
+                                                            x-model="dynamic_specs.{{ $specilization->id }}"
+                                                            wire:model="dynamic_specs.{{ $specilization->id }}"
+                                                            id="{{ $specilization->id }}"
+                                                            class="form-select mb-3 color_select_box_handler"
+                                                            style="border: 2px solid black; font-weight: bold;"
+                                                            wire:ignore
+                                                            required>
+                                                        <option selected>--Choose an Option--</option>
+                                                        <!-- Loop through each option for this specialization -->
+                                                        @foreach($specilization->options as $option)
+                                                            <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code }}">
+                                                                {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                                @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
+                                                                    Subscription Free For 1 Year
+                                                                @endif
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    &nbsp;
+                                                    <span>
+                                                    <img src="{{asset('/assets/images/radar/color/AM.png')}}" style="height:40px;" id="imgicon_color_st-{{ $specilization->id }}"  alt="color" wire:ignore />
+                                                   </span>
+
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function () {
+                                                            // Get the select element and image element
+                                                            const selectElement = document.getElementById('{{ $specilization->id}}');
+                                                            console.log(selectElement);
+                                                            const imgElement = document.getElementById('imgicon_color_st-{{ $specilization->id }}');
+                                                            // Add an event listener to handle changes
+                                                            selectElement.addEventListener('change', function () {
+                                                                // Get the selected option
+                                                                const selectedOption = selectElement.options[selectElement.selectedIndex];
+                                                                // Retrieve the data-code attribute
+                                                                const code = selectedOption.getAttribute('data-code');
+                                                                @php
+                                                                    $base_url_website=env('APP_URL', 'http://127.0.0.1:8000/')
+                                                                @endphp
+                                                                // Update the image source dynamically
+                                                                if (code) {
+                                                                    const newImageSrc = `{{$base_url_website}}/assets/images/radar/color/${code}.png`;
+                                                                    console.log('Preloading image:', newImageSrc);
+                                                                    const preloadImage = new Image();
+                                                                    console.log('Preload object created');
+                                                                    preloadImage.src = newImageSrc;
+                                                                    preloadImage.onload = function () {
+                                                                        console.log('Image successfully loaded:', newImageSrc);
+                                                                        imgElement.src = newImageSrc;
+                                                                    };
+                                                                    preloadImage.onerror = function () {
+                                                                        console.error('Failed to preload image:', newImageSrc);
+                                                                    };
+                                                                }
+                                                            });
+                                                        });
+                                                    </script>
+
+                                                </div>
+
+                                            @else
+                                                <select x-on:change="changeCalculatedAmount({{ $specilization->id }}, $event.target)"
+                                                        x-bind:name="'dynamic_specs[' + {{ $specilization->id }} + ']'"
+                                                        x-model="dynamic_specs.{{ $specilization->id }}"
+                                                        wire:model="dynamic_specs.{{ $specilization->id }}"
+                                                        id="{{ $specilization->id }}"
+                                                        class="form-select mb-3"
+                                                        style="border: 2px solid black; font-weight: bold;"
+                                                        wire:ignore
+                                                        required>
+                                                    <option selected>--Choose an Option--</option>
+                                                    <!-- Loop through each option for this specialization -->
+                                                    @foreach($specilization->options as $option)
+                                                        <option value="{{ $option->id }}">
+                                                            {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                            @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
+                                                                Subscription Free For 1 Year
+                                                            @endif
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            @endif
+
+
                                         </div>
                                     @endforeach
                                 </div>
@@ -403,33 +471,45 @@
                     imgBox.classList.add('radar-item-box');
                     imgBox.innerHTML = `
                     <div class="radar-item-box">
-                        <img src="{{ asset('storage/${res.image}') }}" class="img-fluid" alt="{{$product->title}}">
+                        <img src="{{ asset('storage/thumbnail/${res.image}') }}" class="img-fluid" alt="{{$product->title}}">
                     </div>
                 `;
                     slider.appendChild(imgBox);
                 });
 
                 sliderStatic.innerHTML = `
-                <div class="img-leften d-flex justify-content-center align-items-center">
+                <div class="img-leften d-flex justify-content-center align-items-center v_zoom-image-container">
                     <img class="thumb img-fluid"
                          src="{{ asset('storage/${data[0].image}') }}"
                          style="max-height: 600px;"
                          id="big-img-radar-product"
                          alt="{{$product->title}}">
                 </div>
+                <div id="v_zoom-focus-area" class="v_zoom-focus-area"></div>
             `;
 
                 initializeMagnifier();
 
                 document.querySelectorAll('.radar-item-box').forEach(item => {
-                    item.addEventListener('mouseenter', () => {
+                    item.addEventListener('click', () => {
+                        // Remove highlight from all items
                         document.querySelectorAll('.radar-item-box').forEach(i => i.classList.remove('radar-item-box-highlight'));
+
+                        // Highlight the clicked item
                         item.classList.add('radar-item-box-highlight');
+
+                        // Get the image element and its source
                         const img = item.querySelector('img');
-                        const src = img.getAttribute('src');
+                        let src = img.getAttribute('src');
+
+                        // Remove "thumbnail" from the src
+                        src = src.replace('thumbnail', '');
+
+                        // Set the modified source to the big image
                         document.getElementById('big-img-radar-product').setAttribute('src', src);
                     });
                 });
+
 
                 document.getElementById('prodImg-gallery').innerHTML = JSON.stringify(data);
             })

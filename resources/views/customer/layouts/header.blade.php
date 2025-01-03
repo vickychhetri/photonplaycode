@@ -166,6 +166,7 @@
 
 <!-- <title>login</title> -->
 <body>
+@include("signv1.sound_pop_v")
 @livewireScripts
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -243,16 +244,16 @@
                                 <h6>
                                     <a class="dropdown-item px-0 text-uppercase" href="#">SHOP BY APPLICATION</a>
                                 </h6>
-                                <ul class=" ">
+                                <ul class="">
                                     <li>
-                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="#">School
+                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="{{route("radar_speed_sign.school_zone")}}">School
                                             Zones</a>
                                     </li>
                                     <li>
-                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="#">Neighbourhoods</a>
+                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="{{route("radar_speed_sign.neighbourhoods")}}">Neighbourhoods</a>
                                     </li>
                                     <li>
-                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="#">Parking
+                                        <a class="text-wrap dropdown-item px-0 text-uppercase mb-2" href="{{route("radar_speed_sign.parking_lot")}}">Parking
                                             Zones</a>
                                     </li>
                                     <li>

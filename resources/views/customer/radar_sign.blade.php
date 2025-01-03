@@ -161,10 +161,10 @@ $exchange_rate = session('exchange_rate', '1');
         left: 720px; /* Adjust to position next to the image */
         width: 600px;
         height: 500px;
-        border: 3px solid #ccc;
+        /*border: 3px solid #ccc;*/
         display: none;
         overflow: hidden;
-        background-color: rgba(223, 223, 230, 0.8);
+        /*background-color: rgba(223, 223, 230, 0.8);*/
     }
 
     #v_zoom-zoomed-image {
@@ -177,10 +177,10 @@ $exchange_rate = session('exchange_rate', '1');
 
     .v_zoom-focus-area {
         position: absolute;
-        border: 2px dashed rgba(0, 0, 0, 0.5);
+        /*border: 2px dashed rgba(0, 0, 0, 0.5);*/
         pointer-events: none;
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         visibility: hidden;
         background: rgba(0, 0, 0, 0.2);
     }
@@ -191,7 +191,7 @@ $exchange_rate = session('exchange_rate', '1');
 {{--<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">--}}
 {{--</div>--}}
     <div id="v_zoom-zoom-container" class="v_zoom-zoom-container">
-        <img id="v_zoom-zoomed-image" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8zMF8zZF9yZW5kZXJfY2hhcmFjdGVyX29mX2FfZ2lybF9yZWFkaW5nX2NhcnRvb184NDcwYjgzMy01OWI1LTQ1YzItYTI1NC0yZWY3YTgwNjQ5MTIucG5n.png" alt="Zoomed Product Image">
+        <img id="v_zoom-zoomed-image" src="" alt="Zoomed Product Image">
     </div>
 <!-- Our Product-start -->
 <section class="pt-0 pb-0">
@@ -552,7 +552,7 @@ $exchange_rate = session('exchange_rate', '1');
                         $('slider').append(
                             `<div>
                                         <div class="radar-item-box">
-                                            <img src="{{asset('storage/${res.image}')}}" class="img-fluid"
+                                            <img src="{{asset('storage/thumbnail/${res.image}')}}" class="img-fluid"
                                                     alt="{{$product->title}}">
                                         </div>
                                     </div>`
@@ -561,11 +561,12 @@ $exchange_rate = session('exchange_rate', '1');
                         // console.log(res)
                     })
                     $('#slider_static').append(
-                        `<div class="img-leften  d-flex justify-content-center align-items-center">
+                        `<div class="img-leften  d-flex justify-content-center align-items-center v_zoom-image-container">
                                             <img src="{{ asset('storage/${response[0].image}') }}" class="img-fluid"
                                                  style="max-height: 600px;" id="big-img-radar-product"
                                                  alt="{{$product->title}}">
-                                        </div>`
+                                        </div>
+                                        <div id="v_zoom-focus-area" class="v_zoom-focus-area"></div>`
                     )
                     $('#prodImg-gallery').html(response)
                 },
@@ -573,28 +574,84 @@ $exchange_rate = session('exchange_rate', '1');
                     console.error(xhr.responseText);
                 },
                 complete: function() {
-                    $('.radar-item-box').hover(function() {
+                    $('.radar-item-box').click(function() {
+                        // Remove highlight from all items
                         $('.radar-item-box').removeClass("radar-item-box-highlight");
+
+                        // Highlight the clicked item
                         $(this).addClass("radar-item-box-highlight");
+
+                        // Get the image element and its source
                         let image = $(this).find('img');
                         let src = image.attr('src');
-                        $('#big-img-radar-product').attr('src', src)
+
+                        // Remove "thumbnail" from the src
+                        src = src.replace('thumbnail', '');
+
+                        // Set the modified source to the big image
+                        $('#big-img-radar-product').attr('src', src);
                     });
+
+                    const productImage = document.getElementById('big-img-radar-product');
+                    const zoomContainer = document.getElementById('v_zoom-zoom-container');
+                    const zoomedImage = document.getElementById('v_zoom-zoomed-image');
+                    const imageContainer = document.querySelector('.v_zoom-image-container');
+                    const focusArea = document.getElementById('v_zoom-focus-area');
+                    const scale = 1; // Adjust zoom level
+
+                    productImage.addEventListener('mousemove', function(e) {
+                        var dynamic_image = productImage.src;
+                        zoomedImage.src = dynamic_image;
+                        zoomContainer.style.display = 'block';
+                        focusArea.style.visibility = 'visible';
+
+                        const containerRect = imageContainer.getBoundingClientRect();
+                        const mouseX = e.pageX - containerRect.left - window.scrollX;
+                        const mouseY = e.pageY - containerRect.top - window.scrollY;
+
+                        const focusWidth = focusArea.offsetWidth;
+                        const focusHeight = focusArea.offsetHeight;
+
+                        const focusX = Math.max(0, Math.min(mouseX - focusWidth / 2, containerRect.width - focusWidth));
+                        const focusY = Math.max(0, Math.min(mouseY - focusHeight / 2, containerRect.height - focusHeight));
+
+                        focusArea.style.left = `${focusX}px`;
+                        focusArea.style.top = `${focusY}px`;
+
+                        const zoomX = (focusX / containerRect.width) * (zoomedImage.offsetWidth + zoomContainer.offsetWidth);
+                        const zoomY = (focusY / containerRect.height) * (zoomedImage.offsetHeight + zoomContainer.offsetHeight);
+
+                        zoomedImage.style.transform = `translate(-${zoomX}px, -${zoomY}px) scale(${scale})`;
+                    });
+
+                    productImage.addEventListener('mouseleave', function() {
+                        zoomContainer.style.display = 'none';
+                        focusArea.style.visibility = 'hidden';
+                    });
+
                 }
             });
 
         });
 
-
-        $('.radar-item-box').hover(function() {
+        $('.radar-item-box').click(function() {
+            // Remove highlight from all items
             $('.radar-item-box').removeClass("radar-item-box-highlight");
+
+            // Highlight the clicked item
             $(this).addClass("radar-item-box-highlight");
+
+            // Get the image element and its source
             let image = $(this).find('img');
             let src = image.attr('src');
-            $('#big-img-radar-product').attr('src', src)
 
+            // Remove "thumbnail" from the src
+            src = src.replace('thumbnail', '');
 
+            // Set the modified source to the big image
+            $('#big-img-radar-product').attr('src', src);
         });
+
 
 
     });

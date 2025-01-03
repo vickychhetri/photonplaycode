@@ -61,76 +61,91 @@ if($data_record){
     </div>
     <div class="container radar-container">
         <div class="row">
-            <h1 class="text-center mt-4 pb-2 text-dark">Radar Speed Signs for Municipal Traffic Management</h1>
+            <h1 class="text-center mt-4 pb-2 text-dark">Radar Speed Signs for School Zone Safety</h1>
 
-            <h5 class="text-dark pt-4">Supporting Safer Streets and Smarter Traffic Control</h5>
+            <h5 class="text-dark pt-4">Ensuring Child Safety in School Zones</h5>
             <p>
-                Radar speed signs are a vital tool for municipalities looking to enhance road safety, promote responsible driving, and manage traffic flow effectively.
-                These signs provide real-time feedback to drivers, encouraging compliance with posted speed limits and reducing the risk of accidents in urban and suburban areas.
+                Radar speed signs are an essential tool for improving safety in school zones by encouraging
+                drivers to slow down and comply with posted speed limits. With children crossing streets and
+                walking near roadways, it is critical to implement measures that effectively manage vehicle
+                speeds and protect young pedestrians.
             </p>
 
             <h5 class="text-dark pt-4">How Radar Speed Signs Work</h5>
             <p>
-                Equipped with radar technology, these signs detect the speed of oncoming vehicles and display it on a highly visible LED screen.
-                Drivers exceeding the limit are alerted with visual signals, including flashing lights or color-coded warnings, prompting immediate speed adjustments.
+                Radar speed signs detect the speed of approaching vehicles using radar technology. The
+                vehicle's speed is displayed in real time, often with visual alerts like flashing lights or
+                changing colors to grab the driver’s attention. This immediate feedback prompts drivers to
+                reduce speed, especially in areas where children are present.
             </p>
 
-            <h5 class="text-dark pt-4">Benefits of Radar Speed Signs for Municipalities</h5>
+            <h5 class="text-dark pt-4">Benefits of Radar Speed Signs in School Zones</h5>
             <ol class="ml-3 p-4">
                 <li>
-                    <strong>Improved Road Safety:</strong> Immediate speed feedback encourages drivers to slow down, reducing accidents and improving pedestrian safety.
+                    <strong> Improved Driver Awareness:</strong>  Real-time feedback alerts drivers to slow down when
+                    entering school zones.
                 </li>
                 <li>
-                    <strong>Community-Friendly Compliance:</strong> Promotes voluntary adherence to speed limits without relying on fines or enforcement.
+                    <strong>Enhanced Pedestrian Safety: </strong> Slower speeds reduce the risk of accidents, protecting
+                    children and families.
                 </li>
                 <li>
-                    <strong>Traffic Flow Management:</strong> Helps regulate traffic speeds in congested or high-risk areas.
+                    <strong>Non-Punitive Compliance:</strong>  Focuses on voluntary speed reduction rather than issuing
+                    fines.
                 </li>
                 <li>
-                    <strong>Customizable Alerts and Messaging:</strong> Display traffic warnings, road condition updates, or public service announcements.
+                    <strong> Custom Messaging Options: </strong>  Display messages such as "School Zone Ahead" or
+                    "Slow Down" along with speed data.
                 </li>
                 <li>
-                    <strong>Data Collection and Analysis:</strong> Record traffic data to monitor trends, identify problem areas, and optimize future safety measures.
+                    <strong> Traffic Data Collection:</strong>  Provides insights into traffic patterns to help authorities
+                    monitor compliance and plan safety improvements.
                 </li>
                 <li>
-                    <strong>Sustainable and Cost-Effective:</strong> Solar-powered models offer an environmentally friendly and low-maintenance solution.
+                    <strong> Eco-Friendly and Energy-Efficient: </strong>Solar-powered options make installations cost
+                    effective and sustainable.
                 </li>
             </ol>
         </div>
     </div>
 </section>
+
 @include('signv1.best_suite')
 
 <section class="pt-0 mt-0">
     <div class="container ">
         <div class="row">
-            <h5 class="text-dark pt-2">Applications for Municipalities</h5>
+            <h5 class="text-dark pt-2">Applications in School Zones</h5>
             <ul class="ml-3 p-4">
-                <li><strong>Residential Areas:</strong> Reduce speeding in neighborhoods and improve pedestrian safety.</li>
-                <li><strong>School Zones:</strong> Protect students with targeted speed control during school hours.</li>
+                <li><strong>Crosswalks and Drop-Off Areas: </strong> Reduce speeds where children frequently cross the
+                    road. </li>
+                <li><strong> Playgrounds and Recreational Spaces:</strong>Ensure safe driving speeds near play areas. </li>
                 <li><strong>Parks and Recreational Areas:</strong> Maintain safe driving speeds in pedestrian-heavy zones.</li>
-                <li><strong>Construction Zones:</strong> Temporary deployments for safety in work areas.</li>
-                <li><strong>Downtown and Commercial Districts:</strong> Manage traffic speeds in busy urban spaces.</li>
-                <li><strong>Highways and Rural Roads:</strong> Reinforce speed limits and improve compliance in less monitored areas.</li>
+                <li><strong>Entry and Exit Points: </strong> Manage traffic flow and enforce speed limits at school
+                    entrances and exits. </li>
+                <li><strong>Temporary School Events:</strong> : Provide portable options for events or activities requiring
+                    enhanced traffic control. </li>
             </ul>
 
             <h5 class="text-dark pt-2">Why Choose Our Radar Speed Signs?</h5>
             <p>
-                Photonplay offers durable, customizable radar speed signs specifically designed to meet the needs of municipalities.
+                Photonplay offers high-quality radar speed signs specifically designed for school zone safety.
                 Our products are:
             </p>
             <ul class="ml-3 p-4">
-                <li><strong>Weatherproof and Rugged:</strong> Built to withstand harsh weather conditions.</li>
-                <li><strong>Easy to Deploy and Relocate:</strong> Suitable for permanent installations or temporary use during events or construction.</li>
-                <li><strong>Smart and Data-Enabled:</strong> Collect and analyze traffic data for improved planning and decision-making.</li>
-                <li><strong>Eco-Friendly Options:</strong> Solar-powered models for sustainable operations.</li>
+                <li><strong> Durable and Weather-Resistant:</strong> Engineered to withstand various environmental
+                    conditions. </li>
+                <li><strong> Easy to Install and Relocate:</strong> Suitable for both permanent and portable use. </li>
+                <li><strong> Smart and Data-Driven:</strong> Collect traffic data to analyse patterns and compliance. </li>
+                <li><strong>Eco-Friendly Options:</strong> Solar-powered models for sustainable and low-maintenance
+                    operation.</li>
             </ul>
 
-            <h5 class="text-dark pt-2">Empower Your Municipality with Smarter Traffic Management</h5>
+            <h5 class="text-dark pt-2">Make School Zones Safer Today </h5>
             <p>
-                Enhance safety, promote compliance, and improve traffic management with our cutting-edge radar speed signs.
-                Whether for residential streets, school zones, or busy commercial areas, we have solutions to fit your municipality's needs.
-                Contact us today to learn more about our products and customization options.
+                Invest in the safety of your school zone with our advanced radar speed signs. Protect children
+                and encourage responsible driving with effective, customisable solutions. Contact us today to
+                learn more about our products and customisation options.
             </p>
         </div>
 
