@@ -260,7 +260,10 @@ $products_list_ids=[];
     }
 
     public function deleteCartTableItem($id){
-        Cart::find($id)->delete();
+        $item=Cart::find($id);
+        if($item){
+            $item->delete();
+        }
         return redirect()->route('customer.shopping.bag');
     }
 
