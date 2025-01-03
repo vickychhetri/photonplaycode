@@ -82,7 +82,7 @@
                     <th>Product Image</th>
                     <th>Product Name</th>
                     <th>Options</th>
-                    <th>Color</th>
+                    <th>SKU</th>
                     <th>Quantity</th>
                     <th>Price</th>
 
@@ -106,7 +106,7 @@
                             @endforeach
 
                         </td>
-                        <td>{{ $prod->color }}</td>
+                        <td>{{ $prod->sku_code }}</td>
                         <td>{{ $prod->quantity }}</td>
                         <td>${{$prod->price}}/-</td>
                     </tr>

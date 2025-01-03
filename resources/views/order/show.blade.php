@@ -83,7 +83,6 @@ use Illuminate\Support\Facades\Log;
                                     <th>Product Name</th>
                                     <th>Options</th>
                                     <th>Quantity</th>
-                                    <th>Color</th>
                                     <th>Price</th>
 
                                 </tr>
@@ -108,7 +107,6 @@ use Illuminate\Support\Facades\Log;
                                             @endif
                                         </td>
                                         <td>{{ $prod->quantity }}</td>
-                                        <td>{{ $prod->color }}</td>
                                         <td>${{$prod->price}}/-</td>
                                     </tr>
                                 @endforeach
