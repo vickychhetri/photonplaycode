@@ -362,7 +362,13 @@
                                 </div>
                                 <hr>
                             @endforeach
-
+                            <script>
+                                document.addEventListener('livewire:load', function () {
+                                    Livewire.on('cartUpdated', quantity => {
+                                        document.getElementById('cart_item_counts').innerText = quantity;
+                                    });
+                                });
+                            </script>
                             <div class="d-flex justify-content-between text-black fw-bold">
                                 <span>Cart subtotal</span>
                                 <span>{{$currency_icon}}{{ $cartTotal }}</span>
