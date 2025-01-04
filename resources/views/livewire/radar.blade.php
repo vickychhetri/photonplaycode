@@ -366,6 +366,7 @@
                                 document.addEventListener('livewire:load', function () {
                                     Livewire.on('cartUpdated', quantity => {
                                         document.getElementById('cart_item_counts').innerText = quantity;
+                                        document.getElementById('cart_item_counts').style.backgroundColor = 'red';
                                     });
                                 });
                             </script>

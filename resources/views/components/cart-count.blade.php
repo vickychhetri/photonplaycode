@@ -12,5 +12,17 @@
                                             font-size: 12px;
                                             font-weight: bold;
                                         " id="cart_item_counts">{{ $total_count }}</span>
+    @else
+        <span style="
+                                            position: absolute;
+                                            top: 1px;
+                                            right: 48px;
+                                            /*background-color: red;*/
+                                            color: white;
+                                            border-radius: 50%;
+                                            padding: 2px 10px;
+                                            font-size: 12px;
+                                            font-weight: bold;
+                                        " id="cart_item_counts"></span>
     @endif
 </a>
