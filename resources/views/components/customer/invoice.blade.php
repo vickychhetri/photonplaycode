@@ -117,7 +117,7 @@
                 <th>Product Image</th>
                 <th>Product Name</th>
                 <th>Options</th>
-                <th>Color</th>
+                <th>SKU</th>
                 <th>Quantity</th>
                 <th>Price</th>
             </tr>
@@ -141,7 +141,7 @@
                             @endforeach
                         @endforeach
                     </td>
-                    <td>{{ $prod->color }}</td>
+                    <td>{{ $prod->sku_code }}</td>
                     <td>{{ $prod->quantity }}</td>
                     <td>${{ $prod->price }}</td>
                 </tr>
@@ -156,14 +156,14 @@
 
     <div class="invoice-section">
         <h3>Billing Address</h3>
-        <p>{{$order->billing_street}}</p>
-        <p>{{$order->billing_flat_suite}}</p>
-        <p>{{$order->billing_city}}</p>
-        <p>{{$order->billing_state}}</p>
-        <p>{{$order->billing_country}}</p>
-        <p>{{$order->billing_postcode}}</p>
+        <p>Street : {{$order->billing_street}}</p>
+        <p>Address1 : {{$order->billing_flat_suite}}</p>
+        <p>City : {{$order->billing_city}}</p>
+        <p>State : {{$order->billing_state}}</p>
+        <p>Country: {{$order->billing_country}}</p>
+        <p>Postal Code :  {{$order->billing_postcode}}</p>
         <div class="shadow-sm p-3">
-            <p><strong>Address Note:</strong> {{$order->address}}</p>
+            <p><strong>  Note:</strong> {{$order->address}}</p>
         </div>
     </div>
 
