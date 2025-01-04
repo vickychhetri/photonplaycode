@@ -214,15 +214,15 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                         style="color: #0c0c0c">
-                        PRODUCT
+                        PRODUCTS
                     </a>
 
                     <ul class="dropdown-menu mega-menu w-100 bg-white" style="max-width: 600px;">
                         <li class="row p-3">
                             <!-- Radar Speed Signs Section -->
                             <div class="col-md-6 col-sm-12 mb-3">
-                                <h6>
-                                    <a class="dropdown-item px-0 text-uppercase" href="#">RADAR SPEED SIGNS</a>
+                                <h6 class="font-weight-bold text-dark pb-2">
+                                    <a class="dropdown-item px-0 text-uppercase" href="#"><b> RADAR SPEED SIGNS </b></a>
                                 </h6>
                                 <ul class=" ">
                                     @foreach($productLists ?? [] as $product)
@@ -244,9 +244,9 @@
                             </div>
 
                             <!-- Shop by Application Section -->
-                            <div class="col-md-6 col-sm-12 mb-3">
+                            <div class="col-md-6 col-sm-12 mb-3 pb-2">
                                 <h6>
-                                    <a class="dropdown-item px-0 text-uppercase" href="#">SHOP BY APPLICATION</a>
+                                    <a class="dropdown-item px-0 text-uppercase " href="#"><b> SHOP BY APPLICATION </b></a>
                                 </h6>
                                 <ul class="">
                                     <li>
@@ -312,7 +312,7 @@
                                     src="{{asset('assets\customer\images\user.png')}}" alt="Not Found"
                                     class="img-fluid me-2 ">
                             </a>
-                            <span class="text-dark">Hello, John</span>
+                            <span class="text-dark">Login/Signup</span>
                         </div>
 
                         @else

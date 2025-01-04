@@ -30,10 +30,6 @@
                                 <div class="responsive-two">
                                     <div>
                                         <div class="p-2 v_zoom-product-container" id="slider_static">
-{{--                                            <div class="img-leften d-flex justify-content-center align-items-center">--}}
-{{--                                                <img  src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"--}}
-{{--                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>--}}
-{{--                                            </div>--}}
                                             <div class="img-leften d-flex justify-content-center align-items-center v_zoom-image-container">
                                                 <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
                                                       class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
@@ -68,24 +64,20 @@
 
                             <h4 class="font-weight-bold">{{ $product->product_heading_text??$product->title }}</h4>
                             <span class="text-capitalize d-block">{{ $product->category->title }}</span>
-
-{{--                            @if ($product && $product->sku)--}}
-{{--                                <span class="text-capitalize d-block small"><b>SKU : </b>{{ strtoupper($product->sku) }}</span>--}}
-{{--                            @endif--}}
                             <div>
-                                <label for="sku">SKU:</label>
-                                <span id="sku-display" style="font-weight: bold; color: #333;"  wire:ignore ></span>
+                                <label for="sku" class="sku_dis" >SKU:</label>
+                                <span id="sku-display" class="sku_dis"  wire:ignore ></span>
                             </div>
                             <!-- Product Price Section -->
                             @if($product->is_price_hide != 1)
-                                <p class="fw-bold fs-5" id="total_price2"><span x-ref="total_price">{{$currency_icon}}{{ $price }}</span></p>
+                                <p class="fs-2" id="total_price2"><span x-ref="total_price">{{$currency_icon}}{{ $price }}</span></p>
                             @else
                                 <p class="fw-bold fs-5" id="total_price2"></p>
                             @endif
 
                             <!-- Specifications Section -->
                             <div>
-                                <p class="specific-heading">Select Specification</p>
+                                <p class="specific-heading pb-1">Select Specification</p>
                                 </div>
                                 <div x-data="{
                                         dynamic_specs: {},
@@ -133,7 +125,7 @@
                                     @foreach ($product->specilizations->reverse() as $specilization)
                                         <div class="col-md-8 bg-transparent">
 
-                                            <h6 class="text-dark">{{ $specilization->specilization->title }}</h6>
+                                            <h6 class="text-dark" style="font-weight: bold;">{{ $specilization->specilization->title }}</h6>
 
                                             @if($specilization->specilization->code=="CR")
                                                 <div class="d-flex justify-content-center">
@@ -143,7 +135,7 @@
                                                             wire:model="dynamic_specs.{{ $specilization->id }}"
                                                             id="{{ $specilization->id }}"
                                                             class="form-select mb-3 color_select_box_handler sku-builder"
-                                                            style="border: 2px solid black; font-weight: bold;"
+                                                            style="border: 2px solid black;"
                                                             data-code="{{$specilization->specilization->code}}"
                                                             wire:ignore
                                                             required>
@@ -211,7 +203,7 @@
                                                         wire:model="dynamic_specs.{{ $specilization->id }}"
                                                         id="{{ $specilization->id }}"
                                                         class="form-select mb-3 sku-builder"
-                                                        style="border: 2px solid black; font-weight: bold;"
+                                                        style="border: 2px solid black;"
                                                         data-code="{{$specilization->specilization->code}}"
                                                         wire:ignore
                                                         required>

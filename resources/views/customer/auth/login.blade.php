@@ -88,57 +88,57 @@
 
 @include('customer.layout2.footer')
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var eye = document.querySelector('.toggle-password');
-        var password = document.querySelector('input[name="password"]');
-        var email = document.querySelector('input[name="email"]');
-        var form = document.getElementById('loginForm');
+{{--<script>--}}
+{{--    document.addEventListener('DOMContentLoaded', function() {--}}
+{{--        var eye = document.querySelector('.toggle-password');--}}
+{{--        var password = document.querySelector('input[name="password"]');--}}
+{{--        var email = document.querySelector('input[name="email"]');--}}
+{{--        var form = document.getElementById('loginForm');--}}
 
-        // Toggle password visibility
-        eye.addEventListener('click', function() {
-            if (password.type === 'password') {
-                password.type = 'text';
-                eye.innerHTML = '<i class="bi bi-eye-slash"></i>';
-            } else {
-                password.type = 'password';
-                eye.innerHTML = '<i class="bi bi-eye"></i>';
-            }
-        });
+{{--        // Toggle password visibility--}}
+{{--        eye.addEventListener('click', function() {--}}
+{{--            if (password.type === 'password') {--}}
+{{--                password.type = 'text';--}}
+{{--                eye.innerHTML = '<i class="bi bi-eye-slash"></i>';--}}
+{{--            } else {--}}
+{{--                password.type = 'password';--}}
+{{--                eye.innerHTML = '<i class="bi bi-eye"></i>';--}}
+{{--            }--}}
+{{--        });--}}
 
-        // Form validation
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+{{--        // Form validation--}}
+{{--        form.addEventListener('submit', function(event) {--}}
+{{--            event.preventDefault();--}}
 
-            // Clear previous errors
-            document.querySelectorAll('.error-message').forEach(function(el) {
-                el.textContent = '';
-            });
+{{--            // Clear previous errors--}}
+{{--            document.querySelectorAll('.error-message').forEach(function(el) {--}}
+{{--                el.textContent = '';--}}
+{{--            });--}}
 
-            var isValid = true;
+{{--            var isValid = true;--}}
 
-            // Email validation
-            var emailValue = email.value;
-            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!emailValue || !emailRegex.test(emailValue)) {
-                isValid = false;
-                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
-            }
+{{--            // Email validation--}}
+{{--            var emailValue = email.value;--}}
+{{--            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;--}}
+{{--            if (!emailValue || !emailRegex.test(emailValue)) {--}}
+{{--                isValid = false;--}}
+{{--                document.getElementById('emailError').textContent = 'Please enter a valid email address.';--}}
+{{--            }--}}
 
-            // Password validation
-            var passwordValue = password.value;
-            if (!passwordValue || passwordValue.length < 6) {
-                isValid = false;
-                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
-            }
+{{--            // Password validation--}}
+{{--            var passwordValue = password.value;--}}
+{{--            if (!passwordValue || passwordValue.length < 6) {--}}
+{{--                isValid = false;--}}
+{{--                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';--}}
+{{--            }--}}
 
-            // Submit the form if valid
-            if (isValid) {
-                form.submit();
-            }
-        });
-    });
-</script>
+{{--            // Submit the form if valid--}}
+{{--            if (isValid) {--}}
+{{--                form.submit();--}}
+{{--            }--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}
 
 <style>
     /* Error message styling */
