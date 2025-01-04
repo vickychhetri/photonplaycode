@@ -153,7 +153,7 @@
             </tr>
             <tr>
                 <td colspan="6" class="totals">VAT Charges</td>
-                <td>{{ ($order->gst*$order->grand_total)/100 }}</td>
+                <td>{{ ($order->gst*$order->cart_subtotal)/100 }}</td>
             </tr>
             <tr>
                 <td colspan="6" class="totals">Total</td>
