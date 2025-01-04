@@ -39,10 +39,15 @@ class Radar extends Component
             ->first();
 
         $this->quantity = 1;
-
+        $country_code = Session::get('country_code', 'US');
         if ($this->product) {
-            $this->price = $this->product->price * $this->exchangeRate;
-            $this->initial_price = $this->product->price * $this->exchangeRate;
+            if($country_code=="CA"){
+                $this->price = $this->product->price_canada * $this->exchangeRate;
+                $this->initial_price = $this->product->price_canada * $this->exchangeRate;
+            }else {
+                $this->price = $this->product->price * $this->exchangeRate;
+                $this->initial_price = $this->product->price * $this->exchangeRate;
+            }
             $this->title = $this->product->title;
             $this->cover_image = $this->product->cover_image;
             $this->category = $this->product->category->id;

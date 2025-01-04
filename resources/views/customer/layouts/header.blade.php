@@ -181,6 +181,13 @@
       z-index: 99;">
     <img src="{{asset('/assets/images/arrow-up.png')}}" height="50px;"/>
 </a>
+<style>
+    .navbar-nav {
+        margin: 0 auto; /* Centers the navigation menu */
+        display: flex;
+        justify-content: center; /* Horizontal alignment */
+    }
+</style>
 <nav class="navbar navbar-expand-lg bg-light pt-2 pb-0 border-bottom sticky-header">
     <div class="container">
         <a class="navbar-brand me-5" href="#">
@@ -194,13 +201,10 @@
                       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" href="/radar-speed-signs">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-black" href="/company">COMPANY</a>
                 </li>
                 <li class="nav-item dropdown position-relative solution-pos">
                     <a

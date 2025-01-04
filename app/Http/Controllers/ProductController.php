@@ -142,6 +142,16 @@ class ProductController extends Controller
         $product->product_heading_text=$request->product_heading_text;
         $product->product_breadcrumb_text=$request->product_breadcrumb_text;
         $product->shipping_text=$request->shipping_text;
+
+
+        $product->shipping_type=$request->shipping_type;
+        $product->shipping_fees_us=$request->shipping_fees_us;
+        $product->shipping_fees_can=$request->shipping_fees_can;
+        $product->free_shipping_label=$request->free_shipping_label;
+        $product->paid_shipping_label=$request->paid_shipping_label;
+        $product->price_canada=$request->price_canada;
+
+
         $product->pdf_download_text=$request->pdf_download_text;
         $product->categories_linked=$request->categories_linked;
         $product->products_linked=$request->products_linked;
