@@ -160,8 +160,15 @@
         <p> {{$order->shipping_street}}, {{$order->shipping_flat_suite}}, {{$order->shipping_city}}, {{$order->shipping_state}}, {{$order->shipping_country}}, {{$order->shipping_postcode}}</p>
     </div>
     @endif
+    <div class="invoice-section">
+        <h3>Status</h3>
+        <p> {{"Payment Status : ".$order->payment_status}}</p>
+        <p> {{"Delivery Status : ".$order->delivery_status}}</p>
+        <p> {{"Last Updated at : ".$order->updated_at}}</p>
+
+    </div>
     <div class="footer">
-        <p>Thank you for your purchase! If you have any questions, feel free to contact us at sales@photonplay.com.</p>
+        <p>Thank you for your purchase! If you have any questions, feel free to contact us at sales@photonplay.com or visit website <a href="https://www.photonplay.com"> www.photonplay.com </a></p>
     </div>
 </div>
 </body>
