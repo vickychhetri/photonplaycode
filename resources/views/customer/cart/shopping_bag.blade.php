@@ -98,26 +98,55 @@
                                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                                    @foreach($linked_products as $l_product)
                                         <div class="col-md-4">
-                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}">
+                                            <form method="POST" action="{{ route('customer.store.shopping.accessory.bag') }}">
                                                 @csrf
-                                                <div class="card text-center">
-                                                    <img src="{{asset('storage/'.$l_product->cover_image)}}"  class="card-img-top" alt="Accessory 1" style="max-height: 200px; object-fit: contain;">
-                                                    <div class="card-body">
-                                                        <h6 class="card-title">S{{$l_product->product_heading_text??$l_product->title}}</h6>
-                                                        <p class="card-text text-primary">{{$currency_icon}} {{$country_code=="CA"?$l_product->price_canada*$exchange_rate:$l_product->price*$exchange_rate}}</p>
-
-
+                                                <div class="card text-center border-0 shadow-sm" style="max-width: 250px; margin: auto;">
+                                                    <img src="{{ asset('storage/' . $l_product->cover_image) }}"
+                                                         class="card-img-top p-2"
+                                                         alt="{{ $l_product->title }}"
+                                                         style="max-height: 150px; object-fit: contain;">
+                                                    <div class="card-body p-3">
+                                                        <h6 class="card-title text-truncate">{{ $l_product->product_heading_text ?? $l_product->title }}</h6>
+                                                        <p class="card-text text-primary fw-bold mb-2">
+                                                            {{ $currency_icon }} {{ $country_code == 'CA' ? $l_product->price_canada * $exchange_rate : $l_product->price * $exchange_rate }}
+                                                        </p>
 
                                                         <input type="hidden" name="product_id" value="{{ $l_product->id }}">
-                                                        <input type="hidden" name="price" value="{{$country_code=="CA"?$l_product->price_canada*$exchange_rate:$l_product->price*$exchange_rate}}">
+                                                        <input type="hidden" name="price" value="{{ $country_code == 'CA' ? $l_product->price_canada * $exchange_rate : $l_product->price * $exchange_rate }}">
                                                         <input type="hidden" name="title" value="{{ $l_product->title }}">
                                                         <input type="hidden" name="category" value="{{ $l_product->category->title }}">
-                                                        <input type="hidden" name="quantity" value="1">
+
                                                         <input type="hidden" name="cover_image" value="{{ $l_product->cover_image }}">
-                                                        <button class="btn btn-primary  btn-sm p-1 w-100">Add To Cart</button>
+                                                        <div class="quantity-control d-flex align-items-center justify-content-center gap-2 pb-2">
+                                                            <button type="button" class="btn btn-sm btn-outline-secondary decrement-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;">-</button>
+                                                            <input type="number" name="quantity" value="1" class="form-control text-center quantity-input p-1" style="width: 60px; height: 30px;" min="1" readonly>
+                                                            <button type="button" class="btn btn-sm btn-outline-secondary increment-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;">+</button>
+                                                        </div>
+                                                        <button class="btn btn-primary btn-sm w-100">Add to Cart</button>
                                                     </div>
                                                 </div>
                                             </form>
+
+
+                                            <script>
+                                                document.addEventListener('DOMContentLoaded', function() {
+                                                    document.querySelectorAll('.increment-btn').forEach(btn => {
+                                                        btn.addEventListener('click', function() {
+                                                            const quantityInput = this.previousElementSibling;
+                                                            quantityInput.value = parseInt(quantityInput.value) + 1;
+                                                        });
+                                                    });
+
+                                                    document.querySelectorAll('.decrement-btn').forEach(btn => {
+                                                        btn.addEventListener('click', function() {
+                                                            const quantityInput = this.nextElementSibling;
+                                                            if (parseInt(quantityInput.value) > 1) {
+                                                                quantityInput.value = parseInt(quantityInput.value) - 1;
+                                                            }
+                                                        });
+                                                    });
+                                                });
+                                            </script>
 
                                         </div>
                                    @endforeach
