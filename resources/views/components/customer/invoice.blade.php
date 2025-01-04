@@ -149,11 +149,11 @@
             @endforeach
             <tr>
                 <td colspan="6" class="totals">Shipping Charges</td>
-                <td>${{ $order->shipping==0?"Free":$order->shipping }}</td>
+                <td>{{ $order->shipping==0?"Free":"$".$order->shipping }}</td>
             </tr>
             <tr>
                 <td colspan="6" class="totals">VAT Charges</td>
-                <td>${{ ($order->gst/$order->grand_total)*100 }}%</td>
+                <td>{{ ($order->gst*$order->grand_total)/100 }}</td>
             </tr>
             <tr>
                 <td colspan="6" class="totals">Total</td>
