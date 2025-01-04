@@ -1,199 +1,175 @@
-<style>
-    table {
-        border-collapse: collapse;
-    }
-    td, th {
-        border: 1px solid black;
-        padding: 8px;
-    }
-</style>
-<div>
-    <div class="shadow-sm">
-        <table width="100%" border="1" cellpadding="0">
-            <tr>
-                <th>
-                    Order No:
-                </th>
-                <td>
-                    <p>   {{$order->order_number}}</p>
-                </td>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
 
-                <th>
-                    Order Date & Time:
-                </th>
+        .invoice-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .invoice-header .company-info {
+            text-align: left;
+        }
+
+        .invoice-header .company-info h2 {
+            margin: 0;
+            color: #007bff;
+        }
+
+        .invoice-header .invoice-info {
+            text-align: right;
+        }
+
+        .invoice-header .invoice-info p {
+            margin: 0;
+        }
+
+        .invoice-section {
+            margin-bottom: 20px;
+        }
+
+        .invoice-section h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #343a40;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f1f3f5;
+            font-weight: bold;
+        }
+
+        .totals {
+            text-align: right;
+        }
+
+        .totals td {
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+<div class="invoice-container">
+    <div class="invoice-header">
+        <div class="company-info">
+            <h2>Photonplay Systems Ltd.</h2>
+            <p>6733 Mississauga Rd, Mississauga, ON L5N 6J5, Canada</p>
+            <p>+1 (800) 966-9329 | sales@photonplay.com</p>
+        </div>
+        <div class="invoice-info">
+            <p><strong>Order No:</strong> {{$order->order_number}}</p>
+            <p><strong>Order Date & Time:</strong> {{$order->created_at}}</p>
+        </div>
+    </div>
+
+    <div class="invoice-section">
+        <h3>Customer Information</h3>
+        <p><strong>Name:</strong> {{$order->user->name}}</p>
+        <p><strong>Email:</strong> {{$order->user->email}}</p>
+    </div>
+
+    <div class="invoice-section">
+        <h3>Products</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Options</th>
+                <th>SKU</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($order->orderedProducts as $prod)
+                <tr>
+                    <td>{{ $prod->product_id }}</td>
+                    <td><img src="{{asset('storage/'.$prod->cover_image)}}" alt="Product Image" style="max-height: 70px; max-width: 100px;"></td>
+                    <td>{{ $prod->title }}</td>
                     <td>
-                    <p>   {{$order->created_at}}</p>
-                </td>
-            </tr>
-
+                        @foreach (explode(',', $prod->option_ids) as $option)
+                            @php
+                                $options = \App\Models\ProductSpcializationOption::with('specializationoptions', 'product_specilization.specilization')
+                                    ->where('specialization_option_id', $option)
+                                    ->where('product_id', $prod->product_id)
+                                    ->get();
+                            @endphp
+                            @foreach ($options as $opp)
+                                {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}} (${{$opp->specialization_price}})<br>
+                            @endforeach
+                        @endforeach
+                    </td>
+                    <td>{{ $prod->sku_code }}</td>
+                    <td>{{ $prod->quantity }}</td>
+                    <td>${{ $prod->price }}</td>
+                </tr>
+            @endforeach
             <tr>
-                <th>
-                    Name
-                </th>
-                <td>{{ $order->user->name }}</td>
-                <th>
-                    Email
-                </th>
-                <td>{{ $order->user->email }}</td>
-            {{--    <td>{{ $order->user->phone_number }}</td>--}}
+                <td colspan="6" class="totals">Total</td>
+                <td>${{ $order->grand_total }}</td>
             </tr>
-            <tr>
-                <th>
-                    Payment Status :
-                </th>
-                <td>
-                    <p>  <span class="{{$order->payment_status=='paid'?'text-success':'text-warning'}} p-1">
-                                    {{ucfirst($order->payment_status)}} </span>   </p>
-                </td>
-
-                <th>
-                        Order Status :
-                </th>
-                <td>
-                    <p>  <span class="p-1">
-                                    {{strtoupper($order->delivery_status)}} </span>   </p>
-                </td>
-            </tr>
-{{--            <tr>--}}
-{{--                <th >--}}
-{{--                    Transaction No. :--}}
-{{--                </th>--}}
-{{--                <td colspan="3">--}}
-{{--                    <p style="text-wrap: normal;">  <span>--}}
-{{--                                {{$order->trx_id}}</span> </p>--}}
-{{--                </td>--}}
-{{--            </tr>--}}
-            <tr>
-                <th>
-                    Order Note:
-
-                </th>
-                <td colspan="3">
-                    <p> {{$order->order_notes??'Order notes not available.'}}</p>
-                </td>
-            </tr>
+            </tbody>
         </table>
     </div>
 
-
-    <div class="dt-ext table-responsive">
-
-        <h2> </h2>
-        <div class="shadow-lg p-4 ">
-            <h2> Product </h2>
-            <hr/>
-            <table style="width: 100%;" border="1">
-                <thead>
-                <tr>
-                    <th>Product Id</th>
-                    <th>Product Image</th>
-                    <th>Product Name</th>
-                    <th>Options</th>
-                    <th>Color</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($order->orderedProducts as $prod)
-                    <tr>
-                        <td>{{ $prod->product_id }}</td>
-                        <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="empty_image" style="max-height: 70px;max-width:100px; " /></td>
-                        <td>{{ $prod->title }}</td>
-                        <td>
-                            @foreach (explode(',',$prod->option_ids) as $option)
-                                @php
-                                    $options = \App\Models\ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$prod->product_id)->get();
-
-                                @endphp
-                                @foreach ($options as $opp)
-                                    {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
-                                @endforeach
-                            @endforeach
-
-                        </td>
-                        <td>{{ $prod->color }}</td>
-                        <td>{{ $prod->quantity }}</td>
-                        <td>${{$prod->price}}/-</td>
-                    </tr>
-                @endforeach
-                <tr>
-                    <td>
-
-                    </td>
-                    <td colspan="5">
-                    </td>
-                    <td>
-                        ${{$order->grand_total}} /-
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="invoice-section">
+        <h3>Billing Address</h3>
+        <p>Street : {{$order->billing_street}}</p>
+        <p>Address1 : {{$order->billing_flat_suite}}</p>
+        <p>City : {{$order->billing_city}}</p>
+        <p>State : {{$order->billing_state}}</p>
+        <p>Country: {{$order->billing_country}}</p>
+        <p>Postal Code :  {{$order->billing_postcode}}</p>
+        <div class="shadow-sm p-3">
+            <p><strong>  Note:</strong> {{$order->address}}</p>
         </div>
-        <br/>
+    </div>
 
-{{--        <div class="shadow-lg p-4 ">--}}
-{{--            <h2> Customer Information </h2>--}}
-{{--            <hr/>--}}
-{{--            <table style="width: 100%" border="1">--}}
-{{--                <thead>--}}
-{{--                <tr>--}}
-{{--                    <th>Name</th>--}}
-{{--                    <th>Email</th>--}}
-{{--                    <th>Phone Number</th>--}}
-
-
-{{--                </tr>--}}
-{{--                </thead>--}}
-{{--                <tbody>--}}
-
-{{--                <tr>--}}
-
-{{--                </tr>--}}
-
-{{--                </tbody>--}}
-{{--            </table>--}}
-{{--        </div>--}}
-
-
-
-        <br/>
-        <div class="shadow-lg p-4 ">
-            <h2> Billing Address </h2>
-            <hr/>
-            <table  style="width: 100%" border="1">
-                <thead>
-                <tr>
-                    <th>Billing Street</th>
-                    <th>Billing Flat Suite</th>
-                    <th>Billing City</th>
-                    <th>Billing State</th>
-                    <th>Billing Country</th>
-                    <th>Billing Postcode</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{$order->billing_street }}</td>
-                    <td>{{$order->billing_flat_suite}}</td>
-                    <td>{{ $order->billing_city }}</td>
-                    <td>{{ $order->billing_state}}</td>
-                    <td>{{ $order->billing_country }}</td>
-                    <td>{{ $order->billing_postcode }}</td>
-                </tr>
-
-
-                </tbody>
-            </table>
-            <div class="shadow-sm p-3">
-                <p>  <b> Address Note: </b>  {{$order->address}}</p>
-            </div>
-
-        </div>
-
+    <div class="footer">
+        <p>Thank you for your purchase! If you have any questions, feel free to contact us at sales@photonplay.com.</p>
     </div>
 </div>
-
-
-
+</body>
+</html>

@@ -204,12 +204,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="/radar-speed-signs">HOME</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/company">COMPANY</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            PRODUCT
+                            PRODUCTS
                         </a>
                         <ul class="dropdown-menu rounded-3 shadow-lg p-2" aria-labelledby="productDropdown">
                             @foreach($products as $product)

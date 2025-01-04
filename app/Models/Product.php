@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Session;
 
 class Product extends Model
 {
@@ -30,11 +31,33 @@ class Product extends Model
 
     public static function getLinkedProducts(array $productIds)
     {
+        // Initialize excluded product IDs
+        $excludedProductIds = [];
+        // Determine if the user is a guest or logged in
+        if (!Session::get('user')) {
+            // Guest user: Get cart items by session ID
+            $cartTable = Cart::select('quantity', 'product_id')
+                ->where('session_id', Session::getId())
+                ->get();
+        } else {
+            // Logged-in user: Get cart items by user ID
+            $cartTable = Cart::select('quantity', 'product_id')
+                ->where('user_id', Session::get('user')->id)
+                ->get();
+        }
+
+        // Populate excluded product IDs and calculate total count
+        foreach ($cartTable as $cartItem) {
+            $excludedProductIds[] = $cartItem->product_id;
+        }
+
+
         return self::where(function ($query) use ($productIds) {
             foreach ($productIds as $productId) {
                 $query->orWhereJsonContains('products_linked', (string) $productId);
             }
-        })->get();
+        })->whereNotIn('id', $excludedProductIds) // Exclude products in the cart
+        ->get();
     }
 
 

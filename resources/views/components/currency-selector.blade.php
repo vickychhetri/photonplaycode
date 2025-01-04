@@ -6,7 +6,7 @@
             @foreach($currencies as $currency)
                 <option value="{{ $currency->currency_code }}"
                     {{ session('currency_icon') === $currency->currency_code ? 'selected' : '' }}>
-                    {{ $currency->currency_code }}
+                    {{ $currency->label }}
                 </option>
             @endforeach
         </select>
