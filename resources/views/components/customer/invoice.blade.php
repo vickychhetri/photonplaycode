@@ -115,9 +115,7 @@
             <thead>
             <tr>
                 <th>Product Id</th>
-                <th>Product Image</th>
                 <th>Product Name</th>
-                <th>Options</th>
                 <th>SKU</th>
                 <th>Quantity</th>
                 <th>Price</th>
@@ -127,32 +125,18 @@
             @foreach($order->orderedProducts as $prod)
                 <tr>
                     <td>{{ $prod->product_id }}</td>
-                    <td><img src="{{asset('storage/'.$prod->cover_image)}}" alt="Product Image" style="max-height: 70px; max-width: 100px;"></td>
                     <td>{{ $prod->title }}</td>
-                    <td>
-                        @foreach (explode(',', $prod->option_ids) as $option)
-                            @php
-                                $options = \App\Models\ProductSpcializationOption::with('specializationoptions', 'product_specilization.specilization')
-                                    ->where('specialization_option_id', $option)
-                                    ->where('product_id', $prod->product_id)
-                                    ->get();
-                            @endphp
-                            @foreach ($options as $opp)
-                                {{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}} (${{$opp->specialization_price}})<br>
-                            @endforeach
-                        @endforeach
-                    </td>
                     <td>{{ $prod->sku_code }}</td>
                     <td>{{ $prod->quantity }}</td>
                     <td>${{ $prod->price }}</td>
                 </tr>
             @endforeach
             <tr>
-                <td colspan="6" class="totals">Shipping Charges</td>
+                <td colspan="4" class="totals">Shipping Charges</td>
                 <td>{{ $order->shipping==0?"Free":"$".$order->shipping }}</td>
             </tr>
             <tr>
-                <td colspan="6" class="totals">VAT Charges</td>
+                <td colspan="4" class="totals">VAT Charges</td>
                 <td>{{ ($order->gst*$order->cart_subtotal)/100 }}</td>
             </tr>
             <tr>
