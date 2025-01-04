@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Receipt</title>
     <style>
+        .invoice-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .col-sm-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -147,6 +168,14 @@
                 </tr>
             @endforeach
             <tr>
+                <td colspan="6" class="totals">Shipping Charges</td>
+                <td>${{ $order->shipping==0?"Free":$order->shipping }}</td>
+            </tr>
+            <tr>
+                <td colspan="6" class="totals">VAT Charges</td>
+                <td>${{ ($order->gst/$order->grand_total)*100 }}%</td>
+            </tr>
+            <tr>
                 <td colspan="6" class="totals">Total</td>
                 <td>${{ $order->grand_total }}</td>
             </tr>
@@ -154,18 +183,40 @@
         </table>
     </div>
 
-    <div class="invoice-section">
-        <h3>Billing Address</h3>
-        <p>Street : {{$order->billing_street}}</p>
-        <p>Address1 : {{$order->billing_flat_suite}}</p>
-        <p>City : {{$order->billing_city}}</p>
-        <p>State : {{$order->billing_state}}</p>
-        <p>Country: {{$order->billing_country}}</p>
-        <p>Postal Code :  {{$order->billing_postcode}}</p>
-        <div class="shadow-sm p-3">
-            <p><strong>  Note:</strong> {{$order->address}}</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="invoice-section">
+                <h3>Billing Address</h3>
+                <p>Street : {{$order->billing_street}}</p>
+                <p>Address1 : {{$order->billing_flat_suite}}</p>
+                <p>City : {{$order->billing_city}}</p>
+                <p>State : {{$order->billing_state}}</p>
+                <p>Country: {{$order->billing_country}}</p>
+                <p>Postal Code :  {{$order->billing_postcode}}</p>
+                <div class="shadow-sm p-3">
+                    <p><strong>Note:</strong> {{$order->address}}</p>
+                </div>
+            </div>
         </div>
+
+        @if(!$order->is_shipping_same)
+            <div class="col-sm-6">
+                <div class="invoice-section">
+                    <h3>Shipping Address</h3>
+                    <p>Street : {{$order->shipping_street}}</p>
+                    <p>Address1 : {{$order->shipping_flat_suite}}</p>
+                    <p>City : {{$order->shipping_city}}</p>
+                    <p>State : {{$order->shipping_state}}</p>
+                    <p>Country: {{$order->shipping_country}}</p>
+                    <p>Postal Code : {{$order->shipping_postcode}}</p>
+                    <div class="shadow-sm p-3">
+                        -
+                    </div>
+                </div>
+            </div>
+        @endif
     </div>
+
 
     <div class="footer">
         <p>Thank you for your purchase! If you have any questions, feel free to contact us at sales@photonplay.com.</p>
