@@ -470,39 +470,69 @@
                     <div class="row">
                         <div class="container text-center my-5">
                             <h5 class="mb-4 text-black">Compatible Accessories</h5>
-                                    @foreach($linked_products as $ap)
-                                        <div class="col-md-12 mb-3">
-                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}" wire:ignore>
-                                                @csrf
-                                                 <div class="card mx-auto" style="width: 18rem;">
-                                            <div class="d-flex justify-content-center align-items-center w-100 p-2 m-2">
+                            @foreach($linked_products as $ap)
+                                <div class="col-md-12 mb-3">
+                                    <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}" wire:ignore>
+                                        @csrf
+                                        <div class="card" >
+                                            <div class="d-flex justify-content-center align-items-center w-100 p-4 pb-2 border-1">
                                                 <img src="{{ asset('storage/' . $ap->cover_image )  }}" class="card-img-top"
-                                                     alt="SafePace Universal Mounting Bracket"
-                                                     style="max-width: 100%;max-width: 200px;">
+                                                     alt="{{$ap->title}}"
+                                                     style="max-width: 100%; ">
                                             </div>
 
                                             <div class="card-body">
                                                 @php
-//                                                    $currency_icon = session('currency_icon', '$');
                                                     $exchange_rate = session('exchange_rate', '1');
                                                 @endphp
-                                                <h5 class="card-title"> {{$ap->product_heading_text??$ap->title}}</h5>
-                                                <p class="card-text"> {{$currency_icon}}{{ $country_code=="CA"?$ap->price_canada*$exchange_rate:$ap->price*$exchange_rate }}</p>
+                                                <h5 class="card-title"> {{$ap->product_heading_text ?? $ap->title}}</h5>
+                                                <p class="card-text">
+                                                    {{ $currency_icon ?? '$' }}
+                                                    {{ $country_code == "CA" ? $ap->price_canada * $exchange_rate : $ap->price * $exchange_rate }}
+                                                </p>
                                                 <p class="text-muted p-2">{{$ap->category->title}}</p>
 
                                                 <input type="hidden" name="product_id" value="{{ $ap->id }}">
-                                                <input type="hidden" name="price" value="{{$country_code=="CA"?$ap->price_canada*$exchange_rate:$ap->price*$exchange_rate}}">
+                                                <input type="hidden" name="price" value="{{ $country_code == "CA" ? $ap->price_canada * $exchange_rate : $ap->price * $exchange_rate }}">
                                                 <input type="hidden" name="title" value="{{ $ap->title }}">
                                                 <input type="hidden" name="category" value="{{ $ap->category->title }}">
-                                                <input type="hidden" name="quantity" value="1">
-                                                <input type="hidden" name="p" value="1">
                                                 <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
-                                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                <input type="hidden" name="p" value="1">
+
+                                                <div class="quantity-control d-flex align-items-center justify-content-center gap-2">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary decrement-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;" >-</button>
+                                                    <input type="number" name="quantity" value="1" class="form-control text-center quantity-input p-1" style="width: 60px; height: 30px;" min="1" readonly>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary increment-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;">+</button>
+                                                </div>
+
+
+                                                <button type="submit" class="btn btn-primary mt-3">Add to Cart</button>
                                             </div>
                                         </div>
-                                            </form>
-                                        </div>
-                                    @endforeach
+                                    </form>
+                                </div>
+                            @endforeach
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    document.querySelectorAll('.increment-btn').forEach(btn => {
+                                        btn.addEventListener('click', function() {
+                                            const quantityInput = this.previousElementSibling;
+                                            quantityInput.value = parseInt(quantityInput.value) + 1;
+                                        });
+                                    });
+
+                                    document.querySelectorAll('.decrement-btn').forEach(btn => {
+                                        btn.addEventListener('click', function() {
+                                            const quantityInput = this.nextElementSibling;
+                                            if (parseInt(quantityInput.value) > 1) {
+                                                quantityInput.value = parseInt(quantityInput.value) - 1;
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
+
                         </div>
                     </div>
                 </div>
