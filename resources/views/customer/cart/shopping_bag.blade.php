@@ -127,6 +127,27 @@
                                                 </div>
                                             </form>
 
+
+                                            <script>
+                                                document.addEventListener('DOMContentLoaded', function() {
+                                                    document.querySelectorAll('.increment-btn').forEach(btn => {
+                                                        btn.addEventListener('click', function() {
+                                                            const quantityInput = this.previousElementSibling;
+                                                            quantityInput.value = parseInt(quantityInput.value) + 1;
+                                                        });
+                                                    });
+
+                                                    document.querySelectorAll('.decrement-btn').forEach(btn => {
+                                                        btn.addEventListener('click', function() {
+                                                            const quantityInput = this.nextElementSibling;
+                                                            if (parseInt(quantityInput.value) > 1) {
+                                                                quantityInput.value = parseInt(quantityInput.value) - 1;
+                                                            }
+                                                        });
+                                                    });
+                                                });
+                                            </script>
+
                                         </div>
                                    @endforeach
 
