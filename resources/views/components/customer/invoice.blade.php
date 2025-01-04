@@ -140,7 +140,7 @@
                 <td>{{ ($order->gst*$order->cart_subtotal)/100 }}</td>
             </tr>
             <tr>
-                <td colspan="5" class="totals">Total</td>
+                <td colspan="4" class="totals">Total</td>
                 <td>${{ $order->grand_total }}</td>
             </tr>
             </tbody>
