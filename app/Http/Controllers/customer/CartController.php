@@ -11,6 +11,7 @@ use App\Models\Currency;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderedProduct;
+use App\Models\PostalCode;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\ShippingRate;
@@ -260,7 +261,12 @@ $products_list_ids=[];
     }
 
     public function deleteCartTableItem($id){
-        Cart::find($id)->delete();
+        if($id){
+            $item =Cart::find($id);
+            if($item){
+                $item->delete();
+            }
+        }
         return redirect()->route('customer.shopping.bag');
     }
 
@@ -299,7 +305,7 @@ $products_list_ids=[];
                    ],
                  ]);
 
-
+            $customer_session_id = Session::getId();
            $checkout_session = \Stripe\Checkout\Session::create([
            'line_items' => [[
                 'price' => $price->id,
@@ -307,7 +313,7 @@ $products_list_ids=[];
            ]],
            'customer_email' => $email,
            'mode' => 'payment',
-           'success_url' => route('customer.success.response', ['order_id' => $orderId, 'userId' => $userId, 'email' => $email, 'type' => $type]),
+           'success_url' => route('customer.success.response', ['order_id' => $orderId, 'userId' => $userId, 'email' => $email, 'type' => $type,'tSessId'=>$customer_session_id]),
            'cancel_url' => route('customer.cancel.response'),
            ]);
 
@@ -392,8 +398,10 @@ $products_list_ids=[];
                 'payment_status' => $checkout->payment_status
             ]);
             if($request->type == 'guest'){
-                Cart::where('session_id', $request->userId)->delete();
+                Cart::where('session_id', $request->tSessId)->delete();
+                Cart::where('user_id', $request->userId)->delete();
             }else{
+                Cart::where('session_id', $request->tSessId)->delete();
                 Cart::where('user_id', $request->userId)->delete();
             }
 
@@ -442,16 +450,57 @@ $products_list_ids=[];
         return response()->json($address);
     }
 
-    public function getUserPostalCode($postalCode){
-        $rate = ShippingRate::where('postal_code', $postalCode)->first();
-        $shipping = Setting::select('shipping_time')->first();
-        $shippingPrice = 0;
-        if($rate){
-            $shippingPrice = $rate->shipping_rate;
+        public function getUserPostalCode($postalCode){
+        if(Session::get('user')){
+            $customer = Customer::find((Session::get('user')->id));
+            $addresses = UserAddress::where('user_id', Session::get('user')->id)->get();
+            $cart_table =  Cart::where('user_id', Session::get('user')->id)->get();
         }else{
-            $shippingPrice = $shipping->shipping_time;
+            $customer = Session::getId();
+            $addresses = [];
+            $cart_table =  DB::table('carts')->where('session_id', $customer)->get();
         }
-        return response()->json((int)$shippingPrice);
+            $query = PostalCode::query();
+            // Clean postal code input by removing spaces
+            if ($postalCode) {
+                // Remove spaces from the postal code
+                $postalCode = str_replace(' ', '', $postalCode);
+
+                // Use 'like' query for postal code without spaces
+                $query->whereRaw("REPLACE(postal_code, ' ', '') LIKE ?", ["$postalCode%"]);
+            }
+
+            $postalData = $query->first();
+         $totalShippingCharges = 0; // Initialize total shipping charges
+            if($postalData){
+                $countryCode = $postalData->country??"-";
+            }
+        // Iterate through the cart items
+        foreach ($cart_table as $cartItem) {
+            $product = DB::table('products')->where('id', $cartItem->product_id)->first();
+            if ($product) {
+                if ($product->shipping_type == 1) {
+                    // Shipping charges are 0 for type 1
+                    $shippingCharges = 0;
+                } else if ($product->shipping_type == 2) {
+                    // Get the country code from session
+                    if ($countryCode == 'US') {
+                        $shippingCharges = $product->shipping_fees_us;
+                    } elseif ($countryCode == 'CA') {
+                        $shippingCharges = $product->shipping_fees_can;
+                    } else {
+                        $shippingCharges = 0; // Default to 0 for unsupported countries
+                    }
+                } else {
+                    $shippingCharges = 0; // Default to 0 for unknown shipping types
+                }
+
+                // Add the shipping charges for the current product to the total
+                $totalShippingCharges += ($shippingCharges*$cartItem->quantity);
+            }
+        }
+
+        return response()->json((int)$totalShippingCharges);
     }
 
 

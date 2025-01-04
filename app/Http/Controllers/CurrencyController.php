@@ -20,7 +20,7 @@ class CurrencyController extends Controller
         if ($currencyHandler) {
             Session::put('currency_icon', $currencyHandler->currency_code);
             Session::put('exchange_rate', $currencyHandler->exchange_rate);
-
+            Session::put('country_code', $currencyHandler->country_code);
             if(Session::get('user')){
                 Cart::where('user_id', Session::get('user')->id)->delete();
             }else{

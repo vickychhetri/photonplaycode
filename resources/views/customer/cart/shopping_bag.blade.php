@@ -1,7 +1,9 @@
 @php
     use App\Models\ProductSpcializationOption;
     use Illuminate\Support\Facades\Log;
+        $country_code = Illuminate\Support\Facades\Session::get('country_code', 'US');
 @endphp
+
 @include('customer.layouts.header')
 
 <!-- header-end -->
@@ -102,9 +104,12 @@
                                                     <img src="{{asset('storage/'.$l_product->cover_image)}}"  class="card-img-top" alt="Accessory 1" style="max-height: 200px; object-fit: contain;">
                                                     <div class="card-body">
                                                         <h6 class="card-title">S{{$l_product->product_heading_text??$l_product->title}}</h6>
-                                                        <p class="card-text text-primary">{{$currency_icon}} {{$l_product->price*$exchange_rate}}</p>
+                                                        <p class="card-text text-primary">{{$currency_icon}} {{$country_code=="CA"?$l_product->price_canada*$exchange_rate:$l_product->price*$exchange_rate}}</p>
+
+
+
                                                         <input type="hidden" name="product_id" value="{{ $l_product->id }}">
-                                                        <input type="hidden" name="price" value="{{ $l_product->price*$exchange_rate }}">
+                                                        <input type="hidden" name="price" value="{{$country_code=="CA"?$l_product->price_canada*$exchange_rate:$l_product->price*$exchange_rate}}">
                                                         <input type="hidden" name="title" value="{{ $l_product->title }}">
                                                         <input type="hidden" name="category" value="{{ $l_product->category->title }}">
                                                         <input type="hidden" name="quantity" value="1">

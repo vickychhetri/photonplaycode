@@ -1,3 +1,6 @@
+@php
+   $country_code = Illuminate\Support\Facades\Session::get('country_code', 'US');
+@endphp
 <div>
     <section class="our-product pt-2 pb-2">
 {{--        <form id="myForm" action="{{ route('customer.store.shopping.bag') }}" method="post">--}}
@@ -86,10 +89,10 @@
                                 </div>
                                 <div x-data="{
                                         dynamic_specs: {},
-                                        total_amount_single_product: {{ $product->price*$exchange_rate }},
-                                        product_amount: {{ $product->price*$exchange_rate }},
+                                        total_amount_single_product: {{ $country_code=="CA"? $product->price_canada*$exchange_rate:$product->price*$exchange_rate }},
+                                        product_amount: {{ $country_code=="CA"?$product->price_canada*$exchange_rate:$product->price*$exchange_rate }},
                                         counts: 1,
-                                        total_price: {{ $product->price*$exchange_rate }},
+                                        total_price: {{ $country_code=="CA"?$product->price_canada*$exchange_rate:$product->price*$exchange_rate }},
 
                                         changeCalculatedAmount(specId, priceElement) {
                                             const selectedOption = priceElement.options[priceElement.selectedIndex];
@@ -148,7 +151,12 @@
                                                         <!-- Loop through each option for this specialization -->
                                                         @foreach($specilization->options as $option)
                                                             <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code }}">
-                                                                {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                                {{ $option->specializationoptions->option }}
+                                                                @if($country_code=="CA")
+                                                                    (+$<span class="price">{{ $option->specialization_price_ca*$exchange_rate }}</span>)
+                                                                @else
+                                                                    (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                                @endif
                                                                 @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                                     Subscription Free For 1 Year
                                                                 @endif
@@ -211,7 +219,12 @@
                                                     <!-- Loop through each option for this specialization -->
                                                     @foreach($specilization->options as $option)
                                                         <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code }}">
-                                                            {{ $option->specializationoptions->option }} (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                            {{ $option->specializationoptions->option }}
+                                                            @if($country_code=="CA")
+                                                                (+$<span class="price">{{ $option->specialization_price_ca*$exchange_rate }}</span>)
+                                                            @else
+                                                                (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
+                                                            @endif
                                                             @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
                                                                 Subscription Free For 1 Year
                                                             @endif
@@ -293,7 +306,13 @@
 
 
                                 <div class="px-4 py-lg-0 py-4">
-                                    <span style="display: none" class="one-thousand" id="total_price">${{ $product->price*$exchange_rate }}</span>
+                                    <span style="display: none" class="one-thousand" id="total_price">
+                                        @if($country_code=="CA")
+                                            ${{ $product->price_canada*$exchange_rate }}</span>
+                                        @else
+                                            ${{ $product->price*$exchange_rate }}</span>
+                                        @endif
+
                                 </div>
                                 <button data-bs-toggle="modal" data-bs-target="#exampleModalCenter" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
                                     <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
@@ -445,9 +464,9 @@
                             <h5 class="mb-4 text-black">Compatible Accessories</h5>
                                     @foreach($linked_products as $ap)
                                         <div class="col-md-12 mb-3">
-                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}">
+                                            <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}" wire:ignore>
                                                 @csrf
-                                        <div class="card mx-auto" style="width: 18rem;">
+                                                 <div class="card mx-auto" style="width: 18rem;">
                                             <div class="d-flex justify-content-center align-items-center w-100 p-2 m-2">
                                                 <img src="{{ asset('storage/' . $ap->cover_image )  }}" class="card-img-top"
                                                      alt="SafePace Universal Mounting Bracket"
@@ -460,20 +479,20 @@
                                                     $exchange_rate = session('exchange_rate', '1');
                                                 @endphp
                                                 <h5 class="card-title"> {{$ap->product_heading_text??$ap->title}}</h5>
-                                                <p class="card-text"> {{$currency_icon}}{{$ap->price*$exchange_rate}}</p>
+                                                <p class="card-text"> {{$currency_icon}}{{ $country_code=="CA"?$ap->price_canada*$exchange_rate:$ap->price*$exchange_rate }}</p>
                                                 <p class="text-muted p-2">{{$ap->category->title}}</p>
 
                                                 <input type="hidden" name="product_id" value="{{ $ap->id }}">
-                                                <input type="hidden" name="price" value="{{ $ap->price*$exchange_rate }}">
+                                                <input type="hidden" name="price" value="{{$country_code=="CA"?$ap->price_canada*$exchange_rate:$ap->price*$exchange_rate}}">
                                                 <input type="hidden" name="title" value="{{ $ap->title }}">
                                                 <input type="hidden" name="category" value="{{ $ap->category->title }}">
                                                 <input type="hidden" name="quantity" value="1">
                                                 <input type="hidden" name="p" value="1">
                                                 <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
-                                                <button class="btn btn-primary">Add to Cart</button>
+                                                <button type="submit" class="btn btn-primary">Add to Cart</button>
                                             </div>
                                         </div>
-
+                                            </form>
                                         </div>
                                     @endforeach
                         </div>
