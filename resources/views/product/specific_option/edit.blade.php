@@ -64,6 +64,22 @@
                                 </div>
                             </div>
 
+                            <div class="row mb-3 form-group">
+                                <label for="specialization_price_ca" class="col-md-4 col-form-label text-md-end"><span>* </span>{{ __('Price (CA)') }}</label>
+
+                                <div class="col-md-3">
+                                    <input id="specialization_price_ca" type="text" class="form-control @error('specialization_price_ca') is-invalid @enderror" name="specialization_price_ca" value="{{ old('specialization_price_ca') ?? $specialization_options->specialization_price_ca ?? ''}}" required autocomplete="specialization_price_ca" autofocus>
+
+                                    @error('specialization_price_ca')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">

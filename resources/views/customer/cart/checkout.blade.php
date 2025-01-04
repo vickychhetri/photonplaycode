@@ -149,7 +149,7 @@
                                                      document.getElementById('billing_country').innerHTML = `<option value="${location.country_name}">${location.country_name}</option>`;
                                                      document.getElementById('billing_state').innerHTML = `<option value="${location.province_abbr}">${location.province}</option>`;
                                                      document.getElementById('billing_city').innerHTML = `<option value="${location.city}">${location.city}</option>`;
-
+                                                     document.getElementById('billing_postcode_error_msg').style.display = "none";
                                                      // Hide the suggestions list after selection
                                                      suggestionsList.style.display = 'none';
                                                  });
@@ -169,7 +169,7 @@
                                                          document.getElementById('billing_country').innerHTML = `<option value="${location.country_name}">${location.country_name}</option>`;
                                                          document.getElementById('billing_state').innerHTML = `<option value="${location.province_abbr}">${location.province}</option>`;
                                                          document.getElementById('billing_city').innerHTML = `<option value="${location.city}">${location.city}</option>`;
-
+                                                         document.getElementById('billing_postcode_error_msg').style.display = "none";
                                                          // Hide the suggestions list after selection
                                                          suggestionsList.style.display = 'none';
                                                      });
@@ -183,7 +183,7 @@
                                          } else {
                                              // No suggestions found, hide the list
                                              const billingPostcodeErrorMsg = document.getElementById('billing_postcode_error_msg');
-                                             document.getElementById('billing_postcode_error_msg').style.display = "block";
+
                                              document.getElementById('billing_postcode_error_msg').style.color = "red";
                                              document.getElementById('billing_postcode_error_msg').innerText =
 
@@ -785,7 +785,7 @@
                         // console.log(result);
                         var icon_currency =  '{{session('currency_icon', '$')}}';
                         var exchange_rate = '{{session('exchange_rate', '1')}}';
-                        var resuPrice= parseFloat(result)*parseFloat(exchange_rate) * parseInt({{$total_counting_product??0}})
+                        var resuPrice= parseFloat(result)*parseFloat(exchange_rate)
 
                         $('#submittername').empty();
                         var shipping = $('#submittername').append(icon_currency + resuPrice);

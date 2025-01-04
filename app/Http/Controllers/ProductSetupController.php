@@ -105,6 +105,7 @@ class ProductSetupController extends Controller
             abort(404);
         }
         $item->specialization_price=$request->specialization_price;
+        $item->specialization_price_ca=$request->specialization_price_ca;
         $item->save();
         return redirect('admin/product-specification-options/'.$request->product_id.'/'.$item->product_specilizations_id);
 
