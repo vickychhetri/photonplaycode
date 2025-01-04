@@ -40,6 +40,7 @@ class CountryRedirect
             if ($currency_handler) {
                 Session::put('currency_icon', $currency_handler->currency_code);
                 Session::put('exchange_rate', $currency_handler->exchange_rate);
+                Session::put('country_code', $countryCode);
             }
         }
 
