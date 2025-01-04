@@ -43,7 +43,6 @@ class CountryRedirect
                 Session::put('country_code', $countryCode);
             }
         }
-
         if ($countryCode === 'IN') {
           return redirect('https://www.photonplayinc.com/traffic-signs/radar-speed-signs/');
         }

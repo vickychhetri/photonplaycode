@@ -10,7 +10,7 @@
             <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
             <input type="hidden" wire:model="title" name="title" id="title" value="{{ $product->title }}">
             <input type="hidden" wire:model="category" name="category" id="category" value="{{ $product->category->title }}">
-            <input type="hidden" wire:model="price" name="price" id="price" value="{{ $product->price*$exchange_rate }}">
+            <input type="hidden" wire:model="price" name="price" id="price" value="{{ $country_code=="CA"? $product->price_canada*$exchange_rate:$product->price*$exchange_rate }}">
             <input type="hidden" wire:model="cover_image" name="cover_image" id="cover_image" value="{{ $product->cover_image }}">
 
             <div class="container">
