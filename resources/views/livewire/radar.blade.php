@@ -366,13 +366,15 @@
                                 document.addEventListener('livewire:load', function () {
                                     Livewire.on('cartUpdated', quantity => {
                                         document.getElementById('cart_item_counts').innerText = quantity;
+                                        document.getElementById('cart_item_counts').style.backgroundColor = 'red';
+                                        document.getElementById('cart_item_counts').style.pointerEvents = 'auto';
                                     });
                                 });
                             </script>
-                            <div class="d-flex justify-content-between text-black fw-bold">
-                                <span>Cart subtotal</span>
-                                <span>{{$currency_icon}}{{ $cartTotal }}</span>
-                            </div>
+{{--                            <div class="d-flex justify-content-between text-black fw-bold">--}}
+{{--                                <span>Cart subtotal</span>--}}
+{{--                                <span>{{$currency_icon}}{{ $cartTotal }}</span>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="modal-footer">
                             <button wire:click="navigateToShopping" class="btn btn-primary w-100">View Cart / Checkout</button>
