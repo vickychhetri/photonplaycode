@@ -272,6 +272,8 @@ $products_list_ids=[];
 
     public function placeOrder(Request $request){
         try{
+            $productsCart = Cart::select('id','title','price','quantity')->whereIn('id', $request->product_ids)->get() ?? [];
+
             $currency_code = Session::get('currency_code', 'USD');
             if(!Session::get('user')){
                 $this->validate($request, [
@@ -296,28 +298,74 @@ $products_list_ids=[];
 
             $orderId ='#'.mt_rand(1111, 99999);
             $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
-               header('Content-Type: application/json');
-               $price = \Stripe\Price::create([
-                   'unit_amount' => $request->grand_total * 100,
-                   'currency' => $pay_currency,
-                   'product_data' => [
-                     'name' => 'Total Amount',
-                   ],
-                 ]);
+            header('Content-Type: application/json');
+            $productsCart = Cart::select('id', 'title', 'price', 'quantity')
+                ->whereIn('id', $request->product_ids)
+                ->get();
+
+//            $line_items = [];
+//
+//            foreach ($productsCart as $product) {
+//                $price = \Stripe\Price::create([
+//                    'unit_amount' => (int)($product->price * 100),
+//                    'currency' => $pay_currency,
+//                    'product_data' => [
+//                        'name' => $product->title,
+//                    ],
+//                ]);
+//
+//                $line_items[] = [
+//                    'price' => $price->id,
+//                    'quantity' => (int)$product->quantity,
+//                ];
+//            }
+            $line_items = [];
+            $total_amount = 0;
+            $flat_tax_amount = (int)$request->estimated_tax * 100;
+
+            foreach ($productsCart as $product) {
+                $line_items[] = [
+                    'price_data' => [
+                        'currency' => $pay_currency,
+                        'product_data' => [
+                            'name' => $product->title,
+                        ],
+                        'unit_amount' => (int)($product->price * 100),
+                    ],
+                    'quantity' => (int)$product->quantity,
+                ];
+
+                $total_amount += $product->price * $product->quantity;
+            }
+            $line_items[] = [
+                'price_data' => [
+                    'currency' => $pay_currency,
+                    'product_data' => [
+                        'name' => 'Estimated Tax',
+                    ],
+                    'unit_amount' => $flat_tax_amount,
+                ],
+                'quantity' => 1,
+            ];
 
             $customer_session_id = Session::getId();
-           $checkout_session = \Stripe\Checkout\Session::create([
-           'line_items' => [[
-                'price' => $price->id,
-                'quantity' => 1,
-           ]],
-           'customer_email' => $email,
-           'mode' => 'payment',
-           'success_url' => route('customer.success.response', ['order_id' => $orderId, 'userId' => $userId, 'email' => $email, 'type' => $type,'tSessId'=>$customer_session_id]),
-           'cancel_url' => route('customer.cancel.response'),
-           ]);
+            $checkout_session = \Stripe\Checkout\Session::create([
+                'line_items' => $line_items,
+                'customer_email' => $email,
+                'mode' => 'payment',
+                'success_url' => route('customer.success.response', [
+                    'order_id' => $orderId,
+                    'userId' => $userId,
+                    'email' => $email,
+                    'type' => $type,
+                    'tSessId' => $customer_session_id
+                ]),
+                'cancel_url' => route('customer.cancel.response'),
+            ]);
 
-           $order = Order::create([
+
+
+            $order = Order::create([
                'user_id' => $userId,
                'trx_id' => $checkout_session->id,
                'order_number' => $orderId,

@@ -578,6 +578,7 @@
                              <li class="d-flex justify-content-between">
                                  <span class="text">Estimated Tax</span>
                                  <span class="text-amount">{{session("currency_icon","$")}}{{ $gstAmount = (($total - $discount) + $shipping) * $gst / 100 }}</span>
+                                 <input type="hidden" value="{{ $gstAmount }}" name="estimated_tax">
                              </li>
                          @if($discount != 0)
                              <li class="d-flex justify-content-between">
