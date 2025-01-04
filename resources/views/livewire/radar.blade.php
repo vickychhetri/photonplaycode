@@ -282,11 +282,10 @@
                             <div class="d-md-flex justify-content-start mt-lg-0 mt-4 buy-right align-items-center">
                                 <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
                                     <a class="btn d-flex align-items-center justify-content-center m-0"
-                                       @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
+                                       @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
                                        style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
-                                        +
+                                        -
                                     </a>
-
                                     <input id="uniqueQuantityInput"
                                            type="number"
                                            class="text-center border-0 m-0"
@@ -295,11 +294,10 @@
                                            min="1"
                                            max="100"
                                            style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">
-
                                     <a class="btn d-flex align-items-center justify-content-center m-0"
-                                       @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
+                                       @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
                                        style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
-                                        -
+                                        +
                                     </a>
                                 </div>
 
