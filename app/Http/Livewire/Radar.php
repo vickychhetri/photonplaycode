@@ -170,6 +170,19 @@ class Radar extends Component
             }
 
         }
+        $total_count = 0;
+        if(!Session::get('user')){
+            $cart_table =  Cart::select('quantity')->where('session_id', Session::getId())->get();
+            foreach($cart_table as $cart_t){
+                $total_count += $cart_t->quantity;
+            }
+        }else {
+            $cart_table =  Cart::select('quantity')->where('user_id', Session::get('user')->id)->get();
+            foreach($cart_table as $cart_t){
+               $total_count += $cart_t->quantity;
+            }
+        }
+        $this->emit('cartUpdated', $total_count);
     }
 
 
