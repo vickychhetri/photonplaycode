@@ -22,16 +22,63 @@ class OrderController extends Controller
         return $pdf->download('order'.$order->order_number.'.pdf');
     }
 
-    public function generateCustomerInvoice(Request $request,$id)
+    public function generateCustomerInvoice(Request $request, $id)
     {
-        try{
-            $order=Order::find($id);
-            $pdf = PDF::loadView('reports.invoice_customer',['id' => $id]);
-        }catch (\Exception $e){
-            return $e->getMessage();
+        try {
+            $order = Order::find($id);
+            if (!$order) {
+                return response()->json(['error' => 'Order not found'], 404);
+            }
+
+            $pdf = PDF::loadView('reports.invoice_customer', ['id' => $id]);
+
+            // Stream the PDF in the browser
+            return $pdf->stream('order' . $order->order_number . '.pdf');
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
         }
-        return $pdf->download('order'.$order->order_number.'.pdf');
     }
+
+
+    /***
+    * Below two function is for view and download separate
+     */
+    public function viewCustomerInvoice(Request $request, $id)
+    {
+        try {
+            $order = Order::find($id);
+            if (!$order) {
+                return response()->json(['error' => 'Order not found'], 404);
+            }
+
+            $pdf = PDF::loadView('customer.invoice_customer', ['id' => $id]);
+
+            // Stream the PDF
+            return $pdf->stream('order' . $order->order_number . '.pdf');
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function downloadCustomerInvoice(Request $request, $id)
+    {
+        try {
+            $order = Order::find($id);
+            if (!$order) {
+                return response()->json(['error' => 'Order not found'], 404);
+            }
+
+            $pdf = PDF::loadView('customer.invoice_customer', ['id' => $id]);
+
+            // Download the PDF
+            return $pdf->download('order' . $order->order_number . '.pdf');
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+
+
 
     /**
      * @param Request $request

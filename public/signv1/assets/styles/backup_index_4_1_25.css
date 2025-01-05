@@ -1,0 +1,569 @@
+@import './_theme.css';
+
+:root {
+  --white: #ffffff;
+  --black: #121212;
+  --primary: rgb(32 136 209);
+  --text-color: rgb(34 34 34);
+  --secondary: rgb(167 167 167);
+  --footer-bg: rgb(22 22 22);
+  --footer-bg-light: rgb(40 40 40);
+}
+
+@font-face {
+  font-family: Alternox-regular;
+  src: url('../UI-01/FONTS/Alternox-Regular.otf');
+}
+
+@font-face {
+  font-family: Alternox-bold;
+  src: url('../UI-01/FONTS/Alternox-Bold.otf');
+}
+
+@font-face {
+  font-family: Alternox-semibold;
+  src: url('../UI-01/FONTS/Alternox-SemiBold.otf');
+}
+
+@font-face {
+  font-family: Railway-regular;
+  src: url('../UI-01/FONTS/Raleway-Regular.ttf');
+}
+
+@font-face {
+  font-family: Railway-bold;
+  src: url('../UI-01/FONTS/Raleway-Bold.ttf');
+}
+
+@font-face {
+  font-family: Railway-semibold;
+  src: url('../UI-01/FONTS/Raleway-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: Railway-medium;
+  src: url('../UI-01/FONTS/Raleway-Medium.ttf');
+}
+
+body {
+  font-family: Railway-regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Alternox-semibold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+section {
+  padding-block: 80px;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.text-black {
+  color: var(--black) !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.fs-16 {
+  font-size: 16px !important;
+}
+
+.fs-18 {
+  font-size: 18px !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--secondary) !important;
+}
+
+.border {
+  border: 1px solid var(--secondary) !important;
+}
+
+.border-top {
+  border-top: 1px solid var(--secondary) !important;
+}
+
+.border-left {
+  border-left: 1px solid var(--secondary) !important;
+}
+
+.border-right {
+  border-right: 1px solid var(--secondary) !important;
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0;
+  padding: 10px 24px;
+}
+
+.btn-key-solution-rounded {
+  background-color: white;
+  color: black !important;
+  border-radius:50px
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+
+.text-tag {
+  background-color: #e5e5e5;
+  width: fit-content;
+  border-radius: 45px;
+  padding: 6px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: auto;
+}
+
+.title h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.title * {
+  color: var(--primary);
+  text-align: center;
+}
+
+.font-railway {
+  font-family: Railway-bold;
+}
+
+.form-control {
+  border-radius: 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: none !important;
+}
+
+::placeholder {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* --------------------- Banner section ----------------------- */
+.banner-section {
+  background: url('../UI-01/UI-Data/Images/banner-with-speed.png');
+  background-position: right;
+  background-size: cover;
+}
+
+.navbar-nav .nav-link {
+  color: var(--white);
+  font-weight: 500;
+  font-family: Railway-semibold;
+  padding-block: 20px;
+  margin-right: 14px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.banner-section *:not(button) {
+  color: var(--white);
+}
+
+.banner-section h1 {
+  font-size: 50px;
+}
+
+/* --------------- Stats section ---------------------- */
+.state-section {
+  box-shadow: rgba(0, 0, 0, 0.153) 0px -50px 36px -28px inset;
+  background-color: rgba(145, 143, 143, 0.037);
+}
+
+.stats-card * {
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.stats-card {
+  width: 100%;
+}
+
+.speed-image img {
+  border-radius: 16px;
+}
+
+.radar-speed-container {
+  height: 700px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.radar-speed-amount {
+  box-shadow: rgba(30, 30, 30, 0.153) 0px 40px 36px -28px inset;
+  background-color: rgba(145, 143, 143, 0.071);
+}
+
+.radar-speed-list li {
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  color: var(--primary);
+}
+
+.radar-speed-list2 li {
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e5e5;
+  color: var(--primary);
+}
+
+.radar-speed-list li:last-child {
+  border: none;
+}
+
+.list-white li {
+  background-color: var(--white);
+}
+.list-grey li{
+  background-color: #f3f3f3;
+}
+
+.list-white li:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.list-white li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.list-white li:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.list-grey li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.radar-speed-card {
+  background-color: rgb(235 246 252);
+  padding: 60px 20px 30px 20px;
+  border-radius: 14px;
+}
+
+.price-card {
+  background-color: var(--primary);
+  padding: 12px 24px;
+  color: var(--white);
+  font-weight: 600;
+  margin-inline: 18px;
+  text-align: center;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  font-size: 20px;
+  min-height: 54px;
+}
+
+.speed-count-image {
+  position: absolute;
+  top: -230px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+}
+
+.speed-count-image-2 {
+  top: -260px;
+}
+
+.speed-count-image-3 {
+  top: -280px;
+}
+
+.form-container {
+  padding: 60px 40px;
+  background-color: #ffffff5f;
+  border-radius: 24px;
+}
+
+.form-section {
+  background: url('../UI-01/UI-Data/Images/banner-with-speed.png');
+  background-position: right;
+  background-size: cover;
+  position: relative;
+}
+
+
+
+.form-section::after{
+  position: absolute;
+  content: '';
+  height: 15%;
+  top: 0;
+  bottom: 0;
+  border: 50%;
+  margin-block: auto;
+  box-shadow: 0 10px 800px 300px hsla(205, 100%, 69%, 0.337);
+}
+
+
+.client-card{
+  padding: 40px 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
+  border-radius: 0px;
+}
+
+.client-card p{
+  line-height: 30px;
+  word-spacing: 2px;
+}
+
+.news-card .news-card-content{
+padding: 20px 20px 0 20px;
+}
+
+.news-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.news-card .news-image{
+  height: 240px;
+  min-height: 240px;
+  position: relative;
+}
+.news-card .news-image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.news-image .image-tag{
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  font-weight: 500;
+  left: 20px;
+  padding: 10px 24px;
+}
+
+.news-btn{
+  border: 2px solid var(--secondary);
+  color: var(--black);
+}
+
+.news-btn:hover{
+  border-color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.looking-dealer{
+  background: url('../UI-01/UI-Data/Images/we-are-looking-for-dealers.png') center/cover;
+}
+
+.input-box .form-control{
+  background-color: #ffffff5f;
+  border-color: #ffffff5f;
+  color: #121212;
+}
+
+.input-box .form-control::placeholder{
+  color: #003090;
+}
+
+.accordion-item{
+  border-inline: none;
+  border-radius: 0 !important;
+}
+.accordion-button{
+  background-color: var(--white) !important;
+  box-shadow: none !important;
+  font-family: Railway-semibold;
+  color: var(--black) !important;
+  padding-block: 16px !important;
+  padding-left: 36px !important;
+  border-radius: 0 !important;
+}
+
+.accordion-button:not(.collapsed){
+  color: var(--primary) !important;
+}
+
+.accordion-item:first-child{
+  border-top: 5px solid var(--primary);
+}
+
+.accordion-button::after{
+  background-image: url('../UI-01/UI-Data/Images/chevron-right-black.png') !important;
+  position: absolute;
+  left: 0px;
+}
+.accordion-button:not(.collapsed)::after{
+  background-image: url('../UI-01/UI-Data/Images/chevron-down-bluw.png') !important;
+  background-repeat: no-repeat;
+  left: 0;
+}
+
+.accordion-body{
+  padding-left: 36px !important;
+  font-size: 14px;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.traffic-safety-solutions{
+  background: url('../UI-01/UI-Data/Images/Creating-safer-Roads-bg-image.png');
+}
+
+.traffic-safety-solutions *{
+  color: var(--white);
+}
+
+.driver-image{
+  height: 500px;
+}
+
+.driver-image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.discover-more{
+  background: url('../UI-01/UI-Data/Images/Empower-BG-image.png');
+}
+
+.footer{
+  padding-block: 80px;
+  background-color: var(--footer-bg);
+}
+.footer li, h5{
+  color: var(--white);
+}
+
+.footer li{
+  padding-block: 10px;
+  font-size: 14px;
+  color: var(--white);
+  opacity: 0.7;
+}
+
+.footer-copyright{
+  padding-block: 30px;
+}
+
+.back-to-top{
+  background-color: var(--footer-bg-light);
+  padding-block:18px;
+}
+
+.back-to-top-text{
+  font-size: 14px;
+  width: fit-content;
+  padding: 10px 12px;
+  font-weight: 600;
+  margin-inline: auto;
+  margin-top: -36px;
+  background-color: var(--footer-bg-light);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--white);
+}
+
+.help-right{
+  height: 500px;
+  align-items: end;
+}
+
+.custom-border {
+  border: 3px solid black;
+  width: 50%;  /* Adjust the width as needed */
+  margin: 0 auto; /* Centers the border */
+}
+
+
+@media (max-width:767px) {
+  .driver-image{
+    height: auto;
+  }
+  .help-right{
+    height: auto;
+  }
+  .radar-speed-container {
+    height: auto;
+  }
+  .radar-speed-list li{
+    border: none;
+  }
+.speed-count-image{
+  position: unset;
+}
+.brand-image{
+  text-align: center;
+
+}
+
+.banner-section {
+    background: url('https://i.pinimg.com/736x/cf/df/71/cfdf7123f69072b4986167c7133b814e.jpg');
+}
+
+.slick-arrow {
+    display: none !important;
+}
+
+.slick-dots {
+    display: none !important;
+}
+
+
+.form-container{
+  padding: 24px 16px;
+}
+}

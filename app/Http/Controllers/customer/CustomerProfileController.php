@@ -8,6 +8,7 @@ use App\Models\Customer;
 use App\Models\Order;
 use App\Models\User;
 use App\Models\UserAddress;
+use App\Notifications\PasswordChanged;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -17,6 +18,10 @@ class CustomerProfileController extends Controller
     public function editProfileForm(){
         $customer = Customer::find((Session::get('user')->id));
         return view('customer.profile.edit_profile', compact('customer'));
+    }
+    public function editMyProfileForm(){
+        $customer = Customer::find((Session::get('user')->id));
+        return view('customer.profile.edit_profile_read', compact('customer'));
     }
 
     public function address(){
@@ -51,10 +56,12 @@ class CustomerProfileController extends Controller
         $customer->update([
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone_number' => '+'.$request->phone_number,
+            'phone_number' => $request->phone_number,
             'company_name' => $request->company_name,
         ]);
 
+        $customer->notify(new PasswordChanged($customer));
+        session()->flash('success', 'Profile updated successfully.');
         return redirect()->route('customer.edit.profile');
     }
 
