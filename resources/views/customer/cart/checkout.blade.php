@@ -21,6 +21,14 @@
         transition: background-color 0.2s ease;
     }
 
+    #billing_postcode {
+        text-transform: uppercase;
+    }
+
+    #shipping_postcode {
+        text-transform: uppercase;
+    }
+
     .list-group-item:hover {
         background-color: #f8f9fa; /* Light gray hover effect */
     }
@@ -73,11 +81,14 @@
                     @if(!is_string($customer))
                         <input type="hidden" class="form-control rounded-0 px-3" name="email_login" value="{{ $customer->email }}">
                     @else
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Name" name="name" value="" required>
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" required>
+                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" value="" required>
+                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" value="" required>
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" maxlength="100" required>
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">
+
                     @endif
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" required>
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" value="">
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
                     <div>
                         <div>
                             <label for="billing_postcode" class="form-label">Postal Code</label>
@@ -892,7 +903,10 @@
         }, 2000);
     });
 
-
+    document.querySelector('input[name="phone_number"]').addEventListener('input', function(e) {
+        // Replace non-numeric characters with an empty string
+        this.value = this.value.replace(/\D/g, '');
+    });
 </script>
 
 
