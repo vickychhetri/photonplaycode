@@ -114,7 +114,6 @@
         <table>
             <thead>
             <tr>
-                <th>Product Id</th>
                 <th>Product Name</th>
                 <th>SKU</th>
                 <th>Quantity</th>
@@ -124,7 +123,6 @@
             <tbody>
             @foreach($order->orderedProducts as $prod)
                 <tr>
-                    <td>{{ $prod->product_id }}</td>
                     <td>{{ $prod->title }}</td>
                     <td>{{ $prod->sku_code }}</td>
                     <td>{{ $prod->quantity }}</td>
