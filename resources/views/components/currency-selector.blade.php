@@ -1,4 +1,4 @@
-<div class="currency-selector d-flex align-items-center">
+<div class="currency-selector d-flex align-items-center mt-2 mb-4">
     <form id="currency-form" action="{{ route('customer.currency.change') }}" method="POST" class="">
         @csrf
         <div class="input-group">
