@@ -166,7 +166,6 @@
 
 <!-- <title>login</title> -->
 <body>
-@include("signv1.sound_pop_v")
 @livewireScripts
 <!-- Google Tag Manager (noscript) -->
 <noscript>

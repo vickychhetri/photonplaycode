@@ -25,10 +25,10 @@
                 <h6 class="fw-bold">My Account</h6>
                 <ul>
                     <li><a href="#" class="text-white text-decoration-none">Cloud Login</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Account Login</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Check Order Status</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Cart</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Report an Issue</a></li>
+                    <li><a href="{{route("customer.loginForm")}}" class="text-white text-decoration-none">Account Login</a></li>
+                    <li><a href="{{route("customer.history")}}" class="text-white text-decoration-none">Check Order Status</a></li>
+                    <li><a href="{{route("customer.shopping.bag")}}" class="text-white text-decoration-none">Cart</a></li>
+                    <li><a href="{{route("customer.contact.us")}}" class="text-white text-decoration-none">Report an Issue</a></li>
                 </ul>
                 <h6 class="fw-bold">Currency</h6>
                     <span>
@@ -40,16 +40,16 @@
             <div class="col-md-3">
                 <h6 class="fw-bold">Customer Service</h6>
                 <ul>
-                    <li><a href="#" class="text-white text-decoration-none">Contact Support</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Warranty and Guarantee</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Request a Quote</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Send us Feedback</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Security & Privacy Policy</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Secure Shopping</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Do Not Sell or Share My Personal Info</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Accessibility</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Shipping & Returns</a></li>
+                    <li><a href="{{route("customer.contact.us")}}" class="text-white text-decoration-none">Contact Support</a></li>
+                    <li><a href="/return-policy" class="text-white text-decoration-none">Warranty and Guarantee</a></li>
+                    <li><a href="{{route("customer.radar.speed.signs__get_quote_v1")}}" class="text-white text-decoration-none">Request a Quote</a></li>
+                    <li><a href="{{route("customer.contact.us")}}" class="text-white text-decoration-none">Send us Feedback</a></li>
+                    <li><a href="{{route("customer.show_page_policy_privacy_policy")}}" class="text-white text-decoration-none">Security & Privacy Policy</a></li>
+                    <li><a href="{{route("customer.show_page_policy_privacy_policy")}}" class="text-white text-decoration-none">Secure Shopping</a></li>
+                    <li><a href="{{route("customer.show_page_policy_term_conditions")}}" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                    <li><a href="{{route("customer.show_page_policy_privacy_policy")}}" class="text-white text-decoration-none">Do Not Sell or Share My Personal Info</a></li>
+{{--                    <li><a href="#" class="text-white text-decoration-none">Accessibility</a></li>--}}
+                    <li><a href="{{route("customer.show_page_policy_shipping")}}" class="text-white text-decoration-none">Shipping & Returns</a></li>
                 </ul>
             </div>
 
@@ -57,9 +57,9 @@
             <div class="col-md-3">
                 <h6 class="fw-bold">Products</h6>
                 <ul>
-                    <li><a href="#" class="text-white text-decoration-none">Radar Speed Signs</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Stop Signs</a></li>
-                    <li><a href="#" class="text-white text-decoration-none">Portable Trailers</a></li>
+                    <li><a href="{{route("customer.radar.speed.signs")}}" class="text-white text-decoration-none">Radar Speed Signs</a></li>
+{{--                    <li><a href="#" class="text-white text-decoration-none">Stop Signs</a></li>--}}
+                    <li><a href="{{route("customer.portable.variable.message.signs")}}" class="text-white text-decoration-none">Portable Trailers</a></li>
                 </ul>
             </div>
 

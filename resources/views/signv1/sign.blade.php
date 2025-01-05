@@ -1,7 +1,7 @@
 @extends('signv1.layouts.header')
 @section('content')
     <!-- -------------------- Stats section ------------------- -->
-
+    @include("signv1.sound_pop_v")
 
     <section class="state-section py-5">
         <div class="container">

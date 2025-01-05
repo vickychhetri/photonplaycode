@@ -14,6 +14,7 @@ $seo_meta = Cache::remember('seo_meta_data', 60*24*30, function () {
 });
 ?>
 @include('customer.layout2.header')
+@include("signv1.sound_pop_v")
 <x-Customer.HomePageBanner/>
 <!-- undefeated-section-start -->
 <section class="undefeated-wrapper pt-lg-0 shadow-lg">
