@@ -78,7 +78,7 @@ class CustomerProfileController extends Controller
         ]);
 
         $customer->notify(new PasswordChanged($customer));
-        session()->flash('success', 'Profile updated successfully.');
+        session()->flash('success', 'Your changes have been saved successfully.');
         return redirect()->route('customer.edit.profile');
     }
 

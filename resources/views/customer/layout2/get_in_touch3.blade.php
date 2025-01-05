@@ -28,7 +28,7 @@ $setting = Setting::first();
         opacity: 0.9;
     }
 </style>
-<section class="contact-form mt-0 pt-1" id="" style="position: relative; background-color: rgba(228,240,243,0.36);">
+<section class="contact-form mt-0 pt-1" id="inquiry" style="position: relative; background-color: rgba(228,240,243,0.36);">
     <div class="container position-relative" style="z-index: 2;">
         <div class="container">
             <div class="row">
@@ -67,19 +67,24 @@ $setting = Setting::first();
                 </div>
                 <!-- Right Section -->
                 <div class="col-md-6">
-                    <form>
+                    <form action="{{route('customer.inquery.submit')}}" method="post" >
+                        @csrf
+                        <input type="hidden" name="url" value="{{\Illuminate\Support\Facades\URL::full()}}">
                         <div class="mb-3">
-                            <input type="text" class="form-control rounded-5" placeholder="First Name" required>
+                            <input type="text" class="form-control rounded-5" name="first_name" placeholder="First Name" required>
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control rounded-5" placeholder="Last Name" required>
+                            <input type="text" class="form-control rounded-5" name="last_name" placeholder="Last Name" required>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control rounded-5" placeholder="What's your email?" required>
+                            <input type="email" class="form-control rounded-5" name="email" placeholder="What's your email?" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control rounded-5" placeholder="Your questions..." rows="4" required></textarea>
+                            <textarea class="form-control rounded-5" name="message" placeholder="Your questions..." rows="4" required></textarea>
                         </div>
+                        <!-- Google Recaptcha -->
+                        <div class="g-recaptcha mt-4 mb-4 " style="max-width: 100%;" data-sitekey={{config('services.recaptcha.key')}}></div>
+
                         <button type="submit" class="btn send-btn rounded-5 w-100">SEND MESSAGE</button>
                     </form>
                 </div>

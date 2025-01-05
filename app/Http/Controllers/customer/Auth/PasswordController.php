@@ -51,7 +51,7 @@ class PasswordController extends Controller
             'created_at' => now(),
         ];
         ResetPasswordJob::dispatch($data);
-        return redirect()->back()->with('success', "We have e-mailed your password reset link!");
+        return redirect()->back()->with('success', "A reset link has been sent to your email. Please check your inbox and click the verification link to reset your password.");
     }
 
 //    public function resetPassword($token)

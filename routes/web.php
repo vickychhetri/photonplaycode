@@ -257,7 +257,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('emergency-signage/product/{slug}', [ContactUsController::class, 'signagesSubPage'])->name('signages.sub.page');
 
         Route::get('get-saved-address/{addressId}', [CartController::class, 'getSavedAddress'])->name('get-saved-address');
-        Route::get('get-postal-code/{postalCode}', [CartController::class, 'getUserPostalCode'])->name('get.user.postal.code');
+        Route::get('get-postal-code/postalcode', [CartController::class, 'getUserPostalCode'])->name('get.user.postal.code');
 
 
 

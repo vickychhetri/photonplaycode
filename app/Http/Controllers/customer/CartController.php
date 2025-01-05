@@ -453,8 +453,27 @@ $products_list_ids=[];
         return response()->json($address);
     }
 
-        public function getUserPostalCode($postalCode){
-        if(Session::get('user')){
+        public function getUserPostalCode(Request $request){
+            $shippingType = $request->input('shipping_type');
+
+            if($shippingType=="0"){
+                $totalShippingCharges=0;
+                return response()->json((int)$totalShippingCharges);
+            }
+            $postalCode = $request->input('postal_code');
+
+            if(!isset($postalCode)){
+                $totalShippingCharges=0;
+                return response()->json((int)$totalShippingCharges);
+            }
+
+            if(empty($postalCode)){
+                $totalShippingCharges=0;
+                return response()->json((int)$totalShippingCharges);
+            }
+
+
+            if(Session::get('user')){
             $customer = Customer::find((Session::get('user')->id));
             $addresses = UserAddress::where('user_id', Session::get('user')->id)->get();
             $cart_table =  Cart::where('user_id', Session::get('user')->id)->get();
