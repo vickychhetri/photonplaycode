@@ -21,7 +21,7 @@
         <!-- Main Sections -->
         <div class="row">
             <!-- My Account Section -->
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <h6 class="fw-bold">My Account</h6>
                 <ul>
                     <li><a href="#" class="text-white text-decoration-none">Cloud Login</a></li>
@@ -31,7 +31,7 @@
                     <li><a href="{{route("customer.contact.us")}}" class="text-white text-decoration-none">Report an Issue</a></li>
                 </ul>
                 <h6 class="fw-bold">Currency</h6>
-                <span>
+                <span class="mb-4">
                           <x-CurrencySelector/>
                     </span>
             </div>
