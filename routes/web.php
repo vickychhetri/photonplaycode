@@ -336,6 +336,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('edit-address', [CustomerProfileController::class, 'address'])->name('address');
         Route::get('edit-history', [CustomerProfileController::class, 'history'])->name('history');
         Route::get('edit-profile', [CustomerProfileController::class, 'editProfileForm'])->name('edit.profile');
+        Route::get('order-tracking/{id}', [CustomerProfileController::class, 'order_tracking'])->name('my.order.tracking');
         Route::get('edit-my-profile', [CustomerProfileController::class, 'editMyProfileForm'])->name('edit.my.profile');
         Route::get('edit-saved-card', [CustomerProfileController::class, 'savedCard'])->name('edit.saved.card');
         Route::get('add-new-address', [CustomerProfileController::class, 'addAddressForm'])->name('add.address.form');
