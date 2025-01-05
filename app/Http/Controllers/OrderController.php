@@ -131,6 +131,32 @@ class OrderController extends Controller
         return view('order.show',compact('order'));
     }
 
+
+    public function updateTracking(Request $request, $id)
+    {
+        $request->validate([
+            'estimated_delivery_date' => 'nullable|date',
+            'carrier_name' => 'nullable|string|max:255',
+            'tracking_number' => 'nullable|string|max:255',
+            'tracking_url' => 'nullable|string',
+            'shipping_status' => 'nullable|string|in:Pending,In Transit,Delivered',
+        ]);
+
+        $order = Order::findOrFail($id);
+
+        $order->update([
+            'estimated_delivery_date' => $request->estimated_delivery_date,
+            'carrier_name' => $request->carrier_name,
+            'tracking_number' => $request->tracking_number,
+            'tracking_url' => $request->tracking_url,
+            'shipping_status' => $request->shipping_status,
+        ]);
+
+        return redirect()->back()->with('success', 'Tracking details updated successfully.');
+    }
+
+
+
     public function changeOrderStatus(Request $request){
         dd($request->all());
     }

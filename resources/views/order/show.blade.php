@@ -69,8 +69,91 @@ use Illuminate\Support\Facades\Log;
                     <div class="card-body">
 
                         <div class="dt-ext table-responsive">
+                            <div class="shadow-lg p-4">
+                                <h2>Tracking Details</h2>
+                                <hr />
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Estimated Delivery Date</th>
+                                        <th>Carrier Name</th>
+                                        <th>Tracking Number</th>
+                                        <th>Shipping Status</th>
+                                        <th>Tracking Url</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ $order->order_number }}</td>
+                                        <td>{{ $order->estimated_delivery_date ?? 'Not Set' }}</td>
+                                        <td>{{ $order->carrier_name ?? 'Not Set' }}</td>
+                                        <td>{{ $order->tracking_number ?? 'Not Set' }}</td>
+                                        <td>{{ $order->shipping_status ?? 'Pending' }}</td>
+                                        <td>
+                                            @if($order->tracking_url)
+                                                <a href="{{ $order->tracking_url }}" target="_blank">Track Order</a>
+                                            @else
+                                                Not Set
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#trackingModal">Edit</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
-                            <h2> </h2>
+                            <!-- Modal for Editing Tracking Details -->
+                            <div class="modal fade" id="trackingModal" tabindex="-1" aria-labelledby="trackingModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form action="{{ route('admin.orders.updateTracking', $order->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="trackingModalLabel">Update Tracking Details</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="estimated_delivery_date" class="form-label">Estimated Delivery Date</label>
+                                                    <input type="date" class="form-control" id="estimated_delivery_date" name="estimated_delivery_date" value="{{ $order->estimated_delivery_date }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="carrier_name" class="form-label">Carrier Name</label>
+                                                    <input type="text" class="form-control" id="carrier_name" name="carrier_name" value="{{ $order->carrier_name }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="tracking_number" class="form-label">Tracking Number</label>
+                                                    <input type="text" class="form-control" id="tracking_number" name="tracking_number" value="{{ $order->tracking_number }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="tracking_url" class="form-label">Tracking Url</label>
+                                                    <input type="text" class="form-control" id="tracking_url" name="tracking_url" value="{{ $order->tracking_url }}">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="shipping_status" class="form-label">Shipping Status</label>
+                                                    <select class="form-select" id="shipping_status" name="shipping_status">
+                                                        <option value="Pending" {{ $order->shipping_status == 'Pending' ? 'selected' : '' }}>Pending</option>
+                                                        <option value="In Transit" {{ $order->shipping_status == 'In Transit' ? 'selected' : '' }}>In Transit</option>
+                                                        <option value="Delivered" {{ $order->shipping_status == 'Delivered' ? 'selected' : '' }}>Delivered</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br/>
                             <div class="shadow-lg p-4 ">
                                 <h2> Product </h2>
                                 <hr/>
