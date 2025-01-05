@@ -114,7 +114,6 @@
         <table>
             <thead>
             <tr>
-                <th>Product Id</th>
                 <th>Product Name</th>
                 <th>SKU</th>
                 <th>Quantity</th>
@@ -124,7 +123,6 @@
             <tbody>
             @foreach($order->orderedProducts as $prod)
                 <tr>
-                    <td>{{ $prod->product_id }}</td>
                     <td>{{ $prod->title }}</td>
                     <td>{{ $prod->sku_code }}</td>
                     <td>{{ $prod->quantity }}</td>
@@ -132,15 +130,15 @@
                 </tr>
             @endforeach
             <tr>
-                <td colspan="4" class="totals">Shipping Charges</td>
+                <td colspan="3" class="totals">Shipping Charges</td>
                 <td>{{ $order->shipping==0?"Free":"$".$order->shipping }}</td>
             </tr>
             <tr>
-                <td colspan="4" class="totals">VAT Charges</td>
+                <td colspan="3" class="totals">VAT Charges</td>
                 <td>{{ ($order->gst*$order->cart_subtotal)/100 }}</td>
             </tr>
             <tr>
-                <td colspan="4" class="totals">Total</td>
+                <td colspan="3" class="totals">Total</td>
                 <td>${{ $order->grand_total }}</td>
             </tr>
             </tbody>
