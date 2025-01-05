@@ -71,7 +71,7 @@
             <h4 class="mb-3">Checkout as a Guest</h4>
             <p>Customers checking out as a guest will have the opportunity to create an account after placing your order.</p>
             @if($total_cart_count >0)
-                <form action="{{ route('customer.checkout') }}" method="POST">
+                <form action="{{ route('customer.checkout', [ 'c' => request()->query('c'), 'd' => request()->query('d') ] ) }}" method="POST">
                     @csrf
             @else
                 <form action="{{ route('customer.product.shop') }}" method="GET">
