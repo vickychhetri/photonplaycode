@@ -163,7 +163,7 @@
     <div class="invoice-section">
         <h3>Status</h3>
         <p> {{"Payment Status : ".$order->payment_status}}</p>
-        <p> {{"Delivery Status : ".$order->delivery_status}}</p>
+        <p> {{"Status : ".$order->delivery_status}}</p>
         <p> {{"Last Updated at : ".$order->updated_at}}</p>
 
     </div>
