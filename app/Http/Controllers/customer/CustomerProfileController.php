@@ -23,7 +23,7 @@ class CustomerProfileController extends Controller
         $customer = Customer::find(Session::get('user')->id);
 
         // Ensure the logged-in customer is authorized to view the order
-        if ($customer->id !== $order->user_id) {
+        if ($customer->id != $order->user_id) {
             abort(403, 'Unauthorized access to this order.');
         }
 
