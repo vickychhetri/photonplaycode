@@ -9,7 +9,7 @@
 
                     <div class="col-lg-8 col-md-6 col-12">
                         <div class="overview-wrapper">
-                            <h5 class="btn-light fs-5 py-3">Profile Details</h5>
+                            <h5 class="btn-light fs-5 py-3">Account Details</h5>
                             <div class="card-box border p-3">
                                 <form method="post" action="{{route('customer.update.profile')}}" id="profileUpdateForm">
                                     @csrf
