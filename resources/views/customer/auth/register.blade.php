@@ -6,6 +6,21 @@
     .input-cus-group .input-group-text{
         height: 45px;
     }
+    .alert-danger {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .alert-danger ul {
+        padding-left: 20px;
+    }
+
+    .alert-danger li {
+        line-height: 1.5;
+    }
 </style>
 <div class="container-cus pt-lg-5 pt-3">
     <div class="login-sec">
