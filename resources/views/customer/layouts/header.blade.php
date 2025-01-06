@@ -67,11 +67,11 @@
             z-index: 1000;
         }
 
-        .sticky-header nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+        /*.sticky-header nav ul {*/
+        /*    list-style-type: none;*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*}*/
 
         .sticky-header nav ul li {
             display: inline;

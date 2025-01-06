@@ -202,8 +202,8 @@ section {
   border-bottom: 2px solid var(--primary);
 }
 
-.banner-section *:not(button) {
-  color: var(--white);
+.banner-section *:not(nav):not(nav *) {
+    color: var(--white);
 }
 
 .banner-section h1 {
