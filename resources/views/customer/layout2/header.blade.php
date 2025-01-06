@@ -140,7 +140,7 @@
     <img src="{{asset('/assets/images/arrow-up.png')}}" height="50px;"/>
 </a>
 
-@include("signv1.sound_pop_v")
+{{--@include("signv1.sound_pop_v")--}}
 <div>
     <header class="header bg-white py-3 sticky-top">
         <div class="desktop_nav" style="display: none">

@@ -22,6 +22,11 @@ $seo_meta=[
                     <div class="col-lg-8  col-md-6 col-12">
                         <div class="overview-wrapper">
                             <h5 class="btn-light fs-5 py-2 ">Order Detail</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5> <a href="{{route("customer.my.order.tracking",$order->id)}}"> Order Tracking</a></h5>
+                                </div>
+                            </div>
                             <div class="d-flex gap-4">
 
                                 <!-- All Client Table Start -->

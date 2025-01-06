@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Notifications\PasswordChanged;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +12,7 @@ class ProfileController extends Controller
 {
     public function editProfileForm($id){
         $user = User::find($id);
-       return view("admin_profile.edit-profile",compact('user'));
+       return view("admin_profile.edit-profile_read",compact('user'));
     }
 
     public function editProfile(Request  $request){

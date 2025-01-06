@@ -257,7 +257,7 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('emergency-signage/product/{slug}', [ContactUsController::class, 'signagesSubPage'])->name('signages.sub.page');
 
         Route::get('get-saved-address/{addressId}', [CartController::class, 'getSavedAddress'])->name('get-saved-address');
-        Route::get('get-postal-code/{postalCode}', [CartController::class, 'getUserPostalCode'])->name('get.user.postal.code');
+        Route::get('get-postal-code/postalcode', [CartController::class, 'getUserPostalCode'])->name('get.user.postal.code');
 
 
 
@@ -310,6 +310,9 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
 
     Route::get('/reports/order/customer/invoice/{id}', [OrderController::class,'generateCustomerInvoice'])->name("customer_order_invoice");
 
+    Route::get('/reports/order/invoice/view/{id}', [OrderController::class, 'viewCustomerInvoice'])->name('view.invoice');
+    Route::get('/reports/order/invoice/download/{id}', [OrderController::class, 'downloadCustomerInvoice'])->name('download.invoice');
+
 
 
 //VASD
@@ -333,6 +336,8 @@ Route::group(['as' => 'customer.', 'namespace' => 'App\Http\Controllers\customer
         Route::get('edit-address', [CustomerProfileController::class, 'address'])->name('address');
         Route::get('edit-history', [CustomerProfileController::class, 'history'])->name('history');
         Route::get('edit-profile', [CustomerProfileController::class, 'editProfileForm'])->name('edit.profile');
+        Route::get('order-tracking/{id}', [CustomerProfileController::class, 'order_tracking'])->name('my.order.tracking');
+        Route::get('edit-my-profile', [CustomerProfileController::class, 'editMyProfileForm'])->name('edit.my.profile');
         Route::get('edit-saved-card', [CustomerProfileController::class, 'savedCard'])->name('edit.saved.card');
         Route::get('add-new-address', [CustomerProfileController::class, 'addAddressForm'])->name('add.address.form');
 

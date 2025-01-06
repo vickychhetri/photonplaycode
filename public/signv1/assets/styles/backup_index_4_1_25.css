@@ -46,7 +46,7 @@
 }
 
 body {
-  font-family: Arial,Sans-Serif;
+  font-family: Railway-regular;
 }
 
 h1,
@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arial,Sans-Serif;
+  font-family: Alternox-semibold;
 }
 
 h1,
@@ -175,10 +175,10 @@ section {
   box-shadow: none !important;
 }
 
-    /*::placeholder {*/
-    /*  color: var(--secondary);*/
-    /*  font-weight: 600;*/
-    /*}*/
+::placeholder {
+  color: var(--secondary);
+  font-weight: 600;
+}
 
 /* --------------------- Banner section ----------------------- */
 .banner-section {
@@ -190,8 +190,7 @@ section {
 .navbar-nav .nav-link {
   color: var(--white);
   font-weight: 500;
-  /*font-family: Railway-semibold;*/
-    font-family: Arial, Sans-Serif;
+  font-family: Railway-semibold;
   padding-block: 20px;
   margin-right: 14px;
   border-bottom: 2px solid transparent;
@@ -202,8 +201,8 @@ section {
   border-bottom: 2px solid var(--primary);
 }
 
-.banner-section *:not(nav):not(nav *) {
-    color: var(--white);
+.banner-section *:not(button) {
+  color: var(--white);
 }
 
 .banner-section h1 {
@@ -424,8 +423,7 @@ padding: 20px 20px 0 20px;
 .accordion-button{
   background-color: var(--white) !important;
   box-shadow: none !important;
-  /*font-family: Railway-semibold;*/
-    font-family: Arial,Sans-Serif;
+  font-family: Railway-semibold;
   color: var(--black) !important;
   padding-block: 16px !important;
   padding-left: 36px !important;
@@ -568,7 +566,4 @@ padding: 20px 20px 0 20px;
 .form-container{
   padding: 24px 16px;
 }
-}
-.sku_dis {
-    font-size: 12px;
 }

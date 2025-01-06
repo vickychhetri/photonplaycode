@@ -279,12 +279,15 @@ $products_list_ids=[];
                 $this->validate($request, [
                     'email' => 'required|email',
                     'name' => 'required|string',
+                    'phone_number' => 'required',
                 ]);
                 $email = $request->email;
                 $name = $request->name;
+                $last_name = $request->last_name;
+                $phone_number = $request->phone_number;
                 $userId=$this->findAndUseExistUser($request->email);
                 if(!isset($userId)){
-                    $userId = $this->createGuestUser($email, $name);
+                    $userId = $this->createGuestUser($email, $name,$last_name,$phone_number);
                 }
                 $type = 'guest';
             }else{
@@ -536,8 +539,27 @@ $products_list_ids=[];
         return response()->json($address);
     }
 
-        public function getUserPostalCode($postalCode){
-        if(Session::get('user')){
+        public function getUserPostalCode(Request $request){
+            $shippingType = $request->input('shipping_type');
+
+            if($shippingType=="0"){
+                $totalShippingCharges=0;
+                return response()->json((int)$totalShippingCharges);
+            }
+            $postalCode = $request->input('postal_code');
+
+            if(!isset($postalCode)){
+                $totalShippingCharges=0;
+                return response()->json((int)$totalShippingCharges);
+            }
+
+            if(empty($postalCode)){
+                $totalShippingCharges=0;
+                return response()->json((int)$totalShippingCharges);
+            }
+
+
+            if(Session::get('user')){
             $customer = Customer::find((Session::get('user')->id));
             $addresses = UserAddress::where('user_id', Session::get('user')->id)->get();
             $cart_table =  Cart::where('user_id', Session::get('user')->id)->get();
@@ -598,7 +620,7 @@ $products_list_ids=[];
         }
        return null;
     }
-    public function createGuestUser($email, $name)
+    public function createGuestUser($email, $name, $last_name=null,$phone=null)
     {
         $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
 
@@ -610,6 +632,8 @@ $products_list_ids=[];
         $customer = Customer::create([
             'stripe_id' => $customer->id,
             'name' => $name,
+            'last_name' => $last_name,
+            'phone_number' => $phone,
             'email' => $email,
             'password' => Hash::make(rand(10000000, 99999999)),
         ]);

@@ -27,68 +27,73 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <table class="table border bg-white">
-                                <thead>
-                                <tr>
-                                    <th scope="col" class="text-capitalize text-center">Product</th>
-                                    <th scope="col" class="text-capitalize text-center">price</th>
-                                    <th scope="col" class="text-capitalize text-center">quantity</th>
-                                    <th scope="col" class="text-capitalize text-center">total price</th>
-                                    <th scope="col" class="text-capitalize text-center">remove</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @php
-                                    $currency_icon = session('currency_icon', '$');
-                                    $exchange_rate = session('exchange_rate', '1');
-                                @endphp
-                                @forelse ($cart_table as $key => $cart)
-
+                            <div class="table-responsive">
+                                <table class="table border bg-white">
+                                    <thead>
                                     <tr>
-                                        <td class="border border-end">
-                                            <div class="d-flex align-items-center p-1">
-                                                <img src="{{asset('storage/'.$cart->cover_image)}}" alt="Not Found" class="profile-table me-2 h-25 w-25">
-                                                <div class="d-flex flex-column">
-{{--                                                    <h6 class="text-uppercase">{{$cart->category}}</h6>--}}
-                                                    <span>Brand : {{$cart->title}}</span>
-                                                    {{-- <span>Model: ---</span> --}}
-{{--                                                    <span>Color : {{$cart->color}}</span>--}}
-                                                    @if (unserialize($cart->option_ids) != null)
-                                                        @forelse (unserialize($cart->option_ids) as $option)
-                                                            @php
-                                                                $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('id', $option)->get();
-                                                            @endphp
-                                                            @forelse ($options as $opp)
-                                                                @if(isset($opp->product_specilization))
-
-                                                                    <span> {{$opp->product_specilization->specilization->title}} :
-
-                                                            {{$opp->specializationoptions->option}}({{$currency_icon}}{{$opp->specialization_price*$exchange_rate}}) <span>
-                                                    @endif
-                                                   <br>
-                                                                    @empty
-                                                                    @endforelse
-                                                                    @empty
-                                                                    @endforelse
-                                                                @endif
-
+                                        <th scope="col" class="text-capitalize text-center">Product</th>
+                                        <th scope="col" class="text-capitalize text-center">Price</th>
+                                        <th scope="col" class="text-capitalize text-center">Quantity</th>
+                                        <th scope="col" class="text-capitalize text-center">Total Price</th>
+                                        <th scope="col" class="text-capitalize text-center">Remove</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @php
+                                        $currency_icon = session('currency_icon', '$');
+                                        $exchange_rate = session('exchange_rate', '1');
+                                    @endphp
+                                    @forelse ($cart_table as $key => $cart)
+                                        <tr>
+                                            <td class="border border-end">
+                                                <div class="d-flex align-items-center p-1 flex-wrap overflow-hidden">
+                                                    <img src="{{asset('storage/'.$cart->cover_image)}}"
+                                                         alt="Not Found"
+                                                         class="profile-table me-2"
+                                                         style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+                                                    <div class="d-flex flex-column text-truncate" style="max-width: 200px;">
+                                                        <span>Brand: {{$cart->title}}</span>
+                                                        @if (unserialize($cart->option_ids) != null)
+                                                            @forelse (unserialize($cart->option_ids) as $option)
+                                                                @php
+                                                                    $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('id', $option)->get();
+                                                                @endphp
+                                                                @forelse ($options as $opp)
+                                                                    @if(isset($opp->product_specilization))
+                                                                        <span>
+                                {{$opp->product_specilization->specilization->title}}:
+                                {{$opp->specializationoptions->option}}
+                                ({{$currency_icon}} {{$opp->specialization_price * $exchange_rate}})
+                            </span>
+                                                                    @endif
+                                                                    <br>
+                                                                @empty
+                                                                @endforelse
+                                                            @empty
+                                                            @endforelse
+                                                        @endif
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="border border-end text-center">{{$currency_icon}} {{$cart->price}}</td>
-                                        <td class="border border-end text-center">{{$cart->quantity}}</td>
-                                        <td class="border border-end text-center">{{$currency_icon}}  {{$total_price =  $cart->price * $cart->quantity}}</td>
-                                        <td class="border border-end text-center"><a href="{{route('customer.delete.cart.table.item', $cart->id ?? $cart->id)}}"><img src="{{asset('assets/customer/images/crosss.png')}}" alt="Not Found" class="cartItem"></a>
+                                            </td>
 
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr >
-                                        <td colspan="5" align="center" > <span class="h6"> No Item in cart </span></td>
-                                    </tr>
-                                @endforelse
-                                </tbody>
-                            </table>
+                                            <td class="border border-end text-center">{{$currency_icon}} {{$cart->price}}</td>
+                                            <td class="border border-end text-center">{{$cart->quantity}}</td>
+                                            <td class="border border-end text-center">{{$currency_icon}} {{$total_price = $cart->price * $cart->quantity}}</td>
+                                            <td class="border border-end text-center">
+                                                <a href="{{ route('customer.delete.cart.table.item', $cart->id ?? $cart->id) }}">
+                                                    <img src="{{ asset('assets/customer/images/crosss.png') }}" alt="Not Found" class="cartItem">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="5" align="center"><span class="h6">No Item in Cart</span></td>
+                                        </tr>
+                                    @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
 
                         <div class="col-lg-12">

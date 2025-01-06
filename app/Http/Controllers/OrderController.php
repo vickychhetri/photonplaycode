@@ -22,16 +22,63 @@ class OrderController extends Controller
         return $pdf->download('order'.$order->order_number.'.pdf');
     }
 
-    public function generateCustomerInvoice(Request $request,$id)
+    public function generateCustomerInvoice(Request $request, $id)
     {
-        try{
-            $order=Order::find($id);
-            $pdf = PDF::loadView('reports.invoice_customer',['id' => $id]);
-        }catch (\Exception $e){
-            return $e->getMessage();
+        try {
+            $order = Order::find($id);
+            if (!$order) {
+                return response()->json(['error' => 'Order not found'], 404);
+            }
+
+            $pdf = PDF::loadView('reports.invoice_customer', ['id' => $id]);
+
+            // Stream the PDF in the browser
+            return $pdf->stream('order' . $order->order_number . '.pdf');
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
         }
-        return $pdf->download('order'.$order->order_number.'.pdf');
     }
+
+
+    /***
+    * Below two function is for view and download separate
+     */
+    public function viewCustomerInvoice(Request $request, $id)
+    {
+        try {
+            $order = Order::find($id);
+            if (!$order) {
+                return response()->json(['error' => 'Order not found'], 404);
+            }
+
+            $pdf = PDF::loadView('customer.invoice_customer', ['id' => $id]);
+
+            // Stream the PDF
+            return $pdf->stream('order' . $order->order_number . '.pdf');
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function downloadCustomerInvoice(Request $request, $id)
+    {
+        try {
+            $order = Order::find($id);
+            if (!$order) {
+                return response()->json(['error' => 'Order not found'], 404);
+            }
+
+            $pdf = PDF::loadView('customer.invoice_customer', ['id' => $id]);
+
+            // Download the PDF
+            return $pdf->download('order' . $order->order_number . '.pdf');
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+
+
 
     /**
      * @param Request $request
@@ -83,6 +130,32 @@ class OrderController extends Controller
 
         return view('order.show',compact('order'));
     }
+
+
+    public function updateTracking(Request $request, $id)
+    {
+        $request->validate([
+            'estimated_delivery_date' => 'nullable|date',
+            'carrier_name' => 'nullable|string|max:255',
+            'tracking_number' => 'nullable|string|max:255',
+            'tracking_url' => 'nullable|string',
+            'shipping_status' => 'nullable|string|in:Pending,In Transit,Delivered',
+        ]);
+
+        $order = Order::findOrFail($id);
+
+        $order->update([
+            'estimated_delivery_date' => $request->estimated_delivery_date,
+            'carrier_name' => $request->carrier_name,
+            'tracking_number' => $request->tracking_number,
+            'tracking_url' => $request->tracking_url,
+            'shipping_status' => $request->shipping_status,
+        ]);
+
+        return redirect()->back()->with('success', 'Tracking details updated successfully.');
+    }
+
+
 
     public function changeOrderStatus(Request $request){
         dd($request->all());

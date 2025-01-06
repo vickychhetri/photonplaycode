@@ -63,13 +63,12 @@ class LoginController extends Controller
         $sessionId = Session::getId();
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|exists:customers,email',
-            'password' => 'required|min:6',
+            'password' => 'required',
         ], [
             'email.required' => 'The email address is required.',
             'email.email' => 'Please provide a valid email address.',
-            'email.exists' => 'This email does not exist in our records.',
+            'email.exists' => 'Account does not exist. Please enter correct login details or sign up',
             'password.required' => 'The password field cannot be empty.',
-            'password.min' => 'The password must be at least 6 characters long.',
         ]);
 
         if ($validator->fails()) {

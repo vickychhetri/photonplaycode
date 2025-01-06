@@ -21,6 +21,14 @@
         transition: background-color 0.2s ease;
     }
 
+    #billing_postcode {
+        text-transform: uppercase;
+    }
+
+    #shipping_postcode {
+        text-transform: uppercase;
+    }
+
     .list-group-item:hover {
         background-color: #f8f9fa; /* Light gray hover effect */
     }
@@ -73,11 +81,14 @@
                     @if(!is_string($customer))
                         <input type="hidden" class="form-control rounded-0 px-3" name="email_login" value="{{ $customer->email }}">
                     @else
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Name" name="name" value="" required>
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" required>
+                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" value="" required>
+                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" value="" required>
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" maxlength="100" required>
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">
+
                     @endif
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" required>
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" value="">
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
                     <div>
                         <div>
                             <label for="billing_postcode" class="form-label">Postal Code</label>
@@ -210,26 +221,24 @@
 
                  </script>
 
-
-                    {{--                    <div>--}}
-{{--                        <select id="billing_country"  name="billing_country"  class="form-control rounded-0 px-3" required>--}}
-{{--                            <option value="">Select Country</option>--}}
-{{--                        </select>--}}
-{{--                        <select id="billing_state"  name="billing_state" class="form-control rounded-0 px-3" required>--}}
-{{--                            <option value="">Select State</option>--}}
-{{--                        </select>--}}
-{{--                        <select id="billing_city" name="billing_city" class="form-control rounded-0 px-3" required>--}}
-{{--                            <option value="">Select City</option>--}}
-{{--                        </select>--}}
-{{--                        <input type="text" class="form-control rounded-0 px-3" name="billing_postcode" id="billing_postcode" placeholder="Postal Code"  required />--}}
-{{--                    </div>--}}
-
                     <h3 class="mt-5">Shipping Details</h3>
                     <label>
                         <input type="checkbox" id="is_shipping_same" name="is_shipping_same" value="1" checked>
                         My Shipping address is the same as my billing address?
                     </label>
+                    <div class="mt-3">
+                        <label>
+                            <input type="radio" id="i_want_free_shipping" name="i_want_free_shipping" value="0" checked>
+                            Free Shipping
+                        </label>
+                    </div>
 
+                    <div class="mt-2">
+                        <label>
+                            <input type="radio" id="i_want_free_shipping" name="i_want_free_shipping" value="1">
+                            Express Shipping
+                        </label>
+                    </div>
                     <div id="shipping-details" class="mt-3 d-none">
 
                         <div>
@@ -600,6 +609,7 @@
                      <input type="hidden" name="cart_subtotal" value="{{$total}}">
                      <input type="hidden" name="gst" value="{{$gst}}">
                      <input type="hidden" name="shipping" id="shipping" value="{{$shipping}}">
+                     <input type="hidden" name="shipping_am" id="shipping_am" value="{{$shipping}}">
                      <button type="submit" id="checkout-button" class="btn btn-primary btn-block w-100">Checkout & Pay</button>
                      <p class="mt-2" style="font-size: 10px;font-weight: bold;">
                          Promotional offers cannot be combined with any other offers or discounts, including those in a sales quote. Some exclusions may apply. Products shipped by truck are not eligible for free shipping. Free shipping offers apply only to the continental United States.
@@ -766,23 +776,24 @@
 
     $(document).ready(function() {
         $('#billing_postcode, #shipping_postcode').on('change', function() {
-            console.log("enter");
+
             if ($("#is_shipping_same").prop("checked")) {
-                console.log("from billing ");
                 var txtInput = $("#billing_postcode").val();
             }else {
-                console.log("from shiiping ");
                 var txtInput = $("#shipping_postcode").val();
             }
-            console.log(txtInput);
-                var url = "{{ route('customer.get.user.postal.code', ":id") }}";
-                url = url.replace(':id', txtInput);
+            var selectedShipping = document.querySelector('input[name="i_want_free_shipping"]:checked').value;
+                var url = "{{ route('customer.get.user.postal.code') }}";
                 $.ajax({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     url: url,
                     type: 'GET',
+                    data: {
+                        shipping_type: selectedShipping,
+                        postal_code: txtInput
+                    },
                     dataType: 'json',
                     success: function (result) {
                         // console.log(result);
@@ -793,6 +804,7 @@
                         $('#submittername').empty();
                         var shipping = $('#submittername').append(icon_currency + resuPrice);
                         $('#shipping').val(resuPrice);
+                        $('#shipping_am').val(resuPrice);
                         var total = $('#grand_total_static').text();
 
                         $('#grand_total').text(parseFloat(total) + parseFloat(resuPrice));
@@ -806,6 +818,10 @@
         });
     });
 
+    $('input[name="i_want_free_shipping"]').change(function() {
+        // Trigger the postal code change event manually
+        $('#billing_postcode, #shipping_postcode').trigger('change');
+    });
     //
     // function isValidPostalCode(postalCode) {
     //     const usPostalCodeRegex = /^\d{5}(-\d{4})?$/; // US: 5 digits or 5 digits-4 digits
@@ -895,7 +911,10 @@
         }, 2000);
     });
 
-
+    document.querySelector('input[name="phone_number"]').addEventListener('input', function(e) {
+        // Replace non-numeric characters with an empty string
+        this.value = this.value.replace(/\D/g, '');
+    });
 </script>
 
 

@@ -67,11 +67,11 @@
             z-index: 1000;
         }
 
-        .sticky-header nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+        /*.sticky-header nav ul {*/
+        /*    list-style-type: none;*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*}*/
 
         .sticky-header nav ul li {
             display: inline;
@@ -166,7 +166,6 @@
 
 <!-- <title>login</title> -->
 <body>
-@include("signv1.sound_pop_v")
 @livewireScripts
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -190,7 +189,7 @@
 </style>
 <nav class="navbar navbar-expand-lg bg-light pt-2 pb-0 border-bottom sticky-header">
     <div class="container">
-        <a class="navbar-brand me-5" href="#">
+        <a class="navbar-brand me-5" href="/">
             <img src="https://www.photonplay.com/assets/customer/images/logo-dark.png" alt="Logo" height="30px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -214,15 +213,15 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                         style="color: #0c0c0c">
-                        PRODUCT
+                        PRODUCTS
                     </a>
 
                     <ul class="dropdown-menu mega-menu w-100 bg-white" style="max-width: 600px;">
                         <li class="row p-3">
                             <!-- Radar Speed Signs Section -->
                             <div class="col-md-6 col-sm-12 mb-3">
-                                <h6>
-                                    <a class="dropdown-item px-0 text-uppercase" href="#">RADAR SPEED SIGNS</a>
+                                <h6 class="font-weight-bold text-dark pb-2">
+                                    <a class="dropdown-item px-0 text-uppercase" href="#"><b> RADAR SPEED SIGNS </b></a>
                                 </h6>
                                 <ul class=" ">
                                     @foreach($productLists ?? [] as $product)
@@ -244,9 +243,9 @@
                             </div>
 
                             <!-- Shop by Application Section -->
-                            <div class="col-md-6 col-sm-12 mb-3">
+                            <div class="col-md-6 col-sm-12 mb-3 pb-2">
                                 <h6>
-                                    <a class="dropdown-item px-0 text-uppercase" href="#">SHOP BY APPLICATION</a>
+                                    <a class="dropdown-item px-0 text-uppercase " href="#"><b> SHOP BY APPLICATION </b></a>
                                 </h6>
                                 <ul class="">
                                     <li>
@@ -292,11 +291,6 @@
                     <img src="{{ asset('assets/images/call_now.webp') }}" alt="Phone Icon"
                          style="width: 100%; max-width: 150px; height: auto;">
                 </a>
-            </div>
-
-
-            <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
 
                 @if (!Session::get('user'))
                     <div class="d-flex align-items-center">
@@ -312,14 +306,12 @@
                                     src="{{asset('assets\customer\images\user.png')}}" alt="Not Found"
                                     class="img-fluid me-2 ">
                             </a>
-                            <span class="text-dark">Hello, John</span>
+                            <span class="text-dark">Login/Signup</span>
                         </div>
 
                         @else
                             <div class="d-flex align-items-center">
 
-                                {{--                        <a href="{{route('customer.shopping.bag')}}" @if($cartPrice == 0) style="pointer-events: none" @endif> <img src="{{asset('assets\customer\images\add-to-cart-radar.png')}}" alt="Not Found" class="img-fluid me-5"></a>--}}
-                                {{--                        <p class="me-2 mb-0">{{$cartPrice}}</p>--}}
                                 <div style="position: relative; display: inline-block;">
                                     <x-cart-count/>
                                 </div>
@@ -356,7 +348,13 @@
                                     </div>
                                 </div>
                             </div>
-                @endif
+                        @endif
+            </div>
+
+
+            <form class="d-none  d-lg-flex header-side mt-lg-0 mt-4" role="search">
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+
 
             </form>
 

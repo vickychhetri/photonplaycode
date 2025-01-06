@@ -8,15 +8,37 @@ use App\Models\Customer;
 use App\Models\Order;
 use App\Models\User;
 use App\Models\UserAddress;
+use App\Notifications\PasswordChanged;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class CustomerProfileController extends Controller
 {
+    public function order_tracking($id)
+    {
+
+        // Fetch the order by its ID with related user details
+        $order = Order::with('user')->findOrFail($id);
+        $customer = Customer::find(Session::get('user')->id);
+
+        // Ensure the logged-in customer is authorized to view the order
+        if ($customer->id != $order->user_id) {
+            abort(403, 'Unauthorized access to this order.');
+        }
+
+        // Pass the order details to the view
+        return view('customer.profile.tracking_detail', compact('order'));
+    }
+
+
     public function editProfileForm(){
         $customer = Customer::find((Session::get('user')->id));
         return view('customer.profile.edit_profile', compact('customer'));
+    }
+    public function editMyProfileForm(){
+        $customer = Customer::find((Session::get('user')->id));
+        return view('customer.profile.edit_profile_read', compact('customer'));
     }
 
     public function address(){
@@ -51,10 +73,12 @@ class CustomerProfileController extends Controller
         $customer->update([
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone_number' => '+'.$request->phone_number,
+            'phone_number' => $request->phone_number,
             'company_name' => $request->company_name,
         ]);
 
+        $customer->notify(new PasswordChanged($customer));
+        session()->flash('success', 'Your changes have been saved successfully.');
         return redirect()->route('customer.edit.profile');
     }
 

@@ -1,7 +1,7 @@
 @extends('signv1.layouts.header')
 @section('content')
     <!-- -------------------- Stats section ------------------- -->
-
+    @include("signv1.sound_pop_v")
 
     <section class="state-section py-5">
         <div class="container">
@@ -107,13 +107,13 @@
                                     <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                    <span> 5 Years</span>
                                 </li>
                                 <li>
                                     <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                     <span>$2500</span>
                                 </li>
                                 <li>
                                     <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
@@ -129,16 +129,16 @@
                             </div>
                             <ul class="list-unstyled list-grey mx-3 radar-speed-list">
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                </li>
+                                <li>
+                                    <span>1 Year</span>
                                 </li>
                                 <li>
                                     <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
-                                </li>
-                                <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                    <span>$3000</span>
                                 </li>
                                 <li>
                                     <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
@@ -157,16 +157,16 @@
                                     <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                     <span>1 Year</span>
                                 </li>
                                 <li>
                                     <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                    <span>$2700 </span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
                                 </li>
                             </ul>
                         </div>
@@ -242,11 +242,10 @@
                                         <li>
                                             Yes
 
-                                            <div class="text-center mt-3">
+                                            <div class="text-center mt-1">
                                                 <a href="https://www.photonplay.com/radar-speed-signs/model/r1200"
-                                                   class="btn btn-primary d-flex align-items-center justify-content-center mx-auto gap-3">Shop
-                                                    Now <img src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png"
-                                                             alt="error"></a>
+                                                   class="pt-1">   <img
+                                                            src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
                                         </li>
                                     </ul>
@@ -274,11 +273,10 @@
                                         <li>
                                             Yes
 
-                                            <div class="text-center mt-3">
+                                            <div class="text-center mt-1">
                                                 <a href="https://www.photonplay.com/radar-speed-signs/model/r1500m"
-                                                   class="btn btn-primary d-flex align-items-center justify-content-center mx-auto gap-3">Shop
-                                                    Now <img src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png"
-                                                             alt="error"></a>
+                                                   class="pt-1">  <img
+                                                        src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;"> </a>
                                             </div>
                                         </li>
                                     </ul>
@@ -306,11 +304,10 @@
                                         <li>
                                             Yes
 
-                                            <div class="text-center mt-3">
+                                            <div class="text-center mt-1">
                                                 <a href="https://www.photonplay.com/radar-speed-signs/model/r1800m"
-                                                   class="btn btn-primary d-flex align-items-center justify-content-center mx-auto gap-3">Shop
-                                                    Now <img src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png"
-                                                             alt="error"></a>
+                                                   class="pt-1">  <img
+                                                        src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
                                         </li>
                                     </ul>
@@ -391,49 +388,49 @@
 
     <!-- --------------------- Form Section ----------------------- -->
 
-    <section class="form-section"  id="inquiry"  >
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-container">
-                        <h5 class="font-railway mb-3 text-white">Request A Quote</h5>
-                        <p class="mb-4 fs-12 opacity-75 text-white">
-                            Please complete the form below to request a quote, and we&apos;ll be in touch. Or you can
-                            call <a href="tel:+18009669329" class="text-white">(800) 966-9329</a>, and our specialists will provide the necessary help!
-                        </p>
-                        <form action="{{route('customer.inquery.submit')}}" method="post">
-                            @csrf
-                            <input type="hidden" name="url" value="{{\Illuminate\Support\Facades\URL::full()}}">
-                            <div class="row gy-4">
-                                <div class="col-md-6">
-                                    <input type="text" name="first_name" class="form-control" placeholder="Name" />
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="country"  class="form-control" placeholder="Country" />
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="email" class="form-control" placeholder="Email Address" />
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="phone_number" class="form-control" placeholder="Phone Number" />
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" placeholder="Message" class="form-control" rows="4"></textarea>
-                                </div>
-                                <!-- Google Recaptcha -->
-                                <div class="g-recaptcha mt-4 mb-4" style="max-height: 100px;" data-sitekey={{config('services.recaptcha.key')}}></div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary d-flex align-items-center gap-3"><img
-                                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""> Submit
-                                        Request</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="form-section"  id="inquiry"  >--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-12 col-md-6">--}}
+{{--                    <div class="form-container">--}}
+{{--                        <h5 class="font-railway mb-3 text-white">Request A Quote</h5>--}}
+{{--                        <p class="mb-4 fs-12 opacity-75 text-white">--}}
+{{--                            Please complete the form below to request a quote, and we&apos;ll be in touch. Or you can--}}
+{{--                            call <a href="tel:+18009669329" class="text-white">(800) 966-9329</a>, and our specialists will provide the necessary help!--}}
+{{--                        </p>--}}
+{{--                        <form action="{{route('customer.inquery.submit')}}" method="post">--}}
+{{--                            @csrf--}}
+{{--                            <input type="hidden" name="url" value="{{\Illuminate\Support\Facades\URL::full()}}">--}}
+{{--                            <div class="row gy-4">--}}
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input type="text" name="first_name" class="form-control" placeholder="Name" />--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input type="text" name="country"  class="form-control" placeholder="Country" />--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input type="text" name="email" class="form-control" placeholder="Email Address" />--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input type="text" name="phone_number" class="form-control" placeholder="Phone Number" />--}}
+{{--                                </div>--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <textarea name="message" placeholder="Message" class="form-control" rows="4"></textarea>--}}
+{{--                                </div>--}}
+{{--                                <!-- Google Recaptcha -->--}}
+{{--                                <div class="g-recaptcha mt-4 mb-4" style="max-height: 100px;" data-sitekey={{config('services.recaptcha.key')}}></div>--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <button class="btn btn-primary d-flex align-items-center gap-3"><img--}}
+{{--                                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""> Submit--}}
+{{--                                        Request</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <!-- ----------------------- Client Section ------------------ -->
     <section class="client-section pb-0 not_show_until_load">
@@ -692,6 +689,7 @@
 
     <!-- ----------------------- New & Update -------------------- -->
 
+    @include("customer.layout2.get_in_touch3")
     <section class="new-and-update-section pt-4">
         <div class="container">
             <div class="row mb-4">
@@ -738,25 +736,25 @@
     </section>
 
     <!------------------------- Looking Dealer -------------------------->
-    <section class="looking-dealer">
-        <div class="container">
-            <div class="row align-items-center g-2">
-                <div class="col-md-6">
-                    <h4 class="text-white">We are Looking for Dealers/Parterns</h4>
-                </div>
-                <div class="col-md-6" >
-                    <form action="{{ route('customer.dealer.subscriptions.store') }}" method="POST"  >
-                        @csrf
-                        <div class="input-box d-flex align-items-center position-relative">
-                            <input type="text" name="email" id="" placeholder="E-mail" class="form-control rounded-pill" />
-                            <button class="btn p-0 h-100 position-absolute end-0 me-2"><img
-                                    src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="looking-dealer">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row align-items-center g-2">--}}
+{{--                <div class="col-md-6">--}}
+{{--                    <h4 class="text-white">We are Looking for Dealers/Parterns</h4>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6" >--}}
+{{--                    <form action="{{ route('customer.dealer.subscriptions.store') }}" method="POST"  >--}}
+{{--                        @csrf--}}
+{{--                        <div class="input-box d-flex align-items-center position-relative">--}}
+{{--                            <input type="text" name="email" id="" placeholder="E-mail" class="form-control rounded-pill" />--}}
+{{--                            <button class="btn p-0 h-100 position-absolute end-0 me-2"><img--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></button>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <!-- ---------------------- Faq Section ------------------------- -->
     <section class="faq-section" id="dealer-subscribe">
@@ -988,138 +986,138 @@
     </section>
 
 
-    <!-- ---------------------- Traffic safety solution ------------------- -->
-    <section class="traffic-safety-solutions">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-12 col-md-10 col-lg-8">
-                    <div class="title">
-                        <p class="fw-semibold mb-2">Intregated Traffic Safety Solutions & Real-Time Monitoring 24/7</p>
-                        <h2>Creating Safer Roads Through Innovation and Data-Driven Insight</h2>
-                    </div>
-                </div>
-            </div>
+{{--    <!-- ---------------------- Traffic safety solution ------------------- -->--}}
+{{--    <section class="traffic-safety-solutions">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row justify-content-center mb-5">--}}
+{{--                <div class="col-12 col-md-10 col-lg-8">--}}
+{{--                    <div class="title">--}}
+{{--                        <p class="fw-semibold mb-2">Intregated Traffic Safety Solutions & Real-Time Monitoring 24/7</p>--}}
+{{--                        <h2>Creating Safer Roads Through Innovation and Data-Driven Insight</h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="row justify-content-between align-items-center gy-4 mb-5">
-                <div class="col-md-5">
-                    <div class="traffic-safety-content">
-                        <p class="fw-semibold mb-3">Key Solutions 1 - Reducing Speed & Enhancing Safety</p>
-                        <h3 class="font-railway mb-5">Educating Drivers to Slow Down & Ensure Safety</h3>
-                        <p class="opacity-75"> Excessive speeding is a pressing issue, especially in sensitive areas like neighborhoods and school zones. PhotonPlay's radar speed signs go beyond simple speed detection; they actively encourage safer driving. By offering real-time speed feedback to drivers, our systems help reduce speeding and foster a culture of safety on the road.</p>
+{{--            <div class="row justify-content-between align-items-center gy-4 mb-5">--}}
+{{--                <div class="col-md-5">--}}
+{{--                    <div class="traffic-safety-content">--}}
+{{--                        <p class="fw-semibold mb-3">Key Solutions 1 - Reducing Speed & Enhancing Safety</p>--}}
+{{--                        <h3 class="font-railway mb-5">Educating Drivers to Slow Down & Ensure Safety</h3>--}}
+{{--                        <p class="opacity-75"> Excessive speeding is a pressing issue, especially in sensitive areas like neighborhoods and school zones. PhotonPlay's radar speed signs go beyond simple speed detection; they actively encourage safer driving. By offering real-time speed feedback to drivers, our systems help reduce speeding and foster a culture of safety on the road.</p>--}}
 
-                        <ul class="list-unstyled mt-5">
-                            <li class="fw-semibold fs-14 d-flex align-items-center gap-2"><img
-                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Real time speed feedback
-                            </li>
-                            <li class="my-3 fw-semibold fs-14 d-flex align-items-center gap-2"> <img
-                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Community-focused safety
-                                solutions</li>
-                            <li class="fw-semibold fs-14 d-flex align-items-center gap-2"><img
-                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Durable and eco-friendly
-                                design</li>
-                        </ul>
+{{--                        <ul class="list-unstyled mt-5">--}}
+{{--                            <li class="fw-semibold fs-14 d-flex align-items-center gap-2"><img--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Real time speed feedback--}}
+{{--                            </li>--}}
+{{--                            <li class="my-3 fw-semibold fs-14 d-flex align-items-center gap-2"> <img--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Community-focused safety--}}
+{{--                                solutions</li>--}}
+{{--                            <li class="fw-semibold fs-14 d-flex align-items-center gap-2"><img--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Durable and eco-friendly--}}
+{{--                                design</li>--}}
+{{--                        </ul>--}}
 
-                        <a href="#inquiry" class="btn btn-primary mt-5 d-flex align-items-center gap-3" style="max-width: 250px;">Meet Our Expert <img
-                                src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="driver-image">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/Education-Drivers-image.png" alt="" class="img-fluid">
-                    </div>
-                </div>
-            </div>
+{{--                        <a href="#inquiry" class="btn btn-primary mt-5 d-flex align-items-center gap-3" style="max-width: 250px;">Meet Our Expert <img--}}
+{{--                                src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-5">--}}
+{{--                    <div class="driver-image">--}}
+{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/Education-Drivers-image.png" alt="" class="img-fluid">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
-            <div class="row justify-content-between align-items-center gy-4 py-4 mb-5">
-                <div class="col-md-5">
-                    <div class="driver-image">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/banner-image.png" alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="traffic-safety-content">
-                        <p class="fw-semibold mb-3">Key Solution 2 - Data Collection for Informed Decision-Making</p>
-                        <h3 class="font-railway mb-5"> Data-Driven Insights for Smarter Traffic Management </h3>
+{{--            <div class="row justify-content-between align-items-center gy-4 py-4 mb-5">--}}
+{{--                <div class="col-md-5">--}}
+{{--                    <div class="driver-image">--}}
+{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/banner-image.png" alt="" class="img-fluid">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-5">--}}
+{{--                    <div class="traffic-safety-content">--}}
+{{--                        <p class="fw-semibold mb-3">Key Solution 2 - Data Collection for Informed Decision-Making</p>--}}
+{{--                        <h3 class="font-railway mb-5"> Data-Driven Insights for Smarter Traffic Management </h3>--}}
 
-                        Effective road planning starts with accurate data. PhotonPlay's radar systems capture detailed traffic data, including vehicle counts, speed averages, and peak travel times. This vital information helps municipalities make well-informed decisions, optimizing infrastructure and enhancing public safety based on real-world data. </p>
+{{--                        Effective road planning starts with accurate data. PhotonPlay's radar systems capture detailed traffic data, including vehicle counts, speed averages, and peak travel times. This vital information helps municipalities make well-informed decisions, optimizing infrastructure and enhancing public safety based on real-world data. </p>--}}
 
-                        <h6 class="mt-5">Key Benefits:</h6>
-                        <ol class="mt-2">
-                            <li>Track vehicle counts</li>
-                            <li>Analyze speed trends</li>
-                            <li>Identify peak traffic hours</li>
-                            <li>Support for infrastructure planning</li>
-                            <li>Make data-backed safety improvements</li>
-                        </ol>
+{{--                        <h6 class="mt-5">Key Benefits:</h6>--}}
+{{--                        <ol class="mt-2">--}}
+{{--                            <li>Track vehicle counts</li>--}}
+{{--                            <li>Analyze speed trends</li>--}}
+{{--                            <li>Identify peak traffic hours</li>--}}
+{{--                            <li>Support for infrastructure planning</li>--}}
+{{--                            <li>Make data-backed safety improvements</li>--}}
+{{--                        </ol>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
+{{--            </div>--}}
 
-            <div class="row justify-content-between align-items-center gy-4 py-4">
+{{--            <div class="row justify-content-between align-items-center gy-4 py-4">--}}
 
-                <div class="col-md-5">
-                    <div class="traffic-safety-content">
-                        <p class="fw-semibold mb-3">Key Solution 3 - Community Engagement Through Public Messaging</p>
-                        <h3 class="font-railway mb-5"> Engage & Inform Your Community with Real-Time Messaging </h3>
-                        <p class="opacity-75">Connecting with residents is crucial for community building. PhotonPlay's radar displays can be used to share important messages, alerts, and event notifications in real-time. This feature not only promotes road safety but also strengthens community engagement by keeping citizens informed and connected.</p>
+{{--                <div class="col-md-5">--}}
+{{--                    <div class="traffic-safety-content">--}}
+{{--                        <p class="fw-semibold mb-3">Key Solution 3 - Community Engagement Through Public Messaging</p>--}}
+{{--                        <h3 class="font-railway mb-5"> Engage & Inform Your Community with Real-Time Messaging </h3>--}}
+{{--                        <p class="opacity-75">Connecting with residents is crucial for community building. PhotonPlay's radar displays can be used to share important messages, alerts, and event notifications in real-time. This feature not only promotes road safety but also strengthens community engagement by keeping citizens informed and connected.</p>--}}
 
-                        <div class="mt-4"  >
-                            <button type="button" class="btn btn-primary m-2  " style="border-radius:50px;">Emergency alerts</button>
-                            <button type="button" class="btn   m-2 btn-key-solution-rounded"  >Community event notifications</button>
-                            <button type="button" class="btn btn-secondary  m-2 btn-key-solution-rounded" >Public safety messages</button>
-                            <button type="button" class="btn btn-secondary m-2 btn-key-solution-rounded "  >Customized messages</button>
-                        </div>
-                        <div class="mt-4">
-                            <p>
-                                Additionally, our team may offer preventative maintenance programs and security integration services for extremely complex sites.  Contact Us Now!
-                            </p>
-                        </div>
+{{--                        <div class="mt-4"  >--}}
+{{--                            <button type="button" class="btn btn-primary m-2  " style="border-radius:50px;">Emergency alerts</button>--}}
+{{--                            <button type="button" class="btn   m-2 btn-key-solution-rounded"  >Community event notifications</button>--}}
+{{--                            <button type="button" class="btn btn-secondary  m-2 btn-key-solution-rounded" >Public safety messages</button>--}}
+{{--                            <button type="button" class="btn btn-secondary m-2 btn-key-solution-rounded "  >Customized messages</button>--}}
+{{--                        </div>--}}
+{{--                        <div class="mt-4">--}}
+{{--                            <p>--}}
+{{--                                Additionally, our team may offer preventative maintenance programs and security integration services for extremely complex sites.  Contact Us Now!--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
 
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="driver-image">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/Engage&informimage.png" alt="" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-5">--}}
+{{--                    <div class="driver-image">--}}
+{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/Engage&informimage.png" alt="" class="img-fluid">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <!-- ---------------------- Discover More Section ---------------------- -->
-    <section class="discover-more">
-        <div class="container py-sm-5">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-7">
-                    <div class="text-center">
-                        <h2 class="text-white">Empower Your Community with Smarter Traffic Solutions</h2>
+{{--    <!-- ---------------------- Discover More Section ---------------------- -->--}}
+{{--    <section class="discover-more">--}}
+{{--        <div class="container py-sm-5">--}}
+{{--            <div class="row justify-content-center">--}}
+{{--                <div class="col-12 col-md-10 col-lg-7">--}}
+{{--                    <div class="text-center">--}}
+{{--                        <h2 class="text-white">Empower Your Community with Smarter Traffic Solutions</h2>--}}
 
-                        <p class="text-white my-4 mb-5">From data-driven insights to impactful messaging, Photonplay
-                            equips you with the tools to transform your roads and protect your Community. Discover how
-                            we&apos;re shaping the future of roads safety today.</p>
+{{--                        <p class="text-white my-4 mb-5">From data-driven insights to impactful messaging, Photonplay--}}
+{{--                            equips you with the tools to transform your roads and protect your Community. Discover how--}}
+{{--                            we&apos;re shaping the future of roads safety today.</p>--}}
 
-                        <div class="d-flex align-items-center gap-4 fw-semibold justify-content-center flex-wrap">
-                            <a href="#inquiry" class="btn btn-primary d-flex align-items-center gap-3">Discover More Info <img
-                                    src="/signv1/assets/UI-01/UI-Data/Images/E-mail-arrow-icon.png" alt=""></a>
-                            <div class="d-flex gap-3 align-items-center">
-                                <a href="tel:8009669389">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Call Now">
-                                </a>
-                                <div class="content text-start">
-                                    <p class="text-white opacity-75 fs-14">Call 24HR/7 Days</p>
-                                    <p class="text-white fw-semibold">8009669389 (US)</p>
-                                </div>
-                            </div>
+{{--                        <div class="d-flex align-items-center gap-4 fw-semibold justify-content-center flex-wrap">--}}
+{{--                            <a href="#inquiry" class="btn btn-primary d-flex align-items-center gap-3">Discover More Info <img--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/E-mail-arrow-icon.png" alt=""></a>--}}
+{{--                            <div class="d-flex gap-3 align-items-center">--}}
+{{--                                <a href="tel:8009669389">--}}
+{{--                                    <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Call Now">--}}
+{{--                                </a>--}}
+{{--                                <div class="content text-start">--}}
+{{--                                    <p class="text-white opacity-75 fs-14">Call 24HR/7 Days</p>--}}
+{{--                                    <p class="text-white fw-semibold">8009669389 (US)</p>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 @endsection
 
 @push('scripts')
