@@ -37,6 +37,15 @@ class SignController extends Controller
         $products = Product::select('id','slug')->where('category_id', 1)->get();
         $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
         $blogs = array_slice($postsSlice, 0 , 3);
+        $sessionId = Session::getId();
+        $cartCount = 0;
+        if (Session::get('user')) {
+            $cartCount = Cart::where('user_id', Session::get('user')->id)->count();
+            $postalCode = UserPostalCode::where('user_id', Session::get('user')->id)->first();
+        } else {
+            $postalCode = UserPostalCode::where('session_id', $sessionId)->first();
+            $cartCount = Cart::where('session_id', $sessionId)->count();
+        }
 
         return view('signv1.sign', compact('products','blogs'));
     }
