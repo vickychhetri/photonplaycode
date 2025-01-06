@@ -339,6 +339,25 @@ $products_list_ids=[];
             $couponCode = $request->coupon_name;
             $couponId = $this->applyCoupon($pay_currency, $couponCode);
 
+            //shipping
+            $shipping_charge = $request->shipping;
+            $shipping_options = [];
+            if ($shipping_charge > 0 ) {
+                $shipping_options[] = [
+                    'shipping_rate_data' => [
+                        'type' => 'fixed_amount',
+                        'fixed_amount' => [
+                            'amount' => $shipping_charge * 100,
+                            'currency' => $pay_currency,
+                        ],
+                        'display_name' => 'Fallback Shipping',
+                        'delivery_estimate' => [
+                            'minimum' => ['unit' => 'business_day', 'value' => 10],
+                            'maximum' => ['unit' => 'business_day', 'value' => 15],
+                        ],
+                    ],
+                ];
+            }
 
             $checkout_session_params = [
                 'line_items' => $line_items,
@@ -352,7 +371,14 @@ $products_list_ids=[];
                     'tSessId' => $customer_session_id
                 ]),
                 'cancel_url' => route('customer.cancel.response'),
+                'shipping_address_collection' => [
+                    'allowed_countries' => ['US', 'CA'], // You can modify this to the countries you allow
+                ],
             ];
+
+            if ($shipping_charge > 0) {
+                $checkout_session_params['shipping_options'] = $shipping_options;
+            }
 
             if ($couponId) {
                 $checkout_session_params['discounts'] = [
@@ -484,7 +510,8 @@ $products_list_ids=[];
 
             $order->update([
                 'status' => $checkout->status,
-                'payment_status' => $checkout->payment_status
+                'payment_status' => $checkout->payment_status,
+                'payment_complete'=>true
             ]);
             if($request->type == 'guest'){
                 Cart::where('session_id', $request->tSessId)->delete();
