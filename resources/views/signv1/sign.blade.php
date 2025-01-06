@@ -9,46 +9,29 @@
                 <div class="col-12">
                     <div class="d-flex align-items-center gap-sm-4 gap-5 flex-wrap flex-sm-nowrap">
                         <div class="stats-card">
-                            <div class="stats-image mb-4 pt-1">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/12k_.png" alt="error">
+                            <div class="stats-image">
+                                <img src="{{asset("assets/images/radar/icons/free_shipping.png")}}" alt="Free Shipping" style="height: 100px;">
                             </div>
-                            <div class="state-content pt-3">
-                                Sign Installed <br> Worldwide
-                            </div>
-                        </div>
-                        <div class="stats-card">
-                            <div class="stats-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/same-day-shipping.png" alt="error">
-                            </div>
-                            <div class="state-content">
-                                Same Day <br> Shipping
-                            </div>
-                        </div>
-                        <div class="stats-card">
-                            <div class="stats-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/One-Click-Easy-Returns-iocn.png" alt="error">
-                            </div>
-                            <div class="state-content">
-                                One Click <br> Easy Return
-                            </div>
-                        </div>
-                        <div class="stats-card">
-                            <div class="stats-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Performance-Guarantee-Icon.png" alt="error">
-                            </div>
-                            <div class="state-content">
-                                Performance <br>Guarantee
-                            </div>
-                        </div>
-                        <div class="stats-card">
-                            <div class="stats-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Guaranteed-Lowest-Price-Icon.png" alt="error">
-                            </div>
-                            <div class="state-content">
-                                Guaranteed <br/>Lowest Price
-                            </div>
-                        </div>
 
+                        </div>
+                        <div class="stats-card">
+                            <div class="stats-image">
+                                <img src="{{asset("assets/images/radar/icons/low_price.png")}}" style="height: 100px;" alt="Low Price">
+                            </div>
+
+                        </div>
+                        <div class="stats-card">
+                            <div class="stats-image">
+                                <img src="{{asset("assets/images/radar/icons/satisfaction.png")}}" style="height: 100px;" alt="Satisfaction">
+                            </div>
+
+                        </div>
+                        <div class="stats-card">
+                            <div class="stats-image">
+                                <img src="{{asset("assets/images/radar/icons/guarantee.png")}}"  style="height: 100px;" alt="Guarantee">
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
