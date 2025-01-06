@@ -510,7 +510,8 @@ $products_list_ids=[];
 
             $order->update([
                 'status' => $checkout->status,
-                'payment_status' => $checkout->payment_status
+                'payment_status' => $checkout->payment_status,
+                'payment_complete'=>true
             ]);
             if($request->type == 'guest'){
                 Cart::where('session_id', $request->tSessId)->delete();

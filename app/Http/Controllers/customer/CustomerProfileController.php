@@ -47,7 +47,7 @@ class CustomerProfileController extends Controller
     }
 
     public function history(){
-        $orders = Order::with('orderedProducts', 'orderedProducts.product', 'orderedProducts.product.category')->where('user_id', Session::get('user')->id)->orderBy('id','DESC')->paginate(3);
+        $orders = Order::with('orderedProducts', 'orderedProducts.product', 'orderedProducts.product.category')->where('user_id', Session::get('user')->id)->where('payment_complete',1)->orderBy('id','DESC')->paginate(3);
         // dd($orders);
         return view('customer.profile.history', compact('orders'));
     }

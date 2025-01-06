@@ -14,7 +14,7 @@
             bottom: -150px;
             left: 20px;
             width: 400px;
-            background-color: #0056b3;
+            background-color: #021933;
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -31,7 +31,7 @@
         .v_sound_pop-popup img {
             width: 60px;
             height: auto;
-            scale: 2;
+            scale: 1.5;
             margin-bottom: 30px;
         }
 

@@ -1,5 +1,38 @@
 @extends('signv1.layouts.header')
 @section('content')
+    <style>
+        .brochure-section {
+            padding: 50px 0;
+        }
+        .brochure-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .brochure-description {
+            font-size: 1rem;
+            color: #6c757d;
+            margin: 15px 0;
+        }
+        .download-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+        .brochure-image img {
+            max-width: 100%;
+            height: auto;
+            scale: 1;
+        }
+    </style>
     <!-- -------------------- Stats section ------------------- -->
     @include("signv1.sound_pop_v")
 
@@ -415,8 +448,38 @@
 {{--        </div>--}}
 {{--    </section>--}}
 
+
+<section class="mt-1 mb-1 pt-1 pb-1">
+    <div class="container brochure-section">
+        <div class="row align-items-center">
+            <!-- Text Section -->
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-4">
+                <h1 class="brochure-title text-dark p-2">Download Our Product Catalogue to Learn More</h1>
+                <p class="brochure-description p-2">
+                    Wavetec offers a complete range of display solutions, ideal for advertising, retail, and branding.
+                    HD Series, PRO Series, and Prime Series are premium product lines offering solutions for both
+                    indoor LED and outdoor LED displaying applications.
+                </p>
+                <a href="#" class="download-btn text-decoration-none p-2 m-2">
+                     Download Brochure <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- Image Section -->
+            <div class="col-md-6 text-center brochure-image">
+                <img src="{{asset("assets/images/radar/radar_catalog.png")}}" alt="Brochure">
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- ----------------------- Client Section ------------------ -->
-    <section class="client-section pb-0 not_show_until_load">
+    <section class="client-section pb-0 not_show_until_load pt-1 mt-1">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-12 mb-1">
