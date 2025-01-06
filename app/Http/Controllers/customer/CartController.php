@@ -272,6 +272,8 @@ $products_list_ids=[];
 
     public function placeOrder(Request $request){
         try{
+            $productsCart = Cart::select('id','title','price','quantity')->whereIn('id', $request->product_ids)->get() ?? [];
+
             $currency_code = Session::get('currency_code', 'USD');
             if(!Session::get('user')){
                 $this->validate($request, [
@@ -293,31 +295,73 @@ $products_list_ids=[];
             $icon=Session::get('currency_icon', '$');
             $currency_handler = Currency::where('currency_code', $icon)->first();
             $pay_currency=$currency_handler->stripe_currency_code??'usd';
-
+            $customer_session_id = Session::getId();
             $orderId ='#'.mt_rand(1111, 99999);
             $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
-               header('Content-Type: application/json');
-               $price = \Stripe\Price::create([
-                   'unit_amount' => $request->grand_total * 100,
-                   'currency' => $pay_currency,
-                   'product_data' => [
-                     'name' => 'Total Amount',
-                   ],
-                 ]);
+            header('Content-Type: application/json');
+            $productsCart = Cart::select('id', 'title', 'price', 'quantity')
+                ->whereIn('id', $request->product_ids)
+                ->get();
 
-            $customer_session_id = Session::getId();
-           $checkout_session = \Stripe\Checkout\Session::create([
-           'line_items' => [[
-                'price' => $price->id,
-                'quantity' => 1,
-           ]],
-           'customer_email' => $email,
-           'mode' => 'payment',
-           'success_url' => route('customer.success.response', ['order_id' => $orderId, 'userId' => $userId, 'email' => $email, 'type' => $type,'tSessId'=>$customer_session_id]),
-           'cancel_url' => route('customer.cancel.response'),
-           ]);
+            //tax rate
+            $taxRate = \Stripe\TaxRate::create([
+                'display_name' => 'Tax',
+                'description' => 'Sales Tax',
+                'percentage' => $request->gst,
+                'inclusive' => false,
+            ]);
 
-           $order = Order::create([
+
+
+            $line_items = [];
+
+            foreach ($productsCart as $product) {
+                $price = \Stripe\Price::create([
+                    'unit_amount' => (int)($product->price * 100),
+                    'currency' => $pay_currency,
+                    'product_data' => [
+                        'name' => $product->title,
+                    ],
+                ]);
+
+                $line_items[] = [
+                    'price' => $price->id,
+                    'quantity' => (int)$product->quantity,
+                    'tax_rates' => [$taxRate->id],
+                ];
+            }
+
+
+            //coupon code
+            $couponCode = $request->coupon_name;
+            $couponId = $this->applyCoupon($pay_currency, $couponCode);
+
+
+            $checkout_session_params = [
+                'line_items' => $line_items,
+                'customer_email' => $email,
+                'mode' => 'payment',
+                'success_url' => route('customer.success.response', [
+                    'order_id' => $orderId,
+                    'userId' => $userId,
+                    'email' => $email,
+                    'type' => $type,
+                    'tSessId' => $customer_session_id
+                ]),
+                'cancel_url' => route('customer.cancel.response'),
+            ];
+
+            if ($couponId) {
+                $checkout_session_params['discounts'] = [
+                    [
+                        'coupon' => $couponId,
+                    ]
+                ];
+            }
+
+            $checkout_session = \Stripe\Checkout\Session::create($checkout_session_params);
+
+            $order = Order::create([
                'user_id' => $userId,
                'trx_id' => $checkout_session->id,
                'order_number' => $orderId,
@@ -386,6 +430,48 @@ $products_list_ids=[];
             return redirect()->route('customer.homePage')->with('error', 'Cart is empty, Please add some products');
         }
     }
+
+    protected function applyCoupon($pay_currency, $couponCode = null) {
+
+        $coupon_detail = Coupon::select('id','coupon_name','type','value')->where('coupon_name', Crypt::decrypt($couponCode))->first();
+
+        if (!$coupon_detail) {
+            return null;
+        }
+        $isPercentage = $coupon_detail->type;
+        if($isPercentage == 2){
+            $couponAmount = $coupon_detail->value;
+        }else{
+            $couponAmount = $coupon_detail->value * 100;
+        }
+        try {
+            $existingCoupon = \Stripe\Coupon::retrieve($couponCode);
+            return $existingCoupon->id;
+        } catch (\Stripe\Exception\InvalidRequestException $e) {
+            try {
+                if ($isPercentage == 2) {
+                    $coupon = \Stripe\Coupon::create([
+                        'percent_off' => $couponAmount,
+                        'currency' => $pay_currency,
+                        'duration' => 'once',
+                        'id' => $couponCode
+                    ]);
+                } else {
+                    $coupon = \Stripe\Coupon::create([
+                        'amount_off' => $couponAmount,
+                        'currency' => $pay_currency,
+                        'duration' => 'once',
+                        'id' => $couponCode
+                    ]);
+                }
+                return $coupon->id;
+            } catch (\Stripe\Exception\InvalidRequestException $e) {
+                return null;
+            }
+        }
+    }
+
+
 
     public function checkoutSuccess(Request $request){
        $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));

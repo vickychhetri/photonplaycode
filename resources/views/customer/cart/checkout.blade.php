@@ -562,6 +562,13 @@
                                  <span class="text-amount">{{session("currency_icon","$")}}{{$item->price * $item->quantity}}</span>
                              </li>
                          @endforeach
+                         <input type="hidden" value="{{ (request()->query('c')) }}" name="coupon_name">
+                         @if(request()->query('d') && \Illuminate\Support\Facades\Crypt::decrypt(request()->query('d')) != 0)
+                             <li class="d-flex justify-content-between">
+                                 <span class="text">Discount</span>
+                                 <span class="text-amount text-danger">{{session("currency_icon","$")}}{{ $discount = \Illuminate\Support\Facades\Crypt::decrypt(request()->query('d') )}}</span>
+                             </li>
+                         @endif
                          <li class="d-flex justify-content-between" >
                              <span class="text-amount">Estimated Shipping (BEST <br/> WAY GROUND)</span>
 {{--                              <span class="text-amount">${{$shipping = $taxes->shipping_time ?? 00}}</span>--}}
@@ -569,7 +576,7 @@
                          </li>
                          <li class="d-flex justify-content-between">
                              <span class="text"><b>Subtotal excluding Tax</b></span>
-                             <span class="text-amount">{{session("currency_icon","$")}}{{$total}}</span>
+                             <span class="text-amount">{{session("currency_icon","$")}}{{$total - $discount}}</span>
                          </li>
                              @php
                                  $gst = $taxes->gst??0;
@@ -578,13 +585,9 @@
                              <li class="d-flex justify-content-between">
                                  <span class="text">Estimated Tax</span>
                                  <span class="text-amount">{{session("currency_icon","$")}}{{ $gstAmount = (($total - $discount) + $shipping) * $gst / 100 }}</span>
+                                 <input type="hidden" value="{{ $gstAmount }}" name="estimated_tax">
                              </li>
-                         @if($discount != 0)
-                             <li class="d-flex justify-content-between">
-                                 <span class="text">Discount</span>
-                                 <span class="text-amount text-danger">{{session("currency_icon","$")}}{{$discount}}</span>
-                             </li>
-                         @endif
+
                          <li class="d-flex justify-content-between">
                              <span class="text"><b>Total including Tax</b></span>
                              <span id="grand_total" class="text-amount">
