@@ -234,7 +234,9 @@ WAY GROUND)</span>
                                                 </form>
 
                                             @else
-                                            <a href="{{ route('customer.loginForm') }}"  class="btn btn-primary p-1 btn-block w-100 rounded-0 {{ count($cart_table) <= 0 ? 'disabled' : '' }}">Proceed to buy </a>
+                                                <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
+                                                <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
+                                            <a href="{{ route('customer.loginForm' , ['c' => \Illuminate\Support\Facades\Crypt::encrypt($coupon_name) , 'd' => \Illuminate\Support\Facades\Crypt::encrypt($discounted_amount)]) }}"  class="btn btn-primary p-1 btn-block w-100 rounded-0 {{ count($cart_table) <= 0 ? 'disabled' : '' }}">Proceed to buy </a>
                                             @endif
                                             <!-- Main Form -->
 

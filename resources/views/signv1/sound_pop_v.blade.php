@@ -2,7 +2,7 @@
     $pop_up_data_sound=\App\Models\PopSetupData::get()->first();
 @endphp
 
-@if($pop_up_data_sound->status==1)
+@if(isset($pop_up_data_sound) && $pop_up_data_sound->status==1)
     <style>
         body {
             font-family: Arial, sans-serif;

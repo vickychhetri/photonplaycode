@@ -87,21 +87,19 @@
         </div>
 
         <!-- Guest Checkout Section -->
-        <div class="col-lg-6 text-center justify-content-center align-items-center">
-            <div class="mt-4">
-                <h4 class="mb-3">Checkout as a Guest</h4>
-                <p>Customers checking out as a guest will have the opportunity to create an account after placing your order.</p>
-                @if($total_cart_count >0)
-                    <form action="{{ route('customer.checkout') }}" method="POST">
-                        @csrf
-                        @else
-                            <form action="{{ route('customer.product.shop') }}" method="GET">
-                                @endif
-                                <button type="submit" class="btn btn-primary mt-3  btn-block rounded-0" >
-                                    Checkout as a Guest
-                                </button>
-                            </form>
-            </div>
+        <div class="col-lg-6 text-center">
+            <h4 class="mb-3 mt-4">Checkout as a Guest</h4>
+            <p>Customers checking out as a guest will have the opportunity to create an account after placing your order.</p>
+            @if($total_cart_count >0)
+                <form action="{{ route('customer.checkout', [ 'c' => request()->query('c'), 'd' => request()->query('d') ] ) }}" method="POST">
+                    @csrf
+            @else
+                <form action="{{ route('customer.product.shop') }}" method="GET">
+            @endif
+                <button type="submit" class="btn btn-primary mt-3  btn-block rounded-0" >
+                    Checkout as a Guest
+                </button>
+            </form>
 
         </div>
     </div>
