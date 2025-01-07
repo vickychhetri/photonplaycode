@@ -239,8 +239,8 @@ $products_list_ids=[];
         }
 
         // dd($addresses);
-        $coupon_name = $request->coupon_s;
-        $discount = $request->discount_s;
+        $coupon_name = $request->c;
+        $discount = $request->d;
         $taxes = DB::table('settings')->select('shipping_time','gst')->first();
 
         $total = 0;
