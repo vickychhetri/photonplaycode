@@ -228,8 +228,8 @@ WAY GROUND)</span>
 
                                                 <form action="{{route('customer.checkout')}}" method="any">
                                                     @csrf
-                                                    <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
-                                                    <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
+                                                    <input type="hidden" name="c" value="{{\Illuminate\Support\Facades\Crypt::encrypt($coupon_name)}}">
+                                                    <input type="hidden" name="d" value="{{\Illuminate\Support\Facades\Crypt::encrypt($discounted_amount)}}">
                                                     <button type="submit" class=" btn btn-primary p-1 btn-block w-100 rounded-0 <?php if(count($cart_table) <= 0){ ?> disabled <?php } ?>" >Proceed to buy</button>
                                                 </form>
 

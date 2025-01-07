@@ -571,7 +571,7 @@
                                  <span class="text-amount">{{session("currency_icon","$")}}{{$item->price * $item->quantity}}</span>
                              </li>
                          @endforeach
-                         <input type="hidden" value="{{ (request()->query('c')) }}" name="coupon_name">
+                         <input type="text" value="{{ (request()->query('c')) }}" name="coupon_name">
                          @if(request()->query('d') && \Illuminate\Support\Facades\Crypt::decrypt(request()->query('d')) != 0)
                              <li class="d-flex justify-content-between">
                                  <span class="text">Discount</span>
