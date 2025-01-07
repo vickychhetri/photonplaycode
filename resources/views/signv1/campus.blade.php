@@ -23,18 +23,7 @@ if($data_record){
         border-collapse: collapse;
     }
 </style>
-<style>
-    /* Hide the content by default */
-    .radar-container {
-        display: none;
-    }
-</style>
-<script>
-    // Show the content after the page is fully loaded
-    window.addEventListener("load", function () {
-        document.querySelector(".radar-container").style.display = "block";
-    });
-</script>
+
 <section class="pt-0 mt-0 pb-0 mb-0">
     <div class="container-fluid">
         <div class="row mt-2">
@@ -43,9 +32,9 @@ if($data_record){
                 <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
                     <nav aria-label="breadcrumb m-3 p-3">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Traffic Signs</a></li>
-                            <li class="breadcrumb-item"><a href="#">Radar Speed Sign</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route("customer.radar.speed.signs")}}">Traffic Signs</a></li>
+                            <li class="breadcrumb-item"> Municipal Traffic</li>
                         </ol>
                     </nav>
 
