@@ -41,15 +41,15 @@
                 <h6 class="fw-bold">Customer Service</h6>
                 <ul>
                     <li><a href="{{route("customer.contact.us")}}" class="text-white text-decoration-none">Contact Support</a></li>
-                    <li><a href="/return-policy" class="text-white text-decoration-none">Warranty and Guarantee</a></li>
+                    <li><a href="{{route("radar.warranty_guarantee")}}" class="text-white text-decoration-none">Warranty and Guarantee</a></li>
                     <li><a href="{{route("customer.radar.speed.signs__get_quote_v1")}}" class="text-white text-decoration-none">Request a Quote</a></li>
                     <li><a href="{{route("customer.contact.us")}}" class="text-white text-decoration-none">Send us Feedback</a></li>
-                    <li><a href="{{route("customer.show_page_policy_privacy_policy")}}" class="text-white text-decoration-none">Security & Privacy Policy</a></li>
-                    <li><a href="{{route("customer.show_page_policy_privacy_policy")}}" class="text-white text-decoration-none">Secure Shopping</a></li>
-                    <li><a href="{{route("customer.show_page_policy_term_conditions")}}" class="text-white text-decoration-none">Terms & Conditions</a></li>
-                    <li><a href="{{route("customer.show_page_policy_privacy_policy")}}" class="text-white text-decoration-none">Do Not Sell or Share My Personal Info</a></li>
-{{--                    <li><a href="#" class="text-white text-decoration-none">Accessibility</a></li>--}}
-                    <li><a href="{{route("customer.show_page_policy_shipping")}}" class="text-white text-decoration-none">Shipping & Returns</a></li>
+                    <li><a href="{{route("radar.security_privacy_policy")}}" class="text-white text-decoration-none">Security & Privacy Policy</a></li>
+                    <li><a href="{{route("radar.secure_shopping")}}" class="text-white text-decoration-none">Secure Shopping</a></li>
+                    <li><a href="{{route("radar.terms_conditions")}}" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                    <li><a href="{{route("radar.do_not_sell")}}" class="text-white text-decoration-none">Do Not Sell or Share My Personal Info</a></li>
+                    <li><a href="{{route("radar.accessibility_statement")}}" class="text-white text-decoration-none">Accessibility</a></li>
+                    <li><a href="{{route("radar.shipping_return")}}" class="text-white text-decoration-none">Shipping & Returns</a></li>
                 </ul>
             </div>
 

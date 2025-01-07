@@ -182,7 +182,7 @@ section {
 
 /* --------------------- Banner section ----------------------- */
 .banner-section {
-  background: url('../UI-01/UI-Data/Images/banner-with-speed.png');
+  background: url('/assets/images/radar/banner1_road.webp');
   background-position: right;
   background-size: cover;
 }
