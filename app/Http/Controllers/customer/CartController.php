@@ -240,14 +240,14 @@ $products_list_ids=[];
 
         // dd($addresses);
         $coupon_name = $request->c;
-        $discount = $request->d;
+        $discount_a = \Illuminate\Support\Facades\Crypt::decrypt($request->d);
         $taxes = DB::table('settings')->select('shipping_time','gst')->first();
 
         $total = 0;
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
             }
-        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount', 'addresses','customer'));
+        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount_a', 'addresses','customer'));
     }
 
     public function removeCartItem($id){
