@@ -571,8 +571,15 @@
                                  <span class="text-amount">{{session("currency_icon","$")}}{{$item->price * $item->quantity}}</span>
                              </li>
                          @endforeach
-                         <input type="text" value="{{ (request()->query('c')) }}" name="coupon_name">
-                         @if(request()->query('d') && \Illuminate\Support\Facades\Crypt::decrypt(request()->query('d')) != 0)
+                         <input type="hidden" value="{{ (request()->query('c')) }}" name="coupon_name">
+                         @if(\Illuminate\Support\Facades\Session::get('user'))
+                         @if(isset($discount_a) && $discount_a != 0)
+                             <li class="d-flex justify-content-between">
+                                 <span class="text">Discount</span>
+                                 <span class="text-amount text-danger">{{session("currency_icon","$")}}{{ $discount_a }}</span>
+                             </li>
+                         @endif
+                             @else
                              <li class="d-flex justify-content-between">
                                  <span class="text">Discount</span>
                                  <span class="text-amount text-danger">{{session("currency_icon","$")}}{{ $discount = \Illuminate\Support\Facades\Crypt::decrypt(request()->query('d') )}}</span>
@@ -583,9 +590,10 @@
 {{--                              <span class="text-amount">${{$shipping = $taxes->shipping_time ?? 00}}</span>--}}
                              <span class="text" id="submittername" style="display: none;">{{$shipping = 0}}</span>
                          </li>
+
                          <li class="d-flex justify-content-between">
                              <span class="text"><b>Subtotal excluding Tax</b></span>
-                             <span class="text-amount">{{session("currency_icon","$")}}{{$total - $discount}}</span>
+                             <span class="text-amount">{{session("currency_icon","$")}}{{$total - $discount_a}}</span>
                          </li>
                              @php
                                  $gst = $taxes->gst??0;
@@ -593,15 +601,15 @@
 
                              <li class="d-flex justify-content-between">
                                  <span class="text">Estimated Tax</span>
-                                 <span class="text-amount">{{session("currency_icon","$")}}{{ $gstAmount = (($total - $discount) + $shipping) * $gst / 100 }}</span>
+                                 <span class="text-amount">{{session("currency_icon","$")}}{{ $gstAmount = (($total - $discount_a) + $shipping) * $gst / 100 }}</span>
                                  <input type="hidden" value="{{ $gstAmount }}" name="estimated_tax">
                              </li>
 
                          <li class="d-flex justify-content-between">
                              <span class="text"><b>Total including Tax</b></span>
                              <span id="grand_total" class="text-amount">
-                                 {{session("currency_icon","$")}}{{$grand_total = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
-                             <span style="display : none;" id="grand_total_static" class="text-amount">{{$grand_totall = ($discounted = $total - $discount) + $shipping + (($discounted  * $gst) / 100)}}</span>
+                                 {{session("currency_icon","$")}}{{$grand_total = ($discounted = $total - $discount_a) + $shipping + (($discounted  * $gst) / 100)}}</span>
+                             <span style="display : none;" id="grand_total_static" class="text-amount">{{$grand_totall = ($discounted = $total - $discount_a) + $shipping + (($discounted  * $gst) / 100)}}</span>
                          </li>
                      </ul>
 
