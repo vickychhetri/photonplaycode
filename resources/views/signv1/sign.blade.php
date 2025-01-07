@@ -400,55 +400,6 @@
         </div>
     </section>
 
-
-
-    <!-- --------------------- Form Section ----------------------- -->
-
-{{--    <section class="form-section"  id="inquiry"  >--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-12 col-md-6">--}}
-{{--                    <div class="form-container">--}}
-{{--                        <h5 class="font-railway mb-3 text-white">Request A Quote</h5>--}}
-{{--                        <p class="mb-4 fs-12 opacity-75 text-white">--}}
-{{--                            Please complete the form below to request a quote, and we&apos;ll be in touch. Or you can--}}
-{{--                            call <a href="tel:+18009669329" class="text-white">(800) 966-9329</a>, and our specialists will provide the necessary help!--}}
-{{--                        </p>--}}
-{{--                        <form action="{{route('customer.inquery.submit')}}" method="post">--}}
-{{--                            @csrf--}}
-{{--                            <input type="hidden" name="url" value="{{\Illuminate\Support\Facades\URL::full()}}">--}}
-{{--                            <div class="row gy-4">--}}
-{{--                                <div class="col-md-6">--}}
-{{--                                    <input type="text" name="first_name" class="form-control" placeholder="Name" />--}}
-{{--                                </div>--}}
-{{--                                <div class="col-md-6">--}}
-{{--                                    <input type="text" name="country"  class="form-control" placeholder="Country" />--}}
-{{--                                </div>--}}
-{{--                                <div class="col-md-6">--}}
-{{--                                    <input type="text" name="email" class="form-control" placeholder="Email Address" />--}}
-{{--                                </div>--}}
-{{--                                <div class="col-md-6">--}}
-{{--                                    <input type="text" name="phone_number" class="form-control" placeholder="Phone Number" />--}}
-{{--                                </div>--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <textarea name="message" placeholder="Message" class="form-control" rows="4"></textarea>--}}
-{{--                                </div>--}}
-{{--                                <!-- Google Recaptcha -->--}}
-{{--                                <div class="g-recaptcha mt-4 mb-4" style="max-height: 100px;" data-sitekey={{config('services.recaptcha.key')}}></div>--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <button class="btn btn-primary d-flex align-items-center gap-3"><img--}}
-{{--                                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""> Submit--}}
-{{--                                        Request</button>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-
-
 <section class="mt-1 mb-1 pt-1 pb-1">
     <div class="container brochure-section">
         <div class="row align-items-center">
@@ -462,7 +413,7 @@
                     HD Series, PRO Series, and Prime Series are premium product lines offering solutions for both
                     indoor LED and outdoor LED displaying applications.
                 </p>
-                <a href="#" class="download-btn text-decoration-none p-2 m-2">
+                <a href="#" class="download-btn text-decoration-none p-2 m-2 text-white">
                      Download Brochure <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
                         <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
                         <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
