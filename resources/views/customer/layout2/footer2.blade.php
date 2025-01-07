@@ -24,7 +24,7 @@
             <div class="col-md-3">
                 <h6 class="fw-bold">My Account</h6>
                 <ul>
-                    <li><a href="#" class="text-white text-decoration-none">Cloud Login</a></li>
+                    <li><a href="https://www.photonplayinc.com/devicelogin1.html?_gl=1*1ndnfou*_ga*MTExNDMxMzQ2NS4xNzM0NjczMzE4*_ga_E7ZY3YK2KC*MTczNjE1ODEyNC41LjEuMTczNjE1ODgyMy41NS4wLjA" class="text-white text-decoration-none">Cloud Login</a></li>
                     <li><a href="{{route("customer.loginForm")}}" class="text-white text-decoration-none">Account Login</a></li>
                     <li><a href="{{route("customer.history")}}" class="text-white text-decoration-none">Check Order Status</a></li>
                     <li><a href="{{route("customer.shopping.bag")}}" class="text-white text-decoration-none">Cart</a></li>

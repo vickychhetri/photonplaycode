@@ -202,8 +202,8 @@ $exchange_rate = session('exchange_rate', '1');
                 <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
                     <nav aria-label="breadcrumb m-3 p-3">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">{{$product->category->title}}</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route("customer.radar.speed.signs")}}">{{$product->category->title}}</a></li>
                             <li class="breadcrumb-item"><a href="{{route("customer.product.shop")}}">Shop</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$product->title}}</li>
                         </ol>
