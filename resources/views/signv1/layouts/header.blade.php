@@ -296,11 +296,10 @@
         .sticky-header {
             position: sticky;
             top: 0;
-            background-color: #333;
             color: white;
             padding: 10px 0;
             text-align: center;
-            z-index: 1000;
+            /*z-index: 1000;*/
         }
 
         .navbar-nav {
@@ -309,7 +308,10 @@
             justify-content: center; /* Horizontal alignment */
         }
     </style>
-    <nav class="navbar navbar-expand-lg bg-light pt-2 pb-0 border-bottom sticky-header">
+<section class="banner-section pt-0">
+    <!----------------------- Header ---------------------------->
+
+    <nav class="navbar navbar-expand-lg bg-light pt-2 pb-0 border-bottom sticky-header" style="position: sticky;">
         <div class="container">
             <a class="navbar-brand me-5" href="/">
                 <img src="https://www.photonplay.com/assets/customer/images/logo-dark.png" alt="Logo" height="30px">
@@ -485,7 +487,7 @@
         </div>
     </nav>
 
-    <div class="container pt-5">
+    <div class=" section container pt-5">
         <div class="row pt-4">
             <div class="col-12 col-lg-8">
                 <div class="banner-content">
