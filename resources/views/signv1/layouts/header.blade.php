@@ -538,7 +538,7 @@
 
     <div class="container pt-5">
         <div class="row pt-4">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-8">
                 <div class="banner-content">
 
                     <p>Over 10,000+ Signs Installed Worldwide!</p>
@@ -554,6 +554,12 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 d-flex align-items-center justify-content-center ">
+                <div id="banner "  class="p-4 desktop-display" style="  display: block;">
+                    <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" style="max-width: 300px;scale: 1.4;"/>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

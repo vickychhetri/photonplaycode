@@ -36,6 +36,10 @@
     <!-- -------------------- Stats section ------------------- -->
     @include("signv1.sound_pop_v")
 
+{{--    <div style="position: fixed; right: 0; top: 50%; transform: translateY(-50%);">--}}
+{{--        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" style="max-width: 300px;"/>--}}
+{{--    </div>--}}
+
     <section class="state-section py-5">
         <div class="container">
             <div class="row">
