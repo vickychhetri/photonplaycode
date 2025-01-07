@@ -462,11 +462,14 @@
                             <h5 class="mb-4 text-black">Compatible Accessories</h5>
                             @foreach($linked_products as $ap)
                                 <div class="col-md-12 mb-3">
-                                    <form method="POST" action="{{route("customer.store.shopping.accessory.bag")}}" wire:ignore>
+                                    <form wire:submit.prevent="addAccessory" >
+
+{{--                                        <input type="text" wire:model="price" value="{{ $country_code == "CA" ? $ap->price_canada * $exchange_rate : $ap->price * $exchange_rate }}">--}}
+{{--                                        <input type="text" wire:model="title" value="{{ $ap->product_heading_text ?? $ap->title }}">--}}
                                         @csrf
                                         <div class="card" >
                                             <div class="d-flex justify-content-center align-items-center w-100 p-4 pb-2 border-1">
-                                                <img src="{{ asset('storage/' . $ap->cover_image )  }}" class="card-img-top"
+                                                <img x-init="@this.set('cover_image_a', {{$ap->cover_image}})" src="{{ asset('storage/' . $ap->cover_image )  }}" class="card-img-top"
                                                      alt="{{$ap->title}}"
                                                      style="max-width: 100%; ">
                                             </div>
@@ -475,28 +478,30 @@
                                                 @php
                                                     $exchange_rate = session('exchange_rate', '1');
                                                 @endphp
-                                                <h5 class="card-title"> {{$ap->product_heading_text ?? $ap->title}}</h5>
-                                                <p class="card-text">
+                                                <h5 class="card-title" > {{$ap->product_heading_text ?? $ap->title}}</h5>
+                                                <p class="card-text" x-init="@this.set('price_a', {{$country_code == 'CA' ? ($ap->price_canada * $exchange_rate) : ($ap->price * $exchange_rate)}})">
                                                     {{ $currency_icon ?? '$' }}
-                                                    {{ $country_code == "CA" ? $ap->price_canada * $exchange_rate : $ap->price * $exchange_rate }}
+                                                    {{ $country_code == 'CA' ? ($ap->price_canada * $exchange_rate) : ($ap->price * $exchange_rate) }}
                                                 </p>
-                                                <p class="text-muted p-2">{{$ap->category->title}}</p>
 
-                                                <input type="hidden" name="product_id" value="{{ $ap->id }}">
+                                                <p class="text-muted p-2" x-init="@this.set('category_a', {{$ap->category->title}})">{{$ap->category->title}}</p>
+
+                                                <input type="hidden" x-init="@this.set('Pid_a', {{$ap->id}})" name="product_id" value="{{ $ap->id }}">
                                                 <input type="hidden" name="price" value="{{ $country_code == "CA" ? $ap->price_canada * $exchange_rate : $ap->price * $exchange_rate }}">
-                                                <input type="hidden" name="title" value="{{ $ap->title }}">
+                                                <input type="hidden" wire:model="title_a" name="title" value="{{ $ap->product_heading_text ?? $ap->title }}">
+                                                <input type="hidden" wire:model="title_a" name="title" value="{{ $ap->product_heading_text ?? $ap->title }}">
                                                 <input type="hidden" name="category" value="{{ $ap->category->title }}">
                                                 <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
                                                 <input type="hidden" name="p" value="1">
 
                                                 <div class="quantity-control d-flex align-items-center justify-content-center gap-2">
                                                     <button type="button" class="btn btn-sm btn-outline-secondary decrement-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;" >-</button>
-                                                    <input type="number" name="quantity" value="1" class="form-control text-center quantity-input p-1" style="width: 60px; height: 30px;" min="1" readonly>
+                                                    <input type="number" wire:model="quantity_a" name="quantity" value="1" class="form-control text-center quantity-input p-1" style="width: 60px; height: 30px;" min="1" readonly>
                                                     <button type="button" class="btn btn-sm btn-outline-secondary increment-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;">+</button>
                                                 </div>
 
 
-                                                <button type="submit" class="btn btn-primary mt-3">Add to Cart</button>
+                                                <button data-bs-toggle="modal" data-bs-target="#exampleModalCenter" type="submit" type="submit" class="btn btn-primary mt-3">Add to Cart</button>
                                             </div>
                                         </div>
                                     </form>

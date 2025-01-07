@@ -11,7 +11,8 @@ use Livewire\Component;
 
 class Radar extends Component
 {
-    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price, $currency_icon ;
+    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price, $currency_icon ,$Pid_a,$price_a,$title_a,$category_a,$quantity_a = 1,$cover_image_a,$currency_icon_a,$exchangeRate_a;
+
     public $linked_products;
     public  $currency_icon_selected;
     public $product_id;
@@ -83,6 +84,10 @@ class Radar extends Component
 
         $this->linked_products=Product::getLinkedProducts([$this->Pid]);
 
+        foreach ($this->linked_products as $linked_product) {
+            $this->title_a = $linked_product->product_heading_text ?? $linked_product->title;
+            $this->cover_image_a = $linked_product->brochure;
+        }
         return view('livewire.radar', [
             'productLists' => $this->productLists,
             'postalCode' => $this->postalCode,
@@ -195,7 +200,47 @@ class Radar extends Component
         $this->color = $value;
     }
 
+    public function addAccessory(){
 
+        if(!Session::get('user')){
+            Cart::create([
+                'session_id' => $this->sessionId,
+                'product_id' => $this->Pid_a,
+                'price' => $this->price_a,
+                'title' => $this->title_a,
+                'category' => $this->category_a,
+                'quantity' => $this->quantity_a,
+                'cover_image' => $this->cover_image_a,
+                'currency_code'=> $this->currency_icon_a,
+                'exchange_rate'=>$this->exchangeRate_a,
+            ]);
+        }else{
+            Cart::create([
+                'user_id' => Session::get('user')->id,
+                'product_id' => $this->Pid_a,
+                'price' => $this->price_a,
+                'title' => $this->title_a,
+                'category' => $this->category_a,
+                'quantity' => $this->quantity_a,
+                'cover_image' => $this->cover_image_a,
+                'currency_code'=> $this->currency_icon_a,
+                'exchange_rate'=>$this->exchangeRate_a,
+            ]);
+        }
+        $total_count = 0;
+        if(!Session::get('user')){
+            $cart_table =  Cart::select('quantity')->where('session_id', Session::getId())->get();
+            foreach($cart_table as $cart_t){
+                $total_count += $cart_t->quantity;
+            }
+        }else {
+            $cart_table =  Cart::select('quantity')->where('user_id', Session::get('user')->id)->get();
+            foreach($cart_table as $cart_t){
+                $total_count += $cart_t->quantity;
+            }
+        }
+        $this->emit('cartUpdated', $total_count);
+    }
 
 
 

@@ -1,6 +1,6 @@
 <?php
 use App\Models\ManageSeo;
-$data_record = ManageSeo::where('page_name', ManageSeo::RADAR_MUNICIPALITIES)->first();
+$data_record = ManageSeo::where('page_name', ManageSeo::CONTACT)->first();
 if($data_record){
     $seo_meta=[
         "title"=>$data_record->title,
@@ -32,9 +32,9 @@ if($data_record){
                 <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
                     <nav aria-label="breadcrumb m-3 p-3">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Traffic Signs</a></li>
-                            <li class="breadcrumb-item"><a href="#">Radar Speed Sign</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route("customer.radar.speed.signs")}}">Traffic Signs</a></li>
+                            <li class="breadcrumb-item">Contact us</li>
                         </ol>
                     </nav>
 

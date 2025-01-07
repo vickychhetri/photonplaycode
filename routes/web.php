@@ -21,6 +21,7 @@ use App\Http\Controllers\PostalCodesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RadarApplicationAreaPageController;
 use App\Http\Controllers\RadarCloudManagementController;
+use App\Http\Controllers\RadarPolicyController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\ShopBrowseController;
 use App\Http\Controllers\TestimonialController;
@@ -412,8 +413,7 @@ Route::group(['prefix' => 'radar_speed_sign', 'as' => 'radar_speed_sign.'], func
     Route::get('parking-lot', [RadarApplicationAreaPageController::class, 'parking_lot'])->name('parking_lot');
 
     Route::get('neighbourhoods', [RadarApplicationAreaPageController::class, 'neighbourhoods'])->name('neighbourhoods');
-
-
-
-
 });
+
+
+require_once base_path('routes/policy.php');
