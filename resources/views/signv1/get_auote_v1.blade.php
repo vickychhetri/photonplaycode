@@ -33,7 +33,7 @@ if($data_record){
                     <nav aria-label="breadcrumb m-3 p-3">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item"><a href="{{route("customer.radar.speed.signs")}}">Traffic Signs</a></li>
+                                <li class="breadcrumb-item"><a href="{{route("customer.radar.speed.signs")}}">Traffic Signs</a></li>
                             <li class="breadcrumb-item">Contact us</li>
                         </ol>
                     </nav>

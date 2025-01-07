@@ -292,68 +292,17 @@
 <a href="/dealership" class="rotated-button" style="text-decoration: none;color: white;">Want to be Dealers/Partners?</a>
 <!-- ------------------ Hero section------------------ -->
 
-    <!----------------------- Header ---------------------------->
-
-<section class="banner-section pt-0">
-    <!----------------------- Header ---------------------------->
-
-{{--    <nav class="navbar navbar-expand-lg bg-transparent pt-2 pb-0 border-bottom">--}}
-{{--        <div class="container">--}}
-{{--            <a class="navbar-brand me-5" href="#">--}}
-{{--                <img src="https://www.photonplay.com/assets/customer/images/logo-dark.png" alt="Logo" height="30px">--}}
-{{--            </a>--}}
-{{--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--}}
-{{--                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">--}}
-{{--                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>--}}
-{{--                </svg>--}}
-{{--            </button>--}}
-{{--            <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
-{{--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link active" href="/radar-speed-signs">HOME</a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item dropdown">--}}
-{{--                        <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                            PRODUCTS--}}
-{{--                        </a>--}}
-{{--                        <ul class="dropdown-menu rounded-3 shadow-lg p-2" aria-labelledby="productDropdown">--}}
-{{--                            @foreach($products as $product)--}}
-{{--                                <li><a class="dropdown-item px-4 py-3 text-black border-bottom hover-bg-light" href="{{ route('customer.radar.sign', $product->slug) }}">{{ $product->title }}</a></li>--}}
-{{--                            @endforeach--}}
-{{--                            <li><a class="dropdown-item px-4 py-3 text-black hover-bg-light" href="/radar-cloud-management"> Cloud Software</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="/blogs">NEWS & MEDIA</a>--}}
-{{--                    </li>--}}
-
-
-
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="{{route('customer.radar.speed.signs__get_quote_v1')}}">GET QUOTE--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-
-
-
-
-
-{{--                </ul>--}}
-
-{{--                <div class="personal-information d-flex align-items-center gap-2">--}}
-{{--                    <a href="tel:+8009669329">--}}
-{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Phone Icon">--}}
-{{--                    </a>--}}
-{{--                    <div class="info">--}}
-{{--                        <p class="text-white fw-bold mb-0"> (800)966-9329</p>--}}
-{{--                        <p class="text-secondary fs-14 fw-semibold mb-0">sales@photonplay.com</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </nav>--}}
-
     <style>
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
         .navbar-nav {
             margin: 0 auto; /* Centers the navigation menu */
             display: flex;
