@@ -514,6 +514,7 @@
                                         btn.addEventListener('click', function() {
                                             const quantityInput = this.previousElementSibling;
                                             quantityInput.value = parseInt(quantityInput.value) + 1;
+                                        @this.set('quantity_a', quantityInput.value);
                                         });
                                     });
 
@@ -522,6 +523,7 @@
                                             const quantityInput = this.nextElementSibling;
                                             if (parseInt(quantityInput.value) > 1) {
                                                 quantityInput.value = parseInt(quantityInput.value) - 1;
+                                            @this.set('quantity_a', quantityInput.value);
                                             }
                                         });
                                     });
