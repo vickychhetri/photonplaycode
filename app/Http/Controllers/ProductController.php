@@ -49,7 +49,7 @@ class ProductController extends Controller
             'category_id' => 'required|max:255',
             'title' => 'required|max:255',
             'price' => 'required|max:255',
-            'slug' => 'required|max:255',
+            'slug' => 'nullable|max:255',
             'sku' => 'nullable'
         ]);
 

@@ -126,7 +126,7 @@
                                         <label for="sku" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('SKU') }}</label>
 
                                         <div class="col-md-10">
-                                            <input id="sku" type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" value="{{ old('sku') }}" required autocomplete="sku" autofocus>
+                                            <input id="sku" type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" value="{{ old('sku') }}" autocomplete="sku" autofocus>
 
                                             @error('sku')
                                             <span class="invalid-feedback" role="alert">
@@ -144,7 +144,7 @@
                                         <label for="brochure" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Brochure') }}</label>
 
                                         <div class="col-md-7">
-                                            <input id="brochure" type="file" class="form-control @error('brochure') is-invalid @enderror" name="brochure" value="" required autocomplete="brochure" autofocus>
+                                            <input id="brochure" type="file" class="form-control @error('brochure') is-invalid @enderror" name="brochure" value=""  autocomplete="brochure" autofocus>
 
                                             @error('brochure')
                                             <span class="invalid-feedback" role="alert">

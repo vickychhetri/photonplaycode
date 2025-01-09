@@ -40,7 +40,7 @@
                                     <tr>
 
                                         <th>#</th>
-                                        <th>Image</th>
+{{--                                        <th>Image</th>--}}
                                         <th>Specilization</th>                                        <th>Options</th>
                                     </tr>
                                 </thead>
@@ -48,9 +48,14 @@
                                  @foreach ($specilizations as $specilization)
                                  <tr>
                                         <td>{{$Sr++}}</td>
-                                         <td>
-                                             <img src="{{asset('storage/'.$specilization->image)}}" style="max-height: 60px;"/>
-                                         </td>
+{{--                                         <td>--}}
+{{--                                             @if($specilization->image)--}}
+{{--                                                 <img src="{{asset('storage/'.$specilization->image)}}" style="max-height: 60px;"/>--}}
+{{--                                             @else--}}
+{{--                                                 ---}}
+{{--                                             @endif--}}
+
+{{--                                         </td>--}}
                                         <td>{{$specilization->title}}</td>
                                         <td>
                                             <a href="{{route('admin.specilization-option.show', $specilization->id)}}">
