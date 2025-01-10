@@ -430,7 +430,7 @@
                                         src="{{asset('assets\customer\images\user.png')}}" alt="Not Found"
                                         class="img-fluid me-2 ">
                                 </a>
-                                <span class="text-dark">Login/Signup</span>
+                                <a href="{{route('customer.loginForm')}}" style="text-decoration: none;">  <span class="text-dark">Login/Signup</span> </a>
                             </div>
 
                             @else

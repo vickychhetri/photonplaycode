@@ -5,6 +5,7 @@ namespace App\Http\Controllers\customer\Auth;
 use App\Http\Controllers\Controller;
 use App\Mail\WelcomeMail;
 use App\Models\Cart;
+use App\Models\Country;
 use App\Models\Customer;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Database\QueryException;
@@ -103,7 +104,9 @@ class LoginController extends Controller
         if($loginuser_validate){
             return redirect("radar-speed-signs");
         }
-        return view('customer.auth.register');
+
+        $countries = Country::all();
+        return view('customer.auth.register',compact('countries'));
     }
 
     public function register(Request $request)
@@ -114,6 +117,8 @@ class LoginController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'last_name'=>'nullable|string|max:255',
+            'phone_code'=>'required',
+            'phone_number'=>'required|string|max:255',
             'email' => 'required|email|unique:customers,email',
             'password' => [
                 'required',
@@ -141,6 +146,9 @@ class LoginController extends Controller
             'stripe_id' => $customer->id,
             'name' => $request->name,
             'last_name' => $request->last_name,
+            'phone_code' => $request->phone_code,
+            'phone_number' => $request->phone_number,
+            'guest' => false,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
