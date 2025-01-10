@@ -30,6 +30,7 @@ class Customer extends Authenticatable
         'provider_id',
         'created_by',
         'phone_number',
+        'phone_code',
         'company_name',
     ];
     /**

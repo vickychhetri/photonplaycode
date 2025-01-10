@@ -75,6 +75,27 @@
                                        value="{{ old('email') }}" aria-label="Email Address">
                             </div>
 
+
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label">Phone Number</label>
+                                <div class="error-message" id="phone_number_error"></div>
+                                <div class="d-flex gap-2">
+                                    <!-- Dropdown for Country Code -->
+                                    <select name="phone_code" id="country_code" class="form-select w-auto" aria-label="Country Code">
+                                        @foreach($countries as $country)
+                                            <option value="{{$country->dial_code}}">{{$country->dial_code}}</option>
+                                        @endforeach
+                                    </select>
+
+                                    <input type="number" name="phone_number" id="phone_number"
+                                           class="form-control flex-grow-1" value="{{ old('phone_number') }}"
+                                           aria-label="Phone Number" placeholder="Enter phone number" min="1000000" max="9999999999"
+                                           oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);">
+                                </div>
+                            </div>
+
+
+
                             <label for="">Password <span style="font-size: 10px;">  (Password must be 8-12 characters long and must contain one special character)</span></label>
 
                             <div class="error-message" id="passwordError"></div>
