@@ -3,6 +3,13 @@
     <script src="https://js.stripe.com/v3/"></script>
   </head>
 {{--//main_shipping_double_address - vicky 26-12-2024 start--}}
+
+<style>
+    .error {
+        border: 2px solid red;
+    }
+</style>
+
 <style>
     .text-amount {
         font-family: Roboto, sans-serif;
@@ -48,7 +55,7 @@
     <section class="step-form">
         <div class="container">
 {{--            //main_shipping_double_address - vicky 26-12-2024 start--}}
-            <form action="{{route('customer.place.order')}}" method="post">
+            <form id="myFormCheckoutProcess" action="{{route('customer.place.order')}}" method="post">
 {{--                //main_shipping_double_address - vicky 26-12-2024 end--}}
 
             <div class="row">
@@ -82,16 +89,18 @@
                     @else
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" value="" required>
+                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" id="name" value="" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" value="" required>
+                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" id="last_name" value="" required>
                             </div>
                         </div>
 
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" maxlength="100" required>
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" id-="email" name="email" value="" id="email" maxlength="100" required>
 {{--                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">--}}
+                        <span style="font-size: 8px"> (Country code : e.g US/CA) </span>
                         <div class="d-flex">
+
                             <select name="phone_code" id="country_code" class="form-control rounded-0 px-3 " style="max-width: 100px;" aria-label="Country Code">
                                 @foreach($countries as $country)
                                     <option value="{{$country->dial_code}}">{{$country->code}}({{$country->dial_code}})</option>
@@ -442,7 +451,7 @@
                     <label class="d-block mt-3">Order Comments</label>
                     <textarea name="order_notes" class="form-control rounded-0 mt-2" rows="5"
                         placeholder="Enter Order Notes"></textarea>
-                    <button type="submit" id="checkout-button" class="btn btn-primary btn-block mt-4 p-2 -">Checkout &amp; Pay</button>
+                    <button id="checkout-button" onclick="showAlert(event)" class="btn btn-primary btn-block mt-4 p-2 -">Checkout &amp; Pay</button>
                 </div>
 {{--                //main_shipping_double_address - vicky 26-12-2024 start--}}
                 <div class="col-md-1">
@@ -512,7 +521,7 @@
                      <input type="hidden" name="gst" value="{{$gst}}">
                      <input type="hidden" name="shipping" id="shipping" value="{{$shipping}}">
                      <input type="hidden" name="shipping_am" id="shipping_am" value="{{$shipping}}">
-                     <button type="submit" id="checkout-button" class="btn btn-primary btn-block w-100">Checkout & Pay</button>
+                     <button   id="checkout-button"  onclick="showAlert(event)"  class="btn btn-primary btn-block w-100">Checkout & Pay</button>
                      <p class="mt-2" style="font-size: 10px;font-weight: bold;">
                          Promotional offers cannot be combined with any other offers or discounts, including those in a sales quote. Some exclusions may apply. Products shipped by truck are not eligible for free shipping. Free shipping offers apply only to the continental United States.
                      </p>
@@ -818,5 +827,83 @@
         this.value = this.value.replace(/\D/g, '');
     });
 </script>
+
+
+<script>
+    function showAlert(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var fieldsWithMessages = {
+            '#shipping_postcode': 'Shipping postcode is required',
+            '#shipping_street': 'Shipping street is required',
+            '#shipping_flat_suite': 'Shipping flat/suite is required',
+            '#shipping_country': 'Shipping country is required',
+            '#shipping_state': 'Shipping state is required',
+            '#shipping_city': 'Shipping city is required',
+            '#billing_postcode': 'Billing postcode is required',
+            '#billing_street': 'Billing street is required',
+            '#billing_flat_suite': 'Billing flat/suite is required',
+            '#billing_country': 'Billing country is required',
+            '#billing_state': 'Billing state is required',
+            '#billing_city': 'Billing city is required',
+            '#phone_number': 'Phone number is required',
+            '#name': 'Name is required',
+            '#last_name': 'Last name is required',
+            '#email': 'Email is required'
+        };
+
+        // Determine if shipping is the same as billing
+        const isShippingSame = $("#is_shipping_same").prop("checked");
+
+        // Process fields based on whether shipping is the same
+        const fieldsToCheck = isShippingSame ? Object.keys(fieldsWithMessages).filter(selector => !selector.startsWith('#shipping')) : Object.keys(fieldsWithMessages);
+
+        let hasErrors = false; // Flag to track if there are any errors
+
+        // Loop through fields to check and apply styles/messages
+        fieldsToCheck.forEach(selector => {
+            const field = document.querySelector(selector);
+            const messageContainer = document.createElement('div');
+
+            if (field && field.value.trim() === '') {
+                // Add a red border
+                field.style.border = '1px solid red';
+
+                // Create and display the error message
+                messageContainer.classList.add('error-message');
+                messageContainer.style.color = 'red';
+                messageContainer.style.fontSize = '12px';
+                messageContainer.style.marginTop = '5px';
+                messageContainer.innerText = fieldsWithMessages[selector];
+
+                // Insert the message above the field
+                if (!field.previousElementSibling || !field.previousElementSibling.classList.contains('error-message')) {
+                    field.parentNode.insertBefore(messageContainer, field);
+                }
+
+                if (field === fieldsToCheck[0]) {
+                    // Scroll to the first error field
+                    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                hasErrors = true; // Set the flag to true if there is an error
+            } else {
+                // Reset border and remove message if not empty
+                field.style.border = '';
+                if (field.previousElementSibling && field.previousElementSibling.classList.contains('error-message')) {
+                    field.previousElementSibling.remove();
+                }
+            }
+        });
+
+        // If there are no errors, submit the form
+        if (!hasErrors) {
+            // Assuming you have a form element with ID 'myForm'
+            document.getElementById('myFormCheckoutProcess').submit(); // Replace 'myForm' with your actual form ID
+        }
+    }
+</script>
+
+
 
 

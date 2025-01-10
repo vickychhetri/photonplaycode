@@ -48,11 +48,11 @@
                             <div class="row">
                                 <!-- First Name -->
                                 <div class="col-md-6 mb-3">
-                                    <label for="">Name</label>
+                                    <label for="">First Name</label>
                                     <span class="error-message" id="nameError"></span>
                                     <div class="input-group input-cus-group mb-1">
                                         <input type="text" name="name" id="name" class="form-control input-cus"
-                                               value="{{ old('name') }}" aria-label="Name">
+                                               value="{{ old('name') }}" placeholder="First Name" aria-label="Name">
                                     </div>
                                 </div>
 
@@ -62,7 +62,7 @@
                                     <span class="error-message" id="lastNameError"></span>
                                     <div class="input-group input-cus-group">
                                         <input type="text" name="last_name" id="last_name" class="form-control input-cus"
-                                               value="{{ old('last_name') }}" aria-label="Last Name">
+                                               value="{{ old('last_name') }}" placeholder="Last Name" aria-label="Last Name">
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                             <div class="error-message" id="emailError"></div>
                             <div class="input-group input-cus-group  mb-1">
                                 <input type="email" name="email" id="email" class="form-control input-cus"
-                                       value="{{ old('email') }}" aria-label="Email Address">
+                                       value="{{ old('email') }}" placeholder="Email Address" aria-label="Email Address">
                             </div>
 
 
@@ -100,7 +100,7 @@
                             <div class="error-message" id="passwordError"></div>
                             <div class="input-group input-cus-group  mb-1">
                                 <input type="password" name="password" id="password" class="form-control input-cus"
-                                       aria-label="Password">
+                                       aria-label="Password" placeholder="Enter Password">
                                 <span class="input-group-text toggle-password-password">
             <i class="bi bi-eye"></i>
         </span>
@@ -110,7 +110,7 @@
                             <div class="error-message" id="confirmPasswordError"></div>
                             <div class="input-group input-cus-group mb-4">
                                 <input type="password" name="password_confirmation" id="password_confirmation"
-                                       class="form-control input-cus" aria-label="Confirm Password">
+                                       class="form-control input-cus" aria-label="Confirm Password" placeholder="Enter Confirm Password">
                                 <span class="input-group-text toggle-password-confirmation">
             <i class="bi bi-eye"></i>
         </span>
