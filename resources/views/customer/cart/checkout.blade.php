@@ -72,7 +72,6 @@
                             @forelse ($addresses as $address)
                                 <option value="{{$address->id}}">{{$address->street_number . ' ... ' . $address->country}}</option>
                             @empty
-                                <option value="0">No addresses saved.</option>
                             @endforelse
                         </select>
                     </div>
@@ -81,8 +80,15 @@
                     @if(!is_string($customer))
                         <input type="hidden" class="form-control rounded-0 px-3" name="email_login" value="{{ $customer->email }}">
                     @else
-                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" value="" required>
-                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" value="" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" value="" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" value="" required>
+                            </div>
+                        </div>
+
                         <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" maxlength="100" required>
                         <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">
 
@@ -549,12 +555,13 @@
                     <label class="d-block mt-3">Order Comments</label>
                     <textarea name="order_notes" class="form-control rounded-0 mt-2" rows="5"
                         placeholder="Enter Order Notes"></textarea>
+                    <button type="submit" id="checkout-button" class="btn btn-primary btn-block mt-4 pt-4">Checkout &amp; Pay</button>
                 </div>
 {{--                //main_shipping_double_address - vicky 26-12-2024 start--}}
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-3">
-                 <div class=" p-2  bg-white" style="border: 2px solid grey;">
+                    <div class="p-2 bg-white mt-4 pt-4" style="border: 2px solid grey; position: sticky; top: 100px; z-index: 10;">
                      <h3 class="mt-4">Order Summary</h3>
                      <ul class="order-details p-0 mb-5">
                          @php
