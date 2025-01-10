@@ -90,11 +90,22 @@
                         </div>
 
                         <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" maxlength="100" required>
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">
+{{--                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">--}}
+                        <div class="d-flex">
+                            <select name="phone_code" id="country_code" class="form-control rounded-0 px-3 " style="max-width: 100px;" aria-label="Country Code">
+                                @foreach($countries as $country)
+                                    <option value="{{$country->dial_code}}">{{$country->code}}({{$country->dial_code}})</option>
+                                @endforeach
+                            </select>
 
+                            <input type="text" name="phone_number" id="phone_number"
+                                   class="form-control" value="{{ old('phone_number') }}"
+                                   aria-label="Phone Number" placeholder="Enter phone number">
+                        </div>
                     @endif
                     <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_address_line_2" placeholder="Address line 2" id="address">
                     <div>
                         <div>
                             <label for="billing_postcode" class="form-label">Postal Code</label>
@@ -256,6 +267,11 @@
                             <label for="shipping_flat_suite" class="form-label">Flat/Suite</label>
                             <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" id="shipping_flat_suite" placeholder="Flat/Suite">
                         </div>
+                        <div>
+                            <label for="shipping_flat_suite" class="form-label">Address Line 2</label>
+                            <input type="text" class="form-control rounded-0 px-3" name="shipping_address_line_2" placeholder="Address line 2" id="address">
+                        </div>
+
 
                         <div>
                             <label for="shipping_postcode" class="form-label">Postal Code</label>
@@ -555,7 +571,7 @@
                     <label class="d-block mt-3">Order Comments</label>
                     <textarea name="order_notes" class="form-control rounded-0 mt-2" rows="5"
                         placeholder="Enter Order Notes"></textarea>
-                    <button type="submit" id="checkout-button" class="btn btn-primary btn-block mt-4 pt-4">Checkout &amp; Pay</button>
+                    <button type="submit" id="checkout-button" class="btn btn-primary btn-block mt-4 p-2 -">Checkout &amp; Pay</button>
                 </div>
 {{--                //main_shipping_double_address - vicky 26-12-2024 start--}}
                 <div class="col-md-1">

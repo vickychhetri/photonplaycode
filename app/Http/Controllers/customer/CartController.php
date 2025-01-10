@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\ResetPasswordJob;
 use App\Mail\OrderPlaceMail;
 use App\Models\Cart;
+use App\Models\Country;
 use App\Models\Coupon;
 use App\Models\Currency;
 use App\Models\Customer;
@@ -247,7 +248,8 @@ $products_list_ids=[];
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
             }
-        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount_a', 'addresses','customer'));
+        $countries = Country::all();
+        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount_a', 'addresses','customer','countries'));
     }
 
     public function removeCartItem($id){
@@ -285,9 +287,10 @@ $products_list_ids=[];
                 $name = $request->name;
                 $last_name = $request->last_name;
                 $phone_number = $request->phone_number;
+                $phone_code = $request->phone_code;
                 $userId=$this->findAndUseExistUser($request->email);
                 if(!isset($userId)){
-                    $userId = $this->createGuestUser($email, $name,$last_name,$phone_number);
+                    $userId = $this->createGuestUser($email, $name,$last_name,$phone_number,$phone_code);
                 }
                 $type = 'guest';
             }else{
@@ -406,6 +409,8 @@ $products_list_ids=[];
                'billing_state' => $request->billing_state,
                'billing_country' => $request->billing_country,
                'billing_postcode' => $request->billing_postcode,
+               'billing_address_line_2' => $request->billing_address_line_2,
+               'shipping_address_line_2' => $request->shipping_address_line_2,
                //main_shipping_double_address - vicky 26-12-2024 start
                'is_shipping_same' => $request->is_shipping_same==1?1:0,
                'shipping_street' => $request->shipping_street,
@@ -647,7 +652,7 @@ $products_list_ids=[];
         }
        return null;
     }
-    public function createGuestUser($email, $name, $last_name=null,$phone=null)
+    public function createGuestUser($email, $name, $last_name=null,$phone=null,$phone_code=null)
     {
         $stripe = Stripe\Stripe::setApiKey(config('services.stripe.stripe_secret'));
 
@@ -660,6 +665,7 @@ $products_list_ids=[];
             'stripe_id' => $customer->id,
             'name' => $name,
             'last_name' => $last_name,
+            'phone_code' => $phone_code,
             'phone_number' => $phone,
             'email' => $email,
             'password' => Hash::make(rand(10000000, 99999999)),
