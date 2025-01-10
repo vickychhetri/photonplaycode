@@ -500,7 +500,7 @@
                         Feedback Signs, now with Multi-function Display and Cloud Control access. </p>
 
                     <div class="d-flex gap-4 mt-4">
-                        <a href="#product_shop" style="text-decoration: none;">  <img
+                        <a href="{{route("customer.product.shop")}}" style="text-decoration: none;">  <img
                                 src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now" style="max-width: 200px;"> </a>
                     </div>
                 </div>
