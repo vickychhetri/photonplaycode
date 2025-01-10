@@ -103,9 +103,20 @@
                                    aria-label="Phone Number" placeholder="Enter phone number">
                         </div>
                     @endif
+                    <div>
+                        <label for="billing_street" class="form-label">Street Number</label>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
+                    </div>
+
+                    <div>
+                        <label for="billing_flat_suite" class="form-label">Flat/Suite</label>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
+                    </div>
+                    <div>
+                        <label for="billing_flat_suite" class="form-label">Address line 2</label>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_address_line_2" placeholder="Address line 2" id="address">
+                    </div>
+
                     <div>
                         <div>
                             <label for="billing_postcode" class="form-label">Postal Code</label>
