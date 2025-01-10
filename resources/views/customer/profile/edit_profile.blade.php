@@ -27,7 +27,9 @@
                                 </div>
                                 <div class="mb-4">
                                     <label for="phone_number" class="form-label">Phone Number:</label>
-                                    <p class="form-control-plaintext">{{isset($customer->phone_number)?"+".$customer->phone_number:"Not Available"}}</p>
+                                    <p class="form-control-plaintext">
+                                        {{$customer->phone_code."-"}}
+                                        {{isset($customer->phone_number)?$customer->phone_number:"Not Available"}}</p>
                                 </div>
                                 <div class="mb-4">
                                     <label for="company_name" class="form-label">Company Name:</label>
