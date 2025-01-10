@@ -14,7 +14,9 @@
                                 <form method="post" action="{{route('customer.update.profile')}}"
                                       id="profileUpdateForm">
                                     @csrf
-                                    <input type="hidden" name="email" class="form-control shadow-none" value="{{$customer->email}}" readonly>
+                                    <div class="mb-4">
+                                    <input type="email" name="email" class="form-control shadow-none" style="background-color: #faf4f4;" value="{{$customer->email}}" readonly>
+                                    </div>
                                     <div class="mb-4">
                                         <input type="text" name="name" class="form-control shadow-none" value="{{$customer->name}}"
                                                id="name" placeholder="Customer First Name">
