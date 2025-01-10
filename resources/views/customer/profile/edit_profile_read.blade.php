@@ -50,16 +50,15 @@
                                         <div class="error-message" id="phone_number_error"></div>
                                         <div class="d-flex gap-2">
                                             <!-- Dropdown for Country Code -->
-                                            <select name="phone_code" id="country_code" class="form-select w-auto" aria-label="Country Code">
+                                            <select name="phone_code" id="country_code" class="form-select w-auto" aria-label="Country Code" >
                                                 @foreach($countries as $country)
-                                                    <option value="{{$country->dial_code}}" {{$country->dial_code==$customer->phone_code?"selected":''}}>{{$country->dial_code}}</option>
+                                                    <option value="{{$country->dial_code}}" {{$country->dial_code==$customer->phone_code?"selected":''}}>{{$country->code}}({{$country->dial_code}})</option>
                                                 @endforeach
                                             </select>
 
                                             <input type="number" name="phone_number" id="phone_number"
                                                    class="form-control flex-grow-1" value="{{$customer->phone_number}}"
-                                                   aria-label="Phone Number" placeholder="Enter phone number" min="1000000" max="9999999999"
-                                                   oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);">
+                                                   aria-label="Phone Number" placeholder="Enter phone number" >
                                         </div>
                                     </div>
                                     <div class="mb-4">
@@ -113,6 +112,16 @@
                 isValid = false;
                 document.getElementById('passwordError').textContent = 'Enter Password (Password must be 8-12 characters long, contain at least one letter, one number, and one special character like @$!%*?&)';
             }
+
+            var phoneNumber = document.getElementById('phone_number').value;
+            var phoneRegex = /^[0-9]{8,11}$/; // Allows only 8–11 digits
+            if (!phoneNumber || !phoneRegex.test(phoneNumber)) {
+                isValid = false;
+                document.getElementById('phone_number_error').textContent = 'Please enter a valid phone number.';
+            } else {
+                document.getElementById('phone_number_error').textContent = ''; // Clear the error if valid
+            }
+
 
             // Submit form if valid
             if (isValid) {

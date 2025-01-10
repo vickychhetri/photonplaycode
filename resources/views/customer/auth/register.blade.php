@@ -26,8 +26,8 @@
     <div class="login-sec">
         <div class="form-section2 p-3">
             <div class="d-flex flex-lg-row form-section-inner">
-                <div class="login-parent">
-                    <div class="login-parent-inner">
+                <div class="login-parent" >
+                    <div class="login-parent-inner" style="max-width: 400px">
                         <h4 class="mb-lg-5 mb-1 text-dark">Create an Account</h4>
 
                         <!-- Display all validation errors here -->
@@ -49,7 +49,7 @@
                                 <!-- First Name -->
                                 <div class="col-md-6 mb-3">
                                     <label for="">Name</label>
-                                    <div class="error-message" id="nameError"></div>
+                                    <span class="error-message" id="nameError"></span>
                                     <div class="input-group input-cus-group mb-1">
                                         <input type="text" name="name" id="name" class="form-control input-cus"
                                                value="{{ old('name') }}" aria-label="Name">
@@ -59,7 +59,7 @@
                                 <!-- Last Name -->
                                 <div class="col-md-6 mb-3">
                                     <label for="last_name">Last Name</label>
-                                    <div class="error-message" id="lastNameError"></div>
+                                    <span class="error-message" id="lastNameError"></span>
                                     <div class="input-group input-cus-group">
                                         <input type="text" name="last_name" id="last_name" class="form-control input-cus"
                                                value="{{ old('last_name') }}" aria-label="Last Name">
@@ -83,14 +83,13 @@
                                     <!-- Dropdown for Country Code -->
                                     <select name="phone_code" id="country_code" class="form-select w-auto" aria-label="Country Code">
                                         @foreach($countries as $country)
-                                            <option value="{{$country->dial_code}}">{{$country->dial_code}}</option>
+                                            <option value="{{$country->dial_code}}">{{$country->code}}({{$country->dial_code}})</option>
                                         @endforeach
                                     </select>
 
                                     <input type="number" name="phone_number" id="phone_number"
                                            class="form-control flex-grow-1" value="{{ old('phone_number') }}"
-                                           aria-label="Phone Number" placeholder="Enter phone number" min="1000000" max="9999999999"
-                                           oninput="if(this.value.length > 10) this.value = this.value.slice(0, 10);">
+                                           aria-label="Phone Number" placeholder="Enter phone number">
                                 </div>
                             </div>
 
@@ -194,6 +193,11 @@
                 isValid = false;
                 document.getElementById('nameError').textContent = 'Name is required.';
             }
+            var last_name = document.getElementById('last_name').value;
+            if (!last_name) {
+                isValid = false;
+                document.getElementById('lastNameError').textContent = 'Last name is required.';
+            }
 
             // Validate Email
             var email = document.getElementById('email').value;
@@ -202,6 +206,16 @@
                 isValid = false;
                 document.getElementById('emailError').textContent = 'Please enter a valid email address.';
             }
+
+            var phoneNumber = document.getElementById('phone_number').value;
+            var phoneRegex = /^[0-9]{8,11}$/; // Allows only 8–11 digits
+            if (!phoneNumber || !phoneRegex.test(phoneNumber)) {
+                isValid = false;
+                document.getElementById('phone_number_error').textContent = 'Please enter a valid phone number.';
+            } else {
+                document.getElementById('phone_number_error').textContent = ''; // Clear the error if valid
+            }
+
 
             // Validate Password
             var passwordValue = password.value;
@@ -231,7 +245,7 @@
     /* Error message style */
     .error-message {
         color: red;
-        font-size: 0.875rem;
+        font-size: 0.675rem;
         margin-top: 5px;
     }
 </style>
