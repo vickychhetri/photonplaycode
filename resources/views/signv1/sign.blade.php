@@ -710,8 +710,14 @@
                             </div>
                             <div class="news-card-content">
                                 <h6 class="mb-4">{{$blog['title']['rendered']}}</h6>
-
-                                <p class="fs-12 fw-semibold text-secondary mb-4">Jan 22, 2022 - <span
+                                <p class="fs-12 fw-semibold text-secondary mb-4">
+                                    @php
+                                    if ($blog["date"]){
+                                        $formattedDate = \Carbon\Carbon::parse($blog["date"])->format('M d, Y');
+                                        echo $formattedDate;
+                                    }
+                                    @endphp
+                                    - <span
                                         class="text-primary">Photonplay System</span></p>
 
                                 <p class="text-secondary fs-12 mb-4">{!! Str::limit($blog['excerpt']['rendered'], 200)  !!} </p>
