@@ -15,18 +15,22 @@
                                       id="profileUpdateForm">
                                     @csrf
                                     <div class="mb-4">
+                                        <label> Email</label>
                                     <input type="email" name="email" class="form-control shadow-none" style="background-color: #faf4f4;" value="{{$customer->email}}" readonly>
                                     </div>
                                     <div class="mb-4">
+                                        <label> Name</label>
                                         <input type="text" name="name" class="form-control shadow-none" value="{{$customer->name}}"
                                                id="name" placeholder="Customer First Name">
                                     </div>
                                     <div class="mb-4">
+                                        <label> Last Name</label>
                                         <input type="text" name="last_name" class="form-control shadow-none" value="{{$customer->last_name}}"
                                                id="last_name" placeholder="Last Name">
                                     </div>
 
                                     <div class="mb-4">
+
                                         <label for="password">Password
                                             <span style="font-size: 10px;">
                                                 (Password must be 8-12 characters long, contain at least one letter, one number, and one special character like @$!%*?&)
@@ -59,6 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-4">
+                                        <label> Company</label>
                                         <input type="text" name="company_name" class="form-control shadow-none" value="{{$customer->company_name}}"
                                                id="exampleInputPassword3" placeholder="Company Name">
                                     </div>
