@@ -876,9 +876,15 @@
                 messageContainer.style.marginTop = '5px';
                 messageContainer.innerText = fieldsWithMessages[selector];
 
+
                 // Insert the message above the field
                 if (!field.previousElementSibling || !field.previousElementSibling.classList.contains('error-message')) {
-                    field.parentNode.insertBefore(messageContainer, field);
+                    if(field.id=="phone_number"){
+                        return;
+                    }else {
+                        field.parentNode.insertBefore(messageContainer, field);
+                    }
+
                 }
 
                 if (field === fieldsToCheck[0]) {
