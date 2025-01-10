@@ -4,6 +4,7 @@ namespace App\Http\Controllers\customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContentPage;
+use App\Models\Country;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\User;
@@ -38,7 +39,8 @@ class CustomerProfileController extends Controller
     }
     public function editMyProfileForm(){
         $customer = Customer::find((Session::get('user')->id));
-        return view('customer.profile.edit_profile_read', compact('customer'));
+        $countries = Country::all();
+        return view('customer.profile.edit_profile_read', compact('customer','countries'));
     }
 
     public function address(){
@@ -67,13 +69,16 @@ class CustomerProfileController extends Controller
         $request->validate([
             'email' => 'required|email',
             'phone_number' => 'nullable|integer',
+            'phone_code' => 'nullable',
         ]);
         $customer = Customer::find(Session::get('user')->id);
 
         $customer->update([
-            'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone_number' => $request->phone_number,
+            'phone_code' => $request->phone_code,
+            'name' => $request->name,
+            'last_name' => $request->last_name,
             'company_name' => $request->company_name,
         ]);
 

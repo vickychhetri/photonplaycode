@@ -12,6 +12,16 @@
                             <h5 class="btn-light fs-5 py-3">Account Details</h5>
                             <div class="card-box border p-3">
                                 <div class="mb-4">
+                                    <label for="email" class="form-label">First Name:</label>
+                                    <p class="form-control-plaintext">{{$customer->name}}</p>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="email" class="form-label">Last Name:</label>
+                                    <p class="form-control-plaintext">{{$customer->last_name}}</p>
+                                </div>
+
+                                <div class="mb-4">
                                     <label for="email" class="form-label">Email:</label>
                                     <p class="form-control-plaintext">{{$customer->email}}</p>
                                 </div>
