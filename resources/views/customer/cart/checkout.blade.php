@@ -72,17 +72,17 @@
                         </h4>
                     </div>
                     <h3>billing details</h3>
-                    @if(!is_string($customer))
-                    <div class="mb-3">
-                        <select name="billing_address" id="saved_address" class="form-select">
-                                <option value="0" selected> --Select Saved Address-- </option>
-                            @forelse ($addresses as $address)
-                                <option value="{{$address->id}}">{{$address->street_number . ' ... ' . $address->country}}</option>
-                            @empty
-                            @endforelse
-                        </select>
-                    </div>
-                    @endif
+{{--                    @if(!is_string($customer))--}}
+{{--                    <div class="mb-3">--}}
+{{--                        <select name="billing_address" id="saved_address" class="form-select">--}}
+{{--                                <option value="0" selected> --Select Saved Address-- </option>--}}
+{{--                            @forelse ($addresses as $address)--}}
+{{--                                <option value="{{$address->id}}">{{$address->street_number . ' ... ' . $address->country}}</option>--}}
+{{--                            @empty--}}
+{{--                            @endforelse--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
+{{--                    @endif--}}
                     @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                     @if(!is_string($customer))
                         <input type="hidden" class="form-control rounded-0 px-3" name="email_login" value="{{ $customer->email }}">
@@ -547,7 +547,15 @@
 
     $(document).ready(function() {
         $('#saved_address').on('click', function () {
-            var addressId = $('#saved_address').val(); // Fetch the selected address ID
+            var addressId = $('#saved_address').val();
+
+            if(!addressId){
+                return;
+            }
+            if(addressId=="0"){
+                return;
+            }
+            // Fetch the selected address ID
             var url = "{{ route('customer.get-saved-address', ':id') }}";
             url = url.replace(':id', addressId);
 
