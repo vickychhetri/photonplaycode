@@ -79,16 +79,16 @@
                             <div class="mb-3">
                                 <label for="phone_number" class="form-label">Phone Number</label>
                                 <div class="error-message" id="phone_number_error"></div>
-                                <div class="d-flex gap-2">
+                                <div class=" input-cus-group d-flex gap-2">
                                     <!-- Dropdown for Country Code -->
-                                    <select name="phone_code" id="country_code" class="form-select w-auto" aria-label="Country Code">
+                                    <select name="phone_code" id="country_code" class="form-select w-auto input-cus" aria-label="Country Code">
                                         @foreach($countries as $country)
                                             <option value="{{$country->dial_code}}">{{$country->code}}({{$country->dial_code}})</option>
                                         @endforeach
                                     </select>
 
-                                    <input type="number" name="phone_number" id="phone_number"
-                                           class="form-control flex-grow-1" value="{{ old('phone_number') }}"
+                                    <input type="text" name="phone_number" id="phone_number"
+                                           class="form-control flex-grow-1 input-cus" value="{{ old('phone_number') }}"
                                            aria-label="Phone Number" placeholder="Enter phone number">
                                 </div>
                             </div>
