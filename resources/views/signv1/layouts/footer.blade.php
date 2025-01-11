@@ -30,10 +30,10 @@
                     <li><a href="{{route("customer.shopping.bag")}}" class="text-white text-decoration-none">Cart</a></li>
                     <li><a href="{{route("customer.contact.us")}}" class="text-white text-decoration-none">Report an Issue</a></li>
                 </ul>
-                <h6 class="fw-bold">Currency</h6>
-                <span>
-                          <x-CurrencySelector/>
-                    </span>
+{{--                <h6 class="fw-bold">Currency</h6>--}}
+{{--                <span>--}}
+{{--                          <x-CurrencySelector/>--}}
+{{--                    </span>--}}
             </div>
 
             <!-- Customer Service Section -->
