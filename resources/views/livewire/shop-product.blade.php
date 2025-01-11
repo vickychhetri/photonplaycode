@@ -73,10 +73,10 @@
 
                                 <div x-data="{
                                             priceRange: @entangle('priceRange'),
-                                            minPrice: 0,
-                                            maxPrice: 10000,
-                                            minRange: 0,
-                                            maxRange: 10000,
+                                            minPrice: {{ $minPrice }},
+                                            maxPrice: {{ $maxPrice }},
+                                            minRange: {{ $minPrice }},
+                                            maxRange: {{ $maxPrice }},
                                             $init() {
                                                 this.minPrice = this.priceRange[0];
                                                 this.maxPrice = this.priceRange[1];
@@ -86,8 +86,8 @@
                                     <div class="card-body">
                                         <p class="h6 mb-3"><strong>Price Range</strong></p>
 
-                                        <small class="text-muted" x-show="minPrice === 0 && maxPrice === 10000"><em>No filters applied</em></small>
-                                        <small class="text-muted" x-show="minPrice !== 0 || maxPrice !== 10000">
+                                        <small class="text-muted" x-show="minPrice === {{$minPrice}} && maxPrice === {{ $maxPrice }}"><em>No filters applied</em></small>
+                                        <small class="text-muted" x-show="minPrice !== {{$minPrice}} || maxPrice !== {{ $maxPrice }}">
                                             <em>Range: $<span x-text="minPrice"></span> - $<span x-text="maxPrice"></span></em>
                                         </small>
 
@@ -108,6 +108,7 @@
                                                        x-bind:max="maxRange"
                                                        step="1"
                                                        class="form-range"
+                                                       style="display: none"
                                                        @input="@this.set('priceRange', [minPrice, maxPrice])" />
                                             </div>
                                         </div>
