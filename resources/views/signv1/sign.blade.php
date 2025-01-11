@@ -258,7 +258,7 @@
                                             Yes
 
                                             <div class="text-center mt-1">
-                                                <a href="https://www.photonplay.com/radar-speed-signs/model/r1200"
+                                                <a href="/radar-speed-signs/model/r1200"
                                                    class="pt-1">   <img
                                                             src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
@@ -289,7 +289,7 @@
                                             Yes
 
                                             <div class="text-center mt-1">
-                                                <a href="https://www.photonplay.com/radar-speed-signs/model/r1500m"
+                                                <a href="/radar-speed-signs/model/r1500m"
                                                    class="pt-1">  <img
                                                         src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;"> </a>
                                             </div>
@@ -320,7 +320,7 @@
                                             Yes
 
                                             <div class="text-center mt-1">
-                                                <a href="https://www.photonplay.com/radar-speed-signs/model/r1800m"
+                                                <a href="/radar-speed-signs/model/r1800m"
                                                    class="pt-1">  <img
                                                         src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
