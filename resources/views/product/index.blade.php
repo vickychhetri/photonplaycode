@@ -39,7 +39,7 @@
                                         <th>#</th>
                                         <th>Title</th>
                                         <th>Price</th>
-                                        <th>Status</th>
+                                        <th>Code</th>
                                         <th>Created at</th>
                                         {{-- <th>Status </th> --}}
                                         <th>Options</th>
@@ -51,7 +51,11 @@
                                         <td>{{$Sr++}}</td>
                                         <td>{{$product->title}}</td>
                                         <td>{{$product->price}}</td>
-                                        <td><span class="text-{{$product->status=='Listed'?'success':($product->status=='Unlisted'?'warning':'danger')}}">{{$product->status}} </span></td>
+                                        <td>
+                                            <span> {{$product->code??"NOT ASSIGNED"}} </span>
+
+                                        </td>
+
                                         <td>{{$product->created_at->format('d/m/Y')}}</td>
                                         <td>
                                             <a href="{{route('admin.product_basic_update',$product->id)}}" class="text-success p-1" data-toggle="tooltip" title="Edit">

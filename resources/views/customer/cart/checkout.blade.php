@@ -3,6 +3,13 @@
     <script src="https://js.stripe.com/v3/"></script>
   </head>
 {{--//main_shipping_double_address - vicky 26-12-2024 start--}}
+
+<style>
+    .error {
+        border: 2px solid red;
+    }
+</style>
+
 <style>
     .text-amount {
         font-family: Roboto, sans-serif;
@@ -48,7 +55,7 @@
     <section class="step-form">
         <div class="container">
 {{--            //main_shipping_double_address - vicky 26-12-2024 start--}}
-            <form action="{{route('customer.place.order')}}" method="post">
+            <form id="myFormCheckoutProcess" action="{{route('customer.place.order')}}" method="post">
 {{--                //main_shipping_double_address - vicky 26-12-2024 end--}}
 
             <div class="row">
@@ -65,30 +72,60 @@
                         </h4>
                     </div>
                     <h3>billing details</h3>
-                    @if(!is_string($customer))
-                    <div class="mb-3">
-                        <select name="billing_address" id="saved_address" class="form-select">
-                                <option value="0" selected> --Select Saved Address-- </option>
-                            @forelse ($addresses as $address)
-                                <option value="{{$address->id}}">{{$address->street_number . ' ... ' . $address->country}}</option>
-                            @empty
-                                <option value="0">No addresses saved.</option>
-                            @endforelse
-                        </select>
-                    </div>
-                    @endif
+{{--                    @if(!is_string($customer))--}}
+{{--                    <div class="mb-3">--}}
+{{--                        <select name="billing_address" id="saved_address" class="form-select">--}}
+{{--                                <option value="0" selected> --Select Saved Address-- </option>--}}
+{{--                            @forelse ($addresses as $address)--}}
+{{--                                <option value="{{$address->id}}">{{$address->street_number . ' ... ' . $address->country}}</option>--}}
+{{--                            @empty--}}
+{{--                            @endforelse--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
+{{--                    @endif--}}
                     @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                     @if(!is_string($customer))
                         <input type="hidden" class="form-control rounded-0 px-3" name="email_login" value="{{ $customer->email }}">
                     @else
-                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" value="" required>
-                        <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" value="" required>
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" name="email" value="" maxlength="100" required>
-                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter First Name" name="name" id="name" value="" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control rounded-0 px-3" maxlength="40" placeholder="Enter Last Name" name="last_name" id="last_name" value="" required>
+                            </div>
+                        </div>
 
+                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" id-="email" name="email" value="" id="email" maxlength="100" required>
+{{--                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">--}}
+                        <span style="font-size: 8px"> (Country code : e.g US/CA) </span>
+                        <div class="d-flex">
+
+                            <select name="phone_code" id="country_code" class="form-control rounded-0 px-3 " style="max-width: 100px;" aria-label="Country Code">
+                                @foreach($countries as $country)
+                                    <option value="{{$country->dial_code}}">{{$country->code}}({{$country->dial_code}})</option>
+                                @endforeach
+                            </select>
+
+                            <input type="text" name="phone_number" id="phone_number"
+                                   class="form-control" value="{{ old('phone_number') }}"
+                                   aria-label="Phone Number" placeholder="Enter phone number">
+                        </div>
                     @endif
+                    <div>
+                        <label for="billing_street" class="form-label">Street Number</label>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
+                    </div>
+
+                    <div>
+                        <label for="billing_flat_suite" class="form-label">Flat/Suite</label>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
+                    </div>
+                    <div>
+                        <label for="billing_flat_suite" class="form-label">Address line 2</label>
+                    <input type="text" class="form-control rounded-0 px-3" name="billing_address_line_2" placeholder="Address line 2" id="address">
+                    </div>
+
                     <div>
                         <div>
                             <label for="billing_postcode" class="form-label">Postal Code</label>
@@ -250,6 +287,11 @@
                             <label for="shipping_flat_suite" class="form-label">Flat/Suite</label>
                             <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" id="shipping_flat_suite" placeholder="Flat/Suite">
                         </div>
+                        <div>
+                            <label for="shipping_flat_suite" class="form-label">Address Line 2</label>
+                            <input type="text" class="form-control rounded-0 px-3" name="shipping_address_line_2" placeholder="Address line 2" id="address">
+                        </div>
+
 
                         <div>
                             <label for="shipping_postcode" class="form-label">Postal Code</label>
@@ -289,9 +331,12 @@
                                 if ($(this).is(':checked')) {
                                     // Hide shipping details and reset fields
                                     $('#shipping-details').addClass('d-none');
+                                    toggleRequiredFields('remove');
                                     resetShippingFields();
+
                                 } else {
                                     // Show shipping details
+                                    toggleRequiredFields('add');
                                     $('#shipping-details').removeClass('d-none');
                                 }
                             });
@@ -305,6 +350,25 @@
                                 $('#shipping_state').html('<option value="">Select State</option>');
                                 $('#shipping_city').html('<option value="">Select City</option>');
                                 $('#shipping-suggestions').hide().html('');
+                            }
+
+                            function toggleRequiredFields(action) {
+                                const fields = [
+                                    '#shipping_postcode',
+                                    '#shipping_street',
+                                    '#shipping_flat_suite',
+                                    '#shipping_country',
+                                    '#shipping_state',
+                                    '#shipping_city'
+                                ];
+
+                                fields.forEach(function(field) {
+                                    if (action === 'add') {
+                                        $(field).attr('required', 'required');
+                                    } else if (action === 'remove') {
+                                        $(field).removeAttr('required');
+                                    }
+                                });
                             }
 
                             // Fetch shipping location suggestions based on postal code
@@ -380,168 +444,6 @@
                         });
                     </script>
 
-
-                    {{--                    <div id="shipping-details" class="mt-3 d-none">--}}
-{{--                        <input type="text" class="form-control rounded-0 px-3" name="shipping_street" placeholder="Street Number">--}}
-
-{{--                        <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" placeholder="Flat/Suite">--}}
-{{--                        <select id="shipping_country" class="form-control rounded-0 px-3" name="shipping_country">--}}
-{{--                            <option value="">Select Country</option>--}}
-{{--                        </select>--}}
-{{--                        <select id="shipping_state" class="form-control rounded-0 px-3" name="shipping_state">--}}
-{{--                            <option value="">Select State</option>--}}
-{{--                        </select>--}}
-{{--                        <select id="shipping_city" class="form-control rounded-0 px-3" name="shipping_city">--}}
-{{--                            <option value="">Select City</option>--}}
-{{--                        </select>--}}
-{{--                        <input type="text" class="form-control rounded-0 px-3" name="shipping_postcode" id="shipping_postcode" placeholder="Postal Code">--}}
-{{--                    </div>--}}
-
-
-{{--                    <script>--}}
-{{--                        $(document).ready(function () {--}}
-{{--                            // Toggle Shipping Details--}}
-{{--                            $('#is_shipping_same').change(function () {--}}
-{{--                                if ($(this).is(':checked')) {--}}
-{{--                                    $('#shipping-details').addClass('d-none');--}}
-{{--                                } else {--}}
-{{--                                    $('#shipping-details').removeClass('d-none');--}}
-{{--                                }--}}
-{{--                            });--}}
-{{--                        });--}}
-
-{{--                        $(document).ready(function () {--}}
-{{--                            const apiBaseUrl = "https://countriesnow.space/api/v0.1";--}}
-
-{{--                            // Populate Countries for Billing--}}
-{{--                            fetch(`${apiBaseUrl}/countries`)--}}
-{{--                                .then(response => response.json())--}}
-{{--                                .then(data => {--}}
-{{--                                    const countries = data.data;--}}
-{{--                                    countries.forEach(country => {--}}
-{{--                                        $('#billing_country').append(new Option(country.country, country.country));--}}
-{{--                                        $('#shipping_country').append(new Option(country.country, country.country)); // For Shipping--}}
-{{--                                    });--}}
-{{--                                })--}}
-{{--                                .catch(err => console.error("Error fetching countries:", err));--}}
-
-{{--                            // Handle Country Change for Billing--}}
-{{--                            $('#billing_country').change(function () {--}}
-{{--                                const selectedCountry = $(this).val();--}}
-{{--                                if (selectedCountry) {--}}
-{{--                                    $('#billing_state').empty().append(new Option("Select State", ""));--}}
-{{--                                    $('#billing_city').empty().append(new Option("Select City", ""));--}}
-{{--                                    $('#billing_postcode').val("");--}}
-
-{{--                                    fetch(`${apiBaseUrl}/countries/states`, {--}}
-{{--                                        method: "POST",--}}
-{{--                                        headers: { "Content-Type": "application/json" },--}}
-{{--                                        body: JSON.stringify({ country: selectedCountry })--}}
-{{--                                    })--}}
-{{--                                        .then(response => response.json())--}}
-{{--                                        .then(data => {--}}
-{{--                                            const states = data.data.states || [];--}}
-{{--                                            states.forEach(state => {--}}
-{{--                                                $('#billing_state').append(new Option(state.name, state.name));--}}
-{{--                                            });--}}
-{{--                                        })--}}
-{{--                                        .catch(err => console.error("Error fetching states:", err));--}}
-{{--                                }--}}
-{{--                            });--}}
-
-{{--                            // Handle State Change for Billing--}}
-{{--                            $('#billing_state').change(function () {--}}
-{{--                                const selectedCountry = $('#billing_country').val();--}}
-{{--                                const selectedState = $(this).val();--}}
-{{--                                if (selectedState) {--}}
-{{--                                    $('#billing_city').empty().append(new Option("Select City", ""));--}}
-{{--                                    $('#billing_postcode').val("");--}}
-
-{{--                                    fetch(`${apiBaseUrl}/countries/state/cities`, {--}}
-{{--                                        method: "POST",--}}
-{{--                                        headers: { "Content-Type": "application/json" },--}}
-{{--                                        body: JSON.stringify({ country: selectedCountry, state: selectedState })--}}
-{{--                                    })--}}
-{{--                                        .then(response => response.json())--}}
-{{--                                        .then(data => {--}}
-{{--                                            const cities = data.data || [];--}}
-{{--                                            cities.forEach(city => {--}}
-{{--                                                $('#billing_city').append(new Option(city, city));--}}
-{{--                                            });--}}
-{{--                                        })--}}
-{{--                                        .catch(err => console.error("Error fetching cities:", err));--}}
-{{--                                }--}}
-{{--                            });--}}
-
-{{--                            // Handle Country Change for Shipping--}}
-{{--                            $('#shipping_country').change(function () {--}}
-{{--                                const selectedCountry = $(this).val();--}}
-{{--                                if (selectedCountry) {--}}
-{{--                                    $('#shipping_state').empty().append(new Option("Select State", ""));--}}
-{{--                                    $('#shipping_city').empty().append(new Option("Select City", ""));--}}
-{{--                                    $('#shipping_postcode').val("");--}}
-
-{{--                                    fetch(`${apiBaseUrl}/countries/states`, {--}}
-{{--                                        method: "POST",--}}
-{{--                                        headers: { "Content-Type": "application/json" },--}}
-{{--                                        body: JSON.stringify({ country: selectedCountry })--}}
-{{--                                    })--}}
-{{--                                        .then(response => response.json())--}}
-{{--                                        .then(data => {--}}
-{{--                                            const states = data.data.states || [];--}}
-{{--                                            states.forEach(state => {--}}
-{{--                                                $('#shipping_state').append(new Option(state.name, state.name));--}}
-{{--                                            });--}}
-{{--                                        })--}}
-{{--                                        .catch(err => console.error("Error fetching states:", err));--}}
-{{--                                }--}}
-{{--                            });--}}
-
-{{--                            // Handle State Change for Shipping--}}
-{{--                            $('#shipping_state').change(function () {--}}
-{{--                                const selectedCountry = $('#shipping_country').val();--}}
-{{--                                const selectedState = $(this).val();--}}
-{{--                                if (selectedState) {--}}
-{{--                                    $('#shipping_city').empty().append(new Option("Select City", ""));--}}
-{{--                                    $('#shipping_postcode').val("");--}}
-
-{{--                                    fetch(`${apiBaseUrl}/countries/state/cities`, {--}}
-{{--                                        method: "POST",--}}
-{{--                                        headers: { "Content-Type": "application/json" },--}}
-{{--                                        body: JSON.stringify({ country: selectedCountry, state: selectedState })--}}
-{{--                                    })--}}
-{{--                                        .then(response => response.json())--}}
-{{--                                        .then(data => {--}}
-{{--                                            const cities = data.data || [];--}}
-{{--                                            cities.forEach(city => {--}}
-{{--                                                $('#shipping_city').append(new Option(city, city));--}}
-{{--                                            });--}}
-{{--                                        })--}}
-{{--                                        .catch(err => console.error("Error fetching cities:", err));--}}
-{{--                                }--}}
-{{--                            });--}}
-
-{{--                            // Optional: Synchronize Shipping with Billing if "is_shipping_same" is checked--}}
-{{--                            $('#is_shipping_same').change(function () {--}}
-{{--                                if (this.checked) {--}}
-{{--                                    $('#shipping_street').val($('#billing_street').val());--}}
-{{--                                    $('#shipping_flat_suite').val($('#billing_flat_suite').val());--}}
-{{--                                    $('#shipping_country').val($('#billing_country').val()).trigger('change');--}}
-{{--                                    $('#shipping_state').val($('#billing_state').val()).trigger('change');--}}
-{{--                                    $('#shipping_city').val($('#billing_city').val()).trigger('change');--}}
-{{--                                    $('#shipping_postcode').val($('#billing_postcode').val());--}}
-{{--                                } else {--}}
-{{--                                    // Clear Shipping fields if unchecked--}}
-{{--                                    $('#shipping_street, #shipping_flat_suite, #shipping_postcode').val("");--}}
-{{--                                    $('#shipping_country, #shipping_state, #shipping_city').val("").trigger('change');--}}
-{{--                                }--}}
-{{--                            });--}}
-{{--                        });--}}
-
-
-{{--                    </script>--}}
-{{--                    //main_shipping_double_address - vicky 26-12-2024 end--}}
-
                     <input name="address" type="hidden" value=" "/>
                     {{-- <h3 class="mt-5 mb-2">SHIPPING ADDRESS</h3> --}}
                     {{-- <label for=""> <input type="checkbox" class="me-2 d-inline-block">SHIP TO A DIFFERENT
@@ -549,12 +451,13 @@
                     <label class="d-block mt-3">Order Comments</label>
                     <textarea name="order_notes" class="form-control rounded-0 mt-2" rows="5"
                         placeholder="Enter Order Notes"></textarea>
+                    <button id="checkout-button" onclick="showAlert(event)" class="btn btn-primary btn-block mt-4 p-2 -">Checkout &amp; Pay</button>
                 </div>
 {{--                //main_shipping_double_address - vicky 26-12-2024 start--}}
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-3">
-                 <div class=" p-2  bg-white" style="border: 2px solid grey;">
+                    <div class="p-2 bg-white mt-4 pt-4" style="border: 2px solid grey; position: sticky; top: 100px; z-index: 10;">
                      <h3 class="mt-4">Order Summary</h3>
                      <ul class="order-details p-0 mb-5">
                          @php
@@ -618,7 +521,7 @@
                      <input type="hidden" name="gst" value="{{$gst}}">
                      <input type="hidden" name="shipping" id="shipping" value="{{$shipping}}">
                      <input type="hidden" name="shipping_am" id="shipping_am" value="{{$shipping}}">
-                     <button type="submit" id="checkout-button" class="btn btn-primary btn-block w-100">Checkout & Pay</button>
+                     <button   id="checkout-button"  onclick="showAlert(event)"  class="btn btn-primary btn-block w-100">Checkout & Pay</button>
                      <p class="mt-2" style="font-size: 10px;font-weight: bold;">
                          Promotional offers cannot be combined with any other offers or discounts, including those in a sales quote. Some exclusions may apply. Products shipped by truck are not eligible for free shipping. Free shipping offers apply only to the continental United States.
                      </p>
@@ -644,7 +547,15 @@
 
     $(document).ready(function() {
         $('#saved_address').on('click', function () {
-            var addressId = $('#saved_address').val(); // Fetch the selected address ID
+            var addressId = $('#saved_address').val();
+
+            if(!addressId){
+                return;
+            }
+            if(addressId=="0"){
+                return;
+            }
+            // Fetch the selected address ID
             var url = "{{ route('customer.get-saved-address', ':id') }}";
             url = url.replace(':id', addressId);
 
@@ -924,5 +835,111 @@
         this.value = this.value.replace(/\D/g, '');
     });
 </script>
+
+
+<script>
+    function showAlert(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+
+        @if($customer && !is_string($customer))
+        var fieldsWithMessages = {
+            '#shipping_postcode': 'Shipping postcode is required',
+            '#shipping_street': 'Shipping street is required',
+            '#shipping_flat_suite': 'Shipping flat/suite is required',
+            '#shipping_country': 'Shipping country is required',
+            '#shipping_state': 'Shipping state is required',
+            '#shipping_city': 'Shipping city is required',
+            '#billing_postcode': 'Billing postcode is required',
+            '#billing_street': 'Billing street is required',
+            '#billing_flat_suite': 'Billing flat/suite is required',
+            '#billing_country': 'Billing country is required',
+            '#billing_state': 'Billing state is required',
+            '#billing_city': 'Billing city is required'
+        };
+
+        @else
+            var fieldsWithMessages = {
+            '#shipping_postcode': 'Shipping postcode is required',
+            '#shipping_street': 'Shipping street is required',
+            '#shipping_flat_suite': 'Shipping flat/suite is required',
+            '#shipping_country': 'Shipping country is required',
+            '#shipping_state': 'Shipping state is required',
+            '#shipping_city': 'Shipping city is required',
+            '#billing_postcode': 'Billing postcode is required',
+            '#billing_street': 'Billing street is required',
+            '#billing_flat_suite': 'Billing flat/suite is required',
+            '#billing_country': 'Billing country is required',
+            '#billing_state': 'Billing state is required',
+            '#billing_city': 'Billing city is required',
+            '#phone_number': 'Phone number is required',
+            '#name': 'Name is required',
+            '#last_name': 'Last name is required',
+            '#email': 'Email is required'
+        };
+
+
+        @endif
+
+
+        // Determine if shipping is the same as billing
+        const isShippingSame = $("#is_shipping_same").prop("checked");
+
+        // Process fields based on whether shipping is the same
+        const fieldsToCheck = isShippingSame ? Object.keys(fieldsWithMessages).filter(selector => !selector.startsWith('#shipping')) : Object.keys(fieldsWithMessages);
+
+        let hasErrors = false; // Flag to track if there are any errors
+
+        // Loop through fields to check and apply styles/messages
+        fieldsToCheck.forEach(selector => {
+            const field = document.querySelector(selector);
+            const messageContainer = document.createElement('div');
+
+            if (field && field.value.trim() === '') {
+                // Add a red border
+                field.style.border = '1px solid red';
+
+                // Create and display the error message
+                messageContainer.classList.add('error-message');
+                messageContainer.style.color = 'red';
+                messageContainer.style.fontSize = '12px';
+                messageContainer.style.marginTop = '5px';
+                messageContainer.innerText = fieldsWithMessages[selector];
+
+
+                // Insert the message above the field
+                if (!field.previousElementSibling || !field.previousElementSibling.classList.contains('error-message')) {
+                    if(field.id=="phone_number"){
+                        return;
+                    }else {
+                        field.parentNode.insertBefore(messageContainer, field);
+                    }
+
+                }
+
+                if (field === fieldsToCheck[0]) {
+                    // Scroll to the first error field
+                    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                hasErrors = true; // Set the flag to true if there is an error
+            } else {
+                // Reset border and remove message if not empty
+                field.style.border = '';
+                if (field.previousElementSibling && field.previousElementSibling.classList.contains('error-message')) {
+                    field.previousElementSibling.remove();
+                }
+            }
+        });
+
+        // If there are no errors, submit the form
+        if (!hasErrors) {
+            // Assuming you have a form element with ID 'myForm'
+            document.getElementById('myFormCheckoutProcess').submit(); // Replace 'myForm' with your actual form ID
+        }
+    }
+</script>
+
+
 
 

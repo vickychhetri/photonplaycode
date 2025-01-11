@@ -38,7 +38,7 @@
 {{--                                //main_shipping_double_address - vicky 26-12-2024 end--}}
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 mb-4 pt-4">
                             <div class="product-delievery  border-bottom border-0">
                                 <ul
                                     class="product-delievery__ d-flex flex-wrap justify-content-center align-items-center p-0 m-0">
@@ -55,73 +55,26 @@
                                         <span class="text-uppercase">${{$orders->grand_total}}</span>
                                     </li>
                                     <li class="d-flex flex-column align-items-center px-5">
+                                        <span class="text-uppercase">Invoice</span>
+                                        <span class="text-uppercase">
+                                            <a href="{{route('customer.customer_order_invoice',$orders->id)}}?download=Y">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                            </a>
+                                         </span>
+                                    </li>
+                                    <li class="d-flex flex-column align-items-center px-5">
                                         <span class="text-uppercase">Payment Method</span>
                                         <span class="text-uppercase">Online</span>
                                     </li>
+
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="payment-details bg-white p-3 pb-4 h-100">
-                                <h3 class="text-uppercase">our order</h3>
-                                <ul class="order-details p-0 mb-5">
-                                    @foreach ($orders->orderedProducts as $product)
-                                    <li class="d-flex justify-content-between py-3">
-                                        <span class="text-dark">{{$product->product->title}}  </span>
-                                        <span class="text-dark"> x {{$product->quantity}}</span>
-{{--                                        <span class="text-amount">${{$product->price}}</span>--}}
-                                    </li>
-                                    @endforeach
-{{--                                    <li class="d-flex justify-content-between py-3">--}}
-{{--                                        <span class="text text-capitalize">Cart Subtotal</span>--}}
-{{--                                        <span class="text-amount">${{$orders->cart_subtotal}}</span>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="d-flex justify-content-between py-3">--}}
-{{--                                        <span class="text text-capitalize"> Shipping and Handing</span>--}}
-{{--                                        <span class="text-amount">${{$orders->shipping}}</span>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="d-flex justify-content-between py-3">--}}
-{{--                                        <span class="text text-capitalize">VAT</span>--}}
-{{--                                        <span class="text-amount">${{$orders->gst}}</span>--}}
-{{--                                    </li>--}}
-{{--                                    @if($orders->discounted_amount != 0)--}}
-{{--                                    <li class="d-flex justify-content-between py-3">--}}
-{{--                                        <span class="text text-capitalize">Discount</span>--}}
-{{--                                        <span class="text-amount text-danger">${{$orders->discounted_amount}}</span>--}}
-{{--                                    </li>--}}
-{{--                                    @endif--}}
 
-{{--                                    <li class="d-flex justify-content-between py-3 active">--}}
-{{--                                        <span class="text text-capitalize fw-bold">Order total</span>--}}
-{{--                                        <span class="text-amount">${{$orders->grand_total}}</span>--}}
-{{--                                    </li>--}}
-{{--                                    <li class="d-flex justify-content-between py-3 active">--}}
-{{--                                        <span class="text text-capitalize fw-bold">Invoice</span>--}}
-{{--                                        <span class="text-amount"><a href="{{route('customer.customer_order_invoice',$orders->id)}}"><i class="bi bi-receipt"></i> </a></span>--}}
-{{--                                    </li>--}}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="box-coupon bg-white p-3 pt-4 pb-0 h-100">
-                                <h3 class="text-uppercase">Billing Details</h3>
-                                <ul class="order-details p-0 mb-5">
-                                    <li class="d-flex justify-content-start border-0 ">
-                                        <span class="text-amount text-uppercase">Address :  </span> &nbsp
-                                        <span class="text-dark">{{$orders->billing_street .' '. $orders->billing_flat_suite .' '. $orders->billing_city .' '. $orders->billing_state .' '. $orders->billing_country .' '.( $orders->billing_postcode)}}</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between border-0">
-                                        <span class="text-amount text-uppercase">email : </span>
-                                        <span class="text">{{$orders->user->email}}</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between border-0">
-                                        <span class="text-amount text-uppercase">phone : </span>
-                                        <span class="text">{{$orders->user->phone_number}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

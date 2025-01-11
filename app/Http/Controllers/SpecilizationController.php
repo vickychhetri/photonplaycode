@@ -41,9 +41,12 @@ class SpecilizationController extends Controller
     {
         $request->validate([
             'title' => 'required|unique:categories',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:512',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:512',
         ]);
-        $image_path = $request->file('image')->store('image', 'public');
+        $image_path=null;
+        if($request->file('image')){
+            $image_path = $request->file('image')->store('image', 'public');
+        }
         Specilization::create([
             'title' => $request->title,
             'image' => $image_path,

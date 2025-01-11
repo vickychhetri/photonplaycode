@@ -100,7 +100,7 @@
         .rotated-button {
             position: fixed; /* Keeps the button fixed on the screen */
             top: 50%; /* Center the button vertically */
-            left: -120px; /* Fixed position on the left side of the screen */
+            left: -110px; /* Fixed position on the left side of the screen */
             transform: translateY(-90%) rotate(-90deg); /* Center vertically and apply rotation */
             background-color: #206bbd; /* Button color */
             color: #fff; /* Text color */

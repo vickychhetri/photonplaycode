@@ -100,7 +100,7 @@
                                     Warranty
                                 </li>
                                 <li>
-                                    Cloud SSubscription (Free for 1 year)
+                                    Cloud Subscription (Free for 1 year)
                                 </li>
                                 <li>
                                     Starting Cost
@@ -258,7 +258,7 @@
                                             Yes
 
                                             <div class="text-center mt-1">
-                                                <a href="https://www.photonplay.com/radar-speed-signs/model/r1200"
+                                                <a href="/radar-speed-signs/model/r1200"
                                                    class="pt-1">   <img
                                                             src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
@@ -289,7 +289,7 @@
                                             Yes
 
                                             <div class="text-center mt-1">
-                                                <a href="https://www.photonplay.com/radar-speed-signs/model/r1500m"
+                                                <a href="/radar-speed-signs/model/r1500m"
                                                    class="pt-1">  <img
                                                         src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;"> </a>
                                             </div>
@@ -320,7 +320,7 @@
                                             Yes
 
                                             <div class="text-center mt-1">
-                                                <a href="https://www.photonplay.com/radar-speed-signs/model/r1800m"
+                                                <a href="/radar-speed-signs/model/r1800m"
                                                    class="pt-1">  <img
                                                         src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
@@ -710,8 +710,14 @@
                             </div>
                             <div class="news-card-content">
                                 <h6 class="mb-4">{{$blog['title']['rendered']}}</h6>
-
-                                <p class="fs-12 fw-semibold text-secondary mb-4">Jan 22, 2022 - <span
+                                <p class="fs-12 fw-semibold text-secondary mb-4">
+                                    @php
+                                    if ($blog["date"]){
+                                        $formattedDate = \Carbon\Carbon::parse($blog["date"])->format('M d, Y');
+                                        echo $formattedDate;
+                                    }
+                                    @endphp
+                                    - <span
                                         class="text-primary">Photonplay System</span></p>
 
                                 <p class="text-secondary fs-12 mb-4">{!! Str::limit($blog['excerpt']['rendered'], 200)  !!} </p>

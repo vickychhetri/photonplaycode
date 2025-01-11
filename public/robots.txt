@@ -1,13 +1,2 @@
 User-agent: *
-Allow: /
-Disallow: /cgi-bin/
-Disallow: /index.php
-Disallow: /public
-Disallow: /blog?category
-Disallow: /blog?months
-Disallow: /blog?tag
-Disallow: /blog/*/like-unlike
-Disallow: /admin/login
-Disallow: blog.photonplay.com
-
-Sitemap: https://www.photonplay.com/sitemap.xml
+Disallow: /

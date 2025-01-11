@@ -300,13 +300,15 @@
                             <x-cart-count/>
                         </div>
 
-                        <a href="{{route('customer.loginForm')}}" style="text-decoration: none;"> <img
-                                src="{{asset('assets\customer\images\user.png')}}" alt="Not Found"
-                                class="img-fluid me-2 ">
+
                         <div class="d-flex flex-column align-items-center ">
-                            <span class="text-dark">Login/Signup</span>
+                            <a href="{{route('customer.loginForm')}}"> <img
+                                    src="{{asset('assets\customer\images\user.png')}}" alt="Not Found"
+                                    class="img-fluid me-2 ">
+                            </a>
+                            <a href="{{route('customer.loginForm')}}" style="text-decoration: none;"> <span class="text-dark">Login/Signup</span> </a>
                         </div>
-                        </a>
+
                         @else
                             <div class="d-flex align-items-center">
 

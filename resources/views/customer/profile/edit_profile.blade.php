@@ -12,12 +12,22 @@
                             <h5 class="btn-light fs-5 py-3">Account Details</h5>
                             <div class="card-box border p-3">
                                 <div class="mb-4">
+                                    <label for="email" class="form-label">First Name:</label>
+                                    <p class="form-control-plaintext">{{$customer->name}} {{$customer->last_name}}</p>
+                                </div>
+
+                                <div class="mb-4">
                                     <label for="email" class="form-label">Email:</label>
                                     <p class="form-control-plaintext">{{$customer->email}}</p>
                                 </div>
                                 <div class="mb-4">
                                     <label for="phone_number" class="form-label">Phone Number:</label>
-                                    <p class="form-control-plaintext">{{isset($customer->phone_number)?"+".$customer->phone_number:"Not Available"}}</p>
+                                    <p class="form-control-plaintext">
+                                        @if($customer->phone_code)
+                                            {{$customer->phone_code."-"}}
+                                        @endif
+
+                                        {{isset($customer->phone_number)?$customer->phone_number:"Not Available"}}</p>
                                 </div>
                                 <div class="mb-4">
                                     <label for="company_name" class="form-label">Company Name:</label>

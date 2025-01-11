@@ -121,7 +121,7 @@
         .rotated-button {
             position: fixed; /* Keeps the button fixed on the screen */
             top: 50%; /* Center the button vertically */
-            left: -120px; /* Fixed position on the left side of the screen */
+            left: -110px; /* Fixed position on the left side of the screen */
             transform: translateY(-90%) rotate(-90deg); /* Center vertically and apply rotation */
             background-color: #206bbd; /* Button color */
             color: #fff; /* Text color */
@@ -430,7 +430,7 @@
                                         src="{{asset('assets\customer\images\user.png')}}" alt="Not Found"
                                         class="img-fluid me-2 ">
                                 </a>
-                                <span class="text-dark">Login/Signup</span>
+                                <a href="{{route('customer.loginForm')}}" style="text-decoration: none;">  <span class="text-dark">Login/Signup</span> </a>
                             </div>
 
                             @else
@@ -500,7 +500,7 @@
                         Feedback Signs, now with Multi-function Display and Cloud Control access. </p>
 
                     <div class="d-flex gap-4 mt-4">
-                        <a href="#product_shop" style="text-decoration: none;">  <img
+                        <a href="{{route("customer.product.shop")}}" style="text-decoration: none;">  <img
                                 src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now" style="max-width: 200px;"> </a>
                     </div>
                 </div>
