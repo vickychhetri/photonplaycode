@@ -374,9 +374,8 @@ $products_list_ids=[];
                     'tSessId' => $customer_session_id
                 ]),
                 'cancel_url' => route('customer.cancel.response'),
-                'shipping_address_collection' => [
-                    'allowed_countries' => ['US', 'CA'], // You can modify this to the countries you allow
-                ],
+                'shipping_address_collection' => null,
+                'billing_address_collection' => 'auto'
             ];
 
             if ($shipping_charge > 0) {
@@ -458,6 +457,7 @@ $products_list_ids=[];
            return redirect()->away($checkout_session->url);
 
         }catch(Stripe\Exception\InvalidRequestException $e){
+            dd($e->getMessage());
             if(!Session::get('user') && isset($userId)){
                 Customer::where('id', $userId)->delete();
             }
