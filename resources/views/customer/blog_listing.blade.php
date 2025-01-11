@@ -40,7 +40,13 @@ $page = $_GET['page'] ?? 1;
 
                             <div class="mb-4 pb-4 post-info">
                                 <a href="{{route('customer.blog_show', $s_blog['slug'])}}"   class="text-decoration-none">   <h2 class="text-uppercase"> <b>   {{$s_blog['title']['rendered']}} </b></h2></a>
-                                <div>{{$s_blog['date']}} by {{$s_blog['_embedded']['author'][0]['name']}}</div>
+                                <div>
+
+                                    @if($s_blog['date'])
+                                        {{ \Carbon\Carbon::parse($s_blog['date'])->format('M d, Y \a\t h:i A') }}
+
+                                    @endif
+                                    by {{$s_blog['_embedded']['author'][0]['name']}}</div>
                                 <p>
                                     {!! $s_blog['excerpt']['rendered'] !!}
                                 </p>
