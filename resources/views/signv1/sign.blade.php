@@ -100,7 +100,7 @@
                                     Warranty
                                 </li>
                                 <li>
-                                    Cloud SSubscription (Free for 1 year)
+                                    Cloud Subscription (Free for 1 year)
                                 </li>
                                 <li>
                                     Starting Cost
