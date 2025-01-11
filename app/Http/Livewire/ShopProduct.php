@@ -16,6 +16,7 @@ class ShopProduct extends Component
     public $category_accessory_id = null;
     public $sortOrder = 'asc';
     public $limit = 10, $sort;
+    public $minPrice = 0;
     public $maxPrice;
 
     public $limit_data = [5,10,15,20];
@@ -89,6 +90,7 @@ class ShopProduct extends Component
         $this->limit_data = [5,10,15,20];
         $this->priceRange = null;
         $this->limit = 10;
+        $this->minPrice = 0;
         $this->resetPage();
 
     }

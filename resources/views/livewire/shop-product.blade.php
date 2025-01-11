@@ -73,9 +73,9 @@
 
                                 <div x-data="{
                                             priceRange: @entangle('priceRange'),
-                                            minPrice: 0,
+                                            minPrice: {{ $minPrice }},
                                             maxPrice: {{ $maxPrice }},
-                                            minRange: 0,
+                                            minRange: {{ $minPrice }},
                                             maxRange: {{ $maxPrice }},
                                             $init() {
                                                 this.minPrice = this.priceRange[0];
@@ -86,8 +86,8 @@
                                     <div class="card-body">
                                         <p class="h6 mb-3"><strong>Price Range</strong></p>
 
-                                        <small class="text-muted" x-show="minPrice === 0 && maxPrice === {{ $maxPrice }}"><em>No filters applied</em></small>
-                                        <small class="text-muted" x-show="minPrice !== 0 || maxPrice !== {{ $maxPrice }}">
+                                        <small class="text-muted" x-show="minPrice === {{$minPrice}} && maxPrice === {{ $maxPrice }}"><em>No filters applied</em></small>
+                                        <small class="text-muted" x-show="minPrice !== {{$minPrice}} || maxPrice !== {{ $maxPrice }}">
                                             <em>Range: $<span x-text="minPrice"></span> - $<span x-text="maxPrice"></span></em>
                                         </small>
 
