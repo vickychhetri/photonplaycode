@@ -154,7 +154,7 @@ class LoginController extends Controller
         $cust_may_guest = Customer::where('email', $request->email)->first();
         if ($cust_may_guest) {
             if($cust_may_guest->is_guest){
-                $return_msg ="Hi Guest, Account Already Created. Please reset your password to login.";
+                $return_msg ="Hi Guest, Your account already created. Please reset your password to login.";
             }else {
                 $return_msg="This email address is already registered. Please try logging in or use a different email address.";
             }
