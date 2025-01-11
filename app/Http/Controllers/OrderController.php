@@ -24,6 +24,8 @@ class OrderController extends Controller
 
     public function generateCustomerInvoice(Request $request, $id)
     {
+        if($request->download=="Y") return $this->downloadCustomerInvoice($request, $id);
+
         try {
             $order = Order::find($id);
             if (!$order) {
@@ -68,7 +70,7 @@ class OrderController extends Controller
                 return response()->json(['error' => 'Order not found'], 404);
             }
 
-            $pdf = PDF::loadView('customer.invoice_customer', ['id' => $id]);
+            $pdf = PDF::loadView('reports.invoice_customer', ['id' => $id]);
 
             // Download the PDF
             return $pdf->download('order' . $order->order_number . '.pdf');
