@@ -104,7 +104,7 @@ class PasswordController extends Controller
 
             DB::table('password_resets')->where('email', $request->email)->delete();
             notify()->success('Success! password has been changed');
-            return redirect('/');
+            return redirect()->route('customer.loginForm');
         }
         notify()->success('Failed! something went wrong');
         return redirect()->route('forgot-password');
