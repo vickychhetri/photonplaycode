@@ -18,6 +18,7 @@ use App\Models\Setting;
 use App\Models\ShippingRate;
 use App\Models\UserAddress;
 use App\Models\UserPostalCode;
+use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -552,9 +553,27 @@ $products_list_ids=[];
             }else {
                 $order['shipping_address']=$order["billing_flat_suite"]." ".$order["billing_street"]." ".$order["billing_city"]." ".$order["billing_state"]." ".$order["billing_country"]." ".$order["billing_postcode"];
             }
-
-        $place_order = new OrderPlaceMail($order);
+        $pdfPath=null;
+        try {
+        $pdf = PDF::loadView('reports.invoice_customer', ['id' => $order["id"]]);
+        $pdfPath = storage_path('app/public/order_invoices/' . 'invoice_' . $order["id"] . '.pdf');
+        $pdf->save($pdfPath);
+        $place_order = new OrderPlaceMail($order,$pdfPath);
         Mail::to($request->email)->send($place_order);
+
+            if (file_exists($pdfPath)) {
+                unlink($pdfPath);
+            }
+        } catch (\Exception $e) {
+            // Handle any errors
+            \Log::error('Error sending order confirmation email: ' . $e->getMessage());
+
+            // Ensure cleanup even if an error occurs
+            if (file_exists($pdfPath)) {
+                unlink($pdfPath);
+            }
+        }
+
 
             return redirect()->route('customer.confirmation', Crypt::encrypt($orderId));
     }

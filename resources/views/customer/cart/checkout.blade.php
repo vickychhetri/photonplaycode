@@ -841,7 +841,25 @@
     function showAlert(event) {
         event.preventDefault(); // Prevent the default form submission
 
+
+        @if($customer && !is_string($customer))
         var fieldsWithMessages = {
+            '#shipping_postcode': 'Shipping postcode is required',
+            '#shipping_street': 'Shipping street is required',
+            '#shipping_flat_suite': 'Shipping flat/suite is required',
+            '#shipping_country': 'Shipping country is required',
+            '#shipping_state': 'Shipping state is required',
+            '#shipping_city': 'Shipping city is required',
+            '#billing_postcode': 'Billing postcode is required',
+            '#billing_street': 'Billing street is required',
+            '#billing_flat_suite': 'Billing flat/suite is required',
+            '#billing_country': 'Billing country is required',
+            '#billing_state': 'Billing state is required',
+            '#billing_city': 'Billing city is required'
+        };
+
+        @else
+            var fieldsWithMessages = {
             '#shipping_postcode': 'Shipping postcode is required',
             '#shipping_street': 'Shipping street is required',
             '#shipping_flat_suite': 'Shipping flat/suite is required',
@@ -859,6 +877,10 @@
             '#last_name': 'Last name is required',
             '#email': 'Email is required'
         };
+
+
+        @endif
+
 
         // Determine if shipping is the same as billing
         const isShippingSame = $("#is_shipping_same").prop("checked");
