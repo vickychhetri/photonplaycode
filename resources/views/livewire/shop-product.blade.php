@@ -16,7 +16,7 @@
 
             <div class="container py-4 text-center" style="position: relative; z-index: 1;">
                 <h1 class="h1 py-2 mt-5 mb-0 mx-xl-5 px-xl-5 text-white text-uppercase">
-                    <strong>Stop Intersection</strong>
+                    <strong>RADAR SPEED SIGN </strong>
                 </h1>
             </div>
         </div>
