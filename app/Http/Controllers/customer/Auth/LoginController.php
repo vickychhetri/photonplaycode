@@ -78,7 +78,14 @@ class LoginController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (!Auth::guard('customer')->attempt($credentials)) {
-            return redirect()->back()->with('error', "You have entered invalid credentials");
+            $return_msg="You have entered invalid credentials";
+            $cust_may_guest=Customer::where('email',$request->email)->first();
+
+            if($cust_may_guest->is_guest){
+                $return_msg ="Hi Guest, Please reset your password to login.";
+            }
+
+            return redirect()->back()->with('error',$return_msg);
         }
 
         $userLogged=Auth::guard('customer')->user();
@@ -90,6 +97,12 @@ class LoginController extends Controller
 
 
         $session = Session::put('user', Auth::guard('customer')->user());
+
+        $cust_may_guest = Customer::where('email', $request->email)->first();
+        if ($cust_may_guest) {
+            $cust_may_guest->update(['is_guest' => false]);
+        }
+
         $cart = Cart::where('session_id', $sessionId)->update(['user_id' => Session::get('user')->id]);
 
         if($cart){
@@ -119,7 +132,7 @@ class LoginController extends Controller
             'last_name'=>'nullable|string|max:255',
             'phone_code'=>'required',
             'phone_number'=>'required|string|max:255',
-            'email' => 'required|email|unique:customers,email',
+            'email' => 'required|email',
             'password' => [
                 'required',
                 'confirmed',
@@ -136,6 +149,16 @@ class LoginController extends Controller
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $cust_may_guest = Customer::where('email', $request->email)->first();
+        if ($cust_may_guest) {
+            if($cust_may_guest->is_guest){
+                $return_msg ="Hi Guest, Account Already Created. Please reset your password to login.";
+            }else {
+                $return_msg="This email address is already registered. Please try logging in or use a different email address.";
+            }
+            return redirect()->back()->with('error', $return_msg);
         }
 
         $customer = \Stripe\Customer::create([

@@ -32,6 +32,7 @@ class Customer extends Authenticatable
         'phone_number',
         'phone_code',
         'company_name',
+        'is_guest',
     ];
     /**
      * The attributes that should be hidden for serialization.

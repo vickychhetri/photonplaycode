@@ -40,6 +40,12 @@
                                 </ul>
                             </div>
                         @endif
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
 
                         <form id="registerForm" action="{{ route('customer.register') }}" method="post">
                             @csrf
