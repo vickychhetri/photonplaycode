@@ -33,7 +33,7 @@
                         <hr/>
                         <div class="row">
                             <div class="col-md-12 d-flex">
-                                <h5>Product Specifications::   <a href="{{route("admin.sku_generate",$product->id)}}" class=""> Generate SKU</a></h5>
+                                <h5>Product Specifications:: </h5>
 
                                 <a href="{{ url('/admin/add/product-specification/'.$product->id)}}" class="btn btn-primary ms-auto">
                                     <div class="d-flex align-items-center">
@@ -129,6 +129,100 @@
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="container">
+            <div class="row">
+                    @php
+                    $product_skus=\App\Models\ProductSku::where('pid',$product->id)->get();
+                    @endphp
+
+                <div class="col-md-6 card-body">
+                    <h4>
+                        SKU RANGE :: {{$product->title}}
+                    </h4>
+                    <a href="{{route("admin.sku_generate",$product->id)}}" class="btn btn-danger"> Generate SKU</a>
+                    <p style="font-size: 10px;color:red;"> Before click here to generate SKU Range, please set starting range.
+                    create all specifications.
+                    </p>
+                    @if(!isset($product_skus))
+                        SKU Not Generated for this , please add range In product edit and then generate sku.
+                    @endif
+                    <table class="table " style="max-width: 400px;">
+                        <tr>
+                            <th>
+                                Combination
+                            </th>
+                            <th>
+                                Range
+                            </th>
+                        </tr>
+
+                        @foreach($product_skus as $product_sku)
+                        <tr>
+                    <td>
+                        {{$product_sku->specification_condition}}
+                    </td>
+                    <td>
+                        {{$product_sku->sku_code}}
+                    </td>
+                        </tr>
+                    @endforeach
+                    </table>
+
+
+
+                </div>
+                <div class="col-md-6 card-body">
+                    @php
+                        $product_s=\App\Models\Product::all();
+                    @endphp
+                    <h4>
+                        SKU RANGE Already Start Allocated.
+                    </h4>
+                    <table class="table table-bordered " style="max-width: 400px;">
+                        <tr>
+                            <th>
+                                Product
+                            </th>
+                            <th>
+                                Range
+                            </th>
+                        </tr>
+                            @php
+                            $common=[];
+                            @endphp
+                        @foreach($product_s as $product_s_item)
+                            <tr>
+                                <td>
+                                    @if($product->id ==$product_s_item->id)
+                                        <span class="text-success font-weight-bold"> {{$product_s_item->title}} </span>
+                                    @else
+                                        {{$product_s_item->title}}
+                                    @endif
+
+                                </td>
+                                <td>
+                                    @php
+                                    if(in_array($product_s_item->sku_start_range,$common)){
+                                                echo "<span class='text-danger'> (Please change) </span>";
+                                    }
+                                    @endphp
+                                    X >= {{$product_s_item->sku_start_range??"Not Set"}}
+                                </td>
+
+                            </tr>
+                            @php
+                                $common[]=$product_s_item->sku_start_range;
+                            @endphp
+                        @endforeach
+                    </table>
+
+
+
+                </div>
+            </div>
     </div>
 
 
