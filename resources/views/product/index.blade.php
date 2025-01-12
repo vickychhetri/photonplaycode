@@ -72,27 +72,67 @@
                                                 <i data-feather="edit"></i>
                                             </a>
 
-                                            <a id="Delete-" class="text-danger pointer p-1" data-toggle="tooltip" title="Delete">
+{{--                                            <a id="Delete-" class="text-danger pointer p-1" data-toggle="tooltip" title="Delete">--}}
+{{--                                                <i data-feather="trash-2"></i>--}}
+{{--                                            </a>--}}
+{{--                                            <script>--}}
+{{--                                                $('#Delete-').click(function(){--}}
+{{--                                                    console.log("hello");--}}
+{{--                                                    Swal.fire({--}}
+{{--                                                    title: 'Are you sure?',--}}
+{{--                                                    text: "You won't be able to revert this!",--}}
+{{--                                                    icon: 'question',--}}
+{{--                                                    showCancelButton: true,--}}
+{{--                                                    confirmButtonColor: '#3085d6',--}}
+{{--                                                    cancelButtonColor: '#d33',--}}
+{{--                                                    confirmButtonText: 'Yes, delete it!'--}}
+{{--                                                    }).then((result) => {--}}
+{{--                                                    if (result.isConfirmed) {--}}
+{{--                                                        window.location.href = "{{ url('admin/delete-employee/')}}";--}}
+{{--                                                    }--}}
+{{--                                                    });--}}
+{{--                                                });--}}
+{{--                                            </script>--}}
+                                            <a id="Delete-{{ $product->id }}" class="text-danger pointer p-1" data-toggle="tooltip" title="Delete">
                                                 <i data-feather="trash-2"></i>
                                             </a>
+                                            <a target="_blank" href="{{ route('customer.radar.sign', $product->slug) }}" class="text-primary p-1" data-toggle="tooltip" title="Edit">
+                                                <i data-feather="link"></i>
+                                            </a>
+
                                             <script>
-                                                $('#Delete-').click(function(){
+                                                $('#Delete-{{ $product->id }}').click(function(){
                                                     console.log("hello");
                                                     Swal.fire({
-                                                    title: 'Are you sure?',
-                                                    text: "You won't be able to revert this!",
-                                                    icon: 'question',
-                                                    showCancelButton: true,
-                                                    confirmButtonColor: '#3085d6',
-                                                    cancelButtonColor: '#d33',
-                                                    confirmButtonText: 'Yes, delete it!'
+                                                        title: 'Are you sure?',
+                                                        text: "You won't be able to revert this!",
+                                                        icon: 'question',
+                                                        showCancelButton: true,
+                                                        confirmButtonColor: '#3085d6',
+                                                        cancelButtonColor: '#d33',
+                                                        confirmButtonText: 'Yes, delete it!'
                                                     }).then((result) => {
-                                                    if (result.isConfirmed) {
-                                                        window.location.href = "{{ url('admin/delete-employee/')}}";
-                                                    }
+                                                        if (result.isConfirmed) {
+                                                            $.ajax({
+                                                                url: "{{ route('admin.product.destroy', $product->id) }}",
+                                                                type: 'DELETE',
+                                                                data: {
+                                                                    _token: '{{ csrf_token() }}',
+                                                                },
+                                                                success: function(response) {
+                                                                    Swal.fire('Deleted!', 'Your product has been deleted.', 'success').then(function() {
+                                                                        window.location.reload();
+                                                                    });
+                                                                },
+                                                                error: function(xhr, status, error) {
+                                                                    Swal.fire('Error!', 'There was an issue deleting the product. Please try again.', 'error');
+                                                                }
+                                                            });
+                                                        }
                                                     });
                                                 });
                                             </script>
+
                                         </td>
                                     </tr>
                                 @endforeach
