@@ -168,7 +168,7 @@ class Radar extends Component
             }
         }
 
-        dd($color_code);
+        dd( $this->cover_image);
 
         if(!Session::get('user')){
             $cart = Cart::where(['session_id' => $this->sessionId, 'product_id' => $this->Pid, 'price' => $this->price])->first();
