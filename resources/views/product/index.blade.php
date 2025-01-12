@@ -96,6 +96,9 @@
                                             <a id="Delete-{{ $product->id }}" class="text-danger pointer p-1" data-toggle="tooltip" title="Delete">
                                                 <i data-feather="trash-2"></i>
                                             </a>
+                                            <a target="_blank" href="{{ route('customer.radar.sign', $product->slug) }}" class="text-primary p-1" data-toggle="tooltip" title="Edit">
+                                                <i data-feather="link"></i>
+                                            </a>
 
                                             <script>
                                                 $('#Delete-{{ $product->id }}').click(function(){
