@@ -421,7 +421,7 @@ $products_list_ids=[];
             }
 
             $checkout_session = \Stripe\Checkout\Session::create($checkout_session_params);
-
+            $coupon_amount=0;
             $coupon_detail = Coupon::select('id','coupon_name','type','value')->where('coupon_name', Crypt::decrypt($request->coupon_name))->first();
             if ($coupon_detail) {
                 $isPercentage = $coupon_detail->type;
