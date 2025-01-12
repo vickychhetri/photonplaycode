@@ -104,6 +104,7 @@ class Radar extends Component
     }
 
     public function addToCart(){
+
         $impodeSpec = array();
 //        if(isset($this->dynamic_specs)){
 //            foreach($this->dynamic_specs as $specs){
@@ -121,7 +122,14 @@ class Radar extends Component
 //            }
 //        }
 
-//            print_r($this->dynamic_specs);
+//            dd($this->dynamic_specs);
+        if (empty($this->dynamic_specs) || in_array("", $this->dynamic_specs) || in_array('--Choose an Option--', $this->dynamic_specs)) {
+            $this->addError('dynamic_specs_error', 'Specifications are required.');
+            return false;
+        } else {
+            $this->emit('trigger-modal');
+        }
+
         $color_code=null;
         if(isset($this->dynamic_specs)){
             foreach($this->dynamic_specs as $key => $specs) {
