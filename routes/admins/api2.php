@@ -15,6 +15,7 @@ use App\Http\Controllers\ProductSetupController;
 use App\Http\Controllers\TeamMemberController;
 
 Route::get('/product/edit/{id}', [ProductSetupController::class, 'product_edit_basic'])->name("product_basic_update");
+Route::get('/product/edit/copy/{id}', [ProductSetupController::class, 'product_copy'])->name("product_copy");
 
 Route::get('/add/product-specification/{id}', [ProductSetupController::class, 'add_specification_form'])->name("add_specification_form");
 
