@@ -158,6 +158,35 @@ class ProductSetupController extends Controller
                 $new_spec = $specialization->replicate();
                 $new_spec->product_id = $new_product->id;
                 $new_spec->save();
+
+                foreach ($specialization->options as $option){
+                    $new_option = $option->replicate();
+                    $new_option->product_specilizations_id = $new_spec->id;
+                    $new_option->product_id = $new_product->id;
+                    $new_option->save();
+                }
+            }
+
+            if ($original_product->product_seo) {
+                $new_seo = $original_product->product_seo->replicate();
+                $new_seo->product_id = $new_product->id;
+                $new_seo->save();
+            }
+
+            if ($original_product->pricing) {
+                foreach ($original_product->pricing as $price){
+                    $new_seo = $price->replicate();
+                    $new_seo->product_id = $new_product->id;
+                    $new_seo->save();
+                }
+            }
+
+            if ($original_product->product_resources) {
+                foreach ($original_product->product_resources as $resource){
+                    $new_seo = $resource->replicate();
+                    $new_seo->product_id = $new_product->id;
+                    $new_seo->save();
+                }
             }
 
             foreach ($original_product->images as $images) {
