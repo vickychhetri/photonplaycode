@@ -165,6 +165,7 @@ class Radar extends Component
             $img=ProductImage::select('image')->where('product_id',$this->id)->where('color',$color[$color_code])->first();
             if(isset($img)){
                 $this->cover_image=$img->image;
+                dd($img->image);
             }
         }
 
