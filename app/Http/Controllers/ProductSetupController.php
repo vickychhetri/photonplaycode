@@ -158,7 +158,15 @@ class ProductSetupController extends Controller
                 $new_spec = $specialization->replicate();
                 $new_spec->product_id = $new_product->id;
                 $new_spec->save();
+
+                foreach ($specialization->options as $option){
+                    $new_option = $option->replicate();
+                    $new_option->product_specilizations_id = $new_spec->id;
+                    $new_option->product_id = $new_product->id;
+                    $new_option->save();
+                }
             }
+
 
             foreach ($original_product->images as $images) {
                 $new_spec = $images->replicate();
