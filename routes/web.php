@@ -120,6 +120,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('specilization', SpecilizationController::class);
         Route::resource('specilization-option', SpecilizationOptionController::class);
         Route::resource('product', ProductController::class);
+        Route::get('product-sku/{id}', [ProductController::class,'generate_sku'])->name('sku_generate');
 
 
         // db-backups
@@ -413,6 +414,8 @@ Route::group(['prefix' => 'radar_speed_sign', 'as' => 'radar_speed_sign.'], func
     Route::get('parking-lot', [RadarApplicationAreaPageController::class, 'parking_lot'])->name('parking_lot');
 
     Route::get('neighbourhoods', [RadarApplicationAreaPageController::class, 'neighbourhoods'])->name('neighbourhoods');
+    Route::post('product-sku/find_sku/{id}', [ProductController::class,'find_sku'])->name('find_sku');
+
 });
 
 

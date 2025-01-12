@@ -250,12 +250,44 @@
                                                     }).filter(Boolean);
 
                                                     // Combine product code and other SKU parts with '-' between different specifications
-                                                    const sku = productCode + '-' + skuParts.join('-');
+                                                    const sku =skuParts.join('-');
 
-                                                    // Update the hidden input value and the display span
-                                                    skuInput.value = sku;
-                                                    skuDisplay.textContent = sku;
-                                                   @this.set('product_sku_code', sku);
+                                                    // Send AJAX request
+                                                    $.ajax({
+                                                        url: "{{ route('radar_speed_sign.find_sku',$product->id) }}", // The route we defined earlier
+                                                        type: 'POST',
+                                                        data: {
+                                                            product_id: {{$product->id}},
+                                                            sku: sku,
+                                                            _token: '{{ csrf_token() }}' // CSRF token for security
+                                                        },
+                                                        success: function(response) {
+                                                            // Handle success
+                                                            if (response.status === 'success') {
+                                                                if (response && response.data && Object.keys(response.data).length !== 0) {
+                                                                    var sku_formed='PSI-'+'{{$product->code}}' +'-'+ response.data;
+
+                                                                    skuInput.value =sku_formed;
+                                                                    skuDisplay.textContent = sku_formed;
+                                                                @this.set('product_sku_code', sku_formed);
+                                                                }else {
+                                                                    skuInput.value =null;
+                                                                    skuDisplay.textContent = null;
+                                                                @this.set('product_sku_code', null);
+                                                                }
+                                                            } else {
+                                                                $('#result').html('<p>' + response.message + '</p>');
+                                                            }
+                                                        },
+                                                        error: function(xhr, status, error) {
+                                                            skuInput.value =null;
+                                                            skuDisplay.textContent = null;
+                                                        @this.set('product_sku_code', null);
+
+                                                        }
+                                                    });
+
+
                                                 }
 
                                                 selects.forEach(select => {
