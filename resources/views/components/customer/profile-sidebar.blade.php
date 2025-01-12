@@ -11,7 +11,7 @@
             <a href="{{ route('customer.overview') }}" class="text-decoration-none">Overview</a>
             <a href="{{ route('customer.history') }}" class="text-decoration-none">Orders History</a>
             <a href="{{ route('customer.edit.profile') }}" class="text-decoration-none">Profile</a>
-            <a href="{{ route('customer.address') }}" class="text-decoration-none">Addresses</a>
+{{--            <a href="{{ route('customer.address') }}" class="text-decoration-none">Addresses</a>--}}
             <a href="{{ route('customer.logout') }}" class="text-decoration-none">Logout</a>
             <a href="{{ route('customer.page_show_content', 'about-us') }}" class="text-decoration-none">About Us</a>
             <a href="{{ route('customer.page_show_content', 'term-conditions') }}" class="text-decoration-none">Terms of Use</a>
@@ -31,7 +31,7 @@
                                     <span class="text-capitalize">account</span>
                                     <a href="{{route('customer.edit.profile')}}" style="text-decoration: none"><p class="mb-0 text-grey">Profile </p></a>
 
-                                    <a href="{{route('customer.address')}}" style="text-decoration: none"><p class="mb-0">Addresses</p></a>
+{{--                                    <a href="{{route('customer.address')}}" style="text-decoration: none"><p class="mb-0">Addresses</p></a>--}}
 
                                     <a href="{{route('customer.logout')}}" style="text-decoration: none"><p class="mb-0 ">Logout</p></a>
                                 </div>

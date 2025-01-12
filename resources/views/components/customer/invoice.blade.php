@@ -134,8 +134,12 @@
                 <td>{{ $order->shipping==0?"Free":"$".$order->shipping }}</td>
             </tr>
             <tr>
+                <td colspan="3" class="totals">Discount</td>
+                <td>{{ $order->discounted_amount==0?"-":"-$".$order->discounted_amount }}</td>
+            </tr>
+            <tr>
                 <td colspan="3" class="totals">VAT Charges</td>
-                <td>{{ ($order->gst*$order->cart_subtotal)/100 }}</td>
+                <td>${{ ($order->gst*($order->cart_subtotal-($order->discounted_amount??0)))/100 }}</td>
             </tr>
             <tr>
                 <td colspan="3" class="totals">Total</td>
