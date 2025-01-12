@@ -84,6 +84,13 @@ class Product extends Model
         return $sku;
     }
 
+    public function product_seo(){
+        return $this->hasOne(ProductSeo::class);
+    }
+
+    public function pricing(){
+        return $this->hasMany(ProductPricing::class);
+    }
 
 
 }

@@ -16,7 +16,7 @@ use Livewire\Component;
 
 class Radar extends Component
 {
-    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price, $currency_icon ,$Pid_a,$price_a,$title_a,$category_a,$quantity_a = 1,$cover_image_a,$currency_icon_a,$exchangeRate_a;
+    public $sessionId,$product = [],$productLists,$postalCode,$cartCount, $productId, $cartItems, $exchange_rate,$postal_code,$price,$quantity,$title,$category,$cover_image,$Pid, $exchangeRate,$specPrice = 0, $initial_price, $optionsIds = [], $sum,$total_price, $currency_icon ,$Pid_a,$price_a,$title_a,$category_a,$quantity_a = 1,$cover_image_a,$currency_icon_a,$exchangeRate_a,$dynamic_spec_count = 0;
 
     public $linked_products;
     public  $currency_icon_selected;
@@ -43,6 +43,10 @@ class Radar extends Component
         ])
             ->where('slug', $this->productId)
             ->first();
+
+        if($this->product->specilizations){
+            $this->dynamic_spec_count = $this->product->specilizations->count();
+        }
 
         $this->quantity = 1;
         $country_code = Session::get('country_code', 'US');
@@ -123,7 +127,7 @@ class Radar extends Component
 //        }
 
 //            dd($this->dynamic_specs);
-        if (empty($this->dynamic_specs) || in_array("", $this->dynamic_specs) || in_array('--Choose an Option--', $this->dynamic_specs)) {
+        if (empty($this->dynamic_specs) || in_array("", $this->dynamic_specs) || in_array('--Choose an Option--', $this->dynamic_specs) || count($this->dynamic_specs) < $this->dynamic_spec_count) {
             $this->addError('dynamic_specs_error', 'Specifications are required.');
             return false;
         } else {
