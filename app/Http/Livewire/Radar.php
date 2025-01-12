@@ -162,15 +162,11 @@ class Radar extends Component
             'GC'=>'green'
         ];
         if(isset($color_code)){
-            $img=ProductImage::select('image')->where('product_id',$this->id)->where('color',$color[$color_code])->first();
+            $img=ProductImage::select('image')->where('product_id',$this->Pid)->where('color',$color[$color_code])->first();
             if(isset($img)){
                 $this->cover_image=$img->image;
-                dd($img->image);
             }
         }
-
-        dd( $this->cover_image);
-
         if(!Session::get('user')){
             $cart = Cart::where(['session_id' => $this->sessionId, 'product_id' => $this->Pid, 'price' => $this->price])->first();
 
