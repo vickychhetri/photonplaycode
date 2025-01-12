@@ -345,16 +345,9 @@
                                 <!-- Radar Speed Signs Section -->
                                 <div class="col-md-6 col-sm-12 mb-3">
                                     <h6 class="font-weight-bold text-dark pb-2">
-                                        <a class="dropdown-item px-0 text-uppercase text-dark" href="#"><b> RADAR SPEED SIGNS </b></a>
+                                        <a class="dropdown-item px-0 text-uppercase text-dark" href="{{ route('customer.product.shop') }}"><b> RADAR SPEED SIGNS </b></a>
                                     </h6>
                                     <ul class=" ">
-                                        <li>
-                                            <a
-                                                class="text-wrap dropdown-item px-0 text-uppercase mb-2"
-                                                href="{{ route('customer.product.shop') }}">
-                                                SHOP NOW
-                                            </a>
-                                        </li>
                                         @foreach($productLists ?? [] as $product)
                                             <li>
                                                 <a
@@ -370,6 +363,7 @@
                                                 Cloud Software
                                             </a>
                                         </li>
+
                                     </ul>
                                 </div>
 

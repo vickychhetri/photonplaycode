@@ -33,7 +33,8 @@
                         <hr/>
                         <div class="row">
                             <div class="col-md-12 d-flex">
-                                <h5>Product Specifications</h5>
+                                <h5>Product Specifications::   <a href="{{route("admin.sku_generate",$product->id)}}" class=""> Generate SKU</a></h5>
+
                                 <a href="{{ url('/admin/add/product-specification/'.$product->id)}}" class="btn btn-primary ms-auto">
                                     <div class="d-flex align-items-center">
                                         <i data-feather="plus-circle"> </i>

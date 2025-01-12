@@ -50,8 +50,11 @@
                                                     <img src="{{asset('storage/'.$cart->cover_image)}}"
                                                          alt="Not Found"
                                                          class="profile-table me-2"
-                                                         style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+                                                         style="max-width: 60px; max-height: 100px; width: auto; height: auto;">
                                                     <div class="d-flex flex-column text-truncate" style="max-width: 200px;">
+                                                        @if($cart->sku_code)
+                                                            <span>SKU: {{$cart->sku_code}}</span>
+                                                        @endif
                                                         <span>Brand: {{$cart->title}}</span>
                                                         @if (unserialize($cart->option_ids) != null)
                                                             @forelse (unserialize($cart->option_ids) as $option)
@@ -63,10 +66,10 @@
                                                                         <span>
                                 {{$opp->product_specilization->specilization->title}}:
                                 {{$opp->specializationoptions->option}}
-                                ({{$currency_icon}} {{$opp->specialization_price * $exchange_rate}})
+                                ({{$currency_icon}}{{$opp->specialization_price * $exchange_rate}})
                             </span>
                                                                     @endif
-                                                                    <br>
+
                                                                 @empty
                                                                 @endforelse
                                                             @empty
@@ -76,7 +79,7 @@
                                                 </div>
                                             </td>
 
-                                            <td class="border border-end text-center">{{$currency_icon}} {{$cart->price}}</td>
+                                            <td class="border border-end text-center">{{$currency_icon}}{{$cart->price}}</td>
                                             <td class="border border-end text-center">{{$cart->quantity}}</td>
                                             <td class="border border-end text-center">{{$currency_icon}} {{$total_price = $cart->price * $cart->quantity}}</td>
                                             <td class="border border-end text-center">

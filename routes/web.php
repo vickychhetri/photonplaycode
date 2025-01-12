@@ -120,6 +120,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('specilization', SpecilizationController::class);
         Route::resource('specilization-option', SpecilizationOptionController::class);
         Route::resource('product', ProductController::class);
+
         Route::get('product-sku/{id}', [ProductController::class,'generate_sku'])->name('sku_generate');
 
 
