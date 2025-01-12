@@ -97,7 +97,6 @@
                         </div>
 
                         <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Email Address" id-="email" name="email" value="" id="email" maxlength="100" required>
-{{--                        <input type="text" class="form-control rounded-0 px-3" placeholder="Enter Phone Number" name="phone_number" maxlength="13" value="" required pattern="\d*" inputmode="numeric">--}}
                         <span style="font-size: 8px"> (Country code : e.g US/CA) </span>
                         <div class="d-flex">
 
@@ -112,14 +111,21 @@
                                    aria-label="Phone Number" placeholder="Enter phone number">
                         </div>
                     @endif
-                    <div>
-                        <label for="billing_street" class="form-label">Street Number</label>
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
-                    </div>
 
-                    <div>
-                        <label for="billing_flat_suite" class="form-label">Flat/Suite</label>
-                    <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
+                    <div class="row">
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="billing_street" class="form-label">Street Number</label>
+                                    <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
+                                </div>
+                            </div>
+                        <div class="col-md-6">
+                            <div>
+                                <label for="billing_flat_suite" class="form-label">Flat/Suite</label>
+                                <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
+                            </div>
+
+                        </div>
                     </div>
                     <div>
                         <label for="billing_flat_suite" class="form-label">Address line 2</label>
@@ -131,23 +137,33 @@
                             <label for="billing_postcode" class="form-label">Postal Code</label>
                             <input type="text" class="form-control rounded-0 px-3 pb-0" name="billing_postcode" id="billing_postcode" placeholder="Postal Code" maxlength="8" required />
                             <span id="billing_postcode_error_msg" class="mb-2"></span>
-                            <ul id="suggestions" class="list-group pt-0 mt-0 mb-2" style="display:none;"></ul>
+                            <ul id="suggestions" class="list-group pt-0 mt-0 mb-2" style="display:none;"> </ul>
+                            <button id="suggestion_close" class="btn btn-danger btn-sm" style="display:none;"> Close Suggestion</button>
                         </div>
 
-                        <div>
-                            <label for="billing_city" class="form-label">City</label>
-                            <input type="text" id="billing_city" name="billing_city" class="form-control rounded-0 px-3 mt-2" placeholder="Enter City Name" required />
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="billing_city" class="form-label">City</label>
+                                    <input type="text" id="billing_city" name="billing_city" class="form-control rounded-0 px-3" placeholder="Enter City Name" required />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+
+                                <div>
+                                    <label for="billing_state" class="form-label">State</label>
+                                    <input type="text" id="billing_state" name="billing_state" class="form-control rounded-0 px-3" placeholder="Enter State Name" required  />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="billing_country" class="form-label">Country</label>
+                                    <input type="text" id="billing_country" placeholder="Enter Country Name" name="billing_country" class="form-control rounded-0 px-3" required  />
+                                </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <label for="billing_state" class="form-label">State</label>
-                            <input type="text" id="billing_state" name="billing_state" class="form-control rounded-0 px-3" placeholder="Enter State Name" required  />
-                        </div>
-
-                        <div>
-                            <label for="billing_country" class="form-label">Country</label>
-                            <input type="text" id="billing_country" placeholder="Enter Country Name" name="billing_country" class="form-control rounded-0 px-3" required  />
-                        </div>
 
                     </div>
 
@@ -158,6 +174,7 @@
                         document.getElementById('billing_postcode').addEventListener('input', function () {
                             let postalCode = this.value.trim();
                             const suggestionsList = document.getElementById('suggestions');
+                            const suggestion_close_button = document.getElementById('suggestion_close');
 
                             // Reset associated fields when the postal code changes
                             resetFields();
@@ -165,6 +182,7 @@
                             // Hide suggestions if no postal code is entered
                             if (postalCode.length === 0) {
                                 suggestionsList.style.display = 'none';
+                                suggestion_close_button.style.display = 'none';
                                 return;
                             }
 
@@ -184,6 +202,8 @@
                                                 // Clear previous suggestions
                                                 suggestionsList.innerHTML = '';
                                                 suggestionsList.style.display = 'block';
+                                                suggestion_close_button.style.display = 'block';
+
 
                                                 if (data.data.length === 1) {
                                                     // If there's only one suggestion, populate fields directly
@@ -194,6 +214,7 @@
                                                     document.getElementById('billing_city').value = location.city;
 
                                                     suggestionsList.style.display = 'none';
+                                                    suggestion_close_button.style.display = 'none';
                                                 } else {
                                                     // Show suggestions for the postal code entered
                                                     data.data.forEach(location => {
@@ -211,11 +232,16 @@
                                                             document.getElementById('billing_city').value = location.city;
 
                                                             suggestionsList.style.display = 'none';
+                                                            suggestion_close_button.style.display = 'none';
+                                                            document.getElementById('billing_postcode_error_msg').style.display='none';
+
                                                         });
 
                                                         // Append the suggestion item to the list
                                                         suggestionsList.appendChild(suggestionItem);
                                                     });
+
+
                                                 }
                                             } else {
                                                 // No suggestions found, show error message
@@ -229,6 +255,7 @@
                                         .catch(error => {
                                             console.error('Error fetching location data:', error);
                                             suggestionsList.style.display = 'none'; // Hide suggestions on error
+                                            suggestion_close_button.style.display = 'none'; // Hide suggestions on error
                                         });
                                 }, 200); // 200ms delay after the user stops typing
                             }
@@ -369,14 +396,23 @@
                             <input type="text" class="form-control rounded-0 px-3" name="shipping_street" id="shipping_street" placeholder="Street Number">
                         </div>
 
-                        <div>
-                            <label for="shipping_flat_suite" class="form-label">Flat/Suite</label>
-                            <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" id="shipping_flat_suite" placeholder="Flat/Suite">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="shipping_flat_suite" class="form-label">Flat/Suite</label>
+                                    <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" id="shipping_flat_suite" placeholder="Flat/Suite">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="shipping_flat_suite" class="form-label">Address Line 2</label>
+                                    <input type="text" class="form-control rounded-0 px-3" name="shipping_address_line_2" placeholder="Address line 2" id="address">
+                                </div>
+                            </div>
+
                         </div>
-                        <div>
-                            <label for="shipping_flat_suite" class="form-label">Address Line 2</label>
-                            <input type="text" class="form-control rounded-0 px-3" name="shipping_address_line_2" placeholder="Address line 2" id="address">
-                        </div>
+
+
 
 
                         <div>
@@ -387,19 +423,35 @@
                                    autocapitalize="off" >
                             <span id="shipping_postcode_error_msg" class="mb-2"></span>
                             <ul id="shipping-suggestions" class="list-group mt-0 mb-2" style="display:none;"></ul>
+                            <span id="shipping_suggestion_close" class="btn btn-danger btn-sm" style="display:none;"> Close Suggestion</span>
                         </div>
-                        <div>
-                            <label for="shipping_city" class="form-label">City</label>
-                            <input type="text" id="shipping_city" class="form-control rounded-0 px-3" placeholder="Enter City Name" name="shipping_city"  required />
+
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="shipping_city" class="form-label">City</label>
+                                    <input type="text" id="shipping_city" class="form-control rounded-0 px-3" placeholder="Enter City Name" name="shipping_city"  required />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="shipping_state" class="form-label">State</label>
+                                    <input type="text" id="shipping_state" class="form-control rounded-0 px-3" placeholder="Enter State Name" name="shipping_state"  required />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div>
+                                    <label for="shipping_country" class="form-label">Country</label>
+                                    <input type="text" id="shipping_country" class="form-control rounded-0 px-3" placeholder="Enter Country Name" name="shipping_country"  required />
+                                </div>
+                            </div>
+
                         </div>
-                        <div>
-                            <label for="shipping_state" class="form-label">State</label>
-                            <input type="text" id="shipping_state" class="form-control rounded-0 px-3" placeholder="Enter State Name" name="shipping_state"  required />
-                        </div>
-                        <div>
-                            <label for="shipping_country" class="form-label">Country</label>
-                            <input type="text" id="shipping_country" class="form-control rounded-0 px-3" placeholder="Enter Country Name" name="shipping_country"  required />
-                        </div>
+
+
+
 
                     </div>
 <script>
@@ -452,6 +504,8 @@
         $('#shipping_postcode').on('input', function () {
             let shippingPostalCode = $(this).val().trim();
             const shippingSuggestionsList = $('#shipping-suggestions');
+            const closeShippingButton = $('#shipping_suggestion_close');
+
 
             // Reset dependent fields when postal code changes
             resetShippingFields();
@@ -459,6 +513,7 @@
             // Hide suggestions if no postal code is entered
             if (shippingPostalCode.length === 0) {
                 shippingSuggestionsList.hide();
+                closeShippingButton.hide();
                 return;
             }
 
@@ -474,6 +529,7 @@
                         .then(data => {
                             if (data.status === 'success' && data.data.length > 0) {
                                 shippingSuggestionsList.html('').show();
+                                closeShippingButton.show();
 
                                 if (data.data.length === 1) {
                                     // If only one suggestion, populate the fields directly
@@ -484,6 +540,7 @@
                                     $('#shipping_city').val(location.city);
                                     // document.getElementById('shipping_postcode_error_msg').style.display = "none";
                                     shippingSuggestionsList.hide();
+                                    closeShippingButton.hide();
                                 } else {
                                     // Show suggestions for multiple results
                                     data.data.forEach(location => {
@@ -498,8 +555,10 @@
                                             $('#shipping_country').val(location.country_name);
                                             $('#shipping_state').val(location.province);
                                             $('#shipping_city').val(location.city);
-                                            // document.getElementById('shipping_postcode_error_msg').style.display = "none";
+                                            document.getElementById('shipping_postcode_error_msg').style.display = "none";
                                             shippingSuggestionsList.hide();
+                                            closeShippingButton.hide();
+
                                         });
 
                                         shippingSuggestionsList.append(suggestionItem);
@@ -507,6 +566,7 @@
                                 }
                             } else {
                                 shippingSuggestionsList.hide();
+                                closeShippingButton.hide();
                                 // document.getElementById('shipping_postcode_error_msg').style.display = "block";
                                 // document.getElementById('shipping_postcode_error_msg').style.color = "black";
                                 // document.getElementById('shipping_postcode_error_msg').innerText = "Please enter your address manually!";
@@ -1147,6 +1207,29 @@
             document.getElementById('myFormCheckoutProcess').submit(); // Replace 'myForm' with your actual form ID
         }
     }
+
+
+
+
+    const closeButton = document.getElementById('suggestion_close');
+    const suggestionsList = document.getElementById('suggestions');
+    closeButton.addEventListener('click', function () {
+        suggestionsList.style.display = 'none';
+        closeButton.style.display = 'none';
+    });
+
+
+
+    const closeShippingButton = document.getElementById('shipping_suggestion_close');
+    const suggestionsShippingList = document.getElementById('shipping-suggestions');
+    closeShippingButton.addEventListener('click', function () {
+        suggestionsShippingList.style.display = 'none';
+        closeShippingButton.style.display = 'none';
+    });
+
+
+
+
 </script>
 
 
