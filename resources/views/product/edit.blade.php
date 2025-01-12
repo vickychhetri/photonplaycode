@@ -181,6 +181,10 @@
                     <h4>
                         SKU RANGE Already Start Allocated.
                     </h4>
+                    <p style="font-size: 10px;color:red;"> All the Products SKU Start range is for references purpose only.
+                        if please change (RED TEXT) then you need to change the range because allocated to another product already.
+                        or empty.
+                    </p>
                     <table class="table table-bordered " style="max-width: 400px;">
                         <tr>
                             <th>
