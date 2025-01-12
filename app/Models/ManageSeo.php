@@ -24,6 +24,10 @@ class ManageSeo extends Model
     public const NEWS_EVENT="NEWS_EVENT";
     public const LED_TICKER_TAPES="LED_TICKER_TAPES";
     public const RADAR_MUNICIPALITIES="RADAR_MUNICIPALITIES";
+    public const CAMPUS="CAMPUS";
+    public const NEIGHBOURHOOD="NEIGHBOURHOOD";
+    public const PARKING_LOT="PARKING_LOT";
+    public const SCHOOL_ZONE="SCHOOL_ZONE";
 
 
 }

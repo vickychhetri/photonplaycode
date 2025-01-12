@@ -1,6 +1,6 @@
 <?php
 use App\Models\ManageSeo;
-$data_record = ManageSeo::where('page_name', ManageSeo::RADAR_MUNICIPALITIES)->first();
+$data_record = ManageSeo::where('page_name', ManageSeo::SCHOOL_ZONE)->first();
 if($data_record){
     $seo_meta=[
         "title"=>$data_record->title,
