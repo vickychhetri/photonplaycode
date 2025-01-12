@@ -4,6 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\ProductImage;
+use App\Models\ProductSpcializationOption;
+use App\Models\ProductSpecilization;
+use App\Models\SpecializationOption;
+use App\Models\Specilization;
 use App\Models\UserPostalCode;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -116,6 +121,27 @@ class Radar extends Component
 //            }
 //        }
 
+//            print_r($this->dynamic_specs);
+        $color_code=null;
+        if(isset($this->dynamic_specs)){
+            foreach($this->dynamic_specs as $key => $specs) {
+                $spec_general=Specilization::where('code','CR')->first();
+               $p_specs= ProductSpecilization::where('specialization_id',$spec_general->id)->where('product_id',$this->Pid)->first();
+               if(isset($p_specs->id) && isset($key)){
+                   if($p_specs->id==$key){
+                           $pso=ProductSpcializationOption::where('id',$specs)->where('product_id',$this->Pid)->first();
+                           if($pso){
+                          $optin=SpecializationOption::find($pso->specialization_option_id);
+                          if(isset($optin)){
+                              $color_code=$optin->code;
+                              break;
+                          }
+                      }
+                   }
+               }
+
+            }
+        }
 
         if( $this->postalCode){
             if(Session::get('user')){
@@ -128,6 +154,15 @@ class Radar extends Component
             ],[
                 'postal_code' =>  $this->postalCode,
             ]);
+        }
+        $color =[
+            'AM'=>'amber',
+            'WH'=>'white',
+            'GC'=>'green'
+        ];
+        $img=ProductImage::select('image')->where('product_id',$this->id)->where('color',$color[$color_code])->first();
+        if(isset($img)){
+            $this->cover_image=$img->image;
         }
 
         if(!Session::get('user')){
