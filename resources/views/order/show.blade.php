@@ -59,10 +59,10 @@ use Illuminate\Support\Facades\Log;
                             <p> Order Status : <span class="p-1">
                                     {{strtoupper($order->delivery_status)}} </span>   </p>
 
-                        <p> Trasaction No. : <span>
+                        <p> Transaction No. : <span>
                                 {{$order->trx_id}}</span> </p>
                         <p>  <b> Order Note: </b>  {{$order->order_notes??'Order notes not available.'}}</p>
-                            <a href="{{route('admin.generate_order_invoice',$order->id)}}" target="_blank">
+                            <a href="{{route('customer.customer_order_invoice',$order->id)}}" target="_blank">
                                 <i data-feather="printer"></i>  </a>
                         </div>
                     </div>
