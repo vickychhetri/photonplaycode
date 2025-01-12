@@ -155,8 +155,14 @@
     @if(!$order->is_shipping_same)
     <div class="invoice-section">
         <h3>Shipping Address</h3>
-        <p> {{$order->shipping_street}}, {{$order->shipping_flat_suite}}, {{$order->shipping_city}}, {{$order->shipping_state}}, {{$order->shipping_country}}, {{$order->shipping_postcode}}</p>
+        <p> {{$order->shipping_street}}, {{$order->shipping_flat_suite}},{{$order->shipping_address_line_2}},  {{$order->shipping_city}}, {{$order->shipping_state}}, {{$order->shipping_country}}, {{$order->shipping_postcode}}</p>
     </div>
+    @else
+        <div class="invoice-section">
+            <h3>Shipping Address</h3>
+            <p> {{$order->billing_street}}, {{$order->billing_flat_suite}},{{$order->billing_address_line_2}}, {{$order->billing_city}}, {{$order->billing_state}}, {{$order->billing_country}}, {{$order->billing_postcode}}.</p>
+        </div>
+
     @endif
     <div class="invoice-section">
         <h3>Status</h3>

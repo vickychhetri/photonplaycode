@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductSku;
 use App\Models\ProductSpcializationOption;
 use App\Models\ProductSpecilization;
+use App\Models\SpecializationOption;
 use App\Models\Specilization;
 use App\Traits\UploadImageNameTrait;
 use Illuminate\Http\Request;
@@ -190,4 +192,155 @@ class ProductController extends Controller
     {
         //
     }
+
+
+    public function generate_sku($id){
+            $product = Product::find($id);
+            if(!isset($product->sku_start_range)){
+                echo "Please add start range for this product!";
+                return;
+            }
+            $ps=ProductSpecilization::where('product_id',$id)->groupBy('specialization_id')->get();
+
+            $complete =[];
+            $data=[];
+            foreach ($ps as $sp_op){
+                $ops=ProductSpcializationOption::where('product_specilizations_id',$sp_op->id)
+                    ->where('product_id',$id)->get();
+                foreach ($ops as $options){
+                    if(in_array($options->id,$complete)){
+                        continue;
+                    }
+                    $data[]= [
+                        "pid"=>$id,
+                        "specialization_id"=>$sp_op->specialization_id,
+                        "sp_code"=>Specilization::where('id',$sp_op->specialization_id)->first()->code,
+                        "option"=>$options->specialization_option_id,
+                        "option_code"=>SpecializationOption::where('id',$options->specialization_option_id)->first()->code
+                    ];
+                    $complete[]=$options->id;
+                }
+
+           }
+
+            $grouped = [];
+            foreach ($data as $item) {
+                $sp_code = $item['sp_code'];
+                $option_code = $item['option_code'];
+                $grouped[$sp_code][] = $option_code;
+            }
+        $i=$product->sku_start_range;
+            $combinations = $this->cartesianProduct($grouped);
+
+            foreach ($combinations as $combination) {
+                $ssku_number = implode(', ', $combination);
+                ProductSku::where('specification_condition',$ssku_number)->where('pid',$id)->delete();
+                ProductSku::create([
+                    'pid' => $id,
+                    'specification_condition' => $ssku_number,
+                    'sku_code'=>$i++
+                ]);
+            }
+                echo "done";
+    }
+
+
+
+    public  function  find_sku(Request  $request,$pid){
+        $input = $request->sku;
+        $input_keys =$this->parseKeyValue($input);
+        $sku_product=ProductSku::where('pid',$pid)->get();
+        $code=null;
+
+        foreach ($sku_product as $sku){
+            $d=$this->convertStringToArray($sku->specification_condition);
+
+            if($d==$input_keys){
+                $code=$sku->sku_code;
+                break;
+            }
+
+        }
+
+        if ($code) {
+            return response()->json(['status' => 'success', 'data' => $code]);
+        } else {
+            return response()->json(['status' => 'error', 'data' => null], 404);
+        }
+
+    }
+    function cartesianProduct($arrays) {
+        $result = [[]];
+        foreach ($arrays as $key => $values) {
+            $append = [];
+            foreach ($result as $product) {
+                foreach ($values as $value) {
+                    $append[] = array_merge($product, [$key . ' = ' . $value]);
+                }
+            }
+            $result = $append;
+        }
+        return $result;
+    }
+
+    public function convertStringToArray($sskuString)
+    {
+        // Split the string by commas to get individual key-value pairs
+        $pairs = explode(', ', $sskuString);
+
+        $result = [];
+        foreach ($pairs as $pair) {
+            // Split each pair by '=' to get the key and value
+            list($key, $value) = explode(' = ', $pair);
+            $result[$key] = $value;
+        }
+
+        return $result;
+    }
+
+//    function parseKeyValue($input)
+//    {
+//        $keyValuePairs = [];
+//
+//        // Split into groups by '/'
+//        $groups = explode('/', $input);
+//
+//        foreach ($groups as $group) {
+//            // Split each group by '-'
+//            $parts = explode('-', $group);
+//            if (count($parts) === 2) {
+//                $keyValuePairs[] = [
+//                    'key' => $parts[0],
+//                    'value' => $parts[1],
+//                ];
+//            }
+//        }
+//
+//        return $keyValuePairs;
+//    }
+
+    function parseKeyValue($input)
+    {
+        $keyValuePairs = [];
+
+        // Split by '/' first to get segments like ["CR", "AM-PW", "SL-CA", "YS"]
+        $groups = explode('-', $input);
+
+        foreach ($groups as $group) {
+            // Split by '-' for each segment to get the key-value pairs
+            $parts = explode('/', $group);
+
+            // If there are two parts, treat them as key-value pairs
+            if (count($parts) === 2) {
+                $keyValuePairs[$parts[0]]=$parts[1];
+            } else {
+                // Handle the case where no '-' exists, it's just a single part
+                $keyValuePairs[$parts[0]]=null;
+            }
+        }
+
+        return $keyValuePairs;
+    }
+
+
 }

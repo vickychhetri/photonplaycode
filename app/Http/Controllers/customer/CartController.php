@@ -687,6 +687,7 @@ $products_list_ids=[];
             'phone_code' => $phone_code,
             'phone_number' => $phone,
             'email' => $email,
+            'is_guest' => true,
             'password' => Hash::make(rand(10000000, 99999999)),
         ]);
 

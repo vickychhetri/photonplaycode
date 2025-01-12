@@ -224,6 +224,13 @@
                                     <a class="dropdown-item px-0 text-uppercase" href="#"><b> RADAR SPEED SIGNS </b></a>
                                 </h6>
                                 <ul class=" ">
+                                    <li>
+                                        <a
+                                            class="text-wrap dropdown-item px-0 text-uppercase mb-2"
+                                            href="{{ route('customer.product.shop') }}">
+                                            SHOP NOW
+                                        </a>
+                                    </li>
                                     @foreach($productLists ?? [] as $product)
                                         <li>
                                             <a
