@@ -299,6 +299,20 @@
 
                                         </div>
 
+                                        <div class="row mb-3 form-group">
+                                            <label for="product_breadcrumb_text" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Sku Start range') }}</label>
+                                            <div class="col-md-10">
+                                                <input id="sku_start_range" type="number" class="form-control @error('sku_start_range') is-invalid @enderror" name="sku_start_range" value="{{$product->sku_start_range}}" required autocomplete="title" autofocus>
+
+                                                @error('sku_start_range')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
                                         <div class="row mb-2 form-group">
                                             <label for="shipping_type" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Shipping Type') }}</label>
 
