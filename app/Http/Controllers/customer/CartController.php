@@ -240,17 +240,46 @@ $products_list_ids=[];
             $cart_table =  DB::table('carts')->where('session_id', $customer)->get();
         }
 
-        // dd($addresses);
         $coupon_name = $request->c;
         $discount_a = \Illuminate\Support\Facades\Crypt::decrypt($request->d);
         $taxes = DB::table('settings')->select('shipping_time','gst')->first();
 
         $total = 0;
+        $pid=[];
             foreach($cart_table as $cart_t){
                 $total += ($cart_t->price * $cart_t->quantity);
+                $pid[]=[
+                    "count"=>$cart_t->quantity,
+                    "pid"=>$cart_t->product_id
+                ];
             }
+            $shipping_amount=0;
+            foreach ($pid as $ps){
+                $Amount=0;
+                    if(isset($ps["pid"])){
+                        $pst=Product::find($ps["pid"]);
+                        $c=$ps["count"]??1;
+                        if(isset($pst))
+                            if($pst->shipping_fees_us) {
+                                if($pst->shipping_type==2){
+                                    $Amount=$pst->shipping_fees_us*$c;
+                                }else {
+                                    $Amount=0;
+                                }
+
+                            }
+                        if(isset($Amount))
+                        {
+                            $shipping_amount+=$Amount;
+                        }
+                    }
+
+            }
+
         $countries = Country::all();
-        return view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount_a', 'addresses','customer','countries'));
+        return response()->view('customer.cart.checkout', compact('taxes','cart_table','total','coupon_name','discount_a', 'addresses','customer','countries','shipping_amount'))->header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+                ->header('Pragma', 'no-cache')
+                ->header('Expires', 'Fri, 01 Jan 1990 00:00:00 GMT');;
     }
 
     public function removeCartItem($id){
@@ -643,13 +672,16 @@ $products_list_ids=[];
                     $shippingCharges = 0;
                 } else if ($product->shipping_type == 2) {
                     // Get the country code from session
-                    if ($countryCode == 'US') {
-                        $shippingCharges = $product->shipping_fees_us;
-                    } elseif ($countryCode == 'CA') {
-                        $shippingCharges = $product->shipping_fees_can;
-                    } else {
-                        $shippingCharges = 0; // Default to 0 for unsupported countries
-                    }
+                    $shippingCharges = $product->shipping_fees_us;
+//                    if ($countryCode == 'US') {
+//                        $shippingCharges = $product->shipping_fees_us;
+//                    } elseif ($countryCode == 'CA') {
+//                        $shippingCharges = $product->shipping_fees_can;
+//                    }
+
+//                    else {
+//                        $shippingCharges = 0; // Default to 0 for unsupported countries
+//                    }
                 } else {
                     $shippingCharges = 0; // Default to 0 for unknown shipping types
                 }

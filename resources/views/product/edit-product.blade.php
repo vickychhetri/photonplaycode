@@ -344,79 +344,79 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-2 form-group">
-                                            <label for="shipping_fees_can" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Shipping Fees (Canada)') }}</label>
+{{--                                        <div class="row mb-2 form-group">--}}
+{{--                                            <label for="shipping_fees_can" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Shipping Fees (Canada)') }}</label>--}}
 
-                                            <div class="col-md-10">
-                                                <input id="shipping_fees_can" type="number" step="0.01" class="form-control @error('shipping_fees_can') is-invalid @enderror" name="shipping_fees_can" value="{{ old('shipping_fees_can', $product->shipping_fees_can) }}" required>
+{{--                                            <div class="col-md-10">--}}
+{{--                                                <input id="shipping_fees_can" type="number" step="0.01" class="form-control @error('shipping_fees_can') is-invalid @enderror" name="shipping_fees_can" value="{{ old('shipping_fees_can', $product->shipping_fees_can) }}" required>--}}
 
-                                                @error('shipping_fees_can')
-                                                <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-                                                @enderror
-                                            </div>
-                                        </div>
+{{--                                                @error('shipping_fees_can')--}}
+{{--                                                <span class="invalid-feedback" role="alert">--}}
+{{--            <strong>{{ $message }}</strong>--}}
+{{--        </span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div class="row mb-2 form-group">
-                                            <label for="free_shipping_label" class="col-md-2 col-form-label text-md-end">{{ __('Free Shipping Label') }}</label>
+{{--                                        <div class="row mb-2 form-group">--}}
+{{--                                            <label for="free_shipping_label" class="col-md-2 col-form-label text-md-end">{{ __('Free Shipping Label') }}</label>--}}
 
-                                            <div class="col-md-10">
-                                                <input id="free_shipping_label" type="text" class="form-control @error('free_shipping_label') is-invalid @enderror" name="free_shipping_label" value="{{ old('free_shipping_label', $product->free_shipping_label) }}">
+{{--                                            <div class="col-md-10">--}}
+{{--                                                <input id="free_shipping_label" type="text" class="form-control @error('free_shipping_label') is-invalid @enderror" name="free_shipping_label" value="{{ old('free_shipping_label', $product->free_shipping_label) }}">--}}
 
-                                                @error('free_shipping_label')
-                                                <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-                                                @enderror
-                                            </div>
-                                        </div>
+{{--                                                @error('free_shipping_label')--}}
+{{--                                                <span class="invalid-feedback" role="alert">--}}
+{{--            <strong>{{ $message }}</strong>--}}
+{{--        </span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div class="row mb-2 form-group">
-                                            <label for="paid_shipping_label" class="col-md-2 col-form-label text-md-end">{{ __('Paid Shipping Label') }}</label>
+{{--                                        <div class="row mb-2 form-group">--}}
+{{--                                            <label for="paid_shipping_label" class="col-md-2 col-form-label text-md-end">{{ __('Paid Shipping Label') }}</label>--}}
 
-                                            <div class="col-md-10">
-                                                <input id="paid_shipping_label" type="text" class="form-control @error('paid_shipping_label') is-invalid @enderror" name="paid_shipping_label" value="{{ old('paid_shipping_label', $product->paid_shipping_label) }}">
+{{--                                            <div class="col-md-10">--}}
+{{--                                                <input id="paid_shipping_label" type="text" class="form-control @error('paid_shipping_label') is-invalid @enderror" name="paid_shipping_label" value="{{ old('paid_shipping_label', $product->paid_shipping_label) }}">--}}
 
-                                                @error('paid_shipping_label')
-                                                <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                            </div>
-                                        </div>
+{{--                                                @error('paid_shipping_label')--}}
+{{--                                                <span class="invalid-feedback" role="alert">--}}
+{{--                                                        <strong>{{ $message }}</strong>--}}
+{{--                                                    </span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div class="row mb-2 form-group">
-                                            <label for="price_canada" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Price (Canada)') }}</label>
+{{--                                        <div class="row mb-2 form-group">--}}
+{{--                                            <label for="price_canada" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Price (Canada)') }}</label>--}}
 
-                                            <div class="col-md-10">
-                                                <input id="price_canada" type="number" step="0.01" class="form-control @error('price_canada') is-invalid @enderror" name="price_canada" value="{{ old('price_canada', $product->price_canada) }}" required>
+{{--                                            <div class="col-md-10">--}}
+{{--                                                <input id="price_canada" type="number" step="0.01" class="form-control @error('price_canada') is-invalid @enderror" name="price_canada" value="{{ old('price_canada', $product->price_canada) }}" required>--}}
 
-                                                @error('price_canada')
-                                                <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                            </div>
-                                        </div>
+{{--                                                @error('price_canada')--}}
+{{--                                                <span class="invalid-feedback" role="alert">--}}
+{{--                                                        <strong>{{ $message }}</strong>--}}
+{{--                                                    </span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div class="row mb-2 form-group">
-                                        <label for="sku" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('SKU') }}</label>
+    {{--                                        <div class="row mb-2 form-group">--}}
+    {{--                                        <label for="sku" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('SKU') }}</label>--}}
 
-                                        <div class="col-md-10">
-                                            <input id="sku" type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" value="{{$product->sku}}" required autocomplete="sku" autofocus>
+    {{--                                        <div class="col-md-10">--}}
+    {{--                                            <input id="sku" type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" value="{{$product->sku}}" required autocomplete="sku" autofocus>--}}
 
-                                            @error('sku')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
-
-
-                                        </div>
+    {{--                                            @error('sku')--}}
+    {{--                                            <span class="invalid-feedback" role="alert">--}}
+    {{--                                                <strong>{{ $message }}</strong>--}}
+    {{--                                            </span>--}}
+    {{--                                            @enderror--}}
 
 
-                                    </div>
+    {{--                                        </div>--}}
+
+
+    {{--                                    </div>--}}
 
                                         <div class="row mb-2 form-group">
                                             <label for="brochure" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Brochure') }}</label>

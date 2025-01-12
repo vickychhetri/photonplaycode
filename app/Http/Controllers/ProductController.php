@@ -139,7 +139,7 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->is_price_hide=$isPriceHidden;
         $product->slug=$request->slug;
-        $product->sku=$request->sku;
+//        $product->sku=$request->sku;
         $product->sku_start_range=$request->sku_start_range;
 
         $product->product_heading_text=$request->product_heading_text;
@@ -149,10 +149,10 @@ class ProductController extends Controller
 
         $product->shipping_type=$request->shipping_type;
         $product->shipping_fees_us=$request->shipping_fees_us;
-        $product->shipping_fees_can=$request->shipping_fees_can;
-        $product->free_shipping_label=$request->free_shipping_label;
-        $product->paid_shipping_label=$request->paid_shipping_label;
-        $product->price_canada=$request->price_canada;
+//        $product->shipping_fees_can=$request->shipping_fees_can;
+//        $product->free_shipping_label=$request->free_shipping_label;
+//        $product->paid_shipping_label=$request->paid_shipping_label;
+//        $product->price_canada=$request->price_canada;
 
 
         $product->pdf_download_text=$request->pdf_download_text;

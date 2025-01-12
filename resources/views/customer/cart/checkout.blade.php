@@ -350,19 +350,18 @@
                         <input type="checkbox" id="is_shipping_same" name="is_shipping_same" value="1" checked>
                         My Shipping address is the same as my billing address?
                     </label>
+
                     <div class="mt-3">
-                        <label>
-                            <input type="radio" id="i_want_free_shipping" name="i_want_free_shipping" value="0" checked>
-                            Free Shipping
-                        </label>
+                        <label for="shipping_option">Shipping Options</label>
+                        <select id="shipping_option" name="i_want_free_shipping" class="form-select">
+                            <option value="0" selected>Free Shipping</option>
+                            <option value="1">Express Shipping (${{$shipping_amount}})</option>
+                        </select>
                     </div>
 
-                    <div class="mt-2">
-                        <label>
-                            <input type="radio" id="i_want_free_shipping" name="i_want_free_shipping" value="1">
-                            Express Shipping
-                        </label>
-                    </div>
+
+
+
                     <div id="shipping-details" class="mt-3 d-none">
 
                         <div>
@@ -902,8 +901,10 @@
             }else {
                 var txtInput = $("#shipping_postcode").val();
             }
-            var selectedShipping = document.querySelector('input[name="i_want_free_shipping"]:checked').value;
-                var url = "{{ route('customer.get.user.postal.code') }}";
+            // var selectedShipping = document.querySelector('input[name="i_want_free_shipping"]:checked').value;
+            var selectedShipping = document.querySelector('#shipping_option').value;
+
+            var url = "{{ route('customer.get.user.postal.code') }}";
                 $.ajax({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -938,7 +939,7 @@
         });
     });
 
-    $('input[name="i_want_free_shipping"]').change(function() {
+    $('#shipping_option').change(function() {
         // Trigger the postal code change event manually
         $('#billing_postcode, #shipping_postcode').trigger('change');
     });
