@@ -143,12 +143,15 @@
                         SKU RANGE :: {{$product->title}}
                     </h4>
                     <a href="{{route("admin.sku_generate",$product->id)}}" class="btn btn-danger"> Generate SKU</a>
-                    <p style="font-size: 10px;color:red;"> Before click here to generate SKU Range, please set starting range.
-                    create all specifications.
+                    <p style="font-size: 10px; color: red;">
+                        Before clicking here to generate the SKU range, please set the starting range and create all specifications.
                     </p>
                     @if(!isset($product_skus))
-                        SKU Not Generated for this , please add range In product edit and then generate sku.
+                        <p style="font-size: 10px; color: red;">
+                            SKU has not been generated for this product. Please add a range in the product edit section and then generate the SKU.
+                        </p>
                     @endif
+
                     <table class="table " style="max-width: 400px;">
                         <tr>
                             <th>
@@ -181,6 +184,11 @@
                     <h4>
                         SKU RANGE Already Start Allocated.
                     </h4>
+                    <p style="font-size: 10px; color: red;">
+                        All product SKU start ranges are provided for reference purposes only.
+                        If you need to change the range (indicated in red text), please note that it is either already allocated to another product or currently empty.
+                    </p>
+
                     <table class="table table-bordered " style="max-width: 400px;">
                         <tr>
                             <th>
