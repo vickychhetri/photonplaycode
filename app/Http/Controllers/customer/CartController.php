@@ -422,13 +422,24 @@ $products_list_ids=[];
 
             $checkout_session = \Stripe\Checkout\Session::create($checkout_session_params);
 
+            $coupon_detail = Coupon::select('id','coupon_name','type','value')->where('coupon_name', Crypt::decrypt($request->coupon_name))->first();
+            if ($coupon_detail) {
+                $isPercentage = $coupon_detail->type;
+                if($isPercentage == 2){
+                    $couponAmount = $coupon_detail->value;
+                    $coupon_amount=   $request->cart_subtotal* $couponAmount/100;
+
+                }else{
+                    $coupon_amount = $coupon_detail->value;
+                }
+            }
             $order = Order::create([
                'user_id' => $userId,
                'trx_id' => $checkout_session->id,
                'order_number' => $orderId,
                'coupon' => $request->coupon,
                'cart_subtotal' => $request->cart_subtotal,
-               'discounted_amount' => $request->discount,
+               'discounted_amount' => $coupon_amount,
                'shipping' => $request->shipping,
                'gst' => $request->gst,
                'grand_total' => $request->grand_total,
