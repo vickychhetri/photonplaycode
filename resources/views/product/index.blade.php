@@ -49,7 +49,11 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td>{{$Sr++}}</td>
-                                        <td>{{$product->title}}</td>
+                                        <td>
+                                            <a class="text-decoration-underline text-reset" href="{{route('admin.product_basic_update',$product->id)}}">
+                                            {{$product->title}}
+                                            </a>
+                                        </td>
                                         <td>{{$product->price}}</td>
                                         <td>
                                             <span> {{$product->code??"NOT ASSIGNED"}} </span>
@@ -58,8 +62,11 @@
 
                                         <td>{{$product->created_at->format('d/m/Y')}}</td>
                                         <td>
-                                            <a href="{{route('admin.product_basic_update',$product->id)}}" class="text-success p-1" data-toggle="tooltip" title="Edit">
-                                                <i data-feather="edit-3"></i>
+{{--                                            <a href="{{route('admin.product_basic_update',$product->id)}}" class="text-success p-1" data-toggle="tooltip" title="Edit">--}}
+{{--                                                <i data-feather="edit-3"></i>--}}
+{{--                                            </a>--}}
+                                            <a href="{{route('admin.product_copy',$product->id)}}" class="text-success p-1" data-toggle="tooltip" title="Edit" onclick="return confirm('Are you sure want to copy this product?')">
+                                                <i data-feather="copy"></i>
                                             </a>
                                             <a href="{{route('admin.product.edit',$product->id)}}" class="text-warning p-1" data-toggle="tooltip" title="Edit">
                                                 <i data-feather="edit"></i>

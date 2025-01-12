@@ -139,4 +139,80 @@ class ProductSetupController extends Controller
         }
     }
 
+    public function product_copy($id)
+    {
+        $original_product = Product::find($id);
+
+        if ($original_product) {
+            $new_product = $original_product->replicate();
+
+            $new_product->title = $this->generateUniqueCopyName($new_product->title, 'title');
+
+            $new_product->slug = $this->generateUniqueCopyName($new_product->slug, 'slug');
+
+            $new_product->code = $this->generateUniqueCopyName($new_product->code, 'code');
+
+            $new_product->save();
+
+            foreach ($original_product->specilizations as $specialization) {
+                $new_spec = $specialization->replicate();
+                $new_spec->product_id = $new_product->id;
+                $new_spec->save();
+            }
+
+            foreach ($original_product->images as $images) {
+                $new_spec = $images->replicate();
+                $new_spec->product_id = $new_product->id;
+                $new_spec->save();
+            }
+
+            foreach ($original_product->product_features as $feature) {
+                $new_spec = $feature->replicate();
+                $new_spec->product_id = $new_product->id;
+                $new_spec->save();
+            }
+
+            return redirect()->back()->with('success', 'Product and its specializations have been copied.');
+        }
+
+        return redirect()->back()->with('error', 'Product not found.');
+    }
+
+    private function generateUniqueCopyName($original, $field)
+    {
+        $counter = 1;
+        $new_value = $original;
+
+        if ($field === 'title') {
+            $new_value = $original . ' (Copy)';
+            while (Product::where('title', $new_value)->exists()) {
+                $counter++;
+                $new_value = $original . ' (Copy ' . $counter . ')';
+            }
+        }
+
+        if ($field === 'slug') {
+            $new_value = $original . '-copy';
+            while (Product::where('slug', $new_value)->exists()) {
+                $counter++;
+                $new_value = $original . '-copy' . ($counter > 1 ? '-' . $counter : '');
+            }
+        }
+
+        if ($field === 'code') {
+            $new_value = $original . '-copy';
+            while (Product::where('code', $new_value)->exists()) {
+                $counter++;
+                $new_value = $original . '-copy' . ($counter > 1 ? '-' . $counter : '');
+            }
+        }
+
+        return $new_value;
+    }
+
+
+
+
+
+
 }
