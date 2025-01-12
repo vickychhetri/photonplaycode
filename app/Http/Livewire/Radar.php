@@ -133,6 +133,7 @@ class Radar extends Component
                            if($pso){
                           $optin=SpecializationOption::find($pso->specialization_option_id);
                           if(isset($optin)){
+
                               $color_code=$optin->code;
                               break;
                           }
@@ -160,10 +161,14 @@ class Radar extends Component
             'WH'=>'white',
             'GC'=>'green'
         ];
-        $img=ProductImage::select('image')->where('product_id',$this->id)->where('color',$color[$color_code])->first();
-        if(isset($img)){
-            $this->cover_image=$img->image;
+        if(isset($color_code)){
+            $img=ProductImage::select('image')->where('product_id',$this->id)->where('color',$color[$color_code])->first();
+            if(isset($img)){
+                $this->cover_image=$img->image;
+            }
         }
+
+        dd($color_code);
 
         if(!Session::get('user')){
             $cart = Cart::where(['session_id' => $this->sessionId, 'product_id' => $this->Pid, 'price' => $this->price])->first();
