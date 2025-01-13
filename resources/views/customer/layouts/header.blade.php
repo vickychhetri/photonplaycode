@@ -491,26 +491,26 @@
 
     <script>
         // Fetch user's IP information using ip-api API
-        fetch('http://ip-api.com/json')
-            .then(response => response.json())
-            .then(data => {
-                const ipAddress = data.query;
-                const city = data.city;
-                const region = data.regionName;
-                const country = data.country;
-
-
-                console.log('IP Address:', ipAddress);
-                console.log('City:', city);
-                console.log('Region:', region);
-                console.log('Country:', country);
-
-                // Now you can use this information as needed
-            })
-            .catch(error => {
-                console.error('Error fetching IP information:', error);
-                // You can handle errors here
-            });
+        // fetch('http://ip-api.com/json')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         const ipAddress = data.query;
+        //         const city = data.city;
+        //         const region = data.regionName;
+        //         const country = data.country;
+        //
+        //
+        //         console.log('IP Address:', ipAddress);
+        //         console.log('City:', city);
+        //         console.log('Region:', region);
+        //         console.log('Country:', country);
+        //
+        //         // Now you can use this information as needed
+        //     })
+        //     .catch(error => {
+        //         console.error('Error fetching IP information:', error);
+        //         // You can handle errors here
+        //     });
 
         document.getElementById("backToTop").addEventListener("click", function () {
             window.scrollTo({
