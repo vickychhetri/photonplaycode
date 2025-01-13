@@ -643,17 +643,22 @@
 
     const sliderStatic = document.getElementById('main_screen_image_cover_div');
     const preview1 = document.getElementById('preview1');
-    // Set z-index to 999 when mouse enters
-    sliderStatic.addEventListener('mouseover', () => {
-        preview1.style.zIndex = '999';
-        preview1.style.display = 'block';
-    });
 
-    // Reset z-index to -999 when mouse leaves
-    sliderStatic.addEventListener('mouseout', () => {
-        preview1.style.zIndex = '-999';
-        preview1.style.display = 'none';
-    });
+    if (sliderStatic && preview1) {
+        // Set z-index to 999 when mouse enters
+        sliderStatic.addEventListener('mouseover', () => {
+            preview1.style.zIndex = '999';
+            preview1.style.display = 'block';
+        });
+
+        // Reset z-index to -999 when mouse leaves
+        sliderStatic.addEventListener('mouseout', () => {
+            preview1.style.zIndex = '-999';
+            preview1.style.display = 'none';
+        });
+    } else {
+        // console.error('sliderStatic or preview1 is not defined.');
+    }
 
 
 

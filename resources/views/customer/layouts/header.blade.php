@@ -30,7 +30,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
+    @php
+        $disable_js=0;
+        $disable_js_error=\App\Models\MasterConfiguration::where('code','disable_js_errors')->first();
+        if(isset($disable_js_error)){
+            $disable_js=$disable_js_error->value;
+        }
+    @endphp
+    @if($disable_js==1)
+        <script src="{{ asset('assets/js/disable-console.js') }}"></script>
+    @endif
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
