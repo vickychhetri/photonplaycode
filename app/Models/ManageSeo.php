@@ -28,6 +28,9 @@ class ManageSeo extends Model
     public const NEIGHBOURHOOD="NEIGHBOURHOOD";
     public const PARKING_LOT="PARKING_LOT";
     public const SCHOOL_ZONE="SCHOOL_ZONE";
+    public const LOGIN="LOGIN";
+    public const REGISTER="REGISTER";
+    public const SHOPPING_BAG="SHOPPING_BAG";
 
 
 }

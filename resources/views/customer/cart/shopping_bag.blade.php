@@ -1,9 +1,24 @@
+
 @php
     use App\Models\ProductSpcializationOption;
     use Illuminate\Support\Facades\Log;
+    use App\Models\ManageSeo;
         $country_code = Illuminate\Support\Facades\Session::get('country_code', 'US');
 @endphp
 
+<?php
+
+$data_record = ManageSeo::where('page_name', ManageSeo::SHOPPING_BAG)->first();
+if($data_record){
+    $seo_meta=[
+        "title"=>$data_record->title,
+        "description"=>$data_record->description,
+        "keywords"=>$data_record->keyword,
+        "schema"=>$data_record->schema,
+        "feature_image"=>"storage/image/banner%202.webp"
+    ];
+}
+?>
 @include('customer.layouts.header')
 
 <!-- header-end -->

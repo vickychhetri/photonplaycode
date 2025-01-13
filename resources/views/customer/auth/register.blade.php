@@ -1,3 +1,16 @@
+<?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name', ManageSeo::REGISTER)->first();
+if($data_record){
+    $seo_meta=[
+        "title"=>$data_record->title,
+        "description"=>$data_record->description,
+        "keywords"=>$data_record->keyword,
+        "schema"=>$data_record->schema,
+        "feature_image"=>"storage/image/banner%202.webp"
+    ];
+}
+?>
 @include('customer.layouts.header')
 <style>
     .input-cus-group .form-control{
