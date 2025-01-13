@@ -239,9 +239,13 @@ $products_list_ids=[];
             $addresses = [];
             $cart_table =  DB::table('carts')->where('session_id', $customer)->get();
         }
+            try{
+                $coupon_name = $request->c;
+                $discount_a = \Illuminate\Support\Facades\Crypt::decrypt($request->d);
+            }catch (\Exception $e){
+                return redirect()->route('customer.shopping.bag')->with('error', 'Something went wrong, please try again.');;
+            }
 
-        $coupon_name = $request->c;
-        $discount_a = \Illuminate\Support\Facades\Crypt::decrypt($request->d);
         $taxes = DB::table('settings')->select('shipping_time','gst')->first();
 
         $total = 0;
