@@ -72,6 +72,17 @@
     <meta name="twitter:site" content="@photonplayinc" />
     <meta name="twitter:creator" content="@photonplayinc" />
 
+    @php
+        $disable_js=0;
+        $disable_js_error=\App\Models\MasterConfiguration::where('code','disable_js_errors')->first();
+        if(isset($disable_js_error)){
+            $disable_js=$disable_js_error->value;
+        }
+    @endphp
+    @if($disable_js==1)
+        <script src="{{ asset('assets/js/disable-console.js') }}"></script>
+    @endif
+
     <!-- Toastify CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="{{ asset('assets\customer\css\style.css') }}">

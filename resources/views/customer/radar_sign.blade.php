@@ -179,8 +179,8 @@ $exchange_rate = session('exchange_rate', '1');
         position: absolute;
         /*border: 2px dashed rgba(0, 0, 0, 0.5);*/
         pointer-events: none;
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 300px;
         visibility: hidden;
         background: rgba(0, 0, 0, 0.2);
     }

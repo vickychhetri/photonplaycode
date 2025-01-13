@@ -40,6 +40,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.bootstrap4.min.css">
 
+    @php
+        $disable_js=0;
+        $disable_js_error=\App\Models\MasterConfiguration::where('code','disable_js_errors')->first();
+        if(isset($disable_js_error)){
+            $disable_js=$disable_js_error->value;
+        }
+    @endphp
+    @if($disable_js==1)
+        <script src="{{ asset('assets/js/disable-console.js') }}"></script>
+    @endif
 
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">--}}
     <style>
