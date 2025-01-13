@@ -235,10 +235,10 @@ class ProductController extends Controller
             }
         $i=$product->sku_start_range;
             $combinations = $this->cartesianProduct($grouped);
-
+            ProductSku::where('pid',$id)->delete();
             foreach ($combinations as $combination) {
                 $ssku_number = implode(', ', $combination);
-                ProductSku::where('specification_condition',$ssku_number)->where('pid',$id)->delete();
+//                ProductSku::where('specification_condition',$ssku_number)->where('pid',$id)->delete();
                 ProductSku::create([
                     'pid' => $id,
                     'specification_condition' => $ssku_number,
