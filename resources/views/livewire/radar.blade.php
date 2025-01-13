@@ -301,7 +301,7 @@
                             </div>
                         <div class="col-lg-8 col-md-8">
                             <div class="d-md-flex justify-content-start mt-lg-0 mt-4 buy-right align-items-center">
-                                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);max-width: 200px;">
                                     <a class="btn d-flex align-items-center justify-content-center m-0"
                                        @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
                                        style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
@@ -323,20 +323,24 @@
                                 </div>
 
 
+                                    <div>
+                                        <div class="px-4 py-lg-0 py-4">
+                                                                        <span style="display: none" class="one-thousand" id="total_price">
+                                                                            @if($country_code=="CA")
+                                                                                ${{ $product->price_canada*$exchange_rate }}
+                                                                        </span>
+                                            @else
+                                                ${{ $product->price*$exchange_rate }}
+                                                </span>
+                                            @endif
 
-                                <div class="px-4 py-lg-0 py-4">
-                                    <span style="display: none" class="one-thousand" id="total_price">
-                                        @if($country_code=="CA")
-                                            ${{ $product->price_canada*$exchange_rate }}</span>
-                                        @else
-                                            ${{ $product->price*$exchange_rate }}</span>
-                                        @endif
+                                        </div>
+                                        {{--                                data-bs-target="#exampleModalCenter"--}}
+                                        <button data-bs-toggle="modal" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
+                                            <img style="height: 58px;" class="img_size"    src="{{ asset('assets/images/add_to_cart.webp') }}">
+                                        </button>
+                                    </div>
 
-                                </div>
-{{--                                data-bs-target="#exampleModalCenter"--}}
-                                <button data-bs-toggle="modal" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
-                                    <img style="height: 58px;" class="img_size" src="{{ asset('assets/images/add_to_cart.webp') }}">
-                                </button>
                             </div>
                         </div>
                         <p class="mt-4">{{$product->shipping_text??"Comes with multiple power options such as Standalone Solar powered operations. <br> Shipping: 7-10 Working Days"}}.</p>
