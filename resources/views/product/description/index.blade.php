@@ -76,7 +76,7 @@
                                         </div>
 
                                         <div class="row mb-3 form-group  d-flex align-items-center">
-                                            <label for="feature" class="col-md-3 col-form-label text-md-end"><span>* </span>{{ __('Feature') }}</label>
+                                            <label for="feature" class="col-md-3 col-form-label text-md-end"><span>* </span>{{ __('Shipping & Return') }}</label>
 
                                             <div class="col-md-8">
                                                 <textarea   id="feature"  name="feature" class="form-control summernote_feature"  >{{ old('feature') ??  $product->feature ?? ''}}</textarea>

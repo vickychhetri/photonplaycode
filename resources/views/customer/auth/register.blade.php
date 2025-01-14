@@ -34,6 +34,9 @@ if($data_record){
     .alert-danger li {
         line-height: 1.5;
     }
+    .astrick_mandatory {
+        color: red;
+    }
 </style>
 <div class="container-cus pt-lg-5 pt-3">
     <div class="login-sec">
@@ -67,7 +70,7 @@ if($data_record){
                             <div class="row">
                                 <!-- First Name -->
                                 <div class="col-md-6 mb-3">
-                                    <label for="">First Name</label>
+                                    <label for="">First Name<span class="astrick_mandatory">*</span></label>
                                     <span class="error-message" id="nameError"></span>
                                     <div class="input-group input-cus-group mb-1">
                                         <input type="text" name="name" id="name" class="form-control input-cus"
@@ -77,7 +80,7 @@ if($data_record){
 
                                 <!-- Last Name -->
                                 <div class="col-md-6 mb-3">
-                                    <label for="last_name">Last Name</label>
+                                    <label for="last_name">Last Name<span class="astrick_mandatory">*</span> </label>
                                     <span class="error-message" id="lastNameError"></span>
                                     <div class="input-group input-cus-group">
                                         <input type="text" name="last_name" id="last_name" class="form-control input-cus"
@@ -87,7 +90,7 @@ if($data_record){
                             </div>
 
 
-                            <label for="">Email Address</label>
+                            <label for="">Email Address<span class="astrick_mandatory">*</span></label>
                             <div class="error-message" id="emailError"></div>
                             <div class="input-group input-cus-group  mb-1">
                                 <input type="email" name="email" id="email" class="form-control input-cus"
@@ -96,7 +99,7 @@ if($data_record){
 
 
                             <div class="mb-3">
-                                <label for="phone_number" class="form-label">Phone Number</label>
+                                <label for="phone_number" class="form-label">Phone Number<span class="astrick_mandatory">*</span></label>
                                 <div class="error-message" id="phone_number_error"></div>
                                 <div class=" input-cus-group d-flex gap-2">
                                     <!-- Dropdown for Country Code -->
@@ -114,7 +117,7 @@ if($data_record){
 
 
 
-                            <label for="">Password <span style="font-size: 10px;">  (Password must be 8-12 characters long and must contain one special character)</span></label>
+                            <label for="">Password<span class="astrick_mandatory">*</span> <span style="font-size: 10px;">  (Password must be 8-12 characters long and must contain one special character)</span></label>
 
                             <div class="error-message" id="passwordError"></div>
                             <div class="input-group input-cus-group  mb-1">
@@ -125,7 +128,7 @@ if($data_record){
         </span>
                             </div>
 
-                            <label for="">Confirm Password</label>
+                            <label for="">Confirm Password<span class="astrick_mandatory">*</span></label>
                             <div class="error-message" id="confirmPasswordError"></div>
                             <div class="input-group input-cus-group mb-4">
                                 <input type="password" name="password_confirmation" id="password_confirmation"
