@@ -39,6 +39,9 @@
     .list-group-item:hover {
         background-color: #f8f9fa; /* Light gray hover effect */
     }
+    .astrick_mandatory {
+        color: red;
+    }
 </style>
 {{--//main_shipping_double_address - vicky 26-12-2024 end--}}
 <section class="stepper-form-tabber pt-3 pb-0">
@@ -104,26 +107,26 @@
                     <div class="row">
                             <div class="col-md-6">
                                 <div>
-                                    <label for="billing_street" class="form-label">Street Number</label>
+                                    <label for="billing_street" class="form-label">Street Number<span class="astrick_mandatory">*</span></label>
                                     <input type="text" class="form-control rounded-0 px-3" name="billing_street" placeholder="Street Number" id="billing_street" value="" maxlength="150" required>
                                 </div>
                             </div>
                         <div class="col-md-6">
                             <div>
-                                <label for="billing_flat_suite" class="form-label">Flat/Suite</label>
+                                <label for="billing_flat_suite" class="form-label">Flat/Suite<span class="astrick_mandatory">*</span></label>
                                 <input type="text" class="form-control rounded-0 px-3" name="billing_flat_suite" placeholder="Flat/Suite" id="billing_flat_suite" maxlength="100" value="">
                             </div>
 
                         </div>
                     </div>
                     <div>
-                        <label for="billing_flat_suite" class="form-label">Address line 2</label>
+                        <label for="billing_flat_suite" class="form-label">Address line 2 (Optional)</label>
                     <input type="text" class="form-control rounded-0 px-3" name="billing_address_line_2" placeholder="Address line 2" id="address">
                     </div>
 
                     <div>
                         <div>
-                            <label for="billing_postcode" class="form-label">Postal Code</label>
+                            <label for="billing_postcode" class="form-label">Postal Code<span class="astrick_mandatory">*</span></label>
                             <input type="text" class="form-control rounded-0 px-3 pb-0" name="billing_postcode" id="billing_postcode" placeholder="Postal Code" maxlength="8" required />
                             <span id="billing_postcode_error_msg" class="mb-2"></span>
                             <ul id="suggestions" class="list-group pt-0 mt-0 mb-2" style="display:none;"> </ul>
@@ -134,20 +137,20 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div>
-                                    <label for="billing_city" class="form-label">City</label>
+                                    <label for="billing_city" class="form-label">City<span class="astrick_mandatory">*</span></label>
                                     <input type="text" id="billing_city" name="billing_city" class="form-control rounded-0 px-3" placeholder="Enter City Name" required />
                                 </div>
                             </div>
                             <div class="col-md-4">
 
                                 <div>
-                                    <label for="billing_state" class="form-label">State</label>
+                                    <label for="billing_state" class="form-label">State<span class="astrick_mandatory">*</span></label>
                                     <input type="text" id="billing_state" name="billing_state" class="form-control rounded-0 px-3" placeholder="Enter State Name" required  />
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="billing_country" class="form-label">Country</label>
+                                    <label for="billing_country" class="form-label">Country<span class="astrick_mandatory">*</span></label>
                                     <input type="text" id="billing_country" placeholder="Enter Country Name" name="billing_country" class="form-control rounded-0 px-3" required  />
                                 </div>
                             </div>
@@ -264,13 +267,23 @@
                         My Shipping address is the same as my billing address?
                     </label>
 
-                    <div class="mt-3">
-                        <label for="shipping_option">Shipping Options</label>
-                        <select id="shipping_option" name="i_want_free_shipping" class="form-select">
-                            <option value="0" selected>Free Shipping</option>
-                            <option value="1">Express Shipping (${{$shipping_amount}})</option>
-                        </select>
-                    </div>
+                    @if($shipping_amount > 0)
+                        <div class="mt-3">
+                            <label for="shipping_option">Shipping Options<span class="astrick_mandatory">*</span></label>
+                            <select id="shipping_option" name="i_want_free_shipping" class="form-select">
+                                <option value="0" selected>Free Shipping</option>
+                                <option value="1">Express Shipping (${{$shipping_amount}})</option>
+                            </select>
+                        </div>
+                    @else
+                        <div class="mt-3">
+                            <label for="shipping_option">Shipping Options<span class="astrick_mandatory">*</span></label>
+                            <select id="shipping_option" name="i_want_free_shipping" class="form-select">
+                                <option value="0" selected>Free Shipping</option>
+                            </select>
+                        </div>
+                    @endif
+
 
 
 
@@ -278,20 +291,20 @@
                     <div id="shipping-details" class="mt-3 d-none">
 
                         <div>
-                            <label for="shipping_street" class="form-label">Street Number</label>
+                            <label for="shipping_street" class="form-label">Street Number<span class="astrick_mandatory">*</span></label>
                             <input type="text" class="form-control rounded-0 px-3" name="shipping_street" id="shipping_street" placeholder="Street Number">
                         </div>
 
                         <div class="row">
                             <div class="col-md-6">
                                 <div>
-                                    <label for="shipping_flat_suite" class="form-label">Flat/Suite</label>
+                                    <label for="shipping_flat_suite" class="form-label">Flat/Suite<span class="astrick_mandatory">*</span></label>
                                     <input type="text" class="form-control rounded-0 px-3" name="shipping_flat_suite" id="shipping_flat_suite" placeholder="Flat/Suite">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div>
-                                    <label for="shipping_flat_suite" class="form-label">Address Line 2</label>
+                                    <label for="shipping_flat_suite" class="form-label">Address Line 2 (Optional)</label>
                                     <input type="text" class="form-control rounded-0 px-3" name="shipping_address_line_2" placeholder="Address line 2" id="address">
                                 </div>
                             </div>
@@ -302,7 +315,7 @@
 
 
                         <div>
-                            <label for="shipping_postcode" class="form-label">Postal Code</label>
+                            <label for="shipping_postcode" class="form-label">Postal Code<span class="astrick_mandatory">*</span></label>
 
                             <input type="text" class="form-control rounded-0 px-3" name="shipping_postcode" id="shipping_postcode" placeholder="Postal Code"  autocomplete="off"
                                    autocorrect="off"
@@ -317,19 +330,19 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div>
-                                    <label for="shipping_city" class="form-label">City</label>
+                                    <label for="shipping_city" class="form-label">City<span class="astrick_mandatory">*</span></label>
                                     <input type="text" id="shipping_city" class="form-control rounded-0 px-3" placeholder="Enter City Name" name="shipping_city"  required />
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="shipping_state" class="form-label">State</label>
+                                    <label for="shipping_state" class="form-label">State<span class="astrick_mandatory">*</span></label>
                                     <input type="text" id="shipping_state" class="form-control rounded-0 px-3" placeholder="Enter State Name" name="shipping_state"  required />
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div>
-                                    <label for="shipping_country" class="form-label">Country</label>
+                                    <label for="shipping_country" class="form-label">Country<span class="astrick_mandatory">*</span></label>
                                     <input type="text" id="shipping_country" class="form-control rounded-0 px-3" placeholder="Enter Country Name" name="shipping_country"  required />
                                 </div>
                             </div>
@@ -473,7 +486,7 @@
                     {{-- <h3 class="mt-5 mb-2">SHIPPING ADDRESS</h3> --}}
                     {{-- <label for=""> <input type="checkbox" class="me-2 d-inline-block">SHIP TO A DIFFERENT
                         ADDRESS?</label> --}}
-                    <label class="d-block mt-3">Order Comments</label>
+                    <label class="d-block mt-3">Order Comments (Optional)</label>
                     <textarea name="order_notes" class="form-control rounded-0 mt-2" rows="5"
                         placeholder="Enter Order Notes"></textarea>
                     <button id="checkout-button" onclick="showAlert(event)" class="btn btn-primary btn-block mt-4 p-2 -">Checkout &amp; Pay</button>
