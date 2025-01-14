@@ -502,7 +502,6 @@ $products_list_ids=[];
            return redirect()->away($checkout_session->url);
 
         }catch(Stripe\Exception\InvalidRequestException $e){
-            dd($e->getMessage());
             if(!Session::get('user') && isset($userId)){
                 Customer::where('id', $userId)->delete();
             }
