@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\VendorJob;
 use App\Models\BrochureDownload;
 use App\Models\Cart;
+use App\Models\MasterConfiguration;
 use App\Models\Product;
 use App\Models\UserPostalCode;
 use App\Models\Vendor;
@@ -60,6 +61,18 @@ class SignController extends Controller
     {
         $sessionId = Session::getId();
         $product = Product::with(['images' => fn ($r) => $r->where('color', 'amber'), 'specilizations.specilization', 'specilizations.options', 'specilizations.options.specializationoptions', 'category','product_resources','product_features'])->where('slug', $id)->first();
+
+
+        $not_allowed_category = MasterConfiguration::where('disable_show_detail_product_category')->first();
+        if (isset($not_allowed_category)) {
+            $not_allowed_category_arr = explode(',', $not_allowed_category->disable_show_detail_product_category); // Make sure you're accessing the correct column value
+            if (in_array($product->category_id, $not_allowed_category_arr)) {
+                return redirect()->back()->with('error', 'This product category is not allowed to view details.');
+            }
+        }
+
+
+
         $productLists = Product::where('category_id', 1)->take(5)->get();
 
         //list all accessories
