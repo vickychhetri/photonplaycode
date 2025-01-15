@@ -67,7 +67,8 @@ class SignController extends Controller
         if (isset($not_allowed_category)) {
             $not_allowed_category_arr = explode(',', $not_allowed_category->disable_show_detail_product_category); // Make sure you're accessing the correct column value
             if (in_array($product->category_id, $not_allowed_category_arr)) {
-                return redirect()->back()->with('error', 'This product category is not allowed to view details.');
+                abort(403, 'This product category is not allowed to view details.');
+
             }
         }
 
