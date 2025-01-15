@@ -64,8 +64,10 @@ class SignController extends Controller
 
 
         $not_allowed_category = MasterConfiguration::where('code','disable_show_detail_product_category')->first();
+
         if (isset($not_allowed_category)) {
-            $not_allowed_category_arr = explode(',', $not_allowed_category->disable_show_detail_product_category); // Make sure you're accessing the correct column value
+
+            $not_allowed_category_arr = explode(',', $not_allowed_category->value); // Make sure you're accessing the correct column value
             if (in_array($product->category_id, $not_allowed_category_arr)) {
                 abort(403, 'This product category is not allowed to view details.');
 
