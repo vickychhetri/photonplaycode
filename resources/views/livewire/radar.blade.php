@@ -525,7 +525,7 @@
                                                 <input type="hidden" wire:model="title_a" name="title" value="{{ $ap->product_heading_text ?? $ap->title }}">
                                                 <input type="hidden" wire:model="title_a" name="title" value="{{ $ap->product_heading_text ?? $ap->title }}">
                                                 <input type="hidden" name="category" value="{{ $ap->category->title }}">
-                                                <input type="hidden" name="cover_image" value="{{ $ap->cover_image }}">
+                                                <input type="hidden" name="cover_image_a" value="{{ $ap->cover_image }}">
                                                 <input type="hidden" name="p" value="1">
 
                                                 <div class="quantity-control d-flex align-items-center justify-content-center gap-2">
