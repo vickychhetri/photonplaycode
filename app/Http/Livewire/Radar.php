@@ -95,8 +95,9 @@ class Radar extends Component
 
         foreach ($this->linked_products as $linked_product) {
             $this->title_a = $linked_product->product_heading_text ?? $linked_product->title;
-            $this->cover_image_a = $linked_product->brochure;
+            $this->cover_image_a = $linked_product->cover_image;
         }
+
         return view('livewire.radar', [
             'productLists' => $this->productLists,
             'postalCode' => $this->postalCode,
