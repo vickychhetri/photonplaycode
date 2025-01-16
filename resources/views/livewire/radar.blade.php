@@ -220,7 +220,7 @@
                                                                 (+$<span class="price">{{ $option->specialization_price*$exchange_rate }}</span>)
                                                             @endif
                                                             @if($specilization->specilization->title == "Cloud-Access" && strtolower($option->specializationoptions->option) == "yes")
-                                                                Subscription Free For 1 Year
+                                                               {{$subscription_free_text}}
                                                             @endif
                                                         </option>
                                                     @endforeach

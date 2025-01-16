@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Cart;
+use App\Models\MasterConfiguration;
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\ProductSpcializationOption;
@@ -22,6 +23,7 @@ class Radar extends Component
     public  $currency_icon_selected;
     public $product_id;
     public $product_sku_code;
+    public $subscription_free_text;
     public $color = 'Amber-Color.png';
     public $dynamic_specs = [];
     public function mount($product_id)
@@ -74,6 +76,10 @@ class Radar extends Component
         $this->exchange_rate = Session::get('exchange_rate', 1);
         $this->currency_icon_selected = Session::get('currency_icon', '$');
 
+        $subscription_free_label=MasterConfiguration::where('code','subscription_free_label')->first();
+        if(isset($subscription_free_label)){
+            $this->subscription_free_text=$subscription_free_label->value;
+        }
         $this->productLists = Product::with(['category'])
             ->where('category_id', 1)
             ->take(5)
