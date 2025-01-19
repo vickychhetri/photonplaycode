@@ -45,7 +45,8 @@
                     </div>
                     <div class="d-none d-sm-block col-6 order-lg-2 col-lg text-right pt-3 pt-lg-0">
                         <div class="col-6 col-lg-auto order-lg-3">
-                            <button wire:click="clearFilters" class="btn btn-sm btn-warning rounded">Clear Filters</button>
+                            <button wire:click="clearFilters" class="btn btn-sm btn-warning rounded">Clear Filters
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -86,9 +87,13 @@
                                     <div class="card-body">
                                         <p class="h6 mb-3"><strong>Price Range</strong></p>
 
-                                        <small class="text-muted" x-show="minPrice === {{$minPrice}} && maxPrice === {{ $maxPrice }}"><em>No filters applied</em></small>
-                                        <small class="text-muted" x-show="minPrice !== {{$minPrice}} || maxPrice !== {{ $maxPrice }}">
-                                            <em>Range: $<span x-text="minPrice"></span> - $<span x-text="maxPrice"></span></em>
+                                        <small class="text-muted"
+                                               x-show="minPrice === {{$minPrice}} && maxPrice === {{ $maxPrice }}"><em>No
+                                                filters applied</em></small>
+                                        <small class="text-muted"
+                                               x-show="minPrice !== {{$minPrice}} || maxPrice !== {{ $maxPrice }}">
+                                            <em>Range: $<span x-text="minPrice"></span> - $<span
+                                                    x-text="maxPrice"></span></em>
                                         </small>
 
                                         <div class="mt-3">
@@ -100,7 +105,7 @@
                                                        x-bind:max="maxRange"
                                                        step="1"
                                                        class="form-range"
-                                                       @input="@this.set('priceRange', [minPrice, maxPrice])" />
+                                                       @input="@this.set('priceRange', [minPrice, maxPrice])"/>
 
                                                 <input type="range"
                                                        x-model="maxPrice"
@@ -109,13 +114,12 @@
                                                        step="1"
                                                        class="form-range"
                                                        style="display: none"
-                                                       @input="@this.set('priceRange', [minPrice, maxPrice])" />
+                                                       @input="@this.set('priceRange', [minPrice, maxPrice])"/>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
-
 
 
                             </div>
@@ -125,7 +129,7 @@
 
                 <div class="col-md-8 col-lg-9 col-xxl-10">
                     <div class="row">
-{{--                        @for($i = 0; $i <= 2; $i++)--}}
+                        {{--                        @for($i = 0; $i <= 2; $i++)--}}
                         @foreach ($productLists as $more_product)
                             <!-- Product Card -->
                             <div class="product col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
@@ -163,7 +167,7 @@
                             </div>
 
                         @endforeach
-{{--                        @endfor--}}
+                        {{--                        @endfor--}}
                     </div>
                 </div>
             </div>
@@ -198,20 +202,18 @@
                                 <article class="text-center">
                                     <figure class="card-figure position-relative">
                                         <div class="card-img-container">
-{{--                                            <a href="{{ route('customer.radar.sign', $more_product->slug) }}">--}}
-                                                <img class="img-fluid img-thumbnail-md lazyautosizes lazyloaded"
-                                                     src="{{ url('storage') . '/' . ($more_product->cover_image ?? '/default.png') }}"
-                                                     alt="{{ $more_product->title }}"
-                                                     title="{{ $more_product->title }}">
-{{--                                            </a>--}}
+                                            {{--                                            <a href="{{ route('customer.radar.sign', $more_product->slug) }}">--}}
+                                            <img class="img-fluid img-thumbnail-md lazyautosizes lazyloaded"
+                                                 src="{{ url('storage') . '/' . ($more_product->cover_image ?? '/default.png') }}"
+                                                 alt="{{ $more_product->title }}"
+                                                 title="{{ $more_product->title }}">
+                                            {{--                                            </a>--}}
 
                                         </div>
                                     </figure>
                                     <div class="card-body pt-0">
                                         <h4 class="card-title">
                                             <strong>
-{{--                                                <a href="{{ route('customer.radar.sign', $more_product->slug) }}"--}}
-{{--                                                   class="text-dark">{{ $more_product->title }}</a>--}}
                                                 <span>{{ $more_product->title }}</span>
                                             </strong>
                                         </h4>
@@ -221,14 +223,22 @@
                                             </span>
                                         </div>
                                         <div class="brand-holder text-truncate">
-{{--                                            <a href="#!" class="link-faceless text-muted small">--}}
-                                                <span>{{ $more_product->category->title }}</span>
-{{--                                            </a>--}}
+                                            {{--                                            <a href="#!" class="link-faceless text-muted small">--}}
+                                            <span>{{ $more_product->category->title }}</span>
+                                            {{--                                            </a>--}}
                                         </div>
                                     </div>
+                                    <button wire:click="addToCart(
+                                        '{{ $more_product->id }}',
+                                        '{{ addslashes($more_product->title) }}',
+                                        {{ isset($more_product->price) ? number_format($more_product->price * session('exchange_rate', 1), 2) : 'null' }},
+                                        '{{ $more_product->category_id }}',
+                                        '{{ $more_product->cover_image }}'
+                                    )" style="font-size: 12px;padding: 0px 20px;" type="submit" class="btn btn-sm btn-primary">Add to Cart
+                                    </button>
+
                                 </article>
                             </div>
-
                         @endforeach
                         {{--                        @endfor--}}
                     </div>
@@ -248,4 +258,54 @@
 
         </div>
     </section>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" wire:ignore.self>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title text-black" id="exampleModalLongTitle">Recently Added Item(s)</h5>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Continue Shopping</button>
+                </div>
+                <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+
+                    @php
+                        $cartTotal = 0;
+                    @endphp
+                    @foreach($cartItems as $item)
+                        @php
+                            $cartTotal = $item->quantity * $item->price;
+                        @endphp
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{{ asset('storage/' . $item->cover_image )  }}"
+                                 alt="Item Image"
+                                 style="width: 50px; height: 50px; margin-right: 10px; display: block;">
+                            <div>
+                                <div class="text-black fw-bold">{{ $item->title }}</div>
+                                <div>Qty: {{ $item->quantity }}</div>
+                            </div>
+                            <div class="ms-auto text-black">{{$currency_icon}}{{ isset($item->price) ? number_format($item->price, 2) : '' }}</div>
+                        </div>
+                        <hr>
+                    @endforeach
+                    <script>
+                        document.addEventListener('livewire:load', function () {
+                            Livewire.on('trigger-modal', () => {
+                                $('#exampleModalCenter').modal('show');
+                                console.log('modal triggered successfully');
+                            });
+
+                            Livewire.on('cartUpdated', quantity => {
+                                document.getElementById('cart_item_counts').innerText = quantity;
+                                document.getElementById('cart_item_counts').style.backgroundColor = 'red';
+                                document.getElementById('cart_item_counts').style.pointerEvents = 'auto';
+                            });
+                        });
+                    </script>
+                </div>
+                <div class="modal-footer">
+                    <button wire:click="navigateToShopping" class="btn btn-primary w-100">View Cart / Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
