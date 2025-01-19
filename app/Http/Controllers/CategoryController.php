@@ -66,7 +66,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id)->first();
+        $category = Category::find($id);
         return view('category.edit', compact('category'));
     }
 
@@ -102,9 +102,9 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $category = Category::find($id);
-        
+
         $category->delete();
         return redirect()->route('admin.category.index')->with('status', 'Category Successfully deleted');
     }
-    
+
 }
