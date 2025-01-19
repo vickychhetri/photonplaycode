@@ -178,6 +178,70 @@
                 </div>
             </div>
 
+
+            <!-- accessories -->
+            <div class="bg-light text-center mb-4">
+                <p class="h3 text-uppercase py-3 px-3">Browse Accessories</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-lg-9 col-xxl-10">
+                    <div class="row">
+                        {{--                        @for($i = 0; $i <= 2; $i++)--}}
+                        @foreach ($accessories as $more_product)
+                            <!-- Product Card -->
+                            <div class="product col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                <article class="text-center">
+                                    <figure class="card-figure position-relative">
+                                        <div class="card-img-container">
+{{--                                            <a href="{{ route('customer.radar.sign', $more_product->slug) }}">--}}
+                                                <img class="img-fluid img-thumbnail-md lazyautosizes lazyloaded"
+                                                     src="{{ url('storage') . '/' . ($more_product->cover_image ?? '/default.png') }}"
+                                                     alt="{{ $more_product->title }}"
+                                                     title="{{ $more_product->title }}">
+{{--                                            </a>--}}
+
+                                        </div>
+                                    </figure>
+                                    <div class="card-body pt-0">
+                                        <h4 class="card-title">
+                                            <strong>
+{{--                                                <a href="{{ route('customer.radar.sign', $more_product->slug) }}"--}}
+{{--                                                   class="text-dark">{{ $more_product->title }}</a>--}}
+                                                <span>{{ $more_product->title }}</span>
+                                            </strong>
+                                        </h4>
+                                        <div class="card-text">
+                                            <span class="price price-non-sale price-without-tax">
+                                                {{ session('currency_icon', '$') }}{{ number_format($more_product->price * session('exchange_rate', '1'), 2) }}
+                                            </span>
+                                        </div>
+                                        <div class="brand-holder text-truncate">
+{{--                                            <a href="#!" class="link-faceless text-muted small">--}}
+                                                <span>{{ $more_product->category->title }}</span>
+{{--                                            </a>--}}
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+
+                        @endforeach
+                        {{--                        @endfor--}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row py-3">
+                <div class="col-md"></div>
+                <div class="col-md">
+                    <nav>
+                        <ul class="pagination justify-content-center justify-content-md-end">
+                            {{ $accessories->links('pagination::bootstrap-4') }}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
         </div>
     </section>
 </div>
