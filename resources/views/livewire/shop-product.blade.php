@@ -185,6 +185,10 @@
             </div>
 
             <div class="row">
+                <aside class="col-md-4 col-lg-3 col-xxl-2">
+                    <nav class="navbar navbar-expand-md navbar-light bg-white flex-md-column px-0 pb-0 p-md-0">
+                    </nav>
+                </aside>
                 <div class="col-md-8 col-lg-9 col-xxl-10">
                     <div class="row">
                         {{--                        @for($i = 0; $i <= 2; $i++)--}}
