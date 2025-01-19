@@ -138,14 +138,14 @@
                                                             id="{{ $specilization->id }}"
                                                             class="form-select mb-3 color_select_box_handler sku-builder"
                                                             style="border: 2px solid black;"
-                                                            data-code="{{$specilization->specilization->code}}"
+                                                            data-code="{{$specilization->specilization->code ?? ''}}"
                                                             wire:ignore
                                                             required>
                                                         <option value="null"  selected>--Choose an Option--</option>
                                                         <!-- Loop through each option for this specialization -->
                                                         @foreach($specilization->options as $option)
-                                                            <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code }}">
-                                                                {{ $option->specializationoptions->option }}
+                                                            <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code ?? '' }}">
+                                                                {{ $option->specializationoptions->option ?? '' }}
                                                                 @if($country_code=="CA")
                                                                     (+$<span class="price">{{ $option->specialization_price_ca*$exchange_rate }}</span>)
                                                                 @else
@@ -212,7 +212,7 @@
                                                     <option selected>--Choose an Option--</option>
                                                     <!-- Loop through each option for this specialization -->
                                                     @foreach($specilization->options as $option)
-                                                        <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code }}">
+                                                        <option value="{{ $option->id }}"  data-code="{{ $option->specializationoptions->code ?? ''}}">
                                                             {{ $option->specializationoptions->option }}
                                                             @if($country_code=="CA")
                                                                 (+$<span class="price">{{ $option->specialization_price_ca*$exchange_rate }}</span>)
@@ -252,7 +252,7 @@
                                                     }).filter(Boolean);
 
                                                     const sku =skuParts.join('-');
-                                                    // Send AJAX request
+                                                    // Send X request
                                                     $.ajax({
                                                         url: "{{ route('radar_speed_sign.find_sku',$product->id) }}", // The route we defined earlier
                                                         type: 'POST',
@@ -337,7 +337,7 @@
                                         </div>
                                         {{--                                data-bs-target="#exampleModalCenter"--}}
                                         <button data-bs-toggle="modal" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
-                                            <img style="height: 58px;" class="img_size"    src="{{ asset('assets/images/add_to_cart.webp') }}">
+                                            <img border="0" style="height: 58px;" class="img_size"    src="{{ asset('assets/images/add_to_cart.webp') }}">
                                         </button>
                                     </div>
 
@@ -677,9 +677,10 @@
     // }
     // initializeMagnifier();
 
-    $(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function () {
         Livewire.on('trigger-modal', () => {
             $('#exampleModalCenter').modal('show');
+            console.log('modal triggered successfully');
         });
     });
 

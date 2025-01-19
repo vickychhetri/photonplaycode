@@ -19,6 +19,7 @@ class ShopProduct extends Component
     public $minPrice = 0;
     public $maxPrice;
 
+    public $accessory_id;
     public $limit_data = [5,10,15,20];
     public $sorting_data = [
         1 => 'A to Z',
@@ -34,6 +35,9 @@ class ShopProduct extends Component
         if ($config) {
             $this->category_accessory_id = $config->value;
         }
+
+        $this->accessory_id = MasterConfiguration::where(['code' => Configure::CATEGORY_ACCESSORY_ID, 'status' => 1])->value('value') ?? '';
+
 
     }
 
@@ -73,7 +77,8 @@ class ShopProduct extends Component
 
 
         return view('livewire.shop-product',[
-            'productLists' => $query->paginate($this->limit)
+            'productLists' => $query->paginate($this->limit),
+            'accessories' => $this->getAccessories()->paginate($this->limit)
         ]);
     }
 
@@ -93,6 +98,41 @@ class ShopProduct extends Component
         $this->minPrice = 0;
         $this->resetPage();
 
+    }
+
+    protected function getAccessories(){
+        $query = Product::with([
+            'images',
+            'specilizations.specilization',
+            'specilizations.options',
+            'specilizations.options.specializationoptions',
+            'category',
+            'product_resources'
+        ])
+            ->where('category_id', $this->accessory_id);
+
+
+        if($this->priceRange) {
+            $query = $query->whereBetween('price', [$this->priceRange[0], $this->priceRange[1]]);
+        }
+
+        if($this->sort == 1) {
+            $query = $query->orderBy('title', 'asc');
+        }
+
+        if($this->sort == 2) {
+            $query = $query->orderBy('title', 'desc');
+        }
+
+        if($this->sort == 3) {
+            $query = $query->orderBy('price', 'asc');
+        }
+
+        if($this->sort == 4) {
+            $query = $query->orderBy('price', 'desc');
+        }
+
+        return $query;
     }
 }
 
