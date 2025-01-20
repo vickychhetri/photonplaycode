@@ -139,7 +139,7 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->is_price_hide=$isPriceHidden;
         $product->slug=$request->slug;
-//        $product->sku=$request->sku;
+        $product->sku=$request->sku;
         $product->sku_start_range=$request->sku_start_range;
 
         $product->product_heading_text=$request->product_heading_text;

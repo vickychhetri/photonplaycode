@@ -63,7 +63,7 @@
                             </div>
 
                             <h4 class="font-weight-bold">{{ $product->product_heading_text??$product->title }}</h4>
-                            <span class="text-capitalize d-block">{{ $product->category->title }}</span>
+                            <span class="text-capitalize d-block">{{ $product->sku }}</span>
                             <div>
                                 <label for="sku" class="sku_dis" >SKU:</label>
                                 <span id="sku-display" class="sku_dis"  wire:ignore ></span>
