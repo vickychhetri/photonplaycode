@@ -248,6 +248,12 @@
                                             Cloud Software
                                         </a>
                                     </li>
+                                        <li>
+                                            <a class="text-wrap dropdown-item px-0 text-uppercase mb-2"
+                                               href="{{ route('customer.product.shop') }}?#browse-accessories">
+                                               Accessories
+                                            </a>
+                                        </li>
                                 </ul>
                             </div>
 
