@@ -400,23 +400,23 @@
 {{--                                            </div>--}}
 {{--                                        </div>--}}
 
-    {{--                                        <div class="row mb-2 form-group">--}}
-    {{--                                        <label for="sku" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('SKU') }}</label>--}}
+                                            <div class="row mb-2 form-group">
+                                            <label for="sku" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Category Heading') }}</label>
 
-    {{--                                        <div class="col-md-10">--}}
-    {{--                                            <input id="sku" type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" value="{{$product->sku}}" required autocomplete="sku" autofocus>--}}
+                                            <div class="col-md-10">
+                                                <input id="sku" type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" value="{{$product->sku}}" required autocomplete="sku" autofocus>
 
-    {{--                                            @error('sku')--}}
-    {{--                                            <span class="invalid-feedback" role="alert">--}}
-    {{--                                                <strong>{{ $message }}</strong>--}}
-    {{--                                            </span>--}}
-    {{--                                            @enderror--}}
-
-
-    {{--                                        </div>--}}
+                                                @error('sku')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
 
 
-    {{--                                    </div>--}}
+                                            </div>
+
+
+                                        </div>
 
                                         <div class="row mb-2 form-group">
                                             <label for="brochure" class="col-md-2 col-form-label text-md-end"><span>* </span>{{ __('Brochure') }}</label>
