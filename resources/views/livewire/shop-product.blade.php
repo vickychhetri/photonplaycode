@@ -184,7 +184,7 @@
 
 
             <!-- accessories -->
-            <div class="bg-light text-center mb-4">
+            <div class="bg-light text-center mb-4" id="browse-accessories">
                 <p class="h3 text-uppercase py-3 px-3">Browse Accessories</p>
             </div>
 
