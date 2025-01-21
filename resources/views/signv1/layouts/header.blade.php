@@ -80,7 +80,15 @@
         }
     @endphp
     @if($disable_js==1)
-        <script src="{{ asset('assets/js/disable-console.js') }}"></script>
+       <script>
+           console.log = function() {};
+           console.error = function() {};
+           console.warn = function() {};
+           window.onerror = function(message, source, lineno, colno, error) {
+               return true;
+           };
+
+       </script>
     @endif
 
     <!-- Toastify CSS -->
