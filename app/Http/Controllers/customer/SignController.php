@@ -13,6 +13,7 @@ use App\Models\Vendor;
 use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
@@ -38,7 +39,18 @@ class SignController extends Controller
         $products = Product::select('id','slug')->where('category_id', 1)->get();
 //        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 //        $blogs = array_slice($postsSlice, 0 , 3);
-        $blogs=null;
+
+        $cacheKey = 'latest_blogs';
+        $cacheDuration = 60*24; // Cache for 60 minutes
+
+        // Attempt to retrieve the cached blogs
+        $blogs = Cache::remember($cacheKey, $cacheDuration, function () {
+            // Fetch the blogs from the WordPress API
+            $postsSlice = Http::get((env('WORDPRESS_BASE_URL') ?? 'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+
+            // Return only the top 3 blogs
+            return array_slice($postsSlice, 0, 3);
+        });
         $sessionId = Session::getId();
         $cartCount = 0;
         if (Session::get('user')) {
