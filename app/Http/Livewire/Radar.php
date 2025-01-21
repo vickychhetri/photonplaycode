@@ -134,12 +134,25 @@ class Radar extends Component
 //        }
 
 //            dd($this->dynamic_specs);
-        if (empty($this->dynamic_specs) || in_array("", $this->dynamic_specs) || in_array('--Choose an Option--', $this->dynamic_specs) || count($this->dynamic_specs) < $this->dynamic_spec_count) {
-            $this->addError('dynamic_specs_error', 'Specifications are required.');
-            return false;
-        } else {
-            $this->emit('trigger-modal');
+//        $pid_accesory_check=Product::find($this->Pid);
+        $skip=false;
+        if(isset($this->product->category->id)){
+            if($this->product->category->id==3){
+                $skip=true;
+            }
         }
+
+        if($skip){
+            $this->emit('trigger-modal');
+        }else {
+            if (empty($this->dynamic_specs) || in_array("", $this->dynamic_specs) || in_array('--Choose an Option--', $this->dynamic_specs) || count($this->dynamic_specs) < $this->dynamic_spec_count) {
+                $this->addError('dynamic_specs_error', 'Specifications are required.');
+                return false;
+            } else {
+                $this->emit('trigger-modal');
+            }
+        }
+
 
         $color_code=null;
         if(isset($this->dynamic_specs)){
