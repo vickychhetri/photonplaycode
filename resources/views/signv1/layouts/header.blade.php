@@ -519,7 +519,7 @@
 
                     <div class="d-flex gap-4 mt-4">
                         <a href="{{route("customer.product.shop")}}" style="text-decoration: none;">  <img
-                                src="{{asset("assets/images/radar/shop_now_radar.webp")}}" alt="shop now" style="max-width: 200px;"> </a>
+                                src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now" style="max-width: 200px;"> </a>
                     </div>
                 </div>
             </div>
