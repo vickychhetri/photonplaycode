@@ -42,25 +42,25 @@
                     <div class="d-flex align-items-center gap-sm-4 gap-5 flex-wrap flex-sm-nowrap">
                         <div class="stats-card">
                             <div class="stats-image">
-                                <img src="{{asset("assets/images/radar/icons/free_shipping.webp")}}" alt="Free Shipping" style="height: 100px;">
+                                <img src="{{asset("assets/images/radar/icons/free_shipping.png")}}" alt="Free Shipping" style="height: 100px;">
                             </div>
 
                         </div>
                         <div class="stats-card">
                             <div class="stats-image">
-                                <img src="{{asset("assets/images/radar/icons/low_price.webp")}}" style="height: 100px;" alt="Low Price">
+                                <img src="{{asset("assets/images/radar/icons/low_price.png")}}" style="height: 100px;" alt="Low Price">
                             </div>
 
                         </div>
                         <div class="stats-card">
                             <div class="stats-image">
-                                <img src="{{asset("assets/images/radar/icons/satisfaction.webp")}}" style="height: 100px;" alt="Satisfaction">
+                                <img src="{{asset("assets/images/radar/icons/satisfaction.png")}}" style="height: 100px;" alt="Satisfaction">
                             </div>
 
                         </div>
                         <div class="stats-card">
                             <div class="stats-image">
-                                <img src="{{asset("assets/images/radar/icons/guarantee.webp")}}"  style="height: 100px;" alt="Guarantee">
+                                <img src="{{asset("assets/images/radar/icons/guarantee.png")}}"  style="height: 100px;" alt="Guarantee">
                             </div>
 
                         </div>
