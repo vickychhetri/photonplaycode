@@ -484,16 +484,20 @@
                                     <span style="font-weight: bold;font-size: 13px;">{{$pf->heading_text}}</span>
                                 </div>
                             @endforeach
-
+                                @if(isset($product->product_features) && count($product->product_features)>0)
                             <p class="note">
                                 Note: All above features <span>worth $1450</span> are included in this product without any extra/hidden cost (limited time offer).
                             </p>
+                                @endif
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="container text-center my-5">
-                            <h5 class="mb-4 text-black">Compatible Accessories</h5>
+                            @if(isset($linked_products) && count($linked_products)>0)
+                                <h5 class="mb-4 text-black">Compatible Accessories</h5>
+                            @endif
+
                             @foreach($linked_products as $ap)
                                 <div class="col-md-12 mb-3">
                                     <form wire:submit.prevent="addAccessory" >
