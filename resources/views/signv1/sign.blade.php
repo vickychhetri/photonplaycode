@@ -83,7 +83,7 @@
 
                 <div class="col">
                     <div class="help-image">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/Girl.png" alt="error" class="img-fluid">
+                        <img src="/signv1/assets/UI-01/UI-Data/Images/Girl.png" alt="Girl.png" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -421,7 +421,7 @@
             </div>
             <!-- Image Section -->
             <div class="col-md-6 text-center brochure-image">
-                <img src="{{asset("assets/images/radar/radar_catalog.png")}}" alt="Brochure">
+                <img src="{{asset("assets/images/radar/radar_catalog.webp")}}" alt="radar_catalog.webp">
             </div>
         </div>
     </div>
@@ -442,7 +442,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold"> The radar speed signs have been a game-changer for our neighborhood. Cars actually slow down now, and our streets feel so much safer for kids to play.</p>
 
@@ -450,7 +450,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Sarah Thompson, <span class="text-secondary">Maplewood Estates</span></h6>
                             </div>
@@ -459,7 +459,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold">We used to get complaints about reckless driving in our campus parking areas. Since adding 3 radar speed signs, the problem has been solved. Vehicle speeds are now consistently within safe limits. Thank you Mike for helping us to choose the right sign.</p>
 
@@ -467,7 +467,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Lisa Warner, <span class="text-secondary">Harmony Business Park</span></h6>
                             </div>
@@ -476,7 +476,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold">The radar speed signs installed near our school have been a blessing. Cars now slow down significantly during drop-off and pick-up times, making the area much safer for children. Thank you, for making our school zone a safer place!</p>
 
@@ -484,7 +484,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Laura Simmons, <span class="text-secondary">Hillcrest Elementary School</span></h6>
                             </div>
@@ -493,7 +493,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold">Our residents love the visible speed reminders. The signs have been effective in keeping traffic calm, especially near the school zone.</p>
 
@@ -501,7 +501,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Emily Carter, <span class="text-secondary">Oak Ridge Town</span></h6>
                             </div>
@@ -514,7 +514,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold">We’ve had fewer incidents and complaints since the radar speed signs were put up outside the school. Drivers are more aware, and parents feel more secure about their kids crossing the road. A big thanks to Photonplay sales team for providing such an effective solution!</p>
 
@@ -522,7 +522,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Mark Taylor, <span class="text-secondary">Maple Grove School District</span></h6>
                             </div>
@@ -532,7 +532,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold">We were skeptical at first, but the radar speed signs have exceeded expectations. They’ve made a huge difference in slowing down vehicles on our busy streets.</p>
 
@@ -540,7 +540,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="Quote-Icon.png">
                                 </div>
                                 <h6>James Miller, <span class="text-secondary">Silver Lake Village</span></h6>
                             </div>
@@ -550,7 +550,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold">Initially we installed one iCop sign, it was a success so we decided to add 2 more signs to our neighborhood. We’ve had now fewer complaints about reckless driving since they were installed.</p>
 
@@ -558,7 +558,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Priya Patel, <span class="text-secondary">Greenfield Park</span></h6>
                             </div>
@@ -568,7 +568,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold">The radar speed signs not only slowed down vehicles in our school zone but also gave us detailed analytics. We discovered that 85% of drivers reduced their speed by 10-15 mph after seeing the signs.</p>
 
@@ -576,7 +576,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Laura Simmons, <span class="text-secondary">Hillcrest Elementary School Zone</span></h6>
                             </div>
@@ -586,7 +586,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold"> Thanks to the detailed reports provided by the radar signs, we learned that peak speeding times occurred between 4 PM and 6 PM. Using this data, we coordinated additional traffic calming measures, resulting in a 38% reduction in speeding incidents. Photonplay has been a fantastic partner to support the cause!</p>
 
@@ -594,7 +594,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Emily Carter , <span class="text-secondary">Oak Ridge Town</span></h6>
                             </div>
@@ -605,7 +605,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold"> The analytics provided by analytical reports generated by sign helped us realize that over 48% of drivers slowed down by at least 12 mph near the playground zone. This insight reassured us that the investment was worth it. The signs are doing a great job!</p>
 
@@ -613,7 +613,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Michelle Brown , <span class="text-secondary">Riverbend Heights</span></h6>
                             </div>
@@ -623,7 +623,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold"> It’s incredible how a simple speed sign can have such a big impact. Drivers are more aware now, and it’s made our streets much safer.</p>
 
@@ -631,7 +631,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>John Dawson , <span class="text-secondary">Pine Hill Community</span></h6>
                             </div>
@@ -641,7 +641,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold"> We’ve seen a noticeable improvement in traffic behaviour. The radar speed signs have proven to be a great investment for our town.</p>
 
@@ -649,7 +649,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Lisa Nguyen , <span class="text-secondary">Brookside Meadows</span></h6>
                             </div>
@@ -659,7 +659,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="Quote-Icon.png">
                             </div>
                             <p class="fs-18 fw-semibold"> Installing radar speed signs has reduced speeding incidents significantly. We've noticed a calmer and more mindful driving culture in our community.</p>
 
@@ -667,7 +667,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="stars.png">
                                 </div>
                                 <h6>Tom Rodriguez , <span class="text-secondary">Willow Creek</span></h6>
                             </div>
@@ -704,7 +704,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="news-card">
                             <div class="news-image">
-                                <img src="{{$image['media_details']['sizes']['medium']['source_url'] ?? null}}" alt="error"
+                                <img src="{{$image['media_details']['sizes']['medium']['source_url'] ?? null}}" alt="{{$blog['title']['rendered']}}"
                                      class="img-fluid">
                                 <div class="image-tag">Photon</div>
                             </div>
