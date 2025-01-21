@@ -31,6 +31,7 @@ class ManageSeo extends Model
     public const LOGIN="LOGIN";
     public const REGISTER="REGISTER";
     public const SHOPPING_BAG="SHOPPING_BAG";
+    public const SHOP_BROWSE="SHOP_BROWSE";
 
 
 }

@@ -1,3 +1,18 @@
+<?php
+use App\Models\ManageSeo;
+$data_record = ManageSeo::where('page_name', ManageSeo::SHOP_BROWSE)->first();
+if($data_record){
+    $seo_meta=[
+        "title"=>$data_record->title,
+        "description"=>$data_record->description,
+        "keywords"=>$data_record->keyword,
+        "schema"=>$data_record->schema,
+        "feature_image"=>"storage/image/banner%202.webp"
+    ];
+}
+?>
+
+
 @push('header_meta_content')
     <meta property="og:type" content="product.item"/>
 @endpush
@@ -12,6 +27,7 @@
     }
 </style>
 <!-- Our Product-start -->
+
 <livewire:shop-product />
 
 @include('customer.layout2.footer2')
