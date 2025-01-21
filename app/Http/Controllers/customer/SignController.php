@@ -40,16 +40,25 @@ class SignController extends Controller
 //        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 //        $blogs = array_slice($postsSlice, 0 , 3);
 
-        $cacheKey = 'latest_blogs';
-        $cacheDuration = 60*24; // Cache for 60 minutes
+        $cacheKey = 'latest_blogs_with_images';
+        $cacheDuration = 60; // Cache for 60 minutes
 
-        // Attempt to retrieve the cached blogs
         $blogs = Cache::remember($cacheKey, $cacheDuration, function () {
             // Fetch the blogs from the WordPress API
             $postsSlice = Http::get((env('WORDPRESS_BASE_URL') ?? 'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $blogs = array_slice($postsSlice, 0, 3);
 
-            // Return only the top 3 blogs
-            return array_slice($postsSlice, 0, 3);
+            // Fetch images for each blog
+            foreach ($blogs as &$blog) {
+                if (!empty($blog['featured_media'])) {
+                    $image = Http::get((env('WORDPRESS_BASE_URL') ?? 'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/' . $blog['featured_media'])->json();
+                    $blog['image_url'] = $image['media_details']['sizes']['medium']['source_url'] ?? null;
+                } else {
+                    $blog['image_url'] = null;
+                }
+            }
+
+            return $blogs;
         });
         $sessionId = Session::getId();
         $cartCount = 0;

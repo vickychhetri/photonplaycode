@@ -686,56 +686,50 @@
     <!-- ----------------------- New & Update -------------------- -->
 
     @include("customer.layout2.get_in_touch3")
-{{--    <section class="new-and-update-section pt-4">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row mb-4">--}}
-{{--                <div class="col-12">--}}
-{{--                    <div class="title">--}}
-{{--                        <h2>News and Updates</h2>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="row gy-4">--}}
+    <section class="new-and-update-section pt-4">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="title">
+                        <h2>News and Updates</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-4">
 
-{{--                @foreach($blogs as $blog)--}}
-{{--                        <?php--}}
-{{--                        $image = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();--}}
-{{--                        ?>--}}
-{{--                    <div class="col-12 col-md-6 col-lg-4">--}}
-{{--                        <div class="news-card">--}}
-{{--                            <div class="news-image">--}}
-{{--                                <img src="{{$image['media_details']['sizes']['medium']['source_url'] ?? null}}" alt="{{$blog['title']['rendered']}}"--}}
-{{--                                     class="img-fluid">--}}
-{{--                                <div class="image-tag">Photon</div>--}}
-{{--                            </div>--}}
-{{--                            <div class="news-card-content">--}}
-{{--                                <h6 class="mb-4">{{$blog['title']['rendered']}}</h6>--}}
-{{--                                <p class="fs-12 fw-semibold text-secondary mb-4">--}}
-{{--                                    @php--}}
-{{--                                    if ($blog["date"]){--}}
-{{--                                        $formattedDate = \Carbon\Carbon::parse($blog["date"])->format('M d, Y');--}}
-{{--                                        echo $formattedDate;--}}
-{{--                                    }--}}
-{{--                                    @endphp--}}
-{{--                                    - <span--}}
-{{--                                        class="text-primary">Photonplay System</span></p>--}}
+                @foreach($blogs as $blog)
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="news-card">
+                            <div class="news-image">
+                                <img src="{{ $blog['image_url'] }}" alt="{{ $blog['title']['rendered'] }}" class="img-fluid">
+                                <div class="image-tag">Photon</div>
+                            </div>
+                            <div class="news-card-content">
+                                <h6 class="mb-4">{{ $blog['title']['rendered'] }}</h6>
+                                <p class="fs-12 fw-semibold text-secondary mb-4">
+                                    @php
+                                        if ($blog["date"]) {
+                                            $formattedDate = \Carbon\Carbon::parse($blog["date"])->format('M d, Y');
+                                            echo $formattedDate;
+                                        }
+                                    @endphp
+                                    - <span class="text-primary">Photonplay System</span>
+                                </p>
+                                <p class="text-secondary fs-12 mb-4">{!! Str::limit($blog['excerpt']['rendered'], 200) !!}</p>
+                                <a href="{{ route('customer.blog_show', $blog['slug']) }}" class="btn news-btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
-{{--                                <p class="text-secondary fs-12 mb-4">{!! Str::limit($blog['excerpt']['rendered'], 200)  !!} </p>--}}
 
-
-{{--                                <a href="{{route("customer.blog_show",$blog['slug'])}}" class="btn news-btn">Read More</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-
-{{--                <div class="col-12 text-center mt-5">--}}
-{{--                    <a href="{{route('customer.blog')}}" class="text-black nav-link fw-bold fs-14">Check All Blog Posts <img--}}
-{{--                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.webp" /></a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+                <div class="col-12 text-center mt-5">
+                    <a href="{{route('customer.blog')}}" class="text-black nav-link fw-bold fs-14">Check All Blog Posts <img
+                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.webp" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!------------------------- Looking Dealer -------------------------->
 {{--    <section class="looking-dealer">--}}
