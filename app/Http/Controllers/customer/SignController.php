@@ -36,8 +36,9 @@ class SignController extends Controller
     public function radarSpeedSigns_v1()
     {
         $products = Product::select('id','slug')->where('category_id', 1)->get();
-        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
-        $blogs = array_slice($postsSlice, 0 , 3);
+//        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+//        $blogs = array_slice($postsSlice, 0 , 3);
+        $blogs=null;
         $sessionId = Session::getId();
         $cartCount = 0;
         if (Session::get('user')) {
