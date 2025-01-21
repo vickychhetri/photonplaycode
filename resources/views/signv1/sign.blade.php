@@ -252,7 +252,7 @@
                                             Amber / Red
                                         </li>
                                         <li>
-                                            EV<small>12</small>FM only
+                                           No
                                         </li>
                                         <li>
                                             Yes
