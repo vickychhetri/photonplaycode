@@ -124,12 +124,16 @@ if($data_record){
                                             <form method="POST" action="{{ route('customer.store.shopping.accessory.bag') }}">
                                                 @csrf
                                                 <div class="card text-center border-0 shadow-sm" style="max-width: 250px; margin: auto;">
+                                                    <a href="{{ route('customer.radar.sign', $more_product->slug) }}">
                                                     <img src="{{ asset('storage/' . $l_product->cover_image) }}"
                                                          class="card-img-top p-2"
                                                          alt="{{ $l_product->title }}"
                                                          style="max-height: 150px; object-fit: contain;">
+                                                    </a>
                                                     <div class="card-body p-3">
+                                                        <a href="{{ route('customer.radar.sign', $more_product->slug) }}" class="text-decoration-none">
                                                         <h6 class="card-title text-truncate">{{ $l_product->product_heading_text ?? $l_product->title }}</h6>
+                                                        </a>
                                                         <p class="card-text text-primary fw-bold mb-2">
                                                             {{ $currency_icon }} {{ $country_code == 'CA' ? $l_product->price_canada * $exchange_rate : $l_product->price * $exchange_rate }}
                                                         </p>

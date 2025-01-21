@@ -507,16 +507,20 @@
                                         @csrf
                                         <div class="card" >
                                             <div class="d-flex justify-content-center align-items-center w-100 p-4 pb-2 border-1">
+                                                <a href="{{ route('customer.radar.sign', $more_product->slug) }}">
                                                 <img x-init="@this.set('cover_image_a', {{$ap->cover_image}})" src="{{ asset('storage/' . $ap->cover_image )  }}" class="card-img-top"
                                                      alt="{{$ap->title}}"
                                                      style="max-width: 100%; ">
+                                                </a>
                                             </div>
 
                                             <div class="card-body">
                                                 @php
                                                     $exchange_rate = session('exchange_rate', '1');
                                                 @endphp
+                                                <a href="{{ route('customer.radar.sign', $more_product->slug) }}" class="text-decoration-none">
                                                 <h5 class="card-title" > {{$ap->product_heading_text ?? $ap->title}}</h5>
+                                                </a>
                                                 <p class="card-text" x-init="@this.set('price_a', {{$country_code == 'CA' ? ($ap->price_canada * $exchange_rate) : ($ap->price * $exchange_rate)}})">
                                                     {{ $currency_icon ?? '$' }}
                                                     {{ $country_code == 'CA' ? ($ap->price_canada * $exchange_rate) : ($ap->price * $exchange_rate) }}
