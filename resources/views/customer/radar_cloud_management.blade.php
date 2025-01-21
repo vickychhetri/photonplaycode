@@ -54,7 +54,7 @@ $seo_meta=[
         <div class="row">
             <div class="col-lg-12 ">
                 <div class="radar-icop">
-                    <h4 class="text-uppercase text-center"> CONTROL RADAR SPPED SIGNS VIA CENTRALIZED RADAD CLOUD MANAGEMENT SOFTWARE.</h4>
+                    <h4 class="text-uppercase text-center"> CONTROL RADAR SPEED SIGNS VIA CENTRALIZED RADAD CLOUD MANAGEMENT SOFTWARE.</h4>
                     <p class="mt-4 text-center">
                         The complete sign management includes basic sign configuration and settings, alert management, data analysis and data collection from anywhere for the connected device without installing any application.
                     </p>
