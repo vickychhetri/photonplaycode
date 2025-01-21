@@ -202,19 +202,19 @@
                                 <article class="text-center">
                                     <figure class="card-figure position-relative">
                                         <div class="card-img-container">
-                                            {{--                                            <a href="{{ route('customer.radar.sign', $more_product->slug) }}">--}}
+                                                                                        <a href="{{ route('customer.radar.sign', $more_product->slug) }}">
                                             <img class="img-fluid img-thumbnail-md lazyautosizes lazyloaded"
                                                  src="{{ url('storage') . '/' . ($more_product->cover_image ?? '/default.png') }}"
                                                  alt="{{ $more_product->title }}"
                                                  title="{{ $more_product->title }}">
-                                            {{--                                            </a>--}}
+                                                                                        </a>
 
                                         </div>
                                     </figure>
                                     <div class="card-body pt-0">
                                         <h4 class="card-title">
                                             <strong>
-                                                <span>{{ $more_product->title }}</span>
+                                                <a href="{{ route('customer.radar.sign', $more_product->slug) }}"> <span>{{ $more_product->title }}</span> </a>
                                             </strong>
                                         </h4>
                                         <div class="card-text">
