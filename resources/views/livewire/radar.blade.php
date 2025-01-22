@@ -314,7 +314,7 @@
                                            x-model="quantity"
                                            min="1"
                                            max="100"
-                                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;">
+                                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;" readonly>
                                     <a class="btn d-flex align-items-center justify-content-center m-0"
                                        @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
                                        style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
