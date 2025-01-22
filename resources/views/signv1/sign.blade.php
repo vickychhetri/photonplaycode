@@ -112,76 +112,76 @@
                         </div>
                         <div class="col position-relative">
                             <div class="text-center">
-                                <img src="/signv1/assets/images/Photonplay_Speed_icon.webp" alt="">
+                                <img src="/signv1/assets/images/Photonplay_Speed_icon.webp" alt="Photonplay_Speed_icon">
                             </div>
                             <div class="btn btn-primary rounded-pill w-100">
                                 Photonplay
                             </div>
                             <ul class="list-unstyled list-grey mx-3 radar-speed-list">
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="check-mark.webp">
                                 </li>
                                 <li>
                                     <span> 5 Years</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="check-mark.webp">
                                 </li>
                                 <li>
                                      <span>$2500</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="check-mark.webp">
                                 </li>
                             </ul>
                         </div>
                         <div class="col position-relative">
                             <div class="text-center">
-                                <img src="/signv1/assets/images/Other_company_2.webp" alt="">
+                                <img src="/signv1/assets/images/Other_company_2.webp" alt="Other company 2">
                             </div>
                             <div class="btn btn-primary rounded-pill w-100">
                                 Other Company
                             </div>
                             <ul class="list-unstyled list-grey mx-3 radar-speed-list">
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                     <span>1 Year</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                     <span>$3000</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                             </ul>
                         </div>
                         <div class="col position-relative">
                             <div class="text-center">
-                                <img src="/signv1/assets/images/Other_company_3.webp" alt="">
+                                <img src="/signv1/assets/images/Other_company_3.webp" alt="Other company 3">
                             </div>
                             <div class="btn btn-primary rounded-pill w-100">
                                 Other Company
                             </div>
                             <ul class="list-unstyled list-grey mx-3 radar-speed-list">
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                      <span>1 Year</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                     <span>$2700 </span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                             </ul>
                         </div>
@@ -235,7 +235,7 @@
                                             <img src="https://cdn-icons-png.flaticon.com/512/8465/8465733.png" alt="Best Seller" />
                                         </div>
                                         <!-- Image -->
-                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="" height="220">
+                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="Radar Speed Sign" height="220">
                                     </div>
 
                                     <div class="price-card">
@@ -267,7 +267,7 @@
                                 </div>
                                 <div class="col-md-3 px-0 position-relative">
                                     <div class="speed-count-image speed-count-image-2">
-                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1500-amber-front-side.webp" alt="" height="250">
+                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1500-amber-front-side.webp" alt="Radar Speed Sign" height="250">
                                     </div>
                                     <div class="price-card">
                                         R1500
@@ -298,7 +298,7 @@
                                 </div>
                                 <div class="col-md-3 ps-0 position-relative">
                                     <div class="speed-count-image  speed-count-image-3">
-                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1800m-amber-front-side.webp" alt="" height="270">
+                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1800m-amber-front-side.webp" alt="Radar Speed Sign" height="270">
                                     </div>
                                     <div class="price-card">
                                         R1800
@@ -725,7 +725,7 @@
 
                 <div class="col-12 text-center mt-5">
                     <a href="{{route('customer.blog')}}" class="text-black nav-link fw-bold fs-14">Check All Blog Posts <img
-                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.webp" /></a>
+                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.webp"  alt="right-arrow"/></a>
                 </div>
             </div>
         </div>
