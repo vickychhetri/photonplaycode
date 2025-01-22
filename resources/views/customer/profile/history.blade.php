@@ -23,13 +23,13 @@
                                 @foreach($order->orderedProducts as $product)
                                 <div class="d-flex align-items-center p-2 my-4 border">
                                     <div class="inner-card-wrapper me-3">
-                                        <img src="{{asset('storage/'.$product->product->cover_image)}}" class="img-fluid" style="max-height: 100%;">
+                                        <img src="{{asset('storage/'.$product->color)}}" class="img-fluid" style="max-height: 100%;">
                                     </div>
                                     <div>
                                         <p class="text-uppercase mb-1">{{$product->product->title}}</p>
                                         <span class="d-block text-capitalize"><b>Price: </b>{{$product->product->price}}</span>
                                         <span class="d-block text-capitalize">{{$product->product->category->title}}</span>
-                                        <span class="d-block text-capitalize">Color</span>
+{{--                                        <span class="d-block text-capitalize">Color</span>--}}
                                     </div>
                                 </div>
                                 @endforeach

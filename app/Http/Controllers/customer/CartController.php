@@ -38,6 +38,13 @@ class CartController extends Controller
         $sessionId = Session::getId();
         $taxes = DB::table('settings')->select('shipping_time','gst')->first();
         $coupon = Coupon::where('coupon_name', $request->coupon)->first();
+
+        if(isset($request->coupon) && strlen($request->coupon) > 2 ){
+            if(!isset($coupon)){
+                return redirect()->back()->with('error', 'Coupon Invalid! Please try another one');
+            }
+        }
+
         $discount = 0;
         $discounted_amount = 0;
         $coupon_name = '0';
@@ -492,7 +499,7 @@ $products_list_ids=[];
                        'option_ids' => $carts->option_ids,
                        'quantity' => $carts->quantity,
                        'price' => $carts->price,
-                       'color' => $carts->color,
+                       'color' => $carts->cover_image,
                        'sku_code' => $carts->sku_code,
                    ]);
                }

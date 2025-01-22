@@ -228,14 +228,14 @@
                                             {{--                                            </a>--}}
                                         </div>
                                     </div>
-                                    <button wire:click="addToCart(
-                                        '{{ $more_product->id }}',
-                                        '{{ addslashes($more_product->title) }}',
-                                        {{ isset($more_product->price) ? number_format($more_product->price * session('exchange_rate', 1), 2) : 'null' }},
-                                        '{{ $more_product->category_id }}',
-                                        '{{ $more_product->cover_image }}'
-                                    )" style="font-size: 12px;padding: 0px 20px;" type="submit" class="btn btn-sm btn-primary">Add to Cart
-                                    </button>
+{{--                                    <button wire:click="addToCart(--}}
+{{--                                        '{{ $more_product->id }}',--}}
+{{--                                        '{{ addslashes($more_product->title) }}',--}}
+{{--                                        {{ isset($more_product->price) ? number_format($more_product->price * session('exchange_rate', 1), 2) : 'null' }},--}}
+{{--                                        '{{ $more_product->category_id }}',--}}
+{{--                                        '{{ $more_product->cover_image }}'--}}
+{{--                                    )" style="font-size: 12px;padding: 0px 20px;" type="submit" class="btn btn-sm btn-primary">Add to Cart--}}
+{{--                                    </button>--}}
 
                                 </article>
                             </div>

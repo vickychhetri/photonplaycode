@@ -197,6 +197,12 @@ if($data_record){
                                     <div class="col-md-12 " >
                                         <div class="payment-details bg-white p-3 pb-1 py-4" style="border: 2px solid grey;">
                                             <h3>Order Summary</h3>
+                                            @if(session('error'))
+                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <strong>Error:</strong> {{ session('error') }}
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+                                            @endif
                                             <ul class="order-details p-0 mb-5">
                                                 <li class="d-flex justify-content-between">
                                                     <span class="text">Subtotal excluding Tax</span>

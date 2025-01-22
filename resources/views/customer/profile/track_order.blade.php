@@ -79,19 +79,13 @@ $seo_meta=[
                                                             @foreach($order->orderedProducts as $prod)
                                                                 <tr>
 
-                                                                    <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="Image not found"  style="max-height: 50px;max-width: 100px;"/></td>
+                                                                    <td><img src="{{asset("storage/".$prod->color)}}" alt="Product image"  style="max-height: 50px;max-width: 100px;"/></td>
                                                                     <td>{{ $prod->title }} <br/>
-                                                                        @foreach (explode(',',$prod->option_ids) as $option)
 
-                                                                            @php
-                                                                                $options = ProductSpcializationOption::with('specializationoptions','product_specilization.specilization')->where('specialization_option_id', $option)->where('product_id',$prod->product_id)->get();
-                                                                            @endphp
+                                                                        @if($prod->sku_code)
+                                                                            SKU:  {{ $prod->sku_code }}
+                                                                        @endif
 
-                                                                            @foreach ($options as $opp){{$opp->product_specilization->specilization->title}} : {{$opp->specializationoptions->option}}(${{$opp->specialization_price}}) <br>
-                                                                            @endforeach
-
-                                                                        @endforeach
-                                                                       Color:  {{ $prod->color }}
                                                                     </td>
 
                                                                     <td>{{ $prod->quantity }} x ${{$prod->price}}
