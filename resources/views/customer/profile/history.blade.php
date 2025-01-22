@@ -29,7 +29,7 @@
                                         <p class="text-uppercase mb-1">{{$product->product->title}}</p>
                                         <span class="d-block text-capitalize"><b>Price: </b>{{$product->product->price}}</span>
                                         <span class="d-block text-capitalize">{{$product->product->category->title}}</span>
-                                        <span class="d-block text-capitalize">Color</span>
+{{--                                        <span class="d-block text-capitalize">Color</span>--}}
                                     </div>
                                 </div>
                                 @endforeach

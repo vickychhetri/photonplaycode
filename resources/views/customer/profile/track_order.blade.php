@@ -91,7 +91,7 @@ $seo_meta=[
                                                                             @endforeach
 
                                                                         @endforeach
-                                                                       Color:  {{ $prod->color }}
+{{--                                                                       Color:  {{ $prod->color }}--}}
                                                                     </td>
 
                                                                     <td>{{ $prod->quantity }} x ${{$prod->price}}
