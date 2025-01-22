@@ -541,7 +541,7 @@
                                                                name="quantity"
                                                                class="form-control text-center quantity-input p-1"
                                                                style="width: 60px; height: 30px;"
-                                                               >
+                                                               readonly>
                                                         <button type="button" class="btn btn-sm btn-outline-secondary increment-btn p-2 pb-1 pt-1"
                                                                 style="width: 40px; max-width: 100%;"
                                                                 wire:click="incrementQuantity('{{ $ap->id }}')">
@@ -555,7 +555,7 @@
                                         </form>
                                     </div>
                                 @endforeach
-                            
+
                         </div>
                     </div>
                 </div>
