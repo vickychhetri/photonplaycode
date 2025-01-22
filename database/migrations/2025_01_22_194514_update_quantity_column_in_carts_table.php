@@ -13,9 +13,9 @@ class UpdateQuantityColumnInCartsTable extends Migration
      */
     public function up()
     {
-        Schema::table('carts', function (Blueprint $table) {
-            $table->integer('quantity')->default(1)->nullable(false)->change();
-        });
+//        Schema::table('carts', function (Blueprint $table) {
+////            $table->integer('quantity')->default(1)->nullable(false)->change();
+//        });
     }
 
     /**
@@ -25,8 +25,8 @@ class UpdateQuantityColumnInCartsTable extends Migration
      */
     public function down()
     {
-        Schema::table('carts', function (Blueprint $table) {
-            $table->string('quantity', 255)->nullable()->change();
-        });
+//        Schema::table('carts', function (Blueprint $table) {
+////            $table->string('quantity', 255)->nullable()->change();
+//        });
     }
 }
