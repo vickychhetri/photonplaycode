@@ -543,8 +543,9 @@ $products_list_ids=[];
             if(!Session::get('user') && isset($userId)){
                 Customer::where('id', $userId)->delete();
             }
-
-            dd($e->getMessage());
+            echo "<pre>";
+            print_r($e->getMessage());
+            die();
             return redirect()->route('customer.homePage')->with('error', 'Cart is empty, Please add some products');
         }
     }
