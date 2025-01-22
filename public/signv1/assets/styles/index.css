@@ -1,4 +1,4 @@
-@import './_theme.css';
+/*@import './_theme.css';*/
 
 :root {
   --white: #ffffff;
@@ -10,40 +10,40 @@
   --footer-bg-light: rgb(40 40 40);
 }
 
-@font-face {
-  font-family: Alternox-regular;
-  src: url('../UI-01/FONTS/Alternox-Regular.otf');
-}
+/*@font-face {*/
+/*  font-family: Alternox-regular;*/
+/*  src: url('../UI-01/FONTS/Alternox-Regular.otf');*/
+/*}*/
 
-@font-face {
-  font-family: Alternox-bold;
-  src: url('../UI-01/FONTS/Alternox-Bold.otf');
-}
+/*@font-face {*/
+/*  font-family: Alternox-bold;*/
+/*  src: url('../UI-01/FONTS/Alternox-Bold.otf');*/
+/*}*/
 
-@font-face {
-  font-family: Alternox-semibold;
-  src: url('../UI-01/FONTS/Alternox-SemiBold.otf');
-}
+/*@font-face {*/
+/*  font-family: Alternox-semibold;*/
+/*  src: url('../UI-01/FONTS/Alternox-SemiBold.otf');*/
+/*}*/
 
-@font-face {
-  font-family: Railway-regular;
-  src: url('../UI-01/FONTS/Raleway-Regular.ttf');
-}
+/*@font-face {*/
+/*  font-family: Railway-regular;*/
+/*  src: url('../UI-01/FONTS/Raleway-Regular.ttf');*/
+/*}*/
 
-@font-face {
-  font-family: Railway-bold;
-  src: url('../UI-01/FONTS/Raleway-Bold.ttf');
-}
+/*@font-face {*/
+/*  font-family: Railway-bold;*/
+/*  src: url('../UI-01/FONTS/Raleway-Bold.ttf');*/
+/*}*/
 
-@font-face {
-  font-family: Railway-semibold;
-  src: url('../UI-01/FONTS/Raleway-SemiBold.ttf');
-}
+/*@font-face {*/
+/*  font-family: Railway-semibold;*/
+/*  src: url('../UI-01/FONTS/Raleway-SemiBold.ttf');*/
+/*}*/
 
-@font-face {
-  font-family: Railway-medium;
-  src: url('../UI-01/FONTS/Raleway-Medium.ttf');
-}
+/*@font-face {*/
+/*  font-family: Railway-medium;*/
+/*  src: url('../UI-01/FONTS/Raleway-Medium.ttf');*/
+/*}*/
 
 body {
   font-family: Arial,Sans-Serif;

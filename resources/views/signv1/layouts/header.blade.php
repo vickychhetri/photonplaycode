@@ -72,6 +72,33 @@
     <meta name="twitter:site" content="@photonplayinc" />
     <meta name="twitter:creator" content="@photonplayinc" />
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Radar Speed Signs",
+        "image": "https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp",
+        "description": "Photonplay's radar speed signs utilize advanced technology to display real-time vehicle speeds, encouraging drivers to adhere to speed limits and enhancing road safety.",
+        "brand": {
+            "@type": "Organization",
+            "name": "Photonplay",
+            "url": "https://staging.photonplay.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://staging.photonplay.com/radar-speed-signs",
+            "priceCurrency": "USD",
+            "price": "Contact for pricing",
+            "availability": "https://schema.org/InStock"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Radar_speed_sign",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://staging.photonplay.com/radar-speed-signs"
+        }
+    }
+    </script>
+
     @php
         $disable_js=0;
         $disable_js_error=\App\Models\MasterConfiguration::where('code','disable_js_errors')->first();
@@ -80,7 +107,15 @@
         }
     @endphp
     @if($disable_js==1)
-        <script src="{{ asset('assets/js/disable-console.js') }}"></script>
+       <script>
+           console.log = function() {};
+           console.error = function() {};
+           console.warn = function() {};
+           window.onerror = function(message, source, lineno, colno, error) {
+               return true;
+           };
+
+       </script>
     @endif
 
     <!-- Toastify CSS -->
@@ -90,8 +125,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/signv1/assets/styles/index.css">
-    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+{{--    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">--}}
+{{--    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">--}}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
@@ -445,7 +480,7 @@
 
                             <div class="d-flex flex-column align-items-center ">
                                 <a href="{{route('customer.loginForm')}}"> <img
-                                        src="{{asset('assets\customer\images\user.png')}}" alt="Not Found"
+                                        src="{{asset('assets\customer\images\user.png')}}" alt="User"
                                         class="img-fluid me-2 ">
                                 </a>
                                 <a href="{{route('customer.loginForm')}}" style="text-decoration: none;">  <span class="text-dark">Login/Signup</span> </a>
@@ -474,7 +509,7 @@
                                                 aria-expanded="false"
                                             >
                                                 <a><img src="{{asset('assets\customer\images\profile.png')}}"
-                                                        alt="Not Found"
+                                                        alt="Profile"
                                                         class="img-fluid rounded-circle d-block" width="36" height="36"></a>
                                                 <span class="text-dark">Hello, {{Session::get('user')->name}}</span>
                                             </button>
@@ -525,7 +560,7 @@
             </div>
             <div class="col-lg-4 d-flex align-items-center justify-content-center ">
                 <div id="banner "  class="p-4 desktop-display" style="  display: block;">
-                    <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" style="max-width: 300px;scale: 1.4;"/>
+                    <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="Radar Speed Sign" style="max-width: 300px;scale: 1.4;"/>
                 </div>
             </div>
 

@@ -13,6 +13,7 @@ use App\Models\Vendor;
 use App\Rules\ReCaptcha;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
@@ -36,8 +37,29 @@ class SignController extends Controller
     public function radarSpeedSigns_v1()
     {
         $products = Product::select('id','slug')->where('category_id', 1)->get();
-        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
-        $blogs = array_slice($postsSlice, 0 , 3);
+//        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+//        $blogs = array_slice($postsSlice, 0 , 3);
+
+        $cacheKey = 'latest_blogs_with_images';
+        $cacheDuration = 60; // Cache for 60 minutes
+
+        $blogs = Cache::remember($cacheKey, $cacheDuration, function () {
+            // Fetch the blogs from the WordPress API
+            $postsSlice = Http::get((env('WORDPRESS_BASE_URL') ?? 'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
+            $blogs = array_slice($postsSlice, 0, 3);
+
+            // Fetch images for each blog
+            foreach ($blogs as &$blog) {
+                if (!empty($blog['featured_media'])) {
+                    $image = Http::get((env('WORDPRESS_BASE_URL') ?? 'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/' . $blog['featured_media'])->json();
+                    $blog['image_url'] = $image['media_details']['sizes']['medium']['source_url'] ?? null;
+                } else {
+                    $blog['image_url'] = null;
+                }
+            }
+
+            return $blogs;
+        });
         $sessionId = Session::getId();
         $cartCount = 0;
         if (Session::get('user')) {

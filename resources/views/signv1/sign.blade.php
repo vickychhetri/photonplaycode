@@ -83,7 +83,7 @@
 
                 <div class="col">
                     <div class="help-image">
-                        <img src="/signv1/assets/UI-01/UI-Data/Images/Girl.png" alt="error" class="img-fluid">
+                        <img src="/signv1/assets/UI-01/UI-Data/Images/Girl.webp" alt="Girl.webp" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -112,76 +112,76 @@
                         </div>
                         <div class="col position-relative">
                             <div class="text-center">
-                                <img src="/signv1/assets/images/Photonplay_Speed_icon.png" alt="">
+                                <img src="/signv1/assets/images/Photonplay_Speed_icon.webp" alt="Photonplay_Speed_icon">
                             </div>
                             <div class="btn btn-primary rounded-pill w-100">
                                 Photonplay
                             </div>
                             <ul class="list-unstyled list-grey mx-3 radar-speed-list">
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="check-mark.webp">
                                 </li>
                                 <li>
                                     <span> 5 Years</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="check-mark.webp">
                                 </li>
                                 <li>
                                      <span>$2500</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/check-mark.webp" alt="check-mark.webp">
                                 </li>
                             </ul>
                         </div>
                         <div class="col position-relative">
                             <div class="text-center">
-                                <img src="/signv1/assets/images/Other_company_2.png" alt="">
+                                <img src="/signv1/assets/images/Other_company_2.webp" alt="Other company 2">
                             </div>
                             <div class="btn btn-primary rounded-pill w-100">
                                 Other Company
                             </div>
                             <ul class="list-unstyled list-grey mx-3 radar-speed-list">
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                     <span>1 Year</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                     <span>$3000</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                             </ul>
                         </div>
                         <div class="col position-relative">
                             <div class="text-center">
-                                <img src="/signv1/assets/images/Other_company_3.png" alt="">
+                                <img src="/signv1/assets/images/Other_company_3.webp" alt="Other company 3">
                             </div>
                             <div class="btn btn-primary rounded-pill w-100">
                                 Other Company
                             </div>
                             <ul class="list-unstyled list-grey mx-3 radar-speed-list">
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                      <span>1 Year</span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                                 <li>
                                     <span>$2700 </span>
                                 </li>
                                 <li>
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.png" alt="">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/cross-mark-icon.webp" alt="cross-mark-icon.webp">
                                 </li>
                             </ul>
                         </div>
@@ -235,7 +235,7 @@
                                             <img src="https://cdn-icons-png.flaticon.com/512/8465/8465733.png" alt="Best Seller" />
                                         </div>
                                         <!-- Image -->
-                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="" height="220">
+                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="Radar Speed Sign" height="220">
                                     </div>
 
                                     <div class="price-card">
@@ -260,14 +260,14 @@
                                             <div class="text-center mt-1">
                                                 <a href="/radar-speed-signs/model/r1200"
                                                    class="pt-1">   <img
-                                                            src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
+                                                            src="{{asset("assets/images/radar/shop_now_radar.webp")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3 px-0 position-relative">
                                     <div class="speed-count-image speed-count-image-2">
-                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1500-amber-front-side.webp" alt="" height="250">
+                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1500-amber-front-side.webp" alt="Radar Speed Sign" height="250">
                                     </div>
                                     <div class="price-card">
                                         R1500
@@ -291,14 +291,14 @@
                                             <div class="text-center mt-1">
                                                 <a href="/radar-speed-signs/model/r1500m"
                                                    class="pt-1">  <img
-                                                        src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;"> </a>
+                                                        src="{{asset("assets/images/radar/shop_now_radar.webp")}}" alt="shop now"  style="max-width: 200px;"> </a>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3 ps-0 position-relative">
                                     <div class="speed-count-image  speed-count-image-3">
-                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1800m-amber-front-side.webp" alt="" height="270">
+                                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1800m-amber-front-side.webp" alt="Radar Speed Sign" height="270">
                                     </div>
                                     <div class="price-card">
                                         R1800
@@ -322,7 +322,7 @@
                                             <div class="text-center mt-1">
                                                 <a href="/radar-speed-signs/model/r1800m"
                                                    class="pt-1">  <img
-                                                        src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now"  style="max-width: 200px;">  </a>
+                                                        src="{{asset("assets/images/radar/shop_now_radar.webp")}}" alt="shop now"  style="max-width: 200px;">  </a>
                                             </div>
                                         </li>
                                     </ul>
@@ -421,7 +421,7 @@
             </div>
             <!-- Image Section -->
             <div class="col-md-6 text-center brochure-image">
-                <img src="{{asset("assets/images/radar/radar_catalog.png")}}" alt="Brochure">
+                <img src="{{asset("assets/images/radar/radar_catalog.webp")}}" alt="radar_catalog.webp">
             </div>
         </div>
     </div>
@@ -442,7 +442,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold"> The radar speed signs have been a game-changer for our neighborhood. Cars actually slow down now, and our streets feel so much safer for kids to play.</p>
 
@@ -450,7 +450,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Sarah Thompson, <span class="text-secondary">Maplewood Estates</span></h6>
                             </div>
@@ -459,7 +459,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold">We used to get complaints about reckless driving in our campus parking areas. Since adding 3 radar speed signs, the problem has been solved. Vehicle speeds are now consistently within safe limits. Thank you Mike for helping us to choose the right sign.</p>
 
@@ -467,7 +467,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Lisa Warner, <span class="text-secondary">Harmony Business Park</span></h6>
                             </div>
@@ -476,7 +476,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold">The radar speed signs installed near our school have been a blessing. Cars now slow down significantly during drop-off and pick-up times, making the area much safer for children. Thank you, for making our school zone a safer place!</p>
 
@@ -484,7 +484,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Laura Simmons, <span class="text-secondary">Hillcrest Elementary School</span></h6>
                             </div>
@@ -493,7 +493,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold">Our residents love the visible speed reminders. The signs have been effective in keeping traffic calm, especially near the school zone.</p>
 
@@ -501,7 +501,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Emily Carter, <span class="text-secondary">Oak Ridge Town</span></h6>
                             </div>
@@ -514,7 +514,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold">We’ve had fewer incidents and complaints since the radar speed signs were put up outside the school. Drivers are more aware, and parents feel more secure about their kids crossing the road. A big thanks to Photonplay sales team for providing such an effective solution!</p>
 
@@ -522,7 +522,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Mark Taylor, <span class="text-secondary">Maple Grove School District</span></h6>
                             </div>
@@ -532,7 +532,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold">We were skeptical at first, but the radar speed signs have exceeded expectations. They’ve made a huge difference in slowing down vehicles on our busy streets.</p>
 
@@ -540,7 +540,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="Quote-Icon.webp">
                                 </div>
                                 <h6>James Miller, <span class="text-secondary">Silver Lake Village</span></h6>
                             </div>
@@ -550,7 +550,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold">Initially we installed one iCop sign, it was a success so we decided to add 2 more signs to our neighborhood. We’ve had now fewer complaints about reckless driving since they were installed.</p>
 
@@ -558,7 +558,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Priya Patel, <span class="text-secondary">Greenfield Park</span></h6>
                             </div>
@@ -568,7 +568,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold">The radar speed signs not only slowed down vehicles in our school zone but also gave us detailed analytics. We discovered that 85% of drivers reduced their speed by 10-15 mph after seeing the signs.</p>
 
@@ -576,7 +576,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Laura Simmons, <span class="text-secondary">Hillcrest Elementary School Zone</span></h6>
                             </div>
@@ -586,7 +586,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold"> Thanks to the detailed reports provided by the radar signs, we learned that peak speeding times occurred between 4 PM and 6 PM. Using this data, we coordinated additional traffic calming measures, resulting in a 38% reduction in speeding incidents. Photonplay has been a fantastic partner to support the cause!</p>
 
@@ -594,7 +594,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Emily Carter , <span class="text-secondary">Oak Ridge Town</span></h6>
                             </div>
@@ -605,7 +605,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold"> The analytics provided by analytical reports generated by sign helped us realize that over 48% of drivers slowed down by at least 12 mph near the playground zone. This insight reassured us that the investment was worth it. The signs are doing a great job!</p>
 
@@ -613,7 +613,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Michelle Brown , <span class="text-secondary">Riverbend Heights</span></h6>
                             </div>
@@ -623,7 +623,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold"> It’s incredible how a simple speed sign can have such a big impact. Drivers are more aware now, and it’s made our streets much safer.</p>
 
@@ -631,7 +631,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>John Dawson , <span class="text-secondary">Pine Hill Community</span></h6>
                             </div>
@@ -641,7 +641,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold"> We’ve seen a noticeable improvement in traffic behaviour. The radar speed signs have proven to be a great investment for our town.</p>
 
@@ -649,7 +649,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Lisa Nguyen , <span class="text-secondary">Brookside Meadows</span></h6>
                             </div>
@@ -659,7 +659,7 @@
                     <div class="col-12 col-md-6 col-lg-4 m-2">
                         <div class="client-card">
                             <div class="qoute-image mb-4">
-                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.png" alt="error">
+                                <img src="/signv1/assets/UI-01/UI-Data/Images/Quote-Icon.webp" alt="Quote-Icon.webp">
                             </div>
                             <p class="fs-18 fw-semibold"> Installing radar speed signs has reduced speeding incidents significantly. We've noticed a calmer and more mindful driving culture in our community.</p>
 
@@ -667,7 +667,7 @@
 
                             <div class="d-flex align-items-center gap-2">
                                 <div class="rating-image">
-                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.png" alt="error">
+                                    <img src="/signv1/assets/UI-01/UI-Data/Images/stars.webp" alt="stars.webp">
                                 </div>
                                 <h6>Tom Rodriguez , <span class="text-secondary">Willow Creek</span></h6>
                             </div>
@@ -698,40 +698,34 @@
             <div class="row gy-4">
 
                 @foreach($blogs as $blog)
-                        <?php
-                        $image = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/media/'. $blog['featured_media'])->json();
-                        ?>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="news-card">
                             <div class="news-image">
-                                <img src="{{$image['media_details']['sizes']['medium']['source_url'] ?? null}}" alt="error"
-                                     class="img-fluid">
+                                <img src="{{ $blog['image_url'] }}" alt="{{ $blog['title']['rendered'] }}" class="img-fluid">
                                 <div class="image-tag">Photon</div>
                             </div>
                             <div class="news-card-content">
-                                <h6 class="mb-4">{{$blog['title']['rendered']}}</h6>
+                                <h6 class="mb-4">{{ $blog['title']['rendered'] }}</h6>
                                 <p class="fs-12 fw-semibold text-secondary mb-4">
                                     @php
-                                    if ($blog["date"]){
-                                        $formattedDate = \Carbon\Carbon::parse($blog["date"])->format('M d, Y');
-                                        echo $formattedDate;
-                                    }
+                                        if ($blog["date"]) {
+                                            $formattedDate = \Carbon\Carbon::parse($blog["date"])->format('M d, Y');
+                                            echo $formattedDate;
+                                        }
                                     @endphp
-                                    - <span
-                                        class="text-primary">Photonplay System</span></p>
-
-                                <p class="text-secondary fs-12 mb-4">{!! Str::limit($blog['excerpt']['rendered'], 200)  !!} </p>
-
-
-                                <a href="{{route("customer.blog_show",$blog['slug'])}}" class="btn news-btn">Read More</a>
+                                    - <span class="text-primary">Photonplay System</span>
+                                </p>
+                                <p class="text-secondary fs-12 mb-4">{!! Str::limit($blog['excerpt']['rendered'], 200) !!}</p>
+                                <a href="{{ route('customer.blog_show', $blog['slug']) }}" class="btn news-btn">Read More</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
 
+
                 <div class="col-12 text-center mt-5">
                     <a href="{{route('customer.blog')}}" class="text-black nav-link fw-bold fs-14">Check All Blog Posts <img
-                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" /></a>
+                            src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.webp"  alt="right-arrow"/></a>
                 </div>
             </div>
         </div>
@@ -750,7 +744,7 @@
 {{--                        <div class="input-box d-flex align-items-center position-relative">--}}
 {{--                            <input type="text" name="email" id="" placeholder="E-mail" class="form-control rounded-pill" />--}}
 {{--                            <button class="btn p-0 h-100 position-absolute end-0 me-2"><img--}}
-{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></button>--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.webp" alt=""></button>--}}
 {{--                        </div>--}}
 {{--                    </form>--}}
 {{--                </div>--}}
@@ -1014,23 +1008,23 @@
 
 {{--                        <ul class="list-unstyled mt-5">--}}
 {{--                            <li class="fw-semibold fs-14 d-flex align-items-center gap-2"><img--}}
-{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Real time speed feedback--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.webp" alt=""> Real time speed feedback--}}
 {{--                            </li>--}}
 {{--                            <li class="my-3 fw-semibold fs-14 d-flex align-items-center gap-2"> <img--}}
-{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Community-focused safety--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.webp" alt=""> Community-focused safety--}}
 {{--                                solutions</li>--}}
 {{--                            <li class="fw-semibold fs-14 d-flex align-items-center gap-2"><img--}}
-{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.png" alt=""> Durable and eco-friendly--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/tick-image.webp" alt=""> Durable and eco-friendly--}}
 {{--                                design</li>--}}
 {{--                        </ul>--}}
 
 {{--                        <a href="#inquiry" class="btn btn-primary mt-5 d-flex align-items-center gap-3" style="max-width: 250px;">Meet Our Expert <img--}}
-{{--                                src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.png" alt=""></a>--}}
+{{--                                src="/signv1/assets/UI-01/UI-Data/Images/right-arrow.webp" alt=""></a>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--                <div class="col-md-5">--}}
 {{--                    <div class="driver-image">--}}
-{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/Education-Drivers-image.png" alt="" class="img-fluid">--}}
+{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/Education-Drivers-image.webp" alt="" class="img-fluid">--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
@@ -1039,7 +1033,7 @@
 {{--            <div class="row justify-content-between align-items-center gy-4 py-4 mb-5">--}}
 {{--                <div class="col-md-5">--}}
 {{--                    <div class="driver-image">--}}
-{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/banner-image.png" alt="" class="img-fluid">--}}
+{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/banner-image.webp" alt="" class="img-fluid">--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--                <div class="col-md-5">--}}
@@ -1087,7 +1081,7 @@
 {{--                </div>--}}
 {{--                <div class="col-md-5">--}}
 {{--                    <div class="driver-image">--}}
-{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/Engage&informimage.png" alt="" class="img-fluid">--}}
+{{--                        <img src="/signv1/assets/UI-01/UI-Data/Images/Engage&informimage.webp" alt="" class="img-fluid">--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
@@ -1108,10 +1102,10 @@
 
 {{--                        <div class="d-flex align-items-center gap-4 fw-semibold justify-content-center flex-wrap">--}}
 {{--                            <a href="#inquiry" class="btn btn-primary d-flex align-items-center gap-3">Discover More Info <img--}}
-{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/E-mail-arrow-icon.png" alt=""></a>--}}
+{{--                                    src="/signv1/assets/UI-01/UI-Data/Images/E-mail-arrow-icon.webp" alt=""></a>--}}
 {{--                            <div class="d-flex gap-3 align-items-center">--}}
 {{--                                <a href="tel:8009669389">--}}
-{{--                                    <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.png" alt="Call Now">--}}
+{{--                                    <img src="/signv1/assets/UI-01/UI-Data/Images/Phone-icon-header.webp" alt="Call Now">--}}
 {{--                                </a>--}}
 {{--                                <div class="content text-start">--}}
 {{--                                    <p class="text-white opacity-75 fs-14">Call 24HR/7 Days</p>--}}
