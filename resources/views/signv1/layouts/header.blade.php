@@ -72,6 +72,33 @@
     <meta name="twitter:site" content="@photonplayinc" />
     <meta name="twitter:creator" content="@photonplayinc" />
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Radar Speed Signs",
+        "image": "https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp",
+        "description": "Photonplay's radar speed signs utilize advanced technology to display real-time vehicle speeds, encouraging drivers to adhere to speed limits and enhancing road safety.",
+        "brand": {
+            "@type": "Organization",
+            "name": "Photonplay",
+            "url": "https://staging.photonplay.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://staging.photonplay.com/radar-speed-signs",
+            "priceCurrency": "USD",
+            "price": "Contact for pricing",
+            "availability": "https://schema.org/InStock"
+        },
+        "additionalType": "https://en.wikipedia.org/wiki/Radar_speed_sign",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://staging.photonplay.com/radar-speed-signs"
+        }
+    }
+    </script>
+
     @php
         $disable_js=0;
         $disable_js_error=\App\Models\MasterConfiguration::where('code','disable_js_errors')->first();
