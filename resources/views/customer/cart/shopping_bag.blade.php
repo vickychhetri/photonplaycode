@@ -231,6 +231,19 @@ WAY GROUND)</span>
                                                     <span class="text text-capitalize fw-bold">Total including Tax</span>
                                                     <span class="text-dark">{{$currency_icon}}{{$grand_total  + (($grand_total * $gst) / 100)}}</span>
                                                 </li>
+                                                @php
+
+                                                    $maximum_total_order_amount_val=9999999;
+                                                    $maximum_total_order_amount= \App\Models\MasterConfiguration::where('code','maximum_total_order_amount')->where('status',1)->first();
+                                                    if(isset($maximum_total_order_amount)){
+                                                        $maximum_total_order_amount_val=$maximum_total_order_amount->value;
+                                                    }
+                                                @endphp
+                                                @if(($grand_total  + (($grand_total * $gst) / 100)) > $maximum_total_order_amount_val)
+                                                    <li>
+                                                    <span style="color: red;"> Please remove some product from the cart to proceed further. Maximum Amount must be less than $30000.</span>
+                                                    </li>
+                                                @endif
                                             </ul>
                                             <form action="{{route('customer.shopping.bag')}}" method="post">
                                                 @csrf
@@ -252,6 +265,7 @@ WAY GROUND)</span>
                                             </p>
 
 
+                                            @if(!(($grand_total  + (($grand_total * $gst) / 100)) > $maximum_total_order_amount_val))
                                             @if(Session::get('user'))
 
                                                 <form action="{{route('customer.checkout')}}" method="any">
@@ -265,6 +279,7 @@ WAY GROUND)</span>
                                                 <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
                                                 <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
                                             <a href="{{ route('customer.loginForm' , ['c' => \Illuminate\Support\Facades\Crypt::encrypt($coupon_name) , 'd' => \Illuminate\Support\Facades\Crypt::encrypt($discounted_amount)]) }}"  class="btn btn-primary p-1 btn-block w-100 rounded-0 {{ count($cart_table) <= 0 ? 'disabled' : '' }}">Proceed to buy </a>
+                                            @endif
                                             @endif
                                             <!-- Main Form -->
 
