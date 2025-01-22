@@ -79,7 +79,7 @@ $seo_meta=[
                                                             @foreach($order->orderedProducts as $prod)
                                                                 <tr>
 
-                                                                    <td><img src="{{asset("storage/".$prod->cover_image)}}" alt="Image not found"  style="max-height: 50px;max-width: 100px;"/></td>
+                                                                    <td><img src="{{asset("storage/".$prod->color)}}" alt="Product image"  style="max-height: 50px;max-width: 100px;"/></td>
                                                                     <td>{{ $prod->title }} <br/>
 
                                                                         @if($prod->sku_code)

@@ -492,7 +492,7 @@ $products_list_ids=[];
                        'option_ids' => $carts->option_ids,
                        'quantity' => $carts->quantity,
                        'price' => $carts->price,
-                       'color' => $carts->color,
+                       'color' => $carts->cover_image,
                        'sku_code' => $carts->sku_code,
                    ]);
                }
