@@ -96,7 +96,7 @@ if($data_record){
 
                                             <td class="border border-end text-center">{{$currency_icon}}{{$cart->price}}</td>
                                             <td class="border border-end text-center">{{$cart->quantity}}</td>
-                                            <td class="border border-end text-center">{{$currency_icon}} {{$total_price = $cart->price * $cart->quantity}}</td>
+                                            <td class="border border-end text-center">{{$currency_icon}}{{$total_price = $cart->price * $cart->quantity}}</td>
                                             <td class="border border-end text-center">
                                                 <a href="{{ route('customer.delete.cart.table.item', $cart->id ?? $cart->id) }}">
                                                     <img src="{{ asset('assets/customer/images/crosss.png') }}" alt="Not Found" class="cartItem">
@@ -119,20 +119,20 @@ if($data_record){
                             <div class="container my-5">
                                 <h6 class="mb-4 text-dark">These item(s) are often bought together with this product</h6>
                                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                                   @foreach($linked_products as $l_product)
+                                    @foreach($linked_products as $l_product)
                                         <div class="col-md-4">
                                             <form method="POST" action="{{ route('customer.store.shopping.accessory.bag') }}">
                                                 @csrf
                                                 <div class="card text-center border-0 shadow-sm" style="max-width: 250px; margin: auto;">
                                                     <a href="{{ route('customer.radar.sign', $l_product->slug) }}">
-                                                    <img src="{{ asset('storage/' . $l_product->cover_image) }}"
-                                                         class="card-img-top p-2"
-                                                         alt="{{ $l_product->title }}"
-                                                         style="max-height: 150px; object-fit: contain;">
+                                                        <img src="{{ asset('storage/' . $l_product->cover_image) }}"
+                                                             class="card-img-top p-2"
+                                                             alt="{{ $l_product->title }}"
+                                                             style="max-height: 150px; object-fit: contain;">
                                                     </a>
                                                     <div class="card-body p-3">
                                                         <a href="{{ route('customer.radar.sign', $l_product->slug) }}" class="text-decoration-none">
-                                                        <h6 class="card-title text-truncate">{{ $l_product->product_heading_text ?? $l_product->title }}</h6>
+                                                            <h6 class="card-title text-truncate">{{ $l_product->product_heading_text ?? $l_product->title }}</h6>
                                                         </a>
                                                         <p class="card-text text-primary fw-bold mb-2">
                                                             {{ $currency_icon }} {{ $country_code == 'CA' ? $l_product->price_canada * $exchange_rate : $l_product->price * $exchange_rate }}
@@ -142,41 +142,44 @@ if($data_record){
                                                         <input type="hidden" name="price" value="{{ $country_code == 'CA' ? $l_product->price_canada * $exchange_rate : $l_product->price * $exchange_rate }}">
                                                         <input type="hidden" name="title" value="{{ $l_product->title }}">
                                                         <input type="hidden" name="category" value="{{ $l_product->category->title }}">
-
                                                         <input type="hidden" name="cover_image" value="{{ $l_product->cover_image }}">
+
                                                         <div class="quantity-control d-flex align-items-center justify-content-center gap-2 pb-2">
-                                                            <button type="button" class="btn btn-sm btn-outline-secondary decrement-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;">-</button>
+                                                            <button type="button" class="btn btn-sm btn-outline-secondary decrement-btn p-2 pb-1 pt-1" style="width: 40px; max-width: 100%;">-</button>
                                                             <input type="number" name="quantity" value="1" class="form-control text-center quantity-input p-1" style="width: 60px; height: 30px;" min="1" readonly>
-                                                            <button type="button" class="btn btn-sm btn-outline-secondary increment-btn p-2 pb-1 pt-1" style="width: 40px;max-width: 100%;">+</button>
+                                                            <button type="button" class="btn btn-sm btn-outline-secondary increment-btn p-2 pb-1 pt-1" style="width: 40px; max-width: 100%;">+</button>
                                                         </div>
                                                         <button class="btn btn-primary btn-sm w-100">Add to Cart</button>
                                                     </div>
                                                 </div>
                                             </form>
-
-
-                                            <script>
-                                                document.addEventListener('DOMContentLoaded', function() {
-                                                    document.querySelectorAll('.increment-btn').forEach(btn => {
-                                                        btn.addEventListener('click', function() {
-                                                            const quantityInput = this.previousElementSibling;
-                                                            quantityInput.value = parseInt(quantityInput.value) + 1;
-                                                        });
-                                                    });
-
-                                                    document.querySelectorAll('.decrement-btn').forEach(btn => {
-                                                        btn.addEventListener('click', function() {
-                                                            const quantityInput = this.nextElementSibling;
-                                                            if (parseInt(quantityInput.value) > 1) {
-                                                                quantityInput.value = parseInt(quantityInput.value) - 1;
-                                                            }
-                                                        });
-                                                    });
-                                                });
-                                            </script>
-
                                         </div>
-                                   @endforeach
+                                    @endforeach
+
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            // Handle increment
+                                            document.querySelectorAll('.increment-btn').forEach(button => {
+                                                button.addEventListener('click', function () {
+                                                    const quantityInput = this.closest('.quantity-control').querySelector('.quantity-input');
+                                                    let currentValue = parseInt(quantityInput.value);
+                                                    quantityInput.value = currentValue + 1;
+                                                });
+                                            });
+
+                                            // Handle decrement
+                                            document.querySelectorAll('.decrement-btn').forEach(button => {
+                                                button.addEventListener('click', function () {
+                                                    const quantityInput = this.closest('.quantity-control').querySelector('.quantity-input');
+                                                    let currentValue = parseInt(quantityInput.value);
+                                                    if (currentValue > 1) {
+                                                        quantityInput.value = currentValue - 1;
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    </script>
+
 
                                 </div>
                             </div>
@@ -231,6 +234,19 @@ WAY GROUND)</span>
                                                     <span class="text text-capitalize fw-bold">Total including Tax</span>
                                                     <span class="text-dark">{{$currency_icon}}{{$grand_total  + (($grand_total * $gst) / 100)}}</span>
                                                 </li>
+                                                @php
+
+                                                    $maximum_total_order_amount_val=9999999;
+                                                    $maximum_total_order_amount= \App\Models\MasterConfiguration::where('code','maximum_total_order_amount')->where('status',1)->first();
+                                                    if(isset($maximum_total_order_amount)){
+                                                        $maximum_total_order_amount_val=$maximum_total_order_amount->value;
+                                                    }
+                                                @endphp
+                                                @if(($grand_total  + (($grand_total * $gst) / 100)) > $maximum_total_order_amount_val)
+                                                    <li>
+                                                    <span style="color: red;"> Please remove some product from the cart to proceed further. Maximum Amount must be less than $30000.</span>
+                                                    </li>
+                                                @endif
                                             </ul>
                                             <form action="{{route('customer.shopping.bag')}}" method="post">
                                                 @csrf
@@ -252,6 +268,7 @@ WAY GROUND)</span>
                                             </p>
 
 
+                                            @if(!(($grand_total  + (($grand_total * $gst) / 100)) > $maximum_total_order_amount_val))
                                             @if(Session::get('user'))
 
                                                 <form action="{{route('customer.checkout')}}" method="any">
@@ -265,6 +282,7 @@ WAY GROUND)</span>
                                                 <input type="hidden" name="coupon_s" value="{{$coupon_name}}">
                                                 <input type="hidden" name="discount_s" value="{{$discounted_amount}}">
                                             <a href="{{ route('customer.loginForm' , ['c' => \Illuminate\Support\Facades\Crypt::encrypt($coupon_name) , 'd' => \Illuminate\Support\Facades\Crypt::encrypt($discounted_amount)]) }}"  class="btn btn-primary p-1 btn-block w-100 rounded-0 {{ count($cart_table) <= 0 ? 'disabled' : '' }}">Proceed to buy </a>
+                                            @endif
                                             @endif
                                             <!-- Main Form -->
 

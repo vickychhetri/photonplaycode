@@ -26,6 +26,7 @@ class Radar extends Component
     public $subscription_free_text;
     public $color = 'Amber-Color.png';
     public $dynamic_specs = [];
+    public $quantities_a = [];
     public function mount($product_id)
     {
         $this->product_id = $product_id;
@@ -67,8 +68,10 @@ class Radar extends Component
         }
 
         //list all accessories
-
-
+        $this->linked_products=Product::getLinkedProducts([$this->product->id]);
+        foreach ($this->linked_products as $product) {
+            $this->quantities_a[$product->id] = 1;
+        }
     }
 
     public function render()
@@ -112,6 +115,20 @@ class Radar extends Component
             'cartItems' => $this->cartItems,
             'linked_products' => $this->linked_products,
         ]);
+    }
+
+    public function incrementQuantity($productId)
+    {
+        if (isset($this->quantities_a[$productId])) {
+            $this->quantities_a[$productId]++;
+        }
+    }
+
+    public function decrementQuantity($productId)
+    {
+        if (isset($this->quantities_a[$productId]) && $this->quantities_a[$productId] > 1) {
+            $this->quantities_a[$productId]--;
+        }
     }
 
     public function addToCart(){
@@ -270,15 +287,23 @@ class Radar extends Component
     }
 
     public function addAccessory(){
-
+        $prd=Product::find( $this->Pid_a);
+        $price=0;
+        if(isset($prd)){
+            $price=$prd->price;
+            $category_id=$prd->category_id;
+            $title=$prd->product_heading_text??$prd->title;
+        } else {
+            return false;
+        }
         if(!Session::get('user')){
             Cart::create([
                 'session_id' => $this->sessionId,
                 'product_id' => $this->Pid_a,
-                'price' => $this->price_a,
-                'title' => $this->title_a,
-                'category' => $this->category_a,
-                'quantity' => $this->quantity_a,
+                'price' => $price,
+                'title' => $title,
+                'category' => $category_id,
+                'quantity' => $this->quantities_a[$this->Pid_a],
                 'cover_image' => $this->cover_image_a,
                 'currency_code'=> $this->currency_icon_a,
                 'exchange_rate'=>$this->exchangeRate_a,
@@ -287,10 +312,10 @@ class Radar extends Component
             Cart::create([
                 'user_id' => Session::get('user')->id,
                 'product_id' => $this->Pid_a,
-                'price' => $this->price_a,
-                'title' => $this->title_a,
-                'category' => $this->category_a,
-                'quantity' => $this->quantity_a,
+                'price' => $price,
+                'title' => $title,
+                'category' => $category_id,
+                'quantity' => $this->quantities_a[$this->Pid_a],
                 'cover_image' => $this->cover_image_a,
                 'currency_code'=> $this->currency_icon_a,
                 'exchange_rate'=>$this->exchangeRate_a,
@@ -309,6 +334,7 @@ class Radar extends Component
             }
         }
         $this->emit('cartUpdated', $total_count);
+        $this->emit('trigger-modal');
     }
 
 
