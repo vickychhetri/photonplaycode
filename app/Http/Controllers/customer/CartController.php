@@ -10,6 +10,7 @@ use App\Models\Country;
 use App\Models\Coupon;
 use App\Models\Currency;
 use App\Models\Customer;
+use App\Models\MasterConfiguration;
 use App\Models\Order;
 use App\Models\OrderedProduct;
 use App\Models\PostalCode;
@@ -44,11 +45,41 @@ class CartController extends Controller
                 return redirect()->back()->with('error', 'Coupon Invalid! Please try another one');
             }
         }
+        $correct_coupon=false;
+        $coupon_on_exist_customer_order= MasterConfiguration::where('code','coupon_on_exist_customer_order')->where('status',1)->first();
+        if(isset($coupon_on_exist_customer_order) && $coupon_on_exist_customer_order->value=="Y"  && isset($request->coupon) && strlen($request->coupon) > 2){
+            $coupon_apply_on_number_order_after= MasterConfiguration::where('code','coupon_apply_on_number_order_after')->where('status',1)->first();
+
+            if(isset($coupon_apply_on_number_order_after)){
+                if(isset(Session::get('user')->id)){
+                    $confirm_order_status_delivery_status= MasterConfiguration::where('code','confirm_order_status_delivery_status')->where('status',1)->first();
+
+                    if(isset($confirm_order_status_delivery_status)){
+                        $already_delivered_count = Order::where('user_id', Session::get('user')->id)
+                            ->where('delivery_status', $confirm_order_status_delivery_status->value)
+                            ->count();
+
+                        if(!(isset($already_delivered_count) && $already_delivered_count >= $coupon_apply_on_number_order_after->value)){
+                            return redirect()->back()->with('error', 'Coupon Invalid! Please try another one');
+                        }else {
+                            $correct_coupon=true;
+                        }
+                    }else {
+                        return redirect()->back()->with('error', 'Something went wrong!');
+                    }
+
+                }else {
+                    return redirect()->back()->with('error', 'Coupon Invalid! Please try another one');
+                }
+            }
+        }else {
+            $correct_coupon=true;
+        }
 
         $discount = 0;
         $discounted_amount = 0;
         $coupon_name = '0';
-        if($coupon){
+        if(isset($coupon) && $correct_coupon){
             if ($coupon->expiry_date < date('Y-m-d')) {
                 return redirect()->back()->with('error', 'Coupon expired! Please try another one');
             }
