@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminContactusController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ClientsLogosController;
