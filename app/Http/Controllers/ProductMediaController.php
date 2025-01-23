@@ -48,7 +48,7 @@ class ProductMediaController extends Controller
             // Store data into ProductAvailableResource model
             $productAvailableResource = ProductAvailableResource::create([
                 'product_id' => $request->input('product_id'), // assuming you have a product_id field in the request
-                'filename' => $fileData['filename'],  // Filename from the method
+                'filename' => strtolower($fileData['filename']),  // Filename from the method
                 'folder' => $fileData['folder'],      // Folder from the method
                 'order' => $order,                    // Order from the form
                 'type' => 'pdf',                      // Type is always pdf in this case

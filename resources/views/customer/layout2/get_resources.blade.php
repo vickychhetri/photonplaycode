@@ -27,7 +27,7 @@
                 <div class="col-md-4">
                     <div class="resource-card">
                         <img src="{{asset("assets/images/PDF_file_icon.svg")}}" alt="{{$item->filename}}">
-                        <p class="mb-2">{{$item->filename}}</p>
+                        <p class="mb-2">{{strtoupper($item->filename)}}</p>
 
                         <a href="{{asset('storage/'.$item->folder.'/'.$item->filename)}}" download>Download here</a>
                     </div>
