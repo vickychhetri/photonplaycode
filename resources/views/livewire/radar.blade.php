@@ -43,8 +43,8 @@
 
                         <!-- Mobile Display Images -->
                         <div class="mobile-display">
-                            <div class="d-flex  flex-row" wire:ignore>
-                                <slidermob>
+                            <div  wire:ignore>
+                                <slidermob class="d-flex  flex-row">
                                     @include('partials.slider')
                                 </slidermob>
 {{--                                @foreach($product->images as $im_g)--}}
