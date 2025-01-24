@@ -484,7 +484,7 @@ $products_list_ids=[];
                'discounted_amount' => $coupon_amount,
                'shipping' => $request->shipping,
                'gst' => $request->gst,
-               'grand_total' => $request->grand_total,
+//               'grand_total' => 69,
                'billing_street' => $request->billing_street,
                'billing_flat_suite' => $request->billing_flat_suite,
                'billing_city' => $request->billing_city,
@@ -598,7 +598,8 @@ $products_list_ids=[];
             $order->update([
                 'status' => $checkout->status,
                 'payment_status' => $checkout->payment_status,
-                'payment_complete'=>true
+                'payment_complete'=>true,
+                'grand_total' => number_format($checkout->amount_total / 100, 2),
             ]);
             if($request->type == 'guest'){
                 Cart::where('session_id', $request->tSessId)->delete();
@@ -614,6 +615,7 @@ $products_list_ids=[];
                 $customer_name=$customer->name;
             }
             $order["customer_first_name"]=$customer_name;
+
         $order_product=OrderedProduct::where('order_id',$order->id)->get();
                 $products_list=[];
             foreach ($order_product as $product_order){
