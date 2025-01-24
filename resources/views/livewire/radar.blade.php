@@ -319,7 +319,7 @@
                            x-model="quantity"
                            min="1"
                            max="100"
-                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;" readonly>
+                           style="width: 30px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;" readonly>
                     <a class="btn d-flex align-items-center justify-content-center m-0"
                        @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
                        style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
@@ -408,10 +408,6 @@
                                     });
                                 });
                             </script>
-{{--                            <div class="d-flex justify-content-between text-black fw-bold">--}}
-{{--                                <span>Cart subtotal</span>--}}
-{{--                                <span>{{$currency_icon}}{{ $cartTotal }}</span>--}}
-{{--                            </div>--}}
                         </div>
                         <div class="modal-footer">
                             <button wire:click="navigateToShopping" class="btn btn-primary w-100">View Cart / Checkout</button>
@@ -423,7 +419,7 @@
 
         </section>
         <section>
-        <div class='container '>
+        <div class='container mb-0'>
             <div class='row'>
                 <div class='col-lg-9'>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -506,7 +502,7 @@
                     </div>
                     @if(isset($linked_products) && count($linked_products)>0)
                     <div class="row">
-                        <div class="container text-center my-5">
+                        <div class="container text-center mt-0 mb-1 pb-0 my-5">
                             @if(isset($linked_products) && count($linked_products)>0)
                                 <h5 class="mb-4 text-black">Compatible Accessories</h5>
                             @endif

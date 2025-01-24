@@ -40,12 +40,15 @@
         .resource-card a {
             font-size: 12px;
         }
+        .resources_title {
+            text-align: center;
+        }
     }
 
 </style>
-<section class="resources-placeholder mt-0 pt-1" id="" >
+<section class="resources-placeholder mt-0 pb-0 pt-1 mb-0" id="" >
     <div class="container my-5">
-        <h3 class="mb-4">Resources</h3>
+        <h3 class="mb-4 resources_title">Resources</h3>
         <div class="row g-4">
                 @foreach($product->product_resources as $item)
 
