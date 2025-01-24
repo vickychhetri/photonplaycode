@@ -25,7 +25,7 @@
 </style>
 
 <!-- Container for images -->
-<div class="radar-scroll-container">
+<div class="radar-scroll-container" wire:ignore>
     @foreach($product->images as $im_g)
         <div>
             <div class="radar-item-box" style="">
