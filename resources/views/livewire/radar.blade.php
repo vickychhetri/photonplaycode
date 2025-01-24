@@ -303,46 +303,56 @@
                                 </div>
                             </div>
                         <div class="col-lg-8 col-md-8">
-                            <div class="d-md-flex justify-content-start mt-lg-0 mt-4 buy-right align-items-center">
-                                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);max-width: 200px;">
-                                    <a class="btn d-flex align-items-center justify-content-center m-0"
-                                       @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
-                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
-                                        -
-                                    </a>
-                                    <input id="uniqueQuantityInput"
-                                           type="number"
-                                           class="text-center border-0 m-0"
-                                           wire:model="quantity"
-                                           x-model="quantity"
-                                           min="1"
-                                           max="100"
-                                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;" readonly>
-                                    <a class="btn d-flex align-items-center justify-content-center m-0"
-                                       @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
-                                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
-                                        +
-                                    </a>
-                                </div>
+                            <div class="d-md-flex justify-content-start flex-row mt-lg-0 mt-4 buy-right align-items-center">
+                                <div class="row">
+            <div class="col">
+                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2 mt-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);max-width: 200px;">
+                    <a class="btn d-flex align-items-center justify-content-center m-0"
+                       @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
+                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
+                        -
+                    </a>
+                    <input id="uniqueQuantityInput"
+                           type="number"
+                           class="text-center border-0 m-0"
+                           wire:model="quantity"
+                           x-model="quantity"
+                           min="1"
+                           max="100"
+                           style="width: 60px; height: 30px; font-size: 16px; -moz-appearance: textfield; -webkit-appearance: none; margin: 0;" readonly>
+                    <a class="btn d-flex align-items-center justify-content-center m-0"
+                       @click="quantity = Math.min(parseInt(quantity) + 1, 100)"
+                       style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
+                        +
+                    </a>
+                </div>
+            </div>
+                                    <div class="col">
+
+                                            <button data-bs-toggle="modal" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-0 pt-0" >
+                                                <img border="0" style="height: 58px;" class="img_size"    src="{{ asset('assets/images/add_to_cart.webp') }}">
+                                            </button>
+
+                                            {{--                                data-bs-target="#exampleModalCenter"--}}
 
 
-                                    <div>
-                                        <div class="px-4 py-lg-0 py-4">
+                                    </div>
+
+                                    <div class="px-4 py-lg-0 py-4">
                                                                         <span style="display: none" class="one-thousand" id="total_price">
                                                                             @if($country_code=="CA")
                                                                                 ${{ $product->price_canada*$exchange_rate }}
                                                                         </span>
-                                            @else
-                                                ${{ $product->price*$exchange_rate }}
-                                                </span>
-                                            @endif
+                                        @else
+                                            ${{ $product->price*$exchange_rate }}
+                                            </span>
+                                        @endif
 
-                                        </div>
-                                        {{--                                data-bs-target="#exampleModalCenter"--}}
-                                        <button data-bs-toggle="modal" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-4 m-2" >
-                                            <img border="0" style="height: 58px;" class="img_size"    src="{{ asset('assets/images/add_to_cart.webp') }}">
-                                        </button>
                                     </div>
+                                </div>
+
+
+
 
                             </div>
                         </div>
