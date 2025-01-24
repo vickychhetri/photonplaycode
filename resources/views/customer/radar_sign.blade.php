@@ -560,12 +560,10 @@ $exchange_rate = session('exchange_rate', '1');
                                     </div>`
                         )
                         $('slidermob').append(
-                            `<div>
-                                        <div class="radar-item-box" wire:ignore>
+                            `  <div class="radar-item-box" wire:ignore>
                                             <img src="{{asset('storage/thumbnail/${res.image}')}}" class="img-fluid"
                                                     alt="{{$product->title}}">
-                                        </div>
-                                    </div>`
+                                        </div>`
                         )
 
                         // console.log(res)
