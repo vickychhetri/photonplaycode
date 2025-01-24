@@ -504,7 +504,7 @@
                                 @endif
                         </div>
                     </div>
-
+                    @if(isset($linked_products) && count($linked_products)>0)
                     <div class="row">
                         <div class="container text-center my-5">
                             @if(isset($linked_products) && count($linked_products)>0)
@@ -571,6 +571,7 @@
 
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
