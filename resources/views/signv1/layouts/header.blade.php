@@ -353,6 +353,18 @@
             display: flex;
             justify-content: center; /* Horizontal alignment */
         }
+
+
+        #title_text_radar {
+            font-size: 2rem; /* Default size */
+        }
+
+        /* Styling for mobile screens only */
+        @media (max-width: 767px) {
+            #title_text_radar {
+                font-size: 1.5rem; /* Smaller size for mobile */
+            }
+        }
     </style>
 <section class="banner-section pt-0">
     <!----------------------- Header ---------------------------->
@@ -544,22 +556,24 @@
         <div class="row pt-4">
             <div class="col-12 col-lg-8">
                 <div class="banner-content">
-
+                    <div id="banner "  class="mb-4 p-4 mobile-display" >
+                        <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="Radar Speed Sign" style="max-width: 300px;scale: 1.4;"/>
+                    </div>
                     <p>Over 10,000+ Signs Installed Worldwide!</p>
-                    <h1 class="mt-2 mb-3"> iCop Radar Speed Feedback Signs </h1>
+                    <h1 class="mt-2 mb-3" id="title_text_radar"> iCop Radar Speed Feedback Signs </h1>
                     <p class="fs-4 mb-4">For Traffic Calming & Reduction in traffic related incidents</p>
 
                     <p>Enhance Road Safety with the industry's No.1 & Most Affordable Radar Speed
                         Feedback Signs, now with Multi-function Display and Cloud Control access. </p>
 
-                    <div class="d-flex gap-4 mt-4">
+                    <div class="d-flex gap-4 mt-4 ">
                         <a href="{{route("customer.product.shop")}}" style="text-decoration: none;">  <img
-                                src="{{asset("assets/images/radar/shop_now_radar.png")}}" alt="shop now" style="max-width: 200px;"> </a>
+                                src="{{asset("assets/images/radar/shop_now_radar.png")}}"  alt="shop now" style="max-width: 200px;"> </a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-items-center justify-content-center ">
-                <div id="banner "  class="p-4 desktop-display" style="  display: block;">
+                <div id="banner "  class="p-4 desktop-display" >
                     <img src="https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp" alt="Radar Speed Sign" style="max-width: 300px;scale: 1.4;"/>
                 </div>
             </div>

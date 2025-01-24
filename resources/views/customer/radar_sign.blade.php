@@ -200,16 +200,17 @@ $exchange_rate = session('exchange_rate', '1');
             <div class="col-md-12">
 
                 <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                  <span class="desktop-display">
                     <nav aria-label="breadcrumb m-3 p-3">
-                        <ol class="breadcrumb m-0">
+                        <ol class="breadcrumb m-0   ">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item"><a href="{{route("customer.radar.speed.signs")}}">{{$product->category->title}}</a></li>
                             <li class="breadcrumb-item"><a href="{{route("customer.product.shop")}}">Shop</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$product->title}}</li>
                         </ol>
                     </nav>
-
-                    <div class="text-end">
+                    </span>
+                    <div class="text-end desktop-display">
                         <img src="https://cdn-icons-png.flaticon.com/512/9165/9165147.png" style="max-width: 50px;">
                         <button href="#" class="btn btn-primary btn-sm p-1 pt-0 pb-0 " id="liveChatButton" style="border-radius: 15px;"> Live Chat</button>
                         <script type="text/javascript">

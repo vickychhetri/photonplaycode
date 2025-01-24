@@ -44,14 +44,17 @@
                         <!-- Mobile Display Images -->
                         <div class="mobile-display">
                             <div class="d-flex flex-row flex-wrap">
-                                @foreach($product->images as $im_g)
-                                    <div class="radar-item-box">
-                                        <img src="{{ asset('storage/'.$im_g->image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore >
-                                    </div>
-                                @endforeach
-                                <div class="radar-item-box">
-                                    <img src="{{ asset('storage/'.$product->cover_image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore>
-                                </div>
+                                <slider>
+                                    @include('partials.slider')
+                                </slider>
+{{--                                @foreach($product->images as $im_g)--}}
+{{--                                    <div class="radar-item-box">--}}
+{{--                                        <img src="{{ asset('storage/'.$im_g->image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore >--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                                <div class="radar-item-box">--}}
+{{--                                    <img src="{{ asset('storage/'.$product->cover_image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>

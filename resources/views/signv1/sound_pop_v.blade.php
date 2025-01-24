@@ -66,11 +66,21 @@
             opacity: 1;
             transform: translateY(0);
         }
+        #popup_v {
+            display: none;
+        }
+
+        /* Show only on desktop (screens wider than 768px) */
+        @media (min-width: 768px) {
+            #popup_v {
+                display: block; /* Adjust this to the desired display type */
+            }
+        }
     </style>
 
     <div class="v_sound_pop-popup" id="popup_v">
         <button class="close-btn" onclick="closePopup()">&times;</button>
-        <img src="{{$pop_up_data_sound->image_icon}}" alt="{{$pop_up_data_sound->title}}">
+        <center> <img src="{{$pop_up_data_sound->image_icon}}"  alt="{{$pop_up_data_sound->title}}"></center>
         <h5 class="text-center">{{$pop_up_data_sound->title}}</h5>
         <p class="text-center">{{$pop_up_data_sound->description}}</p>
         <button onclick="contactUs()">{{$pop_up_data_sound->button_text}}</button>
