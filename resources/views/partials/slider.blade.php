@@ -10,7 +10,7 @@
             display: flex;
             overflow-x: auto; /* Enable horizontal scrolling */
             -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-            gap: 10px; /* Add spacing between items */
+            gap: 5px; /* Add spacing between items */
         }
 
         .radar-scroll-container div {
