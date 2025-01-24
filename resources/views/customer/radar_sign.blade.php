@@ -186,7 +186,31 @@ $exchange_rate = session('exchange_rate', '1');
     }
 
 </style>
+<style>
+    /* Default styling for the radar item box */
+    /*.radar-item-box {*/
+    /*    */
+    /*}*/
 
+    /* Horizontal scrolling for mobile */
+    @media (max-width: 767px) {
+        .radar-scroll-container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+            gap: 5px; /* Add spacing between items */
+        }
+
+        .radar-scroll-container div {
+            flex-shrink: 0; /* Prevent items from shrinking */
+        }
+
+        .radar-item-box img {
+            max-width: 150px; /* Limit the size of the images */
+            height: auto;
+        }
+    }
+</style>
 
 {{--<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">--}}
 {{--</div>--}}
@@ -200,16 +224,17 @@ $exchange_rate = session('exchange_rate', '1');
             <div class="col-md-12">
 
                 <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                  <span class="desktop-display">
                     <nav aria-label="breadcrumb m-3 p-3">
-                        <ol class="breadcrumb m-0">
+                        <ol class="breadcrumb m-0   ">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item"><a href="{{route("customer.radar.speed.signs")}}">{{$product->category->title}}</a></li>
                             <li class="breadcrumb-item"><a href="{{route("customer.product.shop")}}">Shop</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$product->title}}</li>
                         </ol>
                     </nav>
-
-                    <div class="text-end">
+                    </span>
+                    <div class="text-end desktop-display">
                         <img src="https://cdn-icons-png.flaticon.com/512/9165/9165147.png" style="max-width: 50px;">
                         <button href="#" class="btn btn-primary btn-sm p-1 pt-0 pb-0 " id="liveChatButton" style="border-radius: 15px;"> Live Chat</button>
                         <script type="text/javascript">
@@ -245,7 +270,7 @@ $exchange_rate = session('exchange_rate', '1');
 {{--product details end--}}
 @include('customer.layout2.get_resources')
 
-<section class="icop-series pt-4">
+<section class="icop-series pt-4 desktop-display">
     <div class="container" id="our_products">
         <div class="row">
             <div class="col-lg-12 p-0 m-0">
@@ -278,7 +303,7 @@ $exchange_rate = session('exchange_rate', '1');
         </div>
     </div>
 </section>
-
+@include('customer.layout2.list_related_product_mobile')
 @include('customer.layout2.get_in_touch3')
 
 
@@ -546,6 +571,7 @@ $exchange_rate = session('exchange_rate', '1');
                 success: function(response) {
                     // console.log(response);
                     $('slider').html('');
+                    $('slidermob').html('');
                     $('#slider_static').html('');
 
                     response.map((res) => {
@@ -556,6 +582,12 @@ $exchange_rate = session('exchange_rate', '1');
                                                     alt="{{$product->title}}">
                                         </div>
                                     </div>`
+                        )
+                        $('slidermob').append(
+                            `   <div> <div class="radar-item-box" wire:ignore>
+                                            <img src="{{asset('storage/thumbnail/${res.image}')}}" class="img-fluid"
+                                                    alt="{{$product->title}}">
+                                        </div>  </div>`
                         )
 
                         // console.log(res)
