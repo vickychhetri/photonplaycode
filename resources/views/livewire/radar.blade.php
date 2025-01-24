@@ -43,11 +43,8 @@
 
                         <!-- Mobile Display Images -->
                         <div class="mobile-display">
-                            <div   class="radar-scroll-container"  wire:ignore>
-                                <slidermob  style="display: flex;
-            overflow-x: auto; /* Enable horizontal scrolling */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-            gap: 5px;">
+                            <div     wire:ignore>
+                                <slidermob class="radar-scroll-container" >
                                     @include('partials.slider')
                                 </slidermob>
 {{--                                @foreach($product->images as $im_g)--}}

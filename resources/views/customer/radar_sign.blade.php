@@ -186,7 +186,31 @@ $exchange_rate = session('exchange_rate', '1');
     }
 
 </style>
+<style>
+    /* Default styling for the radar item box */
+    /*.radar-item-box {*/
+    /*    */
+    /*}*/
 
+    /* Horizontal scrolling for mobile */
+    @media (max-width: 767px) {
+        .radar-scroll-container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+            gap: 5px; /* Add spacing between items */
+        }
+
+        .radar-scroll-container div {
+            flex-shrink: 0; /* Prevent items from shrinking */
+        }
+
+        .radar-item-box img {
+            max-width: 150px; /* Limit the size of the images */
+            height: auto;
+        }
+    }
+</style>
 
 {{--<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">--}}
 {{--</div>--}}
@@ -560,10 +584,10 @@ $exchange_rate = session('exchange_rate', '1');
                                     </div>`
                         )
                         $('slidermob').append(
-                            `  <div class="radar-item-box" wire:ignore>
+                            `   <div> <div class="radar-item-box" wire:ignore>
                                             <img src="{{asset('storage/thumbnail/${res.image}')}}" class="img-fluid"
                                                     alt="{{$product->title}}">
-                                        </div>`
+                                        </div>  </div>`
                         )
 
                         // console.log(res)
