@@ -43,7 +43,7 @@
 
                         <!-- Mobile Display Images -->
                         <div class="mobile-display">
-                            <div class="d-flex flex-row flex-wrap">
+                            <div class="d-flex flex-row flex-wrap" wire:ignore>
                                 <slidermob>
                                     @include('partials.slider')
                                 </slidermob>
