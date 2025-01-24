@@ -43,7 +43,7 @@
 
                         <!-- Mobile Display Images -->
                         <div class="mobile-display">
-                            <div  wire:ignore>
+                            <div   class="radar-scroll-container"  wire:ignore>
                                 <slidermob class="d-flex  flex-row">
                                     @include('partials.slider')
                                 </slidermob>
