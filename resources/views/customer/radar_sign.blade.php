@@ -547,10 +547,19 @@ $exchange_rate = session('exchange_rate', '1');
                 success: function(response) {
                     // console.log(response);
                     $('slider').html('');
+                    $('slidermob').html('');
                     $('#slider_static').html('');
 
                     response.map((res) => {
                         $('slider').append(
+                            `<div>
+                                        <div class="radar-item-box">
+                                            <img src="{{asset('storage/thumbnail/${res.image}')}}" class="img-fluid"
+                                                    alt="{{$product->title}}">
+                                        </div>
+                                    </div>`
+                        )
+                        $('slidermob').append(
                             `<div>
                                         <div class="radar-item-box">
                                             <img src="{{asset('storage/thumbnail/${res.image}')}}" class="img-fluid"

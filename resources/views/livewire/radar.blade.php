@@ -44,9 +44,9 @@
                         <!-- Mobile Display Images -->
                         <div class="mobile-display">
                             <div class="d-flex flex-row flex-wrap">
-                                <slider>
+                                <slidermob>
                                     @include('partials.slider')
-                                </slider>
+                                </slidermob>
 {{--                                @foreach($product->images as $im_g)--}}
 {{--                                    <div class="radar-item-box">--}}
 {{--                                        <img src="{{ asset('storage/'.$im_g->image) }}" class="img-fluid" alt="{{ $product->title }}"  wire:ignore >--}}
