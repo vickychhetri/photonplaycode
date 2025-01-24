@@ -329,8 +329,8 @@
             </div>
                                     <div class="col">
 
-                                            <button data-bs-toggle="modal" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-0 pt-0" >
-                                                <img border="0" style="height: 58px;" class="img_size"    src="{{ asset('assets/images/add_to_cart.webp') }}">
+                                            <button data-bs-toggle="modal" type="submit"  class="btn rounded-0 text-nowrap align-self-center px-0 pt-1" >
+                                                <img border="0" style="height: 48px;" class="img_size"    src="{{ asset('assets/images/add_to_cart.webp') }}">
                                             </button>
 
                                             {{--                                data-bs-target="#exampleModalCenter"--}}
