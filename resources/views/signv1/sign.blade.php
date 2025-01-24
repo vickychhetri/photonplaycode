@@ -790,20 +790,21 @@
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h6>1. What are radar speed signs?</h6>
+                                    <h3 class="h6 mt-2">1. What are radar speed signs?</h3>
                                     <p>Radar speed signs are electronic signs that use radar technology to detect and display the speed of oncoming vehicles, encouraging drivers to slow down if they are exceeding the speed limit.</p>
 
-                                    <h6>2. How do radar speed signs help improve traffic safety?</h6>
+                                    <h3 class="h6 mt-2">2. How do radar speed signs help improve traffic safety?</h3>
                                     <p>By providing real-time feedback to drivers about their speed, radar speed signs encourage compliance with speed limits, reducing speeding incidents and improving safety for pedestrians and other road users.</p>
 
-                                    <h6>3. Are radar speed signs effective in all weather conditions?</h6>
+                                    <h3 class="h6 mt-2">3. Are radar speed signs effective in all weather conditions?</h3>
                                     <p>Yes, our radar speed signs are designed to function effectively in various weather conditions, including rain, snow, and extreme temperatures.</p>
 
-                                    <h6>4. What are the power options for these signs?</h6>
+                                    <h3 class="h6 mt-2">4. What are the power options for these signs?</h3>
                                     <p>Our signs are available with solar power, AC power, or battery options, allowing flexibility for different installation locations.</p>
 
-                                    <h6>5. Can radar speed signs display customized messages?</h6>
+                                    <h3 class="h6 mt-2">5. Can radar speed signs display customized messages?</h3>
                                     <p>Yes, many of our radar speed signs can display customizable messages like "Slow Down" or "Thank You" in addition to showing vehicle speeds.</p>
+
 
                                 </div>
                             </div>
@@ -818,19 +819,19 @@
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h6>1. How are radar speed signs installed?</h6>
+                                    <h3 class="h6 mt-2">1. How are radar speed signs installed?</h3>
                                     <p>The signs can be pole-mounted or wall-mounted. We provide detailed installation instructions and optional professional installation services.</p>
 
-                                    <h6>2. What is the typical installation time?</h6>
+                                    <h3 class="h6 mt-2">2. What is the typical installation time?</h3>
                                     <p>Installation usually takes 2-4 hours, depending on the site conditions and power source being used.</p>
 
-                                    <h6>3. Do I need a special permit to install radar speed signs?</h6>
+                                    <h3 class="h6 mt-2">3. Do I need a special permit to install radar speed signs?</h3>
                                     <p>Permit requirements vary by jurisdiction. It’s advisable to check with local authorities before installation.</p>
 
-                                    <h6>4. Can these signs be installed in remote areas?</h6>
+                                    <h3 class="h6 mt-2">4. Can these signs be installed in remote areas?</h3>
                                     <p>Yes, with solar power options, our radar speed signs are ideal for remote locations without access to an electrical grid.</p>
 
-                                    <h6>5. What maintenance is required for radar speed signs?</h6>
+                                    <h3 class="h6 mt-2">5. What maintenance is required for radar speed signs?</h3>
                                     <p>Minimal maintenance is required, typically periodic cleaning of the display and checking the power source to ensure optimal performance.</p>
 
 
@@ -847,19 +848,19 @@
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h6>1. What is the range of the radar detection?</h6>
+                                    <h3 class="h6 mt-2">1. What is the range of the radar detection?</h3>
                                     <p>Our radar speed signs typically detect vehicles within a range of 200-400 feet, depending on the model.</p>
 
-                                    <h6>2. Do these signs capture any data about traffic?</h6>
+                                    <h3 class="h6 mt-2">2. Do these signs capture any data about traffic?</h3>
                                     <p>Yes, our radar speed signs include traffic data analytics features that track vehicle speeds, traffic volume, and peak traffic times.</p>
 
-                                    <h6>3. Can the brightness of the display be adjusted?</h6>
+                                    <h3 class="h6 mt-2">3. Can the brightness of the display be adjusted?</h3>
                                     <p>Yes, our signs feature automatic brightness adjustment based on ambient light conditions for maximum visibility.</p>
 
-                                    <h6>4. Do the signs work at night?</h6>
+                                    <h3 class="h6 mt-2">4. Do the signs work at night?</h3>
                                     <p>Absolutely. The LED displays are highly visible in low-light and nighttime conditions.</p>
 
-                                    <h6>5. Are the signs vandal-resistant?</h6>
+                                    <h3 class="h6 mt-2">5. Are the signs vandal-resistant?</h3>
                                     <p>Yes, our radar speed signs are built with durable, vandal-resistant materials to withstand tampering and damage.</p>
 
 
@@ -880,20 +881,21 @@
                             <div id="p2collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h6>1. What kind of data do the signs collect?</h6>
+                                    <h3 class="h6 mt-2">1. What kind of data do the signs collect?</h3>
                                     <p>The signs collect data such as vehicle speed, volume of traffic, and time of day, which can be accessed through our user-friendly software.</p>
 
-                                    <h6>2. How can I access the traffic data?</h6>
+                                    <h3 class="h6 mt-2">2. How can I access the traffic data?</h3>
                                     <p>Traffic data can be accessed via a wireless connection, USB, or cloud-based platform, depending on the sign model.</p>
 
-                                    <h6>3. Can I generate custom reports from the analytics data?</h6>
+                                    <h3 class="h6 mt-2">3. Can I generate custom reports from the analytics data?</h3>
                                     <p>Yes, our software allows you to create custom reports based on specific time frames or traffic patterns.</p>
 
-                                    <h6>4. How secure is the traffic data?</h6>
+                                    <h3 class="h6 mt-2">4. How secure is the traffic data?</h3>
                                     <p>Our signs use encrypted storage and secure transmission protocols to protect all collected data.</p>
 
-                                    <h6>5. Can the analytics data help with traffic planning?</h6>
+                                    <h3 class="h6 mt-2">5. Can the analytics data help with traffic planning?</h3>
                                     <p>Absolutely. The insights from our radar speed signs help communities make informed decisions about traffic management, road safety improvements, and future infrastructure planning.</p>
+
 
 
                                 </div>
@@ -909,35 +911,36 @@
                             <div id="p2collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h6>1. How effective are radar speed signs in reducing speeding?</h6>
+                                    <h3 class="h6 mt-2">1. How effective are radar speed signs in reducing speeding?</h3>
                                     <p>Studies show that radar speed signs can reduce vehicle speeds by 10-20% and decrease speeding incidents significantly.</p>
 
-                                    <h6>2. Do radar speed signs work for all types of vehicles?</h6>
+                                    <h3 class="h6 mt-2">2. Do radar speed signs work for all types of vehicles?</h3>
                                     <p>Yes, our signs can detect and display speeds for cars, motorcycles, buses, and trucks.</p>
 
-                                    <h6>3. Do radar speed signs display exact speeds?</h6>
+                                    <h3 class="h6 mt-2">3. Do radar speed signs display exact speeds?</h3>
                                     <p>Yes, they show the real-time speed of vehicles, and certain models can display warnings if a speed limit is exceeded.</p>
 
-                                    <h6>4. Can radar speed signs be used in high-traffic areas?</h6>
+                                    <h3 class="h6 mt-2">4. Can radar speed signs be used in high-traffic areas?</h3>
                                     <p>Yes, they are highly effective in both high-traffic and low-traffic zones, including urban streets, highways, and residential areas.</p>
 
-                                    <h6>5. What happens if the speed limit is exceeded?</h6>
+                                    <h3 class="h6 mt-2">5. What happens if the speed limit is exceeded?</h3>
                                     <p>The sign can display a warning such as "Slow Down" or flash the speed in red to grab the driver’s attention.</p>
 
-                                    <h6>6. Can the signs measure speeds of vehicles traveling in both directions?</h6>
+                                    <h3 class="h6 mt-2">6. Can the signs measure speeds of vehicles traveling in both directions?</h3>
                                     <p>Some models support bi-directional speed detection, but it depends on the specific sign configuration.</p>
 
-                                    <h6>7. What is the lifespan of a radar speed sign?</h6>
+                                    <h3 class="h6 mt-2">7. What is the lifespan of a radar speed sign?</h3>
                                     <p>Our signs are built to last 10-15 years with proper maintenance.</p>
 
-                                    <h6>8. Are the signs visible in direct sunlight?</h6>
+                                    <h3 class="h6 mt-2">8. Are the signs visible in direct sunlight?</h3>
                                     <p>Yes, the LED displays are designed to be highly visible even in bright sunlight.</p>
 
-                                    <h6>9. How accurate are radar speed signs?</h6>
+                                    <h3 class="h6 mt-2">9. How accurate are radar speed signs?</h3>
                                     <p>Our signs are accurate to within ±1 mph, ensuring reliable speed detection.</p>
 
-                                    <h6>10. Can radar speed signs reduce accidents?</h6>
+                                    <h3 class="h6 mt-2">10. Can radar speed signs reduce accidents?</h3>
                                     <p>Yes, they are proven to improve driver awareness, reduce speeding, and help lower the risk of accidents.</p>
+
 
 
                                 </div>
@@ -953,24 +956,23 @@
                             <div id="p2collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                  data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <h6>1. Can I set specific speed thresholds for the signs?</h6>
+                                    <h3 class="h6 mt-2">1. Can I set specific speed thresholds for the signs?</h3>
                                     <p>Yes, you can customize the speed thresholds to match the local speed limits.</p>
 
-                                    <h6>2. Do the signs integrate with other traffic systems?</h6>
+                                    <h3 class="h6 mt-2">2. Do the signs integrate with other traffic systems?</h3>
                                     <p>Certain models can integrate with traffic management systems or cameras for additional functionality.</p>
 
-                                    <h6>3. Can the signs display other information besides speed?</h6>
+                                    <h3 class="h6 mt-2">3. Can the signs display other information besides speed?</h3>
                                     <p>Yes, they can show messages such as "School Zone," "Slow Down," or even custom graphics.</p>
 
-                                    <h6>4. Are there multilingual options for messages?</h6>
+                                    <h3 class="h6 mt-2">4. Are there multilingual options for messages?</h3>
                                     <p>Yes, our signs can display messages in multiple languages based on your needs.</p>
 
-                                    <h6>5. Can I add logos or branding to the signs?</h6>
+                                    <h3 class="h6 mt-2">5. Can I add logos or branding to the signs?</h3>
                                     <p>Yes, custom branding or logos can be added to the sign for a personalized touch.</p>
 
-                                    <h6>6. Do the signs support flashing lights or alerts?</h6>
+                                    <h3 class="h6 mt-2">6. Do the signs support flashing lights or alerts?</h3>
                                     <p>Yes, many models include optional flashing lights or strobe alerts for increased visibility.</p>
-
 
                                 </div>
                             </div>
