@@ -306,7 +306,7 @@
                             <div class="d-md-flex justify-content-start flex-row mt-lg-0 mt-4 buy-right align-items-center">
                                 <div class="row">
             <div class="col">
-                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2 mt-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);max-width: 200px;">
+                <div x-data="{ quantity: @entangle('quantity') }" class="d-flex align-items-center border p-2 mt-2" style="background-color: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);max-width: 150px;">
                     <a class="btn d-flex align-items-center justify-content-center m-0"
                        @click="quantity = Math.max(parseInt(quantity) - 1, 1)"
                        style="height: 30px; width: 30px; font-size: 20px; border-radius: 4px;">
