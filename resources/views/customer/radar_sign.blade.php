@@ -246,7 +246,7 @@ $exchange_rate = session('exchange_rate', '1');
 {{--product details end--}}
 @include('customer.layout2.get_resources')
 
-<section class="icop-series pt-4">
+<section class="icop-series pt-4 desktop-display">
     <div class="container" id="our_products">
         <div class="row">
             <div class="col-lg-12 p-0 m-0">
@@ -279,7 +279,7 @@ $exchange_rate = session('exchange_rate', '1');
         </div>
     </div>
 </section>
-
+@include('customer.layout2.list_related_product_mobile')
 @include('customer.layout2.get_in_touch3')
 
 
