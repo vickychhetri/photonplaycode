@@ -1686,7 +1686,7 @@ ul.slick-dots {
 }
 
 /* Styles for desktop display */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 767px) {
     /* Add your desktop-specific styles here */
     .desktop-display {
        display: block;
