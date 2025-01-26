@@ -408,7 +408,7 @@
             <div class="col-md-4">
                 <h1 class="brochure-title text-dark p-2">Download Our Product Catalogue to Learn More</h1>
                 <p class="brochure-description p-2">
-                    Wavetec offers a complete range of display solutions, ideal for advertising, retail, and branding.
+                    Photonplay offers a complete range of display solutions, ideal for advertising, retail, and branding.
                     HD Series, PRO Series, and Prime Series are premium product lines offering solutions for both
                     indoor LED and outdoor LED displaying applications.
                 </p>
