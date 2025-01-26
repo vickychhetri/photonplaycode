@@ -57,7 +57,7 @@
                         <img src="{{asset("assets/images/PDF_file_icon.svg")}}" alt="{{$item->filename}}">
                         <p class="mb-2">{{strtoupper($item->filename)}}</p>
 
-                        <a href="{{asset('storage/'.$item->folder.'/'.$item->filename)}}" class="desktop-display" download>Download here</a>
+                        <a href="{{asset('storage/'.$item->folder.'/'.$item->filename)}}" download>Download </a>
                     </div>
 
                 </div>
