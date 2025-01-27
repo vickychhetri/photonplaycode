@@ -11,6 +11,7 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -76,9 +77,21 @@ class LoginController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+        $attemptsKey = 'login_attempts_' . $request->email;
+        // Check if the user has exceeded the attempt limit
+        if (Cache::get($attemptsKey, 0) >= 5) {
+            return redirect()->back()->with('error', 'Too many login attempts. Please try again in few minute.');
+        }
+
+
         $credentials = $request->only('email', 'password');
         if (!Auth::guard('customer')->attempt($credentials)) {
             $return_msg="You have entered invalid credentials";
+
+            // Increment the login attempts
+            Cache::increment($attemptsKey);
+            Cache::put($attemptsKey, Cache::get($attemptsKey), now()->addMinutes(1));
+
             $cust_may_guest=Customer::where('email',$request->email)->first();
 
             if($cust_may_guest->is_guest){
