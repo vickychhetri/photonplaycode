@@ -38,7 +38,7 @@
                         </li>
 
                         <li class="sidebar-list">
-                            <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/category') ? 'active':''}}" href="{{ url('admin/coupons') }}">
+                            <a class="sidebar-link sidebar-title link-nav {{Request::is('admin/coupons') ? 'active':''}}" href="{{ url('admin/coupons') }}">
                                 <i data-feather="trello"> </i>
                                 <span>Manage Coupons</span>
                             </a>
