@@ -420,7 +420,7 @@
         </section>
 
     <style>
-        #product_description_details img {
+        #myTabContent img {
             max-width: 100% !important;
             height: auto !important; /* Maintain aspect ratio */
         }
