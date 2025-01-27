@@ -26,7 +26,7 @@
                     <a href="https://instagram.com/photonplay" style="color: #0056b3;">Instagram</a> for updates, special offers, and exclusive deals.
                 </li>
             </ul>
-            <p><strong>As a token of our appreciation, enjoy 5% Discount on your second purchase.</strong> Use code <strong>WELCOME10</strong> at checkout (valid until 31st December 2025).</p>
+            <p><strong>As a token of our appreciation, enjoy 5% Discount on your purchase.</strong> Use code <strong>WELCOME10</strong> at checkout (valid until 31st December 2025).</p>
             <p>If you have any questions or need assistance, our friendly support team is here to help. Reach out to us at <a href="mailto:billing@photonplay.com" style="color: #0056b3;">billing@photonplay.com</a> or call us at <strong>(800) 966-9329</strong>.</p>
             <p>Welcome aboard – happy shopping!</p>
             <p>Warm Regards,</p>
