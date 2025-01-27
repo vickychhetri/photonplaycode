@@ -427,6 +427,7 @@
 
         #product_description_details table {
             max-width: 100% !important;
+            width: 500px;
         }
 
     </style>
