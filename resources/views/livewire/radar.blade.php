@@ -425,6 +425,10 @@
             height: auto !important; /* Maintain aspect ratio */
         }
 
+        #product_description_details table {
+            max-width: 100% !important;
+        }
+
     </style>
         <section>
         <div class='container mb-0 ' id="product_description_details">
