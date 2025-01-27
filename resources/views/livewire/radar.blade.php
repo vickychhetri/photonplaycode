@@ -427,8 +427,12 @@
 
         #product_description_details table {
             max-width: 100% !important;
-            width: 500px;
+            width: 600px;
         }
+        #product_description_details table td {
+            padding: 10px;
+        }
+
 
     </style>
         <section>
