@@ -432,7 +432,9 @@
         #product_description_details table td {
             padding: 10px;
         }
-
+        #product_description_details table th {
+            padding: 10px;
+        }
 
     </style>
         <section>
