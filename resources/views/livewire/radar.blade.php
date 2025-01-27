@@ -418,8 +418,16 @@
 {{--            End--}}
 
         </section>
+
+    <style>
+        #product_description_details img {
+            max-width: 100% !important;
+            height: auto !important; /* Maintain aspect ratio */
+        }
+
+    </style>
         <section>
-        <div class='container mb-0'>
+        <div class='container mb-0 ' id="product_description_details">
             <div class='row'>
                 <div class='col-lg-9'>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
