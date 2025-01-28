@@ -94,31 +94,31 @@ $seo_meta=[
                                                                 </tr>
                                                             @endforeach
 
-                                                            <tr>
-                                                                <td>
+{{--                                                            <tr>--}}
+{{--                                                                <td>--}}
 
-                                                                </td>
-                                                                <td colspan="1">
-                                                                   Sub Total
-                                                                </td>
-                                                                <td colspan="1">
-                                                                    ${{$order->cart_subtotal}}
+{{--                                                                </td>--}}
+{{--                                                                <td colspan="1">--}}
+{{--                                                                   Sub Total--}}
+{{--                                                                </td>--}}
+{{--                                                                <td colspan="1">--}}
+{{--                                                                    ${{$order->cart_subtotal}}--}}
 
-                                                                </td>
-                                                            </tr>
+{{--                                                                </td>--}}
+{{--                                                            </tr>--}}
 
 
-                                                            <tr>
-                                                                <td>
+{{--                                                            <tr>--}}
+{{--                                                                <td>--}}
 
-                                                                </td>
-                                                                <td colspan="1">
-                                                                   Shipping & handling
-                                                                </td>
-                                                                <td colspan="1">
-                                                                    ${{$order->shipping}}
-                                                                </td>
-                                                            </tr>
+{{--                                                                </td>--}}
+{{--                                                                <td colspan="1">--}}
+{{--                                                                   Shipping & handling--}}
+{{--                                                                </td>--}}
+{{--                                                                <td colspan="1">--}}
+{{--                                                                    ${{$order->shipping}}--}}
+{{--                                                                </td>--}}
+{{--                                                            </tr>--}}
 
                                                             <tr>
                                                                 <td>
