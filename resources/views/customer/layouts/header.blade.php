@@ -17,7 +17,7 @@
             }
     }
 
-    $productLists = Product::where('category_id',1)->take(5)->get();
+    $productLists = Product::where('category_id',1)->where('status', Product::LISTED)->take(5)->get();
 @endphp
 
 <head>
@@ -435,6 +435,8 @@
                         @endforelse
 
                     </ul>
+                </li>
+
                 <li class="nav-item mobile-menu-items">
                     <a class="nav-link text-uppercase {{Request::is('radar-cloud-management') ? 'active':''}}"
                        href="{{route('radar.cloud.management')}}"> Cloud SOFTWARE</a>
