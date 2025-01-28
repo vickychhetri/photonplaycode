@@ -62,6 +62,7 @@ class ShopProduct extends Component
             'category',
             'product_resources'
         ])
+            ->where('status', Product::LISTED)
             ->where('category_id', $this->category_accessory_id);
 
         $this->maxPrice = $query->max('price');
@@ -127,7 +128,8 @@ class ShopProduct extends Component
             'category',
             'product_resources'
         ])
-            ->where('category_id', $this->accessory_id);
+            ->where('category_id', $this->accessory_id)
+            ->where('status', Product::LISTED);
 
 
         if($this->priceRange) {
