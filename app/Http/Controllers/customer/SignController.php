@@ -36,7 +36,8 @@ class SignController extends Controller
 
     public function radarSpeedSigns_v1()
     {
-        $products = Product::select('id','slug')->where('category_id', 1)->get();
+        $products = Product::select('id','slug')->where('status', Product::LISTED)->where('category_id', 1)->get();
+
 //        $postsSlice = Http::get((env('WORDPRESS_BASE_URL')??'https://blog.photonplay.com/') . 'wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc')->json();
 //        $blogs = array_slice($postsSlice, 0 , 3);
 
@@ -82,12 +83,12 @@ class SignController extends Controller
     public function radarSigns($id)
     {
         $sessionId = Session::getId();
-        $product = Product::with(['images' => fn ($r) => $r->where('color', 'amber'), 'specilizations.specilization', 'specilizations.options', 'specilizations.options.specializationoptions', 'category','product_resources','product_features'])->where('slug', $id)->first();
+        $product = Product::with(['images' => fn ($r) => $r->where('color', 'amber'), 'specilizations.specilization', 'specilizations.options', 'specilizations.options.specializationoptions', 'category','product_resources','product_features'])->where('status', Product::LISTED)->where('slug', $id)->first();
 
 
         $not_allowed_category = MasterConfiguration::where('code','disable_show_detail_product_category')->first();
 
-        if (isset($not_allowed_category)) {
+        if (isset($not_allowed_category) && isset($product)) {
 
             $not_allowed_category_arr = explode(',', $not_allowed_category->value); // Make sure you're accessing the correct column value
             if (in_array($product->category_id, $not_allowed_category_arr)) {
@@ -98,10 +99,15 @@ class SignController extends Controller
 
 
 
-        $productLists = Product::where('category_id', 1)->take(5)->get();
+        $productLists = Product::where('category_id', 1)->where('status', Product::LISTED)->take(5)->get();
 
+        if( isset($product)){
+            $linked_products=Product::getLinkedProducts([$product->id]);
+        }else{
+            $linked_products=null;
+        }
         //list all accessories
-        $linked_products=Product::getLinkedProducts([$product->id]);
+
 
         // dd($product);
         $postalCode = '';

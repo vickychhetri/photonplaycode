@@ -18,7 +18,7 @@
             }
     }
 
-    $productLists = Product::where('category_id',1)->take(5)->get();
+    $productLists = Product::where('category_id',1)->where('status', Product::LISTED)->take(5)->get();
 @endphp
 <!DOCTYPE html>
 <html lang="en">

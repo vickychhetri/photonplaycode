@@ -12,6 +12,8 @@ class Product extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
+    const LISTED = 'Listed';
+
     public function specilizations(){
         return $this->hasMany(ProductSpecilization::class);
     }
