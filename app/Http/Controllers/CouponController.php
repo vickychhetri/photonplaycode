@@ -40,7 +40,7 @@ class CouponController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'coupon_name' => 'required|unique:coupons',
+            'coupon_name' => 'required|max:8|unique:coupons',
             'type' => 'required|in:1,2',
             'value' => 'required|integer',
             'expiry_date' => 'required|date_format:Y-m-d|after_or_equal:now',
