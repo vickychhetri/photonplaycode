@@ -212,6 +212,41 @@ $exchange_rate = session('exchange_rate', '1');
     }
 </style>
 
+<style>
+    /* Fullscreen overlay */
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9); /* Light transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    /* Loader Animation */
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #ccc;
+        border-top: 5px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+
+<div id="loading-overlay">
+    <div class="spinner"></div>
+</div>
+
 {{--<div id="preview1" style="display: block; position: absolute; right:10%;max-height: 100%;max-width:1000px;overflow: hidden;height: 500px;width: 500px;">--}}
 {{--</div>--}}
     <div id="v_zoom-zoom-container" class="v_zoom-zoom-container">
@@ -823,6 +858,13 @@ $exchange_rate = session('exchange_rate', '1');
         focusArea.style.visibility = 'hidden';
     });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("loading-overlay").style.display = "none";
+    });
+</script>
+
 </body>
 
 </html>
