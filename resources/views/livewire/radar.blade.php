@@ -232,8 +232,22 @@
                                         </div>
                                     @endforeach
 
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            // Select all specialization dropdowns
+                                            const selectElements = document.querySelectorAll('.sku-builder');
 
-                                        <!-- Hidden input to store the SKU -->
+                                            selectElements.forEach(select => {
+                                                if (select.options.length > 1) {
+                                                    select.selectedIndex = 1; // Select the first available option
+                                                    select.dispatchEvent(new Event('change')); // Trigger change event
+                                                }
+                                            });
+                                        });
+                                    </script>
+
+
+                                    <!-- Hidden input to store the SKU -->
                                         <input type="hidden" id="sku" wire:model="product_sku_code">
                                         <input type="hidden" id="product_code" name="product_code" value="{{ $product->code}}" readonly>
 
