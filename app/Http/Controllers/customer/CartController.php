@@ -561,7 +561,7 @@ $products_list_ids=[];
             $couponAmount = $coupon_detail->value * 100;
         }
         try {
-            $existingCoupon = \Stripe\Coupon::retrieve($couponCode);
+            $existingCoupon = \Stripe\Coupon::retrieve($coupon_detail->id);
             return $existingCoupon->id;
         } catch (\Stripe\Exception\InvalidRequestException $e) {
             try {
@@ -570,14 +570,16 @@ $products_list_ids=[];
                         'percent_off' => $couponAmount,
                         'currency' => $pay_currency,
                         'duration' => 'once',
-                        'id' => $couponCode
+                        'name'=>$coupon_detail->coupon_name,
+                        'id' => $coupon_detail->id,
                     ]);
                 } else {
                     $coupon = \Stripe\Coupon::create([
                         'amount_off' => $couponAmount,
                         'currency' => $pay_currency,
                         'duration' => 'once',
-                        'id' => $couponCode
+                        'name'=>$coupon_detail->coupon_name,
+                        'id' => $coupon_detail->id,
                     ]);
                 }
                 return $coupon->id;
