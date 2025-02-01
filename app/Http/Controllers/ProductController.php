@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductSku;
@@ -180,6 +181,9 @@ class ProductController extends Controller
             $product->brochure = $brochurePath;
         }
         $product->save();
+        if($product->save()){
+            Cart::where('product_id',$id)->delete();
+        }
         return redirect('/admin/product');
     }
 
