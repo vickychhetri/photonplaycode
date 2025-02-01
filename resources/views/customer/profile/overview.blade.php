@@ -12,9 +12,9 @@
                                 <h5 class="btn-light fs-5 py-2 ">Overview</h5>
                                 <div class="d-flex gap-4 mt-5">
                                     <div class="order-address text-center bg-white p-4 border">
-                                        <img src="{{asset('assets\customer\images\delivery-copy.png')}}" alt="Order icon" class="mb-4" >
+                                      <center> <img src="{{asset('assets\customer\images\delivery-copy.png')}}" alt="Order icon" class="mb-4"  style="max-width: 100%;width:100px;">
                                         <h6>Orders</h6>
-                                        <p> <a href="/edit-history"> Check your order status </a></p>
+                                        <p> <a href="/edit-history"> Check your order status </a></p></center>
                                     </div>
 
 {{--                                    <div class="order-address text-center bg-white p-4 border">--}}
