@@ -408,9 +408,7 @@
             <div class="col-md-4">
                 <h1 class="brochure-title text-dark p-2">Download Our Product Catalogue to Learn More</h1>
                 <p class="brochure-description p-2">
-                    Photonplay offers a complete range of display solutions, ideal for advertising, retail, and branding.
-                    HD Series, PRO Series, and Prime Series are premium product lines offering solutions for both
-                    indoor LED and outdoor LED displaying applications.
+                    Photonplay offers a complete range of display results, ideal for advertising, retail, and branding. HD Series, PRO Series, and Prime Series are ultraexpensive product lines offering results for both inner LED and out-of-door LED displaying operations.
                 </p>
                 <span class="desktop-display"> <a href="{{asset("assets/pdf/radar/Radar_Speed_Sign.pdf")}}" class="download-btn text-decoration-none p-2 m-2 text-white" download>
                      Download Brochure <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
