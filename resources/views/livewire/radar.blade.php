@@ -31,9 +31,17 @@
                                     <div>
                                         <div class="p-2 v_zoom-product-container" id="slider_static">
                                             <div class="img-leften d-flex justify-content-center align-items-center v_zoom-image-container">
+                                                <?php
+                                                    if(!$this->query_specs_change){
+                                                        ?>
                                                 <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
-                                                      class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
+                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
                                                 <div id="v_zoom-focus-area" class="v_zoom-focus-area"></div>
+                                                <?php
+
+                                                    }
+                                                ?>
+
                                             </div>
                                         </div>
                                     </div>
