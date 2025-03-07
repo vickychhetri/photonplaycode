@@ -231,27 +231,72 @@
                                             @endif
                                         </div>
                                     @endforeach
+                                    <?php
+                                        if($query_specs_change){
+                                        ?>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                // PHP-generated specification list selection
+                                                const specificationList = <?php echo json_encode($specification_list_selection); ?>;
 
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function () {
-                                            // Select all specialization dropdowns
-                                            const selectElements = document.querySelectorAll('.sku-builder');
+                                                // Select all specialization dropdowns
+                                                const selectElements = document.querySelectorAll('.sku-builder');
 
-                                            selectElements.forEach(select => {
-                                                if (select.options.length > 2) {
-                                                    let foundOption = Array.from(select.options).find(option => option.text.includes('+$0'));
+                                                selectElements.forEach(select => {
+                                                    let dataCode = select.getAttribute('data-code');
+                                                    if (dataCode && specificationList[dataCode]) {
+                                                        let foundOption = Array.from(select.options).find(option => option.getAttribute('data-code') === specificationList[dataCode]);
+                                                        if (foundOption) {
+                                                            foundOption.selected = true;
+                                                        } else if (select.options.length > 1) {
+                                                            select.selectedIndex = 1;
+                                                        }
+                                                    } else if (select.options.length > 2) {
+                                                        let foundOption = Array.from(select.options).find(option => option.text.includes('+$0'));
+                                                        if (foundOption) {
+                                                            foundOption.selected = true;
+                                                        } else {
+                                                            select.selectedIndex = 1;
+                                                        }
+                                                    } else if (select.options.length > 1) {
+                                                        select.selectedIndex = 1;
+                                                    }
+                                                    select.dispatchEvent(new Event('change')); // Trigger change event
+                                                });
+                                            });
+
+                                        </script>
+
+                                    <?php
+
+                                        }else {
+                                                ?>
+                                            <script>
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                // Select all specialization dropdowns
+                                                const selectElements = document.querySelectorAll('.sku-builder');
+
+                                                selectElements.forEach(select => {
+                                                    if (select.options.length > 2) {
+                                                        let foundOption = Array.from(select.options).find(option => option.text.includes('+$0'));
                                                     if (foundOption) {
                                                         foundOption.selected = true;
                                                     } else {
                                                         select.selectedIndex = 1;
                                                     }
                                                 } else if (select.options.length > 1) {
-                                                    select.selectedIndex = 1;
-                                                }
-                                                select.dispatchEvent(new Event('change')); // Trigger change event
-                                            });
+                                                        select.selectedIndex = 1;
+                                                    }
+                                                    select.dispatchEvent(new Event('change')); // Trigger change event
+                                                });
                                         });
-                                    </script>
+                                            </script>
+
+                                            <?php
+                                        }
+
+                                        ?>
+
 
 
                                     <!-- Hidden input to store the SKU -->
