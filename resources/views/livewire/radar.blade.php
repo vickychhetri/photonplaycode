@@ -248,20 +248,18 @@
                                                         let foundOption = Array.from(select.options).find(option => option.getAttribute('data-code') === specificationList[dataCode]);
                                                         if (foundOption) {
                                                             foundOption.selected = true;
-                                                        } else if (select.options.length > 1) {
+                                                        }else if (select.options.length > 1) {
                                                             select.selectedIndex = 1;
                                                         }
-                                                    } else if (select.options.length > 2) {
-                                                        let foundOption = Array.from(select.options).find(option => option.text.includes('+$0'));
-                                                        if (foundOption) {
-                                                            foundOption.selected = true;
-                                                        } else {
-                                                            select.selectedIndex = 1;
-                                                        }
-                                                    } else if (select.options.length > 1) {
+                                                    }else if (select.options.length > 1) {
                                                         select.selectedIndex = 1;
                                                     }
                                                     select.dispatchEvent(new Event('change')); // Trigger change event
+                                                    if(dataCode=="CR"){
+                                                        setTimeout(function() {
+                                                            $(".color_select_box_handler").trigger("change");
+                                                        }, 100);
+                                                    }
                                                 });
                                             });
 
