@@ -27,6 +27,9 @@ class Radar extends Component
     public $color = 'Amber-Color.png';
     public $dynamic_specs = [];
     public $quantities_a = [];
+    public  $specification_list_selection = [];
+    public $query_specs_change=false;
+    public $total_specs_count=0;
     public function mount($product_id)
     {
         $this->product_id = $product_id;
@@ -72,6 +75,20 @@ class Radar extends Component
         foreach ($this->linked_products as $product) {
             $this->quantities_a[$product->id] = 1;
         }
+
+        $this->total_specs_count=ProductSpecilization::where('product_id', $this->product->id)->count();
+
+        foreach (request()->query() as $specification => $option){
+            $sp=Specilization::where('title',$specification)->first();
+            $opti=SpecializationOption::where('option',$option)->first();
+            if($sp && $opti){
+                $this->specification_list_selection[$sp["code"]]=$opti["code"];
+            }
+        }
+
+        if(count($this->specification_list_selection)==$this->total_specs_count && $this->total_specs_count!=0){
+            $this->query_specs_change=true;
+        }
     }
 
     public function render()
@@ -114,6 +131,8 @@ class Radar extends Component
             'id' => $this->productId,
             'cartItems' => $this->cartItems,
             'linked_products' => $this->linked_products,
+            'query_specs_change' => $this->query_specs_change,
+            'specification_list_selection' => $this->specification_list_selection,
         ]);
     }
 
