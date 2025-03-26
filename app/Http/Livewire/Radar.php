@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\MasterConfiguration;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\ProductSku;
 use App\Models\ProductSpcializationOption;
 use App\Models\ProductSpecilization;
 use App\Models\SpecializationOption;
@@ -79,10 +80,29 @@ class Radar extends Component
         $this->total_specs_count=ProductSpecilization::where('product_id', $this->product->id)->count();
 
         foreach (request()->query() as $specification => $option){
-            $sp=Specilization::where('title',$specification)->first();
-            $opti=SpecializationOption::where('option',$option)->first();
-            if($sp && $opti){
-                $this->specification_list_selection[$sp["code"]]=$opti["code"];
+            if(strtolower(trim($specification))=="sku"){
+                    $sku_number=explode('-',$option);
+                    if(count($sku_number)==3){
+                        $sku_data=ProductSku::where('sku_code',$sku_number[2])->first();
+                        if(isset($sku_data->specification_condition)){
+                            $sku_codes_array=explode(',',$sku_data->specification_condition);
+                            foreach ($sku_codes_array as $sk_ar){
+                                $spe_opt=explode('=',$sk_ar);
+                                $sp_code_fetch=trim($spe_opt[0]);
+                                $sp_option_fetch=trim($spe_opt[1]);
+                                if($sp_code_fetch && $sp_option_fetch){
+                                    $this->specification_list_selection[$sp_code_fetch]=$sp_option_fetch;
+                                }
+                            }
+                        }
+                    }
+
+            }else {
+                $sp=Specilization::where('title',$specification)->first();
+                $opti=SpecializationOption::where('option',$option)->first();
+                if($sp && $opti){
+                    $this->specification_list_selection[$sp["code"]]=$opti["code"];
+                }
             }
         }
 
