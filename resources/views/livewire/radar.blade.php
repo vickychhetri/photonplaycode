@@ -31,9 +31,17 @@
                                     <div>
                                         <div class="p-2 v_zoom-product-container" id="slider_static">
                                             <div class="img-leften d-flex justify-content-center align-items-center v_zoom-image-container">
+                                                <?php
+                                                    if(!$this->query_specs_change){
+                                                        ?>
                                                 <img src="{{ asset('storage/' . ($product->images[0]->image ?? $product->cover_image)) }}"
-                                                      class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
+                                                     class="thumb img-fluid" style="max-height: 600px;" id="big-img-radar-product" alt="{{ $product->title }}"  wire:ignore>
                                                 <div id="v_zoom-focus-area" class="v_zoom-focus-area"></div>
+                                                <?php
+
+                                                    }
+                                                ?>
+
                                             </div>
                                         </div>
                                     </div>
@@ -231,27 +239,70 @@
                                             @endif
                                         </div>
                                     @endforeach
+                                    <?php
+                                        if($query_specs_change){
+                                        ?>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                // PHP-generated specification list selection
+                                                const specificationList = <?php echo json_encode($specification_list_selection); ?>;
 
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function () {
-                                            // Select all specialization dropdowns
-                                            const selectElements = document.querySelectorAll('.sku-builder');
+                                                // Select all specialization dropdowns
+                                                const selectElements = document.querySelectorAll('.sku-builder');
 
-                                            selectElements.forEach(select => {
-                                                if (select.options.length > 2) {
-                                                    let foundOption = Array.from(select.options).find(option => option.text.includes('+$0'));
+                                                selectElements.forEach(select => {
+                                                    let dataCode = select.getAttribute('data-code');
+                                                    if (dataCode && specificationList[dataCode]) {
+                                                        let foundOption = Array.from(select.options).find(option => option.getAttribute('data-code') === specificationList[dataCode]);
+                                                        if (foundOption) {
+                                                            foundOption.selected = true;
+                                                        }else if (select.options.length > 1) {
+                                                            select.selectedIndex = 1;
+                                                        }
+                                                    }else if (select.options.length > 1) {
+                                                        select.selectedIndex = 1;
+                                                    }
+                                                    select.dispatchEvent(new Event('change')); // Trigger change event
+                                                    if(dataCode=="CR"){
+                                                        setTimeout(function() {
+                                                            $(".color_select_box_handler").trigger("change");
+                                                        }, 100);
+                                                    }
+                                                });
+                                            });
+
+                                        </script>
+
+                                    <?php
+
+                                        }else {
+                                                ?>
+                                            <script>
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                // Select all specialization dropdowns
+                                                const selectElements = document.querySelectorAll('.sku-builder');
+
+                                                selectElements.forEach(select => {
+                                                    if (select.options.length > 2) {
+                                                        let foundOption = Array.from(select.options).find(option => option.text.includes('+$0'));
                                                     if (foundOption) {
                                                         foundOption.selected = true;
                                                     } else {
                                                         select.selectedIndex = 1;
                                                     }
                                                 } else if (select.options.length > 1) {
-                                                    select.selectedIndex = 1;
-                                                }
-                                                select.dispatchEvent(new Event('change')); // Trigger change event
-                                            });
+                                                        select.selectedIndex = 1;
+                                                    }
+                                                    select.dispatchEvent(new Event('change')); // Trigger change event
+                                                });
                                         });
-                                    </script>
+                                            </script>
+
+                                            <?php
+                                        }
+
+                                        ?>
+
 
 
                                     <!-- Hidden input to store the SKU -->
