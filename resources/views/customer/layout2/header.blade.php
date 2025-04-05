@@ -569,17 +569,27 @@
     <script>
 
 
-        $(document).ready(function() {
-            if ($(window).width() <= 767) {
-                $('.mobile_vendor').css('display', 'block');
-                $('.desktop_vendor').css('display', 'none');
-                $('.desktop_nav').css('display', 'none');
-            } else {
-                $('.desktop_nav').css('display', 'block');
-                $('.mobile_vendor').css('display', 'none');
-                $('.desktop_vendor').css('display', 'block');
+        $(document).ready(function () {
+
+            function updateVendorDisplay() {
+                if ($(window).width() <= 1024) { // mobile and tablet
+                    $('.mobile_vendor').css('display', 'block');
+                    $('.desktop_vendor').css('display', 'none');
+                    $('.desktop_nav').css('display', 'none');
+
+                    $('.heading_tokyo').css({
+                        'top': '30%',
+                    });
+
+                } else {
+                    $('.desktop_nav').css('display', 'block');
+                    $('.mobile_vendor').css('display', 'none');
+                    $('.desktop_vendor').css('display', 'block');
+                }
             }
 
+            updateVendorDisplay();
+            $(window).resize(updateVendorDisplay);
         });
 
         $(document).ready(() => {

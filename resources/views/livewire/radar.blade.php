@@ -186,7 +186,7 @@
                                                                 // Retrieve the data-code attribute
                                                                 const code = selectedOption.getAttribute('data-code');
                                                                 @php
-                                                                    $base_url_website=env('APP_URL', 'http://127.0.0.1:8000/')
+                                                                    $base_url_website=env('APP_URL', 'https://www.photonplay.com/')
                                                                 @endphp
                                                                 // Update the image source dynamically
                                                                 if (code) {
@@ -343,6 +343,10 @@
                                                                     var sku_formed='PSI-'+'{{$product->code}}' +'-'+ response.data;
                                                                     skuInput.value =sku_formed;
                                                                     skuDisplay.textContent = sku_formed;
+                                                                    // updated to set query on url browser
+                                                                    const url = new URL(window.location);
+                                                                    url.searchParams.set('sku', sku_formed);
+                                                                    window.history.pushState({}, '', url);
                                                                 @this.set('product_sku_code', sku_formed);
                                                                 }else {
                                                                     skuInput.value =null;
