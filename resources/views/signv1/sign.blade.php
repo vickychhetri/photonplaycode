@@ -1,3 +1,13 @@
+<?php
+$data_record =\App\Models\ManageSeo::where('page_name', \App\Models\ManageSeo::RADAR)->first();
+$seo_meta = [
+    "title" => $data_record->title ?? '',
+    "description" => $data_record->description ?? '',
+    "keywords" => $data_record->keyword ?? '',
+    "schema" => $data_record->schema ?? '',
+    "feature_image" => "assets\customer\images\Radar-Speed-Signs-Image_1.webp"
+];
+?>
 @extends('signv1.layouts.header')
 @section('content')
     <style>

@@ -17,7 +17,17 @@
                 $cartPrice += $i->quantity;
             }
     }
-
+    if(isset($seo_meta)) {
+            $title = $seo_meta['title'] ?? 'Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay';
+            $description = $seo_meta['description'] ?? 'Photonplay offers high-quality radar speed signs for traffic calming. Buy radar speed signs with customizable options and enhance road safety.';
+            $keywords = $seo_meta['keywords'] ?? 'radar speed sign, speed limit sign, digital radar speed signs, driver feedback sign, your speed sign, traffic calming solutions';
+            $schema = $seo_meta['schema'] ?? '';
+    }else {
+        $title = 'Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay';
+        $description = 'Photonplay offers high-quality radar speed signs for traffic calming. Buy radar speed signs with customizable options and enhance road safety.';
+        $keywords = 'radar speed sign, speed limit sign, digital radar speed signs, driver feedback sign, your speed sign, traffic calming solutions';
+        $schema = '';
+    }
     $productLists = Product::where('category_id',1)->where('status', Product::LISTED)->take(5)->get();
 @endphp
 <!DOCTYPE html>
@@ -27,16 +37,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay </title>
-    <meta name="title" content="Radar Speed Signs | Buy Best Radar Speed Signs in USA – Photonplay">
-    <meta name="description" content="Photonplay offers high-quality radar speed signs for traffic calming. Buy radar speed signs with customizable options and enhance road safety.">
+    <title>{{$title}} </title>
+    <meta name="title" content="{{$title}}">
+    <meta name="description" content="{{$description}}">
     <meta name="google-site-verification" content="x2TVSaiGBx9F_unjNk_O1mEB64-JF5s3lmTguSQvstw"/>
 
     <link rel="icon" href=
         "https://www.photonplay.com/assets/images/photon_small.png"
           type="image/x-icon">
     <link rel="canonical" href="https://www.photonplay.com/radar-speed-signs"/>
-    <meta name="keywords" content="radar speed sign, speed limit sign, digital radar speed signs, driver feedback sign, your speed sign, traffic calming solutions,">
+    <meta name="keywords" content="{{$keywords}}">
     <link rel="alternate" hreflang="en-us">
     <meta name="language" content="English">
     <meta name="author" content="Photonplay">
@@ -72,32 +82,33 @@
     <meta name="twitter:site" content="@photonplayinc" />
     <meta name="twitter:creator" content="@photonplayinc" />
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Radar Speed Signs",
-        "image": "https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp",
-        "description": "Photonplay's radar speed signs utilize advanced technology to display real-time vehicle speeds, encouraging drivers to adhere to speed limits and enhancing road safety.",
-        "brand": {
-            "@type": "Organization",
-            "name": "Photonplay",
-            "url": "https://staging.photonplay.com"
-        },
-        "offers": {
-            "@type": "Offer",
-            "url": "https://staging.photonplay.com/radar-speed-signs",
-            "priceCurrency": "USD",
-            "price": "Contact for pricing",
-            "availability": "https://schema.org/InStock"
-        },
-        "additionalType": "https://en.wikipedia.org/wiki/Radar_speed_sign",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://staging.photonplay.com/radar-speed-signs"
-        }
-    }
-    </script>
+    {!! $schema ?? '' !!}
+{{--    <script type="application/ld+json">--}}
+{{--    {--}}
+{{--        "@context": "https://schema.org",--}}
+{{--        "@type": "Product",--}}
+{{--        "name": "Radar Speed Signs",--}}
+{{--        "image": "https://www.photonplay.com/storage/image/radar-speed-sign-model-r1200-amber-front-side.webp",--}}
+{{--        "description": "Photonplay's radar speed signs utilize advanced technology to display real-time vehicle speeds, encouraging drivers to adhere to speed limits and enhancing road safety.",--}}
+{{--        "brand": {--}}
+{{--            "@type": "Organization",--}}
+{{--            "name": "Photonplay",--}}
+{{--            "url": "https://staging.photonplay.com"--}}
+{{--        },--}}
+{{--        "offers": {--}}
+{{--            "@type": "Offer",--}}
+{{--            "url": "https://staging.photonplay.com/radar-speed-signs",--}}
+{{--            "priceCurrency": "USD",--}}
+{{--            "price": "Contact for pricing",--}}
+{{--            "availability": "https://schema.org/InStock"--}}
+{{--        },--}}
+{{--        "additionalType": "https://en.wikipedia.org/wiki/Radar_speed_sign",--}}
+{{--        "mainEntityOfPage": {--}}
+{{--            "@type": "WebPage",--}}
+{{--            "@id": "https://staging.photonplay.com/radar-speed-signs"--}}
+{{--        }--}}
+{{--    }--}}
+{{--    </script>--}}
 
     @php
         $disable_js=0;
